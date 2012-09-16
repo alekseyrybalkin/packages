@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+
+if [ -z ./package.sh ]; then
+  echo "no package.sh found, goodbye."
+fi
+location=`pwd`
+. ./package.sh
+
+pkgdir=${location}/kiin-dest
+if [[ ${srctar} ]]; then
+  tar xvf ${srctar}
+  cd ${srcdir}
+fi
+kiin_make
+
+maker=${location}/kiin_maker.sh
+echo "#!/bin/sh" > ${maker}
+echo "cd ${location}" >> ${maker}
+echo ". ./package.sh" >> ${maker}
+echo "mkdir ${pkgdir}" >> ${maker}
+if [[ ${srcdir} ]]; then
+  echo "cd ${srcdir}" >> ${maker}
+fi
+echo "kiin_install" >> ${maker}
+echo "cd ${location}" >> ${maker}
+echo "tar cfav kiin.${pkgname}-${pkgver}.tar.xz kiin-dest" >> ${maker}
+chmod +x ${maker}
+pkgdir=${pkgdir} fakeroot ${maker}
+rm ${maker}
+rm -rf ${pkgdir}
+if [[ ${srcdir} ]]; then
+  rm -rf ${srcdir}
+fi
+echo "kiin: all done!"
