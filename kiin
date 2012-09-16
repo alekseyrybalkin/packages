@@ -9,7 +9,8 @@ location=`pwd`
 
 pkgdir=${location}/kiin-dest
 if [[ ${srctar} ]]; then
-  tar xvf ${srctar}
+  echo "unpacking ${srctar}..."
+  tar xf ${srctar}
   cd ${srcdir}
 fi
 kiin_make
@@ -24,7 +25,8 @@ if [[ ${srcdir} ]]; then
 fi
 echo "kiin_install" >> ${maker}
 echo "cd ${location}" >> ${maker}
-echo "tar cfav kiin.${pkgname}-${pkgver}.tar.xz kiin-dest" >> ${maker}
+echo "echo creating xz archive..." >> ${maker}
+echo "tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest" >> ${maker}
 chmod +x ${maker}
 pkgdir=${pkgdir} fakeroot ${maker}
 rm ${maker}
