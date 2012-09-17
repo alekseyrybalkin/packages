@@ -11,8 +11,8 @@ kiin_make() {
 }
 
 kiin_install() {
-  make prefix=${pkgdir}/usr install
-  #mkdir -pv ${pkgdir}/usr/bin
-  #mv -v ${pkgdir}/bin/{gzexe,uncompress,zcmp,zdiff,zegrep} /usr/bin
-  #mv -v /bin/{zfgrep,zforce,zgrep,zless,zmore,znew} /usr/bin
+  make prefix=${pkgdir} install
+  mkdir -pv ${pkgdir}/usr/bin
+  mv -v ${pkgdir}/bin/{gzexe,uncompress,zcmp,zdiff,zegrep} ${pkgdir}/usr/bin
+  mv -v ${pkgdir}/bin/{zfgrep,zforce,zgrep,zless,zmore,znew} ${pkgdir}/usr/bin
 }
