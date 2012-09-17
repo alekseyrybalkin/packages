@@ -14,4 +14,8 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} ldconfig=/bin/true install
+  mkdir -pv ${pkgdir}/lib
+  mv -v ${pkgdir}/lib64/* ${pkgdir}/lib
+  rm -r ${pkgdir}/lib64
+  ln -sv lib ${pkgdir}/lib64
 }

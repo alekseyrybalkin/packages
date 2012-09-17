@@ -26,6 +26,13 @@ kiin_install() {
   mkdir ${pkgdir}/etc
   touch ${pkgdir}/etc/ld.so.conf
   make install_root=${pkgdir} install
+  mkdir -pv ${pkgdir}/lib
+  mv -v ${pkgdir}/lib64/* ${pkgdir}/lib
+  rm -r ${pkgdir}/lib64
+  ln -sv lib ${pkgdir}/lib64
+  mv -v ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib
+  rm -r ${pkgdir}/usr/lib64
+  ln -sv lib ${pkgdir}/usr/lib64
   mkdir -pv ${pkgdir}/usr/include/{rpc,rpcsvc}
   cp -v ../sunrpc/rpc/*.h ${pkgdir}/usr/include/rpc
   cp -v ../sunrpc/rpcsvc/*.h ${pkgdir}/usr/include/rpcsvc

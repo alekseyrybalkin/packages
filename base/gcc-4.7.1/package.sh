@@ -25,7 +25,12 @@ kiin_make() {
 
 kiin_install() {
   cd gcc-build
+  #mkdir ${pkgdir}/usr/lib
+  #ln -sv lib ${pkgdir}/usr/lib64
   make DESTDIR=${pkgdir} install
+  mv -v ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib
+  rm -r ${pkgdir}/usr/lib64
+  ln -sv lib ${pkgdir}/usr/lib64
   mkdir ${pkgdir}/lib
   ln -sv ../usr/bin/cpp ${pkgdir}/lib
   ln -sv gcc ${pkgdir}/usr/bin/cc
