@@ -16,19 +16,22 @@ fi
 kiin_make
 
 maker=${location}/kiin_maker.sh
-echo "#!/bin/sh" > ${maker}
-echo "cd ${location}" >> ${maker}
-echo ". ./package.sh" >> ${maker}
-echo "mkdir ${pkgdir}" >> ${maker}
+cat > ${maker} << "EOF"
+#!/bin/sh
+cd ${location}
+. ./package.sh
+mkdir ${pkgdir}
 if [[ ${srcdir} ]]; then
-  echo "cd ${srcdir}" >> ${maker}
+  cd ${srcdir}
 fi
-echo "kiin_install" >> ${maker}
-echo "cd ${location}" >> ${maker}
-echo "echo creating xz archive..." >> ${maker}
-echo "tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest" >> ${maker}
+kiin_install
+cd ${location}
+echo creating xz archive...
+tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
+EOF
 chmod +x ${maker}
-pkgdir=${pkgdir} fakeroot ${maker}
+location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
+  pkgname=${pkgname} pkgver=${pkgver} fakeroot ${maker}
 rm ${maker}
 rm -rf ${pkgdir}
 if [[ ${srcdir} ]]; then
