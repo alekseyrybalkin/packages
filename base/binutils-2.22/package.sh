@@ -18,8 +18,5 @@ kiin_make() {
 kiin_install() {
   cd binutils-build
   make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
-  mv -v ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib
-  rm -r ${pkgdir}/usr/lib64
-  ln -sv lib ${pkgdir}/usr/lib64
   cp -v ../include/libiberty.h ${pkgdir}/usr/include
 }

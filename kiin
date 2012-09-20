@@ -25,6 +25,7 @@ if [[ ${srcdir} ]]; then
   cd ${srcdir}
 fi
 kiin_install
+fix_symlinks.py
 cd ${location}
 echo creating xz archive...
 tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
