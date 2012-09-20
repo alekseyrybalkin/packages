@@ -1,0 +1,17 @@
+# list dirs
+tar -tf kiin.fakeroot-1.18.4.tar.xz | sed 's/^kiin-dest//g' | grep -E '.*\/$'
+
+# list files
+tar -tf kiin.fakeroot-1.18.4.tar.xz | sed 's/^kiin-dest//g' | grep -E -v '.*\/$'
+
+# number of packages <- temp
+ls /sources/essentials /sources/base -l | grep rybalkin | sort -k 9 | wc -l
+
+# generate list of files in all packages
+for i in `find /sources/installed/ -type f`; do tar -tf $i | sed 's/^kiin-dest//g' | grep -E -v '.*\/$'; done > file_list
+
+# list repeated files
+cat file_list | sort | uniq -c | grep -E -v "      1 .*"
+
+# as ROOT - find files on filesystem which are not in packages
+for i in `find /usr/share -type f`; do grep -q -E "^$i$" /home/rybalkin/file_list; if [ $? != 0 ]; then echo $i; fi; done
