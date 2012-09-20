@@ -1,22 +1,39 @@
 #!/bin/sh
-set -e
 
-if [ -z ./package.sh ]; then
-  echo "no package.sh found, goodbye."
+usage() {
+  echo "usage:"
+  echo "  kiin make"
+  echo "  kiin gen-db"
+  echo "  kiin list-dups"
+  echo "  kiin who-owns </full/path/to/file>"
+  #echo "  kiin list-untracked <dir>"
+  #echo "  kiin list-lost </path/to/package.xz>"
+}
+
+if [ -z $1 ]; then
+  usage
+  exit 0
 fi
-location=`pwd`
-. ./package.sh
 
-pkgdir=${location}/kiin-dest
-if [[ ${srctar} ]]; then
-  echo "unpacking ${srctar}..."
-  tar xf ${srctar}
-  cd ${srcdir}
-fi
-kiin_make
+if [ $1 == "make" ]; then
+  set -e
+  if [ ! -f ./package.sh ]; then
+    echo "no package.sh found, goodbye."
+    exit 0
+  fi
+  location=`pwd`
+  . ./package.sh
 
-maker=${location}/kiin_maker.sh
-cat > ${maker} << "EOF"
+  pkgdir=${location}/kiin-dest
+  if [[ ${srctar} ]]; then
+    echo "unpacking ${srctar}..."
+    tar xf ${srctar}
+    cd ${srcdir}
+  fi
+  kiin_make
+
+  maker=${location}/kiin_maker.sh
+  cat > ${maker} << "EOF"
 #!/bin/sh
 cd ${location}
 . ./package.sh
@@ -30,12 +47,44 @@ cd ${location}
 echo creating xz archive...
 tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
 EOF
-chmod +x ${maker}
-location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
-  pkgname=${pkgname} pkgver=${pkgver} fakeroot ${maker}
-rm ${maker}
-rm -rf ${pkgdir}
-if [[ ${srcdir} ]]; then
-  rm -rf ${srcdir}
+  chmod +x ${maker}
+  location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
+    pkgname=${pkgname} pkgver=${pkgver} fakeroot ${maker}
+  rm ${maker}
+  rm -rf ${pkgdir}
+  if [[ ${srcdir} ]]; then
+    rm -rf ${srcdir}
+  fi
+  echo "kiin: all done!"
+  exit 0
 fi
-echo "kiin: all done!"
+
+if [ $1 == 'gen-db' ]; then
+  for i in `find /sources/installed/ -type f`; do
+    filename="`echo $i | sed 's/\/sources\/installed\/kiin\.//g' | sed 's/\.tar\.xz//g'`"
+    tar -tvf $i | sed "s/kiin-dest//g" > /sources/kiin-db/$filename.list
+  done
+  echo done
+  exit 0
+fi
+
+if [ $1 == 'list-dups' ]; then
+  ls /sources/kiin-db | xargs cat | tr -s ' ' | grep -E '^-.*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r
+  exit 0
+fi
+
+if [ $1 == 'who-owns' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep who-owns
+    exit 0
+  fi
+  for i in `find /sources/kiin-db/ -type f`; do
+    cat $i | grep -q -E "\-.* $2$"
+    if [ $? -eq 0 ]; then
+      echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
+    fi
+  done
+  exit 0
+fi
+
+usage
