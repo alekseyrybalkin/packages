@@ -100,7 +100,7 @@ if [ $1 == 'check-conflicts' ]; then
     echo "$2 does not exist"
     exit 0
   fi
-  for i in `tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort`; do
+  for i in `kiin list-files $2`; do
     if [ -e $i ]; then
       echo $i already exists on filesystem
     fi
