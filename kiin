@@ -160,7 +160,6 @@ if [ $1 == 'install' ]; then
       mkdir -pv $dir
       chmod `stat -c %a $prototype` $dir
       #echo "chown `stat -c %U $prototype`:`stat -c %G $prototype` $dir"
-      exit 0
     fi
   done
   for file in `kiin list-files $2`; do
