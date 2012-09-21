@@ -6,7 +6,6 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/AUTH_METHOD=\"pam\"/AUTH_METHOD=\"shadow\"/g' configure
   ./configure --prefix=/usr --enable-shadow=yes
   make
 }
