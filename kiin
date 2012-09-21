@@ -6,6 +6,10 @@ usage() {
   echo "  kiin gen-db"
   echo "  kiin list-dups"
   echo "  kiin who-owns </full/path/to/file>"
+  echo "  kiin check-conflicts </path/to/package.xz>"
+  echo "  kiin list-files </path/to/package.xz>"
+  echo "  kiin list-dirs </path/to/package.xz>"
+  echo "  kiin install </path/to/package.xz>"
   #echo "  kiin list-untracked <dir>"
   #echo "  kiin list-lost </path/to/package.xz>"
 }
@@ -83,6 +87,85 @@ if [ $1 == 'who-owns' ]; then
     if [ $? -eq 0 ]; then
       echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
     fi
+  done
+  exit 0
+fi
+
+if [ $1 == 'check-conflicts' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep check-conflicts
+    exit 0
+  fi
+  if [ ! -f $2 ]; then
+    echo "$2 does not exist"
+    exit 0
+  fi
+  for i in `tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort`; do
+    if [ -e $i ]; then
+      echo $i already exists on filesystem
+    fi
+  done
+  exit 0
+fi
+
+if [ $1 == 'list-files' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep list-files
+    exit 0
+  fi
+  if [ ! -f $2 ]; then
+    echo "$2 does not exist"
+    exit 0
+  fi
+  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort
+  exit 0
+fi
+
+if [ $1 == 'list-dirs' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep list-dirs
+    exit 0
+  fi
+  if [ ! -f $2 ]; then
+    echo "$2 does not exist"
+    exit 0
+  fi
+  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^d.*' | cut -d ' ' --fields=6 | sort
+  exit 0
+fi
+
+if [ $1 == 'install' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep install
+    exit 0
+  fi
+  if [ ! -f $2 ]; then
+    echo "$2 does not exist"
+    exit 0
+  fi
+  if [ `whoami` != 'root' ]; then
+    echo "you must be root to run kiin install"
+    exit 0
+  fi
+  if [ `kiin check-conflicts $2 | wc -l` != '0' ]; then
+    echo "where are conflicts, not installing"
+    exit 0
+  fi
+  tmpdir=/tmp/kiin/`uuidgen`
+  mkdir -p $tmpdir
+  tar xf $2 -C $tmpdir
+  for dir in `kiin list-dirs $2`; do
+    if [ ! -d $dir ]; then
+      prototype=$tmpdir/kiin-dest$dir
+      mkdir -pv $dir
+      chmod `stat -c %a $prototype` $dir
+      #echo "chown `stat -c %U $prototype`:`stat -c %G $prototype` $dir"
+      exit 0
+    fi
+  done
+  for file in `kiin list-files $2`; do
+    prototype=$tmpdir/kiin-dest$file
+    cp -av $prototype $file
   done
   exit 0
 fi
