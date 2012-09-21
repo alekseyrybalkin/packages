@@ -73,7 +73,7 @@ if [ $1 == 'gen-db' ]; then
 fi
 
 if [ $1 == 'list-dups' ]; then
-  ls /sources/kiin-db | xargs cat | tr -s ' ' | grep -E '^-.*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r
+  find /sources/kiin-db -type f | xargs cat | tr -s ' ' | grep -E '^-.*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r
   exit 0
 fi
 
