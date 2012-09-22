@@ -15,9 +15,9 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
 
-  # was it done or not? why i need this?
-  #sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat &&
-  #install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat /lib/dhcpcd/dhcpcd-hooks/
+  # why i need this?
+  sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat &&
+  install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat ${pkgdir}/lib/dhcpcd/dhcpcd-hooks/
 
   # + some shit about useless bootscripts
 
