@@ -94,6 +94,7 @@ if [ $1 == 'gen-db' ]; then
 fi
 
 if [ $1 == 'list-dups' ]; then
+  # select name, count(id) as cnt from file where permissions not like 'd%' group by name order by cnt desc
   find /sources/kiin-db -name "*.list" | xargs cat | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r -n
   exit 0
 fi
