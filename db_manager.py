@@ -28,6 +28,7 @@ def create_db(conn):
 def gen_db(conn):
     packages_path = '/sources/installed/'
     installed_packages = os.listdir(packages_path)
+    actual_package_list = []
     for package_file in installed_packages:
         filename = packages_path + package_file
         package = package_file.replace('kiin.', '').replace('.tar.xz', '')
@@ -35,6 +36,7 @@ def gen_db(conn):
         tmp = package.split('-')
         version = tmp[len(tmp)-1]
         package = package.replace('-' + version, '')
+        actual_package_list.append(package)
 
         c = conn.cursor()
         c.execute('select id,name,version,timestamp from package where name=?',
@@ -42,8 +44,8 @@ def gen_db(conn):
         stored_package = c.fetchone()
         if stored_package is None or str(stored_package[3]) != str(timestamp):
             if stored_package is not None:
-                c.execute('delete from package where id=?', (stored_package[0],))
                 c.execute('delete from file where package_id=?', (stored_package[0],))
+                c.execute('delete from package where id=?', (stored_package[0],))
             c.execute('''
                 insert into package(name, version, timestamp)
                     values (?, ?, ?)''', (package, version, timestamp))
@@ -63,6 +65,15 @@ def gen_db(conn):
                 insert into file(package_id, permissions, ownership,
                                     name, link)
                     values (?, ?, ?, ?, ?)''', files)
+    # now delete stale packages from db
+    actual_package_set = set(actual_package_list)
+    package_ids_to_delete = []
+    for row in c.execute('select id,name from package'):
+        if row[1] not in actual_package_set:
+            package_ids_to_delete.append(row[0])
+    for package_id in package_ids_to_delete:
+        c.execute('delete from file where package_id=?', (package_id,))
+        c.execute('delete from package where id=?', (package_id,))
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
