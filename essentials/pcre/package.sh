@@ -18,6 +18,7 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  mkdir -pv ${pkgdir}/lib
   mv -v ${pkgdir}/usr/lib/libpcre.so.* ${pkgdir}/lib
   ln -sfv ../../lib/libpcre.so.1.0.1 ${pkgdir}/usr/lib/libpcre.so
 }
