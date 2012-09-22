@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 usage() {
   echo "usage:"
@@ -21,6 +21,23 @@ if [ -z $1 ]; then
   usage
   exit 0
 fi
+
+case $1 in
+  "install" | "list-untracked")
+    if [ `whoami` != 'root' ]; then
+      echo "you must be root to run kiin $1"
+      exit 0
+    fi
+    ;;
+esac
+case $1 in
+  "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" | "list-dirs" | "install" | "uninstall" | "list-untracked")
+    if [ -z $2 ]; then
+      echo "usage:" && usage | grep $1
+      exit 0
+    fi
+    ;;
+esac
 
 if [ $1 == "make" ]; then
   set -e
@@ -77,16 +94,12 @@ if [ $1 == 'gen-db' ]; then
 fi
 
 if [ $1 == 'list-dups' ]; then
-  find /sources/kiin-db -type f | xargs cat | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r -n
+  find /sources/kiin-db -name "*.list" | xargs cat | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r -n
   exit 0
 fi
 
 if [ $1 == 'who-owns' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep who-owns
-    exit 0
-  fi
-  for i in `find /sources/kiin-db/ -type f`; do
+  for i in `find /sources/kiin-db/ -name "*.list"`; do
     cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^[-lpscb].* $2$"
     if [ $? -eq 0 ]; then
       echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
@@ -96,12 +109,8 @@ if [ $1 == 'who-owns' ]; then
 fi
 
 if [ $1 == 'who-uses-dir' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep who-uses-dir
-    exit 0
-  fi
   dir=`echo $2 | sed 's/\/$//g'`
-  for i in `find /sources/kiin-db/ -type f`; do
+  for i in `find /sources/kiin-db/ -name "*.list"`; do
     cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^d.* $dir\/$"
     if [ $? -eq 0 ]; then
       echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
@@ -110,11 +119,8 @@ if [ $1 == 'who-uses-dir' ]; then
   exit 0
 fi
 
+# TODO: take filesystem symlinks into account
 if [ $1 == 'check-conflicts' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep check-conflicts
-    exit 0
-  fi
   if [ ! -f $2 ]; then
     echo "$2 does not exist"
     exit 0
@@ -136,10 +142,6 @@ if [ $1 == 'check-conflicts' ]; then
 fi
 
 if [ $1 == 'list-files' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep list-files
-    exit 0
-  fi
   if [ ! -f $2 ]; then
     echo "$2 does not exist"
     exit 0
@@ -149,10 +151,6 @@ if [ $1 == 'list-files' ]; then
 fi
 
 if [ $1 == 'list-dirs' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep list-dirs
-    exit 0
-  fi
   if [ ! -f $2 ]; then
     echo "$2 does not exist"
     exit 0
@@ -161,15 +159,8 @@ if [ $1 == 'list-dirs' ]; then
   exit 0
 fi
 
+# TODO: take filesystem symlinks into account
 if [ $1 == 'install' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep install
-    exit 0
-  fi
-  if [ `whoami` != 'root' ]; then
-    echo "you must be root to run kiin install"
-    exit 0
-  fi
   if [ ! -f $2 ]; then
     echo "$2 does not exist"
     exit 0
@@ -204,14 +195,6 @@ if [ $1 == 'ls' ]; then
 fi
 
 if [ $1 == 'uninstall' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep uninstall
-    exit 0
-  fi
-  if [ `whoami` != 'root' ]; then
-    echo "you must be root to run kiin uninstall"
-    exit 0
-  fi
   count=`kiin ls | grep $2 | wc -l`
   if [ $count = 0 ]; then
     echo "$2 is not installed"
@@ -263,16 +246,8 @@ if [ $1 == 'uninstall' ]; then
 fi
 
 if [ $1 == 'list-untracked' ]; then
-  if [ -z $2 ]; then
-    echo "usage:" && usage | grep list-untracked
-    exit 0
-  fi
   if [ ! -d $2 ]; then
     echo "dir $2 does not exist"
-    exit 0
-  fi
-  if [ `whoami` != 'root' ]; then
-    echo "you must be root to run kiin list-untracked"
     exit 0
   fi
   dir=`echo $2 | sed 's/\/$//g'`
