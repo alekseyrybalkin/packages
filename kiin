@@ -124,6 +124,14 @@ if [ $1 == 'check-conflicts' ]; then
       echo $i already exists on filesystem
     fi
   done
+  for i in `kiin list-dirs $2`; do
+    i=`echo $i | sed 's/\/$//g'`
+    if [ -e $i ]; then
+      if [ ! -d $i ]; then
+        echo "$i already exists on filesystem and is not a dir"
+      fi
+    fi
+  done
   exit 0
 fi
 
