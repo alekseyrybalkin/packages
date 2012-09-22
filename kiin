@@ -13,7 +13,7 @@ usage() {
   echo "  kiin install </path/to/package.xz>"
   echo "  kiin ls"
   echo "  kiin uninstall <package>"
-  #echo "  kiin list-untracked <dir>"
+  echo "  kiin list-untracked <dir>"
   #echo "  kiin list-lost </path/to/package.xz>"
 }
 
@@ -259,6 +259,29 @@ if [ $1 == 'uninstall' ]; then
   echo "think you would like to run this as user after that:"
   echo "mv /sources/installed/kiin.$package.tar.xz /sources/uninstalled"
   echo "think you would like to run kiin gen-db as user after that, too"
+  exit 0
+fi
+
+if [ $1 == 'list-untracked' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep list-untracked
+    exit 0
+  fi
+  if [ ! -d $2 ]; then
+    echo "dir $2 does not exist"
+    exit 0
+  fi
+  if [ `whoami` != 'root' ]; then
+    echo "you must be root to run kiin list-untracked"
+    exit 0
+  fi
+  dir=`echo $2 | sed 's/\/$//g'`
+  for file in `find $dir ! -type d`; do
+    owner=`kiin who-owns $file`
+    if [ -z $owner ]; then
+      echo "nobody owns $file"
+    fi
+  done
   exit 0
 fi
 
