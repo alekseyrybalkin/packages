@@ -6,6 +6,7 @@ srctar=Python-${pkgver}.tar.xz
 srcdir=${location}/Python-${pkgver}
 
 kiin_make() {
+  sed -i "/SQLITE_OMIT_LOAD_EXTENSION/d" setup.py
   sed -i "s/ndbm_libs = \[\]/ndbm_libs = ['gdbm', 'gdbm_compat']/" setup.py
   ./configure --prefix=/usr --enable-shared
   make
