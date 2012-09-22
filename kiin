@@ -6,10 +6,13 @@ usage() {
   echo "  kiin gen-db"
   echo "  kiin list-dups"
   echo "  kiin who-owns </full/path/to/file>"
+  echo "  kiin who-uses-dir </full/path/to/dir>"
   echo "  kiin check-conflicts </path/to/package.xz>"
   echo "  kiin list-files </path/to/package.xz>"
   echo "  kiin list-dirs </path/to/package.xz>"
   echo "  kiin install </path/to/package.xz>"
+  echo "  kiin ls"
+  echo "  kiin uninstall <package-version>"
   #echo "  kiin list-untracked <dir>"
   #echo "  kiin list-lost </path/to/package.xz>"
 }
@@ -64,6 +67,7 @@ EOF
 fi
 
 if [ $1 == 'gen-db' ]; then
+  rm -f /sources/kiin-db/*.list
   for i in `find /sources/installed/ -type f`; do
     filename="`echo $i | sed 's/\/sources\/installed\/kiin\.//g' | sed 's/\.tar\.xz//g'`"
     tar -tvf $i | sed "s/kiin-dest//g" > /sources/kiin-db/$filename.list
@@ -73,7 +77,7 @@ if [ $1 == 'gen-db' ]; then
 fi
 
 if [ $1 == 'list-dups' ]; then
-  find /sources/kiin-db -type f | xargs cat | tr -s ' ' | grep -E '^-.*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r
+  find /sources/kiin-db -type f | xargs cat | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r -n
   exit 0
 fi
 
@@ -83,7 +87,22 @@ if [ $1 == 'who-owns' ]; then
     exit 0
   fi
   for i in `find /sources/kiin-db/ -type f`; do
-    cat $i | grep -q -E "\-.* $2$"
+    cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^[-lpscb].* $2$"
+    if [ $? -eq 0 ]; then
+      echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
+    fi
+  done
+  exit 0
+fi
+
+if [ $1 == 'who-uses-dir' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep who-uses-dir
+    exit 0
+  fi
+  dir=`echo $2 | sed 's/\/$//g'`
+  for i in `find /sources/kiin-db/ -type f`; do
+    cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^d.* $dir\/$"
     if [ $? -eq 0 ]; then
       echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
     fi
@@ -139,12 +158,12 @@ if [ $1 == 'install' ]; then
     echo "usage:" && usage | grep install
     exit 0
   fi
-  if [ ! -f $2 ]; then
-    echo "$2 does not exist"
-    exit 0
-  fi
   if [ `whoami` != 'root' ]; then
     echo "you must be root to run kiin install"
+    exit 0
+  fi
+  if [ ! -f $2 ]; then
+    echo "$2 does not exist"
     exit 0
   fi
   if [ `kiin check-conflicts $2 | wc -l` != '0' ]; then
@@ -166,6 +185,72 @@ if [ $1 == 'install' ]; then
     prototype=$tmpdir/kiin-dest$file
     cp -av $prototype $file
   done
+  exit 0
+fi
+
+if [ $1 == 'ls' ]; then
+  for i in `find /sources/installed -type f`; do
+    echo $i | sed 's/\/sources\/installed\/kiin\.//g' | sed 's/\.tar\.xz//g'
+  done
+  exit 0
+fi
+
+if [ $1 == 'uninstall' ]; then
+  if [ -z $2 ]; then
+    echo "usage:" && usage | grep uninstall
+    exit 0
+  fi
+  if [ `whoami` != 'root' ]; then
+    echo "you must be root to run kiin uninstall"
+    exit 0
+  fi
+  count=`kiin ls | grep $2 | wc -l`
+  if [ $count = 0 ]; then
+    echo "$2 is not installed"
+    exit 0
+  fi
+  if [ $count -gt 1 ]; then
+    echo "$2 is ambiguous (" `kiin ls | grep $2` ")"
+    exit 0
+  fi
+  package=`kiin ls | grep $2`
+  #echo "uninstalling $package, are you sure? (y/N)"
+  uninstaller=/tmp/kiin/uninstaller-`uuidgen`
+  mkdir -p /tmp/kiin
+  for file in `cat /sources/kiin-db/$package.list | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort`; do
+    kiin list-files /sources/installed/kiin.filesystem-1.tar.xz | grep -q -E "^$file$"
+    if [ ! $? -eq 0 ]; then
+      if [ $file != "/usr/share/info/dir" ]; then
+        owners=`kiin who-owns $file`
+        owner_count=`echo $owners | wc -w`
+        if [ $owner_count != 1 ]; then
+          echo $file owned by $owner_count owners: $owners
+          exit 0
+        fi
+        if [ "$owners" != $package ]; then
+          echo "$package is not owner of $file"
+          exit 0
+        fi
+        echo "rm $file" | tee -a $uninstaller
+      fi
+    fi
+  done
+  for dir in `cat /sources/kiin-db/$package.list | tr -s ' ' | grep -E '^d.*' | cut -d ' ' --fields=6 | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
+    kiin list-dirs /sources/installed/kiin.filesystem-1.tar.xz | grep -q -E "^$dir$"
+    if [ ! $? -eq 0 ]; then
+      users=`kiin who-uses-dir $dir`
+      user_count=`echo $users | wc -w`
+      [ $user_count = 1 ] && [ $users = $package ] && {
+        echo "rm -r $dir" | tee -a $uninstaller
+      }
+    fi
+  done
+  chmod +x $uninstaller
+  echo ""
+  echo "uninstall script is $uninstaller"
+  echo "think you would like to run this after that:"
+  echo "mv /sources/installed/kiin.$package.tar.xz /sources/uninstalled"
+  echo "think you would like to run kiin gen-db after that, too"
   exit 0
 fi
 
