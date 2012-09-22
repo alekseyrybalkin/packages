@@ -12,7 +12,7 @@ usage() {
   echo "  kiin list-dirs </path/to/package.xz>"
   echo "  kiin install </path/to/package.xz>"
   echo "  kiin ls"
-  echo "  kiin uninstall <package-version>"
+  echo "  kiin uninstall <package>"
   #echo "  kiin list-untracked <dir>"
   #echo "  kiin list-lost </path/to/package.xz>"
 }
