@@ -22,6 +22,14 @@ kiin_install() {
   install -d ${pkgdir}/usr/share/doc/linux-3.5.3
   cp -r Documentation/* ${pkgdir}/usr/share/doc/linux-3.5.3
 
+  # install some stupid proprietary shit for wifi-card to work.
+  # it's sickening.
+  # btw, do I really need all of these?
+  mkdir -pv ${pkgdir}/lib/firmware
+  cp -v ../iwlwifi-5000-1.ucode ${pkgdir}/lib/firmware
+  cp -v ../iwlwifi-5000-2.ucode ${pkgdir}/lib/firmware
+  cp -v ../iwlwifi-5000-5.ucode ${pkgdir}/lib/firmware
+
   install -v -m755 -d ${pkgdir}/etc/modprobe.d
   cat > ${pkgdir}/etc/modprobe.d/usb.conf << "EOF"
 # Begin /etc/modprobe.d/usb.conf
