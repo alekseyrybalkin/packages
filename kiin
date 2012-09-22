@@ -247,10 +247,10 @@ if [ $1 == 'uninstall' ]; then
   done
   chmod +x $uninstaller
   echo ""
-  echo "uninstall script is $uninstaller"
-  echo "think you would like to run this after that:"
+  echo "uninstall script is $uninstaller (check it and run it as root)"
+  echo "think you would like to run this as user after that:"
   echo "mv /sources/installed/kiin.$package.tar.xz /sources/uninstalled"
-  echo "think you would like to run kiin gen-db after that, too"
+  echo "think you would like to run kiin gen-db as user after that, too"
   exit 0
 fi
 
