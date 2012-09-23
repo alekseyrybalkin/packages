@@ -3,6 +3,7 @@
 usage() {
   echo "usage:"
   echo "  kiin make"
+  echo "  kiin download"
   echo "  kiin gen-db"
   echo "  kiin list-dups"
   echo "  kiin who-owns </full/path/to/file>"
@@ -25,6 +26,18 @@ if [ -z $1 ]; then
   exit 0
 fi
 
+case $1 in
+  "make" | "download")
+    if [ ! -f ./package.sh ]; then
+      echo "no package.sh found, goodbye."
+      exit 0
+    fi
+    location=`pwd`
+    . ./package.sh
+
+    pkgdir=${location}/kiin-dest
+    ;;
+esac
 case $1 in
   "install" | "uninstall" | "list-untracked" | "check-system-integrity" | "list-missing")
     if [ `whoami` != 'root' ]; then
@@ -58,14 +71,6 @@ esac
 
 if [ $1 == "make" ]; then
   set -e
-  if [ ! -f ./package.sh ]; then
-    echo "no package.sh found, goodbye."
-    exit 0
-  fi
-  location=`pwd`
-  . ./package.sh
-
-  pkgdir=${location}/kiin-dest
   if [[ ${srctar} ]]; then
     echo "unpacking ${srctar}..."
     tar xf ${srctar}
@@ -109,6 +114,13 @@ EOF
     rm -rf ${srcdir}
   fi
   echo "kiin: all done!"
+  exit 0
+fi
+
+if [ $1 = "download" ]; then
+  for url in $urls; do
+    wget $url
+  done
   exit 0
 fi
 
