@@ -75,9 +75,18 @@ def gen_db(conn):
         c.execute('delete from file where package_id=?', (package_id,))
         c.execute('delete from package where id=?', (package_id,))
 
+def list_untracked(conn):
+    c = conn.cursor()
+    for line in sys.stdin:
+        line = line.rstrip("\n")
+        if c.execute("select count(*) from file where name='" + line + "'",
+                ).fetchone()[0] == 0:
+            print "nobody owns", line
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         conn = sqlite3.connect('/sources/kiin-db/kiin.sqlite3')
         if sys.argv[1] == 'gen-db': gen_db(conn)
         if sys.argv[1] == 'create-db': create_db(conn)
+        if sys.argv[1] == 'list-untracked': list_untracked(conn)
         conn.commit()
