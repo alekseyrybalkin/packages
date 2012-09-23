@@ -235,7 +235,12 @@ kiin_install() {
   SSLDIR=${pkgdir}/etc/ssl
   install -d ${SSLDIR}/certs
   cp -v certs/*.pem ${SSLDIR}/certs
-  c_rehash
+  # here we try to mimic c_rehash
+  # TODO: check if this is correct
+  for i in `ls ${SSLDIR}/certs`; do
+    ln -sv $i ${SSLDIR}/certs/`echo $i | sed 's/\.pem/\.0/g'`
+  done
+  #c_rehash
   install BLFS-ca-bundle*.crt ${SSLDIR}/ca-bundle.crt
   unset SSLDIR
   rm -r certs BLFS-ca-bundle*
