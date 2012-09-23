@@ -3,4 +3,5 @@
 *.tar.xz
 *.patch
 *.ucode
+*.pf2
 /kiin-db/
