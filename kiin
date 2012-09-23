@@ -13,8 +13,11 @@ usage() {
   echo "  kiin install </path/to/package.xz>"
   echo "  kiin ls"
   echo "  kiin uninstall <package>"
+  echo "  kiin db-list-files <package>"
+  echo "  kiin db-list-dirs <package>"
   echo "  kiin list-untracked <dir>"
-  #echo "  kiin list-lost </path/to/package.xz>"
+  echo "  kiin check-system-integrity"
+  #echo "  kiin list-missing </path/to/package.xz>"
 }
 
 if [ -z $1 ]; then
@@ -23,7 +26,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "install" | "list-untracked")
+  "install" | "list-untracked" | "check-system-integrity")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 0
@@ -31,11 +34,25 @@ case $1 in
     ;;
 esac
 case $1 in
-  "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" | "list-dirs" | "install" | "uninstall" | "list-untracked")
+  "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" | "list-dirs" | "install" | "uninstall" | "db-list-files" | "db-list-dirs" | "list-untracked")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
       exit 0
     fi
+    ;;
+esac
+case $1 in
+  "uninstall" | "db-list-files" | "db-list-dirs")
+    count=`kiin ls | grep $2 | wc -l`
+    if [ $count = 0 ]; then
+      echo "$2 is not installed"
+      exit 0
+    fi
+    if [ $count -gt 1 ]; then
+      echo "$2 is ambiguous (" `kiin ls | grep $2` ")"
+      exit 0
+    fi
+    package=`kiin ls | grep $2`
     ;;
 esac
 
@@ -67,6 +84,7 @@ if [[ ${srcdir} ]]; then
 fi
 kiin_install
 fix_symlinks.py
+rm -fv ${pkgdir}/usr/share/info/dir
 cd ${location}
 echo creating xz archive...
 tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
@@ -84,39 +102,32 @@ EOF
 fi
 
 if [ $1 == 'gen-db' ]; then
-  rm -f /sources/kiin-db/*.list
-  for i in `find /sources/installed/ -type f`; do
-    filename="`echo $i | sed 's/\/sources\/installed\/kiin\.//g' | sed 's/\.tar\.xz//g'`"
-    tar -tvf $i | sed "s/kiin-dest//g" > /sources/kiin-db/$filename.list
-  done
-  echo done
+  db_manager.py gen-db
   exit 0
 fi
 
 if [ $1 == 'list-dups' ]; then
-  # select name, count(id) as cnt from file where permissions not like 'd%' group by name order by cnt desc
-  find /sources/kiin-db -name "*.list" | xargs cat | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort | uniq -c | grep -E -v "      1 .*" | sort -r -n
+  echo "select * from (select count(id) as cnt, name from file \
+    where permissions not like 'd%' group by name \
+    order by cnt desc) where cnt > 1;" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    | sed 's/|/\ \ /g'
   exit 0
 fi
 
 if [ $1 == 'who-owns' ]; then
-  for i in `find /sources/kiin-db/ -name "*.list"`; do
-    cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^[-lpscb].* $2$"
-    if [ $? -eq 0 ]; then
-      echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
-    fi
-  done
+  echo "select name,version from package where id in \
+    (select distinct package_id from file where name = '$2' \
+    and permissions not like 'd%');" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    | sed 's/|/\-/g' | sort
   exit 0
 fi
 
 if [ $1 == 'who-uses-dir' ]; then
   dir=`echo $2 | sed 's/\/$//g'`
-  for i in `find /sources/kiin-db/ -name "*.list"`; do
-    cat $i | sed 's/\ \->\ .*//g' | grep -q -E "^d.* $dir\/$"
-    if [ $? -eq 0 ]; then
-      echo `echo $i | sed 's/\/sources\/kiin-db\///g' | sed 's/\.list//g'`
-    fi
-  done
+  echo "select name,version from package where id in \
+    (select distinct package_id from file where name = '$dir/' \
+    and permissions like 'd%');" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    | sed 's/|/\-/g' | sort
   exit 0
 fi
 
@@ -185,32 +196,27 @@ if [ $1 == 'install' ]; then
     prototype=$tmpdir/kiin-dest$file
     cp -av $prototype $file
   done
-  exit 0
-fi
-
-if [ $1 == 'ls' ]; then
-  for i in `find /sources/installed -type f`; do
-    echo $i | sed 's/\/sources\/installed\/kiin\.//g' | sed 's/\.tar\.xz//g'
+  # recreate /usr/share/info/dir
+  cd /usr/share/info
+  rm -v dir
+  for f in *; do
+    install-info $f dir 2>/dev/null
   done
   exit 0
 fi
 
+if [ $1 == 'ls' ]; then
+  echo "select name,version from package;" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    | sed 's/|/\-/g'
+  exit 0
+fi
+
 if [ $1 == 'uninstall' ]; then
-  count=`kiin ls | grep $2 | wc -l`
-  if [ $count = 0 ]; then
-    echo "$2 is not installed"
-    exit 0
-  fi
-  if [ $count -gt 1 ]; then
-    echo "$2 is ambiguous (" `kiin ls | grep $2` ")"
-    exit 0
-  fi
-  package=`kiin ls | grep $2`
-  #echo "uninstalling $package, are you sure? (y/N)"
   uninstaller=/tmp/kiin/uninstaller-`uuidgen`
   mkdir -p /tmp/kiin
-  for file in `cat /sources/kiin-db/$package.list | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort`; do
-    kiin list-files /sources/installed/kiin.filesystem-1.tar.xz | grep -q -E "^$file$"
+  for file in `kiin db-list-files $package`; do
+    kiin db-list-files filesystem | grep -q -E "^$file$"
     if [ ! $? -eq 0 ]; then
       if [ $file != "/usr/share/info/dir" ]; then
         owners=`kiin who-owns $file`
@@ -227,8 +233,8 @@ if [ $1 == 'uninstall' ]; then
       fi
     fi
   done
-  for dir in `cat /sources/kiin-db/$package.list | tr -s ' ' | grep -E '^d.*' | cut -d ' ' --fields=6 | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
-    kiin list-dirs /sources/installed/kiin.filesystem-1.tar.xz | grep -q -E "^$dir$"
+  for dir in `kiin db-list-dirs $package`; do
+    kiin db-list-dirs filesystem | grep -q -E "^$dir$"
     if [ ! $? -eq 0 ]; then
       users=`kiin who-uses-dir $dir`
       user_count=`echo $users | wc -w`
@@ -246,17 +252,43 @@ if [ $1 == 'uninstall' ]; then
   exit 0
 fi
 
+if [ $1 == 'db-list-files' ]; then
+  package=`echo $package | sed 's/\-[^a-z]*$//g'`
+  echo "select name from file where package_id in \
+    (select id from package where name='$package') \
+    and permissions not like 'd%';" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3 | sort
+  exit 0
+fi
+
+if [ $1 == 'db-list-dirs' ]; then
+  package=`echo $package | sed 's/\-[^a-z]*$//g'`
+  echo "select name from file where package_id in \
+    (select id from package where name='$package') \
+    and permissions like 'd%';" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3 | sort
+  exit 0
+fi
+
 if [ $1 == 'list-untracked' ]; then
   if [ ! -d $2 ]; then
     echo "dir $2 does not exist"
     exit 0
   fi
   dir=`echo $2 | sed 's/\/$//g'`
-  for file in `find $dir ! -type d`; do
-    owner=`kiin who-owns $file`
-    if [ -z $owner ]; then
-      echo "nobody owns $file"
+  find $dir ! -type d | db_manager.py list-untracked
+  exit 0
+fi
+
+if [ $1 == 'check-system-integrity' ]; then
+  dirs=
+  for i in `ls /`; do
+    if [ ! -z "`kiin who-uses-dir /$i | grep -v filesystem`" ]; then
+      dirs="$dirs /$i"
     fi
+  done
+  for i in $dirs; do
+    kiin list-untracked $i
   done
   exit 0
 fi
