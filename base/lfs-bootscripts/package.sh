@@ -198,4 +198,49 @@ set bell-style none
 
 # End /etc/inputrc
 EOF
+
+  echo "SVN-20120905" > ${pkgdir}/etc/lfs-release
+
+  cat > ${pkgdir}/etc/lsb-release << "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="SVN-20120905"
+DISTRIB_CODENAME="rybalkiin"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF
+
+  cat > ${pkgdir}/etc/rc.d/init.d/rybalkin << "EOF"
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+    start)
+      log_info_msg "Running rybalkin custom initscript..."
+      /sbin/hdparm -B 255 /dev/sda >/dev/null
+      /sbin/dhcpcd -q eth0
+      evaluate_retval
+      ;;
+
+    stop)
+      log_info_msg "Stopping rybalkin custom initscript..."
+      /sbin/dhcpcd -qk eth0
+      evaluate_retval
+      ;;
+
+    status)
+      /sbin/ifstat
+      ;;
+
+    *)
+      echo "Usage: ${0} {start|stop|status}"
+      exit 1
+      ;;
+esac
+
+exit 0
+EOF
+
+  ln -sv ../init.d/rybalkin ${pkgdir}/etc/rc.d/rc0.d/K91rybalkin
+  ln -sv ../init.d/rybalkin ${pkgdir}/etc/rc.d/rc6.d/K91rybalkin
+  ln -sv ../init.d/rybalkin ${pkgdir}/etc/rc.d/rc3.d/S11rybalkin
 }
