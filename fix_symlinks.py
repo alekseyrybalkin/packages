@@ -33,6 +33,7 @@ while True:
         for f in glob.glob(path + '/*'):
             shutil.move(f, target)
         os.rmdir(path)
-        os.symlink(link, path)
+        # don't think we need this:
+        #os.symlink(link, path)
 
     i += 3
