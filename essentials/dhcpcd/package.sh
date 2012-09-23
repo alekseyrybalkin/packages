@@ -18,6 +18,7 @@ kiin_install() {
   # why i need this?
   sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat &&
   install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat ${pkgdir}/lib/dhcpcd/dhcpcd-hooks/
+  rm -r ${pkgdir}/run
 
   # + some shit about useless bootscripts
 
