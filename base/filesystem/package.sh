@@ -33,6 +33,14 @@ kiin_install() {
   mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
   touch ${pkgdir}/etc/mtab
 
+  # for sudo
+  install -dv -m 0755 ${pkgdir}/var/db
+  install -dv -m 0700 ${pkgdir}/var/db/sudo
+
+  # for openssh
+  install -dv -m 0700 ${pkgdir}/var/lib/sshd
+  chown root:sys ${pkgdir}/var/lib/sshd
+
   cat > ${pkgdir}/etc/passwd << "EOF"
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/bin/false

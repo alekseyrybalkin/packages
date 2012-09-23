@@ -18,4 +18,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # remove /var, filesystem package creates everything in there
+  rm -rvf ${pkgdir}/var
 }

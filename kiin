@@ -85,6 +85,9 @@ fi
 kiin_install
 fix_symlinks.py
 rm -fv ${pkgdir}/usr/share/info/dir
+if [ -e ${pkgdir}/var ]; then
+  echo " *** WARNING ***: package tries to use /var"
+fi
 cd ${location}
 echo creating xz archive...
 tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
@@ -285,6 +288,7 @@ if [ $1 == 'check-system-integrity' ]; then
       dirs="$dirs /$i"
     fi
   done
+  echo "used system dirs:" $dirs
   for i in $dirs; do
     kiin list-untracked $i
   done

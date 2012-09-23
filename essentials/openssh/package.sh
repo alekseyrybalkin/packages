@@ -26,4 +26,6 @@ kiin_install() {
   install -v -m755 -d ${pkgdir}/usr/share/doc/openssh-6.0p1
   install -v -m644 INSTALL LICENCE OVERVIEW README* \
       ${pkgdir}/usr/share/doc/openssh-6.0p1
+  # remove /var, filesystem package creates everything in there
+  rm -rvf ${pkgdir}/var
 }

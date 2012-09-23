@@ -99,4 +99,7 @@ EOF
 include /etc/ld.so.conf.d/*.conf
 EOF
   mkdir ${pkgdir}/etc/ld.so.conf.d
+  # remove /var, filesystem package creates everything in there
+  # TODO: decide with /var/db/Makefile
+  rm -rvf ${pkgdir}/var
 }
