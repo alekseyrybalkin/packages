@@ -16,5 +16,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  mkdir -pv ${pkgdir}/etc
   install -m 644 etc/etcscreenrc ${pkgdir}/etc/screenrc
 }
