@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr         \
               --libexecdir=/usr/lib \
-              --with-gitconfig=/etc/gitconfig &&
+              --with-gitconfig=/etc/gitconfig
   make
 }
 
