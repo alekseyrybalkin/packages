@@ -15,4 +15,5 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/bin
   mv -v ${pkgdir}/bin/{gzexe,uncompress,zcmp,zdiff,zegrep} ${pkgdir}/usr/bin
   mv -v ${pkgdir}/bin/{zfgrep,zforce,zgrep,zless,zmore,znew} ${pkgdir}/usr/bin
+  mv -v ${pkgdir}/share ${pkgdir}/usr
 }
