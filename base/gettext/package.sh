@@ -8,7 +8,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   sed -i -e '/gets is a/d' gettext-*/*/stdio.in.h
   ./configure --prefix=/usr \
-              --docdir=/usr/share/doc/gettext-0.18.1.1
+              --docdir=/usr/share/doc/gettext-0.18.1.1 \
+              --without-git
   make
 }
 
