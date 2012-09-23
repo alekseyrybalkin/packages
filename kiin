@@ -17,7 +17,7 @@ usage() {
   echo "  kiin db-list-dirs <package>"
   echo "  kiin list-untracked <dir>"
   echo "  kiin check-system-integrity"
-  #echo "  kiin list-missing </path/to/package.xz>"
+  echo "  kiin list-missing"
 }
 
 if [ -z $1 ]; then
@@ -26,7 +26,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "install" | "list-untracked" | "check-system-integrity")
+  "install" | "list-untracked" | "check-system-integrity" | "list-missing")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 0
@@ -288,9 +288,25 @@ if [ $1 == 'check-system-integrity' ]; then
       dirs="$dirs /$i"
     fi
   done
-  echo "used system dirs:" $dirs
+  echo " * searching for untracked files on filesystem..."
+  echo " * used system dirs:" $dirs
   for i in $dirs; do
     kiin list-untracked $i
+  done
+  echo " * searching for missing package files..."
+  kiin list-missing
+  echo " * searching gor duplications in package db..."
+  kiin list-dups
+  exit 0
+fi
+
+if [ $1 == 'list-missing' ]; then
+  for package in `kiin ls`; do
+    for file in `kiin db-list-files $package`; do
+      if [ ! -e $file ]; then
+        echo "$file is missing ($package)"
+      fi
+    done
   done
   exit 0
 fi
