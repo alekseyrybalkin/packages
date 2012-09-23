@@ -17,7 +17,7 @@ kiin_install() {
   for L in  ${pkgdir}/usr/share/man/{,*/}man1/vim.1; do
       ln -sv vim.1 $(dirname $L)/vi.1
   done
-  mkdir -pv ${pkgdir}/usr/share/doc/vim-7.3
+  mkdir -pv ${pkgdir}/usr/share/doc
   ln -sv ../vim/vim73/doc ${pkgdir}/usr/share/doc/vim-7.3
   mkdir -pv ${pkgdir}/etc
 
