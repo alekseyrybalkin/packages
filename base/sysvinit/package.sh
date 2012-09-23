@@ -7,9 +7,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i 's@Sending processes@& configured via /etc/inittab@g' src/init.c
-  sed -i -e 's/utmpdump wall/utmpdump/' \
+  sed -i -e '/= utmpdump wall/d' \
         -e '/= mountpoint/d' \
-        -e 's/mountpoint.1 wall.1//' src/Makefile
+        -e '/= utmpdump.1 mountpoint.1 wall.1/d' src/Makefile
   make -C src
 }
 
