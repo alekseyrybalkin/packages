@@ -30,5 +30,5 @@ kiin_install() {
   ln -sv ../usr/bin/cpp ${pkgdir}/lib
   ln -sv gcc ${pkgdir}/usr/bin/cc
   mkdir -pv ${pkgdir}/usr/share/gdb/auto-load/usr/lib
-  mv -v ${pkgdir}/usr/lib/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
+  mv -v ${pkgdir}/usr/lib64/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
 }
