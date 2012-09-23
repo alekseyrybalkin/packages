@@ -26,7 +26,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "install" | "list-untracked" | "check-system-integrity" | "list-missing")
+  "install" | "uninstall" | "list-untracked" | "check-system-integrity" | "list-missing")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 0
@@ -84,10 +84,18 @@ if [[ ${srcdir} ]]; then
 fi
 kiin_install
 fix_symlinks.py
+
+# fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
 if [ -e ${pkgdir}/var ]; then
   echo " *** WARNING ***: package tries to use /var"
 fi
+
+# fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+if [ -e ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod ]; then
+  mv -v ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod{,.$pkgname.podpart}
+fi
+
 cd ${location}
 echo creating xz archive...
 tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
@@ -160,7 +168,7 @@ if [ $1 == 'list-files' ]; then
     echo "$2 does not exist"
     exit 0
   fi
-  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscb].*' | cut -d ' ' --fields=6 | sort
+  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscbh].*' | cut -d ' ' --fields=6 | sort
   exit 0
 fi
 
@@ -197,11 +205,21 @@ if [ $1 == 'install' ]; then
     prototype=$tmpdir/kiin-dest$file
     cp -av $prototype $file
   done
+
   # recreate /usr/share/info/dir
   cd /usr/share/info
   rm -v dir
   for f in *; do
     install-info $f dir 2>/dev/null
+  done
+
+  # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+  cd /usr/lib/perl5/5.16.1/x86_64-linux
+  if [ -e perllocal.pod ]; then
+    rm -v perllocal.pod
+  fi
+  for f in `find . -name "*.podpart"`; do
+    cat $f >> perllocal.pod
   done
   exit 0
 fi
@@ -234,7 +252,8 @@ if [ $1 == 'uninstall' ]; then
       fi
     fi
   done
-  for dir in `kiin db-list-dirs $package`; do
+  for dir in `kiin db-list-dirs $package \
+    | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
     kiin db-list-dirs filesystem | grep -q -E "^$dir$"
     if [ ! $? -eq 0 ]; then
       users=`kiin who-uses-dir $dir`
@@ -295,7 +314,7 @@ if [ $1 == 'check-system-integrity' ]; then
   done
   echo " * searching for missing package files..."
   kiin list-missing
-  echo " * searching gor duplications in package db..."
+  echo " * searching for duplications in package db..."
   kiin list-dups
   exit 0
 fi
