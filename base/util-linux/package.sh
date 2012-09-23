@@ -9,7 +9,7 @@ kiin_make() {
   sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
       $(grep -rl '/etc/adjtime' .)
   #mkdir -pv /var/lib/hwclock
-  ./configure --disable-su --disable-sulogin --disable-login
+  ./configure --disable-su --disable-sulogin --disable-login --disable-kill
   make
 }
 
