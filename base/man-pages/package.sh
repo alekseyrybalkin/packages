@@ -11,4 +11,7 @@ kiin_make() {
 
 kiin_install() {
   make prefix=${pkgdir}/usr install
+  # these are included in shadow
+  rm -f ${pkgdir}/usr/share/man/man5/passwd.5
+  rm -f ${pkgdir}/usr/share/man/man3/getspnam.3
 }
