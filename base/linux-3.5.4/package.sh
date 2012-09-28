@@ -1,10 +1,11 @@
 #!/bin/sh
 
-pkgname=linux
+pkgname=linux-3.5.4
+_pkgname=linux
 pkgver=3.5.4
-urls="http://www.kernel.org/pub/${pkgname}/kernel/v3.x/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+urls="http://www.kernel.org/pub/${_pkgname}/kernel/v3.x/${_pkgname}-${pkgver}.tar.xz"
+srctar=${_pkgname}-${pkgver}.tar.xz
+srcdir=${location}/${_pkgname}-${pkgver}
 
 kiin_make() {
   make mrproper
