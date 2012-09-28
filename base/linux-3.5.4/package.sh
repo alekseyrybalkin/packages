@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkgname=linux-3.5.4
+pkgname=linux354
 _pkgname=linux
 pkgver=3.5.4
 urls="http://www.kernel.org/pub/${_pkgname}/kernel/v3.x/${_pkgname}-${pkgver}.tar.xz"

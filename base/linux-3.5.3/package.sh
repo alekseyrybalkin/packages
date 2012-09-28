@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkgname=linux-3.5.3
+pkgname=linux353
 _pkgname=linux
 pkgver=3.5.3
 urls="http://www.kernel.org/pub/${_pkgname}/kernel/v3.x/${_pkgname}-${pkgver}.tar.xz"
