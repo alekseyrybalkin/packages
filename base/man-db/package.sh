@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=man-db
-pkgver=2.6.2
+pkgver=2.6.3
+urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
