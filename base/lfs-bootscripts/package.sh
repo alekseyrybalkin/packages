@@ -13,6 +13,9 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   ls ${pkgdir}/etc/rc.d/rc*/*network* | xargs rm
 
+  # remove /etc/sysconfig/rc.site, it is in git repo now
+  rm ${pkgdir}/etc/sysconfig/rc.site
+
   cat > ${pkgdir}/etc/rc.d/init.d/rybalkin << "EOF"
 #!/bin/sh
 
