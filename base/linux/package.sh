@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=linux
-pkgver=3.5.4
+pkgver=3.5.3
 urls="http://www.kernel.org/pub/${pkgname}/kernel/v3.x/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
