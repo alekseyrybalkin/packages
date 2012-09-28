@@ -1,12 +1,12 @@
 #!/bin/sh
 
 pkgname=kmod
-pkgver=9
+pkgver=10
+urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../kmod-9-testsuite-1.patch
   ./configure --prefix=/usr       \
               --bindir=/bin       \
               --libdir=/lib       \
