@@ -22,4 +22,7 @@ kiin_install() {
 
   install -d ${pkgdir}/usr/share/doc/linux-3.5.3
   cp -r Documentation/* ${pkgdir}/usr/share/doc/linux-3.5.3
+
+  # remove installed firmware, package `linux-firmware` deals with that
+  rm -rf ${pkgdir}/lib/firmware
 }
