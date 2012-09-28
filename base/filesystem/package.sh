@@ -41,33 +41,6 @@ kiin_install() {
   install -dv -m 0700 ${pkgdir}/var/lib/sshd
   chown root:sys ${pkgdir}/var/lib/sshd
 
-  cat > ${pkgdir}/etc/passwd << "EOF"
-root:x:0:0:root:/root:/bin/bash
-bin:x:1:1:bin:/dev/null:/bin/false
-nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
-EOF
-
-  cat > ${pkgdir}/etc/group << "EOF"
-root:x:0:
-bin:x:1:
-sys:x:2:
-kmem:x:3:
-tape:x:4:
-tty:x:5:
-daemon:x:6:
-floppy:x:7:
-disk:x:8:
-lp:x:9:
-dialout:x:10:
-audio:x:11:
-video:x:12:
-utmp:x:13:
-usb:x:14:
-cdrom:x:15:
-mail:x:34:
-nogroup:x:99:
-EOF
-
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
