@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=libpipeline
-pkgver=1.2.1
+pkgver=1.2.2
+urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
