@@ -26,4 +26,7 @@ kiin_install() {
 
   # remove installed firmware, package `linux-firmware` deals with that
   rm -rf ${pkgdir}/lib/firmware
+
+  # remove broken links to build and source
+  rm -v ${pkgdir}/lib/modules/${pkgver}-rybalkiin/{build,source}
 }
