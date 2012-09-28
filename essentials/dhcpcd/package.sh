@@ -20,6 +20,9 @@ kiin_install() {
   install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat ${pkgdir}/lib/dhcpcd/dhcpcd-hooks/
   rm -r ${pkgdir}/run
 
+  # do not replace system-wide config, since it is in git repo now
+  mv -v ${pkgdir}/etc/dhcpcd.conf{,.packaged}
+
   # + some shit about useless bootscripts
 
   # The default behavior of dhcpcd sets the hostname and mtu settings.
