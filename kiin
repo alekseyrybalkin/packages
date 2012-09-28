@@ -20,6 +20,7 @@ usage() {
   echo "  kiin list-untracked <dir>"
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
+  echo "  kiin check-arch-updates"
 }
 
 if [ -z $1 ]; then
@@ -383,6 +384,25 @@ if [ $1 == 'list-missing' ]; then
       fi
     done
   done
+  exit 0
+fi
+
+if [ $1 == 'check-arch-updates' ]; then
+  cd ~/sources/packages
+  #git pull
+  for i in `kiin ls`; do
+    package=`echo $i | sed 's/\-[^a-z]*$//g'`
+    version=`echo $i | sed "s/$package-//g"`
+    if [ -d $package ]; then
+      . $package/trunk/PKGBUILD
+      if [ $pkgver != $version ]; then
+        echo "$package: local is $version, Arch's is $pkgver"
+      fi
+    else
+      echo "  cannot find $package in arch packages"
+    fi
+  done
+
   exit 0
 fi
 
