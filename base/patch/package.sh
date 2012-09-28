@@ -1,12 +1,12 @@
 #!/bin/sh
 
 pkgname=patch
-pkgver=2.6.1
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=2.7
+urls="http://ftp.gnu.org/gnu/patch/patch-2.7.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../patch-2.6.1-test_fix-1.patch
   ./configure --prefix=/usr
   make
 }
