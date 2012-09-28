@@ -2,7 +2,7 @@
 
 pkgname=patch
 pkgver=2.7
-urls="http://ftp.gnu.org/gnu/patch/patch-2.7.tar.xz"
+urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
