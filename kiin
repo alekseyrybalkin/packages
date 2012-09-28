@@ -138,6 +138,7 @@ if [ $1 = "download" ]; then
 fi
 
 if [ $1 == 'gen-db' ]; then
+  # add kiin-git-1 package
   tmpdir=/tmp/kiin-user/`uuidgen`
   mkdir -p $tmpdir
   cd $tmpdir
@@ -145,6 +146,41 @@ if [ $1 == 'gen-db' ]; then
   rm -rf kiin-dest/.git
   tar cfa kiin.kiin-git-1.tar.xz kiin-dest
   mv kiin.kiin-git-1.tar.xz /sources/installed
+  # add kiin-known-1 package
+  tmpdir=/tmp/kiin-user/`uuidgen`
+  mkdir -p $tmpdir
+  cd $tmpdir
+  mkdir kiin-dest
+  cd kiin-dest
+  mkdir -p boot/grub/i386-pc
+  mkdir -p etc/ssh
+  mkdir -p usr/{share/info,lib/perl5/5.16.1/x86_64-linux,lib/locale}
+  touch boot/grub/i386-pc/core.img
+  touch boot/grub/grubenv
+  touch etc/group
+  touch etc/gshadow-
+  touch etc/shadow-
+  touch etc/gshadow
+  touch etc/passwd
+  touch etc/shadow
+  touch etc/.pwd.lock
+  touch etc/ssh/ssh_host_key.pub
+  touch etc/ssh/ssh_host_dsa_key
+  touch etc/ssh/ssh_host_rsa_key.pub
+  touch etc/ssh/ssh_host_key
+  touch etc/ssh/ssh_host_dsa_key.pub
+  touch etc/ssh/ssh_host_ecdsa_key.pub
+  touch etc/ssh/ssh_host_rsa_key
+  touch etc/ssh/ssh_host_ecdsa_key
+  touch etc/passwd-
+  touch etc/group-
+  touch usr/share/info/dir
+  touch usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+  touch usr/lib/locale/locale-archive
+  cd ..
+  tar cfa kiin.kiin-known-1.tar.xz kiin-dest
+  mv kiin.kiin-known-1.tar.xz /sources/installed
+  # generate db
   db_manager.py gen-db
   exit 0
 fi
