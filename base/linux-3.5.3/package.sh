@@ -30,22 +30,4 @@ kiin_install() {
   cp -v ../iwlwifi-5000-1.ucode ${pkgdir}/lib/firmware
   cp -v ../iwlwifi-5000-2.ucode ${pkgdir}/lib/firmware
   cp -v ../iwlwifi-5000-5.ucode ${pkgdir}/lib/firmware
-
-  install -v -m755 -d ${pkgdir}/etc/modprobe.d
-  cat > ${pkgdir}/etc/modprobe.d/usb.conf << "EOF"
-# Begin /etc/modprobe.d/usb.conf
-
-install ohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true
-install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
-
-# End /etc/modprobe.d/usb.conf
-EOF
-
-  cat > ${pkgdir}/etc/modprobe.d/nouveau_blacklist.conf << "EOF"
-blacklist nouveau
-EOF
-
-  cat > ${pkgdir}/etc/modprobe.d/pcspkr_blacklist.conf << "EOF"
-blacklist pcspkr
-EOF
 }
