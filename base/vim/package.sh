@@ -20,17 +20,4 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/share/doc
   ln -sv ../vim/vim73/doc ${pkgdir}/usr/share/doc/vim-7.3
   mkdir -pv ${pkgdir}/etc
-
-  cat > ${pkgdir}/etc/vimrc << "EOF"
-" Begin /etc/vimrc
-
-set nocompatible
-set backspace=2
-syntax on
-if (&term == "iterm") || (&term == "putty")
-  set background=dark
-endif
-
-" End /etc/vimrc
-EOF
 }
