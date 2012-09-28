@@ -18,6 +18,5 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/bin
   mv -v ${pkgdir}/usr/bin/passwd ${pkgdir}/bin
-  # did i do that?
-  #sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
+  sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
 }
