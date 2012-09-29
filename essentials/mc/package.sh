@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=mc
-pkgver=4.8.4
+pkgver=4.8.6
+urls="https://www.midnight-commander.org/downloads/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
