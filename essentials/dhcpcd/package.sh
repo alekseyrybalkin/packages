@@ -1,14 +1,15 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=5.6.1
+pkgver=5.6.2
+urls="http://roy.marples.name/downloads/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --libexecdir=/lib/dhcpcd \
               --dbdir=/run             \
-              --sysconfdir=/etc &&
+              --sysconfdir=/etc
   make
 }
 
@@ -16,7 +17,7 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
 
   # why i need this?
-  sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat &&
+  sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat
   install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat ${pkgdir}/lib/dhcpcd/dhcpcd-hooks/
   rm -r ${pkgdir}/run
 
