@@ -388,18 +388,36 @@ if [ $1 == 'list-missing' ]; then
 fi
 
 if [ $1 == 'check-arch-updates' ]; then
-  cd ~/sources/packages
+  cd ~/sources
   #git pull
   for i in `kiin ls`; do
-    package=`echo $i | sed 's/\-[^a-z]*$//g'`
+    package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
-    if [ -d $package ]; then
-      . $package/trunk/PKGBUILD
+    local_package=$package
+    [[ $package = 'python' ]] && package='python2'
+    [[ $package = 'python2-virtualenv' ]] && package='python-virtualenv'
+    [[ $package = 'mpc' ]] && package='libmpc'
+    [[ $package = 'udev' ]] && package='systemd'
+    # won't upgrade:
+    [[ $package = 'linux-firmware' ]] && continue
+    [[ $package = 'cacerts' ]] && continue
+    [[ $package = 'lfs-bootscripts' ]] && continue
+    [[ $package = 'kiin-git' ]] && continue
+    [[ $package = 'kiin-known' ]] && continue
+    if [ -d packages/$package ]; then
+      . packages/$package/trunk/PKGBUILD
       if [ $pkgver != $version ]; then
-        echo "$package: local is $version, Arch's is $pkgver"
+        echo "$local_package: local is $version, Arch's ($package) is $pkgver"
       fi
     else
-      echo "  cannot find $package in arch packages"
+      if [ -d community/$package ]; then
+        . community/$package/trunk/PKGBUILD
+        if [ $pkgver != $version ]; then
+          echo "$local_package: local is $version, Arch's ($package) is $pkgver"
+        fi
+      else
+        echo "  cannot find $package in arch packages"
+      fi
     fi
   done
 
