@@ -243,6 +243,10 @@ if [ $1 == 'list-dirs' ]; then
 fi
 
 if [ $1 == 'install' ]; then
+  if [ `kiin list-dups | wc -l` != '0' ]; then
+    echo "where are duplicates in the system, not installing"
+    exit 0
+  fi
   if [ `kiin check-conflicts $2 | wc -l` != '0' ]; then
     echo "where are conflicts, not installing"
     exit 0
@@ -282,6 +286,95 @@ if [ $1 == 'install' ]; then
 fi
 
 if [ $1 == 'upgrade' ]; then
+  if [ `kiin list-dups | wc -l` != '0' ]; then
+    echo "where are duplicates in the system, not upgrading"
+    exit 0
+  fi
+  package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
+  new_version=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed "s/$package-//g"`
+  old_version=`echo "select version from package where name='$package';" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3`
+  if [ -z $old_version ]; then
+    echo "no such package installed, sorry"
+    exit 0
+  fi
+  startdir=`pwd`
+  echo "upgrading $package from $old_version to $new_version" | tee -a $upgrade_log
+  upgrade_log=/tmp/kiin/upgrade_log-`uuidgen`
+  tmpdir=/tmp/kiin/`uuidgen`
+  mkdir -p $tmpdir
+  tar xf $2 -C $tmpdir
+  for i in `kiin list-files $2`; do
+    owners=`kiin who-owns $i`
+    owner_count=`echo $owners | wc -w`
+    [[ $owner_count = 0 ]] && [[ -e $i ]] && {
+      echo "$i has no owners: $owners, but exists on filesystem, not upgrading"
+      exit 0
+    }
+    [[ $owner_count > 0 ]] && [[ $owners != "$package-$old_version" ]] && {
+      echo "$i has following owners: $owners, not upgrading"
+      exit 0
+    }
+  done
+  for i in `kiin list-dirs $2`; do
+    i=`echo $i | sed 's/\/$//g'`
+    if [ -e $i ]; then
+      if [ ! -d $i ]; then
+        echo "$i already exists on filesystem and is not a dir, not upgrading"
+        exit 0
+      fi
+    fi
+  done
+  # actual destructive shit
+  for dir in `kiin list-dirs $2`; do
+    if [ ! -d $dir ]; then
+      prototype=$tmpdir/kiin-dest$dir
+      mkdir -pv $dir | tee -a $upgrade_log
+      chmod -v `stat -c %a $prototype` $dir | tee -a $upgrade_log
+    fi
+  done
+  for file in `kiin list-files $2`; do
+    prototype=$tmpdir/kiin-dest$file
+    # the only place with overwriting
+    cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
+  done
+  for file in `kiin db-list-files $package`; do
+    if [ ! -e $tmpdir/kiin-dest$file ]; then
+      rm -v $file | tee -a $upgrade_log
+    fi
+  done
+  for dir in `kiin db-list-dirs $package \
+    | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
+    users=`kiin who-uses-dir $dir`
+    user_count=`echo $users | wc -w`
+    [[ $user_count = 1 ]] && [[ $users = $package ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
+      rm -rv $dir | tee -a $upgrade_log
+    }
+  done
+
+  # recreate /usr/share/info/dir
+  cd /usr/share/info
+  rm -v dir
+  for f in *; do
+    install-info $f dir 2>/dev/null
+  done
+
+  # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+  cd /usr/lib/perl5/5.16.1/x86_64-linux
+  if [ -e perllocal.pod ]; then
+    rm -v perllocal.pod
+  fi
+  for f in `find . -name "*.podpart"`; do
+    cat $f >> perllocal.pod
+  done
+
+  cd $startdir
+  sudo -u rybalkin mv -v /sources/installed/kiin.$package-$old_version.tar.xz \
+    /sources/uninstalled
+  sudo -u rybalkin mv -v $2 /sources/installed
+  sudo -u rybalkin kiin gen-db
+  echo "upgrade log: $upgrade_log"
+
   exit 0
 fi
 
@@ -306,7 +399,7 @@ if [ $1 == 'uninstall' ]; then
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
-    [ $user_count = 1 ] && [ $users = $package ] && {
+    [[ $user_count = 1 ]] && [[ $users = $package ]] && {
       echo "rm -r $dir" | tee -a $uninstaller
     }
   done
