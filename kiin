@@ -133,7 +133,11 @@ fi
 
 if [ $1 = "download" ]; then
   for url in $urls; do
-    wget $url
+    if [[ $url == *midnight* ]]; then
+      wget --no-check-certificate $url
+    else
+      wget $url
+    fi
   done
   exit 0
 fi
@@ -398,7 +402,9 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'python2-virtualenv' ]] && package='python-virtualenv'
     [[ $package = 'mpc' ]] && package='libmpc'
     [[ $package = 'udev' ]] && package='systemd'
+    [[ $package = 'glib' ]] && package='glib2'
     # won't upgrade:
+    [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
     [[ $package = 'cacerts' ]] && continue
     [[ $package = 'lfs-bootscripts' ]] && continue
