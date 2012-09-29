@@ -39,6 +39,9 @@ kiin_install() {
   install -dv -m 0700 ${pkgdir}/var/lib/sshd
   chown root:sys ${pkgdir}/var/lib/sshd
 
+  # for alsa-utils
+  install -dv -m 0755 ${pkgdir}/var/lib/alsa
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
