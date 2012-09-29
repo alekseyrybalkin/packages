@@ -251,6 +251,7 @@ if [ $1 == 'install' ]; then
     echo "where are conflicts, not installing"
     exit 0
   fi
+  startdir=`pwd`
   tmpdir=/tmp/kiin/`uuidgen`
   mkdir -p $tmpdir
   tar xf $2 -C $tmpdir
@@ -282,6 +283,11 @@ if [ $1 == 'install' ]; then
   for f in `find . -name "*.podpart"`; do
     cat $f >> perllocal.pod
   done
+
+  cd $startdir
+  sudo -u rybalkin mv -v $2 /sources/installed
+  sudo -u rybalkin kiin gen-db
+
   exit 0
 fi
 
