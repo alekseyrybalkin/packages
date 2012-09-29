@@ -293,36 +293,22 @@ if [ $1 == 'ls' ]; then
 fi
 
 if [ $1 == 'uninstall' ]; then
+  if [ `kiin list-dups | wc -l` != '0' ]; then
+    echo "where are duplicates in the system, not uninstalling"
+    exit 0
+  fi
   uninstaller=/tmp/kiin/uninstaller-`uuidgen`
   mkdir -p /tmp/kiin
   for file in `kiin db-list-files $package`; do
-    kiin db-list-files filesystem | grep -q -E "^$file$"
-    if [ ! $? -eq 0 ]; then
-      if [ $file != "/usr/share/info/dir" ]; then
-        owners=`kiin who-owns $file`
-        owner_count=`echo $owners | wc -w`
-        if [ $owner_count != 1 ]; then
-          echo $file owned by $owner_count owners: $owners
-          exit 0
-        fi
-        if [ "$owners" != $package ]; then
-          echo "$package is not owner of $file"
-          exit 0
-        fi
-        echo "rm $file" | tee -a $uninstaller
-      fi
-    fi
+    echo "rm $file" | tee -a $uninstaller
   done
   for dir in `kiin db-list-dirs $package \
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
-    kiin db-list-dirs filesystem | grep -q -E "^$dir$"
-    if [ ! $? -eq 0 ]; then
-      users=`kiin who-uses-dir $dir`
-      user_count=`echo $users | wc -w`
-      [ $user_count = 1 ] && [ $users = $package ] && {
-        echo "rm -r $dir" | tee -a $uninstaller
-      }
-    fi
+    users=`kiin who-uses-dir $dir`
+    user_count=`echo $users | wc -w`
+    [ $user_count = 1 ] && [ $users = $package ] && {
+      echo "rm -r $dir" | tee -a $uninstaller
+    }
   done
   chmod +x $uninstaller
   echo ""
