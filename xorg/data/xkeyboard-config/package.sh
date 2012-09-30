@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xkeyboard-config
-pkgver=1.7
+pkgver=2.7
 urls="http://xorg.freedesktop.org/releases/individual/data/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
