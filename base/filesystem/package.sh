@@ -42,6 +42,9 @@ kiin_install() {
   # for alsa-utils
   install -dv -m 0755 ${pkgdir}/var/lib/alsa
 
+  # for fontconfig
+  install -dv -m 0755 ${pkgdir}/var/cache/fontconfig
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
