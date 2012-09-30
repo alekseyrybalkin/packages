@@ -492,6 +492,7 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'mpc' ]] && package='libmpc'
     [[ $package = 'udev' ]] && package='systemd'
     [[ $package = 'glib' ]] && package='glib2'
+    [[ $package = 'gdk-pixbuf' ]] && package='gdk-pixbuf2'
     [[ $package = 'mpd-mpc' ]] && package='mpc'
     # won't upgrade:
     [[ $package = 'filesystem' ]] && continue
