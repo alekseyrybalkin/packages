@@ -45,6 +45,9 @@ kiin_install() {
   # for fontconfig
   install -dv -m 0755 ${pkgdir}/var/cache/fontconfig
 
+  # for xorg-server
+  install -dv -m 0775 ${pkgdir}/var/lib/xkb
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
