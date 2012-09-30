@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=hdparm
-pkgver=9.39
+pkgver=9.42
+urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
