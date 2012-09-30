@@ -15,6 +15,8 @@ kiin_install() {
 
   # remove /etc/sysconfig/rc.site, it is in git repo now
   rm ${pkgdir}/etc/sysconfig/rc.site
+  # remove /etc/sysconfig/createfiles, it is in git repo now
+  rm ${pkgdir}/etc/sysconfig/createfiles
 
   cat > ${pkgdir}/etc/rc.d/init.d/rybalkin << "EOF"
 #!/bin/sh
