@@ -353,7 +353,7 @@ if [ $1 == 'upgrade' ]; then
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
-    [[ $user_count = 1 ]] && [[ $users = $package ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
+    [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
       rm -rv $dir | tee -a $upgrade_log
     }
   done
