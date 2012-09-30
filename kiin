@@ -158,8 +158,9 @@ if [ $1 == 'gen-db' ]; then
   mkdir kiin-dest
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
-  mkdir -p etc/ssh
+  mkdir -p etc/{ssh,gtk-2.0}
   mkdir -p usr/{share/info,lib/perl5/5.16.1/x86_64-linux,lib/locale}
+  mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
   touch etc/group
@@ -182,6 +183,9 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/info/dir
   touch usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
   touch usr/lib/locale/locale-archive
+  touch usr/lib/pango/1.8.0/modules.cache
+  touch usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+  touch etc/gtk-2.0/gtk.immodules
   cd ..
   tar cfa kiin.kiin-known-1.tar.xz kiin-dest
   mv kiin.kiin-known-1.tar.xz /sources/installed
