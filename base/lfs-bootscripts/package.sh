@@ -27,13 +27,16 @@ case "${1}" in
     start)
       log_info_msg "Running rybalkin custom initscript..."
       /sbin/hdparm -B 255 /dev/sda >/dev/null
-      /sbin/dhcpcd -q eth0
+      #/sbin/dhcpcd -q eth0
+      ip link set down eth0
+      /root/bin/wifi &
       evaluate_retval
       ;;
 
     stop)
       log_info_msg "Stopping rybalkin custom initscript..."
-      /sbin/dhcpcd -qk eth0
+      #/sbin/dhcpcd -qk eth0
+      /root/bin/uwifi 2>&1 >/dev/null
       evaluate_retval
       ;;
 
