@@ -336,16 +336,27 @@ if [ $1 == 'upgrade' ]; then
     fi
   done
   # actual destructive shit
+  echo "Following files are going to be deleted:"
+  for file in `kiin db-list-files $package-$old_version`; do
+    if [ ! -e $tmpdir/kiin-dest$file ]; then
+      echo $file
+    fi
+  done
+  read -p "Are you sure? (Y/n)" answer
+  case $answer in
+    [Yy]* ) echo "let's go";;
+    * ) echo "Answer was not y/Y, exiting."; exit 0;;
+  esac
+  for file in `kiin db-list-files $package-$old_version`; do
+    if [ ! -e $tmpdir/kiin-dest$file ]; then
+      rm -v $file | tee -a $upgrade_log
+    fi
+  done
   for dir in `kiin list-dirs $2`; do
     if [ ! -d $dir ]; then
       prototype=$tmpdir/kiin-dest$dir
       mkdir -pv $dir | tee -a $upgrade_log
       chmod -v `stat -c %a $prototype` $dir | tee -a $upgrade_log
-    fi
-  done
-  for file in `kiin db-list-files $package-$old_version`; do
-    if [ ! -e $tmpdir/kiin-dest$file ]; then
-      rm -v $file | tee -a $upgrade_log
     fi
   done
   for file in `kiin list-files $2`; do
