@@ -247,6 +247,11 @@ if [ $1 == 'list-dirs' ]; then
 fi
 
 if [ $1 == 'install' ]; then
+  package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
+  if [ `echo "select id from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3 | wc -l` -gt 0 ]; then
+    echo "Package with name $package is already installed. Aborting."
+    exit 0
+  fi
   if [ `kiin list-dups | wc -l` != '0' ]; then
     echo "where are duplicates in the system, not installing"
     exit 0
