@@ -22,4 +22,6 @@ kiin_install() {
       ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
   # remove /var, filesystem package creates everything in there
   rm -rvf ${pkgdir}/var
+  # do not replace sshd_config, since it is in git repo now
+  mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
 }
