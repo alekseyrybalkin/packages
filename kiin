@@ -343,15 +343,15 @@ if [ $1 == 'upgrade' ]; then
       chmod -v `stat -c %a $prototype` $dir | tee -a $upgrade_log
     fi
   done
-  for file in `kiin list-files $2`; do
-    prototype=$tmpdir/kiin-dest$file
-    # the only place with overwriting
-    cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
-  done
   for file in `kiin db-list-files $package-$old_version`; do
     if [ ! -e $tmpdir/kiin-dest$file ]; then
       rm -v $file | tee -a $upgrade_log
     fi
+  done
+  for file in `kiin list-files $2`; do
+    prototype=$tmpdir/kiin-dest$file
+    # the only place with overwriting
+    cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
   done
   for dir in `kiin db-list-dirs $package-$old_version \
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
