@@ -351,6 +351,7 @@ if [ $1 == 'upgrade' ]; then
   for file in `kiin list-files $2`; do
     prototype=$tmpdir/kiin-dest$file
     # the only place with overwriting
+    rm -vf $file 2>&1 | tee -a $upgrade_log
     cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
   done
   for dir in `kiin db-list-dirs $package-$old_version \
