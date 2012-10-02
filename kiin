@@ -514,7 +514,7 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'glib' ]] && package='glib2'
     [[ $package = 'gdk-pixbuf' ]] && package='gdk-pixbuf2'
     [[ $package = 'mpd-mpc' ]] && package='mpc'
-    [[ $package = 'linux354' ]] && package='linux'
+    [[ $package = 'linux36' ]] && package='linux'
     # won't upgrade:
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
