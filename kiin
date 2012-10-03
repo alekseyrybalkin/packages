@@ -21,6 +21,7 @@ usage() {
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
   echo "  kiin check-arch-updates"
+  echo "  kiin ldd <library>"
 }
 
 if [ -z $1 ]; then
@@ -52,7 +53,7 @@ esac
 case $1 in
   "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" \
     | "list-dirs" | "install" | "upgrade" | "uninstall" | "db-list-files" \
-    | "db-list-dirs" | "list-untracked")
+    | "db-list-dirs" | "list-untracked" | "ldd")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
       exit 0
@@ -539,6 +540,18 @@ if [ $1 == 'check-arch-updates' ]; then
     fi
   done
 
+  exit 0
+fi
+
+if [ $1 == 'ldd' ]; then
+  for i in `kiin ls`; do
+    for j in `kiin db-list-files $i | grep ".so"`; do
+      ldd $j 2>/dev/null
+    done | grep -q $2
+    if [ $? -eq 0 ]; then
+      echo "$i"
+    fi
+  done
   exit 0
 fi
 
