@@ -1,3 +1,5 @@
 libpng
 glib
 pixman
+fontconfig
+xorg-libraries
