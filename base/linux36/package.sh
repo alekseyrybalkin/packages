@@ -15,6 +15,8 @@ kiin_make() {
 }
 
 kiin_install() {
+  mkdir -pv ${pkgdir}/lib/modules
+  make INSTALL_MOD_PATH=${pkgdir} modules_install
   mkdir -pv ${pkgdir}/boot
   cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${pkgver}-rybalkiin-1
   cp -v System.map ${pkgdir}/boot/System.map-${pkgver}
@@ -25,4 +27,7 @@ kiin_install() {
 
   # remove installed firmware, package `linux-firmware` deals with that
   rm -rf ${pkgdir}/lib/firmware
+
+  # remove broken links to build and source
+  rm -v ${pkgdir}/lib/modules/${modules_dir_ver}-rybalkiin/{build,source}
 }
