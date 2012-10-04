@@ -1,9 +1,8 @@
 #!/bin/sh
 
-pkgname=linux36
+pkgname=linux354
 _pkgname=linux
-pkgver=3.6
-_modules_dir_ver=3.6.0
+pkgver=3.5.4
 urls="http://www.kernel.org/pub/${_pkgname}/kernel/v3.x/${_pkgname}-${pkgver}.tar.xz"
 srctar=${_pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${_pkgname}-${pkgver}
@@ -29,5 +28,5 @@ kiin_install() {
   rm -rf ${pkgdir}/lib/firmware
 
   # remove broken links to build and source
-  rm -v ${pkgdir}/lib/modules/${modules_dir_ver}-rybalkiin/{build,source}
+  rm -v ${pkgdir}/lib/modules/${pkgver}-rybalkiin/{build,source}
 }
