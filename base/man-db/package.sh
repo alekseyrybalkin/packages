@@ -7,7 +7,6 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' gnulib/lib/stdio.in.h
   ./configure --prefix=/usr                        \
               --libexecdir=/usr/lib                \
               --docdir=/usr/share/doc/man-db-2.6.2 \
