@@ -7,7 +7,10 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   patch -Np1 -i ../flex-2.5.37-bison-2.6.1-1.patch
-  ./configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man \
+    --infodir=/usr/share/info \
+    --docdir=/usr/share/doc/${pkgname}-${pkgver}
   make
 }
 
@@ -23,6 +26,5 @@ exec /usr/bin/flex -l "$@"
 # End /usr/bin/lex
 EOF
   chmod -v 755 ${pkgdir}/usr/bin/lex
-  mkdir -p -v ${pkgdir}/usr/share/doc/flex-2.5.37
-  cp    -v doc/flex.pdf ${pkgdir}/usr/share/doc/flex-2.5.37
+  cp    -v doc/flex.pdf ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
 }
