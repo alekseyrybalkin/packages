@@ -12,6 +12,13 @@ TODO LIST
 - check updates upstream
 - solve `alsa vs kernel-with-no-modules' issue
 - make `kiin uninstall' more automatic
+- improve readability for output of `kiin check-arch-updates'
+- sort out updating of linux-api-headers, glibc, binutils
+  arch wrote: toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
+  sort all installed packages in dependency order (and make mega-script to rebuild whole world)
+- add meta-information to packages (e.g. ./configure && make log, make install log,
+  build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
+- improve `kiin ldd' to check binaries too (and make it faster)
 
 DONE LIST
 +- make git repo of system configs
