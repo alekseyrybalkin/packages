@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=psmisc
-pkgver=22.19
+pkgver=22.20
+urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
