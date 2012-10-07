@@ -1,11 +1,14 @@
 #!/bin/sh
 
 pkgname=iproute2
-pkgver=3.5.1
+pkgver=3.6.0
+urls="http://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
+  http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-ipset-1.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -Np1 -i ../${pkgname}-${pkgver}-ipset-1.patch
   sed -i '/^TARGETS/s@arpd@@g' misc/Makefile
   sed -i /ARPD/d Makefile
   sed -i 's/arpd.8//' man/man8/Makefile
@@ -15,5 +18,5 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir}              \
       MANDIR=/usr/share/man           \
-      DOCDIR=/usr/share/doc/iproute2-3.5.1 install
+      DOCDIR=/usr/share/doc/${pkgname}-${pkgver} install
 }
