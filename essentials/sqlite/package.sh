@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.7.14
-srctar=${pkgname}-autoconf-3071400.tar.gz
-srcdir=${location}/${pkgname}-autoconf-3071400
+pkgver=3.7.14.1
+_pkgver=3071401
+srctar=${pkgname}-autoconf-${_pkgver}.tar.gz
+urls="http://sqlite.org/${pkgname}-autoconf-${_pkgver}.tar.gz"
+srcdir=${location}/${pkgname}-autoconf-${_pkgver}
 
 kiin_make() {
   export CFLAGS="$CFLAGS -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_COLUMN_METADATA=1 -DSQLITE_ENABLE_UNLOCK_NOTIFY -DSQLITE_SECURE_DELETE"
