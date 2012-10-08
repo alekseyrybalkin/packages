@@ -27,6 +27,8 @@ case "${1}" in
     start)
       log_info_msg "Running rybalkin custom initscript..."
       /sbin/hdparm -B 255 /dev/sda >/dev/null
+      loadkeys /lib/kbd/keymaps/i386/qwerty/ru.map.gz
+      setfont /lib/kbd/consolefonts/UniCyrExt_8x16.psf.gz
       /root/bin/wifi &
       evaluate_retval
       ;;
