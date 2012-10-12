@@ -508,6 +508,7 @@ if [ $1 == 'check-arch-updates' ]; then
     package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
     local_package=$package
+    # package name exceptions:
     [[ $package = 'python' ]] && package='python2'
     [[ $package = 'python2-virtualenv' ]] && package='python-virtualenv'
     [[ $package = 'mpc' ]] && package='libmpc'
@@ -516,6 +517,21 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'gdk-pixbuf' ]] && package='gdk-pixbuf2'
     [[ $package = 'mpd-mpc' ]] && package='mpc'
     [[ $package = 'linux361' ]] && package='linux'
+    [[ $package = 'device-mapper' ]] && package='lvm2'
+    [[ $package = 'perl-ack' ]] && package='ack'
+    # package version exceptions:
+    [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
+    [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
+    [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
+    [[ $package = 'openssl' ]] && [[ $version = '1.0.1c' ]] && version='1.0.1.c'
+    [[ $package = 'vim' ]] && [[ $version = '7.3' ]] && version='7.3.661'
+    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p3' ]] && version='1.8.6.p3'
+    # not found in Arch:
+    [[ $package = 'sysklogd' ]] && continue
+    [[ $package = 'xorg-makedepend' ]] && continue
+    [[ $package = 'libpthread-stubs' ]] && continue
+    [[ $package = 'python2-sh' ]] && continue
+    [[ $package = 'libjpeg' ]] && continue
     # won't upgrade:
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
@@ -523,16 +539,27 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'lfs-bootscripts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
+    bldred='\e[1;31m'
+    green='\e[0;32m'
+    txtrst='\e[0m'
     if [ -d packages/$package ]; then
       . packages/$package/trunk/PKGBUILD
       if [ $pkgver != $version ]; then
-        echo "$local_package: local is $version, Arch's ($package) is $pkgver"
+        if [ $version \> $pkgver ]; then
+          echo -e "${green}${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+        else
+          echo -e "${bldred}${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+        fi
       fi
     else
       if [ -d community/$package ]; then
         . community/$package/trunk/PKGBUILD
         if [ $pkgver != $version ]; then
-          echo "$local_package: local is $version, Arch's ($package) is $pkgver"
+          if [ $version \> $pkgver ]; then
+            echo -e "${green}${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+          else
+            echo -e "${bldred}${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+          fi
         fi
       else
         echo "  cannot find $package in arch packages"
