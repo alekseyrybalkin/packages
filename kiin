@@ -307,6 +307,14 @@ if [ $1 == 'upgrade' ]; then
     exit 0
   fi
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
+  if [ $package -eq "kiin-known" ]; then
+    echo "would not want to upgrade kiin-known, would ya?"
+    exit 0
+  fi
+  if [ $package -eq "kiin-git" ]; then
+    echo "would not want to upgrade kiin-git, would ya?"
+    exit 0
+  fi
   new_version=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed "s/$package-//g"`
   old_version=`echo "select version from package where name='$package';" \
     | sqlite3 /sources/kiin-db/kiin.sqlite3`
