@@ -11,8 +11,7 @@ XORG_PREFIX="/usr"
 kiin_make() {
   ./configure --prefix=$XORG_PREFIX \
     --enable-udev \
-    --enable-vmwgfx-experimental-api \
-    --enable-nouveau-experimental-api
+    --enable-vmwgfx-experimental-api
   make
 }
 
