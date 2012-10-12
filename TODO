@@ -1,26 +1,27 @@
 TODO LIST
 - add initramfs
   encrypt lfs partitions
-  move arch to lfs partition for future chrooting
 - add support for post-install/post-upgrade scripts
 - move ld.so.conf to git
 - fix .packlist for perl modules
-- add ack
 - add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
 - check updates upstream
 - solve `alsa vs kernel-with-no-modules' issue
 - make `kiin uninstall' more automatic
-- improve readability for output of `kiin check-arch-updates'
 - sort out updating of linux-api-headers, glibc, binutils
   arch wrote: toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
-  sort all installed packages in dependency order (and make mega-script to rebuild whole world)
+  make mega-script to rebuild whole world
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
 - improve `kiin ldd' to check binaries too (and make it faster)
 
 DONE LIST
++- improve readability for output of `kiin check-arch-updates'
++  sort all installed packages in dependency order
++  move arch to lfs partition for future chrooting
++- add ack
 +- make git repo of system configs
 +  remove system configs from packages
 +  make kiin list-untracked respect configs in that repo
