@@ -26,4 +26,6 @@ kiin_install() {
                       ${pkgdir}/usr/share/doc/cpio-${pkgver}/html
   install -v -m644    doc/cpio.{html,txt} \
                       ${pkgdir}/usr/share/doc/cpio-${pkgver}
+  # remove /tmp dir, it is created by filesystem package
+  rm -r ${pkgdir}/tmp
 }
