@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.27.0
+pkgver=7.28.0
+urls="http://${pkgname}.haxx.se/download/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -14,6 +15,6 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   find docs \( -name "Makefile*" -o -name "*.1" -o -name "*.3" \) -exec rm {} \;
-  install -v -d -m755 ${pkgdir}/usr/share/doc/curl-7.27.0
-  cp -v -R docs/*     ${pkgdir}/usr/share/doc/curl-7.27.0
+  install -v -d -m755 ${pkgdir}/usr/share/doc/curl-${pkgver}
+  cp -v -R docs/*     ${pkgdir}/usr/share/doc/curl-${pkgver}
 }
