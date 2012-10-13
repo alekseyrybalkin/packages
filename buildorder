@@ -56,7 +56,6 @@ tar
 texinfo
 udev
 vim
-lfs-bootscripts
 linux361
 linux-firmware
 fakeroot
@@ -224,4 +223,7 @@ cpio
 popt
 device-mapper
 cryptsetup
+perl-file-next
+perl-ack
 parted
+busybox-small
