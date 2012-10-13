@@ -308,11 +308,11 @@ if [ $1 == 'upgrade' ]; then
     exit 0
   fi
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
-  if [ $package -eq "kiin-known" ]; then
+  if [ $package == 'kiin-known' ]; then
     echo "would not want to upgrade kiin-known, would ya?"
     exit 0
   fi
-  if [ $package -eq "kiin-git" ]; then
+  if [ $package == 'kiin-git' ]; then
     echo "would not want to upgrade kiin-git, would ya?"
     exit 0
   fi
