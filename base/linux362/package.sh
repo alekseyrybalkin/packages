@@ -1,9 +1,9 @@
 #!/bin/sh
 
-pkgname=linux361
+pkgname=linux362
 _pkgname=linux
-pkgver=3.6.1
-_modules_dir_ver=3.6.1
+pkgver=3.6.2
+_modules_dir_ver=3.6.2
 urls="http://www.kernel.org/pub/${_pkgname}/kernel/v3.x/${_pkgname}-${pkgver}.tar.xz"
 srctar=${_pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${_pkgname}-${pkgver}
