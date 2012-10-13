@@ -22,6 +22,7 @@ usage() {
   echo "  kiin list-missing"
   echo "  kiin check-arch-updates"
   echo "  kiin ldd <library>"
+  echo "  kiin check-buildorder"
 }
 
 if [ -z $1 ]; then
@@ -588,6 +589,27 @@ if [ $1 == 'ldd' ]; then
       echo "$i"
     fi
   done
+  exit 0
+fi
+
+if [ $1 == 'check-buildorder' ]; then
+  for i in `kiin ls`; do
+    package=`echo $i | sed 's/\-[^-]*$//g'`
+    grep -q $package /sources/buildorder
+    if [ $? -gt 0 ]; then
+      echo "$package is missing from buildorder"
+    fi
+  done
+  for i in `cat /sources/buildorder`; do
+    count=`echo "select * from package where name='$i';" | sqlite3 /sources/kiin-db/kiin.sqlite3 | wc -l`
+    if [ $count -lt 1 ]; then
+      echo "$i is not installed, but is in buildorder"
+    fi
+  done
+  dups=`cat /sources/buildorder | sort | uniq -d`
+  if [ ! -z $dups ]; then
+    echo "duplicates in buildorder: $dups"
+  fi
   exit 0
 fi
 
