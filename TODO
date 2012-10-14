@@ -1,5 +1,9 @@
 TODO LIST
 - add initramfs
+  make /var distinct partition (reiserfs)
+  make /home distinct partition (ext4)
+  move /sources to /var/kiin
+  add package git/svn/etc repos to /var/kiin/src
   encrypt lfs partitions
 - add support for post-install/post-upgrade scripts
 - move ld.so.conf to git
@@ -7,7 +11,7 @@ TODO LIST
 - add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
-- check updates upstream
+- check updates upstream (maybe check `git tag`s in /var/kiin/src ?)
 - make `kiin uninstall' more automatic
 - sort out updating of linux-api-headers, glibc, binutils
   arch wrote: toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
