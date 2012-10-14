@@ -9,6 +9,7 @@ kiin_make() {
   patch -Np1 -i ../procps-3.2.8-fix_HZ_errors-1.patch
   patch -Np1 -i ../procps-3.2.8-watch_unicode-1.patch
   sed -i -e 's@\*/module.mk@proc/module.mk ps/module.mk@' Makefile
+  sed -i -e 's/^#SKIP/SKIP/g' Makefile
   make
 }
 
