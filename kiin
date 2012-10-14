@@ -566,9 +566,9 @@ if [ $1 == 'check-arch-updates' ]; then
         . community/$package/trunk/PKGBUILD
         if [ $pkgver != $version ]; then
           if [ $version \> $pkgver ]; then
-            echo -e "  > ${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+            echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
           else
-            echo -e "  > ${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+            echo -e "${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
           fi
         fi
       else
