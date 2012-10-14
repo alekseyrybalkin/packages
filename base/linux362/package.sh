@@ -15,12 +15,8 @@ kiin_make() {
 
 kiin_install() {
   mkdir -pv ${pkgdir}/boot
-  cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${pkgver}-rybalkiin-1
-  cp -v System.map ${pkgdir}/boot/System.map-${pkgver}
-  cp -v .config ${pkgdir}/boot/config-${pkgver}
-
-  install -d ${pkgdir}/usr/share/doc/linux-${pkgver}
-  cp -r Documentation/* ${pkgdir}/usr/share/doc/linux-${pkgver}
+  cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${pkgver}-kiin
+  cp -v System.map ${pkgdir}/boot/System.map-${pkgver}-kiin
 
   # remove installed firmware, package `linux-firmware` deals with that
   rm -rf ${pkgdir}/lib/firmware
