@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=python2-virtualenv
-pkgver=1.8.1
+pkgver=1.8.2
+urls="http://pypi.python.org/packages/source/v/virtualenv/virtualenv-${pkgver}.tar.gz"
 srctar=virtualenv-${pkgver}.tar.gz
 srcdir=${location}/virtualenv-${pkgver}
 
@@ -10,5 +11,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  python2 setup.py install --prefix=/usr --root="$pkgdir"
+  python2 setup.py install --prefix=/usr --root="${pkgdir}"
 }
