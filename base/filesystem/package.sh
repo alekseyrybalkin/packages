@@ -31,6 +31,9 @@ kiin_install() {
   mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
   touch ${pkgdir}/etc/mtab
 
+  # for util-linux
+  install -dv -m 0755 ${pkgdir}/var/lib/hwclock
+
   # for sudo
   install -dv -m 0755 ${pkgdir}/var/db
   install -dv -m 0700 ${pkgdir}/var/db/sudo
