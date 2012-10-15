@@ -525,7 +525,6 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'glib' ]] && package='glib2'
     [[ $package = 'gdk-pixbuf' ]] && package='gdk-pixbuf2'
     [[ $package = 'mpd-mpc' ]] && package='mpc'
-    [[ $package = 'linux362' ]] && package='linux'
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
     [[ $package = 'busybox-small' ]] && package='busybox'
