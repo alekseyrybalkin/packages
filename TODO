@@ -17,6 +17,7 @@ TODO LIST
 - sort out updating of linux-api-headers, glibc, binutils
   arch wrote: toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
   make mega-script to rebuild whole world
+- make sure delete before remove does not break glibc upgrade
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
 - improve `kiin ldd' to check binaries too (and make it faster)
