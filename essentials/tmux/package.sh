@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=tmux
-pkgver=1.7
-urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs="git"
+gittag=1.7
+pkgver=`echo ${gittag} | sed 's/^v//g' | sed 's/-/\./g'`
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr
   make
 }
