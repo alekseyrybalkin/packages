@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ `whoami` != 'root' ]; then
+  if [ ! -d ~/.kiin ]; then
+    mkdir -p ~/.kiin
+  fi
+fi
+
 usage() {
   echo "usage:"
   echo "  kiin make"
@@ -21,6 +27,7 @@ usage() {
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
   echo "  kiin check-arch-updates"
+  echo "  kiin check-updates"
   echo "  kiin ldd <library>"
   echo "  kiin check-buildorder"
 }
@@ -87,10 +94,18 @@ esac
 
 if [ $1 == "make" ]; then
   set -e
-  if [[ ${srctar} ]]; then
-    echo "unpacking ${srctar}..."
-    tar xf ${srctar}
-    cd ${srcdir}
+  if [ ! -z ${vcs} ]; then
+    if [ ${vcs} = 'git' ]; then
+      git clone /sources/src/${pkgname} ${srcdir}
+      cd ${srcdir}
+      git checkout ${gittag}
+    fi
+  else
+    if [[ ${srctar} ]]; then
+      echo "unpacking ${srctar}..."
+      tar xf ${srctar}
+      cd ${srcdir}
+    fi
   fi
   kiin_make
 
@@ -576,6 +591,46 @@ if [ $1 == 'check-arch-updates' ]; then
     fi
   done
 
+  exit 0
+fi
+
+if [ $1 == 'check-updates' ]; then
+  bldred='\e[1;31m'
+  green='\e[0;32m'
+  txtrst='\e[0m'
+  if [ ! -f ~/.kiin/last_git_pull ]; then
+    echo "0" > ~/.kiin/last_git_pull
+  fi
+  date_now=`date +%s`
+  date_when=`cat ~/.kiin/last_git_pull`
+  difference=$date_now
+  ((difference-=date_when))
+  if [ $difference -gt 86400 ]; then
+    echo $date_now > ~/.kiin/last_git_pull
+    echo "updating git repositories..."
+    for i in `ls /sources/src`; do
+      package=`basename $i`
+      cd /sources/src/$package
+      echo -e "${green}${package}${txtrst}"
+      git pull
+    done
+  fi
+
+  for i in `ls /sources/src`; do
+    package=`basename $i`
+    cd /sources/src/$package
+    newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' \
+      refs/tags | tail -n 1`
+    pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
+    version=`echo "select version from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3`
+    if [ $pkgver != $version ]; then
+      if [ $version \> $pkgver ]; then
+        echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
+      else
+        echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
+      fi
+    fi
+  done
   exit 0
 fi
 
