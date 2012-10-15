@@ -1,14 +1,17 @@
 #!/bin/sh
 
 pkgname=alsa-lib
-pkgver=1.0.26
-#urls="http://gd.tuwien.ac.at/opsys/linux/alsa/lib/${pkgname}-${pkgver}.tar.bz2"
-#urls="ftp://ftp.alsa-project.org/pub/lib/${pkgname}-${pkgver}.tar.bz2"
-urls="http://gentoo.nixsolutions.com/distfiles/alsa-lib-1.0.26.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs="git"
+gittag=v1.0.26
+pkgver=`echo ${gittag} | sed 's/^v//g' | sed 's/-/\./g'`
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  libtoolize --force --copy --automake
+  aclocal
+  autoheader
+  automake --foreign --copy --add-missing
+  autoconf
   ./configure
   make
 }
