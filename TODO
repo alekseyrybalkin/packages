@@ -22,9 +22,9 @@ TODO LIST
 - improve `kiin ldd' to check binaries too (and make it faster)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
   update bootscripts
-- fix 'xserverauth file not found' warning on X start
 
 DONE LIST
++- fix 'xserverauth file not found' warning on X start
 +- solve `alsa vs kernel-with-no-modules' issue
 +- improve readability for output of `kiin check-arch-updates'
 +  sort all installed packages in dependency order

@@ -17,6 +17,7 @@ kiin_make() {
   ./configure $XORG_CONFIG \
     --with-xinitdir=/etc/X11/app-defaults
   make
+  sed -i -e "s/xserverauthfile=\$HOME\/\.serverauth\.\$\$$/xserverauthfile=\$XAUTHORITY; touch \$XAUTHORITY/g" startx
 }
 
 kiin_install() {
