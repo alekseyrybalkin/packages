@@ -3,7 +3,7 @@
 pkgname=linux
 vcs="git"
 gittag=v3.7-rc1
-pkgver=`echo ${gittag} | sed 's/^v//g' | sed 's/-/\./g'`
+pkgver=3.7.rc1
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
