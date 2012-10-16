@@ -75,6 +75,7 @@ neon
 subversion
 perl-error
 git
+mercurial
 sudo
 pcre
 openssh
