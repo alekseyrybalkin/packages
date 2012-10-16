@@ -1,4 +1,5 @@
 TODO LIST
+- implement sane glibc upgrade
 - add initramfs
   make /var distinct partition (reiserfs)
   make /home distinct partition (ext4)
@@ -11,20 +12,15 @@ TODO LIST
 - add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
-- check updates upstream
-  1. check `git tag`s in /var/kiin/src
-  2. check websites with archives (not everyone tags everything)
 - make `kiin uninstall' more automatic
   fix perllocal.pod, info, etc. on uninstall too
-- sort out updating of linux-api-headers, glibc, binutils
-  arch wrote: toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
-  make mega-script to rebuild whole world
-- make sure delete before remove does not break glibc upgrade
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
 - improve `kiin ldd' to check binaries too (and make it faster)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
   update bootscripts
+- remove *.la files from packages
+- kiin: implement links and linked
 
 DONE LIST
 +- fix 'xserverauth file not found' warning on X start
