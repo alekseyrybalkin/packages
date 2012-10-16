@@ -11,7 +11,9 @@ TODO LIST
 - add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
-- check updates upstream (maybe check `git tag`s in /var/kiin/src ?)
+- check updates upstream
+  1. check `git tag`s in /var/kiin/src
+  2. check websites with archives (not everyone tags everything)
 - make `kiin uninstall' more automatic
   fix perllocal.pod, info, etc. on uninstall too
 - sort out updating of linux-api-headers, glibc, binutils
