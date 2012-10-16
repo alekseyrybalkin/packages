@@ -20,7 +20,6 @@ usage() {
   echo "  kiin list-untracked <dir>"
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
-  echo "  kiin check-arch-updates"
   echo "  kiin check-updates"
   echo "  kiin ldd <library>"
   echo "  kiin check-buildorder"
@@ -529,9 +528,25 @@ if [ $1 == 'list-missing' ]; then
   exit 0
 fi
 
-if [ $1 == 'check-arch-updates' ]; then
+if [ $1 == 'check-updates' ]; then
+  bldred='\e[1;31m'
+  green='\e[0;32m'
+  txtrst='\e[0m'
+  echo "checking git repos"
+  package=linux
+  cd /sources/src/$package
+  newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | tail -n 1`
+  pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
+  version=`echo "select version from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3`
+  if [ "$pkgver" != "$version" ]; then
+    if [ "$version" \> "$pkgver" ]; then
+      echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
+    else
+      echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
+    fi
+  fi
+  echo "checking arch linux updates"
   cd ~/sources
-  #git pull
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
@@ -567,9 +582,6 @@ if [ $1 == 'check-arch-updates' ]; then
     [[ $package = 'lfs-bootscripts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
-    bldred='\e[1;31m'
-    green='\e[0;32m'
-    txtrst='\e[0m'
     if [ -d packages/$package ]; then
       . packages/$package/trunk/PKGBUILD
       if [ $pkgver != $version ]; then
@@ -598,38 +610,19 @@ if [ $1 == 'check-arch-updates' ]; then
   exit 0
 fi
 
-if [ $1 == 'check-updates' ]; then
-  bldred='\e[1;31m'
-  green='\e[0;32m'
-  txtrst='\e[0m'
-
-  for i in `ls /sources/src`; do
-    package=`basename $i`
-    if [ -d /sources/src/$package/.git ]; then
-      cd /sources/src/$package
-      newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' \
-        refs/tags | tail -n 1`
-      pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
-      version=`echo "select version from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3`
-      if [ "$pkgver" != "$version" ]; then
-        if [ "$version" \> "$pkgver" ]; then
-          echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
-        else
-          echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
-        fi
-      fi
-    fi
-  done
-  exit 0
-fi
-
 if [ $1 == 'ldd' ]; then
-  for i in `kiin ls`; do
-    for j in `kiin db-list-files $i | grep ".so"`; do
-      ldd $j 2>/dev/null
-    done | grep -q $2
+  #for i in `kiin ls`; do
+  #  for j in `kiin db-list-files $i | grep ".so"`; do
+  #    ldd $j 2>/dev/null
+  #  done | grep -q $2
+  #  if [ $? -eq 0 ]; then
+  #    echo "$i"
+  #  fi
+  #done
+  for i in `find /lib /usr/lib /usr/local/lib /bin /sbin /usr/bin /usr/sbin -type f`; do
+    ldd $i 2>/dev/null | grep -q $2
     if [ $? -eq 0 ]; then
-      echo "$i"
+      echo "$i (`kiin who-owns $i`)"
     fi
   done
   exit 0
