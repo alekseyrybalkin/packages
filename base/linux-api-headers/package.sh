@@ -1,8 +1,10 @@
 #!/bin/sh
 
 pkgname=linux-api-headers
-pkgver=3.5.3
-srctar=linux-${pkgver}.tar.xz
+git_pkgname=linux
+vcs="git"
+gittag=v3.7-rc1
+pkgver=3.7.rc1
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
