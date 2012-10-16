@@ -610,9 +610,11 @@ if [ $1 == 'check-updates' ]; then
     echo "updating git repositories..."
     for i in `ls /sources/src`; do
       package=`basename $i`
-      cd /sources/src/$package
-      echo -e "${green}${package}${txtrst}"
-      git pull
+      if [ -d /sources/src/$package/.git ]; then
+        cd /sources/src/$package
+        echo -e "${green}${package}${txtrst}"
+        git pull
+      fi
     done
   fi
 
@@ -623,8 +625,8 @@ if [ $1 == 'check-updates' ]; then
       refs/tags | tail -n 1`
     pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
     version=`echo "select version from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3`
-    if [ $pkgver != $version ]; then
-      if [ $version \> $pkgver ]; then
+    if [ "$pkgver" != "$version" ]; then
+      if [ "$version" \> "$pkgver" ]; then
         echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
       else
         echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
