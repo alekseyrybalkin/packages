@@ -130,11 +130,6 @@ if [ -e ${pkgdir}/var ]; then
   echo " *** WARNING ***: package tries to use /var"
 fi
 
-# fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-#if [ -e ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod ]; then
-#  mv -v ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod{,.$pkgname.podpart}
-#fi
-
 # remove *.la files
 if [ -d ${pkgdir}/lib ]; then
   find ${pkgdir}/lib -name "*.la" | xargs rm -vf
@@ -187,7 +182,6 @@ if [ $1 == 'gen-db' ]; then
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
   mkdir -p etc/{ssh,gtk-2.0}
-  #mkdir -p usr/lib/perl5/5.16.1/x86_64-linux
   mkdir -p usr/{share/info,lib/locale}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
@@ -210,7 +204,6 @@ if [ $1 == 'gen-db' ]; then
   touch etc/passwd-
   touch etc/group-
   touch usr/share/info/dir
-  #touch usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
   touch usr/lib/locale/locale-archive
   touch usr/lib/pango/1.8.0/modules.cache
   touch usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -316,14 +309,6 @@ if [ $1 == 'install' ]; then
     install-info $f dir 2>/dev/null
   done
 
-  # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-  #cd /usr/lib/perl5/5.16.1/x86_64-linux
-  #if [ -e perllocal.pod ]; then
-  #  rm -v perllocal.pod
-  #fi
-  #for f in `find . -name "*.podpart"`; do
-  #  cat $f >> perllocal.pod
-  #done
 
   cd $startdir
   sudo -u rybalkin mv -v $2 /sources/installed
@@ -441,17 +426,6 @@ if [ $1 == 'upgrade' ]; then
       install-info $f dir 2>/dev/null
     done
   fi
-
-  #if [ -f $tmpdir/kiin-dest/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod.$package.podpart ]; then
-    # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-    #cd /usr/lib/perl5/5.16.1/x86_64-linux
-    #if [ -e perllocal.pod ]; then
-    #  rm -v perllocal.pod
-    #fi
-    #for f in `find . -name "*.podpart"`; do
-    #  cat $f >> perllocal.pod
-    #done
-  #fi
 
   cd $startdir
   sudo -u rybalkin mv -v /sources/installed/kiin.$package-$old_version.tar.xz \
