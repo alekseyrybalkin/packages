@@ -19,7 +19,6 @@ kiin_make() {
     --enable-mousewheel \
     --enable-next-scroll \
     --enable-perl \
-    --enable-pixbuf \
     --enable-pointer-blank \
     --enable-rxvt-scroll \
     --enable-selectionscrolling \
@@ -33,6 +32,7 @@ kiin_make() {
     --enable-xft \
     --enable-xim \
     --enable-xterm-scroll \
+    --disable-pixbuf \
     --disable-frills
   make
 }
