@@ -103,6 +103,15 @@ if [ $1 == "make" ]; then
       cd ${srcdir}
       git checkout ${gittag}
     fi
+    if [ ${vcs} = 'mercurial' ]; then
+      if [ ! -z ${hg_pkgname} ]; then
+        hg clone /sources/src/${hg_pkgname} ${srcdir}
+      else
+        hg clone /sources/src/${pkgname} ${srcdir}
+      fi
+      cd ${srcdir}
+      hg update -r ${hgtag}
+    fi
   else
     if [[ ${srctar} ]]; then
       echo "unpacking ${srctar}..."
@@ -568,7 +577,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1c' ]] && version='1.0.1.c'
-    [[ $package = 'vim' ]] && [[ $version = '7.3' ]] && version='7.3.661'
     [[ $package = 'sudo' ]] && [[ $version = '1.8.6p3' ]] && version='1.8.6.p3'
     # not found in Arch:
     [[ $package = 'sysklogd' ]] && continue
