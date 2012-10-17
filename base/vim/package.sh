@@ -1,13 +1,18 @@
 #!/bin/sh
 
 pkgname=vim
-pkgver=7.3
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs="mercurial"
+hgtag="3346d9015468"
+pkgver=7.3.691
 srcdir=${location}/${pkgname}73
 
 kiin_make() {
   echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
-  ./configure --prefix=/usr --enable-multibyte
+  ./configure --prefix=/usr \
+    --enable-multibyte \
+    --with-x=no \
+    --disable-gui \
+    --with-compiledby=kiin
   make
 }
 
