@@ -8,6 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr         \
+              --with-internal-glib  \
               --docdir=/usr/share/doc/${pkgname}-${pkgver}
   make
 }
