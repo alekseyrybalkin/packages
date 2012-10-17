@@ -3,9 +3,9 @@ kiin-git
 kiin-known
 linux-api-headers
 glibc
+zlib
 binutils
 man-pages
-zlib
 file
 gmp
 mpfr
@@ -24,6 +24,7 @@ iana-etc
 m4
 bison
 procps
+pcre
 grep
 readline
 bash
@@ -59,12 +60,12 @@ vim
 linux
 linux-firmware
 fakeroot
-wget
 sqlite
 libffi
 expat
 openssl
 cacerts
+wget
 curl
 python
 swig
@@ -77,7 +78,6 @@ perl-error
 git
 mercurial
 sudo
-pcre
 openssh
 glib
 mc
