@@ -6,7 +6,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  PAGE=A4 ./configure --prefix=/usr
+  PAGE=A4 ./configure --prefix=/usr --without-x
   make
 }
 
