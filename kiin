@@ -24,7 +24,9 @@ usage() {
   echo "  kiin update-links <package>"
   echo "  kiin links <package>"
   echo "  kiin linked-by <package>"
+  echo "  kiin l <package>"
   echo "  kiin check-buildorder"
+  echo "  kiin rebuild-world"
 }
 
 if [ -z $1 ]; then
@@ -36,7 +38,7 @@ case $1 in
   "make" | "download")
     if [ ! -f ./package.sh ]; then
       echo "no package.sh found, goodbye."
-      exit 0
+      exit 1
     fi
     location=`pwd`
     . ./package.sh
@@ -49,7 +51,7 @@ case $1 in
     | "check-system-integrity" | "list-missing")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
-      exit 0
+      exit 1
     fi
     ;;
 esac
@@ -57,24 +59,24 @@ case $1 in
   "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" \
     | "list-dirs" | "install" | "upgrade" | "uninstall" | "db-list-files" \
     | "db-list-dirs" | "list-untracked" | "update-links" | "links" \
-    | "linked-by")
+    | "linked-by" | "l")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
-      exit 0
+      exit 1
     fi
     ;;
 esac
 case $1 in
   "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
-    | "links" | "linked-by")
+    | "links" | "linked-by" | "l")
     count=`kiin ls | grep $2 | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
-      exit 0
+      exit 1
     fi
     if [ $count -gt 1 ]; then
       echo "$2 is ambiguous (" `kiin ls | grep $2` ")"
-      exit 0
+      exit 1
     fi
     package=`kiin ls | grep $2`
     ;;
@@ -84,7 +86,7 @@ case $1 in
     | "upgrade")
     if [ ! -f $2 ]; then
       echo "$2 does not exist"
-      exit 0
+      exit 1
     fi
     ;;
 esac
@@ -129,9 +131,9 @@ if [ -e ${pkgdir}/var ]; then
 fi
 
 # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-if [ -e ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod ]; then
-  mv -v ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod{,.$pkgname.podpart}
-fi
+#if [ -e ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod ]; then
+#  mv -v ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod{,.$pkgname.podpart}
+#fi
 
 # remove *.la files
 if [ -d ${pkgdir}/lib ]; then
@@ -185,7 +187,8 @@ if [ $1 == 'gen-db' ]; then
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
   mkdir -p etc/{ssh,gtk-2.0}
-  mkdir -p usr/{share/info,lib/perl5/5.16.1/x86_64-linux,lib/locale}
+  #mkdir -p usr/lib/perl5/5.16.1/x86_64-linux
+  mkdir -p usr/{share/info,lib/locale}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
@@ -207,7 +210,7 @@ if [ $1 == 'gen-db' ]; then
   touch etc/passwd-
   touch etc/group-
   touch usr/share/info/dir
-  touch usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+  #touch usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
   touch usr/lib/locale/locale-archive
   touch usr/lib/pango/1.8.0/modules.cache
   touch usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -279,15 +282,15 @@ if [ $1 == 'install' ]; then
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
   if [ `echo "select id from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3 | wc -l` -gt 0 ]; then
     echo "Package with name $package is already installed. Aborting."
-    exit 0
+    exit 1
   fi
   if [ `kiin list-dups | wc -l` != '0' ]; then
     echo "where are duplicates in the system, not installing"
-    exit 0
+    exit 1
   fi
   if [ `kiin check-conflicts $2 | wc -l` != '0' ]; then
     echo "where are conflicts, not installing"
-    exit 0
+    exit 1
   fi
   startdir=`pwd`
   tmpdir=/tmp/kiin/`uuidgen`
@@ -314,13 +317,13 @@ if [ $1 == 'install' ]; then
   done
 
   # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-  cd /usr/lib/perl5/5.16.1/x86_64-linux
-  if [ -e perllocal.pod ]; then
-    rm -v perllocal.pod
-  fi
-  for f in `find . -name "*.podpart"`; do
-    cat $f >> perllocal.pod
-  done
+  #cd /usr/lib/perl5/5.16.1/x86_64-linux
+  #if [ -e perllocal.pod ]; then
+  #  rm -v perllocal.pod
+  #fi
+  #for f in `find . -name "*.podpart"`; do
+  #  cat $f >> perllocal.pod
+  #done
 
   cd $startdir
   sudo -u rybalkin mv -v $2 /sources/installed
@@ -332,23 +335,23 @@ fi
 if [ $1 == 'upgrade' ]; then
   if [ `kiin list-dups | wc -l` != '0' ]; then
     echo "where are duplicates in the system, not upgrading"
-    exit 0
+    exit 1
   fi
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
   if [ $package == 'kiin-known' ]; then
     echo "would not want to upgrade kiin-known, would ya?"
-    exit 0
+    exit 1
   fi
   if [ $package == 'kiin-git' ]; then
     echo "would not want to upgrade kiin-git, would ya?"
-    exit 0
+    exit 1
   fi
   new_version=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed "s/$package-//g"`
   old_version=`echo "select version from package where name='$package';" \
     | sqlite3 /sources/kiin-db/kiin.sqlite3`
   if [ -z $old_version ]; then
     echo "no such package installed, sorry"
-    exit 0
+    exit 1
   fi
   startdir=`pwd`
   echo "upgrading $package from $old_version to $new_version" | tee -a $upgrade_log
@@ -361,11 +364,11 @@ if [ $1 == 'upgrade' ]; then
     owner_count=`echo $owners | wc -w`
     [[ $owner_count = 0 ]] && [[ -e $i ]] && {
       echo "$i has no owners: $owners, but exists on filesystem, not upgrading"
-      exit 0
+      exit 1
     }
     [[ $owner_count > 0 ]] && [[ $owners != "$package-$old_version" ]] && {
       echo "$i has following owners: $owners, not upgrading"
-      exit 0
+      exit 1
     }
   done
   for i in `kiin list-dirs $2`; do
@@ -373,7 +376,7 @@ if [ $1 == 'upgrade' ]; then
     if [ -e $i ]; then
       if [ ! -d $i ]; then
         echo "$i already exists on filesystem and is not a dir, not upgrading"
-        exit 0
+        exit 1
       fi
     fi
   done
@@ -390,7 +393,7 @@ if [ $1 == 'upgrade' ]; then
     read -p "Are you sure? (Y/n)" answer
     case $answer in
       [Yy]* ) echo "let's go";;
-      * ) echo "Answer was not y/Y, exiting."; exit 0;;
+      * ) echo "Answer was not y/Y, exiting."; exit 1;;
     esac
   fi
   for file in `kiin db-list-files $package-$old_version`; do
@@ -439,16 +442,16 @@ if [ $1 == 'upgrade' ]; then
     done
   fi
 
-  if [ -f $tmpdir/kiin-dest/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod.$package.podpart ]; then
+  #if [ -f $tmpdir/kiin-dest/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod.$package.podpart ]; then
     # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-    cd /usr/lib/perl5/5.16.1/x86_64-linux
-    if [ -e perllocal.pod ]; then
-      rm -v perllocal.pod
-    fi
-    for f in `find . -name "*.podpart"`; do
-      cat $f >> perllocal.pod
-    done
-  fi
+    #cd /usr/lib/perl5/5.16.1/x86_64-linux
+    #if [ -e perllocal.pod ]; then
+    #  rm -v perllocal.pod
+    #fi
+    #for f in `find . -name "*.podpart"`; do
+    #  cat $f >> perllocal.pod
+    #done
+  #fi
 
   cd $startdir
   sudo -u rybalkin mv -v /sources/installed/kiin.$package-$old_version.tar.xz \
@@ -470,7 +473,7 @@ fi
 if [ $1 == 'uninstall' ]; then
   if [ `kiin list-dups | wc -l` != '0' ]; then
     echo "where are duplicates in the system, not uninstalling"
-    exit 0
+    exit 1
   fi
   uninstaller=/tmp/kiin/uninstaller-`uuidgen`
   mkdir -p /tmp/kiin
@@ -515,7 +518,7 @@ fi
 if [ $1 == 'list-untracked' ]; then
   if [ ! -d $2 ]; then
     echo "dir $2 does not exist"
-    exit 0
+    exit 1
   fi
   dir=`echo $2 | sed 's/\/$//g'`
   find $dir ! -type d | db_manager.py list-untracked
@@ -684,6 +687,11 @@ if [ $1 == 'linked-by' ]; then
   exit 0
 fi
 
+if [ $1 == 'l' ]; then
+  kiin links $package && echo "---" && kiin linked-by $package
+  exit 0
+fi
+
 if [ $1 == 'check-buildorder' ]; then
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
@@ -702,6 +710,54 @@ if [ $1 == 'check-buildorder' ]; then
   if [ ! -z $dups ]; then
     echo "duplicates in buildorder: $dups"
   fi
+  echo "order offenders:"
+  for i in `kiin ls`; do
+    package=`echo $i | sed 's/\-[^-]*$//g'`
+    echo $package
+    order=`grep -n "^$package$" /sources/buildorder | cut -d ":" --fields 1`
+    for j in `kiin links $i`; do
+      dep_order=`grep -n "^$j$" /sources/buildorder | cut -d ":" --fields 1`
+      if [ $dep_order -gt $order ]; then
+        echo "   $j is after $package"
+      fi
+    done
+  done
+  exit 0
+fi
+
+if [ $1 == 'rebuild-world' ]; then
+  set -e
+  for package in `cat /sources/buildorder`; do
+    # won't upgrade
+    [[ $package = 'filesystem' ]] && continue
+    [[ $package = 'kiin-git' ]] && continue
+    [[ $package = 'kiin-known' ]] && continue
+    [[ $package = 'linux-firmware' ]] && continue
+    [[ $package = 'cacerts' ]] && continue
+
+    # upgrade only manually
+    [[ $package = 'linux-api-headers' ]] && continue
+    [[ $package = 'glibc' ]] && continue
+    [[ $package = 'ncurses' ]] && continue
+    [[ $package = 'readline' ]] && continue
+    [[ $package = 'linux' ]] && continue
+
+    # minor problems (segfault after installation)
+    [[ $package = 'zlib' ]] && continue
+    [[ $package = 'sudo' ]] && continue
+
+    # build failed
+    [[ $package = 'dhcpcd' ]] && continue
+    [[ $package = 'xf86-input-evdev' ]] && continue
+    [[ $package = 'xf86-input-synaptics' ]] && continue
+
+    found=`find /sources/{base,essentials,crypt,dev,gui,multimedia,perl-modules,wireless,xorg} -type d -name $package`
+    cd $found
+    kiin make
+    for pack in `find . -name 'kiin.*xz'`; do
+      sudo kiin upgrade $pack noask
+    done
+  done
   exit 0
 fi
 
