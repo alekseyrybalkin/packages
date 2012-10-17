@@ -687,14 +687,18 @@ if [ $1 == 'check-buildorder' ]; then
   echo "order offenders:"
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    echo $package
     order=`grep -n "^$package$" /sources/buildorder | cut -d ":" --fields 1`
+    offending=""
     for j in `kiin links $i`; do
       dep_order=`grep -n "^$j$" /sources/buildorder | cut -d ":" --fields 1`
       if [ $dep_order -gt $order ]; then
-        echo "   $j is after $package"
+        offending="$offending $j"
       fi
     done
+    if [ ! -z "$offending" ]; then
+      echo $package
+      echo "    $offending"
+    fi
   done
   exit 0
 fi
