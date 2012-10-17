@@ -1,5 +1,5 @@
 TODO LIST
-- implement sane glibc upgrade
+- implement sane glibc, ncurses, readline upgrade
 - add initramfs
   make /var distinct partition (reiserfs)
   make /home distinct partition (ext4)
