@@ -7,10 +7,12 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i -e '/gets is a/d' grub-core/gnulib/stdio.in.h
-  ./configure --prefix=/usr          \
-              --sysconfdir=/etc      \
-              --disable-grub-emu-usb \
-              --disable-efiemu       \
+  ./configure --prefix=/usr           \
+              --sysconfdir=/etc       \
+              --disable-grub-emu-usb  \
+              --disable-efiemu        \
+              --disable-device-mapper \
+              --disable-grub-mkfont   \
               --disable-werror
   make
 }
