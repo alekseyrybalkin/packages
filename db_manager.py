@@ -21,9 +21,16 @@ def create_db(conn):
             ownership text,
             name text,
             link text)''')
+    conn.execute('''
+        create table depends(
+            id integer primary key,
+            user_id integer,
+            provider_id integer)''')
     conn.execute('create index package_name on package(name)')
     conn.execute('create index file_name on file(name)')
     conn.execute('create index file_package_id on file(package_id)')
+    conn.execute('create index user_package_id on depends(user_id)')
+    conn.execute('create index provider_package_id on depends(provider_id)')
 
 def gen_db(conn):
     packages_path = '/sources/installed/'
@@ -43,9 +50,18 @@ def gen_db(conn):
                   (package,))
         stored_package = c.fetchone()
         if stored_package is None or str(stored_package[3]) != str(timestamp):
+            depending_list = []
             if stored_package is not None:
                 c.execute('delete from file where package_id=?', (stored_package[0],))
                 c.execute('delete from package where id=?', (stored_package[0],))
+                c.execute('delete from depends where user_id=?', (stored_package[0],))
+                for depending in c.execute('''select package.id from depends
+                        join package on depends.user_id=package.id where
+                        depends.provider_id=? and provider_id <> user_id''',
+                        (stored_package[0],)):
+                    depending_list.append(depending[0])
+                c.execute('delete from depends where provider_id=?', (stored_package[0],))
+            print package+'-'+version
             c.execute('''
                 insert into package(name, version, timestamp)
                     values (?, ?, ?)''', (package, version, timestamp))
@@ -65,6 +81,10 @@ def gen_db(conn):
                 insert into file(package_id, permissions, ownership,
                                     name, link)
                     values (?, ?, ?, ?, ?)''', files)
+            for depending in depending_list:
+                c.execute('''
+                    insert into depends(user_id, provider_id)
+                        values (?, ?)''', (depending, package_id))
     # now delete stale packages from db
     actual_package_set = set(actual_package_list)
     package_ids_to_delete = []
@@ -74,6 +94,8 @@ def gen_db(conn):
     for package_id in package_ids_to_delete:
         c.execute('delete from file where package_id=?', (package_id,))
         c.execute('delete from package where id=?', (package_id,))
+        c.execute('delete from depends where user_id=?', (package_id,))
+        c.execute('delete from depends where provider_id=?', (package_id,))
 
 def list_untracked(conn):
     c = conn.cursor()

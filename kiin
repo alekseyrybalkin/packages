@@ -21,7 +21,9 @@ usage() {
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
   echo "  kiin check-updates"
-  echo "  kiin ldd <library>"
+  echo "  kiin update-links <package>"
+  echo "  kiin links <package>"
+  echo "  kiin linked-by <package>"
   echo "  kiin check-buildorder"
 }
 
@@ -54,7 +56,8 @@ esac
 case $1 in
   "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" \
     | "list-dirs" | "install" | "upgrade" | "uninstall" | "db-list-files" \
-    | "db-list-dirs" | "list-untracked" | "ldd")
+    | "db-list-dirs" | "list-untracked" | "update-links" | "links" \
+    | "linked-by")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
       exit 0
@@ -62,7 +65,8 @@ case $1 in
     ;;
 esac
 case $1 in
-  "uninstall" | "db-list-files" | "db-list-dirs")
+  "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
+    | "links" | "linked-by")
     count=`kiin ls | grep $2 | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
@@ -127,6 +131,14 @@ fi
 # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
 if [ -e ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod ]; then
   mv -v ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod{,.$pkgname.podpart}
+fi
+
+# remove *.la files
+if [ -d ${pkgdir}/lib ]; then
+  find ${pkgdir}/lib -name "*.la" | xargs rm -vf
+fi
+if [ -d ${pkgdir}/usr/lib ]; then
+  find ${pkgdir}/usr/lib -name "*.la" | xargs rm -vf
 fi
 
 cd ${location}
@@ -204,7 +216,10 @@ if [ $1 == 'gen-db' ]; then
   tar cfa kiin.kiin-known-1.tar.xz kiin-dest
   mv kiin.kiin-known-1.tar.xz /sources/installed
   # generate db
-  db_manager.py gen-db
+  for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known \
+    | grep -v kiin-git`; do
+    kiin update-links $i
+  done
   exit 0
 fi
 
@@ -371,11 +386,13 @@ if [ $1 == 'upgrade' ]; then
       fi
     fi
   done
-  read -p "Are you sure? (Y/n)" answer
-  case $answer in
-    [Yy]* ) echo "let's go";;
-    * ) echo "Answer was not y/Y, exiting."; exit 0;;
-  esac
+  if [ ! "$3" = 'noask' ]; then
+    read -p "Are you sure? (Y/n)" answer
+    case $answer in
+      [Yy]* ) echo "let's go";;
+      * ) echo "Answer was not y/Y, exiting."; exit 0;;
+    esac
+  fi
   for file in `kiin db-list-files $package-$old_version`; do
     if [ ! -e $tmpdir/kiin-dest$file ]; then
       if [ ! -h $tmpdir/kiin-dest$file ]; then
@@ -406,25 +423,32 @@ if [ $1 == 'upgrade' ]; then
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
     [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
-      rm -rv $dir | tee -a $upgrade_log
+      filecnt=`ls $dir | wc -w`
+      if [ $filecnt -eq 0 ]; then
+        rm -rv $dir | tee -a $upgrade_log
+      fi
     }
   done
 
-  # recreate /usr/share/info/dir
-  cd /usr/share/info
-  rm -v dir
-  for f in *; do
-    install-info $f dir 2>/dev/null
-  done
-
-  # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
-  cd /usr/lib/perl5/5.16.1/x86_64-linux
-  if [ -e perllocal.pod ]; then
-    rm -v perllocal.pod
+  if [ -d $tmpdir/kiin-dest/usr/share/info ]; then
+    # recreate /usr/share/info/dir
+    cd /usr/share/info
+    rm -v dir
+    for f in *; do
+      install-info $f dir 2>/dev/null
+    done
   fi
-  for f in `find . -name "*.podpart"`; do
-    cat $f >> perllocal.pod
-  done
+
+  if [ -f $tmpdir/kiin-dest/usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod.$package.podpart ]; then
+    # fix /usr/lib/perl5/5.16.1/x86_64-linux/perllocal.pod
+    cd /usr/lib/perl5/5.16.1/x86_64-linux
+    if [ -e perllocal.pod ]; then
+      rm -v perllocal.pod
+    fi
+    for f in `find . -name "*.podpart"`; do
+      cat $f >> perllocal.pod
+    done
+  fi
 
   cd $startdir
   sudo -u rybalkin mv -v /sources/installed/kiin.$package-$old_version.tar.xz \
@@ -610,21 +634,53 @@ if [ $1 == 'check-updates' ]; then
   exit 0
 fi
 
-if [ $1 == 'ldd' ]; then
-  #for i in `kiin ls`; do
-  #  for j in `kiin db-list-files $i | grep ".so"`; do
-  #    ldd $j 2>/dev/null
-  #  done | grep -q $2
-  #  if [ $? -eq 0 ]; then
-  #    echo "$i"
-  #  fi
-  #done
-  for i in `find /lib /usr/lib /usr/local/lib /bin /sbin /usr/bin /usr/sbin -type f`; do
-    ldd $i 2>/dev/null | grep -q $2
-    if [ $? -eq 0 ]; then
-      echo "$i (`kiin who-owns $i`)"
+if [ $1 == 'update-links' ]; then
+  package_name=`echo $package | sed 's/\-[^-]*$//g'`
+  echo "updating links for $package_name..."
+  user_package_id=`echo "select id from package where name='$package_name';" \
+      | sqlite3 /sources/kiin-db/kiin.sqlite3`
+  echo "delete from depends where user_id=$user_package_id;" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3
+  for i in `kiin db-list-files $package`; do
+    if [ ! -r $i ]; then
+      ldd_invocator='sudo ldd'
+    else
+      ldd_invocator='ldd'
     fi
+    for j in `$ldd_invocator 2>/dev/null $i | grep -v "not a dynamic executable" \
+        | sed 's/\ (0x.*$//g' | sed 's/^.*\ =>\ //g' \
+        | sed 's/^[ \t]*//g' | grep -v "linux-vdso.so.1"`; do
+      echo `readlink -m $j`
+    done
+  done | sed 's/\/lib64/\/lib/g' | sed 's/\/usr\/lib64/\/usr\/lib/g' \
+    | sort | uniq | while read line; do
+    kiin who-owns $line
+  done | sort | uniq | while read dep_package; do
+    dep_package_name=`echo $dep_package | sed 's/\-[^-]*$//g'`
+    dep_package_id=`echo "select id from package where name='$dep_package_name';" \
+       | sqlite3 /sources/kiin-db/kiin.sqlite3`
+    echo "insert into depends(user_id,provider_id) values \
+      ($user_package_id, $dep_package_id);" \
+      | sqlite3 /sources/kiin-db/kiin.sqlite3
   done
+  exit 0
+fi
+
+if [ $1 == 'links' ]; then
+  package_name=`echo $package | sed 's/\-[^-]*$//g'`
+  echo "select package.name from (select * from package join depends \
+    on package.id=depends.user_id where name='$package_name') dep join package on \
+    dep.provider_id=package.id where user_id <> provider_id;" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3
+  exit 0
+fi
+
+if [ $1 == 'linked-by' ]; then
+  package_name=`echo $package | sed 's/\-[^-]*$//g'`
+  echo "select package.name from (select * from package join depends \
+    on package.id=depends.provider_id where name='$package_name') dep join package on \
+    dep.user_id=package.id where user_id <> provider_id;" \
+    | sqlite3 /sources/kiin-db/kiin.sqlite3
   exit 0
 fi
 
