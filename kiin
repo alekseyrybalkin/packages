@@ -670,7 +670,7 @@ if [ $1 == 'linked-by' ]; then
 fi
 
 if [ $1 == 'l' ]; then
-  kiin links $package && echo "---" && kiin linked-by $package
+  kiin links $package | sort && echo "---" && kiin linked-by $package | sort
   exit 0
 fi
 
