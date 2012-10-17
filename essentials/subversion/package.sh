@@ -22,4 +22,8 @@ kiin_install() {
   cp -v -R doc/* ${pkgdir}/usr/share/doc/subversion-${pkgver}
   make DESTDIR=${pkgdir} install-swig-pl
   make DESTDIR=${pkgdir} install-swig-py
+  find ${pkgdir} -name perllocal.pod -delete
+  find ${pkgdir} -name .packlist -delete
+  #sed -i -e 's/\/sources\/essentials\/subversion\/kiin-dest//g' \
+  #  ${pkgdir}/usr/lib/perl5/site_perl/5.16.1/x86_64-linux/auto/SVN/_Core/.packlist
 }

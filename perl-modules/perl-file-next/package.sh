@@ -18,4 +18,8 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  find ${pkgdir} -name perllocal.pod -delete
+  find ${pkgdir} -name .packlist -delete
+  #sed -i -e 's/\/sources\/perl-modules\/perl-file-next\/kiin-dest//g' \
+  #  ${pkgdir}/usr/lib/perl5/vendor_perl/5.16.1/x86_64-linux/auto/File/Next/.packlist
 }

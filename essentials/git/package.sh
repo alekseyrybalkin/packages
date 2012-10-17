@@ -18,4 +18,8 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   tar -xf ../${pkgname}-manpages-${pkgver}.tar.gz -C ${pkgdir}/usr/share/man \
     --no-same-owner
+  find ${pkgdir} -name perllocal.pod -delete
+  find ${pkgdir} -name .packlist -delete
+  #sed -i -e 's/\/sources\/essentials\/git\/kiin-dest//g' \
+  #  ${pkgdir}/usr/lib/perl5/site_perl/5.16.1/x86_64-linux/auto/Git/.packlist
 }
