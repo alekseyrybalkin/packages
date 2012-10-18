@@ -227,3 +227,7 @@ perl-file-next
 perl-ack
 parted
 busybox-small
+yasm
+mplayer
+poppler
+evince
