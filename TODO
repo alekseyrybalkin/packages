@@ -22,6 +22,7 @@ TODO LIST
   update bootscripts
 - remove *.la files from packages
 - kiin: implement links and linked
+- carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 
 DONE LIST
 +- fix 'xserverauth file not found' warning on X start
