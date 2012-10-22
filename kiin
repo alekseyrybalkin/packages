@@ -585,6 +585,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'python2-sh' ]] && continue
     [[ $package = 'libjpeg' ]] && continue
     # won't upgrade:
+    [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
     [[ $package = 'cacerts' ]] && continue
