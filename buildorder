@@ -226,4 +226,4 @@ cryptsetup
 perl-file-next
 perl-ack
 parted
-busybox-small
+initramfs
