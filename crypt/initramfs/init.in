@@ -91,6 +91,10 @@ ${UDEV_PATH}/udevd --daemon --resolve-names=never
 udevadm trigger
 udevadm settle
 
+cryptsetup luksOpen /dev/sda3 root
+mkdir /.root
+mount -t ext4 /dev/mapper/root /.root
+
 #if [ -f /etc/mdadm.conf ] ; then mdadm -As                                    ; fi
 #if [ -x /sbin/vgchange  ] ; then /sbin/vgchange --noudevsync -a y > /dev/null ; fi
 #if [ -n "$rootdelay"    ] ; then sleep "$rootdelay"                           ; fi
@@ -98,5 +102,5 @@ udevadm settle
 
 killall -w ${UDEV_PATH}/udevd
 
-#exec switch_root /.root "$init" "$@"
-exec /bin/sh
+exec switch_root /.root "$init" "$@"
+#exec /bin/sh
