@@ -1,5 +1,7 @@
 #!/bin/bash
 
+KIIN_HOME=/var/kiin
+
 usage() {
   echo "usage:"
   echo "  kiin make"
@@ -96,18 +98,18 @@ if [ $1 == "make" ]; then
   if [ ! -z ${vcs} ]; then
     if [ ${vcs} = 'git' ]; then
       if [ ! -z ${git_pkgname} ]; then
-        git clone /sources/src/${git_pkgname} ${srcdir}
+        git clone $KIIN_HOME/src/${git_pkgname} ${srcdir}
       else
-        git clone /sources/src/${pkgname} ${srcdir}
+        git clone $KIIN_HOME/src/${pkgname} ${srcdir}
       fi
       cd ${srcdir}
       git checkout ${gittag}
     fi
     if [ ${vcs} = 'mercurial' ]; then
       if [ ! -z ${hg_pkgname} ]; then
-        hg clone /sources/src/${hg_pkgname} ${srcdir}
+        hg clone $KIIN_HOME/src/${hg_pkgname} ${srcdir}
       else
-        hg clone /sources/src/${pkgname} ${srcdir}
+        hg clone $KIIN_HOME/src/${pkgname} ${srcdir}
       fi
       cd ${srcdir}
       hg update -r ${hgtag}
@@ -182,7 +184,7 @@ if [ $1 == 'gen-db' ]; then
   git clone / kiin-dest 1>/dev/null
   rm -rf kiin-dest/.git
   tar cfa kiin.kiin-git-1.tar.xz kiin-dest
-  mv kiin.kiin-git-1.tar.xz /sources/installed
+  mv kiin.kiin-git-1.tar.xz $KIIN_HOME/installed
   # add kiin-known-1 package
   tmpdir=/tmp/kiin-user/`uuidgen`
   mkdir -p $tmpdir
@@ -219,7 +221,7 @@ if [ $1 == 'gen-db' ]; then
   touch etc/gtk-2.0/gtk.immodules
   cd ..
   tar cfa kiin.kiin-known-1.tar.xz kiin-dest
-  mv kiin.kiin-known-1.tar.xz /sources/installed
+  mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
   # generate db
   for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known \
     | grep -v kiin-git`; do
@@ -231,7 +233,7 @@ fi
 if [ $1 == 'list-dups' ]; then
   echo "select * from (select count(id) as cnt, name from file \
     where permissions not like 'd%' group by name \
-    order by cnt desc) where cnt > 1;" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    order by cnt desc) where cnt > 1;" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 \
     | sed 's/|/\ \ /g'
   exit 0
 fi
@@ -239,7 +241,7 @@ fi
 if [ $1 == 'who-owns' ]; then
   echo "select name,version from package where id in \
     (select distinct package_id from file where name = '$2' \
-    and permissions not like 'd%');" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    and permissions not like 'd%');" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 \
     | sed 's/|/\-/g' | sort
   exit 0
 fi
@@ -248,7 +250,7 @@ if [ $1 == 'who-uses-dir' ]; then
   dir=`echo $2 | sed 's/\/$//g'`
   echo "select name,version from package where id in \
     (select distinct package_id from file where name = '$dir/' \
-    and permissions like 'd%');" | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    and permissions like 'd%');" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 \
     | sed 's/|/\-/g' | sort
   exit 0
 fi
@@ -282,7 +284,7 @@ fi
 
 if [ $1 == 'install' ]; then
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
-  if [ `echo "select id from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3 | wc -l` -gt 0 ]; then
+  if [ `echo "select id from package where name='${package}';" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 | wc -l` -gt 0 ]; then
     echo "Package with name $package is already installed. Aborting."
     exit 1
   fi
@@ -320,7 +322,7 @@ if [ $1 == 'install' ]; then
 
 
   cd $startdir
-  sudo -u rybalkin mv -v $2 /sources/installed
+  sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
   sudo -u rybalkin kiin gen-db
 
   exit 0
@@ -342,7 +344,7 @@ if [ $1 == 'upgrade' ]; then
   fi
   new_version=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed "s/$package-//g"`
   old_version=`echo "select version from package where name='$package';" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3`
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3`
   if [ -z $old_version ]; then
     echo "no such package installed, sorry"
     exit 1
@@ -437,9 +439,9 @@ if [ $1 == 'upgrade' ]; then
   fi
 
   cd $startdir
-  sudo -u rybalkin mv -v /sources/installed/kiin.$package-$old_version.tar.xz \
-    /sources/uninstalled
-  sudo -u rybalkin mv -v $2 /sources/installed
+  sudo -u rybalkin mv -v $KIIN_HOME/installed/kiin.$package-$old_version.tar.xz \
+    $KIIN_HOME/uninstalled
+  sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
   sudo -u rybalkin kiin gen-db
   echo "upgrade log: $upgrade_log"
 
@@ -448,7 +450,7 @@ fi
 
 if [ $1 == 'ls' ]; then
   echo "select name,version from package;" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3 \
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 \
     | sed 's/|/\-/g'
   exit 0
 fi
@@ -475,7 +477,7 @@ if [ $1 == 'uninstall' ]; then
   echo ""
   echo "uninstall script is $uninstaller (check it and run it as root)"
   echo "think you would like to run this as user after that:"
-  echo "mv /sources/installed/kiin.$package.tar.xz /sources/uninstalled"
+  echo "mv $KIIN_HOME/installed/kiin.$package.tar.xz $KIIN_HOME/uninstalled"
   echo "think you would like to run kiin gen-db as user after that, too"
   exit 0
 fi
@@ -485,7 +487,7 @@ if [ $1 == 'db-list-files' ]; then
   echo "select name from file where package_id in \
     (select id from package where name='$package') \
     and permissions not like 'd%';" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3 | sort
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 | sort
   exit 0
 fi
 
@@ -494,7 +496,7 @@ if [ $1 == 'db-list-dirs' ]; then
   echo "select name from file where package_id in \
     (select id from package where name='$package') \
     and permissions like 'd%';" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3 | sort
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 | sort
   exit 0
 fi
 
@@ -544,10 +546,10 @@ if [ $1 == 'check-updates' ]; then
   txtrst='\e[0m'
   echo "checking git repos"
   package=linux
-  cd /sources/src/$package
+  cd $KIIN_HOME/src/$package
   newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | tail -n 1`
   pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
-  version=`echo "select version from package where name='${package}';" | sqlite3 /sources/kiin-db/kiin.sqlite3`
+  version=`echo "select version from package where name='${package}';" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3`
   if [ "$pkgver" != "$version" ]; then
     if [ "$version" \> "$pkgver" ]; then
       echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
@@ -624,9 +626,9 @@ if [ $1 == 'update-links' ]; then
   package_name=`echo $package | sed 's/\-[^-]*$//g'`
   echo "updating links for $package_name..."
   user_package_id=`echo "select id from package where name='$package_name';" \
-      | sqlite3 /sources/kiin-db/kiin.sqlite3`
+      | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3`
   echo "delete from depends where user_id=$user_package_id;" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3
   for i in `kiin db-list-files $package`; do
     if [ ! -r $i ]; then
       ldd_invocator='sudo ldd'
@@ -644,10 +646,10 @@ if [ $1 == 'update-links' ]; then
   done | sort | uniq | while read dep_package; do
     dep_package_name=`echo $dep_package | sed 's/\-[^-]*$//g'`
     dep_package_id=`echo "select id from package where name='$dep_package_name';" \
-       | sqlite3 /sources/kiin-db/kiin.sqlite3`
+       | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3`
     echo "insert into depends(user_id,provider_id) values \
       ($user_package_id, $dep_package_id);" \
-      | sqlite3 /sources/kiin-db/kiin.sqlite3
+      | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3
   done
   exit 0
 fi
@@ -657,7 +659,7 @@ if [ $1 == 'links' ]; then
   echo "select package.name from (select * from package join depends \
     on package.id=depends.user_id where name='$package_name') dep join package on \
     dep.provider_id=package.id where user_id <> provider_id;" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3
   exit 0
 fi
 
@@ -666,7 +668,7 @@ if [ $1 == 'linked-by' ]; then
   echo "select package.name from (select * from package join depends \
     on package.id=depends.provider_id where name='$package_name') dep join package on \
     dep.user_id=package.id where user_id <> provider_id;" \
-    | sqlite3 /sources/kiin-db/kiin.sqlite3
+    | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3
   exit 0
 fi
 
@@ -678,28 +680,28 @@ fi
 if [ $1 == 'check-buildorder' ]; then
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    grep -q $package /sources/buildorder
+    grep -q $package $KIIN_HOME/buildorder
     if [ $? -gt 0 ]; then
       echo "$package is missing from buildorder"
     fi
   done
-  for i in `cat /sources/buildorder`; do
-    count=`echo "select * from package where name='$i';" | sqlite3 /sources/kiin-db/kiin.sqlite3 | wc -l`
+  for i in `cat $KIIN_HOME/buildorder`; do
+    count=`echo "select * from package where name='$i';" | sqlite3 $KIIN_HOME/kiin-db/kiin.sqlite3 | wc -l`
     if [ $count -lt 1 ]; then
       echo "$i is not installed, but is in buildorder"
     fi
   done
-  dups=`cat /sources/buildorder | sort | uniq -d`
+  dups=`cat $KIIN_HOME/buildorder | sort | uniq -d`
   if [ ! -z $dups ]; then
     echo "duplicates in buildorder: $dups"
   fi
   echo "order offenders:"
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    order=`grep -n "^$package$" /sources/buildorder | cut -d ":" --fields 1`
+    order=`grep -n "^$package$" $KIIN_HOME/buildorder | cut -d ":" --fields 1`
     offending=""
     for j in `kiin links $i`; do
-      dep_order=`grep -n "^$j$" /sources/buildorder | cut -d ":" --fields 1`
+      dep_order=`grep -n "^$j$" $KIIN_HOME/buildorder | cut -d ":" --fields 1`
       if [ $dep_order -gt $order ]; then
         offending="$offending $j"
       fi
@@ -714,7 +716,7 @@ fi
 
 if [ $1 == 'rebuild-world' ]; then
   set -e
-  for package in `cat /sources/buildorder`; do
+  for package in `cat $KIIN_HOME/buildorder`; do
     # won't upgrade
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
@@ -738,7 +740,7 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'xf86-input-evdev' ]] && continue
     [[ $package = 'xf86-input-synaptics' ]] && continue
 
-    found=`find /sources/{base,essentials,crypt,dev,gui,multimedia,perl-modules,wireless,xorg} -type d -name $package`
+    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,wireless,xorg} -type d -name $package`
     cd $found
     kiin make
     for pack in `find . -name 'kiin.*xz'`; do
