@@ -1,12 +1,6 @@
 TODO LIST
 - GET ON WITH YOUR LIFE, DOVAHKIIN
 - implement sane glibc, ncurses, readline upgrade
-- add initramfs
-  make /var distinct partition (reiserfs)
-  make /home distinct partition (ext4)
-  move /sources to /var/kiin
-  add package git/svn/etc repos to /var/kiin/src
-  encrypt lfs partitions
 - add support for post-install/post-upgrade scripts
 - move ld.so.conf to git
 - add acpi
@@ -15,6 +9,7 @@ TODO LIST
 - make `kiin uninstall' more automatic
   check links/linked-by before uninstall
   fix perllocal.pod, info, etc. on uninstall too
+- merge duplicate code from install and upgrade
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
@@ -22,6 +17,12 @@ TODO LIST
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 
 DONE LIST
++- add initramfs
++  make /var distinct partition (reiserfs)
++  make /home distinct partition (ext4)
++  move /sources to /var/kiin
++  add package git/svn/etc repos to /var/kiin/src
++  encrypt lfs partitions
 +- fix .packlist for perl modules
 +- improve `kiin ldd' to check binaries too (and make it faster)
 +- kiin: implement links and linked
