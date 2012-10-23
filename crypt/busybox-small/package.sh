@@ -14,5 +14,5 @@ kiin_make() {
 
 kiin_install() {
   mkdir ${pkgdir}/bin
-  cp busybox ${pkgdir}/bin/busybox-small
+  cp busybox ${pkgdir}/bin/${pkgname}
 }
