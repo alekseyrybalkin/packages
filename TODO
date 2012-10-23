@@ -9,22 +9,23 @@ TODO LIST
   encrypt lfs partitions
 - add support for post-install/post-upgrade scripts
 - move ld.so.conf to git
-- fix .packlist for perl modules
 - add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
 - make `kiin uninstall' more automatic
+  check links/linked-by before uninstall
   fix perllocal.pod, info, etc. on uninstall too
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
-- improve `kiin ldd' to check binaries too (and make it faster)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
   update bootscripts
-- remove *.la files from packages
-- kiin: implement links and linked
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 
 DONE LIST
++- fix .packlist for perl modules
++- improve `kiin ldd' to check binaries too (and make it faster)
++- kiin: implement links and linked
++- remove *.la files from packages
 +- fix 'xserverauth file not found' warning on X start
 +- solve `alsa vs kernel-with-no-modules' issue
 +- improve readability for output of `kiin check-arch-updates'
