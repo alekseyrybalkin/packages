@@ -38,9 +38,9 @@ diffutils
 gawk
 findutils
 flex
+xz
 gettext
 groff
-xz
 grub
 less
 gzip
