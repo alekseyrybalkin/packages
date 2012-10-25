@@ -1,14 +1,14 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.22
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=2.23
+urls="http://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   rm -fv etc/standards.info
   sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
-  patch -Np1 -i ../binutils-2.22-build_fix-1.patch
   mkdir -v binutils-build
   cd binutils-build
   ../configure --prefix=/usr --enable-shared
