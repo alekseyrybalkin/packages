@@ -1,19 +1,16 @@
 #!/bin/sh
 
 pkgname=coreutils
-pkgver=8.19
+pkgver=8.20
+urls="http://ftp.gnu.org/gnu/coreutils/coreutils-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  # fixes bug in test case, FYI:
-  sed -i -e 's/! isatty/isatty/' \
-        -e '45i\              || errno == ENOENT' gnulib-tests/test-getlogin.c
-  patch -Np1 -i ../coreutils-8.19-i18n-1.patch
-  FORCE_UNSAFE_CONFIGURE=1 ./configure \
-              --prefix=/usr         \
-              --libexecdir=/usr/lib \
-              --enable-no-install-program=kill,uptime
+  ./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --enable-no-install-program=kill,uptime
   make
 }
 
