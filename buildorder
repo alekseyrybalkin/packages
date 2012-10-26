@@ -229,3 +229,5 @@ parted
 initramfs
 reiserfsprogs
 rsync
+poppler
+epdfview
