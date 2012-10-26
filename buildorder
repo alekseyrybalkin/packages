@@ -231,3 +231,7 @@ reiserfsprogs
 rsync
 poppler
 epdfview
+boost
+rlog
+fuse
+encfs
