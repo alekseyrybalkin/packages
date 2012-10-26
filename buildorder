@@ -228,3 +228,4 @@ perl-ack
 parted
 initramfs
 reiserfsprogs
+rsync
