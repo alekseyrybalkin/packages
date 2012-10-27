@@ -1,16 +1,9 @@
 TODO LIST
 - configure backups
-- GET ON WITH YOUR LIFE, DOVAHKIIN
 - implement sane glibc, ncurses, readline upgrade
 - add support for post-install/post-upgrade scripts
-- move ld.so.conf to git
-- add acpi
 - fix setuid for xlockmore somehow
 - configure iptables
-- make `kiin uninstall' more automatic
-  check links/linked-by before uninstall
-  fix perllocal.pod, info, etc. on uninstall too
-- merge duplicate code from install and upgrade
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
@@ -18,6 +11,12 @@ TODO LIST
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 
 DONE LIST
++- make `kiin uninstall' more automatic
++  check links/linked-by before uninstall
++  fix perllocal.pod, info, etc. on uninstall too
++- merge duplicate code from install and upgrade
++- add acpi
++- move ld.so.conf to git
 +- add initramfs
 +  make /var distinct partition (reiserfs)
 +  make /home distinct partition (ext4)
