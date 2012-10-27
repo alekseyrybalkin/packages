@@ -1,5 +1,8 @@
 TODO LIST
 - configure backups
+- check /boot partition after boot for tampering
+  don't start network if tampering is detected
+  auto-update hashes when upgrading linux/grub/initramfs/kiin-git
 - implement sane glibc, ncurses, readline upgrade
 - add support for post-install/post-upgrade scripts
 - fix setuid for xlockmore somehow
