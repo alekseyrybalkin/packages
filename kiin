@@ -32,6 +32,25 @@ usage() {
   echo "  kiin rebuild-world"
 }
 
+# for upgrade and uninstall
+check_system_packages() {
+  case $1 in
+    "kiin-git" | "kiin-known" | "filesystem" | "glibc")
+      echo "wouldn't want to $2 $1, would ya?"
+      exit 1
+      ;;
+  esac
+}
+
+# for upgrade, install and uninstall
+recreate_info_dir() {
+  cd /usr/share/info
+  rm -v dir
+  for f in *; do
+    install-info $f dir 2>/dev/null
+  done
+}
+
 if [ -z $1 ]; then
   usage
   exit 0
@@ -314,19 +333,12 @@ if [ $1 == 'install' ]; then
     prototype=$tmpdir/kiin-dest$file
     cp -av $prototype $file
   done
-
-  # recreate /usr/share/info/dir
-  cd /usr/share/info
-  rm -v dir
-  for f in *; do
-    install-info $f dir 2>/dev/null
-  done
-
-
+  if [ -d $tmpdir/kiin-dest/usr/share/info ]; then
+    recreate_info_dir
+  fi
   cd $startdir
   sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
   sudo -u rybalkin kiin gen-db
-
   exit 0
 fi
 
@@ -336,14 +348,7 @@ if [ $1 == 'upgrade' ]; then
     exit 1
   fi
   package=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed 's/-[^-]*$//g'`
-  if [ $package == 'kiin-known' ]; then
-    echo "would not want to upgrade kiin-known, would ya?"
-    exit 1
-  fi
-  if [ $package == 'kiin-git' ]; then
-    echo "would not want to upgrade kiin-git, would ya?"
-    exit 1
-  fi
+  check_system_packages $package $1
   new_version=`echo $(basename $2) | sed 's/kiin\.//g' | sed 's/\.tar\.xz//g' | sed "s/$package-//g"`
   old_version=`echo "select version from package where name='$package';" \
     | sqlite3 $KIIN_DB`
@@ -397,15 +402,15 @@ if [ $1 == 'upgrade' ]; then
   for file in `kiin db-list-files $package-$old_version`; do
     if [ ! -e $tmpdir/kiin-dest$file ]; then
       if [ ! -h $tmpdir/kiin-dest$file ]; then
-        rm -v $file | tee -a $upgrade_log
+        rm -v $file 2>&1 | tee -a $upgrade_log
       fi
     fi
   done
   for dir in `kiin list-dirs $2`; do
     if [ ! -d $dir ]; then
       prototype=$tmpdir/kiin-dest$dir
-      mkdir -pv $dir | tee -a $upgrade_log
-      chmod -v `stat -c %a $prototype` $dir | tee -a $upgrade_log
+      mkdir -pv $dir 2>&1 | tee -a $upgrade_log
+      chmod -v `stat -c %a $prototype` $dir 2>&1 | tee -a $upgrade_log
     fi
   done
   for file in `kiin list-files $2`; do
@@ -426,27 +431,19 @@ if [ $1 == 'upgrade' ]; then
     [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
       filecnt=`ls $dir | wc -w`
       if [ $filecnt -eq 0 ]; then
-        rm -rv $dir | tee -a $upgrade_log
+        rm -rv $dir 2>&1 | tee -a $upgrade_log
       fi
     }
   done
-
   if [ -d $tmpdir/kiin-dest/usr/share/info ]; then
-    # recreate /usr/share/info/dir
-    cd /usr/share/info
-    rm -v dir
-    for f in *; do
-      install-info $f dir 2>/dev/null
-    done
+    recreate_info_dir
   fi
-
   cd $startdir
   sudo -u rybalkin mv -v $KIIN_HOME/installed/kiin.$package-$old_version.tar.xz \
     $KIIN_HOME/uninstalled
   sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
   sudo -u rybalkin kiin gen-db
   echo "upgrade log: $upgrade_log"
-
   exit 0
 fi
 
@@ -462,25 +459,42 @@ if [ $1 == 'uninstall' ]; then
     echo "where are duplicates in the system, not uninstalling"
     exit 1
   fi
-  uninstaller=/tmp/kiin/uninstaller-`uuidgen`
+  package_only=`echo $package | sed 's/-[^-]*$//g'`
+  check_system_packages $package_only $1
+  dependent=`kiin linked-by $package`
+  linked_by_count=`echo $dependent | wc -w`
+  if [ $linked_by_count -gt 0 ]; then
+    echo "$package is linked by following packages: $dependent"
+    echo "won't uninstall, bro."
+    exit 1
+  fi
+  uninstall_log=/tmp/kiin/uninstall_log-`uuidgen`
   mkdir -p /tmp/kiin
   for file in `kiin db-list-files $package`; do
-    echo "rm $file" | tee -a $uninstaller
+    rm -v $file 2>&1 | tee -a $uninstall_log
   done
+  do_recreate_info_dir=0
   for dir in `kiin db-list-dirs $package \
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
+    if [ $dir == "/usr/share/info/" ]; then
+      do_recreate_info_dir=1
+    fi
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
     [[ $user_count = 1 ]] && [[ $users = $package ]] && {
-      echo "rm -r $dir" | tee -a $uninstaller
+      filecnt=`ls $dir | wc -w`
+      if [ $filecnt -eq 0 ]; then
+        rm -rv $dir 2>&1 | tee -a $uninstall_log
+      fi
     }
   done
-  chmod +x $uninstaller
-  echo ""
-  echo "uninstall script is $uninstaller (check it and run it as root)"
-  echo "think you would like to run this as user after that:"
-  echo "mv $KIIN_HOME/installed/kiin.$package.tar.xz $KIIN_HOME/uninstalled"
-  echo "think you would like to run kiin gen-db as user after that, too"
+  if [ $do_recreate_info_dir -eq 1 ]; then
+    recreate_info_dir
+  fi
+  sudo -u rybalkin mv -v $KIIN_HOME/installed/kiin.$package.tar.xz \
+    $KIIN_HOME/uninstalled
+  sudo -u rybalkin kiin gen-db
+  echo "uninstall_log: $uninstall_log"
   exit 0
 fi
 
