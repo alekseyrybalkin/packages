@@ -6,9 +6,21 @@ TODO LIST
 - configure iptables
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
+- fail if any operation fails during kiin make (especially kiin_install(), I am looking at you)
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
   update bootscripts
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
+- add which
+- add ability to watch videos in browser (no flash, please) <- libvpx
+- add torrenting capability
+- add ability to play wav, flac and mp3 files in mpd (only ogg right now)
+- add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
+- check if we need intel-dri
+- add ability to read chm and djvu (xchm && djvulibre)
+- add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
+- add openvpn
+- add jabber client (gajim with one chat window with tabs? is it possible?)
+- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages?)
 
 DONE LIST
 +- make `kiin uninstall' more automatic
