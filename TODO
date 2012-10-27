@@ -26,8 +26,8 @@ TODO LIST
 - add ability to read chm and djvu (xchm && djvulibre)
 - add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
 - add openvpn
-- add jabber client (gajim with one chat window with tabs? is it possible?)
-- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages?)
+- add jabber client (gajim with one window for everything)
+- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 
 DONE LIST
 +- make `kiin uninstall' more automatic
