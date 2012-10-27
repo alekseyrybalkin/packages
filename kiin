@@ -607,7 +607,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
     [[ $package = 'cacerts' ]] && continue
-    [[ $package = 'lfs-bootscripts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
     if [ -d packages/$package ]; then
