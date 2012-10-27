@@ -92,6 +92,9 @@ alsa-lib
 alsa-utils
 libogg
 libvorbis
+mpg123
+flac
+audiofile
 mpd
 libmpdclient
 mpd-mpc
@@ -236,3 +239,4 @@ rlog
 fuse
 encfs
 acpi
+unrar

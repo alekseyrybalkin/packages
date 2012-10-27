@@ -15,9 +15,11 @@ kiin_make() {
     --disable-ffmpeg \
     --disable-mad \
     --disable-modplug \
-    --disable-audiofile \
     --disable-shout \
-    --disable-jack
+    --disable-jack \
+    --enable-mpg123 \
+    --enable-flac \
+    --enable-audiofile
   make
 }
 

@@ -20,7 +20,6 @@ TODO LIST
 - add which
 - add ability to watch videos in browser (no flash, please) <- libvpx
 - add torrenting capability
-- add ability to play wav, flac and mp3 files in mpd (only ogg right now)
 - add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
 - check if we need intel-dri
 - add ability to read chm and djvu (xchm && djvulibre)
@@ -30,6 +29,7 @@ TODO LIST
 - add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 
 DONE LIST
++- add ability to play wav, flac and mp3 files in mpd (only ogg right now)
 +- make `kiin uninstall' more automatic
 +  check links/linked-by before uninstall
 +  fix perllocal.pod, info, etc. on uninstall too
