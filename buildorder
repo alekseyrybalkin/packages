@@ -217,6 +217,9 @@ gdk-pixbuf
 harfbuzz
 pango
 gtk2
+which
+yasm
+libvpx
 firefox
 wireless_tools
 libnl
@@ -240,6 +243,3 @@ fuse
 encfs
 acpi
 unrar
-which
-yasm
-libvpx
