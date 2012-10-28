@@ -18,7 +18,6 @@ TODO LIST
   update bootscripts
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 - add which
-- add ability to watch videos in browser (no flash, please) <- libvpx
 - add torrenting capability
 - add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
 - check if we need intel-dri
@@ -29,6 +28,7 @@ TODO LIST
 - add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 
 DONE LIST
++- add ability to watch videos in browser (no flash, please) <- libvpx
 +- add ability to play wav, flac and mp3 files in mpd (only ogg right now)
 +- make `kiin uninstall' more automatic
 +  check links/linked-by before uninstall

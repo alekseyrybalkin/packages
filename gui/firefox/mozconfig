@@ -1,6 +1,5 @@
 mk_add_options MOZ_MAKE_FLAGS="-j3"
 
-ac_add_options --disable-webm
 ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
 ac_add_options --disable-libnotify
@@ -24,3 +23,4 @@ ac_add_options --with-pthreads
 ac_add_options --with-system-jpeg
 ac_add_options --with-system-png
 ac_add_options --with-system-zlib
+ac_add_options --with-system-libvpx

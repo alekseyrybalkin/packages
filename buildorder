@@ -240,3 +240,6 @@ fuse
 encfs
 acpi
 unrar
+which
+yasm
+libvpx
