@@ -589,6 +589,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'mpd-mpc' ]] && package='mpc'
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
+    [[ $package = 'lzo' ]] && package='lzo2'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
