@@ -582,6 +582,11 @@ if [ $1 == 'check-updates' ]; then
     # package name exceptions:
     [[ $package = 'python' ]] && package='python2'
     [[ $package = 'python2-virtualenv' ]] && package='python-virtualenv'
+    [[ $package = 'python2-gobject2' ]] && package='pygobject2'
+    [[ $package = 'python2-gtk' ]] && package='pygtk'
+    [[ $package = 'python2-openssl' ]] && package='pyopenssl'
+    [[ $package = 'python2-pyasn1' ]] && package='python-pyasn1'
+    [[ $package = 'python2-crypto' ]] && package='pycrypto'
     [[ $package = 'mpc' ]] && package='libmpc'
     [[ $package = 'udev' ]] && package='systemd'
     [[ $package = 'glib' ]] && package='glib2'
