@@ -23,11 +23,11 @@ TODO LIST
 - check if we need intel-dri
 - add ability to read chm and djvu (xchm && djvulibre)
 - add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
-- add jabber client (gajim with one window for everything)
 - add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 - fix alsa volume on boot
 
 DONE LIST
++- add jabber client (gajim with one window for everything)
 +- add openvpn
 +- add ability to watch videos in browser (no flash, please) <- libvpx
 +- add ability to play wav, flac and mp3 files in mpd (only ogg right now)

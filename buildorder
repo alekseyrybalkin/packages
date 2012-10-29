@@ -246,3 +246,10 @@ unrar
 lzo
 openvpn
 inotify-tools
+python2-gobject2
+python2-cairo
+python2-gtk
+python2-openssl
+python2-pyasn1
+python2-crypto
+gajim
