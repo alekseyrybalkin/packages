@@ -1,16 +1,16 @@
 #!/bin/sh
 
 pkgname=python2-cairo
-pkgver=1.8.10
-urls="http://cairographics.org/releases/py2cairo-${pkgver}.tar.gz"
-srctar=py2cairo-${pkgver}.tar.gz
-srcdir=${location}/pycairo-${pkgver}
+pkgver=1.10.0
+urls="http://cairographics.org/releases/py2cairo-${pkgver}.tar.bz2"
+srctar=py2cairo-${pkgver}.tar.bz2
+srcdir=${location}/py2cairo-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
-  make
+  ./waf configure --prefix=/usr
+  ./waf build
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+  ./waf install --destdir=${pkgdir}
 }
