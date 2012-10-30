@@ -25,6 +25,8 @@ TODO LIST
 - add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
 - add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 - fix alsa volume on boot
+- control that kiin runs commands strictly as root/user
+- after upgrade note which packages you'll probably want to rebuild
 
 DONE LIST
 +- add jabber client (gajim with one window for everything)
