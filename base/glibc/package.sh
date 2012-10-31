@@ -21,6 +21,7 @@ kiin_make() {
       --disable-profile      \
       --enable-add-ons       \
       --enable-kernel=2.6.25 \
+      --enable-multi-arch    \
       --libexecdir=/usr/lib/glibc
   make
 }
