@@ -31,6 +31,7 @@ usage() {
   echo "  kiin check-buildorder"
   echo "  kiin rebuild-world"
   echo "  kiin backup"
+  echo "  kiin convert-arch-package"
 }
 
 # for upgrade and uninstall
@@ -58,7 +59,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "make" | "download")
+  "make" | "download" | "convert-arch-package")
     if [ ! -f ./package.sh ]; then
       echo "no package.sh found, goodbye."
       exit 1
@@ -92,16 +93,16 @@ esac
 case $1 in
   "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
     | "links" | "linked-by" | "l")
-    count=`kiin ls | grep $2 | wc -l`
+    count=`kiin ls | grep "^$2" | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
       exit 1
     fi
     if [ $count -gt 1 ]; then
-      echo "$2 is ambiguous (" `kiin ls | grep $2` ")"
+      echo "$2 is ambiguous (" `kiin ls | grep "^$2"` ")"
       exit 1
     fi
-    package=`kiin ls | grep $2`
+    package=`kiin ls | grep "^$2"`
     ;;
 esac
 case $1 in
@@ -798,6 +799,49 @@ EOF
 
   echo "backup ended."
   echo "${tmpdir}/${backup_file}"
+  exit 0
+fi
+
+if [ $1 == 'convert-arch-package' ]; then
+  echo "converting arch package..."
+  if [ -f ${location}/${arch_tar} ]; then
+    echo "${arch_tar} present"
+  else
+    wget ${arch_url}
+  fi
+  converter=${location}/kiin_converter.sh
+  cat > ${converter} << "EOF"
+#!/bin/sh
+cd ${location}
+. ./package.sh
+mkdir ${pkgdir}
+tar xvf ${arch_tar} -C ${pkgdir}
+rm ${pkgdir}/.PKGINFO
+
+# fix /usr/share/info/dir
+rm -fv ${pkgdir}/usr/share/info/dir
+if [ -e ${pkgdir}/var ]; then
+  echo " *** WARNING ***: package tries to use /var"
+fi
+
+# remove *.la files
+if [ -d ${pkgdir}/lib ]; then
+  find ${pkgdir}/lib -name "*.la" | xargs rm -vf
+fi
+if [ -d ${pkgdir}/usr/lib ]; then
+  find ${pkgdir}/usr/lib -name "*.la" | xargs rm -vf
+fi
+
+cd ${location}
+echo creating xz archive...
+tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
+EOF
+  chmod +x ${converter}
+  location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
+    pkgname=${pkgname} pkgver=${pkgver} fakeroot ${converter}
+  rm ${converter}
+  rm -rf ${pkgdir}
+  echo "done."
   exit 0
 fi
 
