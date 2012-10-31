@@ -14,7 +14,6 @@ kiin_make() {
   autoreconf -fi
   ./configure --prefix=$XORG_PREFIX \
     --sysconfdir=/etc \
-    --with-dri-driverdir=/usr/lib/xorg/modules/dri \
     --with-gallium-drivers='' \
     --with-dri-drivers='i965' \
     --enable-egl \
