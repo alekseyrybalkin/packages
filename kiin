@@ -597,6 +597,11 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
     [[ $package = 'lzo' ]] && package='lzo2'
+    [[ $package = 'lib32-gcc-libs' ]] && package='gcc-multilib'
+    [[ $package = 'lib32-intel-dri' ]] && package='lib32-mesa'
+    [[ $package = 'lib32-libgl' ]] && package='lib32-mesa'
+    [[ $package = 'lib32-libglapi' ]] && package='lib32-mesa'
+    [[ $package = 'lib32-libltdl' ]] && package='libtool-multilib'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
