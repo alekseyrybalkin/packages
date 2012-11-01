@@ -24,6 +24,7 @@ TODO LIST
 - after upgrade note which packages you'll probably want to rebuild
 - rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
   check if new toolchain can successfully rebuild world
+- add nvidia card support (proprietary drivers, I think) and add switchable graphics support
 
 DONE LIST
 +- add which
