@@ -768,7 +768,7 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'xf86-input-evdev' ]] && continue
     [[ $package = 'xf86-input-synaptics' ]] && continue
 
-    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg} -type d -name $package`
+    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg,multilib} -type d -name $package`
     cd $found
     kiin make
     for pack in `find . -name 'kiin.*xz'`; do
