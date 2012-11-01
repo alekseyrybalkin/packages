@@ -17,18 +17,20 @@ TODO LIST
 - customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
   update bootscripts
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
-- add which
-- add torrenting capability
-- add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
-- check if we need intel-dri
 - add ability to read chm and djvu (xchm && djvulibre)
 - add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
-- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
 - after upgrade note which packages you'll probably want to rebuild
+- rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
+  check if new toolchain can successfully rebuild world
 
 DONE LIST
++- add which
++- add torrenting capability
++- add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
++- check if we need intel-dri
++- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
 +- add jabber client (gajim with one window for everything)
 +- add openvpn
 +- add ability to watch videos in browser (no flash, please) <- libvpx
