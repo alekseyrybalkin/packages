@@ -22,11 +22,12 @@ TODO LIST
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
 - after upgrade note which packages you'll probably want to rebuild
-- rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
-  check if new toolchain can successfully rebuild world
+- check if new multilib toolchain can successfully rebuild world
 - add nvidia card support (proprietary drivers, I think) and add switchable graphics support
+- kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 
 DONE LIST
++- rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
 +- add which
 +- add torrenting capability
 +- add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
