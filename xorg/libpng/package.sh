@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 multilib=1
 
 kiin_make() {
-  gzip -cd ../${pkgname}-${pkgver}-apng.patch.gz | patch -p1
+  gzip -cd ../libpng-${pkgver}-apng.patch.gz | patch -p1
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static
@@ -32,7 +32,7 @@ kiin_install() {
     cd contrib/pngminus
     make PNGLIB="-L${pkgdir}/usr/lib32 -lpng" -f makefile.std png2pnm pnm2png
     rm -rf "${pkgdir}"/usr/{include,share}
-    rm "$pkgdir/usr/bin/libpng-config"
-    ln -s "libpng${_libversion}-config-32" "$pkgdir/usr/bin/libpng-config-32"
+    rm "${pkgdir}/usr/bin/libpng-config"
+    ln -s "libpng15-config-32" "${pkgdir}/usr/bin/libpng-config-32"
   fi
 }
