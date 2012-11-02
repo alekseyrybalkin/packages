@@ -5,6 +5,7 @@ pkgver=4.7.2
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
+multilib=1
 
 kiin_make() {
   sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in
@@ -18,7 +19,7 @@ kiin_make() {
                         --enable-__cxa_atexit    \
                         --enable-clocale=gnu     \
                         --enable-languages=c,c++ \
-                        --disable-multilib       \
+                        --enable-multilib        \
                         --disable-bootstrap      \
                         --with-system-zlib
   make
