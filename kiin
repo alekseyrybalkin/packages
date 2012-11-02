@@ -418,6 +418,8 @@ if [ $1 == 'upgrade' ]; then
     esac
   fi
   # actual destructive shit
+  # TODO: remove broken symbolic links to prevent
+  # 'too many levels of symbolic links' error later
   for file in `kiin db-list-files $package-$old_version`; do
     if [ ! -e $tmpdir/kiin-dest$file ]; then
       if [ ! -h $tmpdir/kiin-dest$file ]; then
@@ -614,6 +616,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
     [[ $package = 'lzo' ]] && package='lzo2'
+    [[ $package = 'lib32-libtool' ]] && package='libtool-multilib'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
