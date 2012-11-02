@@ -3,5 +3,4 @@
 `kiin check-updates`
 `find /var/kiin -name "kiin*xz" | grep -v installed | grep -v uninstalled`
 check if kiin `rebuild-world` looks into all folders under /var/kiin
-# check number of package.sh's (minus trash) = number of installed packages - 2
 # check and update TODO
