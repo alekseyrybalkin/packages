@@ -5,7 +5,7 @@ KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
 
 usage() {
   echo "usage:"
-  echo "  kiin make"
+  echo "  kiin make [lib32]"
   echo "  kiin download"
   echo "  kiin gen-db"
   echo "  kiin list-dups"
@@ -15,7 +15,7 @@ usage() {
   echo "  kiin list-files </path/to/package.xz>"
   echo "  kiin list-dirs </path/to/package.xz>"
   echo "  kiin install </path/to/package.xz>"
-  echo "  kiin upgrade </path/to/package.xz>"
+  echo "  kiin upgrade </path/to/package.xz> [noask]"
   echo "  kiin ls"
   echo "  kiin uninstall <package>"
   echo "  kiin db-list-files <package>"
@@ -117,6 +117,12 @@ esac
 
 if [ $1 == "make" ]; then
   set -e
+  if [ -n "$2" ]; then
+    if [ ! $2 == "lib32" ]; then
+      echo "unknown option $2"
+      exit 1
+    fi
+  fi
   if [ ! -z ${vcs} ]; then
     if [ ${vcs} = 'git' ]; then
       if [ ! -z ${git_pkgname} ]; then
@@ -143,6 +149,10 @@ if [ $1 == "make" ]; then
       cd ${srcdir}
     fi
   fi
+  if [ "$2" == "lib32" ]; then
+    pkgname=lib32-${pkgname}
+    KIIN_LIB32=1
+  fi
   kiin_make
 
   maker=${location}/kiin_maker.sh
@@ -150,6 +160,9 @@ if [ $1 == "make" ]; then
 #!/bin/sh
 cd ${location}
 . ./package.sh
+if [ -n "$KIIN_LIB32" ]; then
+  pkgname=lib32-${pkgname}
+fi
 mkdir ${pkgdir}
 if [[ ${srcdir} ]]; then
   cd ${srcdir}
@@ -170,6 +183,9 @@ fi
 if [ -d ${pkgdir}/usr/lib ]; then
   find ${pkgdir}/usr/lib -name "*.la" | xargs rm -vf
 fi
+if [ -d ${pkgdir}/usr/lib32 ]; then
+  find ${pkgdir}/usr/lib32 -name "*.la" | xargs rm -vf
+fi
 
 cd ${location}
 echo creating xz archive...
@@ -177,7 +193,8 @@ tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
 EOF
   chmod +x ${maker}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
-    pkgname=${pkgname} pkgver=${pkgver} fakeroot ${maker}
+    pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
+    fakeroot ${maker}
   rm ${maker}
   rm -rf ${pkgdir}
   if [[ ${srcdir} ]]; then
@@ -597,11 +614,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
     [[ $package = 'lzo' ]] && package='lzo2'
-    [[ $package = 'lib32-gcc-libs' ]] && package='gcc-multilib'
-    [[ $package = 'lib32-intel-dri' ]] && package='lib32-mesa'
-    [[ $package = 'lib32-libgl' ]] && package='lib32-mesa'
-    [[ $package = 'lib32-libglapi' ]] && package='lib32-mesa'
-    [[ $package = 'lib32-libltdl' ]] && package='libtool-multilib'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
@@ -768,7 +780,7 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'xf86-input-evdev' ]] && continue
     [[ $package = 'xf86-input-synaptics' ]] && continue
 
-    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg,multilib} -type d -name $package`
+    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg} -type d -name $package`
     cd $found
     kiin make
     for pack in `find . -name 'kiin.*xz'`; do
@@ -822,6 +834,7 @@ cd ${location}
 mkdir ${pkgdir}
 tar xvf ${arch_tar} -C ${pkgdir}
 rm ${pkgdir}/.PKGINFO
+rm ${pkgdir}/.INSTALL
 
 # fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
@@ -835,6 +848,9 @@ if [ -d ${pkgdir}/lib ]; then
 fi
 if [ -d ${pkgdir}/usr/lib ]; then
   find ${pkgdir}/usr/lib -name "*.la" | xargs rm -vf
+fi
+if [ -d ${pkgdir}/usr/lib32 ]; then
+  find ${pkgdir}/usr/lib32 -name "*.la" | xargs rm -vf
 fi
 
 rm -rf ${pkgdir}/usr/share/licenses
