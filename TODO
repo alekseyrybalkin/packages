@@ -22,11 +22,9 @@ TODO LIST
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
 - after upgrade note which packages you'll probably want to rebuild
-- add nvidia card support (proprietary drivers, I think) and add switchable graphics support
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
-- maybe add adobe flashplugin if we gone so proprietary?
-- list all proprietary shit in my system (like bios, wifi firmware, nvidia drivers, flashplugin, games, etc.)
+- list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 
 DONE LIST
 +- check if new multilib toolchain can successfully rebuild world
