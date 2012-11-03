@@ -3,7 +3,6 @@
 pkgname=glibc
 pkgver=2.16.0
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://www.iana.org//time-zones/repository/releases/tzdata2012f.tar.gz \
   http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-res_query_fix-1.patch \
   http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-fix_test_installation-1.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
@@ -51,24 +50,6 @@ kiin_install() {
     mkdir -pv ${pkgdir}/usr/lib/locale
     # after installation:
     #localedef -i en_US -f UTF-8 en_US.UTF-8
-
-    tar -xf ../../tzdata2012f.tar.gz
-    ZONEINFO=${pkgdir}/usr/share/zoneinfo
-    mkdir -pv $ZONEINFO/{posix,right}
-    for tz in etcetera southamerica northamerica europe africa antarctica  \
-              asia australasia backward pacificnew solar87 solar88 solar89 \
-              systemv; do
-        /usr/sbin/zic -L /dev/null   -d $ZONEINFO       -y "sh yearistype.sh" ${tz}
-        /usr/sbin/zic -L /dev/null   -d $ZONEINFO/posix -y "sh yearistype.sh" ${tz}
-        /usr/sbin/zic -L leapseconds -d $ZONEINFO/right -y "sh yearistype.sh" ${tz}
-    done
-    cp -v zone.tab iso3166.tab $ZONEINFO
-    /usr/sbin/zic -d $ZONEINFO -p America/New_York
-    unset ZONEINFO
-
-    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Europe/Moscow \
-        ${pkgdir}/etc/localtime
-
     # remove /var, filesystem package creates everything in there
     # TODO: decide with /var/db/Makefile
     rm -rvf ${pkgdir}/var
