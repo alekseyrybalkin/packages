@@ -146,7 +146,9 @@ if [ $1 == "make" ]; then
     if [[ ${srctar} ]]; then
       echo "unpacking ${srctar}..."
       tar xf ${srctar}
-      cd ${srcdir}
+      if [[ ${srcdir} ]]; then
+        cd ${srcdir}
+      fi
     fi
   fi
   if [ "$2" == "lib32" ]; then
@@ -781,8 +783,6 @@ if [ $1 == 'rebuild-world' ]; then
 
     # build failed
     [[ $package = 'dhcpcd' ]] && continue
-    [[ $package = 'xf86-input-evdev' ]] && continue
-    [[ $package = 'xf86-input-synaptics' ]] && continue
 
     lib32=0
     lib32test=`echo $package | grep lib32 | wc -w`
