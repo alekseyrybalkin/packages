@@ -4,7 +4,6 @@ pkgname=libtool
 pkgver=2.4.2
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then

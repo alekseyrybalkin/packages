@@ -5,7 +5,6 @@ pkgver=9.0.0
 urls="ftp://ftp.freedesktop.org/pub/mesa/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 

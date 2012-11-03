@@ -5,7 +5,6 @@ pkgver=0.18.1.1
 urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   sed -i -e '/gets is a/d' gettext-*/*/stdio.in.h

@@ -5,7 +5,6 @@ pkgver=1.0.7
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXau-${pkgver}.tar.bz2"
 srctar=libXau-${pkgver}.tar.bz2
 srcdir=${location}/libXau-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

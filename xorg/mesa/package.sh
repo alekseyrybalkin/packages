@@ -6,7 +6,6 @@ urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.b
       http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-9.0-add_xdemos-4.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 

@@ -8,7 +8,6 @@ urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz \
   http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-fix_test_installation-1.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   sed -i 's#<rpc/types.h>#"rpc/types.h"#' sunrpc/rpc_clntout.c

@@ -5,7 +5,6 @@ pkgver=1.1.3
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXt-${pkgver}.tar.bz2"
 srctar=libXt-${pkgver}.tar.bz2
 srcdir=${location}/libXt-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

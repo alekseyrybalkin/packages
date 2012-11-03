@@ -5,7 +5,6 @@ pkgver=1.5.0
 urls="http://xorg.freedesktop.org/releases/individual/lib/libX11-${pkgver}.tar.bz2"
 srctar=libX11-${pkgver}.tar.bz2
 srcdir=${location}/libX11-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

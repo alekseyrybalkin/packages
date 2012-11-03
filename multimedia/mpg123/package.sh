@@ -5,7 +5,6 @@ pkgver=1.14.4
 urls="http://downloads.sourceforge.net/mpg123/mpg123-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then

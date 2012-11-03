@@ -5,7 +5,6 @@ pkgver=2.4.39
 urls="http://dri.freedesktop.org/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 

@@ -5,7 +5,6 @@ pkgver=1.1.1
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXmu-${pkgver}.tar.bz2"
 srctar=libXmu-${pkgver}.tar.bz2
 srcdir=${location}/libXmu-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

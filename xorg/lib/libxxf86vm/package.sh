@@ -5,7 +5,6 @@ pkgver=1.1.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXxf86vm-${pkgver}.tar.bz2"
 srctar=libXxf86vm-${pkgver}.tar.bz2
 srcdir=${location}/libXxf86vm-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

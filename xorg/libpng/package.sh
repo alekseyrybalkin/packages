@@ -6,7 +6,6 @@ urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
   http://sourceforge.net/projects/${pkgname}-apng/files/${pkgname}15/${pkgver}/${pkgname}-${pkgver}-apng.patch.gz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   gzip -cd ../libpng-${pkgver}-apng.patch.gz | patch -p1

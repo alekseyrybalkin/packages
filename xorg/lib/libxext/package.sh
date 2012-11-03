@@ -5,7 +5,6 @@ pkgver=1.3.1
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXext-${pkgver}.tar.bz2"
 srctar=libXext-${pkgver}.tar.bz2
 srcdir=${location}/libXext-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

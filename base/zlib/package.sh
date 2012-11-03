@@ -4,7 +4,6 @@ pkgname=zlib
 pkgver=1.2.7
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then

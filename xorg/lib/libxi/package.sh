@@ -5,7 +5,6 @@ pkgver=1.6.1
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXi-${pkgver}.tar.bz2"
 srctar=libXi-${pkgver}.tar.bz2
 srcdir=${location}/libXi-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

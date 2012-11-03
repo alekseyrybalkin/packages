@@ -5,7 +5,6 @@ pkgver=2.10.1
 urls="http://${pkgname}.org/release/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then

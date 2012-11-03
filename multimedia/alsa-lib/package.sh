@@ -5,7 +5,6 @@ pkgver=1.0.26
 urls="http://gentoo.nixsolutions.com/distfiles/alsa-lib-1.0.26.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then

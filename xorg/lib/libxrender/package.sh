@@ -5,7 +5,6 @@ pkgver=0.9.7
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXrender-${pkgver}.tar.bz2"
 srctar=libXrender-${pkgver}.tar.bz2
 srcdir=${location}/libXrender-${pkgver}
-multilib=1
 
 XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX \

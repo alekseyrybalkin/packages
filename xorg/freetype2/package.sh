@@ -5,7 +5,6 @@ pkgver=2.4.10
 urls="http://downloads.sourceforge.net/freetype/freetype-${pkgver}.tar.bz2"
 srctar=freetype-${pkgver}.tar.bz2
 srcdir=${location}/freetype-${pkgver}
-multilib=1
 
 kiin_make() {
   sed -i -r 's:.*(#.*SUBPIXEL.*) .*:\1:' \

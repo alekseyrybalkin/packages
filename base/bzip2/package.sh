@@ -4,7 +4,6 @@ pkgname=bzip2
 pkgver=1.0.6
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   if [ -n "$KIIN_LIB32" ]; then

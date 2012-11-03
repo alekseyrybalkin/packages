@@ -5,7 +5,6 @@ pkgver=2.23
 urls="http://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
-multilib=1
 
 kiin_make() {
   rm -fv etc/standards.info
