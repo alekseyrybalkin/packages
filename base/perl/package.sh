@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl
-pkgver=5.16.1
+pkgver=5.16.2
 urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -24,7 +24,7 @@ kiin_make() {
 kiin_install() {
   make install
   sed -i -e 's/\/var\/kiin\/base\/perl\/kiin-dest//g' \
-    ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/Config_heavy.pl
+    ${pkgdir}/usr/lib/perl5/${pkgver}/x86_64-linux/Config_heavy.pl
   sed -i -e 's/\/var\/kiin\/base\/perl\/kiin-dest//g' \
-    ${pkgdir}/usr/lib/perl5/5.16.1/x86_64-linux/.packlist
+    ${pkgdir}/usr/lib/perl5/${pkgver}/x86_64-linux/.packlist
 }
