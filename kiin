@@ -773,6 +773,7 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'ncurses' ]] && continue
     [[ $package = 'readline' ]] && continue
     [[ $package = 'linux' ]] && continue
+    [[ $package = 'initramfs' ]] && continue
 
     # minor problems (segfault after installation)
     [[ $package = 'zlib' ]] && continue
@@ -783,9 +784,21 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'xf86-input-evdev' ]] && continue
     [[ $package = 'xf86-input-synaptics' ]] && continue
 
+    lib32=0
+    lib32test=`echo $package | grep lib32 | wc -w`
+    if [ $lib32test -gt 0 ]; then
+      package=`echo $package | sed 's/lib32\-//g'`
+      lib32=1
+    fi
+    echo "rebuilding $package (lib32=$lib32)"
+    sleep 3
     found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg} -type d -name $package`
     cd $found
-    kiin make
+    if [ $lib32 -eq 0 ]; then
+      kiin make
+    else
+      kiin make lib32
+    fi
     for pack in `find . -name 'kiin.*xz'`; do
       sudo kiin upgrade $pack noask
     done
