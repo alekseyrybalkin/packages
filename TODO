@@ -18,7 +18,6 @@ TODO LIST
   update bootscripts
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 - add ability to read chm and djvu (xchm && djvulibre)
-- add ability to run topcoder arena (openjdk + icedtea-web with no plugin)
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
 - after upgrade note which packages you'll probably want to rebuild
