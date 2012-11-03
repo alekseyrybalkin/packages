@@ -24,6 +24,7 @@ TODO LIST
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
+- subscribe to freecode.com
 
 DONE LIST
 +- check if new multilib toolchain can successfully rebuild world
