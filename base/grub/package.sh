@@ -7,6 +7,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i -e '/gets is a/d' grub-core/gnulib/stdio.in.h
+  #don't build against fuse (will not build /usr/bin/grub-mount
+  sed -i -e 's/fuse_main_real/fuse_main_real_fail/g' configure
+  sed -i -e 's/fuse_main_real/fuse_main_real_fail/g' configure.ac
   ./configure --prefix=/usr           \
               --sysconfdir=/etc       \
               --disable-grub-emu-usb  \
