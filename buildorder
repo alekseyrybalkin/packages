@@ -4,6 +4,7 @@ kiin-known
 linux-api-headers
 glibc
 lib32-glibc
+tzdata
 zlib
 lib32-zlib
 binutils
