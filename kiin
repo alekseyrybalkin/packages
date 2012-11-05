@@ -233,11 +233,13 @@ if [ $1 == 'gen-db' ]; then
   mkdir kiin-dest
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
-  mkdir -p etc/{ssh,gtk-2.0}
+  mkdir -p etc/{ssh,gtk-2.0,xml}
   mkdir -p usr/{share/info,lib/locale}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
+  touch etc/xml/docbook
+  touch etc/xml/catalog
   touch etc/group
   touch etc/gshadow-
   touch etc/shadow-

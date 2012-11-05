@@ -5,6 +5,7 @@ TODO LIST
   auto-update hashes when upgrading linux/grub/initramfs/kiin-git
 - implement sane glibc, ncurses, readline upgrade
 - add support for post-install/post-upgrade scripts
+  e.g. generation of /etc/xml/{docbook,catalog} for docbook-{xsl,xml}
 - fix setuid for xlockmore somehow
 - configure iptables
 - add meta-information to packages (e.g. ./configure && make log, make install log,

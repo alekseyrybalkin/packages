@@ -291,3 +291,6 @@ desktop-file-utils
 wine
 transmission
 mplayer
+docbook-xsl
+docbook-xml
+tidyhtml
