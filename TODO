@@ -26,6 +26,7 @@ TODO LIST
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 - subscribe to freecode.com
+- catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
 +- check if new multilib toolchain can successfully rebuild world
