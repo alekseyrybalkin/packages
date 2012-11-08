@@ -475,7 +475,7 @@ fi
 if [ $1 == 'ls' ]; then
   echo "select name,version from package;" \
     | sqlite3 $KIIN_DB \
-    | sed 's/|/\-/g'
+    | sed 's/|/\-/g' | sort -R
   exit 0
 fi
 
