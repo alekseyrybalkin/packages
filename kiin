@@ -23,6 +23,7 @@ usage() {
   echo "  kiin list-untracked <dir>"
   echo "  kiin check-system-integrity"
   echo "  kiin list-missing"
+  echo "  kiin prepare-check-updates"
   echo "  kiin check-updates"
   echo "  kiin update-links <package>"
   echo "  kiin links <package>"
@@ -607,6 +608,16 @@ vercomp () {
   done
   return 0
 }
+
+if [ $1 == 'prepare-check-updates' ]; then
+  cd ~/sources/packages
+  git pull
+  cd ~/sources/community
+  git pull
+  cd $KIIN_HOME/src/linux
+  git pull
+  exit 0
+fi
 
 if [ $1 == 'check-updates' ]; then
   bldred='\e[1;31m'
