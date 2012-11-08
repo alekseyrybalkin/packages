@@ -1,6 +1,6 @@
 `kiin check-buildorder`
 `sudo kiin check-system-integrity`
 `kiin check-updates`
-`find /var/kiin -name "kiin*xz" | grep -v installed | grep -v uninstalled`
+`find /var/kiin -name "kiin*xz" | grep -v installed`
 check if kiin `rebuild-world` looks into all folders under /var/kiin
 # check and update TODO
