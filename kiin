@@ -581,24 +581,54 @@ if [ $1 == 'list-missing' ]; then
   exit 0
 fi
 
+# written by Dennis Williamson
+# http://stackoverflow.com/questions/4023830/bash-how-compare-two-strings-in-version-format
+vercomp () {
+  if [[ $1 == $2 ]]; then
+    return 0
+  fi
+  local IFS=.
+  local i ver1=($1) ver2=($2)
+  # fill empty fields in ver1 with zeros
+  for ((i=${#ver1[@]}; i<${#ver2[@]}; i++)); do
+    ver1[i]=0
+  done
+  for ((i=0; i<${#ver1[@]}; i++)); do
+    if [[ -z ${ver2[i]} ]]; then
+      # fill empty fields in ver2 with zeros
+      ver2[i]=0
+    fi
+    if ((10#${ver1[i]} > 10#${ver2[i]})); then
+      return 1
+    fi
+    if ((10#${ver1[i]} < 10#${ver2[i]})); then
+      return 2
+    fi
+  done
+  return 0
+}
+
 if [ $1 == 'check-updates' ]; then
   bldred='\e[1;31m'
   green='\e[0;32m'
   txtrst='\e[0m'
-  echo "checking git repos"
+  #echo "checking git repos"
   package=linux
   cd $KIIN_HOME/src/$package
   newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | tail -n 1`
   pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
   version=`echo "select version from package where name='${package}';" | sqlite3 $KIIN_DB`
-  if [ "$pkgver" != "$version" ]; then
-    if [ "$version" \> "$pkgver" ]; then
-      echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
+  vercomp "$pkgver" "$version"
+  cmp=$?
+  if [ $cmp -ne 0 ]; then
+    if [ $cmp -eq 2 ]; then
+      :
+      #echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
     else
       echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
     fi
   fi
-  echo "checking arch linux updates"
+  #echo "checking arch linux updates"
   cd ~/sources
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
@@ -643,9 +673,12 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'kiin-known' ]] && continue
     if [ -d packages/$package ]; then
       . packages/$package/trunk/PKGBUILD
-      if [ $pkgver != $version ]; then
-        if [ $version \> $pkgver ]; then
-          echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+      vercomp "$pkgver" "$version"
+      cmp=$?
+      if [ $cmp -ne 0 ]; then
+        if [ $cmp -eq 2 ]; then
+          :
+          #echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
         else
           echo -e "${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
         fi
@@ -653,9 +686,12 @@ if [ $1 == 'check-updates' ]; then
     else
       if [ -d community/$package ]; then
         . community/$package/trunk/PKGBUILD
-        if [ $pkgver != $version ]; then
-          if [ $version \> $pkgver ]; then
-            echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+        vercomp "$pkgver" "$version"
+        cmp=$?
+        if [ $cmp -ne 0 ]; then
+          if [ $cmp -eq 2 ]; then
+            :
+            #echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
           else
             echo -e "${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
           fi
