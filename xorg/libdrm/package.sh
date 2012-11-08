@@ -17,11 +17,10 @@ kiin_make() {
     export CC="gcc -m32"
     export CXX="g++ -m32"
     export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
-    sed -i -e "s/cairo/cairofail/g" configure
-    sed -i -e "s/cairo/cairofail/g" configure.ac
     ./configure --prefix=$XORG_PREFIX \
       --enable-udev \
       --enable-vmwgfx-experimental-api \
+      --disable-cairo-tests \
       --libdir=/usr/lib32
   fi
   make
