@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=tzdata
-pkgver=2012h
-urls="http://www.iana.org//time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
+pkgver=2012i
+urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
 
