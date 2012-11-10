@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gdk-pixbuf
-pkgver=2.26.4
+pkgver=2.26.5
 urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.26/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
