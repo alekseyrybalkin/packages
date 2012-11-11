@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --disable-history
   make CFLAGS="$CFLAGS -DHAVE_GETLINE"
 }
 
