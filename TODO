@@ -15,20 +15,21 @@ TODO LIST
   kiin: checking of permissions of installed files/dirs <- do we need this?
   kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
-- customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
-  update bootscripts
 - carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 - add ability to read chm and djvu (xchm && djvulibre)
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
-- after upgrade note which packages you'll probably want to rebuild
+- after upgrade note which packages you'll probably want to rebuild in correct order
+  and maybe even automate this rebuild (though I know it is redundant in most cases)
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
-- subscribe to freecode.com
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- subscribe to freecode.com
++- customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
++  update bootscripts
 +- check if new multilib toolchain can successfully rebuild world
 +- rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
 +- add which
