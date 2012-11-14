@@ -11,15 +11,13 @@ XORG_PREFIX="/usr"
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=$XORG_PREFIX \
-      --enable-udev \
-      --enable-vmwgfx-experimental-api
+      --enable-udev
   else
     export CC="gcc -m32"
     export CXX="g++ -m32"
     export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     ./configure --prefix=$XORG_PREFIX \
       --enable-udev \
-      --enable-vmwgfx-experimental-api \
       --disable-cairo-tests \
       --libdir=/usr/lib32
   fi
