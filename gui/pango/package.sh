@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pango
-pkgver=1.32.1
+pkgver=1.32.2
 urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/1.32/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
