@@ -5,6 +5,7 @@
 
 KIIN_HOME=/var/kiin
 KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
+PACKAGE_MANAGER=rybalkin
 
 usage() {
   echo "usage:"
@@ -364,8 +365,8 @@ if [ $1 == 'install' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
-  sudo -u rybalkin kiin gen-db
+  sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
+  sudo -u $PACKAGE_MANAGER kiin gen-db
   exit 0
 fi
 
@@ -468,10 +469,10 @@ if [ $1 == 'upgrade' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u rybalkin mv -v $KIIN_HOME/installed/kiin.$package-$old_version.tar.xz \
+  sudo -u $PACKAGE_MANAGER mv -v $KIIN_HOME/installed/kiin.$package-$old_version.tar.xz \
     $KIIN_HOME/uninstalled
-  sudo -u rybalkin mv -v $2 $KIIN_HOME/installed
-  sudo -u rybalkin kiin gen-db
+  sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
+  sudo -u $PACKAGE_MANAGER kiin gen-db
   echo "upgrade log: $upgrade_log"
   exit 0
 fi
@@ -520,9 +521,9 @@ if [ $1 == 'uninstall' ]; then
   if [ $do_recreate_info_dir -eq 1 ]; then
     recreate_info_dir
   fi
-  sudo -u rybalkin mv -v $KIIN_HOME/installed/kiin.$package.tar.xz \
+  sudo -u $PACKAGE_MANAGER mv -v $KIIN_HOME/installed/kiin.$package.tar.xz \
     $KIIN_HOME/uninstalled
-  sudo -u rybalkin kiin gen-db
+  sudo -u $PACKAGE_MANAGER kiin gen-db
   echo "uninstall_log: $uninstall_log"
   exit 0
 fi
