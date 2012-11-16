@@ -6,6 +6,8 @@
 KIIN_HOME=/var/kiin
 KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
 PACKAGE_MANAGER=rybalkin
+ARCH_PACKAGES_REPO=~/sources/packages
+ARCH_COMMUNITY_REPO=~/sources/community
 
 usage() {
   echo "usage:"
@@ -614,9 +616,9 @@ vercomp () {
 }
 
 if [ $1 == 'prepare-check-updates' ]; then
-  cd ~/sources/packages
+  cd $ARCH_PACKAGES_REPO
   git pull
-  cd ~/sources/community
+  cd $ARCH_COMMUNITY_REPO
   git pull
   cd $KIIN_HOME/src/linux
   git pull
@@ -644,7 +646,6 @@ if [ $1 == 'check-updates' ]; then
     fi
   fi
   #echo "checking arch linux updates"
-  cd ~/sources
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
@@ -686,8 +687,8 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'cacerts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
-    if [ -d packages/$package ]; then
-      . packages/$package/trunk/PKGBUILD
+    if [ -d $ARCH_PACKAGES_REPO/$package ]; then
+      . $ARCH_PACKAGES_REPO/$package/trunk/PKGBUILD
       vercomp "$pkgver" "$version"
       cmp=$?
       if [ $cmp -ne 0 ]; then
@@ -699,8 +700,8 @@ if [ $1 == 'check-updates' ]; then
         fi
       fi
     else
-      if [ -d community/$package ]; then
-        . community/$package/trunk/PKGBUILD
+      if [ -d $ARCH_COMMUNITY_REPO/$package ]; then
+        . $ARCH_COMMUNITY_REPO/$package/trunk/PKGBUILD
         vercomp "$pkgver" "$version"
         cmp=$?
         if [ $cmp -ne 0 ]; then
