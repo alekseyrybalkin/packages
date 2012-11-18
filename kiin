@@ -835,9 +835,6 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'zlib' ]] && continue
     [[ $package = 'sudo' ]] && continue
 
-    # build failed
-    [[ $package = 'dhcpcd' ]] && continue
-
     lib32=0
     lib32test=`echo $package | grep lib32 | wc -w`
     if [ $lib32test -gt 0 ]; then

@@ -1,12 +1,14 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=5.6.2
+pkgver=5.6.3
 urls="http://roy.marples.name/downloads/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i -e 's/_LINUX_IN6_H/_UAPI_LINUX_IN6_H/g' ipv6ns.c
+  sed -i -e 's/_LINUX_IN6_H/_UAPI_LINUX_IN6_H/g' ipv6rs.c
   ./configure --libexecdir=/lib/dhcpcd \
               --dbdir=/run             \
               --sysconfdir=/etc
