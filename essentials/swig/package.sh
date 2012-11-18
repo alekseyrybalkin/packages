@@ -2,6 +2,7 @@
 
 pkgname=swig
 pkgver=2.0.8
+urls="http://prdownloads.sourceforge.net/swig/swig-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 

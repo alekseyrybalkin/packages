@@ -2,6 +2,7 @@
 
 pkgname=ncurses
 pkgver=5.9
+urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -28,6 +29,6 @@ kiin_install() {
   ln -sfv libncurses.so ${pkgdir}/usr/lib/libcurses.so
   ln -sfv libncursesw.a ${pkgdir}/usr/lib/libcursesw.a
   ln -sfv libncurses.a ${pkgdir}/usr/lib/libcurses.a
-  mkdir -pv      ${pkgdir}/usr/share/doc/ncurses-5.9
-  cp -v -R doc/* ${pkgdir}/usr/share/doc/ncurses-5.9
+  mkdir -pv      ${pkgdir}/usr/share/doc/ncurses-${pkgver}
+  cp -v -R doc/* ${pkgdir}/usr/share/doc/ncurses-${pkgver}
 }

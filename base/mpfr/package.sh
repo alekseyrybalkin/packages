@@ -2,13 +2,14 @@
 
 pkgname=mpfr
 pkgver=3.1.1
+urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure  --prefix=/usr        \
               --enable-thread-safe \
-              --docdir=/usr/share/doc/mpfr-3.1.1
+              --docdir=/usr/share/doc/mpfr-${pkgver}
   make
 }
 

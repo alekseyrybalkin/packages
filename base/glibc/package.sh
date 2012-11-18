@@ -10,9 +10,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i 's#<rpc/types.h>#"rpc/types.h"#' sunrpc/rpc_clntout.c
-  patch -Np1 -i ../glibc-2.16.0-fix_test_installation-1.patch
+  patch -Np1 -i ../glibc-${pkgver}-fix_test_installation-1.patch
   sed -i 's|@BASH@|/bin/bash|' elf/ldd.bash.in
-  patch -Np1 -i ../glibc-2.16.0-res_query_fix-1.patch
+  patch -Np1 -i ../glibc-${pkgver}-res_query_fix-1.patch
   mkdir -v glibc-build
   cd glibc-build
   if [ -z "$KIIN_LIB32" ]; then

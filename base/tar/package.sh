@@ -2,6 +2,7 @@
 
 pkgname=tar
 pkgver=1.26
+urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -16,5 +17,5 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  make DESTDIR=${pkgdir} -C doc install-html docdir=/usr/share/doc/tar-1.26
+  make DESTDIR=${pkgdir} -C doc install-html docdir=/usr/share/doc/tar-${pkgver}
 }

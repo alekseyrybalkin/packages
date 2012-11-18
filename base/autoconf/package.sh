@@ -2,6 +2,7 @@
 
 pkgname=autoconf
 pkgver=2.69
+urls="http://ftp.gnu.org/gnu/autoconf/autoconf-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 

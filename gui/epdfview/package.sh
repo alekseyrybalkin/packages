@@ -8,7 +8,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../epdfview-0.1.8-fixes-1.patch
+  patch -Np1 -i ../epdfview-${pkgver}-fixes-1.patch
   ./configure --prefix=/usr
   make
 }

@@ -2,6 +2,7 @@
 
 pkgname=inetutils
 pkgver=1.9.1
+urls="http://ftp.gnu.org/gnu/inetutils/inetutils-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -21,7 +22,7 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   make -C doc html
-  make -C doc install-html docdir=${pkgdir}/usr/share/doc/inetutils-1.9.1
+  make -C doc install-html docdir=${pkgdir}/usr/share/doc/inetutils-${pkgver}
   mkdir -pv ${pkgdir}/{bin,sbin}
   mv -v ${pkgdir}/usr/bin/{hostname,ping,ping6} ${pkgdir}/bin
   mv -v ${pkgdir}/usr/bin/traceroute ${pkgdir}/sbin

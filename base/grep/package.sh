@@ -2,6 +2,7 @@
 
 pkgname=grep
 pkgver=2.14
+urls="http://ftp.gnu.org/gnu/grep/grep-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 

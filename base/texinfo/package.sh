@@ -2,6 +2,7 @@
 
 pkgname=texinfo
 pkgver=4.13a
+urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-4.13
 

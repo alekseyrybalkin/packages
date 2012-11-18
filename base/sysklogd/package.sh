@@ -2,6 +2,7 @@
 
 pkgname=sysklogd
 pkgver=1.5
+urls="http://www.infodrom.org/projects/sysklogd/download/sysklogd-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 

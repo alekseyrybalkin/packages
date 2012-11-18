@@ -10,7 +10,7 @@ kiin_make() {
   sed -i -e '/gets is a/d' gettext-*/*/stdio.in.h
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
-                --docdir=/usr/share/doc/gettext-0.18.1.1 \
+                --docdir=/usr/share/doc/gettext-${pkgver} \
                 --with-included-libxml \
                 --without-git
   else

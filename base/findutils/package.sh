@@ -2,6 +2,7 @@
 
 pkgname=findutils
 pkgver=4.4.2
+urls="http://ftp.gnu.org/gnu/findutils/findutils-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 

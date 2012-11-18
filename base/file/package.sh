@@ -2,6 +2,7 @@
 
 pkgname=file
 pkgver=5.11
+urls="ftp://ftp.astron.com/pub/file/file-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 

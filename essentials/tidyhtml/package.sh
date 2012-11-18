@@ -16,7 +16,7 @@ kiin_install() {
   mkdir -p ${pkgdir}/usr/share/man/man1
   install -v -m644 -D htmldoc/tidy.1 \
     ${pkgdir}/usr/share/man/man1/tidy.1
-  install -v -m755 -d ${pkgdir}/usr/share/doc/tidy-cvs_20101110
+  install -v -m755 -d ${pkgdir}/usr/share/doc/tidy-cvs_${pkgver}
   install -v -m644    htmldoc/*.{html,gif,css} \
-    ${pkgdir}/usr/share/doc/tidy-cvs_20101110
+    ${pkgdir}/usr/share/doc/tidy-cvs_${pkgver}
 }

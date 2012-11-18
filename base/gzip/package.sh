@@ -2,6 +2,7 @@
 
 pkgname=gzip
 pkgver=1.5
+urls="http://ftp.gnu.org/gnu/gzip/gzip-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 

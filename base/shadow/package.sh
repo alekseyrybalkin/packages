@@ -2,6 +2,7 @@
 
 pkgname=shadow
 pkgver=4.1.5.1
+urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 

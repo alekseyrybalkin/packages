@@ -2,9 +2,10 @@
 
 pkgname=boost
 pkgver=1.51.0
-urls="http://downloads.sourceforge.net/boost/boost_1_51_0.tar.bz2"
-srctar=${pkgname}_1_51_0.tar.bz2
-srcdir=${location}/${pkgname}_1_51_0
+_pkgver=1_51_0
+urls="http://downloads.sourceforge.net/boost/boost_${_pkgver}.tar.bz2"
+srctar=${pkgname}_${_pkgver}.tar.bz2
+srcdir=${location}/${pkgname}_${_pkgver}
 
 kiin_make() {
   ./bootstrap.sh --prefix=/usr

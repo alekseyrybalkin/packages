@@ -2,11 +2,12 @@
 
 pkgname=xz
 pkgver=5.0.4
+urls="http://tukaani.org/xz/xz-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libdir=/lib --docdir=/usr/share/doc/xz-5.0.4
+  ./configure --prefix=/usr --libdir=/lib --docdir=/usr/share/doc/xz-${pkgver}
   make
 }
 

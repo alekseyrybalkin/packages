@@ -2,6 +2,8 @@
 
 pkgname=grub
 pkgver=2.00
+urls="http://ftp.gnu.org/gnu/grub/grub-${pkgver}.tar.xz \
+  http://rybalkin.org/kiin-files/unicode.pf2"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
