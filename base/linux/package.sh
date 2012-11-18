@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   make mrproper
-  cp -v ../config-x86_64 .config
+  cp -v ../config-x86_64-`hostname` .config
   make
 }
 
