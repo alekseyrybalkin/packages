@@ -1,16 +1,16 @@
 #!/bin/sh
 
 pkgname=mesa
-pkgver=9.0
+pkgver=9.0.1
 urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
-      http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-9.0-add_xdemos-4.patch"
+      http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-${pkgver}-add_xdemos-4.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
 
 XORG_PREFIX="/usr"
 
 kiin_make() {
-  patch -Np1 -i ../MesaLib-9.0-add_xdemos-4.patch
+  patch -Np1 -i ../MesaLib-${pkgver}-add_xdemos-4.patch
   autoreconf -fi
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=$XORG_PREFIX \
