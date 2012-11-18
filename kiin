@@ -39,6 +39,7 @@ usage() {
   echo "  kiin rebuild-world"
   echo "  kiin backup"
   echo "  kiin convert-arch-package"
+  echo "  kiin list-package-dirs"
 }
 
 # for upgrade and uninstall
@@ -842,8 +843,12 @@ if [ $1 == 'rebuild-world' ]; then
       lib32=1
     fi
     echo "rebuilding $package (lib32=$lib32)"
-    sleep 3
-    found=`find $KIIN_HOME/{base,essentials,crypt,dev,gui,multimedia,perl-modules,python2-modules,wireless,xorg} -type d -name $package`
+    for package_dir in `kiin list-package-dirs`; do
+      found=`find $KIIN_HOME/${package_dir} -type d -name $package`
+      if [ -n "$found" ]; then
+        break
+      fi
+    done
     cd $found
     if [ $lib32 -eq 0 ]; then
       kiin make
@@ -937,6 +942,11 @@ EOF
   rm ${converter}
   rm -rf ${pkgdir}
   echo "done."
+  exit 0
+fi
+
+if [ $1 == 'list-package-dirs' ]; then
+  echo 'base crypt dev essentials gui multimedia perl-modules python2-modules wireless xorg'
   exit 0
 fi
 

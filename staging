@@ -1,0 +1,11 @@
+# all possibly useful scripts for kiin go here
+
+for package_dir in `kiin list-package-dirs`; do
+  for i in `find /var/kiin/${package_dir} -name package.sh`; do . $i; cat $i | grep -v "^pkgver=" | grep -q $pkgver; if [ $? -eq 0 ]; then echo $i; fi; done | sort
+done
+
+for package_dir in `kiin list-package-dirs`; do
+  for i in `find /var/kiin/${package_dir} -name package.sh`; do cat $i | grep -q "^urls="; if [ $? -gt 0 ]; then echo $i; fi; done | sort
+done
+
+echo "select package.name,count(file.id) as cnt from file,package where file.package_id=package.id group by package.id order by cnt asc;" | sqlite3 /var/kiin/kiin-db/kiin.sqlite3
