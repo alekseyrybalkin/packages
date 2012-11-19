@@ -618,11 +618,11 @@ vercomp () {
 
 if [ $1 == 'prepare-check-updates' ]; then
   cd $ARCH_PACKAGES_REPO
-  git pull
+  git pull origin master
   cd $ARCH_COMMUNITY_REPO
-  git pull
+  git pull origin master
   cd $KIIN_HOME/src/linux
-  git pull
+  git pull origin master
   exit 0
 fi
 
