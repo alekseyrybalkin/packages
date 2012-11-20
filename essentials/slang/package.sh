@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   ./configure --prefix=/usr --sysconfdir=/etc
   make
 }
