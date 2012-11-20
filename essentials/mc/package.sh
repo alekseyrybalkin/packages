@@ -11,7 +11,7 @@ kiin_make() {
               --enable-charset  \
               --disable-static  \
               --sysconfdir=/etc \
-              --with-screen=ncurses
+              --with-screen=slang
   make
 }
 
