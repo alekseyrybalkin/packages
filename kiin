@@ -389,6 +389,12 @@ if [ $1 == 'upgrade' ]; then
   fi
   startdir=`pwd`
   echo "upgrading $package from $old_version to $new_version" | tee -a $upgrade_log
+  # remount /boot partition in rw mode
+  case $package in
+    "linux" | "grub" | "initramfs")
+      mount -o remount,rw /boot
+      ;;
+  esac
   upgrade_log=/tmp/kiin/upgrade_log-`uuidgen`
   tmpdir=/tmp/kiin/`uuidgen`
   mkdir -p $tmpdir
@@ -476,6 +482,16 @@ if [ $1 == 'upgrade' ]; then
     $KIIN_HOME/uninstalled
   sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
   sudo -u $PACKAGE_MANAGER kiin gen-db
+  # update hashsums for /boot partition
+  case $package in
+    "linux" | "grub" | "initramfs")
+      echo "updating /boot hashsums..."
+      sync
+      mount -o remount,ro /boot
+      md5sum -b /dev/sda2 > /root/boot_md5
+      sha1sum -b /dev/sda2 > /root/boot_sha1
+      ;;
+  esac
   echo "upgrade log: $upgrade_log"
   exit 0
 fi
