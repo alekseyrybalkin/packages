@@ -1,4 +1,6 @@
 TODO LIST
+- build mplayer from repository (like Arch does)
+- do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
 - configure backups
 - implement sane glibc, ncurses, readline upgrade
 - add support for post-install/post-upgrade scripts
