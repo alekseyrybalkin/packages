@@ -10,6 +10,7 @@ kiin_make() {
   ./configure --prefix=/usr \
     --confdir=/etc/mplayer \
     --enable-dynamic-plugins \
+    --disable-libvpx-lavc \
     --disable-gui
   make
 }
