@@ -1,8 +1,5 @@
 TODO LIST
 - configure backups
-- check /boot partition after boot for tampering
-  don't start network if tampering is detected
-  auto-update hashes when upgrading linux/grub/initramfs/kiin-git
 - implement sane glibc, ncurses, readline upgrade
 - add support for post-install/post-upgrade scripts
   e.g. generation of /etc/xml/{docbook,catalog} for docbook-{xsl,xml}
@@ -15,7 +12,6 @@ TODO LIST
   kiin: checking of permissions of installed files/dirs <- do we need this?
   kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
-- carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 - add ability to read chm and djvu (xchm && djvulibre)
 - fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
@@ -27,6 +23,10 @@ TODO LIST
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- check /boot partition after boot for tampering
++  don't start network if tampering is detected
++  auto-update hashes when upgrading linux/grub/initramfs/kiin-git
++- carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
 +- subscribe to freecode.com
 +- customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
 +  update bootscripts
