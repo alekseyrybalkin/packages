@@ -199,7 +199,7 @@ fi
 
 cd ${location}
 echo creating xz archive...
-tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
+tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest package.sh
 EOF
   chmod +x ${maker}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
@@ -241,13 +241,14 @@ if [ $1 == 'gen-db' ]; then
   mkdir kiin-dest
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
-  mkdir -p etc/{ssh,gtk-2.0,xml}
+  mkdir -p etc/{ssh,gtk-2.0,xml,udev}
   mkdir -p usr/{share/info,lib/locale}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
   touch etc/xml/docbook
   touch etc/xml/catalog
+  touch etc/udev/hwdb.bin
   touch etc/group
   touch etc/gshadow-
   touch etc/shadow-
@@ -325,12 +326,12 @@ if [ $1 == 'check-conflicts' ]; then
 fi
 
 if [ $1 == 'list-files' ]; then
-  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^[-lpscbh].*' | cut -d ' ' --fields=6 | sort
+  tar -tvf $2 | tr -s ' ' | grep -E '^[-lpscbh].*' | cut -d ' ' --fields=6 | grep '^kiin-dest' | sed 's/kiin-dest//g' | sort
   exit 0
 fi
 
 if [ $1 == 'list-dirs' ]; then
-  tar -tvf $2 | sed 's/kiin-dest//g' | tr -s ' ' | grep -E '^d.*' | cut -d ' ' --fields=6 | sort
+  tar -tvf $2 | tr -s ' ' | grep -E '^d.*' | cut -d ' ' --fields=6 | grep '^kiin-dest' | sed 's/kiin-dest//g' | sort
   exit 0
 fi
 
@@ -370,6 +371,14 @@ if [ $1 == 'install' ]; then
   cd $startdir
   sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
   sudo -u $PACKAGE_MANAGER kiin gen-db
+  if [ -f $tmpdir/package.sh ]; then
+    grep -q "kiin_after_install" $tmpdir/package.sh
+    if [ $? -eq 0 ]; then
+      echo "running kiin_after_install..."
+      . $tmpdir/package.sh
+      kiin_after_install
+    fi
+  fi
   exit 0
 fi
 
@@ -461,6 +470,7 @@ if [ $1 == 'upgrade' ]; then
       fi
     fi
     # the only place with overwriting
+    # TODO: fix for shared libraries
     cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
   done
   for dir in `kiin db-list-dirs $package-$old_version \
@@ -492,6 +502,14 @@ if [ $1 == 'upgrade' ]; then
       sha1sum -b /dev/sda2 > /root/boot_sha1
       ;;
   esac
+  if [ -f $tmpdir/package.sh ]; then
+    grep -q "kiin_after_upgrade" $tmpdir/package.sh
+    if [ $? -eq 0 ]; then
+      echo "running kiin_after_upgrade..."
+      . $tmpdir/package.sh
+      kiin_after_upgrade
+    fi
+  fi
   echo "upgrade log: $upgrade_log"
   exit 0
 fi

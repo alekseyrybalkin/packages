@@ -3,12 +3,11 @@ TODO LIST
 - do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
 - configure backups
 - implement sane glibc, ncurses, readline upgrade
-- add support for post-install/post-upgrade scripts
-  e.g. generation of /etc/xml/{docbook,catalog} for docbook-{xsl,xml}
+- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
 - fix setuid for xlockmore somehow
 - configure iptables
 - add meta-information to packages (e.g. ./configure && make log, make install log,
-  build time, last updated, libraries provided, dependencies for libraries and binaries, etc.)
+  build time, last updated, libraries provided, etc.)
 - fail if any operation fails during kiin make (especially kiin_install(), I am looking at you)
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
@@ -25,6 +24,7 @@ TODO LIST
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- add support for post-install/post-upgrade scripts
 +- check /boot partition after boot for tampering
 +  don't start network if tampering is detected
 +  auto-update hashes when upgrading linux/grub/initramfs/kiin-git

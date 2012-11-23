@@ -72,6 +72,8 @@ def gen_db(conn):
                 line = line.rstrip("\n").split()
                 permissions = line[0]
                 ownership = line[1]
+                if not line[5].startswith('kiin-dest'):
+                    continue
                 name = line[5].replace('kiin-dest', '')
                 link = ''
                 if len(line) == 8:
