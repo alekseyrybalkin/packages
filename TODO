@@ -1,4 +1,6 @@
 TODO LIST
+- should we run ldconfig after each install/upgrade/uninstall ?
+- maybe we should collect kiin-knowns from responsible packages?
 - build mplayer from repository (like Arch does)
 - do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
 - configure backups
