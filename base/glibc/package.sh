@@ -48,8 +48,6 @@ kiin_install() {
     cp -v ../sunrpc/rpcsvc/*.h ${pkgdir}/usr/include/rpcsvc
     cp -v ../nis/rpcsvc/*.h ${pkgdir}/usr/include/rpcsvc
     mkdir -pv ${pkgdir}/usr/lib/locale
-    # after installation:
-    #localedef -i en_US -f UTF-8 en_US.UTF-8
     # remove /var, filesystem package creates everything in there
     # TODO: decide with /var/db/Makefile
     rm -rvf ${pkgdir}/var
@@ -65,4 +63,12 @@ kiin_install() {
     # Symlink /usr/lib32/locale to /usr/lib/locale
     ln -s ../lib/locale ${pkgdir}/usr/lib32/locale
   fi
+}
+
+kiin_after_install() {
+  localedef -i en_US -f UTF-8 en_US.UTF-8
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
 }
