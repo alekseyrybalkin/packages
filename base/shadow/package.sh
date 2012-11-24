@@ -21,3 +21,8 @@ kiin_install() {
   mv -v ${pkgdir}/usr/bin/passwd ${pkgdir}/bin
   sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
 }
+
+kiin_after_install() {
+  pwconv
+  grpconv
+}
