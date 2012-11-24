@@ -16,7 +16,6 @@ TODO LIST
   kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - add ability to read chm and djvu (xchm && djvulibre)
-- fix alsa volume on boot
 - control that kiin runs commands strictly as root/user
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
@@ -26,6 +25,7 @@ TODO LIST
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- fix alsa volume on boot
 +- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
 +- add support for post-install/post-upgrade scripts
 +- check /boot partition after boot for tampering
