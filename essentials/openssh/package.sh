@@ -25,3 +25,14 @@ kiin_install() {
   # do not replace sshd_config, since it is in git repo now
   mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
 }
+
+kiin_after_install() {
+  getent group sshd >/dev/null || groupadd -g 50 sshd
+  getent passwd sshd >/dev/null || \
+    useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd \
+    -s /bin/false -u 50 sshd
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
