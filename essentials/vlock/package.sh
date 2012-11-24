@@ -14,3 +14,11 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} VLOCK_GROUP=129 install
 }
+
+kiin_after_install() {
+  getent group vlock >/dev/null || groupadd -g 129 vlock
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
