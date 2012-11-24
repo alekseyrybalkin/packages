@@ -5,7 +5,7 @@ TODO LIST
 - do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
 - configure backups
 - implement sane glibc, ncurses, readline upgrade
-- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
+  ( http://software.intel.com/en-us/articles/update-a-unix-including-linux-shared-library )
 - fix setuid for xlockmore somehow
 - configure iptables
 - add meta-information to packages (e.g. ./configure && make log, make install log,
@@ -26,6 +26,7 @@ TODO LIST
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
 +- add support for post-install/post-upgrade scripts
 +- check /boot partition after boot for tampering
 +  don't start network if tampering is detected
