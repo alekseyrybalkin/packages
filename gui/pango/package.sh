@@ -13,5 +13,12 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  # AFTER INSTALL: pango-querymodules --update-cache
+}
+
+kiin_after_install() {
+  pango-querymodules --update-cache
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
 }

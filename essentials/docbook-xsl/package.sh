@@ -23,5 +23,31 @@ kiin_install() {
                       ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}/README.txt
   install -v -m755    RELEASE-NOTES* NEWS* \
                       ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}
-  # now fix /etc/xml/catalog
+}
+
+kiin_after_install() {
+  if [ ! -d /etc/xml ]; then install -v -m755 -d /etc/xml; fi &&
+  if [ ! -f /etc/xml/catalog ]; then
+    xmlcatalog --noout --create /etc/xml/catalog
+  fi
+  xmlcatalog --noout --add "rewriteSystem" \
+    "http://docbook.sourceforge.net/release/xsl/1.77.1" \
+    "/usr/share/xml/docbook/xsl-stylesheets-1.77.1" \
+    /etc/xml/catalog
+  xmlcatalog --noout --add "rewriteURI" \
+    "http://docbook.sourceforge.net/release/xsl/1.77.1" \
+    "/usr/share/xml/docbook/xsl-stylesheets-1.77.1" \
+    /etc/xml/catalog
+  xmlcatalog --noout --add "rewriteSystem" \
+    "http://docbook.sourceforge.net/release/xsl/current" \
+    "/usr/share/xml/docbook/xsl-stylesheets-1.77.1" \
+    /etc/xml/catalog
+  xmlcatalog --noout --add "rewriteURI" \
+    "http://docbook.sourceforge.net/release/xsl/current" \
+    "/usr/share/xml/docbook/xsl-stylesheets-1.77.1" \
+    /etc/xml/catalog
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
 }
