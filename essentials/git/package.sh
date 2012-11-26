@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=1.8.0
+pkgver=1.8.0.1
 urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-${pkgver}.tar.gz \
   http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
@@ -20,6 +20,4 @@ kiin_install() {
     --no-same-owner
   find ${pkgdir} -name perllocal.pod -delete
   find ${pkgdir} -name .packlist -delete
-  #sed -i -e 's/\/sources\/essentials\/git\/kiin-dest//g' \
-  #  ${pkgdir}/usr/lib/perl5/site_perl/5.16.1/x86_64-linux/auto/Git/.packlist
 }
