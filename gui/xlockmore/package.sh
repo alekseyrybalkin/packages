@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xlockmore
-pkgver=5.40
+pkgver=5.41
 urls="http://www.tux.org/~bagleyd/xlock/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
