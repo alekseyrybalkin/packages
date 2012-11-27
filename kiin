@@ -652,14 +652,14 @@ vercomp () {
 
 if [ $1 == 'prepare-check-updates' ]; then
   cd $ARCH_PACKAGES_REPO
-  git fetch origin master
-  git merge
+  git pull
+  git fetch -p
   cd $ARCH_COMMUNITY_REPO
-  git fetch origin master
-  git merge
+  git pull
+  git fetch -p
   cd $KIIN_HOME/src/linux
-  git fetch origin master
-  git merge
+  git pull
+  git fetch -p
   exit 0
 fi
 
