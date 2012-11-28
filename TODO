@@ -1,30 +1,35 @@
 TODO LIST
-- should we run ldconfig after each install/upgrade/uninstall ?
-- maybe we should collect kiin-knowns from responsible packages?
-- build mplayer from repository (like Arch does)
-- do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
+MAJOR/INTERESTING:
 - configure backups
 - implement sane glibc, ncurses, readline upgrade
   ( http://software.intel.com/en-us/articles/update-a-unix-including-linux-shared-library )
+- kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
+- after upgrade note which packages you'll probably want to rebuild in correct order
+  and maybe even automate this rebuild (though I know it is redundant in most cases)
 - fix setuid for xlockmore somehow
 - configure iptables
+
+NORMAL:
+- maybe we should collect kiin-knowns from responsible packages?
 - add meta-information to packages (e.g. ./configure && make log, make install log,
   build time, last updated, libraries provided, etc.)
 - fail if any operation fails during kiin make (especially kiin_install(), I am looking at you)
+- kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
+
+MINOR:
+- should we run ldconfig after each install/upgrade/uninstall ?
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
-  kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
-- kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - add ability to read chm and djvu (xchm && djvulibre)
 - control that kiin runs commands strictly as root/user
-- after upgrade note which packages you'll probably want to rebuild in correct order
-  and maybe even automate this rebuild (though I know it is redundant in most cases)
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 DONE LIST
++- build mplayer from repository (like Arch does)
++- do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
 +- fix alsa volume on boot
 +- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
 +- add support for post-install/post-upgrade scripts
