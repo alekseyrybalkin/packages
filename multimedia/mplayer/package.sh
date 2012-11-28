@@ -1,17 +1,20 @@
 #!/bin/sh
 
 pkgname=mplayer
-pkgver=1.1
-urls="http://www.mplayerhq.hu/MPlayer/releases/MPlayer-${pkgver}.tar.xz"
-srctar=MPlayer-${pkgver}.tar.xz
+vcs="git"
+gittag=4b74661875a29c302508606a26380e872c5de979
+pkgver=35504
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
+  git clone $KIIN_HOME/src/ffmpeg ffmpeg
   ./configure --prefix=/usr \
     --confdir=/etc/mplayer \
     --enable-dynamic-plugins \
     --disable-libvpx-lavc \
-    --disable-gui
+    --disable-gui \
+    --disable-dvdread \
+    --disable-dvdread-internal
   make
 }
 
