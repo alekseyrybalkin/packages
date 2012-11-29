@@ -8,7 +8,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  ./configure --prefix=/usr --sysconfdir=/etc
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --without-png
   make
 }
 
