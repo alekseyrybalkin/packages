@@ -3,6 +3,7 @@ MAJOR/INTERESTING:
 - configure backups
 - implement sane glibc, ncurses, readline upgrade
   ( http://software.intel.com/en-us/articles/update-a-unix-including-linux-shared-library )
+  should we run ldconfig after each install/upgrade/uninstall ?
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
@@ -17,7 +18,6 @@ NORMAL:
 - kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 
 MINOR:
-- should we run ldconfig after each install/upgrade/uninstall ?
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
 - add ability to read chm and djvu (xchm && djvulibre)
