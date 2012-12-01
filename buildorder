@@ -296,3 +296,5 @@ docbook-xsl
 docbook-xml
 tidyhtml
 pciutils
+ms-sys
+ntfsprogs
