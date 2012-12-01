@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pcre
-pkgver=8.31
+pkgver=8.32
 urls="http://downloads.sourceforge.net/pcre/pcre-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -21,5 +21,5 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/lib
   mv -v ${pkgdir}/usr/lib/libpcre.so.* ${pkgdir}/lib
-  ln -sfv ../../lib/libpcre.so.1.0.1 ${pkgdir}/usr/lib/libpcre.so
+  ln -sfv ../../lib/libpcre.so.1.2.0 ${pkgdir}/usr/lib/libpcre.so
 }
