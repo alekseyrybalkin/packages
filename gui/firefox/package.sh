@@ -1,13 +1,15 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=17.0
+pkgver=17.0.1
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2"
 srctar=${pkgname}-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
 kiin_make() {
   cp ../mozconfig .
+  sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
+  echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
   sed -i 's/\(MOZ_PKG_FATAL_WARNINGS =\).*/\1 0/' \
     browser/installer/Makefile.in
   sed -i 's# ""##' browser/base/Makefile.in
