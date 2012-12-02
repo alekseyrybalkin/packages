@@ -705,6 +705,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'perl-ack' ]] && package='ack'
     [[ $package = 'lzo' ]] && package='lzo2'
     [[ $package = 'lib32-libtool' ]] && package='libtool-multilib'
+    [[ $package = 'ntfsprogs' ]] && package='ntfs-3g_ntfsprogs'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
