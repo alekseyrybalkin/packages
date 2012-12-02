@@ -859,20 +859,17 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
-    [[ $package = 'linux-firmware' ]] && continue
-    [[ $package = 'cacerts' ]] && continue
 
     # upgrade only manually
     [[ $package = 'linux-api-headers' ]] && continue
     [[ $package = 'glibc' ]] && continue
     [[ $package = 'ncurses' ]] && continue
-    [[ $package = 'readline' ]] && continue
-    [[ $package = 'linux' ]] && continue
-    [[ $package = 'initramfs' ]] && continue
+    [[ $package = 'readline' ]] && continue # depends on ncurses
+    [[ $package = 'cacerts' ]] && continue
 
     # minor problems (segfault after installation)
     [[ $package = 'zlib' ]] && continue
-    [[ $package = 'sudo' ]] && continue
+    [[ $package = 'sudo' ]] && continue # depends on zlib
 
     lib32=0
     lib32test=`echo $package | grep lib32 | wc -w`
