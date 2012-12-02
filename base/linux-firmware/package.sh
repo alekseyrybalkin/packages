@@ -21,6 +21,8 @@ kiin_install() {
     cp -v ./iwlwifi-5000-5.ucode ${pkgdir}/lib/firmware
   fi
   if [ `hostname` == 'ritchie' ]; then
-    cp -rv ./brcm ${pkgdir}/lib/firmware
+    mkdir -pv ${pkgdir}/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx-0.fw ${pkgdir}/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx_hdr-0.fw ${pkgdir}/lib/firmware/brcm
   fi
 }
