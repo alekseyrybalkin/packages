@@ -853,19 +853,34 @@ if [ $1 == 'check-buildorder' ]; then
 fi
 
 if [ $1 == 'rebuild-world' ]; then
+  # instructions:
+  # 1. build linux-api-headers, upgrade them
+  # 2. build glibc
+  # 3. reboot to flash
+  # 4. upgrade glibc
+  # 5. build ncurses in chroot, upgrade outside of chroot
+  # 6. build readline in chroot, upgrade outside of chroot
+  # 7. build zlib in chroot, upgrade outside of chroot
+  # 8. build sudo in chroot, upgrade outside of chroot
+  # 9. reboot to kiin
+  # 10. rebuild world
+  # 11. rebuild initramfs
+  # 12. ?????
+  # 13. PROFIT
   set -e
   for package in `cat $KIIN_HOME/buildorder`; do
-    # won't upgrade
+    # won't upgrade (never installed them in the first place)
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
 
-    # upgrade only manually
+    # upgrade only manually (cacerts???)
     [[ $package = 'linux-api-headers' ]] && continue
     [[ $package = 'glibc' ]] && continue
     [[ $package = 'ncurses' ]] && continue
     [[ $package = 'readline' ]] && continue # depends on ncurses
     [[ $package = 'cacerts' ]] && continue
+    [[ $package = 'initramfs' ]] && continue # needs sudo password to build
 
     # minor problems (segfault after installation)
     [[ $package = 'zlib' ]] && continue
