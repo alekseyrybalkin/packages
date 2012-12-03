@@ -9,3 +9,4 @@ for package_dir in `kiin list-package-dirs`; do
 done
 
 echo "select package.name,count(file.id) as cnt from file,package where file.package_id=package.id group by package.id order by cnt asc;" | sqlite3 /var/kiin/kiin-db/kiin.sqlite3
+ps aux | tr -s " " | cut -d " " -f 11 | grep -v "^\[.*\]$"
