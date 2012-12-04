@@ -45,7 +45,7 @@ usage() {
 # for upgrade and uninstall
 check_system_packages() {
   case $1 in
-    "kiin-git" | "kiin-known" | "filesystem" | "glibc")
+    "kiin-git" | "kiin-known" | "filesystem")
       echo "wouldn't want to $2 $1, would ya?"
       exit 1
       ;;
