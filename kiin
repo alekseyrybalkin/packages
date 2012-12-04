@@ -379,6 +379,8 @@ if [ $1 == 'install' ]; then
       kiin_after_install
     fi
   fi
+  echo "running ldconfig..."
+  ldconfig
   exit 0
 fi
 
@@ -525,6 +527,8 @@ if [ $1 == 'upgrade' ]; then
     fi
   fi
   echo "upgrade log: $upgrade_log"
+  echo "running ldconfig..."
+  ldconfig
   exit 0
 fi
 
@@ -576,6 +580,8 @@ if [ $1 == 'uninstall' ]; then
     $KIIN_HOME/uninstalled
   sudo -u $PACKAGE_MANAGER kiin gen-db
   echo "uninstall_log: $uninstall_log"
+  echo "running ldconfig..."
+  ldconfig
   exit 0
 fi
 
