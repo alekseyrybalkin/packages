@@ -1,14 +1,12 @@
 TODO LIST
 MAJOR/INTERESTING:
 - configure backups
-- should we run ldconfig after each install/upgrade/uninstall ?
-  should we check if shared libraries are used by running processes (lsof?)?
+- should we check if shared libraries are used by running processes (lsof?)?
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
 - fix setuid for xlockmore somehow
 - configure iptables
-- decide with cacerts in rebuild-world
 
 NORMAL:
 - maybe we should collect kiin-knowns from responsible packages?
@@ -26,68 +24,4 @@ MINOR:
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
-
-DONE LIST
-+- build mplayer from repository (like Arch does)
-+- do not use outdated transmission-gtk, maybe find another torrent client or use cli interface?
-+- fix alsa volume on boot
-+- add post-installs/upgrades for packages, e.g. generation of /etc/xml/* for docbook-{xsl,xml}
-+- add support for post-install/post-upgrade scripts
-+- check /boot partition after boot for tampering
-+  don't start network if tampering is detected
-+  auto-update hashes when upgrading linux/grub/initramfs/kiin-git
-+- carry entropy pool across reboots (http://www.linuxfromscratch.org/blfs/view/svn/postlfs/random.html)
-+- subscribe to freecode.com
-+- customize boot/shutdown (http://www.linuxfromscratch.org/lfs/view/development/chapter07/site.html)
-+  update bootscripts
-+- check if new multilib toolchain can successfully rebuild world
-+- rebuild binutils, gcc (and friends like libtool maybe?) for multilib, and rebuild all packages from multilib
-+- add which
-+- add torrenting capability
-+- add ability to sanely watch offline videos (mplayer) w/o tearing and other shit
-+- check if we need intel-dri
-+- add ability to run good old games (wine, multilib - no easy task, maybe Arch packages in /opt/lib32?)
-+- add jabber client (gajim with one window for everything)
-+- add openvpn
-+- add ability to watch videos in browser (no flash, please) <- libvpx
-+- add ability to play wav, flac and mp3 files in mpd (only ogg right now)
-+- make `kiin uninstall' more automatic
-+  check links/linked-by before uninstall
-+  fix perllocal.pod, info, etc. on uninstall too
-+- merge duplicate code from install and upgrade
-+- add acpi
-+- move ld.so.conf to git
-+- add initramfs
-+  make /var distinct partition (reiserfs)
-+  make /home distinct partition (ext4)
-+  move /sources to /var/kiin
-+  add package git/svn/etc repos to /var/kiin/src
-+  encrypt lfs partitions
-+- fix .packlist for perl modules
-+- improve `kiin ldd' to check binaries too (and make it faster)
-+- kiin: implement links and linked
-+- remove *.la files from packages
-+- fix 'xserverauth file not found' warning on X start
-+- solve `alsa vs kernel-with-no-modules' issue
-+- improve readability for output of `kiin check-arch-updates'
-+  sort all installed packages in dependency order
-+  move arch to lfs partition for future chrooting
-+- add ack
-+- make git repo of system configs
-+  remove system configs from packages
-+  make kiin list-untracked respect configs in that repo
-+- add ability to have multiple linux kernels (e.g. add kernel version to
-+     package name)
-+  install new linux kernel (maybe latest rc?)
-+- implement kiin upgrade (coreutils, tar, xz, sed, grep, texinfo,
-+     findutils, bash, binutils, glibc, linux-api-headers etc.)
-+- upgrade installed packages
-+  add shortcut to check packages for updates (lfs svn, arch, upstream?)
-+- install alsa-utils, mpd and mpd-mpc and make it work
-+- add perl-error package (to fix git)
-+- install X and stuff
-+- install wireless_tools and wpa_supplicant
-+  connect to the internet with wifi
-+- add commands to start/stop mpd/sshd
-+- add package existence check to kiin install
-+- move sshd_config to git
+- kiin check-updates: add options to show exceptions and upper-to-date packages
