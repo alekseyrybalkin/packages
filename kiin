@@ -447,13 +447,8 @@ if [ $1 == 'upgrade' ]; then
   # actual destructive shit
   # TODO: remove broken symbolic links to prevent
   # 'too many levels of symbolic links' error later
-  for file in `kiin db-list-files $package-$old_version`; do
-    if [ ! -e $tmpdir/kiin-dest$file ]; then
-      if [ ! -h $tmpdir/kiin-dest$file ]; then
-        rm -v $file 2>&1 | tee -a $upgrade_log
-      fi
-    fi
-  done
+
+  # create new dirs
   for dir in `kiin list-dirs $2`; do
     if [ ! -d $dir ]; then
       prototype=$tmpdir/kiin-dest$dir
@@ -461,6 +456,16 @@ if [ $1 == 'upgrade' ]; then
       chmod -v `stat -c %a $prototype` $dir 2>&1 | tee -a $upgrade_log
     fi
   done
+  # copy new files
+  for file in `kiin list-files $2`; do
+    prototype=$tmpdir/kiin-dest$file
+    if [ ! -e $file ]; then
+      if [ ! -h $file ]; then
+        cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
+      fi
+    fi
+  done
+  # overwrite updated files
   for file in `kiin list-files $2`; do
     prototype=$tmpdir/kiin-dest$file
     # symlinks to folders: delete before "overwriting"
@@ -470,9 +475,18 @@ if [ $1 == 'upgrade' ]; then
       fi
     fi
     # the only place with overwriting
-    # TODO: fix for shared libraries
-    cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
+    cp -avf $prototype ${file}.kiin 2>&1 | tee -a $upgrade_log
+    $KIIN_HOME/_kiin-rename ${file}.kiin $file 2>&1 | tee -a $upgrade_log
   done
+  # remove old files
+  for file in `kiin db-list-files $package-$old_version`; do
+    if [ ! -e $tmpdir/kiin-dest$file ]; then
+      if [ ! -h $tmpdir/kiin-dest$file ]; then
+        rm -v $file 2>&1 | tee -a $upgrade_log
+      fi
+    fi
+  done
+  # remove old dirs
   for dir in `kiin db-list-dirs $package-$old_version \
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
     users=`kiin who-uses-dir $dir`

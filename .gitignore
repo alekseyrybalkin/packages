@@ -5,6 +5,7 @@
 *.tar.xz
 *.patch
 *.pf2
+/_kiin-rename
 /kiin-db/
 /src/
 /trash/

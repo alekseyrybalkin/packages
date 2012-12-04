@@ -1,9 +1,7 @@
 TODO LIST
 MAJOR/INTERESTING:
 - configure backups
-- implement sane glibc, ncurses, readline upgrade
-  ( http://software.intel.com/en-us/articles/update-a-unix-including-linux-shared-library )
-  should we run ldconfig after each install/upgrade/uninstall ?
+- should we run ldconfig after each install/upgrade/uninstall ?
   should we check if shared libraries are used by running processes (lsof?)?
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - after upgrade note which packages you'll probably want to rebuild in correct order
