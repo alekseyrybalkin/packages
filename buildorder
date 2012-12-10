@@ -299,3 +299,6 @@ pciutils
 ms-sys
 ntfsprogs
 nmap
+imlib2
+giblib
+feh
