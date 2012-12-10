@@ -12,5 +12,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  make PREFIX=/usr DESTDIR=${pkgdir} install
+  make DESTDIR=${pkgdir} install
 }
