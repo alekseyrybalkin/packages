@@ -163,7 +163,7 @@ if [ $1 == "make" ]; then
     pkgname=lib32-${pkgname}
     KIIN_LIB32=1
   fi
-  kiin_make
+  kiin_make 2>&1 | tee ${location}/kiin_make_log
 
   maker=${location}/kiin_maker.sh
   cat > ${maker} << "EOF"
@@ -177,7 +177,7 @@ mkdir ${pkgdir}
 if [[ ${srcdir} ]]; then
   cd ${srcdir}
 fi
-kiin_install
+kiin_install 2>&1 | tee ${location}/kiin_install_log
 fix_symlinks.py
 
 # fix /usr/share/info/dir
@@ -199,13 +199,18 @@ fi
 
 cd ${location}
 echo creating xz archive...
-tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest package.sh
+tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest \
+  package.sh \
+  kiin_make_log \
+  kiin_install_log
 EOF
   chmod +x ${maker}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
     pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
     fakeroot ${maker}
   rm ${maker}
+  rm ${location}/kiin_make_log
+  rm ${location}/kiin_install_log
   rm -rf ${pkgdir}
   if [[ ${srcdir} ]]; then
     rm -rf ${srcdir}
