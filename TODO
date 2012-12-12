@@ -23,4 +23,3 @@ MINOR:
 - fix sound for libvpx in firefox (maybe blacklist all alsa devices except intel?)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
-- kiin check-updates: add options to show exceptions and upper-to-date packages

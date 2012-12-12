@@ -701,15 +701,11 @@ if [ $1 == 'check-updates' ]; then
   vercomp `echo "$pkgver" | sed 's/rc/0\./g'` `echo "$version" | sed 's/rc/0\./g'`
   cmp=$?
   if [ $cmp -ne 0 ]; then
-    if [ $cmp -eq 2 ]; then
-      :
-      #echo -e "${green}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
-    else
-      echo -e "${bldred}  * ${package}${txtrst}: local is $version, newest in git is $pkgver (tag $newest_tag)"
-    fi
+    printf "${bldred}%20s${txtrst} %10s %10s (tag $newest_tag)\n" \
+      "${package}" "${version}" "${pkgver}"
   fi
   #echo "checking arch linux updates"
-  for i in `kiin ls`; do
+  for i in `kiin ls | sort`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
     local_package=$package
@@ -751,16 +747,25 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'cacerts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
+
+    _package=""
+    if [ $package != $local_package ]; then
+      _package=" ($package)"
+    fi
+
     if [ -d $ARCH_PACKAGES_REPO/$package ]; then
       . $ARCH_PACKAGES_REPO/$package/trunk/PKGBUILD
       vercomp "$pkgver" "$version"
       cmp=$?
       if [ $cmp -ne 0 ]; then
         if [ $cmp -eq 2 ]; then
-          :
-          #echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+          if [ "$2" == 'diff' ]; then
+            printf "${green}%20s${txtrst} %10s %10s%s\n" \
+              "${local_package}" "${version}" "${pkgver}" "${_package}"
+          fi
         else
-          echo -e "${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+          printf "${bldred}%20s${txtrst} %10s %10s%s\n" \
+            "${local_package}" "${version}" "${pkgver}" "${_package}"
         fi
       fi
     else
@@ -770,10 +775,13 @@ if [ $1 == 'check-updates' ]; then
         cmp=$?
         if [ $cmp -ne 0 ]; then
           if [ $cmp -eq 2 ]; then
-            :
-            #echo -e "${green}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+            if [ "$2" == 'diff' ]; then
+              printf "${green}%20s${txtrst} %10s %10s%s\n" \
+                "${local_package}" "${version}" "${pkgver}" "${_package}"
+            fi
           else
-            echo -e "${bldred}  * ${local_package}${txtrst}: local is $version, Arch's ($package) is $pkgver"
+            printf "${bldred}%20s${txtrst} %10s %10s%s\n" \
+              "${local_package}" "${version}" "${pkgver}" "${_package}"
           fi
         fi
       else
