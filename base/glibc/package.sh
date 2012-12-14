@@ -19,7 +19,6 @@ kiin_make() {
     ../configure  \
         --prefix=/usr          \
         --disable-profile      \
-        --enable-add-ons       \
         --enable-kernel=2.6.25 \
         --enable-multi-arch
   else
@@ -29,7 +28,6 @@ kiin_make() {
     ../configure  \
         --prefix=/usr \
         --disable-profile \
-        --enable-add-ons \
         --enable-kernel=2.6.25 \
         --libexecdir=/usr/lib32 \
         --libdir=/usr/lib32 \
