@@ -1,14 +1,12 @@
 #!/bin/sh
 
 pkgname=iproute2
-pkgver=3.6.0
-urls="http://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-ipset-1.patch"
+pkgver=3.7.0
+urls="http://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+srcdir=${location}/iproute-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../${pkgname}-${pkgver}-ipset-1.patch
   sed -i '/^TARGETS/s@arpd@@g' misc/Makefile
   sed -i /ARPD/d Makefile
   sed -i 's/arpd.8//' man/man8/Makefile
