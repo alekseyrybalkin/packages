@@ -9,7 +9,6 @@ MAJOR/INTERESTING:
 NORMAL:
 - maybe we should collect kiin-knowns from responsible packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
-- fail if any operation fails during kiin make (especially kiin_install(), I am looking at you)
 - kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 
 MINOR:

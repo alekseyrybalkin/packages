@@ -164,10 +164,15 @@ if [ $1 == "make" ]; then
     KIIN_LIB32=1
   fi
   kiin_make 2>&1 | tee ${location}/kiin_make_log
+  make_exit_status=${PIPESTATUS[0]}
+  if [ ${make_exit_status} -gt 0 ]; then
+    exit ${make_exit_status}
+  fi
 
   maker=${location}/kiin_maker.sh
   cat > ${maker} << "EOF"
 #!/bin/sh
+set -e
 cd ${location}
 . ./package.sh
 if [ -n "$KIIN_LIB32" ]; then
@@ -178,6 +183,10 @@ if [[ ${srcdir} ]]; then
   cd ${srcdir}
 fi
 kiin_install 2>&1 | tee ${location}/kiin_install_log
+install_exit_status=${PIPESTATUS[0]}
+if [ ${install_exit_status} -gt 0 ]; then
+  exit ${install_exit_status}
+fi
 fix_symlinks.py
 
 # fix /usr/share/info/dir
@@ -215,7 +224,9 @@ EOF
   if [[ ${srcdir} ]]; then
     rm -rf ${srcdir}
   fi
-  echo "kiin: all done!"
+  green='\e[0;32m'
+  txtrst='\e[0m'
+  printf "${green}kiin: all done!${txtrst}\n"
   exit 0
 fi
 
@@ -404,14 +415,13 @@ if [ $1 == 'upgrade' ]; then
     exit 1
   fi
   startdir=`pwd`
-  echo "upgrading $package from $old_version to $new_version" | tee -a $upgrade_log
+  echo "upgrading $package from $old_version to $new_version"
   # remount /boot partition in rw mode
   case $package in
     "linux" | "grub" | "initramfs")
       mount -o remount,rw /boot
       ;;
   esac
-  upgrade_log=/tmp/kiin/upgrade_log-`uuidgen`
   tmpdir=/tmp/kiin/`uuidgen`
   mkdir -p $tmpdir
   tar xf $2 -C $tmpdir
@@ -459,8 +469,8 @@ if [ $1 == 'upgrade' ]; then
   for dir in `kiin list-dirs $2`; do
     if [ ! -d $dir ]; then
       prototype=$tmpdir/kiin-dest$dir
-      mkdir -pv $dir 2>&1 | tee -a $upgrade_log
-      chmod -v `stat -c %a $prototype` $dir 2>&1 | tee -a $upgrade_log
+      mkdir -pv $dir
+      chmod -v `stat -c %a $prototype` $dir
     fi
   done
   # copy new files
@@ -468,7 +478,7 @@ if [ $1 == 'upgrade' ]; then
     prototype=$tmpdir/kiin-dest$file
     if [ ! -e $file ]; then
       if [ ! -h $file ]; then
-        cp -avf $prototype $file 2>&1 | tee -a $upgrade_log
+        cp -avf $prototype $file
       fi
     fi
   done
@@ -478,18 +488,18 @@ if [ $1 == 'upgrade' ]; then
     # symlinks to folders: delete before "overwriting"
     if [ -h $file ]; then
       if [ -d $file ]; then
-        rm -vf $file 2>&1 | tee -a $upgrade_log
+        rm -vf $file
       fi
     fi
     # the only place with overwriting
-    cp -avf $prototype ${file}.kiin 2>&1 | tee -a $upgrade_log
-    $KIIN_HOME/_kiin-rename ${file}.kiin $file 2>&1 | tee -a $upgrade_log
+    cp -avf $prototype ${file}.kiin
+    $KIIN_HOME/_kiin-rename ${file}.kiin $file
   done
   # remove old files
   for file in `kiin db-list-files $package-$old_version`; do
     if [ ! -e $tmpdir/kiin-dest$file ]; then
       if [ ! -h $tmpdir/kiin-dest$file ]; then
-        rm -v $file 2>&1 | tee -a $upgrade_log
+        rm -v $file
       fi
     fi
   done
@@ -501,7 +511,7 @@ if [ $1 == 'upgrade' ]; then
     [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
       filecnt=`ls $dir | wc -w`
       if [ $filecnt -eq 0 ]; then
-        rm -rv $dir 2>&1 | tee -a $upgrade_log
+        rm -rv $dir
       fi
     }
   done
@@ -531,7 +541,6 @@ if [ $1 == 'upgrade' ]; then
       kiin_after_upgrade
     fi
   fi
-  echo "upgrade log: $upgrade_log"
   echo "running ldconfig..."
   ldconfig
   exit 0
@@ -558,10 +567,9 @@ if [ $1 == 'uninstall' ]; then
     echo "won't uninstall, bro."
     exit 1
   fi
-  uninstall_log=/tmp/kiin/uninstall_log-`uuidgen`
   mkdir -p /tmp/kiin
   for file in `kiin db-list-files $package`; do
-    rm -v $file 2>&1 | tee -a $uninstall_log
+    rm -v $file
   done
   do_recreate_info_dir=0
   for dir in `kiin db-list-dirs $package \
@@ -574,7 +582,7 @@ if [ $1 == 'uninstall' ]; then
     [[ $user_count = 1 ]] && [[ $users = $package ]] && {
       filecnt=`ls $dir | wc -w`
       if [ $filecnt -eq 0 ]; then
-        rm -rv $dir 2>&1 | tee -a $uninstall_log
+        rm -rv $dir
       fi
     }
   done
@@ -584,7 +592,6 @@ if [ $1 == 'uninstall' ]; then
   sudo -u $PACKAGE_MANAGER mv -v $KIIN_HOME/installed/kiin.$package.tar.xz \
     $KIIN_HOME/uninstalled
   sudo -u $PACKAGE_MANAGER kiin gen-db
-  echo "uninstall_log: $uninstall_log"
   echo "running ldconfig..."
   ldconfig
   exit 0
