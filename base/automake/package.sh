@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=automake
-pkgver=1.12.5
+pkgver=1.12.6
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
