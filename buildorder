@@ -303,3 +303,6 @@ imlib2
 giblib
 feh
 gnupg
+freeglut
+lib32-freeglut
+glew
