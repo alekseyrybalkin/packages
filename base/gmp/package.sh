@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=gmp
-pkgver=5.0.5
-urls="http://ftp.gnu.org/gnu/gmp/gmp-${pkgver}.tar.xz"
+pkgver=5.1.0
+urls="ftp://ftp.gmplib.org/pub/gmp-${pkgver}/gmp-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --enable-cxx --enable-mpbsd
+  ./configure --prefix=/usr --enable-cxx
   make
 }
 
