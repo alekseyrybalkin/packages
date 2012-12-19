@@ -749,6 +749,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'libjpeg' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
+    [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
     [[ $package = 'initramfs' ]] && continue
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
