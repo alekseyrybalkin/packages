@@ -7,7 +7,7 @@ srctar=freetype-${pkgver}.tar.bz2
 srcdir=${location}/freetype-${pkgver}
 
 kiin_make() {
-  sed -i -r 's:.*(#.*SUBPIXEL.*) .*:\1:' \
+  sed -i -r 's:.*(#.*SUBPIXEL_RENDERING.*) .*:\1:' \
     include/freetype/config/ftoption.h
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr --disable-static
