@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=freetype2
-pkgver=2.4.10
+pkgver=2.4.11
 urls="http://downloads.sourceforge.net/freetype/freetype-${pkgver}.tar.bz2"
 srctar=freetype-${pkgver}.tar.bz2
 srcdir=${location}/freetype-${pkgver}
