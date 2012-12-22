@@ -273,9 +273,9 @@ poppler
 epdfview
 boost
 fuse
+ntfsprogs
 acpi
 unrar
-inotify-tools
 python2-gobject2
 python2-cairo
 python2-gtk
@@ -292,7 +292,6 @@ docbook-xsl
 docbook-xml
 tidyhtml
 pciutils
-ntfsprogs
 nmap
 imlib2
 giblib
