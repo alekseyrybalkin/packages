@@ -2,8 +2,8 @@
 
 pkgname=linux
 vcs="git"
-gittag=v3.7
-pkgver=3.7
+gittag=v3.8-rc1
+pkgver=3.8.rc1
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
