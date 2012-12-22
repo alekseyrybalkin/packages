@@ -14,7 +14,8 @@ kiin_make() {
     --disable-libvpx-lavc \
     --disable-gui \
     --disable-dvdread \
-    --disable-dvdread-internal
+    --disable-dvdread-internal \
+    --disable-liblzo
   make
 }
 
