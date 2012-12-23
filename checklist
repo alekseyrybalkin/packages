@@ -4,3 +4,10 @@
 `find /var/kiin -name "kiin*xz" | grep -v installed`
 check if kiin `rebuild-world` looks into all folders under /var/kiin
 # check and update TODO
+for i in `kiin ls | sort | grep lib32`; do
+  j=`echo $i | sed 's/lib32-//g'`
+  cnt=`kiin ls | grep $j | wc -l`
+  if [ $cnt -ne 2 ]; then
+    echo "$i: lib32 version mismatch"
+  fi
+done
