@@ -19,3 +19,4 @@ MINOR:
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
 - catch and fix a bug with kiin-known (?) showing up twice and triggering dups
+- test for stale tar.gz's (not moved to trash) in checklist
