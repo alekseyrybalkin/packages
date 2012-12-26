@@ -1,35 +1,31 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.16.0
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-res_query_fix-1.patch \
-  http://www.linuxfromscratch.org/patches/lfs/development/${pkgname}-${pkgver}-fix_test_installation-1.patch"
+pkgver=2.17
+urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's#<rpc/types.h>#"rpc/types.h"#' sunrpc/rpc_clntout.c
-  patch -Np1 -i ../glibc-${pkgver}-fix_test_installation-1.patch
-  sed -i 's|@BASH@|/bin/bash|' elf/ldd.bash.in
-  patch -Np1 -i ../glibc-${pkgver}-res_query_fix-1.patch
   mkdir -v glibc-build
   cd glibc-build
   if [ -z "$KIIN_LIB32" ]; then
-    ../configure  \
-        --prefix=/usr          \
-        --disable-profile      \
+    ../configure \
+        --prefix=/usr \
+        --disable-profile \
         --enable-kernel=2.6.25 \
+        --disable-nscd \
         --enable-multi-arch
   else
     export CC="gcc -m32"
     export CXX="g++ -m32"
     echo "slibdir=/usr/lib32" >> configparms
-    ../configure  \
+    ../configure \
         --prefix=/usr \
         --disable-profile \
         --enable-kernel=2.6.25 \
         --libexecdir=/usr/lib32 \
+        --disable-nscd \
         --libdir=/usr/lib32 \
         --enable-multi-arch i686-unknown-linux-gnu
   fi
