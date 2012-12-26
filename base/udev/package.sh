@@ -10,6 +10,7 @@ srcdir=${location}/systemd-${pkgver}
 kiin_make() {
   MAKEFLAGS=
   tar -xvf ../udev-lfs-${pkgver}.tar.bz2
+  sed -i -e 's/HAVE___SECURE_GETENV/HAVE_SECURE_GETENV/' udev-lfs-${pkgver}/cfg.h
   sed -i -e '/udevadm hwdb/d' udev-lfs-${pkgver}/Makefile.lfs
   sed -i -e 's/create/update/' src/udev/udevadm-hwdb.c
   make -f udev-lfs-${pkgver}/Makefile.lfs
