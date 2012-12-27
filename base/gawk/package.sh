@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gawk
-pkgver=4.0.1
+pkgver=4.0.2
 urls="http://ftp.gnu.org/gnu/gawk/gawk-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
