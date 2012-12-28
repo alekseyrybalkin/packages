@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=transmission
-pkgver=2.73
+pkgver=2.75
 urls="http://download.transmissionbt.com/files/transmission-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
