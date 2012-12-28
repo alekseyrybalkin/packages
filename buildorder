@@ -285,6 +285,7 @@ gajim
 desktop-file-utils
 wine
 transmission
+yasm
 mplayer
 docbook-xsl
 docbook-xml
