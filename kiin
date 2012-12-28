@@ -896,6 +896,7 @@ fi
 
 if [ $1 == 'rebuild-world' ]; then
   set -e
+  date > /tmp/kiin-rebuild-world
   for package in `cat $KIIN_HOME/buildorder`; do
     # won't upgrade (never installed them in the first place)
     [[ $package = 'filesystem' ]] && continue
@@ -929,6 +930,7 @@ if [ $1 == 'rebuild-world' ]; then
       sudo kiin upgrade $pack noask
     done
   done
+  date >> /tmp/kiin-rebuild-world
   exit 0
 fi
 
