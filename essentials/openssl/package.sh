@@ -17,6 +17,7 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make INSTALL_PREFIX=${pkgdir} MANDIR=/usr/share/man install
   install -v -d -m755 ${pkgdir}/usr/share/doc/openssl-${pkgver}
   cp -v -r doc/{HOWTO,README,*.{txt,html,gif}}      \
