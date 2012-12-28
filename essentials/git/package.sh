@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=1.8.0.2
+pkgver=1.8.0.3
 urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-${pkgver}.tar.gz \
   http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
