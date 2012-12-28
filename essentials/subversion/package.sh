@@ -18,6 +18,7 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
   install -v -m755 -d ${pkgdir}/usr/share/doc/subversion-${pkgver}
   cp -v -R doc/* ${pkgdir}/usr/share/doc/subversion-${pkgver}
