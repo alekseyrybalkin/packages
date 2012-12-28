@@ -12,7 +12,6 @@ kiin_make() {
 }
 
 kiin_install() {
-  cd ${pkgname}-${pkgver}
   install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
   install -v -d -m755 ${pkgdir}/etc/xml
   chown -R root:root .
