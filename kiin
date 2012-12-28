@@ -1018,7 +1018,7 @@ EOF
 fi
 
 if [ $1 == 'list-package-dirs' ]; then
-  echo 'base crypt dev essentials gui multimedia perl-modules python2-modules wireless xorg'
+  echo 'base crypt dev essentials gui multimedia perl-modules python2-modules wireless xorg mail'
   exit 0
 fi
 
