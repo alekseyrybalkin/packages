@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xf86-video-intel
-pkgver=2.20.16
+pkgver=2.20.17
 urls="http://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
