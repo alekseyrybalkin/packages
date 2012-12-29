@@ -246,6 +246,9 @@ unzip
 atk
 cairo
 libjpeg
+freeglut
+lib32-freeglut
+glew
 libtiff
 gdk-pixbuf
 harfbuzz
@@ -296,7 +299,4 @@ imlib2
 giblib
 feh
 gnupg
-freeglut
-lib32-freeglut
-glew
 mutt
