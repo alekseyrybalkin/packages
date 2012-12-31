@@ -12,7 +12,9 @@ kiin_make() {
 }
 
 kiin_install() {
+  mkdir -p ${pkgdir}/usr/share/doc/groff-1.22/pdf
   make prefix=${pkgdir}/usr install
   ln -sv eqn ${pkgdir}/usr/bin/geqn
   ln -sv tbl ${pkgdir}/usr/bin/gtbl
+  rm -rvf ${pkgdir}/usr/share/doc/groff-1.22/pdf
 }
