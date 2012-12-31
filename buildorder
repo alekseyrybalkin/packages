@@ -228,8 +228,6 @@ xorg-fonts-misc
 perl-xml-parser
 intltool
 xkeyboard-config
-printproto
-libxp
 pixman
 xorg-server
 mtdev
@@ -300,3 +298,10 @@ giblib
 feh
 gnupg
 mutt
+procmail
+fetchmail
+libcroco
+librsvg
+djvulibre
+qt
+djview
