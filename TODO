@@ -16,7 +16,7 @@ NORMAL:
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
-- add ability to read chm and djvu (xchm && djvulibre)
+- add ability to read chm (xchm)
 - control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
