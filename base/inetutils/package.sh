@@ -24,6 +24,5 @@ kiin_install() {
   make -C doc html
   make -C doc install-html docdir=${pkgdir}/usr/share/doc/inetutils-${pkgver}
   mkdir -pv ${pkgdir}/{bin,sbin}
-  mv -v ${pkgdir}/usr/bin/{hostname,ping,ping6} ${pkgdir}/bin
-  mv -v ${pkgdir}/usr/bin/traceroute ${pkgdir}/sbin
+  mv -v ${pkgdir}/usr/bin/{hostname,ping,ping6,traceroute} ${pkgdir}/bin
 }
