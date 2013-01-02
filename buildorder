@@ -22,13 +22,13 @@ ncurses
 util-linux
 lib32-util-linux
 psmisc
+procps
 e2fsprogs
 shadow
 coreutils
 iana-etc
 m4
 bison
-procps
 pcre
 grep
 readline
