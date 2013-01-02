@@ -2,15 +2,14 @@
 
 pkgname=kbd
 pkgver=1.15.5
-urls="http://ftp.altlinux.org/pub/people/legion/kbd/kbd-${pkgver}.tar.gz"
+urls="http://ftp.altlinux.org/pub/people/legion/kbd/kbd-${pkgver}.tar.gz \
+  http://www.linuxfromscratch.org/patches/lfs/development/kbd-${pkgver}-backspace-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i '/guardado\ el/s/\(^.*en\ %\)\(.*\)/\14\$\2/' po/es.po
-  sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/' configure &&
-  sed -i 's/resizecons.8 //' man/man8/Makefile.in &&
-  touch -d '2011-05-07 08:30' configure.ac
+  patch -Np1 -i ../kbd-1.15.5-backspace-1.patch
+  sed -i -e '326 s/if/while/' src/loadkeys.analyze.l
   ./configure --prefix=/usr \
     --datadir=/lib/kbd \
     --disable-vlock
