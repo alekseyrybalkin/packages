@@ -5,6 +5,7 @@ MAJOR/INTERESTING:
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
 - fix setuid for xlockmore somehow
+- catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 NORMAL:
 - maybe we should collect kiin-knowns from responsible packages?
@@ -21,5 +22,4 @@ MINOR:
 - control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
-- catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 - test for stale tar.gz's (not moved to trash) in checklist
