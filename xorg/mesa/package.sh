@@ -7,8 +7,6 @@ urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.b
 srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
 
-XORG_PREFIX="/usr"
-
 kiin_make() {
   patch -Np1 -i ../MesaLib-${pkgver}-add_xdemos-4.patch
   autoreconf -fi

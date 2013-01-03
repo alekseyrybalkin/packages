@@ -6,12 +6,6 @@ urls="http://xorg.freedesktop.org/releases/individual/lib/libXmu-${pkgver}.tar.b
 srctar=libXmu-${pkgver}.tar.bz2
 srcdir=${location}/libXmu-${pkgver}
 
-XORG_PREFIX="/usr"
-XORG_CONFIG="--prefix=$XORG_PREFIX \
-  --sysconfdir=/etc \
-  --mandir=$XORG_PREFIX/share/man \
-  --localstatedir=/var"
-
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure $XORG_CONFIG
