@@ -11,7 +11,8 @@ kiin_make() {
               --sysconfdir=/etc \
               --enable-zlib     \
               --disable-static  \
-              --enable-xpdf-headers
+              --enable-xpdf-headers \
+              --disable-poppler-qt4
   make
 }
 
