@@ -12,6 +12,7 @@ NORMAL:
 - kiin: optimize working on packages with lots of files (e.g. boost,python,ncurses,glibc,perl)
 - kiin rebuild-world: do not fail if some package does not build, just move on
   and in the end show which ones failed
+- fix initramfs for rebuild-world (get rid of sudo)
 
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
