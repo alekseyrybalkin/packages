@@ -919,7 +919,14 @@ fi
 if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
-  for package in `cat $KIIN_HOME/buildorder`; do
+  packages=`cat $KIIN_HOME/buildorder`
+  if [ -n $2 ]; then
+    packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$"`
+  fi
+  if [ -n $3 ]; then
+    packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$" | grep -B 1000 "^$3$"`
+  fi
+  for package in $packages; do
     # won't upgrade (never installed them in the first place)
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
