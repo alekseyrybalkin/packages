@@ -7,20 +7,10 @@ srctar=libXi-${pkgver}.tar.bz2
 srcdir=${location}/libXi-${pkgver}
 
 kiin_make() {
-  if [ -z "$KIIN_LIB32" ]; then
-    ./configure $XORG_CONFIG
-  else
-    export CC="gcc -m32"
-    export CXX="g++ -m32"
-    export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
-    ./configure $XORG_CONFIG --libdir=/usr/lib32
-  fi
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  if [ -n "$KIIN_LIB32" ]; then
-    rm -rf "${pkgdir}"/usr/{include,share,bin}
-  fi
 }

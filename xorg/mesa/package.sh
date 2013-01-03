@@ -30,9 +30,6 @@ kiin_make() {
     make
     make -C xdemos DEMOS_PREFIX=/usr
   else
-    export CC="gcc -m32"
-    export CXX="g++ -m32"
-    export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     sed -i -e "s/libudev/libudevfail/g" configure
     sed -i -e "s/libudev/libudevfail/g" configure.ac
     ./configure --prefix=$XORG_PREFIX \
@@ -64,7 +61,5 @@ kiin_install() {
     make -C xdemos DEMOS_PREFIX=/usr DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/MesaLib-${pkgver}
     cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/MesaLib-${pkgver}
-  else
-    rm -rf "${pkgdir}"/{usr/{include,share,bin},etc}
   fi
 }

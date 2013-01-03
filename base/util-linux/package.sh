@@ -16,8 +16,6 @@ kiin_make() {
       --disable-login
     make
   else
-    export CC="gcc -m32"
-    export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     ./configure --without-ncurses \
       --libdir=/usr/lib32 \
       --disable-su \

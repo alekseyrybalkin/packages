@@ -13,9 +13,6 @@ kiin_make() {
     ./configure --prefix=/usr \
       --disable-static
   else
-    export CC="gcc -m32"
-    export CXX="g++ -m32"
-    export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     ./configure --prefix=/usr \
       --disable-static --program-suffix=-32 --libdir=/usr/lib32
   fi

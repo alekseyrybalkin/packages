@@ -18,8 +18,6 @@ kiin_make() {
         --disable-nscd \
         --enable-multi-arch
   else
-    export CC="gcc -m32"
-    export CXX="g++ -m32"
     echo "slibdir=/usr/lib32" >> configparms
     ../configure \
         --prefix=/usr \
