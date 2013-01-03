@@ -8,6 +8,7 @@ KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
 PACKAGE_MANAGER=rybalkin
 ARCH_PACKAGES_REPO=~/sources/packages
 ARCH_COMMUNITY_REPO=~/sources/community
+SOURCES_HOME=/var/src
 
 usage() {
   echo "usage:"
@@ -134,18 +135,18 @@ if [ $1 == "make" ]; then
   if [ ! -z ${vcs} ]; then
     if [ ${vcs} = 'git' ]; then
       if [ ! -z ${git_pkgname} ]; then
-        git clone $KIIN_HOME/src/${git_pkgname} ${srcdir}
+        git clone $SOURCES_HOME/${git_pkgname} ${srcdir}
       else
-        git clone $KIIN_HOME/src/${pkgname} ${srcdir}
+        git clone $SOURCES_HOME/${pkgname} ${srcdir}
       fi
       cd ${srcdir}
       git checkout ${gittag}
     fi
     if [ ${vcs} = 'mercurial' ]; then
       if [ ! -z ${hg_pkgname} ]; then
-        hg clone $KIIN_HOME/src/${hg_pkgname} ${srcdir}
+        hg clone $SOURCES_HOME/${hg_pkgname} ${srcdir}
       else
-        hg clone $KIIN_HOME/src/${pkgname} ${srcdir}
+        hg clone $SOURCES_HOME/${pkgname} ${srcdir}
       fi
       cd ${srcdir}
       hg update -r ${hgtag}
@@ -705,7 +706,7 @@ if [ $1 == 'prepare-check-updates' ]; then
   cd $ARCH_COMMUNITY_REPO
   git pull
   git fetch -p
-  cd $KIIN_HOME/src/linux
+  cd $SOURCES_HOME/linux
   git pull
   git fetch -p
   exit 0
@@ -717,7 +718,7 @@ if [ $1 == 'check-updates' ]; then
   txtrst='\e[0m'
   #echo "checking git repos"
   package=linux
-  cd $KIIN_HOME/src/$package
+  cd $SOURCES_HOME/$package
   newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | tail -n 1`
   pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
   version=`echo "select version from package where name='${package}';" | sqlite3 $KIIN_DB`
