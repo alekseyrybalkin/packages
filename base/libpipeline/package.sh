@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  PKG_CONFIG_PATH=/tools/lib/pkgconfig ./configure --prefix=/usr
+  ./configure --prefix=/usr
   make
 }
 
