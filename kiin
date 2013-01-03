@@ -38,7 +38,6 @@ usage() {
   echo "  kiin l <package>"
   echo "  kiin check-buildorder"
   echo "  kiin rebuild-world"
-  echo "  kiin backup"
   echo "  kiin convert-arch-package"
   echo "  kiin list-package-dirs"
 }
@@ -81,7 +80,7 @@ case $1 in
 esac
 case $1 in
   "install" | "upgrade" | "uninstall" | "list-untracked" \
-    | "check-system-integrity" | "list-missing" | "backup")
+    | "check-system-integrity" | "list-missing")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 1
@@ -960,35 +959,6 @@ if [ $1 == 'rebuild-world' ]; then
     done
   done
   date >> /tmp/kiin-rebuild-world
-  exit 0
-fi
-
-if [ $1 == 'backup' ]; then
-  # timings, sizes and upload times
-  # gzip 227 seconds, 407 megabytes
-  # bzip2 307 seconds, 355 megabytes
-  echo "backup started."
-  tmpdir=/tmp/kiin/backup-`uuidgen`
-  backup_file=kiin.tar.bz2
-  mkdir -p $tmpdir
-  cd $tmpdir
-  cat > Exclude << "EOF"
-/boot/lost+found
-/dev
-/home
-/lost+found
-/proc
-/root
-/run
-/sys
-/tmp
-/var/chroot
-/var/kiin
-EOF
-  tar --exclude-from=Exclude -cpavf ${backup_file} /
-
-  echo "backup ended."
-  echo "${tmpdir}/${backup_file}"
   exit 0
 fi
 
