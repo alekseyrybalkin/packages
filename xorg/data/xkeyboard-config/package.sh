@@ -19,7 +19,4 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  install -dv -m755 ${pkgdir}$XORG_PREFIX/share/doc/${pkgname}-${pkgver}
-  install -v -m644 docs/{README,HOWTO}* \
-    ${pkgdir}$XORG_PREFIX/share/doc/${pkgname}-${pkgver}
 }
