@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxcomposite
-pkgver=0.4.3
+pkgver=0.4.4
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXcomposite-${pkgver}.tar.bz2"
 srctar=libXcomposite-${pkgver}.tar.bz2
 srcdir=${location}/libXcomposite-${pkgver}
