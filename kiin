@@ -159,6 +159,11 @@ if [ $1 == "make" ]; then
       fi
     fi
   fi
+  XORG_PREFIX="/usr"
+  XORG_CONFIG="--prefix=$XORG_PREFIX \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-static"
   if [ "$2" == "lib32" ]; then
     pkgname=lib32-${pkgname}
     KIIN_LIB32=1
