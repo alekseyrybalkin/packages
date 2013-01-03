@@ -168,9 +168,9 @@ if [ $1 == "make" ]; then
   if [ "$2" == "lib32" ]; then
     pkgname=lib32-${pkgname}
     KIIN_LIB32=1
-    CC="gcc -m32"
-    CXX="g++ -m32"
-    PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+    export CC="gcc -m32"
+    export CXX="g++ -m32"
+    export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     LIBDIR="/usr/lib32"
   else
     LIBDIR="/usr/lib"
@@ -203,7 +203,11 @@ fix_symlinks.py
 
 # remove trash from lib32 version
 if [ -n "$KIIN_LIB32" ]; then
-  rm -rf "${pkgdir}"/usr/{include,share,bin}
+  if [ "$pkgname" != "lib32-glibc" ]; then
+    if [ "$pkgname" != "lib32-libpng" ]; then
+      rm -rf "${pkgdir}"/{usr/{include,share,bin},etc}
+    fi
+  fi
 fi
 
 # fix /usr/share/info/dir
