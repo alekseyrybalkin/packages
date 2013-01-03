@@ -263,15 +263,19 @@ fi
 
 if [ $1 == 'gen-db' ]; then
   # add kiin-git-1 package
-  tmpdir=/tmp/kiin-user/`uuidgen`
+  tmpdir=/tmp/kiin-user/`uuidgen -t`
   mkdir -p $tmpdir
   cd $tmpdir
   git clone / kiin-dest 1>/dev/null
   rm -rf kiin-dest/.git
+  rm -f kiin.kiin-git-1.tar.xz
+  rm -f $KIIN_HOME/installed/kiin.kiin-git-1.tar.xz
   tar cfa kiin.kiin-git-1.tar.xz kiin-dest
   mv kiin.kiin-git-1.tar.xz $KIIN_HOME/installed
+  cd /tmp
+  rm -rf $tmpdir
   # add kiin-known-1 package
-  tmpdir=/tmp/kiin-user/`uuidgen`
+  tmpdir=/tmp/kiin-user/`uuidgen -t`
   mkdir -p $tmpdir
   cd $tmpdir
   mkdir kiin-dest
@@ -311,6 +315,8 @@ if [ $1 == 'gen-db' ]; then
   cd ..
   tar cfa kiin.kiin-known-1.tar.xz kiin-dest
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
+  cd /tmp
+  rm -rf $tmpdir
   # generate db
   for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known \
     | grep -v kiin-git`; do
@@ -386,7 +392,7 @@ if [ $1 == 'install' ]; then
     exit 1
   fi
   startdir=`pwd`
-  tmpdir=/tmp/kiin/`uuidgen`
+  tmpdir=/tmp/kiin/`uuidgen -t`
   mkdir -p $tmpdir
   tar xf $2 -C $tmpdir
   for dir in `kiin list-dirs $2`; do
@@ -415,6 +421,7 @@ if [ $1 == 'install' ]; then
       kiin_after_install
     fi
   fi
+  rm -rf $tmpdir
   echo "running ldconfig..."
   ldconfig
   exit 0
@@ -442,7 +449,7 @@ if [ $1 == 'upgrade' ]; then
       mount -o remount,rw /boot
       ;;
   esac
-  tmpdir=/tmp/kiin/`uuidgen`
+  tmpdir=/tmp/kiin/`uuidgen -t`
   mkdir -p $tmpdir
   tar xf $2 -C $tmpdir
   for i in `kiin list-files $2`; do
@@ -561,6 +568,7 @@ if [ $1 == 'upgrade' ]; then
       kiin_after_upgrade
     fi
   fi
+  rm -rf $tmpdir
   echo "running ldconfig..."
   ldconfig
   exit 0
