@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=bash
-pkgver=4.2.039
-_patchlevel=039
+pkgver=4.2.042
+_patchlevel=042
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-4.2.tar.gz"
 if [ $_patchlevel -gt 000 ]; then
   for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
