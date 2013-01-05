@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86_64 3.8.0-rc1 Kernel Configuration
+# Linux/x86_64 3.8.0-rc2 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -1299,10 +1299,7 @@ CONFIG_DM_CRYPT=y
 #
 # IEEE 1394 (FireWire) support
 #
-CONFIG_FIREWIRE=y
-CONFIG_FIREWIRE_OHCI=y
-# CONFIG_FIREWIRE_SBP2 is not set
-# CONFIG_FIREWIRE_NET is not set
+# CONFIG_FIREWIRE is not set
 # CONFIG_FIREWIRE_NOSY is not set
 # CONFIG_I2O is not set
 # CONFIG_MACINTOSH_DRIVERS is not set
@@ -2306,7 +2303,6 @@ CONFIG_SND_HDA_POWER_SAVE_DEFAULT=0
 # CONFIG_SND_VX222 is not set
 # CONFIG_SND_YMFPCI is not set
 # CONFIG_SND_USB is not set
-# CONFIG_SND_FIREWIRE is not set
 # CONFIG_SND_PCMCIA is not set
 # CONFIG_SND_SOC is not set
 # CONFIG_SOUND_PRIME is not set
@@ -2725,7 +2721,6 @@ CONFIG_NET_VENDOR_SILICOM=y
 # CONFIG_CED1401 is not set
 # CONFIG_DGRP is not set
 # CONFIG_SB105X is not set
-# CONFIG_FIREWIRE_SERIAL is not set
 CONFIG_X86_PLATFORM_DEVICES=y
 # CONFIG_ACER_WMI is not set
 # CONFIG_ACERHDF is not set
@@ -3100,7 +3095,6 @@ CONFIG_FTRACE_MCOUNT_RECORD=y
 CONFIG_MMIOTRACE=y
 # CONFIG_RING_BUFFER_BENCHMARK is not set
 # CONFIG_PROVIDE_OHCI1394_DMA_INIT is not set
-# CONFIG_FIREWIRE_OHCI_REMOTE_DMA is not set
 # CONFIG_DYNAMIC_DEBUG is not set
 # CONFIG_DMA_API_DEBUG is not set
 # CONFIG_ATOMIC64_SELFTEST is not set
