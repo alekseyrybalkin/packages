@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpd
-pkgver=0.17.2
+pkgver=0.17.3
 urls="http://downloads.sourceforge.net/musicpd/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
