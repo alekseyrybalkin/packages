@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=reiserfsprogs
-pkgver=3.6.21
-urls="ftp://anduin.linuxfromscratch.org/BLFS/svn/r/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs="git"
+gittag=v3.6.22
+pkgver=3.6.22
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
