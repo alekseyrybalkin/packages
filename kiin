@@ -769,7 +769,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1c' ]] && version='1.0.1.c'
-    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p3' ]] && version='1.8.6.p3'
+    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p4' ]] && version='1.8.6.p4'
     # not found in Arch:
     [[ $package = 'sysklogd' ]] && continue
     [[ $package = 'xorg-makedepend' ]] && continue
