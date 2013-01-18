@@ -1,6 +1,5 @@
 TODO LIST
 MAJOR/INTERESTING:
-- should we check if shared libraries are used by running processes (lsof?)?
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)

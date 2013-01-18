@@ -36,6 +36,7 @@ usage() {
   echo "  kiin links <package>"
   echo "  kiin linked-by <package>"
   echo "  kiin l <package>"
+  echo "  kiin who-uses-now <package>"
   echo "  kiin check-buildorder"
   echo "  kiin rebuild-world"
   echo "  kiin convert-arch-package"
@@ -80,7 +81,7 @@ case $1 in
 esac
 case $1 in
   "install" | "upgrade" | "uninstall" | "list-untracked" \
-    | "check-system-integrity" | "list-missing")
+    | "check-system-integrity" | "list-missing" | "who-uses-now")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 1
@@ -91,7 +92,7 @@ case $1 in
   "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" \
     | "list-dirs" | "install" | "upgrade" | "uninstall" | "db-list-files" \
     | "db-list-dirs" | "list-untracked" | "update-links" | "links" \
-    | "linked-by" | "l")
+    | "linked-by" | "l" | "who-uses-now")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
       exit 1
@@ -100,7 +101,7 @@ case $1 in
 esac
 case $1 in
   "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
-    | "links" | "linked-by" | "l")
+    | "links" | "linked-by" | "l" | "who-uses-now")
     count=`kiin ls | grep "^$2" | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
@@ -474,6 +475,8 @@ if [ $1 == 'upgrade' ]; then
     fi
   done
   if [ ! "$3" = 'noask' ]; then
+    echo "Following processes are using $package-$old_version right now, JFYI:"
+    kiin who-uses-now $package-$old_version
     echo "Following files are going to be deleted:"
     for file in `kiin db-list-files $package-$old_version`; do
       if [ ! -e $tmpdir/kiin-dest$file ]; then
@@ -883,6 +886,13 @@ fi
 
 if [ $1 == 'l' ]; then
   kiin links $package | sort && echo "---" && kiin linked-by $package | sort
+  exit 0
+fi
+
+if [ $1 == 'who-uses-now' ]; then
+  for f in `kiin db-list-files $package`; do lsof $f; done \
+    | grep -v COMMAND | tr -s ' ' | cut -d ' ' --fields=1,2,3 \
+    | sort | uniq
   exit 0
 fi
 
