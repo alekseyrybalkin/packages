@@ -65,7 +65,6 @@ texinfo
 udev
 vim
 linux
-linux-firmware
 fakeroot
 sqlite
 libffi
@@ -305,3 +304,4 @@ librsvg
 djvulibre
 qt
 djview
+iptables
