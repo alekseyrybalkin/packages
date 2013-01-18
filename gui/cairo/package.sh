@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cairo
-pkgver=1.12.8
+pkgver=1.12.10
 urls="http://cairographics.org/releases/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
