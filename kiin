@@ -9,6 +9,7 @@ PACKAGE_MANAGER=rybalkin
 ARCH_PACKAGES_REPO=~/sources/packages
 ARCH_COMMUNITY_REPO=~/sources/community
 SOURCES_HOME=/var/src
+umask 0022
 
 usage() {
   echo "usage:"
