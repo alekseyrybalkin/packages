@@ -266,7 +266,7 @@ if [ $1 == 'gen-db' ]; then
   tmpdir=/tmp/kiin-user/`uuidgen -t`
   mkdir -p $tmpdir
   cd $tmpdir
-  git clone aleksey@rybalkin.org:~/projects/ritchie-root kiin-dest 1>/dev/null
+  git clone / kiin-dest 1>/dev/null
   rm -rf kiin-dest/.git
   rm -f kiin.kiin-git-1.tar.xz
   rm -f $KIIN_HOME/installed/kiin.kiin-git-1.tar.xz
