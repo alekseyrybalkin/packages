@@ -305,3 +305,4 @@ qt
 djview
 iptables
 lsof
+strace
