@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mesa
-pkgver=9.0.1
+pkgver=9.0.2
 urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
       http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-${pkgver}-add_xdemos-5.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
