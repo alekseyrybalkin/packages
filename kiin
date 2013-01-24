@@ -768,6 +768,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'ntfsprogs' ]] && package='ntfs-3g_ntfsprogs'
     [[ $package = 'lib32-freeglut' ]] && package='freeglut'
     [[ $package = 'djview' ]] && package='djview4'
+    [[ $package = 'procps' ]] && package='procps-ng'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'

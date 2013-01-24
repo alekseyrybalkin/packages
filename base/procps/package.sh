@@ -1,21 +1,23 @@
 #!/bin/sh
 
 pkgname=procps
-pkgver=3.2.8
-urls="http://procps.sourceforge.net/procps-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/lfs/development/procps-${pkgver}-fix_HZ_errors-1.patch \
-  http://www.linuxfromscratch.org/patches/lfs/development/procps-${pkgver}-watch_unicode-1.patch"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs="git"
+gittag=v3.3.6
+pkgver=3.3.6
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../procps-${pkgver}-fix_HZ_errors-1.patch
-  patch -Np1 -i ../procps-${pkgver}-watch_unicode-1.patch
-  sed -i -e 's@\*/module.mk@proc/module.mk ps/module.mk@' Makefile
-  sed -i -e 's/^#SKIP/SKIP/g' Makefile
+  ./autogen.sh
+  ./configure --exec-prefix=/ \
+    --prefix=/usr \
+    --libdir=/usr/lib \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/${pkgname} \
+    --disable-skill \
+    --disable-kill
   make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} ldconfig=/bin/true install
+  make DESTDIR=${pkgdir} install
 }
