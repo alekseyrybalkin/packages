@@ -333,3 +333,4 @@ sdl
 lib32-sdl
 sdl2
 lib32-sdl2
+cmake
