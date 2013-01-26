@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ../nss-3.14.1-standalone-1.patch
+  patch -Np1 -i ../nss-${pkgver}-standalone-1.patch
   cd mozilla/security/nss
   make nss_build_all BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=/usr/include/nspr \
