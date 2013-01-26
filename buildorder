@@ -327,3 +327,9 @@ iptables
 lsof
 strace
 lame
+openal
+lib32-openal
+sdl
+lib32-sdl
+sdl2
+lib32-sdl2
