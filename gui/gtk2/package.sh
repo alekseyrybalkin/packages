@@ -9,7 +9,9 @@ srcdir=${location}/gtk+-${pkgver}
 kiin_make() {
   sed -i 's#l \(gtk-.*\).sgml#& -o \1#' docs/{faq,tutorial}/Makefile.in
   sed -i 's#.*@man_#man_#' docs/reference/gtk/Makefile.in
-  ./configure --prefix=/usr --sysconfdir=/etc
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --libdir=$LIBDIR
   make
 }
 

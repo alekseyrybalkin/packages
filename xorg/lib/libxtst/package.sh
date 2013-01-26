@@ -7,7 +7,7 @@ srctar=libXtst-${pkgver}.tar.bz2
 srcdir=${location}/libXtst-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

@@ -7,7 +7,7 @@ srctar=jpegsrc.v${pkgver}.tar.gz
 srcdir=${location}/jpeg-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --libdir=$LIBDIR
   make
 }
 

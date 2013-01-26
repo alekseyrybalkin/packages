@@ -7,7 +7,9 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --sysconfdir=/etc
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --libdir=$LIBDIR
   make
 }
 

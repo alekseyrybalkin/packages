@@ -7,7 +7,7 @@ srctar=tiff-${pkgver}.tar.gz
 srcdir=${location}/tiff-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static
+  ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
   make
 }
 

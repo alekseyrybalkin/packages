@@ -7,7 +7,7 @@ srctar=libXcomposite-${pkgver}.tar.bz2
 srcdir=${location}/libXcomposite-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

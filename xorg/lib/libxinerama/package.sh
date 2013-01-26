@@ -7,7 +7,7 @@ srctar=libXinerama-${pkgver}.tar.bz2
 srcdir=${location}/libXinerama-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

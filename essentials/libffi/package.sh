@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   patch -Np1 -i ../libffi-${pkgver}-includedir-1.patch
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --libdir=$LIBDIR
   make
 }
 

@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --with-x11
+  ./configure --prefix=/usr --with-x11 --libdir=$LIBDIR
   make
 }
 

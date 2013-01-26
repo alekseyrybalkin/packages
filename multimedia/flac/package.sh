@@ -13,7 +13,8 @@ kiin_make() {
     --mandir=/usr/share/man \
     --disable-thorough-tests \
     --enable-sse \
-    --disable-static
+    --disable-static \
+    --libdir=$LIBDIR
   make
 }
 

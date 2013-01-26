@@ -9,7 +9,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
-              --with-pcre=system
+              --with-pcre=system \
+              --libdir=$LIBDIR
   make
 }
 

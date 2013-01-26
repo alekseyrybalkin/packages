@@ -12,7 +12,10 @@ kiin_make() {
     -DSQLITE_ENABLE_COLUMN_METADATA=1 \
     -DSQLITE_ENABLE_UNLOCK_NOTIFY=1 \
     -DSQLITE_SECURE_DELETE=1"
-  ./configure --prefix=/usr --disable-static --disable-readline
+  ./configure --prefix=/usr \
+    --disable-static \
+    --disable-readline \
+    --libdir=$LIBDIR
   make
 }
 

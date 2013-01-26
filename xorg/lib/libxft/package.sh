@@ -7,7 +7,7 @@ srctar=libXft-${pkgver}.tar.bz2
 srcdir=${location}/libXft-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 
