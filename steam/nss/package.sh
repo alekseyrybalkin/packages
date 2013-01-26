@@ -2,7 +2,7 @@
 
 pkgname=nss
 pkgver=3.14.1
-urls=" http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_14_1_WITH_CKBI_1_93_RTM/src/nss-${pkgver}.with.ckbi.1.93.tar.gz \
+urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_14_1_WITH_CKBI_1_93_RTM/src/nss-${pkgver}.with.ckbi.1.93.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/nss-${pkgver}-standalone-1.patch"
 srctar=${pkgname}-${pkgver}.with.ckbi.1.93.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
