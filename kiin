@@ -270,9 +270,7 @@ if [ $1 == 'gen-db' ]; then
   cd $tmpdir
   git clone / kiin-dest 1>/dev/null
   rm -rf kiin-dest/.git
-  rm -f kiin.kiin-git-1.tar.xz
-  rm -f $KIIN_HOME/installed/kiin.kiin-git-1.tar.xz
-  tar cfa kiin.kiin-git-1.tar.xz kiin-dest
+  find kiin-dest ! -type d | tar cfa kiin.kiin-git-1.tar.xz -T - --no-recursion
   mv kiin.kiin-git-1.tar.xz $KIIN_HOME/installed
   cd /tmp
   rm -rf $tmpdir
@@ -315,7 +313,7 @@ if [ $1 == 'gen-db' ]; then
   touch etc/gtk-2.0/gtk.immodules
   touch etc/mtab.fuselock
   cd ..
-  tar cfa kiin.kiin-known-1.tar.xz kiin-dest
+  find kiin-dest ! -type d | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
   cd /tmp
   rm -rf $tmpdir

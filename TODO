@@ -4,7 +4,6 @@ MAJOR/INTERESTING:
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
 - fix setuid for xlockmore somehow
-- catch and fix a bug with kiin-known (?) showing up twice and triggering dups
 
 NORMAL:
 - maybe we should collect kiin-knowns from responsible packages?
