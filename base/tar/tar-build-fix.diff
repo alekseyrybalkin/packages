@@ -1,0 +1,37 @@
+diff --git a/src/xattrs.c b/src/xattrs.c
+index 4440b34..e493470 100644
+--- a/src/xattrs.c
++++ b/src/xattrs.c
+@@ -484,32 +484,6 @@ xattrs_xattrs_get (int parentfd, char const *file_name,
+     }
+ }
+ 
+-static void
+-xattrs__fd_set (struct tar_stat_info const *st,
+-                char const *file_name, char typeflag,
+-                const char *attr, const char *ptr, size_t len)
+-{
+-  if (ptr)
+-    {
+-      const char *sysname = "setxattrat";
+-      int ret = -1;
+-
+-      if (typeflag != SYMTYPE)
+-        ret = setxattrat (chdir_fd, file_name, attr, ptr, len, 0);
+-      else
+-        {
+-          sysname = "lsetxattr";
+-          ret = lsetxattrat (chdir_fd, file_name, attr, ptr, len, 0);
+-        }
+-
+-      if (ret == -1)
+-        WARNOPT (WARN_XATTR_WRITE,
+-		 (0, errno,
+-		  _("%s: Cannot set '%s' extended attribute for file '%s'"),
+-		  sysname, attr, file_name));
+-    }
+-}
+-
+ /* lgetfileconat is called against FILE_NAME iff the FD parameter is set to
+    zero, otherwise the fgetfileconat is used against correct file descriptor */
+ void

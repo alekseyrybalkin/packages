@@ -1,17 +1,17 @@
 #!/bin/sh
 
 pkgname=tar
-pkgver=1.26
-urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs="git"
+gittag=9cf743abf8667ae07077ceb32fad9a94268a5a93
+pkgver=1.26.20130127
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' gnu/stdio.in.h
-  FORCE_UNSAFE_CONFIGURE=1  \
-  ./configure --prefix=/usr \
-              --bindir=/bin \
-              --libexecdir=/usr/sbin
+  patch -Np1 -i ../tar-build-fix.diff
+  echo "--gnulib-srcdir=/var/src/gnulib" > .bootstrap
+  echo "--paxutils-srcdir=/var/src/paxutils" >> .bootstrap
+  ./bootstrap
+  ./configure --prefix=/usr
   make
 }
 
