@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=transmission
-pkgver=2.76
-urls="http://download.transmissionbt.com/files/transmission-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs="git"
+gittag=624d6631b3d805697bf9e3bc56753269ed593580
+pkgver=2.76.20130128
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr --without-gtk
   make
 }
