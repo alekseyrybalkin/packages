@@ -738,7 +738,7 @@ if [ $1 == 'check-updates' ]; then
   vercomp `echo "$pkgver" | sed 's/rc/0\./g'` `echo "$version" | sed 's/rc/0\./g'`
   cmp=$?
   if [ $cmp -ne 0 ]; then
-    printf "${bldred}%20s${txtrst} %10s %10s (tag $newest_tag)\n" \
+    printf "${bldred}%20s${txtrst} %15s %12s (tag $newest_tag)\n" \
       "${package}" "${version}" "${pkgver}"
   fi
   #echo "checking arch linux updates"
@@ -811,11 +811,11 @@ if [ $1 == 'check-updates' ]; then
       if [ $cmp -ne 0 ]; then
         if [ $cmp -eq 2 ]; then
           if [ "$2" == 'diff' ]; then
-            printf "${green}%20s${txtrst} %10s %10s%s\n" \
+            printf "${green}%20s${txtrst} %15s %12s%s\n" \
               "${local_package}" "${version}" "${pkgver}" "${_package}"
           fi
         else
-          printf "${bldred}%20s${txtrst} %10s %10s%s\n" \
+          printf "${bldred}%20s${txtrst} %15s %12s%s\n" \
             "${local_package}" "${version}" "${pkgver}" "${_package}"
         fi
       fi
@@ -827,11 +827,11 @@ if [ $1 == 'check-updates' ]; then
         if [ $cmp -ne 0 ]; then
           if [ $cmp -eq 2 ]; then
             if [ "$2" == 'diff' ]; then
-              printf "${green}%20s${txtrst} %10s %10s%s\n" \
+              printf "${green}%20s${txtrst} %15s %12s%s\n" \
                 "${local_package}" "${version}" "${pkgver}" "${_package}"
             fi
           else
-            printf "${bldred}%20s${txtrst} %10s %10s%s\n" \
+            printf "${bldred}%20s${txtrst} %15s %12s%s\n" \
               "${local_package}" "${version}" "${pkgver}" "${_package}"
           fi
         fi
