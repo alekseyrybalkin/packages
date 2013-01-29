@@ -242,7 +242,7 @@ zip
 unzip
 atk
 cairo
-libjpeg
+libjpeg-turbo
 freeglut
 lib32-freeglut
 glew
@@ -252,6 +252,8 @@ harfbuzz
 pango
 gtk2
 which
+nspr
+nss
 firefox
 wireless_tools
 libnl
@@ -285,6 +287,13 @@ desktop-file-utils
 wine
 transmission
 yasm
+lame
+openal
+lib32-openal
+sdl
+lib32-sdl
+sdl2
+lib32-sdl2
 mplayer
 docbook-xsl
 docbook-xml
@@ -306,10 +315,4 @@ djview
 iptables
 lsof
 strace
-lame
-openal
-lib32-openal
-sdl
-lib32-sdl
-sdl2
-lib32-sdl2
+nasm
