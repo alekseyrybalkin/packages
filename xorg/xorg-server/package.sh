@@ -10,7 +10,8 @@ kiin_make() {
   #sed -i -e 's/_INPUT_H/_UAPI_INPUT_H/g' hw/xfree86/common/xf86str.h
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
-    --enable-install-setuid
+    --enable-install-setuid \
+    --with-sha1=libcrypto
   make
 }
 
