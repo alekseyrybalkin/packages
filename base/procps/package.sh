@@ -13,6 +13,7 @@ kiin_make() {
     --libdir=/usr/lib \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/${pkgname} \
+    --disable-static \
     --disable-skill \
     --disable-kill
   make
