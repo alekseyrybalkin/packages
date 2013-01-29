@@ -2,12 +2,13 @@
 
 pkgname=xorg-server
 pkgver=1.13.2
-urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2"
+urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2 \
+  http://www.linuxfromscratch.org/patches/blfs/svn/xorg-server-${pkgver}-use_pixman_glyph_cache-1.patch"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  #sed -i -e 's/_INPUT_H/_UAPI_INPUT_H/g' hw/xfree86/common/xf86str.h
+  patch -Np1 -i ../xorg-server-${pkgver}-use_pixman_glyph_cache-1.patch
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
     --enable-install-setuid \
