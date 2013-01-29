@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ntfsprogs
-pkgver=2012.1.15
+pkgver=2013.1.13
 urls="http://tuxera.com/opensource/ntfs-3g_ntfsprogs-${pkgver}.tgz"
 srctar=ntfs-3g_ntfsprogs-${pkgver}.tgz
 srcdir=${location}/ntfs-3g_ntfsprogs-${pkgver}
