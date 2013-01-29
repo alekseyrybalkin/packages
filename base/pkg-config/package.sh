@@ -12,7 +12,8 @@ kiin_make() {
   ./autogen.sh
   ./configure --prefix=/usr         \
               --with-internal-glib  \
-              --docdir=/usr/share/doc/${pkgname}-${pkgver}
+              --docdir=/usr/share/doc/${pkgname}-${pkgver} \
+              --disable-host-tool
   make
 }
 
