@@ -757,9 +757,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'mpc' ]] && package='libmpc'
     [[ $package = 'udev' ]] && package='systemd'
     [[ $package = 'glib' ]] && package='glib2'
-    [[ $package = 'lib32-glib' ]] && package='lib32-glib2'
     [[ $package = 'gdk-pixbuf' ]] && package='gdk-pixbuf2'
-    [[ $package = 'lib32-gdk-pixbuf' ]] && package='lib32-gdk-pixbuf2'
     [[ $package = 'mpd-mpc' ]] && package='mpc'
     [[ $package = 'device-mapper' ]] && package='lvm2'
     [[ $package = 'perl-ack' ]] && package='ack'
@@ -769,26 +767,20 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'lib32-freeglut' ]] && package='freeglut'
     [[ $package = 'djview' ]] && package='djview4'
     [[ $package = 'procps' ]] && package='procps-ng'
-    [[ $package = 'lib32-pulseaudio' ]] && package='lib32-libpulse'
-    [[ $package = 'libcups' ]] && package='cups'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.1' ]] && version='3.1.1.p2'
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1c' ]] && version='1.0.1.c'
     [[ $package = 'sudo' ]] && [[ $version = '1.8.6p5' ]] && version='1.8.6.p5'
-    [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
-    [[ $package = 'lib32-nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     # not found in Arch:
     [[ $package = 'sysklogd' ]] && continue
     [[ $package = 'xorg-makedepend' ]] && continue
     [[ $package = 'libpthread-stubs' ]] && continue
     [[ $package = 'python2-sh' ]] && continue
     [[ $package = 'libjpeg' ]] && continue
-    [[ $package = 'lib32-libjpeg' ]] && continue
     [[ $package = 'sdl2' ]] && continue
     [[ $package = 'lib32-sdl2' ]] && continue
-    [[ $package = 'steam' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
@@ -1045,7 +1037,7 @@ EOF
 fi
 
 if [ $1 == 'list-package-dirs' ]; then
-  echo 'base security dev essentials gui multimedia perl-modules python2-modules wireless xorg mail steam'
+  echo 'base security dev essentials gui multimedia perl-modules python2-modules wireless xorg mail'
   exit 0
 fi
 
