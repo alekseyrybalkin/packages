@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=cairo
-pkgver=1.12.10
-urls="http://cairographics.org/releases/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs="git"
+gittag=74a19c527c1fa07ade2042a8d2acecbb5f6ccab1
+pkgver=1.12.10.20130129
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static \
