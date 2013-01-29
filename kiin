@@ -773,6 +773,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1c' ]] && version='1.0.1.c'
     [[ $package = 'sudo' ]] && [[ $version = '1.8.6p5' ]] && version='1.8.6.p5'
+    [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     # not found in Arch:
     [[ $package = 'sysklogd' ]] && continue
     [[ $package = 'xorg-makedepend' ]] && continue
