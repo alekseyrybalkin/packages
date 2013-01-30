@@ -238,6 +238,7 @@ EOF
   chmod +x ${maker}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
     pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
+    XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
     fakeroot ${maker}
   rm ${maker}
   rm ${location}/kiin_make_log
@@ -940,10 +941,10 @@ if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
   packages=`cat $KIIN_HOME/buildorder`
-  if [ -n $2 ]; then
+  if [ -n "$2" ]; then
     packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$"`
   fi
-  if [ -n $3 ]; then
+  if [ -n "$3" ]; then
     packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$" | grep -B 1000 "^$3$"`
   fi
   for package in $packages; do
