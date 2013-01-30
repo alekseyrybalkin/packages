@@ -8,8 +8,10 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
-    --docdir=/usr/share/doc/gettext-${pkgver} \
+    --docdir=/usr/share/doc/gettext \
     --with-included-libxml \
+    --with-included-glib \
+    --with-included-libcroco \
     --without-git \
     --libdir=$LIBDIR
   make
