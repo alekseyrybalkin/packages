@@ -2,8 +2,8 @@
 
 pkgname=vim
 vcs="mercurial"
-hgtag="52bfa939fc07"
-pkgver=7.3.754
+hgtag="1ff4de5103f8"
+pkgver=7.3.803
 srcdir=${location}/${pkgname}73
 
 kiin_make() {
@@ -23,6 +23,6 @@ kiin_install() {
       ln -sv vim.1 $(dirname $L)/vi.1
   done
   mkdir -pv ${pkgdir}/usr/share/doc
-  ln -sv ../vim/vim73/doc ${pkgdir}/usr/share/doc/vim-7.3
+  ln -sv ../vim/vim73/doc ${pkgdir}/usr/share/doc/vim
   mkdir -pv ${pkgdir}/etc
 }
