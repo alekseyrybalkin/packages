@@ -7,7 +7,7 @@ pkgver=35910
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
-  git clone /var/src/ffmpeg ffmpeg
+  git clone $SOURCES_HOME/ffmpeg ffmpeg
   ./configure --prefix=/usr \
     --confdir=/etc/mplayer \
     --enable-dynamic-plugins \

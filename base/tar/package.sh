@@ -8,8 +8,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   patch -Np1 -i ../tar-build-fix.diff
-  echo "--gnulib-srcdir=/var/src/gnulib" > .bootstrap
-  echo "--paxutils-srcdir=/var/src/paxutils" >> .bootstrap
+  echo "--gnulib-srcdir=$SOURCES_HOME/gnulib" > .bootstrap
+  echo "--paxutils-srcdir=$SOURCES_HOME/paxutils" >> .bootstrap
   ./bootstrap
   ./configure --prefix=/usr
   make
