@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssl
-pkgver=1.0.1c
+pkgver=1.0.1d
 urls="http://www.openssl.org/source/openssl-${pkgver}.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/openssl-${pkgver}-fix_manpages-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
@@ -12,8 +12,6 @@ kiin_make() {
   patch -Np1 -i ../openssl-${pkgver}-fix_manpages-1.patch
   ./config --prefix=/usr zlib-dynamic --openssldir=/etc/ssl shared
   make
-  # to disable static libraries, did not done that. why?
-  #sed -i 's# libcrypto.a##;s# libssl.a##' Makefile
 }
 
 kiin_install() {
