@@ -2,7 +2,10 @@
 
 pkgname=evince
 pkgver=2.32.0
-urls="http://ftp.gnome.org/pub/gnome/sources/evince/2.32/evince-${pkgver}.tar.bz2"
+urls="http://ftp.gnome.org/pub/gnome/sources/evince/2.32/evince-${pkgver}.tar.bz2 \
+  http://rybalkin.org/kiin-files/kill-missing-gconf-complaints.patch \
+  http://rybalkin.org/kiin-files/libview-crash.patch \
+  http://rybalkin.org/kiin-files/update-poppler.patch"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
