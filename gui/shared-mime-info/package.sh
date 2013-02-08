@@ -8,8 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  ./configure --prefix=/usr \
-    --disable-update-mimedb
+  ./configure --prefix=/usr
   make
 }
 
