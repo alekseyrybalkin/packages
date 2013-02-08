@@ -284,6 +284,7 @@ if [ $1 == 'gen-db' ]; then
   mkdir -p boot/grub/i386-pc
   mkdir -p etc/{ssh,gtk-2.0,xml,udev}
   mkdir -p usr/{share/info,lib/locale}
+  mkdir -p usr/share/{icons/hicolor,glib-2.0/schemas,applications}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
@@ -312,6 +313,9 @@ if [ $1 == 'gen-db' ]; then
   touch usr/lib/pango/1.8.0/modules.cache
   touch usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
   touch etc/gtk-2.0/gtk.immodules
+  touch usr/share/icons/hicolor/icon-theme.cache
+  touch usr/share/glib-2.0/schemas/gschemas.compiled
+  touch usr/share/applications/mimeinfo.cache
   touch etc/mtab.fuselock
   cd ..
   find kiin-dest ! -type d | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
