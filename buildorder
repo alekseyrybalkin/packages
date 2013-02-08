@@ -276,8 +276,6 @@ parted
 initramfs
 reiserfsprogs
 rsync
-poppler
-epdfview
 fuse
 ntfsprogs
 acpi
@@ -308,12 +306,13 @@ gnupg
 mutt
 procmail
 fetchmail
-libcroco
-librsvg
-djvulibre
-qt
-djview
 iptables
 lsof
 strace
 nasm
+shared-mime-info
+poppler
+libcroco
+librsvg
+djvulibre
+evince
