@@ -262,9 +262,6 @@ which
 nspr
 nss
 firefox
-wireless_tools
-libnl
-wpa_supplicant
 xlockmore
 cpio
 popt
