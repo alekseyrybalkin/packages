@@ -25,3 +25,4 @@ MINOR:
 - list all proprietary shit in my system (like bios, games, etc.)
 - test for stale tar.gz's (not moved to trash) in checklist
 - check for new tags in repositories?
+- add p7zip
