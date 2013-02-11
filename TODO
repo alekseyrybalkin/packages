@@ -4,6 +4,9 @@ MAJOR/INTERESTING:
 - after upgrade note which packages you'll probably want to rebuild in correct order
   and maybe even automate this rebuild (though I know it is redundant in most cases)
 - fix setuid for xlockmore somehow
+- run tests/checks for packages
+- check tarball integrities whenever possible
+- update git/svn/hg repositories once in a while
 
 NORMAL:
 - maybe we should collect kiin-knowns from responsible packages?
@@ -19,5 +22,6 @@ MINOR:
 - add ability to read chm (xchm)
 - control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
-- list all proprietary shit in my system (like bios, wifi firmware, games, etc.)
+- list all proprietary shit in my system (like bios, games, etc.)
 - test for stale tar.gz's (not moved to trash) in checklist
+- check for new tags in repositories?
