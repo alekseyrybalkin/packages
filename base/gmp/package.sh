@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gmp
-pkgver=5.1.0
+pkgver=5.1.1
 urls="ftp://ftp.gmplib.org/pub/gmp-${pkgver}/gmp-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
