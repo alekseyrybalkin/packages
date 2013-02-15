@@ -15,6 +15,7 @@ NORMAL:
 - kiin rebuild-world: do not fail if some package does not build, just move on
   and in the end show which ones failed
 - fix initramfs for rebuild-world (get rid of sudo)
+- fix running kiin concurrently
 
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
