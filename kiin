@@ -764,6 +764,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'sudo' ]] && [[ $version = '1.8.6p6' ]] && version='1.8.6.p6'
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     # not found in Arch:
+    [[ $package = 'vlock' ]] && continue
     [[ $package = 'sysklogd' ]] && continue
     [[ $package = 'xorg-makedepend' ]] && continue
     [[ $package = 'libpthread-stubs' ]] && continue
