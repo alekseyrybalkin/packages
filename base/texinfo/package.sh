@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=texinfo
-pkgver=4.13a
-urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-4.13
+pkgver=5.0
+urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr
