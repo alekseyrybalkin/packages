@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssl
-pkgver=1.0.1d
+pkgver=1.0.1e
 urls="http://www.openssl.org/source/openssl-${pkgver}.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/openssl-${pkgver}-fix_manpages-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
