@@ -16,6 +16,7 @@ NORMAL:
   and in the end show which ones failed
 - fix initramfs for rebuild-world (get rid of sudo)
 - fix running kiin concurrently
+- fix gen-db bug about spaces in file names
 
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
@@ -27,3 +28,4 @@ MINOR:
 - test for stale tar.gz's (not moved to trash) in checklist
 - check for new tags in repositories?
 - add p7zip
+- implement kiin_after_uninstall
