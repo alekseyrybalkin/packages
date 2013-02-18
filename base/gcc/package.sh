@@ -11,6 +11,7 @@ kiin_make() {
   sed -i -e /autogen/d -e /check.sh/d fixincludes/Makefile.in
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
   sed -i -e 's/#ifdef HAVE_AS_AVX/#if defined(HAVE_AS_AVX) \&\& defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
+  sed -i -e 's/BUILD_INFO=info/BUILD_INFO=/' gcc/configure
   mkdir -v gcc-build
   cd gcc-build
   ../configure --prefix=/usr            \
