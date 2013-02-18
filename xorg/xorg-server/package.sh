@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.13.2
+pkgver=1.13.2.901
 urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/xorg-server-${pkgver}-use_pixman_glyph_cache-1.patch"
 srctar=${pkgname}-${pkgver}.tar.bz2
