@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=file
-pkgver=5.12
+pkgver=5.13
 urls="ftp://ftp.astron.com/pub/file/file-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
