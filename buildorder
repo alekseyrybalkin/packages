@@ -306,6 +306,10 @@ fetchmail
 iptables
 lsof
 strace
+libexif
+babl
+gegl
+gimp
 nasm
 shared-mime-info
 poppler
