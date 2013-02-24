@@ -306,10 +306,6 @@ fetchmail
 iptables
 lsof
 strace
-libexif
-babl
-gegl
-gimp
 nasm
 shared-mime-info
 poppler
@@ -317,3 +313,7 @@ libcroco
 librsvg
 djvulibre
 evince
+libexif
+babl
+gegl
+gimp
