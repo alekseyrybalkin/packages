@@ -2,8 +2,8 @@
 
 pkgname=transmission
 vcs="git"
-gittag=152fbd78f4717791bf3f6695fad861cde6c23ad9
-pkgver=2.76.20130211
+gittag=1aed1fb57f8647f80dd09a5b5c656d6e28ecbbdb
+pkgver=2.77.20130219
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
