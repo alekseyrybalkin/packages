@@ -2,8 +2,8 @@
 
 pkgname=mplayer
 vcs="git"
-gittag=90eb5aab647575d25f7875e3c7fab4fd65624402
-pkgver=35920
+gittag=ae7ac477a6974376bcc4d1dba996e3999d43f59a
+pkgver=35923
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
@@ -15,6 +15,7 @@ kiin_make() {
     --disable-gui \
     --disable-dvdread \
     --disable-dvdread-internal \
+    --disable-xss \
     --disable-liblzo
   make
 }
