@@ -10,7 +10,19 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   MAKEFLAGS=
   patch -Np1 -i ../openssl-${pkgver}-fix_manpages-1.patch
-  ./config --prefix=/usr zlib-dynamic --openssldir=/etc/ssl shared
+  if [ -z "$KIIN_LIB32" ]; then
+    ./config --prefix=/usr \
+      zlib-dynamic \
+      --openssldir=/etc/ssl \
+      shared
+  else
+    ./Configure --prefix=/usr \
+      zlib-dynamic \
+      --openssldir=/etc/ssl \
+      shared \
+      linux-elf \
+      --libdir=lib32
+  fi
   make
 }
 
