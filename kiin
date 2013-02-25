@@ -317,7 +317,6 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/glib-2.0/schemas/gschemas.compiled
   touch usr/share/applications/mimeinfo.cache
   touch etc/mtab.fuselock
-  touch etc/machine-id
   cd ..
   find kiin-dest ! -type d | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
@@ -1030,7 +1029,7 @@ EOF
 fi
 
 if [ $1 == 'list-package-dirs' ]; then
-  echo 'base security dev essentials gui multimedia perl-modules python2-modules xorg mail skype'
+  echo 'base security dev essentials gui multimedia perl-modules python2-modules xorg mail'
   exit 0
 fi
 

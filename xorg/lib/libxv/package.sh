@@ -7,7 +7,7 @@ srctar=libXv-${pkgver}.tar.bz2
 srcdir=${location}/libXv-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./configure $XORG_CONFIG
   make
 }
 
