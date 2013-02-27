@@ -2,8 +2,8 @@
 
 pkgname=tar
 vcs="git"
-gittag=9cf743abf8667ae07077ceb32fad9a94268a5a93
-pkgver=1.26.20130127
+gittag=17f99bc6f1405effe6cc31a60bb7353a033c13d6
+pkgver=1.26.20130220
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
