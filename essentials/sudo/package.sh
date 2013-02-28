@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=sudo
-pkgver=1.8.6p6
+pkgver=1.8.6p7
 urls="http://www.${pkgname}.ws/${pkgname}/dist/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
