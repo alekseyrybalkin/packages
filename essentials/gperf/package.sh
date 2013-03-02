@@ -8,12 +8,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}-${pkgver}
-  makeinfo -o doc/gperf.txt --plaintext doc/gperf.texi
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  install -m644 -v doc/${pkgname}.{dvi,ps,pdf,txt} \
-    ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
 }
