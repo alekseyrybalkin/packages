@@ -30,3 +30,4 @@ MINOR:
 - add p7zip
 - add dig (dnsutils)
 - implement kiin_after_uninstall
+- add ntp
