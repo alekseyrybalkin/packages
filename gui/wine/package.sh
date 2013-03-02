@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.5.24
+pkgver=1.5.25
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
