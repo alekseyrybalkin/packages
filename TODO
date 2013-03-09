@@ -28,6 +28,6 @@ MINOR:
 - test for stale tar.gz's (not moved to trash) in checklist
 - check for new tags in repositories?
 - add p7zip
-- add dig (dnsutils)
+- add drill (ldns)
 - implement kiin_after_uninstall
 - add ntp
