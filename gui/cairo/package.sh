@@ -11,8 +11,6 @@ kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static \
-      --enable-tee \
-      --enable-xcb \
       --libdir=$LIBDIR
   else
     rm -rf test
@@ -27,7 +25,6 @@ kiin_make() {
     sed -i -e 's/perf\/micro\/Makefile//g' configure.ac
     ./configure --prefix=/usr \
       --disable-static \
-      --enable-tee \
       --disable-xlib-xcb \
       --libdir=$LIBDIR
     sed -i -e 's/boilerplate\ test\ perf/boilerplate/g' Makefile
