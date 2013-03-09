@@ -51,6 +51,7 @@ groff
 grub
 less
 gzip
+iptables
 iproute2
 kbd
 kmod
@@ -301,7 +302,6 @@ gnupg
 mutt
 procmail
 fetchmail
-iptables
 lsof
 strace
 nasm
