@@ -8,7 +8,10 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i '/--static-libs)/{N;s#echo .*#echo #;}' curl-config.in
-  ./configure --prefix=/usr --disable-static --with-ca-path=/etc/ssl/certs
+  ./configure --prefix=/usr \
+    --disable-static \
+    --with-ca-path=/etc/ssl/certs \
+    --enable-threaded-resolver
   make
 }
 
