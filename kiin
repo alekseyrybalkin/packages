@@ -735,7 +735,7 @@ if [ $1 == 'check-updates' ]; then
     fi
   fi
   cd $SOURCES_HOME/$package-stable
-  newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | sort -V | tail -n 1`
+  newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | sort -V | grep -v rc | tail -n 1`
   pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
   version=`echo "select version from package where name='${package}';" | sqlite3 $KIIN_DB`
   vercomp `echo "$pkgver" | sed 's/rc/0\./g'` `echo "$version" | sed 's/rc/0\./g'`
