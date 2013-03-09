@@ -7,9 +7,11 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -e "s/pthread-stubs//" -i configure.ac
+  autoreconf -fi
   ./configure $XORG_CONFIG \
     --enable-xinput \
-    --docdir='${datadir}'/doc/${pkgname}-${pkgver} \
+    --docdir='${datadir}'/doc/${pkgname} \
     --libdir=$LIBDIR
   make
 }
