@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=19.0
+pkgver=19.0.2
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2"
 srctar=${pkgname}-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
