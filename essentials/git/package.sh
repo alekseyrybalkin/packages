@@ -10,6 +10,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr         \
               --libexecdir=/usr/lib \
+              --with-libpcre \
               --with-gitconfig=/etc/gitconfig
   make
 }
