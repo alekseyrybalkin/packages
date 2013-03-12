@@ -2,7 +2,7 @@
 
 pkgname=xcb-util
 pkgver=0.3.9
-urls="http://xorg.freedesktop.org/releases/individual/xcb/${pkgname}-${pkgver}.tar.bz2"
+urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
