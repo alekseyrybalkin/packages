@@ -7,4 +7,4 @@ dovahkiin --> rybalkiin --> kiin
 
 ## License
 
-[WTFPL, Version 2](http://sam.zoy.org/wtfpl)
+[WTFPL, Version 2](http://www.wtfpl.net/txt/copying/)
