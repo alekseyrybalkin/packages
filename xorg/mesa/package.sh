@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mesa
-pkgver=9.1
+pkgver=9.1.1
 urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-${pkgver}-add_xdemos-1.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
@@ -59,7 +59,7 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   if [ -z "$KIIN_LIB32" ]; then
     make -C xdemos DEMOS_PREFIX=/usr DESTDIR=${pkgdir} install
-    mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/MesaLib-${pkgver}
-    cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/MesaLib-${pkgver}
+    mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa
+    cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/mesa
   fi
 }
