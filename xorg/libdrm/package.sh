@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -e "/pthread-stubs/d" -i configure.ac
   autoreconf --force --install
   ./configure --prefix=$XORG_PREFIX \
     --enable-udev \
