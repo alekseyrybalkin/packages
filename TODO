@@ -9,6 +9,8 @@ MAJOR/INTERESTING:
 - update git/svn/hg repositories once in a while
 
 NORMAL:
+- fix iproute2 and xorg-xmodmap builds with gcc 4.8
+- find out why procps installed some strange hardlinks for man pages
 - maybe we should collect kiin-knowns from responsible packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
 - kiin: optimize working on packages with lots of files (e.g. python,ncurses,glibc,perl)
