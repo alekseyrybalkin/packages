@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libffi
-pkgver=3.0.12
+pkgver=3.0.13
 urls="ftp://sourceware.org/pub/libffi/libffi-${pkgver}.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/libffi-${pkgver}-includedir-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
