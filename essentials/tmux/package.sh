@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tmux
-pkgver=1.7
+pkgver=1.8
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
