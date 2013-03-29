@@ -10,7 +10,8 @@ kiin_make() {
   rm -fv etc/standards.info
   sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
   # fix for 2.32.2 and texinfo 5.1 build failure
-  sed -i -e 's/SUBDIRS = doc po/SUBDIRS = po/g' bfd/Makefile.in
+  sed -i -e 's/@colophon/@@colophon/' \
+    -e 's/doc@cygnus.com/doc@@cygnus.com/' bfd/doc/bfd.texinfo
   mkdir -v binutils-build
   cd binutils-build
   ../configure --prefix=/usr --enable-shared --enable-multilib
