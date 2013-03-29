@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./autogen.sh
-  LDFLAGS="-L$PWD/libiptc/.libs" ./configure --prefix=/usr \
+  ./configure --prefix=/usr \
     --exec-prefix= \
     --bindir=/usr/bin \
     --with-xtlibdir=/lib/xtables \
