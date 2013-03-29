@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.23.1
+pkgver=2.23.2
 urls="http://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
@@ -9,6 +9,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   rm -fv etc/standards.info
   sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
+  # fix for 2.32.2 and texinfo 5.1 build failure
+  sed -i -e 's/SUBDIRS = doc po/SUBDIRS = po/g' bfd/Makefile.in
   mkdir -v binutils-build
   cd binutils-build
   ../configure --prefix=/usr --enable-shared --enable-multilib
