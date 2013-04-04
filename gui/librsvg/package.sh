@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=librsvg
-pkgver=2.36.4
-urls=" http://ftp.gnome.org/pub/gnome/sources/librsvg/2.36/librsvg-${pkgver}.tar.xz"
+pkgver=2.37.0
+urls=" http://ftp.gnome.org/pub/gnome/sources/librsvg/2.37/librsvg-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
