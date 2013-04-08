@@ -37,6 +37,7 @@ libtool
 lib32-libtool
 gdbm
 inetutils
+db
 perl
 autoconf
 automake
@@ -286,6 +287,7 @@ hicolor-icon-theme
 gajim
 desktop-file-utils
 wine
+miniupnpc
 transmission
 yasm
 cmake
@@ -317,7 +319,5 @@ gegl
 gimp
 bc
 gdb
-miniupnpc
 boost
-db
 bitcoin
