@@ -5,6 +5,7 @@ MAJOR/INTERESTING:
 - run tests/checks for packages
 - check tarball integrities whenever possible
 - update git/svn/hg repositories once in a while
+- check version differences in db and package files
 
 NORMAL:
 - fix iproute2 and xorg-xmodmap builds with gcc 4.8
