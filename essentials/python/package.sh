@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python
-pkgver=2.7.3
+pkgver=2.7.4
 urls="http://www.python.org/ftp/python/${pkgver}/Python-${pkgver}.tar.xz"
 srctar=Python-${pkgver}.tar.xz
 srcdir=${location}/Python-${pkgver}
