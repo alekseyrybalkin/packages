@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=ratpoison
-pkgver=1.4.5
-urls="http://savannah.nongnu.org/download/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=1.4.6
+urls="http://download.savannah.nongnu.org/releases/ratpoison/ratpoison-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
