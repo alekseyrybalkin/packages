@@ -965,6 +965,12 @@ fi
 if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
+  if [ -z "$2" ]; then
+    for repo in gnulib paxutils ffmpeg; do
+      cd $SOURCES_HOME/$repo
+      git pull
+    done
+  fi
   packages=`cat $KIIN_HOME/buildorder`
   if [ -n "$2" ]; then
     packages=`cat $KIIN_HOME/buildorder | grep -A 10000 "^$2$"`
