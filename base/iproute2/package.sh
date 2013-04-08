@@ -10,6 +10,8 @@ kiin_make() {
   sed -i '/^TARGETS/s@arpd@@g' misc/Makefile
   sed -i /ARPD/d Makefile
   sed -i 's/arpd.8//' man/man8/Makefile
+  # fix build with gcc 4.8.0
+  sed -i 's/-Werror//' Makefile
   make DESTDIR=
 }
 

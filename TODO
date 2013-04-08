@@ -8,7 +8,7 @@ MAJOR/INTERESTING:
 - check version differences in db and package files
 
 NORMAL:
-- fix iproute2 and xorg-xmodmap builds with gcc 4.8
+- fix xorg-xmodmap builds with gcc 4.8
 - find out why procps installed some strange hardlinks for man pages
 - maybe we should collect kiin-knowns from responsible packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
