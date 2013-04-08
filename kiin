@@ -39,6 +39,8 @@ usage() {
   echo "  kiin l <package>"
   echo "  kiin who-uses-now <package>"
   echo "  kiin check-buildorder"
+  echo "  kiin u [package1 [package2 [...]]]"
+  echo "  kiin ud <package>"
   echo "  kiin rebuild-world"
   echo "  kiin convert-arch-package"
   echo "  kiin list-package-dirs"
@@ -102,7 +104,7 @@ case $1 in
 esac
 case $1 in
   "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
-    | "links" | "linked-by" | "l" | "who-uses-now")
+    | "links" | "linked-by" | "l" | "who-uses-now" | "ud")
     count=`kiin ls | grep "^$2" | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
@@ -907,7 +909,7 @@ fi
 if [ $1 == 'check-buildorder' ]; then
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    grep -q $package $KIIN_HOME/buildorder
+    grep -q "^$package$" $KIIN_HOME/buildorder
     if [ $? -gt 0 ]; then
       echo "$package is missing from buildorder"
     fi
@@ -941,15 +943,34 @@ if [ $1 == 'check-buildorder' ]; then
   exit 0
 fi
 
+if [ $1 == 'u' ]; then
+  set -e
+  for package in `for item in $@; do
+      if [ $item != 'u' ]; then
+        cat $KIIN_HOME/buildorder | grep -n "^$item$" | sed 's/:/\ /g'
+      fi
+    done | sort -n | cut -d " " -f 2`; do
+    kiin rebuild-world $package $package
+  done
+  exit 0
+fi
+
+if [ $1 == 'ud' ]; then
+  package_name=`echo $package | sed 's/\-[^-]*$//g'`
+  kiin rebuild-world $package_name $package_name
+  kiin u `kiin linked-by $package`
+  exit 0
+fi
+
 if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
   packages=`cat $KIIN_HOME/buildorder`
   if [ -n "$2" ]; then
-    packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$"`
+    packages=`cat $KIIN_HOME/buildorder | grep -A 10000 "^$2$"`
   fi
   if [ -n "$3" ]; then
-    packages=`cat $KIIN_HOME/buildorder | grep -A 1000 "^$2$" | grep -B 1000 "^$3$"`
+    packages=`cat $KIIN_HOME/buildorder | grep -A 10000 "^$2$" | grep -B 10000 "^$3$"`
   fi
   for package in $packages; do
     # won't upgrade (never installed them in the first place)
