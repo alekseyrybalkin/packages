@@ -956,9 +956,10 @@ if [ $1 == 'u' ]; then
 fi
 
 if [ $1 == 'ud' ]; then
+  set -e
   package_name=`echo $package | sed 's/\-[^-]*$//g'`
   kiin rebuild-world $package_name $package_name
-  kiin u `kiin linked-by $package`
+  kiin u `kiin linked-by $package | tr '\n' ' '`
   exit 0
 fi
 
