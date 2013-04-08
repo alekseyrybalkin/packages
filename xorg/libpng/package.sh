@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.5.14
+pkgver=1.6.1
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://sourceforge.net/projects/${pkgname}-apng/files/${pkgname}15/${pkgver}/${pkgname}-${pkgver}-apng.patch.gz"
+  http://downloads.sourceforge.net/libpng-apng/libpng-${pkgver}-apng.patch.gz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -22,13 +22,13 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   if [ -z "$KIIN_LIB32" ]; then
-    mkdir -p ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
-    cp README libpng-manual.txt ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
+    mkdir -p ${pkgdir}/usr/share/doc/${pkgname}
+    cp README libpng-manual.txt ${pkgdir}/usr/share/doc/${pkgname}
   else
     cd contrib/pngminus
     make PNGLIB="-L${pkgdir}/usr/lib32 -lpng" -f makefile.std png2pnm pnm2png
     rm -rf "${pkgdir}"/usr/{include,share}
     rm "${pkgdir}/usr/bin/libpng-config"
-    ln -s "libpng15-config-32" "${pkgdir}/usr/bin/libpng-config-32"
+    ln -s "libpng16-config-32" "${pkgdir}/usr/bin/libpng-config-32"
   fi
 }
