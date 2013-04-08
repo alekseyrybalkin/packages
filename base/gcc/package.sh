@@ -7,23 +7,24 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  # --disable-install-libiberty does not work as of now
   sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in
-  sed -i -e /autogen/d -e /check.sh/d fixincludes/Makefile.in
+  # do not use AVX
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
   sed -i -e 's/#ifdef HAVE_AS_AVX/#if defined(HAVE_AS_AVX) \&\& defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
-  sed -i -e 's/BUILD_INFO=info/BUILD_INFO=/' gcc/configure
   mkdir -v gcc-build
   cd gcc-build
-  ../configure --prefix=/usr            \
-                        --libexecdir=/usr/lib    \
-                        --enable-shared          \
-                        --enable-threads=posix   \
-                        --enable-__cxa_atexit    \
-                        --enable-clocale=gnu     \
-                        --enable-languages=c,c++ \
-                        --enable-multilib        \
-                        --disable-bootstrap      \
-                        --with-system-zlib
+  ../configure --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --enable-shared \
+    --enable-threads=posix \
+    --enable-__cxa_atexit \
+    --enable-clocale=gnu \
+    --enable-languages=c,c++ \
+    --enable-multilib \
+    --disable-bootstrap \
+    --disable-install-libiberty \
+    --with-system-zlib
   make
 }
 
