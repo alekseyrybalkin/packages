@@ -325,3 +325,5 @@ bitcoin
 apache-ant
 libcups
 attr
+openjdk
+icedtea-web
