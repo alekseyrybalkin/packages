@@ -321,3 +321,6 @@ bc
 gdb
 boost
 bitcoin
+apache-ant
+libcups
+attr
