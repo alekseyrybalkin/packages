@@ -261,6 +261,7 @@ gtk2
 which
 nspr
 nss
+xulrunner
 firefox
 xlockmore
 cpio
