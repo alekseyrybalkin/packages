@@ -773,6 +773,9 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'lib32-freeglut' ]] && package='freeglut'
     [[ $package = 'djview' ]] && package='djview4'
     [[ $package = 'procps' ]] && package='procps-ng'
+    [[ $package = 'libcups' ]] && package='cups'
+    [[ $package = 'openjdk' ]] && package='java7-openjdk'
+    [[ $package = 'icedtea-web' ]] && package='icedtea-web-java7'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
