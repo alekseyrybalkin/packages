@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apache-ant
-pkgver=1.8.4
+pkgver=1.9.0
 urls="http://archive.apache.org/dist/ant/source/apache-ant-${pkgver}-src.tar.bz2"
 srctar=${pkgname}-${pkgver}-src.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -12,6 +12,7 @@ kiin_make() {
 
 kiin_install() {
   export JAVA_HOME=/opt/jdk
-  ./build.sh -Ddist.dir=${pkgdir}/opt/ant-1.8.4 dist
-  ln -v -sfn ant-1.8.4 ${pkgdir}/opt/ant
+  unset _JAVA_OPTIONS
+  ./build.sh -Ddist.dir=${pkgdir}/opt/ant-${pkgver} dist
+  ln -v -sfn ant-${pkgver} ${pkgdir}/opt/ant
 }
