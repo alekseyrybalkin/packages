@@ -31,4 +31,3 @@ MINOR:
 - add p7zip
 - add drill (ldns)
 - implement kiin_after_uninstall
-- add ntp

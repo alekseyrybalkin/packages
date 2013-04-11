@@ -327,3 +327,5 @@ libcups
 attr
 openjdk
 icedtea-web
+libcap
+ntp
