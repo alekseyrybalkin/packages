@@ -780,7 +780,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'sysvinit' ]] && [[ $version = '2.88dsf' ]] && version='2.88'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
-    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p7' ]] && version='1.8.6.p7'
+    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p8' ]] && version='1.8.6.p8'
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     # not found in Arch:
     [[ $package = 'vlock' ]] && continue
