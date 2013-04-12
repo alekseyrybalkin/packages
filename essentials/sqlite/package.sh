@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.7.16.1
-_pkgver=3071601
+pkgver=3.7.16.2
+_pkgver=3071602
 srctar=${pkgname}-autoconf-${_pkgver}.tar.gz
 urls="http://sqlite.org/2013/${pkgname}-autoconf-${_pkgver}.tar.gz"
 srcdir=${location}/${pkgname}-autoconf-${_pkgver}
