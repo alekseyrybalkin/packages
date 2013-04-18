@@ -248,12 +248,14 @@ EOF
     pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
     XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
     fakeroot ${maker}
-  rm ${maker}
-  rm ${location}/kiin_make_log
-  rm ${location}/kiin_install_log
-  rm -rf ${pkgdir}
-  if [[ ${srcdir} ]]; then
-    rm -rf ${srcdir}
+  if [ -z "${KIIN_NO_CLEARING}" ]; then
+    rm ${maker}
+    rm ${location}/kiin_make_log
+    rm ${location}/kiin_install_log
+    rm -rf ${pkgdir}
+    if [[ ${srcdir} ]]; then
+      rm -rf ${srcdir}
+    fi
   fi
   green='\e[0;32m'
   txtrst='\e[0m'
