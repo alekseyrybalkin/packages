@@ -5,7 +5,6 @@ vcs="mercurial"
 hg_pkgname=icedtea
 hgtag=397dd0f8e62a
 pkgver=7+
-rhino_ver=1_7R3
 
 HOTSPOT_CHANGESET=b9bbe418db87
 OPENJDK_CHANGESET=8714dddd443a
@@ -14,8 +13,7 @@ JAXP_CHANGESET=e17ab897041e
 JAXWS_CHANGESET=7169780eff51
 JDK_CHANGESET=bc455fc9948f
 LANGTOOLS_CHANGESET=5f4ad2269018
-urls="ftp://ftp.mozilla.org/pub/mozilla.org/js/rhino${rhino_ver}.zip \
-  http://icedtea.classpath.org/hg/icedtea7-forest/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
+urls="http://icedtea.classpath.org/hg/icedtea7-forest/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/archive/${OPENJDK_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/corba/archive/${CORBA_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/jaxp/archive/${JAXP_CHANGESET}.tar.gz \
@@ -57,8 +55,5 @@ kiin_install() {
   mkdir -p ${pkgdir}/opt
   cp -R openjdk.build/j2sdk-image ${pkgdir}/opt/${pkgname}-${pkgver}
   chown -R root:root ${pkgdir}/opt/${pkgname}-${pkgver}
-  unzip ../rhino${rhino_ver}.zip
-  install -v -d -m755 ${pkgdir}/usr/share/java
-  install -v -m755 rhino${rhino_ver}/*.jar ${pkgdir}/usr/share/java
   ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
 }
