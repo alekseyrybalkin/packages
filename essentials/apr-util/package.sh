@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apr-util
-pkgver=1.5.1
+pkgver=1.5.2
 urls="http://archive.apache.org/dist/apr/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
