@@ -137,13 +137,19 @@ if [ $1 == "make" ]; then
   fi
   if [ ! -z ${vcs} ]; then
     if [ ${vcs} = 'git' ]; then
+      SRC_HOME=$SOURCES_HOME
+      if [ ! -z ${sources_home} ]; then
+        SRC_HOME=${sources_home}
+      fi
       if [ ! -z ${git_pkgname} ]; then
-        git clone $SOURCES_HOME/${git_pkgname} ${srcdir}
+        git clone $SRC_HOME/${git_pkgname} ${srcdir}
       else
-        git clone $SOURCES_HOME/${pkgname} ${srcdir}
+        git clone $SRC_HOME/${pkgname} ${srcdir}
       fi
       cd ${srcdir}
-      git checkout ${gittag}
+      if [ ! -z ${gittag} ]; then
+        git checkout ${gittag}
+      fi
     fi
     if [ ${vcs} = 'mercurial' ]; then
       if [ ! -z ${hg_pkgname} ]; then
