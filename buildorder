@@ -324,6 +324,7 @@ bitcoin
 apache-ant
 libcups
 attr
+rhino
 openjdk
 icedtea-web
 libcap
