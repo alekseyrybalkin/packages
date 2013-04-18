@@ -244,7 +244,6 @@ xf86-input-synaptics
 xf86-video-intel
 rxvt-unicode
 ttf-dejavu
-ratpoison
 zip
 unzip
 atk
