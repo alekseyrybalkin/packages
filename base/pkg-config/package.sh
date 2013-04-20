@@ -2,8 +2,8 @@
 
 pkgname=pkg-config
 vcs="git"
-gittag=74ceac54ef6f9247c00f08eecd8cca811a3c5934
-pkgver=0.28.20130124
+gittag=cf21a002be9ad42188c7d6e031a6a1eb36cd9b18
+pkgver=0.28+
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
