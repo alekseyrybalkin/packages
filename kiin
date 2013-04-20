@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this script depends on (beyond base LFS packages):
-# git, mercurial, python 2, sqlite, fakeroot, wget, python2-sh, sudo
+# git, mercurial, python 2, sqlite, fakeroot, wget, python2-sh, sudo, unzip
 
 KIIN_HOME=/var/kiin
 KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
@@ -164,6 +164,13 @@ if [ $1 == "make" ]; then
     if [[ ${srctar} ]]; then
       echo "unpacking ${srctar}..."
       tar xf ${srctar}
+      if [[ ${srcdir} ]]; then
+        cd ${srcdir}
+      fi
+    fi
+    if [[ ${srczip} ]]; then
+      echo "unpacking ${srczip}..."
+      unzip ${srczip}
       if [[ ${srcdir} ]]; then
         cd ${srcdir}
       fi
