@@ -275,7 +275,11 @@ if [ $1 = "download" ]; then
     if [[ $url == *midnight* ]]; then
       wget --no-check-certificate $url
     else
-      wget $url
+      if [ -n "$wget_set_filename" ]; then
+        wget $url -O $srctar
+      else
+        wget $url
+      fi
     fi
   done
   exit 0
