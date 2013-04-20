@@ -3,7 +3,7 @@
 pkgname=tar
 vcs="git"
 gittag=beca89bccb6b806e3528d4d0aa01cb5f2831c954
-pkgver=1.26.20130312
+pkgver=1.26+
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
