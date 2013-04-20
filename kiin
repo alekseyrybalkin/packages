@@ -978,8 +978,9 @@ fi
 if [ $1 == 'ud' ]; then
   set -e
   package_name=`echo $package | sed 's/\-[^-]*$//g'`
+  dependent=`kiin linked-by $package | tr '\n' ' '`
   kiin rebuild-world $package_name $package_name
-  kiin u `kiin linked-by $package | tr '\n' ' '`
+  kiin u $dependent
   exit 0
 fi
 
