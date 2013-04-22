@@ -3,8 +3,8 @@
 pkgname=linux
 #git_pkgname=linux-stable
 vcs="git"
-gittag=v3.9-rc7
-pkgver=3.9.rc7
+gittag=v3.9-rc8
+pkgver=3.9.rc8
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
