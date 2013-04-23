@@ -303,7 +303,7 @@ if [ $1 == 'gen-db' ]; then
   mkdir kiin-dest
   cd kiin-dest
   mkdir -p boot/grub/i386-pc
-  mkdir -p etc/{ssh,gtk-2.0,xml,udev}
+  mkdir -p etc/{ssh,gtk-2.0,xml,udev,ssl/certs/java}
   mkdir -p usr/{share/info,lib/locale}
   mkdir -p usr/share/{icons/hicolor,glib-2.0/schemas,applications}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
@@ -338,6 +338,7 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/glib-2.0/schemas/gschemas.compiled
   touch usr/share/applications/mimeinfo.cache
   touch etc/mtab.fuselock
+  touch etc/ssl/certs/java/cacerts
   cd ..
   find kiin-dest ! -type d | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
