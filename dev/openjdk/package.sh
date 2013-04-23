@@ -56,4 +56,5 @@ kiin_install() {
   cp -R openjdk.build/j2sdk-image ${pkgdir}/opt/${pkgname}-${pkgver}
   chown -R root:root ${pkgdir}/opt/${pkgname}-${pkgver}
   ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
+  ln -sf /etc/ssl/certs/java/cacerts ${pkgdir}/opt/${pkgname}-${pkgver}/jre/lib/security/cacerts
 }
