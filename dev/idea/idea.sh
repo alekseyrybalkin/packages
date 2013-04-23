@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /usr/share/idea/bin/
-./idea.sh "$@"
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true' ./idea.sh "$@"
