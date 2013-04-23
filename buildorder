@@ -325,6 +325,7 @@ apache-ant
 libcups
 attr
 rhino
+ca-certificates-java
 openjdk
 icedtea-web
 libcap
