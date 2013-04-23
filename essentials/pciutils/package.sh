@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pciutils
-pkgver=3.1.10
+pkgver=3.2.0
 urls="http://ftp.kernel.org/pub/software/utils/pciutils/pciutils-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
