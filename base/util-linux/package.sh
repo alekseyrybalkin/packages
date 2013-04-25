@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.22.2
-urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.22/${pkgname}-${pkgver}.tar.xz"
+pkgver=2.23
+urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.23/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
