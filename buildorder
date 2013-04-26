@@ -277,6 +277,8 @@ fuse
 ntfsprogs
 acpi
 unrar
+lzo
+openvpn
 python2-gobject2
 python2-cairo
 python2-gtk
