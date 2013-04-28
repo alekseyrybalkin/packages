@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fetchmail
-pkgver=6.3.25
+pkgver=6.3.26
 urls="http://downloads.sourceforge.net/fetchmail/fetchmail-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
