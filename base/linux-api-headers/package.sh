@@ -3,8 +3,8 @@
 pkgname=linux-api-headers
 git_pkgname=linux
 vcs="git"
-gittag=v3.9-rc8
-pkgver=3.9.rc8
+gittag=v3.9
+pkgver=3.9
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
