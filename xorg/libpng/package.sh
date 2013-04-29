@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  gzip -cd ../libpng-${pkgver}-apng.patch.gz | patch -p1
+  gzip -cd ../libpng-${_apngver}-apng.patch.gz | patch -p1
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static
