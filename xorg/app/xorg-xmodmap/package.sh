@@ -2,12 +2,13 @@
 
 _pkgname=xmodmap
 pkgname=xorg-${_pkgname}
-pkgver=1.0.7
-urls="http://xorg.freedesktop.org/releases/individual/app/${_pkgname}-${pkgver}.tar.bz2"
-srctar=${_pkgname}-${pkgver}.tar.bz2
+vcs="git"
+gittag=f784ef30fdbd1b32aacf44537d9e7c85d268465b
+pkgver=1.0.7+
 srcdir=${location}/${_pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure $XORG_CONFIG
   make
 }
