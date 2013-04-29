@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=zlib
-pkgver=1.2.7
-urls="http://www.zlib.net/zlib-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=1.2.8
+urls="http://www.zlib.net/zlib-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
