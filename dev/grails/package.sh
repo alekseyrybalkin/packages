@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=grails
-pkgver=2.1.3
+pkgver=2.2.1
 urls="http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/${pkgname}-${pkgver}.zip"
 srczip=${pkgname}-${pkgver}.zip
 srcdir=${location}/${pkgname}-${pkgver}
