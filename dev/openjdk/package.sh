@@ -38,8 +38,6 @@ kiin_make() {
   ./autogen.sh
   ./configure --with-jdk-home=/opt/jdk \
     --enable-nss \
-    --disable-system-gif \
-    --disable-system-lcms \
     --with-hotspot-src-zip=${srcdir}/${HOTSPOT_CHANGESET}.tar.gz \
     --with-openjdk-src-zip=${srcdir}/${OPENJDK_CHANGESET}.tar.gz \
     --with-corba-src-zip=${srcdir}/${CORBA_CHANGESET}.tar.gz \
