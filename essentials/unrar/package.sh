@@ -1,16 +1,15 @@
 #!/bin/sh
 
 pkgname=unrar
-pkgver=4.2.4
+pkgver=5.0.2
 urls="http://www.rarlab.com/rar/unrarsrc-${pkgver}.tar.gz"
 srctar=${pkgname}src-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
 
 kiin_make() {
-  make -f makefile.unix
+  make -f makefile CXXFLAGS="-fPIC ${CXXFLAGS}" STRIP="true"
 }
 
 kiin_install() {
-  mkdir -p ${pkgdir}/usr/bin
-  install -v -m755 unrar ${pkgdir}/usr/bin
+  install -Dm755 unrar ${pkgdir}/usr/bin/unrar
 }
