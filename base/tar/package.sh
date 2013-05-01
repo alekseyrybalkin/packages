@@ -1,15 +1,13 @@
 #!/bin/sh
 
 pkgname=tar
-vcs="git"
-gittag=beca89bccb6b806e3528d4d0aa01cb5f2831c954
-pkgver=1.26+
+pkgver=1.26
+urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"
+srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  echo "--gnulib-srcdir=$SOURCES_HOME/gnulib" > .bootstrap
-  echo "--paxutils-srcdir=$SOURCES_HOME/paxutils" >> .bootstrap
-  ./bootstrap
+  sed -i -e '/gets is a/d' gnu/stdio.in.h
   ./configure --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin
   make
 }
