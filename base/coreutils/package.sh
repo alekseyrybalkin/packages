@@ -10,6 +10,8 @@ kiin_make() {
   ./configure \
     --prefix=/usr \
     --libexecdir=/usr/lib \
+    --disable-xattr \
+    --disable-libcap \
     --enable-no-install-program=kill,uptime
   make
 }
