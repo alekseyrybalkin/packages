@@ -7,6 +7,7 @@ pkgver=1.12.14
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  export ac_cv_lib_lzo2_lzo2a_decompress="no"
   ./autogen.sh
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
