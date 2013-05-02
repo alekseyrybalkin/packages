@@ -13,7 +13,6 @@ kiin_make() {
   sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
   sed -i 's/resizecons.8 //' man/man8/Makefile.in
   ./configure --prefix=/usr \
-    --datadir=/lib/kbd \
     --disable-vlock
   make
 }
@@ -22,7 +21,7 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/bin
   mv -v ${pkgdir}/usr/bin/{kbd_mode,loadkeys,openvt,setfont} ${pkgdir}/bin
-  mkdir -pv ${pkgdir}/usr/share/doc/kbd-${pkgver}
+  mkdir -pv ${pkgdir}/usr/share/doc/kbd
   cp -R -v doc/* \
-          ${pkgdir}/usr/share/doc/kbd-${pkgver}
+          ${pkgdir}/usr/share/doc/kbd
 }
