@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python2-pyasn1
-pkgver=0.1.4
+pkgver=0.1.7
 urls="http://downloads.sourceforge.net/sourceforge/pyasn1/pyasn1-${pkgver}.tar.gz"
 srctar=pyasn1-${pkgver}.tar.gz
 srcdir=${location}/pyasn1-${pkgver}
