@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # this script depends on (beyond base LFS packages):
-# git, mercurial, python 2, sqlite, fakeroot, wget, python2-sh, sudo, unzip
+#  git, mercurial, python 2, sqlite, fakeroot, wget,
+#  python2-sh, sudo, unzip, lsof
 
 KIIN_HOME=/var/kiin
 KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
