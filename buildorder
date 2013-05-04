@@ -30,6 +30,7 @@ iana-etc
 m4
 bison
 pcre
+lib32-pcre
 grep
 readline
 bash
@@ -69,10 +70,13 @@ vim
 linux
 fakeroot
 sqlite
+lib32-sqlite
 libffi
+lib32-libffi
 expat
 lib32-expat
 openssl
+lib32-openssl
 cacerts
 wget
 curl
@@ -89,6 +93,7 @@ mercurial
 sudo
 openssh
 glib
+lib32-glib
 slang
 mc
 links
@@ -187,6 +192,9 @@ libxrandr
 lib32-libxrandr
 libxtst
 libxv
+lib32-libxv
+libxss
+lib32-libxss
 libxvmc
 libxxf86dga
 libxxf86vm
@@ -249,6 +257,7 @@ unzip
 atk
 cairo
 libjpeg-turbo
+lib32-libjpeg-turbo
 freeglut
 lib32-freeglut
 glew
@@ -348,3 +357,8 @@ dosbox
 libtxc_dxtn
 lib32-libtxc_dxtn
 steam
+dbus-core
+lib32-dbus-core
+qt
+lib32-qt
+skype

@@ -340,6 +340,7 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/applications/mimeinfo.cache
   touch etc/mtab.fuselock
   touch etc/ssl/certs/java/cacerts
+  touch etc/machine-id
   cd ..
   find kiin-dest ! -type d | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
