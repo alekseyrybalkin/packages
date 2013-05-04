@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=iproute2
-pkgver=3.8.0
+pkgver=3.9.0
 urls="http://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
