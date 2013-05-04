@@ -7,6 +7,8 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  # https://bugs.archlinux.org/task/34630
+  export CFLAGS+=" -Wall"
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
               --with-pcre=system \
