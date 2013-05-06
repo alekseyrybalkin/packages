@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=icedtea-web
-pkgver=1.3.2
+pkgver=1.4
 urls="http://icedtea.classpath.org/download/source/icedtea-web-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
