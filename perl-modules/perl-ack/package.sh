@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-ack
-pkgver=2.02
+pkgver=2.04
 urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/ack-${pkgver}.tar.gz"
 srctar=ack-${pkgver}.tar.gz
 srcdir=${location}/ack-${pkgver}
