@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=steam
-pkgver=1.0.0.38
+pkgver=1.0.0.39
 urls="http://repo.steampowered.com/${pkgname}/pool/${pkgname}/s/${pkgname}/${pkgname}_${pkgver}.tar.gz"
 srctar=${pkgname}_${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
