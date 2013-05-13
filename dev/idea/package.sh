@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=idea
-pkgver=12.1.2
-_pkgver=129.354
+pkgver=12.1.3
+_pkgver=129.451
 urls="http://download.jetbrains.com/idea/ideaIC-${pkgver}.tar.gz"
 srctar=ideaIC-${pkgver}.tar.gz
 srcdir=${location}/idea-IC-${_pkgver}
