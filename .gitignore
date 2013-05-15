@@ -8,6 +8,7 @@
 *.deb
 *.zip
 *.diff
+*.png
 /_kiin-rename
 /kiin-db/
 /trash/
