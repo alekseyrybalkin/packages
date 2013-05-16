@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssh
-pkgver=6.2p1
+pkgver=6.2p2
 urls="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
