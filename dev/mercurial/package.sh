@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mercurial
-pkgver=2.6
+pkgver=2.6.1
 urls="http://mercurial.selenic.com/release/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
