@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cmake
-pkgver=2.8.10.2
+pkgver=2.8.11
 urls="http://www.cmake.org/files/v2.8/cmake-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
