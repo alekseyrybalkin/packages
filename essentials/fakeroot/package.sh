@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fakeroot
-pkgver=1.18.4
+pkgver=1.19
 urls="http://ftp.ru.debian.org/debian/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.bz2"
 srctar=${pkgname}_${pkgver}.orig.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
