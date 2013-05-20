@@ -8,6 +8,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i -e 's/->tempfile($/::tempfile(/g' perl/Git.pm
   ./configure --prefix=/usr         \
               --libexecdir=/usr/lib \
               --with-libpcre \
