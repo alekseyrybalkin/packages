@@ -9,6 +9,7 @@
 *.zip
 *.diff
 *.png
+*.jar
 /_kiin-rename
 /kiin-db/
 /trash/

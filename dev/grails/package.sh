@@ -2,7 +2,8 @@
 
 pkgname=grails
 pkgver=2.2.2
-urls="http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/${pkgname}-${pkgver}.zip"
+urls="http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/${pkgname}-${pkgver}.zip \
+  http://dist.springframework.org/snapshot/SPRING-LOADED/springloaded-1.1.2.20130430.jar"
 srczip=${pkgname}-${pkgver}.zip
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -14,6 +15,8 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/usr/share/pixmaps/
   cp -r . ${pkgdir}/usr/share/${pkgname}
+  cp ../springloaded-1.1.2.20130430.jar \
+    ${pkgdir}/usr/share/grails/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.1.jar
 
   install -Dm755 bin/startGrails \
     ${pkgdir}/usr/share/${pkgname}/startGrails
