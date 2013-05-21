@@ -246,10 +246,11 @@ fi
 
 cd ${location}
 echo creating xz archive...
-tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest \
-  package.sh \
-  kiin_make_log \
-  kiin_install_log
+{ echo package.sh && \
+  echo kiin_make_log && \
+  echo kiin_install_log && \
+  find kiin-dest ! -type d; } | \
+  tar cfa kiin.${pkgname}-${pkgver}.tar.xz -T - --no-recursion
 EOF
   chmod +x ${maker}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
@@ -1098,7 +1099,8 @@ fi
 
 cd ${location}
 echo creating xz archive...
-tar cfa kiin.${pkgname}-${pkgver}.tar.xz kiin-dest
+find kiin-dest ! -type d | \
+  tar cfa kiin.${pkgname}-${pkgver}.tar.xz -T - --no-recursion
 EOF
   chmod +x ${converter}
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
