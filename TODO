@@ -1,15 +1,16 @@
 TODO LIST
 MAJOR/INTERESTING:
-- fix bug with duplicates in glibc archive
+- implement kiin clean <-- _MUCH_ needed
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - fix setuid for xlockmore somehow
 - run tests/checks for packages
 - check tarball integrities whenever possible
+  [ http://allanmcrae.com/2012/04/how-secure-is-the-source-code/ ]
+- sign packages with gpg key and check it before install/upgrade
 - update git/svn/hg repositories once in a while
 - check version differences in db and package files
 
 NORMAL:
-- fix xorg-xmodmap builds with gcc 4.8
 - find out why procps installed some strange hardlinks for man pages
 - maybe we should collect kiin-knowns from responsible packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
