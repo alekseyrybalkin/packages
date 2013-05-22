@@ -129,13 +129,40 @@ case $1 in
 esac
 
 if [ $1 == "make" ]; then
-  set -e
   if [ -n "$2" ]; then
     if [ ! $2 == "lib32" ]; then
       echo "unknown option $2"
       exit 1
     fi
   fi
+  files_fail=0
+  for url in "$urls"; do
+    if [ ! -f "`basename $url`" ]; then
+      echo "file `basename $url` not found, aborting."
+      files_fail=1
+    fi
+  done
+  for file in `ls`; do
+    git ls-files $file --error-unmatch >/dev/null 2>&1
+    if [ $? -ne 0 ]; then
+      in_urls=0
+      for url in "$urls"; do
+        if [ "$file" == `basename $url` ]; then
+          in_urls=1
+          break
+        fi
+      done
+      if [ $in_urls -eq 0 ]; then
+        echo "$file is untracked and not in urls, aborting."
+        files_fail=1
+      fi
+    fi
+  done
+  if [ $files_fail -ne 0 ]; then
+    exit 1
+  fi
+  set -e
+
   if [ ! -z ${vcs} ]; then
     if [ ${vcs} = 'git' ]; then
       SRC_HOME=$SOURCES_HOME
