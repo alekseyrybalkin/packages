@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=alsa-lib
-pkgver=1.0.27
+pkgver=1.0.27.1
 urls="ftp://ftp.alsa-project.org/pub/lib/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
