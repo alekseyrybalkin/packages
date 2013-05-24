@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apache-ant
-pkgver=1.9.0
+pkgver=1.9.1
 urls="http://archive.apache.org/dist/ant/source/apache-ant-${pkgver}-src.tar.bz2"
 srctar=${pkgname}-${pkgver}-src.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
