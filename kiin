@@ -45,6 +45,7 @@ usage() {
   echo "  kiin rebuild-world"
   echo "  kiin convert-arch-package"
   echo "  kiin list-package-dirs"
+  echo "  kiin clean"
 }
 
 # for upgrade and uninstall
@@ -72,7 +73,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "make" | "download" | "convert-arch-package")
+  "make" | "download" | "convert-arch-package" | "clean")
     if [ ! -f ./package.sh ]; then
       echo "no package.sh found, goodbye."
       exit 1
@@ -136,30 +137,68 @@ if [ $1 == "make" ]; then
     fi
   fi
   files_fail=0
-  for url in "$urls"; do
-    if [ ! -f "`basename $url`" ]; then
-      echo "file `basename $url` not found, aborting."
-      files_fail=1
-    fi
-  done
+  if [ -n "$urls" ]; then
+    for url in "$urls"; do
+      if [ ! -f "`basename $url`" ]; then
+        echo "file `basename $url` not found."
+        files_fail=1
+      fi
+    done
+  fi
   for file in `ls`; do
     git ls-files $file --error-unmatch >/dev/null 2>&1
     if [ $? -ne 0 ]; then
       in_urls=0
-      for url in "$urls"; do
-        if [ "$file" == `basename $url` ]; then
-          in_urls=1
-          break
-        fi
-      done
+      if [ -n "$urls" ]; then
+        for url in "$urls"; do
+          if [ "$file" == `basename $url` ]; then
+            in_urls=1
+            break
+          fi
+        done
+      fi
       if [ $in_urls -eq 0 ]; then
-        echo "$file is untracked and not in urls, aborting."
+        echo "$file is untracked and not in urls"
         files_fail=1
       fi
     fi
   done
   if [ $files_fail -ne 0 ]; then
-    exit 1
+    if [ -z "$KIIN_NO_FIX_FILES" ]; then
+      echo "trying to fix files..."
+      kiin clean
+      kiin download
+      for file in `ls`; do
+        git ls-files $file --error-unmatch >/dev/null 2>&1
+        if [ $? -ne 0 ]; then
+          in_urls=0
+          if [ -n "$urls" ]; then
+            for url in "$urls"; do
+              if [ "$file" == `basename $url` ]; then
+                in_urls=1
+                break
+              fi
+            done
+          fi
+          if [ $in_urls -eq 0 ]; then
+            if [ ! -f $KIIN_HOME/trash/`basename $file` ]; then
+              mv -v $file $KIIN_HOME/trash/`basename $file`
+            else
+              cnt=1
+              while [ -f $KIIN_HOME/trash/`basename $file`.$cnt ]; do
+                let cnt=$cnt+1
+              done
+              mv -v $file $KIIN_HOME/trash/`basename $file`.$cnt
+            fi
+          fi
+        fi
+      done
+      KIIN_NO_FIX_FILES=1 kiin $1 $2 $3 $4
+      exit $?
+    else
+      echo "Problems with the files in the folder. Aborting."
+      exit 1
+    fi
   fi
   set -e
 
@@ -285,13 +324,8 @@ EOF
     XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
     fakeroot ${maker}
   if [ -z "${KIIN_NO_CLEARING}" ]; then
-    rm ${maker}
-    rm ${location}/kiin_make_log
-    rm ${location}/kiin_install_log
-    rm -rf ${pkgdir}
-    if [[ ${srcdir} ]]; then
-      rm -rf ${srcdir}
-    fi
+    cd ${location}
+    kiin clean
   fi
   green='\e[0;32m'
   txtrst='\e[0m'
@@ -301,13 +335,15 @@ fi
 
 if [ $1 = "download" ]; then
   for url in $urls; do
-    if [[ $url == *midnight* ]]; then
-      wget --no-check-certificate $url
-    else
-      if [ -n "$wget_set_filename" ]; then
-        wget $url -O $srctar
+    if [ ! -f "`basename $url`" ]; then
+      if [[ $url == *midnight* ]]; then
+        wget --no-check-certificate $url
       else
-        wget $url
+        if [ -n "$wget_set_filename" ]; then
+          wget $url -O $srctar
+        else
+          wget $url
+        fi
       fi
     fi
   done
@@ -1140,6 +1176,17 @@ fi
 
 if [ $1 == 'list-package-dirs' ]; then
   echo 'base security dev essentials gui multimedia perl-modules python2-modules xorg mail gaming skype'
+  exit 0
+fi
+
+if [ $1 == 'clean' ]; then
+  rm -rf kiin_maker.sh
+  rm -rf ${location}/kiin_make_log
+  rm -rf ${location}/kiin_install_log
+  rm -rf ${pkgdir}
+  if [[ ${srcdir} ]]; then
+    rm -rf ${srcdir}
+  fi
   exit 0
 fi
 
