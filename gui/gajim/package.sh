@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gajim
-pkgver=0.15.3
+pkgver=0.15.4
 urls="http://www.gajim.org/downloads/${pkgver%.*}/gajim-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
