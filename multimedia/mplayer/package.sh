@@ -2,8 +2,8 @@
 
 pkgname=mplayer
 vcs="git"
-gittag=06d95575555ef334d153684504103b08815f514d
-pkgver=36197
+gittag=c885377694708bac7d65f07b6a8550ace30836ff
+pkgver=36287
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
