@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxau
-pkgver=1.0.7
+pkgver=1.0.8
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXau-${pkgver}.tar.bz2"
 srctar=libXau-${pkgver}.tar.bz2
 srcdir=${location}/libXau-${pkgver}
