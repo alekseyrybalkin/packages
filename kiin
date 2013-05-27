@@ -1056,6 +1056,7 @@ if [ $1 == 'u' ]; then
   for package in `for item in $@; do
       if [ $item != 'u' ]; then
         cat $KIIN_HOME/buildorder | grep -n "^$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder | grep -n "^lib32-$item$" | sed 's/:/\ /g'
       fi
     done | sort -n | cut -d " " -f 2`; do
     kiin rebuild-world $package $package
@@ -1069,6 +1070,9 @@ if [ $1 == 'ud' ]; then
   dependent=`kiin linked-by $package | tr '\n' ' '`
   kiin rebuild-world $package_name $package_name
   kiin u $dependent
+  if [ `kiin ls | grep "^lib32-$package$" | wc -l` -gt 0 ]; then
+    kiin ud lib32-$package
+  fi
   exit 0
 fi
 
