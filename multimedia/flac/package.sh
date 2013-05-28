@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=flac
-pkgver=1.2.1
-urls="http://downloads.sourceforge.net/flac/flac-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=1.3.0
+urls="http://downloads.xiph.org/releases/flac/flac-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
