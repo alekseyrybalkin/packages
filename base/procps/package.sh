@@ -2,8 +2,8 @@
 
 pkgname=procps
 vcs="git"
-gittag=v3.3.7
-pkgver=3.3.7
+gittag=v3.3.8
+pkgver=3.3.8
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
