@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=pcre
-pkgver=8.32
-urls="http://downloads.sourceforge.net/pcre/pcre-${pkgver}.tar.bz2"
+pkgver=8.33
+urls="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
