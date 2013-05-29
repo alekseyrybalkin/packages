@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfixes
-pkgver=5.0
+pkgver=5.0.1
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXfixes-${pkgver}.tar.bz2"
 srctar=libXfixes-${pkgver}.tar.bz2
 srcdir=${location}/libXfixes-${pkgver}
