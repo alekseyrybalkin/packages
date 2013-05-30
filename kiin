@@ -139,9 +139,16 @@ if [ $1 == "make" ]; then
   files_fail=0
   if [ -n "$urls" ]; then
     for url in $urls; do
-      if [ ! -f "`basename $url`" ]; then
-        echo "file `basename $url` not found."
-        files_fail=1
+      if [ -z "$wget_set_filename" ]; then
+        if [ ! -f "`basename $url`" ]; then
+          echo "file `basename $url` not found."
+          files_fail=1
+        fi
+      else
+        if [ ! -f "${srctar}" ]; then
+          echo "file ${srctar} not found."
+          files_fail=1
+        fi
       fi
     done
   fi
@@ -151,9 +158,16 @@ if [ $1 == "make" ]; then
       in_urls=0
       if [ -n "$urls" ]; then
         for url in $urls; do
-          if [ "$file" == `basename $url` ]; then
-            in_urls=1
-            break
+          if [ -z "$wget_set_filename" ]; then
+            if [ "$file" == `basename $url` ]; then
+              in_urls=1
+              break
+            fi
+          else
+            if [ "$file" == "${srctar}" ]; then
+              in_urls=1
+              break
+            fi
           fi
         done
       fi
@@ -174,9 +188,16 @@ if [ $1 == "make" ]; then
           in_urls=0
           if [ -n "$urls" ]; then
             for url in $urls; do
-              if [ "$file" == `basename $url` ]; then
-                in_urls=1
-                break
+              if [ -z "$wget_set_filename" ]; then
+                if [ "$file" == `basename $url` ]; then
+                  in_urls=1
+                  break
+                fi
+              else
+                if [ "$file" == "${srctar}" ]; then
+                  in_urls=1
+                  break
+                fi
               fi
             done
           fi
@@ -335,15 +356,17 @@ fi
 
 if [ $1 = "download" ]; then
   for url in $urls; do
-    if [ ! -f "`basename $url`" ]; then
-      if [[ $url == *midnight* ]]; then
-        wget --no-check-certificate $url
-      else
-        if [ -n "$wget_set_filename" ]; then
-          wget $url -O $srctar
+    if [ -z "$wget_set_filename" ]; then
+      if [ ! -f "`basename $url`" ]; then
+        if [[ $url == *midnight* ]]; then
+          wget --no-check-certificate $url
         else
           wget $url
         fi
+      fi
+    else
+      if [ ! -f "${srctar}" ]; then
+        wget $url -O $srctar
       fi
     fi
   done
