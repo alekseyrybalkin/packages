@@ -9,7 +9,7 @@ srcdir=${location}/tidy
 
 kiin_make() {
   source build/gnuauto/setup.sh
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --disable-static
   make
 }
 
