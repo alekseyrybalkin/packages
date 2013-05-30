@@ -2,14 +2,12 @@
 
 pkgname=openssl
 pkgver=1.0.1e
-urls="http://www.openssl.org/source/openssl-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/openssl-${pkgver}-fix_manpages-1.patch"
+urls="http://www.openssl.org/source/openssl-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ../openssl-${pkgver}-fix_manpages-1.patch
   if [ -z "$KIIN_LIB32" ]; then
     ./config --prefix=/usr \
       zlib-dynamic \
@@ -28,8 +26,9 @@ kiin_make() {
 
 kiin_install() {
   MAKEFLAGS=
-  make INSTALL_PREFIX=${pkgdir} MANDIR=/usr/share/man install
-  install -v -d -m755 ${pkgdir}/usr/share/doc/openssl-${pkgver}
-  cp -v -r doc/{HOWTO,README,*.{txt,html,gif}}      \
-      ${pkgdir}/usr/share/doc/openssl-${pkgver}
+  sed -i 's# libcrypto.a##;s# libssl.a##' Makefile
+  make INSTALL_PREFIX=${pkgdir} MANDIR=/usr/share/man MANSUFFIX=ssl install
+  install -v -d -m755 ${pkgdir}/usr/share/doc/openssl
+  cp -v -r doc/{HOWTO,README,*.{txt,html,gif}} \
+      ${pkgdir}/usr/share/doc/openssl
 }
