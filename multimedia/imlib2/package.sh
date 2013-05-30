@@ -13,7 +13,7 @@ kiin_make() {
   sed -i -e '38agif=DGifOpenFileHandle(fd,&err);' src/modules/loaders/loader_gif.c
   sed -i -e '40d' src/modules/loaders/loader_gif.c
   sed -i -e '39aif(err)' src/modules/loaders/loader_gif.c
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --disable-static
   make
 }
 
