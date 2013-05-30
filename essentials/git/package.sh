@@ -1,14 +1,16 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=1.8.2.3
-urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-${pkgver}.tar.gz \
-  http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs="git"
+gittag=727a46b2f9a1ce69eaf09bc46cb129f1c40833d8
+pkgver=1.8.3+
+manpagesver=1.8.3
+urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${manpagesver}.tar.gz"
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e 's/->tempfile($/::tempfile(/g' perl/Git.pm
+  git pull git://github.com/kblees/git.git kb/ignore-within-not-ignored-dir
+  make configure
   ./configure --prefix=/usr         \
               --libexecdir=/usr/lib \
               --with-libpcre \
@@ -18,7 +20,7 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  tar -xf ../${pkgname}-manpages-${pkgver}.tar.gz -C ${pkgdir}/usr/share/man \
+  tar -xf ../${pkgname}-manpages-${manpagesver}.tar.gz -C ${pkgdir}/usr/share/man \
     --no-same-owner
   find ${pkgdir} -name perllocal.pod -delete
   find ${pkgdir} -name .packlist -delete
