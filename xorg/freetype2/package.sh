@@ -7,10 +7,12 @@ srctar=freetype-${pkgver}.tar.bz2
 srcdir=${location}/freetype-${pkgver}
 
 kiin_make() {
-  sed -i -r 's:.*(#.*SUBPIXEL_RENDERING.*) .*:\1:' \
-    include/freetype/config/ftoption.h
-  sed -i -e '1059d' src/cff/cffobjs.c
-  sed -i -e '1058adriver->hinting_engine = FT_CFF_HINTING_ADOBE;' src/cff/cffobjs.c
+  sed -e "s@FT_CFF_HINTING_FREETYPE@FT_CFF_HINTING_ADOBE@" \
+    -i src/cff/cffobjs.c
+  sed -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" \
+    -i modules.cfg
+  sed -e "/#.*.SUBPIXEL/s@/\* @@" -e "/#.*.SUBPIXEL/s@ \*/@@" \
+    -i include/freetype/config/ftoption.h
   ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
   make
 }
