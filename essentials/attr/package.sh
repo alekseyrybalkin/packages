@@ -10,7 +10,8 @@ kiin_make() {
   sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in
   INSTALL_USER=root  \
   INSTALL_GROUP=root \
-  ./configure --prefix=/usr --libdir=/lib --libexecdir=/usr/lib
+  ./configure --prefix=/usr --libdir=/lib --libexecdir=/usr/lib \
+    --disable-static
   make
 }
 
