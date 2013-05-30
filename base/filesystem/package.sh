@@ -29,7 +29,7 @@ kiin_install() {
   ln -sv /run ${pkgdir}/var/run
   ln -sv /run/lock ${pkgdir}/var/lock
   mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
-  touch ${pkgdir}/etc/mtab
+  ln -sv /proc/self/mounts ${pkgdir}/etc/mtab
 
   # for util-linux
   install -dv -m 0755 ${pkgdir}/var/lib/hwclock
