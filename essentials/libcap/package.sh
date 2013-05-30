@@ -7,6 +7,7 @@ srctar=${pkgname}2_${pkgver}.orig.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
   make
 }
 
