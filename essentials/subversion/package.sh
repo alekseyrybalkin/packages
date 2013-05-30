@@ -11,7 +11,8 @@ kiin_make() {
   MAKEFLAGS=
   patch -p0 -i ../subversion.rpath.fix.patch
   ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
-    --with-zlib=/usr --with-neon=/usr --with-sqlite=/usr
+    --with-zlib=/usr --with-neon=/usr --with-sqlite=/usr \
+    --disable-static
   make external-all
   make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all
   make swig-py swig-pl
