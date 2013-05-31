@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libogg
-pkgver=1.3.0
+pkgver=1.3.1
 urls="http://downloads.xiph.org/releases/ogg/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
