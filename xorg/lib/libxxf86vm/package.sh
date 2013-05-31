@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxxf86vm
-pkgver=1.1.2
+pkgver=1.1.3
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXxf86vm-${pkgver}.tar.bz2"
 srctar=libXxf86vm-${pkgver}.tar.bz2
 srcdir=${location}/libXxf86vm-${pkgver}
