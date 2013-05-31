@@ -8,6 +8,7 @@ MAJOR/INTERESTING:
 - sign packages with gpg key and check it before install/upgrade
 - update git/svn/hg repositories once in a while
 - check version differences in db and package files
+  e.g. version 1.3 in package.sh, but 1.2 in system
 
 NORMAL:
 - find out why procps installed some strange hardlinks for man pages
@@ -29,6 +30,7 @@ MINOR:
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, games, etc.)
 - list all packages and make dependencies which are pre-built binaries (groovy, grails, xmlbeans, idea)
+- fix some packages to not need internet connection for building (groovy, cacerts)
 - check for new tags in repositories?
 - add p7zip
 - add drill (ldns)
