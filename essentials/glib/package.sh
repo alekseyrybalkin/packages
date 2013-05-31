@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=glib
-pkgver=2.36.2
-urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.36/${pkgname}-${pkgver}.tar.xz"
+pkgver=2.37.1
+urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.37/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
