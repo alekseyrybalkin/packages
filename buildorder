@@ -363,3 +363,6 @@ qt
 lib32-qt
 skype
 freeciv
+at-spi2-core
+at-spi2-atk
+gtk
