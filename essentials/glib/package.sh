@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   # https://bugs.archlinux.org/task/34630
   export CFLAGS+=" -Wall"
+  ./autogen.sh
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
               --with-pcre=system \
