@@ -5,11 +5,12 @@ vcs="git"
 gittag=727a46b2f9a1ce69eaf09bc46cb129f1c40833d8
 pkgver=1.8.3+
 manpagesver=1.8.3
-urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${manpagesver}.tar.gz"
+urls="http://${pkgname}-core.googlecode.com/files/${pkgname}-manpages-${manpagesver}.tar.gz \
+  http://rybalkin.org/kiin-files/git_gitignore_fix.patch"
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  git pull git://github.com/kblees/git.git kb/ignore-within-not-ignored-dir
+  patch -Np1 -i ../git_gitignore_fix.patch
   make configure
   ./configure --prefix=/usr         \
               --libexecdir=/usr/lib \
