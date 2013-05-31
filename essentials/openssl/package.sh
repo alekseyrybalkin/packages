@@ -8,6 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
+  sed -i -e '2,55d' util/pod2mantest
   if [ -z "$KIIN_LIB32" ]; then
     ./config --prefix=/usr \
       zlib-dynamic \
