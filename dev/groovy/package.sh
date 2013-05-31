@@ -2,8 +2,8 @@
 
 pkgname=groovy
 vcs="git"
-gittag=e0fcf892053773267e243c87de254d722cae915f
-pkgver=2.1.3+
+gittag=6404416b7a2a6d642d9f64f997c9a612fd0ec3aa
+pkgver=2.2.0.SNAPSHOT
 _pkgver=2.2.0-SNAPSHOT
 srcdir=${location}/${pkgname}-${pkgver}
 
