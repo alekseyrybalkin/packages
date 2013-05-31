@@ -1127,7 +1127,7 @@ if [ $1 == 'rebuild-world' ]; then
     fi
     echo "rebuilding $package (lib32=$lib32)"
     for package_dir in `kiin list-package-dirs`; do
-      found=`find $KIIN_HOME/${package_dir} -type d -name $package`
+      found=`find $KIIN_HOME/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
       if [ -n "$found" ]; then
         break
       fi
