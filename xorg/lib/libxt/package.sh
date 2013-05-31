@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxt
-pkgver=1.1.3
+pkgver=1.1.4
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXt-${pkgver}.tar.bz2"
 srctar=libXt-${pkgver}.tar.bz2
 srcdir=${location}/libXt-${pkgver}
