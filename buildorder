@@ -19,6 +19,7 @@ bzip2
 lib32-bzip2
 pkg-config
 ncurses
+lib32-ncurses
 util-linux
 lib32-util-linux
 psmisc
