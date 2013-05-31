@@ -2,12 +2,13 @@
 
 pkgname=steam
 pkgver=1.0.0.39
-urls="http://repo.steampowered.com/${pkgname}/pool/${pkgname}/s/${pkgname}/${pkgname}_${pkgver}.tar.gz"
+urls="http://repo.steampowered.com/${pkgname}/pool/${pkgname}/s/${pkgname}/${pkgname}_${pkgver}.tar.gz \
+  http://rybalkin.org/kiin-files/steam_alsa_sdl_audiodriver.patch"
 srctar=${pkgname}_${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
 
 kiin_make() {
-  patch -Np1 -i ../alsa_sdl_audiodriver.patch
+  patch -Np1 -i ../steam_alsa_sdl_audiodriver.patch
   echo "nothing to make..."
 }
 
