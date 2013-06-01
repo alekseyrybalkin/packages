@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxv
-pkgver=1.0.7
+pkgver=1.0.8
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXv-${pkgver}.tar.bz2"
 srctar=libXv-${pkgver}.tar.bz2
 srcdir=${location}/libXv-${pkgver}
