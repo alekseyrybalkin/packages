@@ -266,6 +266,11 @@ gdk-pixbuf
 harfbuzz
 pango
 gtk2
+dbus-core
+lib32-dbus-core
+at-spi2-core
+at-spi2-atk
+gtk
 which
 nspr
 nss
@@ -357,12 +362,7 @@ dosbox
 libtxc_dxtn
 lib32-libtxc_dxtn
 steam
-dbus-core
-lib32-dbus-core
 qt
 lib32-qt
 skype
 freeciv
-at-spi2-core
-at-spi2-atk
-gtk
