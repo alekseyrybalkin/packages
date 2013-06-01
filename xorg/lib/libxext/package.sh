@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxext
-pkgver=1.3.1
+pkgver=1.3.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXext-${pkgver}.tar.bz2"
 srctar=libXext-${pkgver}.tar.bz2
 srcdir=${location}/libXext-${pkgver}
