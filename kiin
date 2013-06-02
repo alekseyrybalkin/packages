@@ -1204,7 +1204,7 @@ EOF
 fi
 
 if [ $1 == 'list-package-dirs' ]; then
-  echo 'base security dev essentials gui multimedia perl-modules python2-modules xorg mail gaming skype'
+  echo 'base security dev essentials gui multimedia perl-modules python2-modules xorg mail gaming skype webkit'
   exit 0
 fi
 

@@ -366,3 +366,15 @@ qt
 lib32-qt
 skype
 freeciv
+ruby
+gsettings-desktop-schemas
+nettle
+gnutls
+glib-networking
+libsoup
+icu
+gstreamer
+gst-plugins-base
+libwebp
+libsecret
+webkitgtk
