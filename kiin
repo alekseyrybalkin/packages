@@ -924,6 +924,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'libpthread-stubs' ]] && continue
     [[ $package = 'sdl2' ]] && continue
     [[ $package = 'lib32-sdl2' ]] && continue
+    [[ $package = 'ttf-win7-fonts' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
