@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=bitcoin
-pkgver=0.8.1
+pkgver=0.8.2
 urls="http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-${pkgver}/bitcoin-${pkgver}-linux.tar.gz"
 srctar=${pkgname}-${pkgver}-linux.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}-linux
