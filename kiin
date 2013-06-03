@@ -906,6 +906,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'lib32-lcms2' ]] && package='lcms2'
     [[ $package = 'qt' ]] && package='qt4'
     [[ $package = 'lib32-qt' ]] && package='lib32-qt4'
+    [[ $package = 'gtk' ]] && package='gtk3'
     # package version exceptions:
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
