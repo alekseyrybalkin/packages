@@ -119,9 +119,12 @@ lib32-mpg123
 flac
 audiofile
 lame
+libsoup
 mpd
 libmpdclient
 mpd-mpc
+libgpg-error
+libgcrypt
 libxslt
 xorg-util-macros
 bigreqsproto
@@ -263,6 +266,7 @@ lib32-freeglut
 glew
 libtiff
 gdk-pixbuf
+icu
 harfbuzz
 pango
 gtk2
@@ -344,6 +348,8 @@ gdb
 boost
 bitcoin
 apache-ant
+nettle
+gnutls
 libcups
 attr
 rhino
@@ -366,15 +372,13 @@ qt
 lib32-qt
 skype
 freeciv
+gperf
 ruby
 gsettings-desktop-schemas
-nettle
-gnutls
 glib-networking
-libsoup
-icu
 gstreamer
 gst-plugins-base
 libwebp
 libsecret
 webkitgtk
+dconf
