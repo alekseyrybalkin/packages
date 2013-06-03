@@ -9,7 +9,6 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr \
     --enable-appdefaultdir=/usr/share/X11/app-defaults \
-    --with-gtk2 \
     --without-esound \
     --without-ftgl
   make
