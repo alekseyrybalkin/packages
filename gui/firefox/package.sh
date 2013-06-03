@@ -8,6 +8,8 @@ srctar=${pkgname}-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
 kiin_make() {
+  CFLAGS="${CFLAGS} -mno-avx"
+  CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
   cp ../firefox-fixed-loading-icon.png \
     browser/themes/gnomestripe/tabbrowser/loading.png

@@ -7,6 +7,8 @@ srctar=firefox-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
 kiin_make() {
+  CFLAGS="${CFLAGS} -mno-avx"
+  CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
