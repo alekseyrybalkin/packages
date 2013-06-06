@@ -856,7 +856,7 @@ if [ $1 == 'check-updates' ]; then
   cmp=$?
   if [ $cmp -ne 0 ]; then
     if [ $cmp -eq 1 ]; then
-      printf "${bldred}%20s${txtrst} %15s %12s (tag $newest_tag)\n" \
+      printf "${bldred}%25s${txtrst} %15s %12s (tag $newest_tag)\n" \
         "${package}" "${version}" "${pkgver}"
     fi
   fi
@@ -868,7 +868,7 @@ if [ $1 == 'check-updates' ]; then
   cmp=$?
   if [ $cmp -ne 0 ]; then
     if [ $cmp -eq 1 ]; then
-      printf "${bldred}%20s stable${txtrst} %15s %12s (tag $newest_tag)\n" \
+      printf "${bldred}%25s stable${txtrst} %15s %12s (tag $newest_tag)\n" \
         "${package}" "${version}" "${pkgver}"
     fi
   fi
@@ -947,11 +947,11 @@ if [ $1 == 'check-updates' ]; then
       if [ $cmp -ne 0 ]; then
         if [ $cmp -eq 2 ]; then
           if [ "$2" == 'diff' ]; then
-            printf "${green}%20s${txtrst} %15s %12s%s\n" \
+            printf "${green}%25s${txtrst} %15s %12s%s\n" \
               "${local_package}" "${version}" "${pkgver}" "${_package}"
           fi
         else
-          printf "${bldred}%20s${txtrst} %15s %12s%s\n" \
+          printf "${bldred}%25s${txtrst} %15s %12s%s\n" \
             "${local_package}" "${version}" "${pkgver}" "${_package}"
         fi
       fi
@@ -963,11 +963,11 @@ if [ $1 == 'check-updates' ]; then
         if [ $cmp -ne 0 ]; then
           if [ $cmp -eq 2 ]; then
             if [ "$2" == 'diff' ]; then
-              printf "${green}%20s${txtrst} %15s %12s%s\n" \
+              printf "${green}%25s${txtrst} %15s %12s%s\n" \
                 "${local_package}" "${version}" "${pkgver}" "${_package}"
             fi
           else
-            printf "${bldred}%20s${txtrst} %15s %12s%s\n" \
+            printf "${bldred}%25s${txtrst} %15s %12s%s\n" \
               "${local_package}" "${version}" "${pkgver}" "${_package}"
           fi
         fi
