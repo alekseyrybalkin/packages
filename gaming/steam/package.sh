@@ -23,6 +23,7 @@ kiin_after_install() {
   getent passwd steam >/dev/null || \
     useradd -m -g steam -G audio,video -s /bin/bash steam
   chown steam:steam /usr/bin/steam
+  chmod -x /usr/bin/steam
 }
 
 kiin_after_upgrade() {
