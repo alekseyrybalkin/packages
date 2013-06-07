@@ -2,7 +2,7 @@
 
 pkgname=transmission
 vcs="git"
-gittag=cee8d079ba97b139ea3280b48c15515cbb7e9c18
+gittag=e882df87ffd3f3b7ab7211cb85c742da1b14a776
 pkgver=2.77+
 srcdir=${location}/${pkgname}-${pkgver}
 
