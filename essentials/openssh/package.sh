@@ -8,10 +8,11 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
-              --sysconfdir=/etc/ssh \
-              --datadir=/usr/share/sshd \
-              --with-md5-passwords \
-              --with-privsep-path=/var/lib/sshd
+    --libexecdir=/usr/lib/openssh \
+    --sysconfdir=/etc/ssh \
+    --datadir=/usr/share/sshd \
+    --with-md5-passwords \
+    --with-privsep-path=/var/lib/sshd
   make
 }
 
