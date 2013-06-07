@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --enable-shared
+  ./configure --prefix=/usr --enable-shared --disable-static
   make
 }
 
