@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openvpn
-pkgver=2.3.1
+pkgver=2.3.2
 urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
