@@ -8,7 +8,7 @@ srctar=${pkgname}-${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${_pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --enable-shared
+  ./configure --prefix=/usr --enable-shared --disable-install-doc
   make
 }
 
