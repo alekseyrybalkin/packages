@@ -7,10 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/#include <stdio.h>/&\n#include <string.h>/' \
-        examples/cpp/encode/file/main.cpp
   ./configure --prefix=/usr \
-    --mandir=/usr/share/man \
     --disable-thorough-tests \
     --enable-sse \
     --disable-static \
