@@ -20,12 +20,12 @@ lib32-bzip2
 pkg-config
 ncurses
 lib32-ncurses
+shadow
 util-linux
 lib32-util-linux
 psmisc
 procps
 e2fsprogs
-shadow
 coreutils
 iana-etc
 m4
