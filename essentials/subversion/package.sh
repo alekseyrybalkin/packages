@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=subversion
-pkgver=1.7.9
+pkgver=1.7.10
 urls="http://archive.apache.org/dist/${pkgname}/${pkgname}-${pkgver}.tar.bz2 \
   http://rybalkin.org/kiin-files/subversion.rpath.fix.patch"
 srctar=${pkgname}-${pkgver}.tar.bz2
