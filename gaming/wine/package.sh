@@ -1,15 +1,16 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.5.31
-urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=1.6rc1
+_pkgver=1.6-rc1
+urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${_pkgver}.tar.bz2"
+srctar=${pkgname}-${_pkgver}.tar.bz2
+srcdir=${location}/${pkgname}-${_pkgver}
 
 kiin_make() {
   # Allow ccache to work
   cd ..
-  cp -r ${pkgname}-${pkgver} ${pkgname}
+  cp -r ${pkgname}-${_pkgver} ${pkgname}
 
   mkdir ${pkgname}-32-build
 
@@ -23,8 +24,9 @@ kiin_make() {
     --sysconfdir=/etc \
     --libdir=/usr/lib \
     --with-x \
+    --without-gstreamer \
     --enable-win64
-  make
+  make CFLAGS+="-fno-builtin-memcpy" CXXFLAGS+="-fno-builtin-memcpy"
   _wine32opts=(
     --libdir=/usr/lib32
     --with-wine64=$location/${pkgname}-64-build
