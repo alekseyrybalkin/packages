@@ -383,3 +383,7 @@ libsecret
 webkitgtk
 dconf
 ttf-win7-fonts
+linux-firmware
+wireless_tools
+libnl
+wpa_supplicant

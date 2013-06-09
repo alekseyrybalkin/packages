@@ -931,6 +931,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'evince' ]] && continue # evince2 is the only option
     [[ $package = 'initramfs' ]] && continue
     [[ $package = 'filesystem' ]] && continue
+    [[ $package = 'linux-firmware' ]] && continue
     [[ $package = 'cacerts' ]] && continue
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue

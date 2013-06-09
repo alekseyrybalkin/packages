@@ -1,0 +1,19 @@
+#!/bin/sh
+
+pkgname=linux-firmware
+vcs="git"
+gittag=2892af06dc38a764938f0583a2eac30595108799
+pkgver=1
+srcdir=${location}/${pkgname}-${pkgver}
+
+kiin_make() {
+  echo "nothing to make..."
+}
+
+kiin_install() {
+  if [ `hostname` == 'ritchie' ]; then
+    mkdir -pv ${pkgdir}/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx-0.fw ${pkgdir}/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx_hdr-0.fw ${pkgdir}/lib/firmware/brcm
+  fi
+}
