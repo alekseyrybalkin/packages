@@ -911,7 +911,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
     [[ $package = 'lib32-openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
-    [[ $package = 'sudo' ]] && [[ $version = '1.8.6p8' ]] && version='1.8.6.p8'
     [[ $package = 'ntp' ]] && [[ $version = '4.2.6p5' ]] && version='4.2.6.p5'
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     [[ $package = 'java7-openjdk' ]] && [[ $version = '7+' ]] && version='7.u21_2.3.9'
