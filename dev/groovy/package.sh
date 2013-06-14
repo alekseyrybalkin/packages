@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=groovy
-pkgver=2.1.4
+pkgver=2.1.5
 urls="http://dist.groovy.codehaus.org/distributions/${pkgname}-binary-${pkgver}.zip"
 srczip=${pkgname}-binary-${pkgver}.zip
 srcdir=${location}/${pkgname}-${pkgver}
