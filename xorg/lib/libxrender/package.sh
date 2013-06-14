@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxrender
-pkgver=0.9.7
+pkgver=0.9.8
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXrender-${pkgver}.tar.bz2"
 srctar=libXrender-${pkgver}.tar.bz2
 srcdir=${location}/libXrender-${pkgver}
