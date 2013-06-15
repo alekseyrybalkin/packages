@@ -1,45 +1,36 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.6rc1
-_pkgver=1.6-rc1
+pkgver=1.6rc2
+_pkgver=1.6-rc2
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${_pkgver}.tar.bz2"
 srctar=${pkgname}-${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${_pkgver}
 
 kiin_make() {
-  # Allow ccache to work
-  cd ..
-  cp -r ${pkgname}-${_pkgver} ${pkgname}
-
-  mkdir ${pkgname}-32-build
+  mkdir ${location}/${pkgname}-32-build
+  mkdir ${location}/${pkgname}-64-build
 
   export CFLAGS="${CFLAGS/-D_FORTIFY_SOURCE=2/} -D_FORTIFY_SOURCE=0"
   export CXXFLAGS="${CXXFLAGS/-D_FORTIFY_SOURCE=2/} -D_FORTIFY_SOURCE=0"
 
-  mkdir ${pkgname}-64-build
-  cd ${pkgname}-64-build
-  ../${pkgname}/configure \
+  cd ${location}/${pkgname}-64-build
+  ../${pkgname}-${_pkgver}/configure \
     --prefix=/usr \
-    --sysconfdir=/etc \
     --libdir=/usr/lib \
     --with-x \
     --without-gstreamer \
     --enable-win64
   make CFLAGS+="-fno-builtin-memcpy" CXXFLAGS+="-fno-builtin-memcpy"
-  _wine32opts=(
-    --libdir=/usr/lib32
-    --with-wine64=$location/${pkgname}-64-build
-  )
 
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
   cd ${location}/${pkgname}-32-build
-  ../${pkgname}/configure \
+  ../${pkgname}-${_pkgver}/configure \
     --prefix=/usr \
-    --sysconfdir=/etc \
+    --libdir=/usr/lib32 \
     --with-x \
-    "${_wine32opts[@]}"
-
+    --without-gstreamer \
+    --with-wine64=${location}/${pkgname}-64-build
   make CFLAGS+="-mstackrealign -mincoming-stack-boundary=2" CXXFLAGS+="-mstackrealign -mincoming-stack-boundary=2"
 }
 
@@ -57,5 +48,4 @@ kiin_install() {
   cd ..
   rm -rf ${pkgname}-32-build
   rm -rf ${pkgname}-64-build
-  rm -rf ${pkgname}
 }
