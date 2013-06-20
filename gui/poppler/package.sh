@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.22.4
+pkgver=0.22.5
 urls="http://poppler.freedesktop.org/poppler-${pkgver}.tar.gz"
 srctar=poppler-${pkgver}.tar.gz
 srcdir=${location}/poppler-${pkgver}
