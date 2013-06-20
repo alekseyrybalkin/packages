@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=miniupnpc
-pkgver=1.6
+pkgver=1.8
 urls="http://miniupnp.free.fr/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
