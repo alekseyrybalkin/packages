@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=at-spi2-atk
-pkgver=2.9.2
-urls="http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.9/at-spi2-atk-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.9
+pkgver=${majorver}.3
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr
