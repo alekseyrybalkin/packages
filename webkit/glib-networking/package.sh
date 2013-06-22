@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=glib-networking
-pkgver=2.37.2
-urls="http://ftp.gnome.org/pub/gnome/sources/glib-networking/2.37/glib-networking-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.37
+pkgver=${majorver}.2
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
