@@ -1,10 +1,21 @@
 #!/bin/sh
 
 pkgname=gtk
-pkgver=3.9.2
-urls="http://ftp.gnome.org/pub/gnome/sources/gtk+/3.9/gtk+-${pkgver}.tar.xz"
-srctar=${pkgname}+-${pkgver}.tar.xz
+majorver=3.9
+pkgver=${majorver}.6
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
+check_server=1
+
+srctar=${pkgname}+-${pkgver}.tar.${extension}
 srcdir=${location}/${pkgname}+-${pkgver}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}\+-.*\.tar.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar.${extension}$//g"
+}
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc --enable-gtk2-dependency
