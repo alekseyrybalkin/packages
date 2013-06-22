@@ -12,6 +12,8 @@ kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static \
+      --enable-gl \
+      --enable-egl \
       --libdir=$LIBDIR
   else
     rm -rf test
