@@ -46,6 +46,7 @@ usage() {
   echo "  kiin convert-arch-package"
   echo "  kiin list-package-dirs"
   echo "  kiin clean"
+  echo "  kiin check-server-version <package>"
 }
 
 # for upgrade and uninstall
@@ -97,7 +98,7 @@ case $1 in
   "who-owns" | "who-uses-dir" | "check-conflicts" | "list-files" \
     | "list-dirs" | "install" | "upgrade" | "uninstall" | "db-list-files" \
     | "db-list-dirs" | "list-untracked" | "update-links" | "links" \
-    | "linked-by" | "l" | "who-uses-now")
+    | "linked-by" | "l" | "who-uses-now" | "check-server-version")
     if [ -z $2 ]; then
       echo "usage:" && usage | grep $1
       exit 1
@@ -106,7 +107,7 @@ case $1 in
 esac
 case $1 in
   "uninstall" | "db-list-files" | "db-list-dirs" | "update-links" \
-    | "links" | "linked-by" | "l" | "who-uses-now" | "ud")
+    | "links" | "linked-by" | "l" | "who-uses-now" | "ud" | "check-server-version")
     count=`kiin ls | grep "^$2" | wc -l`
     if [ $count = 0 ]; then
       echo "$2 is not installed"
@@ -343,7 +344,7 @@ EOF
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
     pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
     XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
-    fakeroot ${maker}
+    KIIN_HOME=${KIIN_HOME} fakeroot ${maker}
   if [ -z "${KIIN_NO_CLEARING}" ]; then
     cd ${location}
     kiin clean
@@ -876,6 +877,25 @@ if [ $1 == 'check-updates' ]; then
     package=`echo $i | sed 's/\-[^-]*$//g'`
     version=`echo $i | sed "s/$package-//g"`
     local_package=$package
+
+    # check ftp/http folders
+    server_version=`kiin check-server-version ${i}`
+    if [ -n "${server_version}" ]; then
+      vercomp "${server_version}" "${version}"
+      cmp=$?
+      if [ $cmp -ne 0 ]; then
+        if [ $cmp -eq 2 ]; then
+          if [ "$2" == 'diff' ]; then
+            printf "${green}%25s${txtrst} %15s %12s%s\n" \
+              "${package}" "${version}" "${server_version}" " server"
+          fi
+        else
+          printf "${bldred}%25s${txtrst} %15s %12s%s\n" \
+            "${package}" "${version}" "${server_version}" " server"
+        fi
+      fi
+    fi
+
     # package name exceptions:
     [[ $package = 'python' ]] && package='python2'
     [[ $package = 'python2-virtualenv' ]] && package='python-virtualenv'
@@ -1218,6 +1238,75 @@ if [ $1 == 'clean' ]; then
   rm -rf ${pkgdir}
   if [[ ${srcdir} ]]; then
     rm -rf ${srcdir}
+  fi
+  exit 0
+fi
+
+if [ $1 == 'check-server-version' ]; then
+  package=`echo $package | sed 's/\-[^-]*$//g'`
+  for package_dir in `kiin list-package-dirs`; do
+    found=`find $KIIN_HOME/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
+    if [ -n "$found" ]; then
+      break
+    fi
+  done
+  cd $found
+  if [ -f ./package.sh ]; then
+    . ./package.sh
+    if [ -n "${check_server}" ]; then
+      if [ -n "${major_folder}" ]; then
+        NOW=`date +%s`
+        FILE_TIME=0
+        SERVER_FILE=${KIIN_HOME}/server-listings/${package}.major.listing
+        if [ -f "${SERVER_FILE}" ]; then
+          FILE_TIME=`stat -c %Z ${SERVER_FILE}`
+        fi
+        let DIFF=$NOW-$FILE_TIME
+        # three days (86400*3)
+        if [ $DIFF -gt 259200 ]; then
+          curl ${major_folder} > ${SERVER_FILE} 2>/dev/null
+        fi
+        LATEST_MAJOR=`if [[ ${major_folder} == ftp* ]]; then
+          for entry in $(cat ${SERVER_FILE} | tr -s ' ' | cut -d ' ' --fields=9 | grep -E "${majorver_grep}"); do
+            entry=$(echo ${entry} | majorver_seds)
+            echo ${entry}
+          done | sort -V | tail -n 1
+        elif [[ ${major_folder} == http* ]]; then
+          for entry in $(python ${KIIN_HOME}/html_extract_text.py ${SERVER_FILE} | grep -E "${majorver_grep}"); do
+            entry=$(echo ${entry} | majorver_seds)
+            echo ${entry}
+          done | sort -V | tail -n 1
+        fi`
+        if [ "${LATEST_MAJOR}" != "${majorver}" ]; then
+          echo "9999999.major.${LATEST_MAJOR}"
+          exit 0
+        fi
+      fi
+      NOW=`date +%s`
+      FILE_TIME=0
+      SERVER_FILE=${KIIN_HOME}/server-listings/${package}.listing
+      if [ -f "${SERVER_FILE}" ]; then
+        FILE_TIME=`stat -c %Z ${SERVER_FILE}`
+      fi
+      let DIFF=$NOW-$FILE_TIME
+      # three days (86400*3)
+      if [ $DIFF -gt 259200 ]; then
+        curl ${folder} > ${SERVER_FILE} 2>/dev/null
+      fi
+      if [[ ${folder} == ftp* ]]; then
+        for entry in `cat ${SERVER_FILE} | tr -s ' ' | cut -d ' ' --fields=9 | grep -E "${ver_grep}"`; do
+          entry=`echo ${entry} | ver_seds`
+          echo $entry
+        done | sort -V | tail -n 1
+      elif [[ ${folder} == http* ]]; then
+        for entry in `python ${KIIN_HOME}/html_extract_text.py ${SERVER_FILE} | grep -E "${ver_grep}"`; do
+          entry=`echo ${entry} | ver_seds`
+          echo ${entry}
+        done | sort -V | tail -n 1
+      fi
+    fi
+  else
+    :
   fi
   exit 0
 fi
