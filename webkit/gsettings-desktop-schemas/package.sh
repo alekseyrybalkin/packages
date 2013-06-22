@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=gsettings-desktop-schemas
-pkgver=3.9.2
-urls="http://ftp.gnome.org/pub/gnome/sources/gsettings-desktop-schemas/3.9/gsettings-desktop-schemas-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=3.9
+pkgver=${majorver}.3
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr
