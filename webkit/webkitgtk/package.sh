@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=webkitgtk
-pkgver=2.1.1
-urls="http://webkitgtk.org/releases/webkitgtk-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=2.1.2
+extension=xz
+folder="http://webkitgtk.org/releases/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   sed -i '/generate-gtkdoc --rebase/s:^:# :' GNUmakefile.in
