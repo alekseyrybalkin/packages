@@ -2,9 +2,18 @@
 
 pkgname=attr
 pkgver=2.4.47
-urls="http://download.savannah.gnu.org/releases/attr/attr-${pkgver}.src.tar.gz"
-srctar=${pkgname}-${pkgver}.src.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://download.savannah.gnu.org/releases/${pkgname}/"
+check_server=1
+
+srctar=${pkgname}-${pkgver}.src.tar.${extension}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-.*\.src\.tar.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}-//g" | sed -r "s/\.src\.tar.${extension}$//g"
+}
 
 kiin_make() {
   sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in
