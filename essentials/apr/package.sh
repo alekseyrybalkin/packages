@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=apr
-pkgver=1.4.6
-urls="http://archive.apache.org/dist/apr/apr-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=1.4.8
+extension=bz2
+folder="http://archive.apache.org/dist/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr --disable-static \
