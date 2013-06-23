@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=5.6.8
-urls="http://roy.marples.name/downloads/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=6.0.1
+extension=bz2
+folder="http://roy.marples.name/downloads/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   #sed -i -e 's/_LINUX_IN6_H/_UAPI_LINUX_IN6_H/g' ipv6ns.c
