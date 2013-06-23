@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.30.0
-urls="http://${pkgname}.haxx.se/download/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=7.31.0
+extension=bz2
+folder="http://${pkgname}.haxx.se/download/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   sed -i '/--static-libs)/{N;s#echo .*#echo #;}' curl-config.in
