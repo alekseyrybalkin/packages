@@ -2,9 +2,11 @@
 
 pkgname=apr-util
 pkgver=1.5.2
-urls="http://archive.apache.org/dist/apr/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://archive.apache.org/dist/apr/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
