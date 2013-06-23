@@ -2,9 +2,18 @@
 
 pkgname=fakeroot
 pkgver=1.19
-urls="http://ftp.ru.debian.org/debian/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.bz2"
-srctar=${pkgname}_${pkgver}.orig.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
+check_server=1
+
+srctar=${pkgname}_${pkgver}.orig.tar.${extension}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}_.*\.orig\.tar.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}_//g" | sed -r "s/\.orig\.tar.${extension}$//g"
+}
 
 kiin_make() {
   ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot \
