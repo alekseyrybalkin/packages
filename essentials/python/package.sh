@@ -2,9 +2,20 @@
 
 pkgname=python
 pkgver=2.7.5
-urls="http://www.python.org/ftp/python/${pkgver}/Python-${pkgver}.tar.xz"
-srctar=Python-${pkgver}.tar.xz
+extension=xz
+folder="http://www.python.org/ftp/${pkgname}/"
+check_server=1
+
+srctar=Python-${pkgver}.tar.${extension}
 srcdir=${location}/Python-${pkgver}
+
+. ${KIIN_HOME}/defaults.sh
+
+urls="${folder}${pkgver}/${srctar}"
+ver_grep="^2\.[0-9]+\.[0-9]+/$"
+ver_seds() {
+  sed -r "s/\///g"
+}
 
 kiin_make() {
   sed -i "/SQLITE_OMIT_LOAD_EXTENSION/d" setup.py

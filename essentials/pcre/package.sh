@@ -2,9 +2,11 @@
 
 pkgname=pcre
 pkgver=8.33
-urls="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \

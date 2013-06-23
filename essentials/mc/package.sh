@@ -2,9 +2,11 @@
 
 pkgname=mc
 pkgver=4.8.8
-urls="https://www.midnight-commander.org/downloads/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=xz
+folder="http://ftp.midnight-commander.org/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr     \

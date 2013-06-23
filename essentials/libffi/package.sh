@@ -2,10 +2,14 @@
 
 pkgname=libffi
 pkgver=3.0.13
-urls="ftp://sourceware.org/pub/libffi/libffi-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/libffi-${pkgver}-includedir-1.patch"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="ftp://sourceware.org/pub/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-[^-rc]*\.tar.${extension}$"
+urls="$urls http://www.linuxfromscratch.org/patches/blfs/svn/libffi-${pkgver}-includedir-1.patch"
 
 kiin_make() {
   patch -Np1 -i ../libffi-${pkgver}-includedir-1.patch

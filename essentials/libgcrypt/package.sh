@@ -2,9 +2,11 @@
 
 pkgname=libgcrypt
 pkgver=1.5.2
-urls="ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="ftp://ftp.gnupg.org/gcrypt/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr --disable-static

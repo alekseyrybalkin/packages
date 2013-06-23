@@ -1,10 +1,20 @@
 #!/bin/sh
 
 pkgname=ntp
-pkgver=4.2.6p5
-urls="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=4.2
+pkgver=${majorver}.6p5
+extension=gz
+major_folder="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+folder="${major_folder}ntp-${majorver}/"
+urls="${folder}${srctar}"
+majorver_grep="^ntp-[0-9]+\.[0-9]+/?$"
+majorver_seds() {
+  sed -r "s/\///g" | sed -r "s/ntp-//g"
+}
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc \

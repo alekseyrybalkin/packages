@@ -2,10 +2,13 @@
 
 pkgname=subversion
 pkgver=1.7.10
-urls="http://archive.apache.org/dist/${pkgname}/${pkgname}-${pkgver}.tar.bz2 \
-  http://rybalkin.org/kiin-files/subversion.rpath.fix.patch"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://archive.apache.org/dist/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+urls="$urls http://rybalkin.org/kiin-files/subversion.rpath.fix.patch"
 
 kiin_make() {
   MAKEFLAGS=

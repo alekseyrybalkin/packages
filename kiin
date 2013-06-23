@@ -359,11 +359,7 @@ if [ $1 = "download" ]; then
   for url in $urls; do
     if [ -z "$wget_set_filename" ]; then
       if [ ! -f "`basename $url`" ]; then
-        if [[ $url == *midnight* ]]; then
-          wget --no-check-certificate $url
-        else
-          wget $url
-        fi
+        wget $url
       fi
     else
       if [ ! -f "${srctar}" ]; then

@@ -2,9 +2,11 @@
 
 pkgname=sudo
 pkgver=1.8.7
-urls="http://www.${pkgname}.ws/${pkgname}/dist/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://www.sudo.ws/${pkgname}/dist/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr                   \

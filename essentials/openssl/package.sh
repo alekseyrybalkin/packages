@@ -2,9 +2,11 @@
 
 pkgname=openssl
 pkgver=1.0.1e
-urls="http://www.openssl.org/source/openssl-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://www.openssl.org/source/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   MAKEFLAGS=

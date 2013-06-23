@@ -2,9 +2,13 @@
 
 pkgname=links
 pkgver=2.7
-urls="http://links.twibright.com/download/links-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://${pkgname}.twibright.com/download/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-[^-pre]*\.tar.${extension}$"
 
 kiin_make() {
   ./configure --prefix=/usr
