@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xulrunner
-pkgver=21.0
+pkgver=22.0
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${pkgver}/source/firefox-${pkgver}.source.tar.bz2"
 srctar=firefox-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
@@ -22,10 +22,9 @@ kiin_install() {
   rm -rf ${pkgdir}/usr/lib/xulrunner-${pkgver}/plugins
   ln -sv ../mozilla/plugins ${pkgdir}/usr/lib/xulrunner-${pkgver}
 
-  chmod -v 755 ${pkgdir}/usr/lib/xulrunner-${pkgver}/libxpcom.so \
-    ${pkgdir}/usr/lib/xulrunner-devel-${pkgver}/sdk/bin/xpcshell
+  chmod -v 755 ${pkgdir}/usr/lib/xulrunner-devel-${pkgver}/sdk/bin/xpcshell
 
-  for library in libmozalloc.so libmozjs.so libxpcom.so libxul.so; do
+  for library in libmozalloc.so libmozjs.so libxul.so; do
     ln -sfv ../../../xulrunner-${pkgver}/$library \
       ${pkgdir}/usr/lib/xulrunner-devel-${pkgver}/sdk/lib/$library
     ln -sfv xulrunner-${pkgver}/$library ${pkgdir}/usr/lib/$library

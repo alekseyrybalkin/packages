@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=21.0
+pkgver=22.0
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2 \
   http://rybalkin.org/kiin-files/firefox-fixed-loading-icon.png"
 srctar=${pkgname}-${pkgver}.source.tar.bz2
@@ -12,11 +12,10 @@ kiin_make() {
   CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
   cp ../firefox-fixed-loading-icon.png \
-    browser/themes/gnomestripe/tabbrowser/loading.png
+    browser/themes/linux/tabbrowser/loading.png
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
   sed -i 's@ ""@@' browser/base/Makefile.in
-  sed -i "/gre_path/s@DIST'\]@& + '/bin'@" toolkit/mozapps/installer/packager.py
   make -f client.mk
 }
 
