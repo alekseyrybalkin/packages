@@ -12,9 +12,9 @@ srcdir=${location}/${pkgname}+-${pkgver}
 
 . ${KIIN_HOME}/defaults.sh
 
-ver_grep="^${pkgname}\+-.*\.tar.${extension}$"
+ver_grep="^${pkgname}\+-.*\.tar\.${extension}$"
 ver_seds() {
-  sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar.${extension}$//g"
+  sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar\.${extension}$//g"
 }
 
 kiin_make() {

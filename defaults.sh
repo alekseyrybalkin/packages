@@ -15,8 +15,8 @@ if [ -n "${check_server}" ]; then
       sed -r "s/\///g"
     }
   fi
-  ver_grep="^${pkgname}-[^-]*\.tar.${extension}$"
+  ver_grep="^${pkgname}-[^-]*\.tar\.${extension}$"
   ver_seds() {
-    sed -r "s/^${pkgname}-//g" | sed -r "s/\.tar.${extension}$//g"
+    sed -r "s/^${pkgname}-//g" | sed -r "s/\.tar\.${extension}$//g"
   }
 fi

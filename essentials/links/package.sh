@@ -8,7 +8,7 @@ check_server=1
 
 . ${KIIN_HOME}/defaults.sh
 
-ver_grep="^${pkgname}-[^-pre]*\.tar.${extension}$"
+ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 
 kiin_make() {
   ./configure --prefix=/usr

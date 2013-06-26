@@ -10,9 +10,9 @@ srctar=${pkgname}2_${pkgver}.orig.tar.${extension}
 
 . ${KIIN_HOME}/defaults.sh
 
-ver_grep="^${pkgname}2_.*\.orig\.tar.${extension}$"
+ver_grep="^${pkgname}2_.*\.orig\.tar\.${extension}$"
 ver_seds() {
-  sed -r "s/^${pkgname}2_//g" | sed -r "s/\.orig\.tar.${extension}$//g"
+  sed -r "s/^${pkgname}2_//g" | sed -r "s/\.orig\.tar\.${extension}$//g"
 }
 
 kiin_make() {
