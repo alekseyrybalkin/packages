@@ -2,9 +2,13 @@
 
 pkgname=icedtea-web
 pkgver=1.4
-urls="http://icedtea.classpath.org/download/source/icedtea-web-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://icedtea.wildebeest.org/download/source/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 
 kiin_make() {
   ./configure --prefix=`readlink -f ${JAVA_HOME}`/jre \

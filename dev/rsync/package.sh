@@ -2,9 +2,11 @@
 
 pkgname=rsync
 pkgver=3.0.9
-urls="http://samba.org/ftp/rsync/src/rsync-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://www.samba.org/ftp/rsync/src/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr

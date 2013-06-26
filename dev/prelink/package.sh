@@ -2,9 +2,11 @@
 
 pkgname=prelink
 pkgver=20111012
-urls="http://people.redhat.com/jakub/prelink/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}
+extension=bz2
+folder="http://people.redhat.com/jakub/prelink/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr --mandir=/usr/share/man --sbin=/usr/bin

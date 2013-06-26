@@ -2,9 +2,11 @@
 
 pkgname=mercurial
 pkgver=2.6.2
-urls="http://mercurial.selenic.com/release/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://mercurial.selenic.com/release/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   make build

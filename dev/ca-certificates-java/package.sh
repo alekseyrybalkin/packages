@@ -2,9 +2,18 @@
 
 pkgname=ca-certificates-java
 pkgver=20121112+nmu2
-urls="http://ftp.debian.org/debian/pool/main/c/${pkgname}/${pkgname}_${pkgver}.tar.gz"
-srctar=${pkgname}_${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=gz
+folder="http://ftp.debian.org/debian/pool/main/c/${pkgname}/"
+check_server=1
+
+srctar=${pkgname}_${pkgver}.tar.${extension}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}_.*\.tar\.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}_//g" | sed -r "s/\.tar\.${extension}$//g"
+}
 
 kiin_make() {
   javac -target 1.6 -source 1.6 UpdateCertificates.java

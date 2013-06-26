@@ -2,9 +2,17 @@
 
 pkgname=postgresql
 pkgver=9.2.4
-urls="ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v9.2.4/postgresql-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+urls="${folder}v${pkgver}/${srctar}"
+ver_grep="^v[0-9\.]+$"
+ver_seds() {
+  sed -r "s/v//g"
+}
 
 kiin_make() {
   ./configure --prefix=/usr \

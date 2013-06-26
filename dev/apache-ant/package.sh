@@ -2,9 +2,18 @@
 
 pkgname=apache-ant
 pkgver=1.9.1
-urls="http://archive.apache.org/dist/ant/source/apache-ant-${pkgver}-src.tar.bz2"
-srctar=${pkgname}-${pkgver}-src.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://archive.apache.org/dist/ant/source/"
+check_server=1
+
+srctar=${pkgname}-${pkgver}-src.tar.${extension}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-.*-src\.tar\.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}-//g" | sed -r "s/-src\.tar\.${extension}$//g"
+}
 
 kiin_make() {
   sed -i 's;jars,test-jar;jars;' build.xml

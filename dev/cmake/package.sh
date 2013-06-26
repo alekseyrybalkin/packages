@@ -1,10 +1,20 @@
 #!/bin/sh
 
 pkgname=cmake
-pkgver=2.8.11.1
-urls="http://www.cmake.org/files/v2.8/cmake-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.8
+pkgver=${majorver}.11.1
+extension=gz
+major_folder="http://www.cmake.org/files/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+folder="${major_folder}v${majorver}/"
+urls="${folder}${srctar}"
+majorver_grep="^v[0-9]+\.[0-9]+/?$"
+majorver_seds() {
+  sed -r "s/\///g" | sed -r "s/^v//g"
+}
 
 kiin_make() {
   ./bootstrap --prefix=/usr \

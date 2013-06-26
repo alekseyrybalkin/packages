@@ -2,9 +2,11 @@
 
 pkgname=nmap
 pkgver=6.25
-urls="http://nmap.org/dist/nmap-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://nmap.org/dist/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr

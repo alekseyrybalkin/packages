@@ -2,9 +2,11 @@
 
 pkgname=qemu
 pkgver=1.5.0
-urls="http://wiki.qemu.org/download/qemu-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://wiki.qemu.org/download/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \

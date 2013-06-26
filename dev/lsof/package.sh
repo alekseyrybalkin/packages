@@ -2,9 +2,18 @@
 
 pkgname=lsof
 pkgver=4.87
-urls="ftp://sunsite.ualberta.ca/pub/Mirror/lsof/lsof_${pkgver}.tar.bz2"
+extension=bz2
+folder="ftp://sunsite.ualberta.ca/pub/Mirror/lsof/"
+check_server=1
+
 srctar=${pkgname}_${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}_${pkgver}
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}_[^-]*\.tar\.${extension}$"
+ver_seds() {
+  sed -r "s/^${pkgname}_//g" | sed -r "s/\.tar\.${extension}$//g"
+}
 
 kiin_make() {
   tar xf ${pkgname}_${pkgver}_src.tar

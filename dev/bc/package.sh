@@ -2,9 +2,11 @@
 
 pkgname=bc
 pkgver=1.06.95
-urls="http://alpha.gnu.org/gnu/bc/bc-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://alpha.gnu.org/gnu/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr --with-readline
