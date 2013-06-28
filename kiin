@@ -15,6 +15,7 @@ umask 0022
 usage() {
   echo "usage:"
   echo "  kiin make [lib32]"
+  echo "  kiin repeat-install [lib32]"
   echo "  kiin download"
   echo "  kiin gen-db"
   echo "  kiin list-dups"
@@ -74,7 +75,7 @@ if [ -z $1 ]; then
 fi
 
 case $1 in
-  "make" | "download" | "convert-arch-package" | "clean")
+  "make" | "repeat-install" | "download" | "convert-arch-package" | "clean")
     if [ ! -f ./package.sh ]; then
       echo "no package.sh found, goodbye."
       exit 1
@@ -130,7 +131,7 @@ case $1 in
     ;;
 esac
 
-if [ $1 == "make" ]; then
+if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
   if [ -n "$2" ]; then
     if [ ! $2 == "lib32" ]; then
       echo "unknown option $2"
@@ -178,6 +179,9 @@ if [ $1 == "make" ]; then
       fi
     fi
   done
+  if [ $1 == "repeat-install" ]; then
+    files_fail=0
+  fi
   if [ $files_fail -ne 0 ]; then
     if [ -z "$KIIN_NO_FIX_FILES" ]; then
       echo "trying to fix files..."
@@ -224,44 +228,46 @@ if [ $1 == "make" ]; then
   fi
   set -e
 
-  if [ ! -z ${vcs} ]; then
-    if [ ${vcs} = 'git' ]; then
-      SRC_HOME=$SOURCES_HOME
-      if [ ! -z ${sources_home} ]; then
-        SRC_HOME=${sources_home}
-      fi
-      if [ ! -z ${git_pkgname} ]; then
-        git clone $SRC_HOME/${git_pkgname} ${srcdir}
-      else
-        git clone $SRC_HOME/${pkgname} ${srcdir}
-      fi
-      cd ${srcdir}
-      if [ ! -z ${gittag} ]; then
-        git checkout ${gittag}
-      fi
-    fi
-    if [ ${vcs} = 'mercurial' ]; then
-      if [ ! -z ${hg_pkgname} ]; then
-        hg clone $SOURCES_HOME/${hg_pkgname} ${srcdir}
-      else
-        hg clone $SOURCES_HOME/${pkgname} ${srcdir}
-      fi
-      cd ${srcdir}
-      hg update -r ${hgtag}
-    fi
-  else
-    if [[ ${srctar} ]]; then
-      echo "unpacking ${srctar}..."
-      tar xf ${srctar}
-      if [[ ${srcdir} ]]; then
+  if [ $1 != "repeat-install" ]; then
+    if [ ! -z ${vcs} ]; then
+      if [ ${vcs} = 'git' ]; then
+        SRC_HOME=$SOURCES_HOME
+        if [ ! -z ${sources_home} ]; then
+          SRC_HOME=${sources_home}
+        fi
+        if [ ! -z ${git_pkgname} ]; then
+          git clone $SRC_HOME/${git_pkgname} ${srcdir}
+        else
+          git clone $SRC_HOME/${pkgname} ${srcdir}
+        fi
         cd ${srcdir}
+        if [ ! -z ${gittag} ]; then
+          git checkout ${gittag}
+        fi
       fi
-    fi
-    if [[ ${srczip} ]]; then
-      echo "unpacking ${srczip}..."
-      unzip ${srczip}
-      if [[ ${srcdir} ]]; then
+      if [ ${vcs} = 'mercurial' ]; then
+        if [ ! -z ${hg_pkgname} ]; then
+          hg clone $SOURCES_HOME/${hg_pkgname} ${srcdir}
+        else
+          hg clone $SOURCES_HOME/${pkgname} ${srcdir}
+        fi
         cd ${srcdir}
+        hg update -r ${hgtag}
+      fi
+    else
+      if [[ ${srctar} ]]; then
+        echo "unpacking ${srctar}..."
+        tar xf ${srctar}
+        if [[ ${srcdir} ]]; then
+          cd ${srcdir}
+        fi
+      fi
+      if [[ ${srczip} ]]; then
+        echo "unpacking ${srczip}..."
+        unzip ${srczip}
+        if [[ ${srcdir} ]]; then
+          cd ${srcdir}
+        fi
       fi
     fi
   fi
@@ -280,10 +286,12 @@ if [ $1 == "make" ]; then
   else
     LIBDIR="/usr/lib"
   fi
-  kiin_make 2>&1 | tee ${location}/kiin_make_log
-  make_exit_status=${PIPESTATUS[0]}
-  if [ ${make_exit_status} -gt 0 ]; then
-    exit ${make_exit_status}
+  if [ $1 != "repeat-install" ]; then
+    kiin_make 2>&1 | tee ${location}/kiin_make_log
+    make_exit_status=${PIPESTATUS[0]}
+    if [ ${make_exit_status} -gt 0 ]; then
+      exit ${make_exit_status}
+    fi
   fi
 
   maker=${location}/kiin_maker.sh
@@ -295,7 +303,8 @@ cd ${location}
 if [ -n "$KIIN_LIB32" ]; then
   pkgname=lib32-${pkgname}
 fi
-mkdir ${pkgdir}
+rm -rf ${pkgdir}
+mkdir -p ${pkgdir}
 if [[ ${srcdir} ]]; then
   cd ${srcdir}
 fi
