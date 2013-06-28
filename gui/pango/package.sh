@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=pango
-pkgver=1.34.1
-urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/1.34/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=1.35
+pkgver=${majorver}.0
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
