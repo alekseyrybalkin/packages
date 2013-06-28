@@ -1,13 +1,14 @@
 #!/bin/sh
 
 pkgname=transmission
-vcs="git"
-gittag=e882df87ffd3f3b7ab7211cb85c742da1b14a776
-pkgver=2.77+
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=2.80
+extension=xz
+folder="http://download-origin.transmissionbt.com/files/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./autogen.sh
   ./configure --prefix=/usr --without-gtk
   make
 }
