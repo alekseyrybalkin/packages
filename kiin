@@ -939,7 +939,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'ntp' ]] && [[ $version = '4.2.6p5' ]] && version='4.2.6.p5'
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     [[ $package = 'java7-openjdk' ]] && [[ $version = '7+' ]] && version='7.u40_2.4.0'
-    [[ $package = 'ruby' ]] && [[ $version = '2.0.0.p195' ]] && version='2.0.0_p195'
+    [[ $package = 'ruby' ]] && [[ $version = '2.0.0.p247' ]] && version='2.0.0_p247'
     # not found in Arch:
     [[ $package = 'vlock' ]] && continue
     [[ $package = 'sysklogd' ]] && continue
