@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=boost
-pkgver=1.53.0
-_pkgver=1_53_0
+pkgver=1.54.0
+_pkgver=1_54_0
 urls="http://downloads.sourceforge.net/boost/boost_${_pkgver}.tar.bz2"
 srctar=${pkgname}_${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}_${_pkgver}
