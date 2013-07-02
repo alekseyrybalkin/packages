@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=lcms2
-pkgver=2.4
+pkgver=2.5
 urls="http://downloads.sourceforge.net/lcms/lcms2-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
