@@ -2,7 +2,7 @@
 
 pkgname=cmake
 majorver=2.8
-pkgver=${majorver}.11.1
+pkgver=${majorver}.11.2
 extension=gz
 major_folder="http://www.cmake.org/files/"
 check_server=1
