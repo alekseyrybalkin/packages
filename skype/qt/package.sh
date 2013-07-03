@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=qt
-pkgver=4.8.4
-urls="http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-${pkgver}.tar.gz"
+pkgver=4.8.5
+urls="http://download.qt-project.org/official_releases/qt/4.8/${pkgver}/qt-everywhere-opensource-src-${pkgver}.tar.gz"
 srctar=qt-everywhere-opensource-src-${pkgver}.tar.gz
 srcdir=${location}/qt-everywhere-opensource-src-${pkgver}
 
