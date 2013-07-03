@@ -1,28 +1,25 @@
 #!/bin/sh
 
 pkgname=subversion
-pkgver=1.7.10
+pkgver=1.8.0
 extension=bz2
 folder="http://archive.apache.org/dist/${pkgname}/"
 check_server=1
 
 . ${KIIN_HOME}/defaults.sh
 
-urls="$urls http://rybalkin.org/kiin-files/subversion.rpath.fix.patch"
-
 kiin_make() {
   MAKEFLAGS=
-  patch -p0 -i ../subversion.rpath.fix.patch
   ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
-    --with-zlib=/usr --with-neon=/usr --with-sqlite=/usr \
-    --disable-static
-  make external-all
+    --with-zlib=/usr --with-serf=/usr --with-neon=/usr \
+    --with-sqlite=/usr --disable-static
   make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all
   make swig-py swig-pl
 }
 
 kiin_install() {
   MAKEFLAGS=
+  export LD_LIBRARY_PATH=${pkgdir}/usr/lib:${LD_LIBRARY_PATH}
   make DESTDIR=${pkgdir} install
   install -v -m755 -d ${pkgdir}/usr/share/doc/subversion-${pkgver}
   cp -v -R doc/* ${pkgdir}/usr/share/doc/subversion-${pkgver}
@@ -30,6 +27,4 @@ kiin_install() {
   make DESTDIR=${pkgdir} install-swig-py
   find ${pkgdir} -name perllocal.pod -delete
   find ${pkgdir} -name .packlist -delete
-  #sed -i -e 's/\/sources\/essentials\/subversion\/kiin-dest//g' \
-  #  ${pkgdir}/usr/lib/perl5/site_perl/5.16.1/x86_64-linux/auto/SVN/_Core/.packlist
 }
