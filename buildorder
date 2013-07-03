@@ -88,6 +88,7 @@ apr
 apr-util
 libxml2
 neon
+serf
 subversion
 perl-error
 git
