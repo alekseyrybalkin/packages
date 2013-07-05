@@ -2,11 +2,12 @@
 
 pkgname=reiserfsprogs
 vcs="git"
-gittag=v3.6.22
-pkgver=3.6.22
+gittag=b4582fed408ace5bbbca6d39069d69a4691de9aa
+pkgver=3.6.23
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  autoreconf -i -f
   ./configure --prefix=/usr --sbindir=/sbin
   make
 }
