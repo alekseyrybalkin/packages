@@ -14,6 +14,7 @@ MAJOR/INTERESTING:
 NORMAL:
 - find out why procps installed some strange hardlinks for man pages
 - maybe we should collect kiin-knowns from responsible packages?
+- maybe even collect check-updates exceptions from packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
 - kiin: optimize working on packages with lots of files (e.g. python,ncurses,glibc,perl)
 - kiin rebuild-world: do not fail if some package does not build, just move on
@@ -30,7 +31,7 @@ MINOR:
 - control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, games, etc.)
-- list all packages and make dependencies which are pre-built binaries (groovy, grails, xmlbeans, idea)
+- list all packages and make dependencies which are pre-built binaries (idea)
 - fix some packages to not need internet connection for building (cacerts)
 - check for new tags in repositories?
 - add p7zip
