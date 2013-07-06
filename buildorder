@@ -95,6 +95,8 @@ git
 mercurial
 sudo
 openssh
+elfutils
+prelink
 glib
 lib32-glib
 slang
@@ -158,6 +160,8 @@ lib32-libxdmcp
 xcb-proto
 libxcb
 lib32-libxcb
+libpng
+lib32-libpng
 freetype2
 lib32-freetype2
 fontconfig
@@ -215,8 +219,6 @@ lib32-mesa
 glu
 lib32-glu
 xbitmaps
-libpng
-lib32-libpng
 xorg-bdftopcf
 xorg-iceauth
 xorg-mkfontdir
@@ -386,5 +388,3 @@ linux-firmware
 wireless_tools
 libnl
 wpa_supplicant
-elfutils
-prelink
