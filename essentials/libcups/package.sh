@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=libcups
-pkgver=1.6.2
-urls="http://ftp.easysw.com/pub/cups/${pkgver}/cups-${pkgver}-source.tar.bz2"
+pkgver=1.6.3
+urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
 srctar=cups-${pkgver}-source.tar.bz2
 srcdir=${location}/cups-${pkgver}
 
