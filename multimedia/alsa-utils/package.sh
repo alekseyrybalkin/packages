@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=alsa-utils
-pkgver=1.0.27.1
+pkgver=1.0.27.2
 urls="ftp://ftp.alsa-project.org/pub/utils/${pkgname}-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/alsa-utils-1.0.27-no_xmlto-1.patch"
 srctar=${pkgname}-${pkgver}.tar.bz2
