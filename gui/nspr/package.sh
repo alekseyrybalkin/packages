@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=nspr
-pkgver=4.9.6
+pkgver=4.10
 urls="http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${pkgver}/src/nspr-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cd mozilla/nsprpub
+  cd nspr
   sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
   sed -i 's#$(LIBRARY) ##' config/rules.mk
   ./configure --prefix=/usr \
@@ -19,6 +19,6 @@ kiin_make() {
 }
 
 kiin_install() {
-  cd mozilla/nsprpub
+  cd nspr
   make DESTDIR=${pkgdir} install
 }
