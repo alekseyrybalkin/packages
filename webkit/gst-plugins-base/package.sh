@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gst-plugins-base
-pkgver=1.0.7
+pkgver=1.0.8
 urls="http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
