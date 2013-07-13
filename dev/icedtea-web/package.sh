@@ -21,4 +21,8 @@ kiin_make() {
 kiin_install() {
   MAKEFLAGS=
   make DESTDIR=${pkgdir} install
+  # plugin for firefox:
+  #mkdir -p ${pkgdir}/usr/lib/mozilla/plugins
+  #ln -s ${JAVA_HOME}/jre/lib/IcedTeaPlugin.so \
+  #  ${pkgdir}/usr/lib/mozilla/plugins/
 }
