@@ -387,3 +387,5 @@ linux-firmware
 wireless_tools
 libnl
 wpa_supplicant
+ldns
+proxychains

@@ -35,5 +35,4 @@ MINOR:
 - fix some packages to not need internet connection for building (cacerts)
 - check for new tags in repositories?
 - add p7zip
-- add drill (ldns)
 - implement kiin_after_uninstall
