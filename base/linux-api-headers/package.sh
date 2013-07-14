@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=linux-api-headers
-git_pkgname=linux
+git_pkgname=linux-stable
 vcs="git"
-gittag=v3.10
-pkgver=3.10
+gittag=v3.10.1
+pkgver=3.10.1
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
