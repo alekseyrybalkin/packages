@@ -1,17 +1,17 @@
 #!/bin/sh
 
 pkgname=nss
-pkgver=3.14.3
-urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_14_3_RTM/src/nss-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/nss-${pkgver}-standalone-1.patch"
+pkgver=3.15.1
+urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_15_1_RTM/src/nss-${pkgver}.tar.gz \
+  http://www.linuxfromscratch.org/patches/blfs/svn/nss-${pkgver}-standalone-2.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ../nss-${pkgver}-standalone-1.patch
-  cd mozilla/security/nss
-  make nss_build_all BUILD_OPT=1 \
+  patch -Np1 -i ../nss-${pkgver}-standalone-2.patch
+  cd nss
+  make BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=/usr/include/nspr \
     USE_SYSTEM_ZLIB=1 \
     ZLIB_LIBS=-lz \
@@ -25,7 +25,7 @@ kiin_install() {
   if [ -n "$KIIN_LIB32" ]; then
     LIB=lib32
   fi
-  cd mozilla/dist
+  cd dist
   mkdir -p ${pkgdir}/usr/$LIB/pkgconfig
   mkdir -p ${pkgdir}/usr/bin
   install -v -m755 Linux*/lib/*.so ${pkgdir}/usr/$LIB
