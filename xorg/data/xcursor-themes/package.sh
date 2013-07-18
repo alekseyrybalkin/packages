@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xcursor-themes
-pkgver=1.0.3
+pkgver=1.0.4
 urls="http://xorg.freedesktop.org/releases/individual/data/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
