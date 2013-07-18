@@ -3,18 +3,18 @@
 pkgname=openjdk
 vcs="mercurial"
 hg_pkgname=icedtea
-hgtag=7b39d0b37add
+hgtag=0a8108854365
 pkgver=7+
 
 # hotspot.map
-HOTSPOT_CHANGESET=25fe5bf8dee3
+HOTSPOT_CHANGESET=2efa7b70e843
 # Makefile.am
-OPENJDK_CHANGESET=78c6b2167b94
-CORBA_CHANGESET=fd00f67b65c4
-JAXP_CHANGESET=7dc9a882c6f8
-JAXWS_CHANGESET=ea9a36dfd4ee
-JDK_CHANGESET=3f1f89553b54
-LANGTOOLS_CHANGESET=68c60cde94a7
+OPENJDK_CHANGESET=424e7e279ef6
+CORBA_CHANGESET=2abbbec3c03c
+JAXP_CHANGESET=9ce0c87f3e87
+JAXWS_CHANGESET=7278e9a73874
+JDK_CHANGESET=afaedb56b499
+LANGTOOLS_CHANGESET=c523dcea4ff3
 urls="http://icedtea.classpath.org/hg/icedtea7-forest/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/archive/${OPENJDK_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/corba/archive/${CORBA_CHANGESET}.tar.gz \
