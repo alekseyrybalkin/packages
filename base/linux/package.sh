@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=linux
-git_pkgname=linux-stable
+#git_pkgname=linux-stable
 vcs="git"
-gittag=v3.10.1
-pkgver=3.10.1
+gittag=v3.11-rc1
+pkgver=3.11.rc1
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
