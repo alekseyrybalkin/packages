@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfont
-pkgver=1.4.5
+pkgver=1.4.6
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXfont-${pkgver}.tar.bz2"
 srctar=libXfont-${pkgver}.tar.bz2
 srcdir=${location}/libXfont-${pkgver}
