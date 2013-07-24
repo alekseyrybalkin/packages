@@ -389,3 +389,6 @@ libnl
 wpa_supplicant
 ldns
 proxychains
+jdk
+maven
+ideau

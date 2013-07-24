@@ -30,8 +30,8 @@ MINOR:
 - add ability to read chm (xchm)
 - control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
-- list all proprietary shit in my system (like bios, games, etc.)
-- list all packages and make dependencies which are pre-built binaries (none)
+- list all proprietary shit in my system (like bios, games, wifi firmware, jdk, ideau, etc.)
+- list all packages and make dependencies which are pre-built binaries (jdk, maven, ideau)
 - fix some packages to not need internet connection for building (cacerts)
 - check for new tags in repositories?
 - add p7zip
