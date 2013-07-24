@@ -682,8 +682,14 @@ if [ $1 == 'upgrade' ]; then
       echo "updating /boot hashsums..."
       sync
       mount -o remount,ro /boot
-      md5sum -b /dev/sda2 > /root/boot_md5
-      sha1sum -b /dev/sda2 > /root/boot_sha1
+      if [ `hostname` == 'ritchie' ]; then
+        md5sum -b /dev/sda2 > /root/boot_md5
+        sha1sum -b /dev/sda2 > /root/boot_sha1
+      fi
+      if [ `hostname` == 'snowden' ]; then
+        md5sum -b /dev/sda1 > /root/boot_md5
+        sha1sum -b /dev/sda1 > /root/boot_sha1
+      fi
       ;;
   esac
   if [ -f $tmpdir/package.sh ]; then

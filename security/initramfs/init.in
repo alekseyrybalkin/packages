@@ -20,7 +20,12 @@ ${UDEV_PATH}/udevd --daemon --resolve-names=never
 udevadm trigger
 udevadm settle
 
-cryptsetup luksOpen /dev/sda3 root
+if [ `hostname` == 'ritchie' ]; then
+  cryptsetup luksOpen /dev/sda3 root
+fi
+if [ `hostname` == 'snowden' ]; then
+  cryptsetup luksOpen /dev/sda2 root
+fi
 mkdir /.root
 mount -t ext4 /dev/mapper/root /.root
 
