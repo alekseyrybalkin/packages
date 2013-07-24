@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=videoproto
-pkgver=2.3.1
+pkgver=2.3.2
 urls="http://xorg.freedesktop.org/releases/individual/proto/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
