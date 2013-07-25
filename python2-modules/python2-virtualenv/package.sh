@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python2-virtualenv
-pkgver=1.9.1
+pkgver=1.10
 urls="http://pypi.python.org/packages/source/v/virtualenv/virtualenv-${pkgver}.tar.gz"
 srctar=virtualenv-${pkgver}.tar.gz
 srcdir=${location}/virtualenv-${pkgver}
