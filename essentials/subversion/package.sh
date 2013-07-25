@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=subversion
-pkgver=1.8.0
+pkgver=1.8.1
 extension=bz2
 folder="http://archive.apache.org/dist/${pkgname}/"
 check_server=1
