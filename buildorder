@@ -392,3 +392,5 @@ proxychains
 jdk
 maven
 ideau
+net-tools
+memcached
