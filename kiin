@@ -933,7 +933,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'libcups' ]] && package='cups'
     [[ $package = 'openjdk' ]] && package='java7-openjdk'
     [[ $package = 'icedtea-web' ]] && package='icedtea-web-java7'
-    [[ $package = 'idea' ]] && package='intellij-idea-community-edition'
+    [[ $package = 'ideau' ]] && package='intellij-idea-community-edition'
     [[ $package = 'lib32-lcms2' ]] && package='lcms2'
     [[ $package = 'qt' ]] && package='qt4'
     [[ $package = 'lib32-qt' ]] && package='lib32-qt4'
