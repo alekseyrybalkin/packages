@@ -12,8 +12,7 @@ kiin_make() {
   make PREFIX=/usr \
     SHAREDIR=/usr/share/misc \
     MANDIR=/usr/share/man \
-    SHARED=yes \
-    ZLIB=no all
+    SHARED=yes all
 }
 
 kiin_install() {
@@ -21,6 +20,5 @@ kiin_install() {
     SHAREDIR=/usr/share/misc \
     MANDIR=/usr/share/man \
     SHARED=yes \
-    ZLIB=no \
     DESTDIR=${pkgdir} install install-lib
 }
