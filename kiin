@@ -1083,28 +1083,28 @@ fi
 if [ $1 == 'check-buildorder' ]; then
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    grep -q "^$package$" $KIIN_HOME/buildorder
+    grep -q "^$package$" $KIIN_HOME/buildorder.`hostname`
     if [ $? -gt 0 ]; then
       echo "$package is missing from buildorder"
     fi
   done
-  for i in `cat $KIIN_HOME/buildorder`; do
+  for i in `cat $KIIN_HOME/buildorder.$(hostname)`; do
     count=`echo "select * from package where name='$i';" | sqlite3 $KIIN_DB | wc -l`
     if [ $count -lt 1 ]; then
       echo "$i is not installed, but is in buildorder"
     fi
   done
-  dups=`cat $KIIN_HOME/buildorder | sort | uniq -d`
+  dups=`cat $KIIN_HOME/buildorder.$(hostname) | sort | uniq -d`
   if [ ! -z $dups ]; then
     echo "duplicates in buildorder: $dups"
   fi
   echo "order offenders:"
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    order=`grep -n "^$package$" $KIIN_HOME/buildorder | cut -d ":" --fields 1`
+    order=`grep -n "^$package$" $KIIN_HOME/buildorder.$(hostname) | cut -d ":" --fields 1`
     offending=""
     for j in `kiin links $i`; do
-      dep_order=`grep -n "^$j$" $KIIN_HOME/buildorder | cut -d ":" --fields 1`
+      dep_order=`grep -n "^$j$" $KIIN_HOME/buildorder.$(hostname) | cut -d ":" --fields 1`
       if [ $dep_order -gt $order ]; then
         offending="$offending $j"
       fi
@@ -1121,8 +1121,8 @@ if [ $1 == 'u' ]; then
   set -e
   for package in `for item in $@; do
       if [ $item != 'u' ]; then
-        cat $KIIN_HOME/buildorder | grep -n "^$item$" | sed 's/:/\ /g'
-        cat $KIIN_HOME/buildorder | grep -n "^lib32-$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder.`hostname` | grep -n "^$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder.`hostname` | grep -n "^lib32-$item$" | sed 's/:/\ /g'
       fi
     done | sort -n | cut -d " " -f 2`; do
     kiin rebuild-world $package $package
@@ -1145,12 +1145,12 @@ fi
 if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
-  packages=`cat $KIIN_HOME/buildorder`
+  packages=`cat $KIIN_HOME/buildorder.$(hostname)`
   if [ -n "$2" ]; then
-    packages=`cat $KIIN_HOME/buildorder | grep -A 10000 "^$2$"`
+    packages=`cat $KIIN_HOME/buildorder.$(hostname) | grep -A 10000 "^$2$"`
   fi
   if [ -n "$3" ]; then
-    packages=`cat $KIIN_HOME/buildorder | grep -A 10000 "^$2$" | grep -B 10000 "^$3$"`
+    packages=`cat $KIIN_HOME/buildorder.$(hostname) | grep -A 10000 "^$2$" | grep -B 10000 "^$3$"`
   fi
   for package in $packages; do
     # won't upgrade (never installed them in the first place)
