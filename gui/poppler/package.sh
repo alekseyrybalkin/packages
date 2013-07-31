@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.22.5
-urls="http://poppler.freedesktop.org/poppler-${pkgver}.tar.gz"
-srctar=poppler-${pkgver}.tar.gz
+pkgver=0.24.0
+urls="http://poppler.freedesktop.org/poppler-${pkgver}.tar.xz"
+srctar=poppler-${pkgver}.tar.xz
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
