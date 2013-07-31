@@ -354,12 +354,17 @@ apache-ant
 nettle
 gnutls
 cups
+ijs
+qpdf
+libdaemon
+cups-filters
 attr
 rhino
 ca-certificates-java
 openjdk
 icedtea-web
 libcap
+avahi
 ntp
 fluxbox
 bridge-utils
