@@ -963,6 +963,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'ttf-win7-fonts' ]] && continue
     [[ $package = 'proxychains' ]] && continue
     [[ $package = 'jdk' ]] && continue
+    [[ $package = 'ijs' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
