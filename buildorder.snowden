@@ -353,7 +353,7 @@ bitcoin
 apache-ant
 nettle
 gnutls
-libcups
+cups
 attr
 rhino
 ca-certificates-java
