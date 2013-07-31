@@ -51,6 +51,15 @@ kiin_install() {
   # for xorg-server
   install -dv -m 0775 ${pkgdir}/var/lib/xkb
 
+  # for cups
+  install -dv -m 0755 ${pkgdir}/var/log/cups
+  install -dv -m 0775 ${pkgdir}/var/cache/cups
+  install -dv -m 0775 ${pkgdir}/var/cache/cups/rss
+  chown -R root:lp ${pkgdir}/var/cache/cups
+  install -dv -m 0710 ${pkgdir}/var/spool/cups
+  install -dv -m 1770 ${pkgdir}/var/spool/cups/tmp
+  chown -R root:lp ${pkgdir}/var/spool/cups
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
