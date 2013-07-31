@@ -15,4 +15,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # annoys the hell out of me when running qpass
+  chmod -x ${pkgdir}/usr/bin/qpdf
 }
