@@ -1121,8 +1121,8 @@ if [ $1 == 'u' ]; then
   set -e
   for package in `for item in $@; do
       if [ $item != 'u' ]; then
-        cat $KIIN_HOME/buildorder.`hostname` | grep -n "^$item$" | sed 's/:/\ /g'
-        cat $KIIN_HOME/buildorder.`hostname` | grep -n "^lib32-$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
       fi
     done | sort -n | cut -d " " -f 2`; do
     kiin rebuild-world $package $package
