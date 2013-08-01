@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fuse
-pkgver=2.9.2
+pkgver=2.9.3
 urls="http://downloads.sourceforge.net/fuse/fuse-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

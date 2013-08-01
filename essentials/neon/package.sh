@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=neon
-pkgver=0.29.6
+pkgver=0.30.0
 extension=gz
 folder="http://www.webdav.org/${pkgname}/"
 check_server=1

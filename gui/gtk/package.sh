@@ -2,7 +2,7 @@
 
 pkgname=gtk
 majorver=3.9
-pkgver=${majorver}.8
+pkgver=${majorver}.10
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
