@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gstreamer
-pkgver=1.0.8
-urls=" http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-${pkgver}.tar.xz"
+pkgver=1.0.9
+urls="http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
