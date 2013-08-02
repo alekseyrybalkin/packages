@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mercurial
-pkgver=2.6.3
+pkgver=2.7
 extension=gz
 folder="http://mercurial.selenic.com/release/"
 check_server=1
