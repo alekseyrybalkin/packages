@@ -13,7 +13,7 @@ kiin_make() {
     ../configure \
         --prefix=/usr \
         --disable-profile \
-        --enable-kernel=2.6.25 \
+        --enable-kernel=2.6.34 \
         --libexecdir=/usr/lib/glibc \
         --disable-nscd \
         --enable-multi-arch
