@@ -9,7 +9,6 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  sed -i '/--static-libs)/{N;s#echo .*#echo #;}' curl-config.in
   ./configure --prefix=/usr \
     --disable-static \
     --with-ca-path=/etc/ssl/certs \
