@@ -14,7 +14,8 @@ kiin_make() {
       --with-console-auth-dir=/run/console/ \
       --enable-inotify --disable-dnotify \
       --disable-verbose-mode --disable-static \
-      --disable-tests --disable-asserts --libdir=$LIBDIR
+      --disable-tests --disable-asserts \
+      --disable-systemd --libdir=$LIBDIR
   make
 }
 
