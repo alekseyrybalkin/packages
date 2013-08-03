@@ -242,6 +242,7 @@ kiin_install() {
   done
   #c_rehash
   install BLFS-ca-bundle*.crt ${SSLDIR}/ca-bundle.crt
+  ln -sv ../ca-bundle.crt ${SSLDIR}/certs/ca-certificates.crt
   unset SSLDIR
   rm -r certs BLFS-ca-bundle*
 }
