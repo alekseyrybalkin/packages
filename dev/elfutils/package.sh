@@ -2,8 +2,8 @@
 
 pkgname=elfutils
 vcs=git
-gittag=24b26ec1aaf4dc87d274f1786a1ad83b3ec2ba25
-pkgver=0.155+
+gittag=elfutils-0.156
+pkgver=0.156
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
