@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 3.11.0-rc3 Kernel Configuration
+# Linux/x86 3.11.0-rc4 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -998,7 +998,7 @@ CONFIG_RPS=y
 CONFIG_RFS_ACCEL=y
 CONFIG_XPS=y
 # CONFIG_NETPRIO_CGROUP is not set
-CONFIG_NET_LL_RX_POLL=y
+CONFIG_NET_RX_BUSY_POLL=y
 CONFIG_BQL=y
 CONFIG_NET_FLOW_LIMIT=y
 
@@ -1538,7 +1538,13 @@ CONFIG_IWLWIFI_P2P=y
 # CONFIG_HERMES is not set
 # CONFIG_P54_COMMON is not set
 # CONFIG_RT2X00 is not set
-# CONFIG_RTLWIFI is not set
+CONFIG_RTL_CARDS=y
+# CONFIG_RTL8192CE is not set
+# CONFIG_RTL8192SE is not set
+# CONFIG_RTL8192DE is not set
+# CONFIG_RTL8723AE is not set
+# CONFIG_RTL8188EE is not set
+# CONFIG_RTL8192CU is not set
 # CONFIG_WL_TI is not set
 # CONFIG_ZD1211RW is not set
 # CONFIG_MWIFIEX is not set
