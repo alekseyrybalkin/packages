@@ -943,7 +943,7 @@ if [ $1 == 'check-updates' ]; then
     #if [ -n "${arch_version_exception}" ]; then
     #  version=${arch_version_exception}
     #fi
-    [[ $package = 'grub' ]] && [[ $version = '2.00' ]] && version='2.00.5043'
+    [[ $package = 'grub' ]] && [[ $version = '2.00' ]] && version='2.00.5086'
     [[ $package = 'readline' ]] && [[ $version = '6.2' ]] && version='6.2.004'
     [[ $package = 'openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
     [[ $package = 'lib32-openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
