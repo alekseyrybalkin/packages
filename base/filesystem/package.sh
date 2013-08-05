@@ -60,6 +60,9 @@ kiin_install() {
   install -dv -m 1770 ${pkgdir}/var/spool/cups/tmp
   chown -R root:lp ${pkgdir}/var/spool/cups
 
+  # for tor
+  install -dv -m 0700 ${pkgdir}/var/lib/tor
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
