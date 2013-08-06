@@ -393,3 +393,4 @@ proxychains
 net-tools
 memcached
 tor
+libmemcached
