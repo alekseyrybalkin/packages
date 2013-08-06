@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-file-next
-pkgver=1.10
+pkgver=1.12
 urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.tar.gz"
 srctar=File-Next-${pkgver}.tar.gz
 srcdir=${location}/File-Next-${pkgver}
