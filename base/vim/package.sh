@@ -2,9 +2,9 @@
 
 pkgname=vim
 vcs="mercurial"
-hgtag="75f4c48a0771"
-pkgver=7.3.1301
-srcdir=${location}/${pkgname}73
+hgtag="a643d80b6507"
+pkgver=7.4.0
+srcdir=${location}/${pkgname}74
 
 kiin_make() {
   echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
@@ -23,6 +23,6 @@ kiin_install() {
       ln -sv vim.1 $(dirname $L)/vi.1
   done
   mkdir -pv ${pkgdir}/usr/share/doc
-  ln -sv ../vim/vim73/doc ${pkgdir}/usr/share/doc/vim
+  ln -sv ../vim/vim74/doc ${pkgdir}/usr/share/doc/vim
   mkdir -pv ${pkgdir}/etc
 }
