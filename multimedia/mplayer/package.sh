@@ -2,7 +2,7 @@
 
 pkgname=mplayer
 vcs="git"
-gittag=1077563337ab662a25f2c82081e31fec133fd9c7
+gittag=93b8932e3c2f76e8686f650d5e4b2cf50bb07661
 pkgver=36287
 srcdir=${location}/MPlayer-${pkgver}
 
