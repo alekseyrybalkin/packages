@@ -3,7 +3,7 @@
 _pkgname=xmodmap
 pkgname=xorg-${_pkgname}
 vcs="git"
-gittag=f784ef30fdbd1b32aacf44537d9e7c85d268465b
+gittag=bf4620e2d78d2a4766948f136f2372a596ac275d
 pkgver=1.0.7+
 srcdir=${location}/${_pkgname}-${pkgver}
 
