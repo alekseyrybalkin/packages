@@ -2,7 +2,7 @@
 
 pkgname=sdl
 vcs="mercurial"
-hgtag="f7fd5c3951b9"
+hgtag="3665bc284271"
 pkgver=1.2.15+
 srcdir=${location}/${pkgname}-${pkgver}
 
