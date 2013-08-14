@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cryptsetup
-pkgver=1.6.1
+pkgver=1.6.2
 urls="http://cryptsetup.googlecode.com/files/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
