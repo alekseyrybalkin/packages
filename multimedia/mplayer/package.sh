@@ -2,8 +2,8 @@
 
 pkgname=mplayer
 vcs="git"
-gittag=93b8932e3c2f76e8686f650d5e4b2cf50bb07661
-pkgver=36287
+pkgver=36422
+gittag=`pushd ${SOURCES_HOME}/mplayer >/dev/null && git log | head -n 1000 | grep "^    git-svn-id\|^commit" | grep -B 1 "trunk@${pkgver}" | head -n 1 | cut -d ' ' --fields=2 && popd >/dev/null`
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
