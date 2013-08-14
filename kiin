@@ -353,7 +353,8 @@ EOF
   location=${location} srcdir=${srcdir} pkgdir=${pkgdir} \
     pkgname=${pkgname} pkgver=${pkgver} KIIN_LIB32=${KIIN_LIB32} \
     XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
-    KIIN_HOME=${KIIN_HOME} fakeroot ${maker}
+    KIIN_HOME=${KIIN_HOME} SOURCES_HOME=${SOURCES_HOME} \
+    fakeroot ${maker}
   if [ -z "${KIIN_NO_CLEARING}" ]; then
     cd ${location}
     kiin clean
