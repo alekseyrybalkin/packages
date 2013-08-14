@@ -59,6 +59,9 @@ cp -a /lib/firmware $WDIR/lib
 
 # Install the init file
 install -m0755 $DATADIR/$INITIN $WDIR/init
+if [ `hostname` == "ritchie" ]; then
+  sed -i -e 's/sda2/sda3/g' $WDIR/init
+fi
 
 # Install basic binaries
 for f in $binfiles ; do
