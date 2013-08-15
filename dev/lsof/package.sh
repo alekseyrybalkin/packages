@@ -10,6 +10,8 @@ srctar=${pkgname}_${pkgver}.tar.bz2
 
 . ${KIIN_HOME}/defaults.sh
 
+srcdir=${location}/${pkgname}_${pkgver}
+
 ver_grep="^${pkgname}_[^-]*\.tar\.${extension}$"
 ver_seds() {
   sed -r "s/^${pkgname}_//g" | sed -r "s/\.tar\.${extension}$//g"
