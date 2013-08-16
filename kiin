@@ -1165,6 +1165,15 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'cacerts' ]] && continue # needs internet access
     [[ $package = 'initramfs' ]] && continue # needs sudo password to build
 
+    # build failures
+    [[ $package = 'boost' ]] && continue
+    [[ $package = 'strace' ]] && continue
+    [[ $package = 'wine' ]] && continue
+    [[ $package = 'bitcoin' ]] && continue
+    [[ $package = 'net-tools' ]] && continue
+    #[[ $package = 'poppler' ]] && continue #with new gtk
+    #[[ $package = 'gstreamer' ]] && continue #with new bison
+
     lib32=0
     lib32test=`echo $package | grep lib32 | wc -w`
     if [ $lib32test -gt 0 ]; then
