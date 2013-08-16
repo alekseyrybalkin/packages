@@ -17,6 +17,5 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/usr
   scons PREFIX=${pkgdir}/usr install
-  ln -sfv libserf-1.so.0.1.0 ${pkgdir}/usr/lib/libserf-1.so.0
-  ln -sfv libserf-1.so.0.1.0 ${pkgdir}/usr/lib/libserf-1.so
+  ln -sfv libserf-1.so.3.0.0 ${pkgdir}/usr/lib/libserf-1.so
 }
