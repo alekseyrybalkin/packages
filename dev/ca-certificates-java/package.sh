@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ca-certificates-java
-pkgver=20121112+nmu2
+pkgver=20130815
 extension=gz
 folder="http://ftp.debian.org/debian/pool/main/c/${pkgname}/"
 check_server=1
