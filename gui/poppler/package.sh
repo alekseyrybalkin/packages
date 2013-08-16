@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.24.0
-urls="http://poppler.freedesktop.org/poppler-${pkgver}.tar.xz"
-srctar=poppler-${pkgver}.tar.xz
+vcs="git"
+gittag=31947d413eae115acc147c33fc55b8ab4adccd91
+pkgver=0.24.0+
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr     \
               --sysconfdir=/etc \
               --enable-zlib     \
