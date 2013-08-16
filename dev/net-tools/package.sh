@@ -7,10 +7,12 @@ gittag=8f124a7073ef43038249484d3ef8dc89af059eb5
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   yes "" | make || :
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir}/usr update
   rm ${pkgdir}/usr/bin/*name
 }

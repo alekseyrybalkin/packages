@@ -1170,8 +1170,6 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'strace' ]] && continue
     [[ $package = 'wine' ]] && continue
     [[ $package = 'bitcoin' ]] && continue
-    [[ $package = 'net-tools' ]] && continue
-    #[[ $package = 'poppler' ]] && continue #with new gtk
     #[[ $package = 'gstreamer' ]] && continue #with new bison
 
     lib32=0
