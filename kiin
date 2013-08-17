@@ -1166,8 +1166,11 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'initramfs' ]] && continue # needs sudo password to build
 
     # build failures
+    # https://svn.boost.org/trac/boost/ticket/8973
     [[ $package = 'boost' ]] && continue
+    # http://comments.gmane.org/gmane.comp.sysutils.strace.devel/3239
     [[ $package = 'strace' ]] && continue
+    # https://bugs.gentoo.org/473056?id=473056
     [[ $package = 'wine' ]] && continue
     [[ $package = 'bitcoin' ]] && continue
     #[[ $package = 'gstreamer' ]] && continue #with new bison
