@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xulrunner
-pkgver=23.0
+pkgver=23.0.1
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${pkgver}/source/firefox-${pkgver}.source.tar.bz2"
 srctar=firefox-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
