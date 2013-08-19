@@ -571,7 +571,7 @@ if [ $1 == 'upgrade' ]; then
   echo "upgrading $package from $old_version to $new_version"
   # remount /boot partition in rw mode
   case $package in
-    "linux" | "grub" | "initramfs")
+    "linux" | "grub" | "initramfs" | "linux-libre")
       mount -o remount,rw /boot
       ;;
   esac
@@ -680,7 +680,7 @@ if [ $1 == 'upgrade' ]; then
   sudo -u $PACKAGE_MANAGER kiin gen-db
   # update hashsums for /boot partition
   case $package in
-    "linux" | "grub" | "initramfs")
+    "linux" | "grub" | "initramfs" | "linux-libre")
       echo "updating /boot hashsums..."
       sync
       mount -o remount,ro /boot
@@ -965,6 +965,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'proxychains' ]] && continue
     [[ $package = 'jdk' ]] && continue
     [[ $package = 'ijs' ]] && continue
+    [[ $package = 'linux-libre' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
