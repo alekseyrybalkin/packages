@@ -2,7 +2,7 @@
 
 pkgname=mplayer
 vcs="git"
-pkgver=36422
+pkgver=36426
 gittag=`pushd ${SOURCES_HOME}/mplayer >/dev/null && git log | head -n 1000 | grep "^    git-svn-id\|^commit" | grep -B 1 "trunk@${pkgver}" | head -n 1 | cut -d ' ' --fields=2 && popd >/dev/null`
 srcdir=${location}/MPlayer-${pkgver}
 
