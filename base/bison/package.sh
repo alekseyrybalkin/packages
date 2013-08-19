@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=bison
-pkgver=2.7.1
+pkgver=3.0
 urls="http://ftp.gnu.org/gnu/bison/bison-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
