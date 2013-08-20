@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cups-filters
-pkgver=1.0.35
+pkgver=1.0.36
 urls="http://www.openprinting.org/download/cups-filters/cups-filters-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
