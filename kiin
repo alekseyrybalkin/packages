@@ -12,6 +12,11 @@ ARCH_COMMUNITY_REPO=~/sources/community
 SOURCES_HOME=/var/src
 umask 0022
 
+PATH=/opt/openjdk-7+/bin:/opt/openjdk-7+/jre/bin:$PATH
+JAVA_HOME=/opt/openjdk-7+
+J2SDKDIR=/opt/openjdk-7+
+J2REDIR=/opt/openjdk-7+/jre
+
 usage() {
   echo "usage:"
   echo "  kiin make [lib32]"
