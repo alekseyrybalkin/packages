@@ -7,6 +7,9 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  # fix build with bison 3.0
+  sed -i '/int priv_gst_parse_yylex/s/, yyscan_t yyscanner//' \
+    gst/parse/grammar.y
   ./configure --prefix=/usr \
     --libexecdir=/usr/lib \
     --with-package-name="GStreamer ${pkgver} kiin" \
