@@ -1,13 +1,15 @@
 #!/bin/sh
 
 pkgname=gsettings-desktop-schemas
-majorver=3.9
-pkgver=${majorver}.5
+majorver=3.8
+pkgver=${majorver}.2
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
 
 . ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr

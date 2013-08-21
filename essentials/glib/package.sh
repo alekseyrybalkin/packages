@@ -1,13 +1,15 @@
 #!/bin/sh
 
 pkgname=glib
-majorver=2.37
-pkgver=${majorver}.6
+majorver=2.36
+pkgver=${majorver}.4
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
 
 . ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   # https://bugs.archlinux.org/task/34630

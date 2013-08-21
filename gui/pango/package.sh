@@ -1,13 +1,15 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.35
-pkgver=${majorver}.2
+majorver=1.34
+pkgver=${majorver}.1
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
 
 . ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr \

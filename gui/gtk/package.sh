@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gtk
-majorver=3.9
-pkgver=${majorver}.10
+majorver=3.8
+pkgver=${majorver}.2
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
@@ -12,6 +12,7 @@ srcdir=${location}/${pkgname}+-${pkgver}
 
 . ${KIIN_HOME}/defaults.sh
 
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 ver_grep="^${pkgname}\+-.*\.tar\.${extension}$"
 ver_seds() {
   sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar\.${extension}$//g"
