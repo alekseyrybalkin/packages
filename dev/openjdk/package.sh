@@ -37,8 +37,10 @@ kiin_make() {
 
   unset JAVA_HOME
   unset _JAVA_OPTIONS
+  unset J2SDKDIR
+  unset J2REDIR
   ./autogen.sh
-  ./configure --with-jdk-home=/opt/jdk \
+  ./configure --with-jdk-home=/opt/openjdk-7+ \
     --enable-nss \
     --with-hotspot-src-zip=${srcdir}/${HOTSPOT_CHANGESET}.tar.gz \
     --with-openjdk-src-zip=${srcdir}/${OPENJDK_CHANGESET}.tar.gz \

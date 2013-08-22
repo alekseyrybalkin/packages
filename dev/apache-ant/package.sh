@@ -20,8 +20,10 @@ kiin_make() {
 }
 
 kiin_install() {
-  export JAVA_HOME=/opt/jdk
+  export JAVA_HOME=/opt/openjdk-7+
   unset _JAVA_OPTIONS
+  unset J2SDKDIR
+  unset J2REDIR
   ./build.sh -Ddist.dir=${pkgdir}/opt/ant-${pkgver} dist
   ln -v -sfn ant-${pkgver} ${pkgdir}/opt/ant
 }
