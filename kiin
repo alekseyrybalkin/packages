@@ -967,6 +967,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'java7-openjdk' ]] && [[ $version = '7+' ]] && version='7.u40_2.4.1'
     [[ $package = 'net-tools' ]] && [[ $version = '1.60+' ]] && version='1.60.20130531git'
     [[ $package = 'ruby' ]] && [[ $version = '2.0.0.p247' ]] && version='2.0.0_p247'
+    [[ $package = 'db' ]] && [[ $version = '5.3.21' ]] && version='6.0.20'
     # not found in Arch:
     [[ $package = 'vlock' ]] && continue
     [[ $package = 'sysklogd' ]] && continue
