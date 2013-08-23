@@ -408,6 +408,7 @@ if [ $1 == 'gen-db' ]; then
   mkdir -p usr/share/{icons/hicolor,glib-2.0/schemas,applications}
   mkdir -p usr/{lib/pango/1.8.0,lib/gdk-pixbuf-2.0/2.10.0}
   mkdir -p usr/lib/gtk-3.0/3.0.0
+  mkdir -p usr/share/mime/application
   touch boot/grub/i386-pc/core.img
   touch boot/grub/grubenv
   touch etc/xml/docbook
@@ -442,6 +443,15 @@ if [ $1 == 'gen-db' ]; then
   touch etc/mtab.fuselock
   touch etc/ssl/certs/java/cacerts
   touch etc/machine-id
+  touch usr/share/mime/application/vnd.ms-word.xml
+  touch usr/share/mime/application/vnd.ms-powerpoint.template.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.ms-excel.sheet.binary.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.ms-excel.template.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.ms-excel.sheet.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.sun.xml.base.xml
+  touch usr/share/mime/application/vnd.ms-powerpoint.presentation.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.ms-word.document.macroenabled.12.xml
+  touch usr/share/mime/application/vnd.ms-word.template.macroenabled.12.xml
   cd ..
   find kiin-dest | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
