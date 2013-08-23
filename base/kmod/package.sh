@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=kmod
-pkgver=14
+pkgver=15
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
