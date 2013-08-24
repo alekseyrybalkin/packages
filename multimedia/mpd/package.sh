@@ -17,6 +17,7 @@ kiin_make() {
     --disable-modplug \
     --disable-shout \
     --disable-jack \
+    --disable-soup \
     --enable-mpg123 \
     --enable-flac \
     --enable-audiofile
