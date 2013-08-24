@@ -19,7 +19,6 @@ bzip2
 lib32-bzip2
 pkg-config
 ncurses
-lib32-ncurses
 shadow
 util-linux
 lib32-util-linux
@@ -36,7 +35,6 @@ grep
 readline
 bash
 libtool
-lib32-libtool
 gdbm
 inetutils
 db
@@ -49,7 +47,6 @@ findutils
 flex
 xz
 gettext
-lib32-gettext
 groff
 grub
 less
@@ -78,7 +75,6 @@ lib32-libffi
 expat
 lib32-expat
 openssl
-lib32-openssl
 cacerts
 wget
 curl
@@ -116,11 +112,8 @@ alsa-utils
 libogg
 libvorbis
 openal
-lib32-openal
 sdl
-lib32-sdl
 mpg123
-lib32-mpg123
 flac
 audiofile
 lame
@@ -178,9 +171,7 @@ lib32-libice
 libsm
 lib32-libsm
 libxt
-lib32-libxt
 libxmu
-lib32-libxmu
 libxpm
 libxaw
 libxfixes
@@ -189,14 +180,12 @@ libxcomposite
 libxrender
 lib32-libxrender
 libxcursor
-lib32-libxcursor
 libxdamage
 lib32-libxdamage
 libfontenc
 libxfont
 libxft
 libxi
-lib32-libxi
 libxinerama
 libxrandr
 libxtst
