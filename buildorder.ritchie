@@ -267,7 +267,6 @@ cairo
 libjpeg-turbo
 lib32-libjpeg-turbo
 freeglut
-lib32-freeglut
 glew
 libtiff
 gdk-pixbuf
@@ -276,7 +275,6 @@ harfbuzz
 pango
 gtk2
 dbus-core
-lib32-dbus-core
 at-spi2-core
 at-spi2-atk
 gtk
