@@ -219,7 +219,6 @@ lib32-libdrm
 mesa
 lib32-mesa
 glu
-lib32-glu
 xbitmaps
 xorg-bdftopcf
 xorg-iceauth
