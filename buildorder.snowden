@@ -314,9 +314,7 @@ desktop-file-utils
 giflib
 lib32-giflib
 lcms
-lib32-lcms
 lcms2
-lib32-lcms2
 miniupnpc
 transmission
 yasm
