@@ -369,7 +369,6 @@ qemu
 dosbox
 libtxc_dxtn
 lib32-libtxc_dxtn
-steam
 qt
 lib32-qt
 skype
