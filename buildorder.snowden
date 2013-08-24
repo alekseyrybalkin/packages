@@ -95,6 +95,8 @@ sudo
 openssh
 elfutils
 prelink
+dbus-core
+lib32-dbus-core
 glib
 lib32-glib
 slang
@@ -261,7 +263,6 @@ icu
 harfbuzz
 pango
 gtk2
-dbus-core
 at-spi2-core
 at-spi2-atk
 gtk
