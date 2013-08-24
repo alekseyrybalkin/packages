@@ -366,7 +366,6 @@ ntp
 fluxbox
 bridge-utils
 qemu
-dosbox
 libtxc_dxtn
 lib32-libtxc_dxtn
 qt
