@@ -119,7 +119,6 @@ mpg123
 flac
 audiofile
 lame
-libsoup
 mpd
 libmpdclient
 mpd-mpc
@@ -355,6 +354,7 @@ gperf
 ruby
 gsettings-desktop-schemas
 glib-networking
+libsoup
 gstreamer
 gst-plugins-base
 libwebp
