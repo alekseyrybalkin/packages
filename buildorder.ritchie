@@ -345,7 +345,6 @@ icedtea-web
 libcap
 ntp
 fluxbox
-bridge-utils
 qemu
 qt
 lib32-qt
