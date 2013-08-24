@@ -312,7 +312,6 @@ hicolor-icon-theme
 gajim
 desktop-file-utils
 giflib
-lib32-giflib
 lcms
 lcms2
 miniupnpc
