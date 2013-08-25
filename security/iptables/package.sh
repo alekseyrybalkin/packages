@@ -2,8 +2,8 @@
 
 pkgname=iptables
 vcs="git"
-gittag=v1.4.19.1
-pkgver=1.4.19.1
+gittag=v1.4.20
+pkgver=1.4.20
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
