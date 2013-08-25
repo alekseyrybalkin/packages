@@ -23,7 +23,9 @@ kiin_install() {
     ln -sv share/{man,doc,info} $dir
   done
   case $(uname -m) in
-  x86_64) ln -sv lib ${pkgdir}/lib64 && ln -sv lib ${pkgdir}/usr/lib64 ;;
+  x86_64) ln -sv lib ${pkgdir}/lib64 && \
+    ln -sv lib ${pkgdir}/usr/lib64 && \
+    ln -sv lib ${pkgdir}/usr/local/lib64 ;;
   esac
   mkdir -v ${pkgdir}/var/{log,mail,spool}
   ln -sv /run ${pkgdir}/var/run
