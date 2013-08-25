@@ -28,6 +28,7 @@ e2fsprogs
 coreutils
 iana-etc
 m4
+flex
 bison
 pcre
 lib32-pcre
@@ -44,7 +45,6 @@ automake
 diffutils
 gawk
 findutils
-flex
 xz
 gettext
 groff
