@@ -1,0 +1,40 @@
+Сделать cupsd работающим
+
+TODO LIST
+MAJOR/INTERESTING:
+- do not miss final linux versions
+- kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
+- fix setuid for xlockmore somehow
+- run tests/checks for packages
+- check tarball integrities whenever possible
+  [ http://allanmcrae.com/2012/04/how-secure-is-the-source-code/ ]
+- sign packages with gpg key and check it before install/upgrade
+- update git/svn/hg repositories once in a while
+- check version differences in db and package files
+  e.g. version 1.3 in package.sh, but 1.2 in system
+
+NORMAL:
+- find out why procps installed some strange hardlinks for man pages
+- maybe we should collect kiin-knowns from responsible packages?
+- maybe even collect check-updates exceptions from packages?
+- add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)
+- kiin: optimize working on packages with lots of files (e.g. python,ncurses,glibc,perl)
+- kiin rebuild-world: do not fail if some package does not build, just move on
+  and in the end show which ones failed
+- fix initramfs for rebuild-world (get rid of sudo)
+- fix running kiin concurrently
+- fix gen-db bug about spaces in file names
+- fix pcre instructions about symlink (need to update 'em every damn time)
+
+MINOR:
+- kiin: checking of hashsums of installed files <- do we need this?
+  kiin: checking of permissions of installed files/dirs <- do we need this?
+- add ability to read chm (xchm)
+- control that kiin runs commands strictly as root/user
+- kiin: remove broken symlinks before upgrade (see TODO in the executable file)
+- list all proprietary shit in my system (like bios, games, wifi firmware, jdk, ideau, skype, etc.)
+- list all packages and make dependencies which are pre-built binaries (jdk, maven, ideau)
+- fix some packages to not need internet connection for building (cacerts, libreoffice)
+- check for new tags in repositories?
+- add p7zip
+- implement kiin_after_uninstall
