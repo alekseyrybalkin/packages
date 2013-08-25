@@ -1,8 +1,5 @@
-Сделать cupsd работающим
-
 TODO LIST
 MAJOR/INTERESTING:
-- do not miss final linux versions
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - fix setuid for xlockmore somehow
 - run tests/checks for packages
