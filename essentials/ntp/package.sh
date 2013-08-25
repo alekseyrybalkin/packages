@@ -18,7 +18,7 @@ majorver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc \
-    --with-binsubdir=sbin
+    --with-binsubdir=sbin --enable-linuxcaps
   make
 }
 
