@@ -13,6 +13,8 @@ kiin_make() {
               --docdir=/usr/share/doc/pcre-${pkgver} \
               --enable-utf \
               --enable-unicode-properties \
+              --enable-pcre16 \
+              --enable-pcre32 \
               --enable-pcregrep-libz \
               --enable-pcregrep-libbz2 \
               --disable-static \
