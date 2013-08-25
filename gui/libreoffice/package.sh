@@ -5,20 +5,21 @@ pkgver=4.1.0.4
 urls="http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-${pkgver}.tar.xz \
   http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-dictionaries-${pkgver}.tar.xz \
   http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-help-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-${pkgver}-system_poppler-1.patch"
+  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-${pkgver}-system_poppler-1.patch \
+  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-${pkgver}-system_neon-1.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   install -dm755 src
   tar -xf ../libreoffice-dictionaries-${pkgver}.tar.xz --no-overwrite-dir --strip-components=1
-  tar -xf ../libreoffice-help-${pkgver}.tar.xz --no-overwrite-dir --strip-components=1
   ln -sv ../../libreoffice-dictionaries-${pkgver}.tar.xz src/
   ln -sv ../../libreoffice-help-${pkgver}.tar.xz src/
   sed -e "/gzip -f/d" \
     -e "s|.1.gz|.1|g" \
     -i bin/distro-install-desktop-integration
   sed -e "/distro-install-file-lists/d" -i Makefile.in
+  patch -Np1 -i ../libreoffice-${pkgver}-system_neon-1.patch
   patch -Np1 -i ../libreoffice-${pkgver}-system_poppler-1.patch
   ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
@@ -44,6 +45,7 @@ kiin_make() {
     --with-system-nss \
     --with-system-openssl \
     --with-system-poppler \
+    --with-system-neon \
     --with-system-zlib \
     --disable-gstreamer-0.10 \
     --disable-dbus \
@@ -52,7 +54,6 @@ kiin_make() {
     #--with-system-openldap \
     #--with-system-redland \
     #--enable-gstreamer=no \
-    #--with-system-neon \
   make build
 }
 
