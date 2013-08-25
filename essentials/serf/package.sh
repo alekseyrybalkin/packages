@@ -7,7 +7,6 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i "/incdir/s:MAJOR':&\n\nenv\['SHLIBVERSION'\]='0.\${MAJOR}.0':" SConstruct
   sed -i "/Append/s:RPATH=libdir,::" SConstruct
   sed -i "/Default/s:lib_static,::" SConstruct
   sed -i "/Alias/s:install_static,::" SConstruct
