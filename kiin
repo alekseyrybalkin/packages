@@ -961,17 +961,12 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'sysklogd' ]] && continue
     [[ $package = 'sysvinit' ]] && continue
     [[ $package = 'xorg-makedepend' ]] && continue
-    [[ $package = 'libpthread-stubs' ]] && continue
-    [[ $package = 'sdl2' ]] && continue
-    [[ $package = 'lib32-sdl2' ]] && continue
     [[ $package = 'ttf-win7-fonts' ]] && continue
     [[ $package = 'proxychains' ]] && continue
     [[ $package = 'jdk' ]] && continue
-    [[ $package = 'ijs' ]] && continue
-    [[ $package = 'linux-libre' ]] && continue
-    [[ $package = 'linux-libre-api-headers' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
+    [[ $package = 'linux-libre' ]] && continue
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
     [[ $package = 'evince' ]] && continue # evince2 is the only option
     [[ $package = 'initramfs' ]] && continue
