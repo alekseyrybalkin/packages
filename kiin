@@ -942,6 +942,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'qt' ]] && package='qt4'
     [[ $package = 'lib32-qt' ]] && package='lib32-qt4'
     [[ $package = 'gtk' ]] && package='gtk3'
+    [[ $package = 'dbus-core' ]] && package='dbus'
     # package version exceptions:
     #if [ -n "${arch_version_exception}" ]; then
     #  version=${arch_version_exception}
