@@ -47,6 +47,7 @@ usage() {
   echo "  kiin who-uses-now <package>"
   echo "  kiin check-buildorder"
   echo "  kiin u [package1 [package2 [...]]]"
+  echo "  kiin sort [package1 [package2 [...]]]"
   echo "  kiin ud <package>"
   echo "  kiin rebuild-world"
   echo "  kiin convert-arch-package"
@@ -1131,6 +1132,19 @@ if [ $1 == 'u' ]; then
       fi
     done | sort -n | cut -d " " -f 2`; do
     kiin rebuild-world $package $package
+  done
+  exit 0
+fi
+
+if [ $1 == 'sort' ]; then
+  set -e
+  for package in `for item in $@; do
+      if [ $item != 'u' ]; then
+        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
+        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
+      fi
+    done | sort -n | cut -d " " -f 2`; do
+    echo ${package}
   done
   exit 0
 fi
