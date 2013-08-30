@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ttf-dejavu
-pkgver=2.33
+pkgver=2.34
 urls="http://downloads.sourceforge.net/project/dejavu/dejavu/${pkgver}/dejavu-fonts-ttf-${pkgver}.tar.bz2"
 srctar=dejavu-fonts-ttf-${pkgver}.tar.bz2
 srcdir=${location}/dejavu-fonts-ttf-${pkgver}
