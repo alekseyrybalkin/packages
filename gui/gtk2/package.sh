@@ -17,6 +17,9 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # fix conflict with gtk3
+  mv ${pkgdir}/usr/bin/gtk{,2}-update-icon-cache
+  mv ${pkgdir}/usr/share/man/man1/gtk{,2}-update-icon-cache.1
 }
 
 kiin_after_install() {

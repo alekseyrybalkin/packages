@@ -16,3 +16,11 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
 }
+
+kiin_after_install() {
+  gdk-pixbuf-query-loaders --update-cache
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}

@@ -19,14 +19,12 @@ ver_seds() {
 }
 
 kiin_make() {
-  ./configure --prefix=/usr --sysconfdir=/etc --enable-gtk2-dependency
+  ./configure --prefix=/usr --sysconfdir=/etc
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  # fix conflict with gtk2
-  rm ${pkgdir}/usr/share/man/man1/gtk-update-icon-cache.1
 }
 
 kiin_after_install() {

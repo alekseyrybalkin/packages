@@ -324,6 +324,12 @@ poppler
 libcroco
 librsvg
 djvulibre
+perl-xml-simple
+icon-naming-utils
+gnome-icon-theme-symbolic
+gnome-icon-theme
+gnome-themes-standard
+itstool
 evince
 libexif
 babl
