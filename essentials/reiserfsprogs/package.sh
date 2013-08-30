@@ -2,8 +2,8 @@
 
 pkgname=reiserfsprogs
 vcs="git"
-gittag=b4582fed408ace5bbbca6d39069d69a4691de9aa
-pkgver=3.6.23
+gittag=fe11487be99b5df3607c039f3ba279536eecc569
+pkgver=3.6.24
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
