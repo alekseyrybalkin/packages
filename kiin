@@ -1184,8 +1184,6 @@ if [ $1 == 'rebuild-world' ]; then
     [[ $package = 'initramfs' ]] && continue # needs sudo password to build
 
     # build failures
-    # http://comments.gmane.org/gmane.comp.sysutils.strace.devel/3239
-    [[ $package = 'strace' ]] && continue
     [[ $package = 'bitcoin' ]] && continue
 
     # big ones
