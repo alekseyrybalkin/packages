@@ -973,7 +973,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'linux-libre' ]] && continue
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
-    [[ $package = 'evince' ]] && continue # evince2 is the only option
     [[ $package = 'initramfs' ]] && continue
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
