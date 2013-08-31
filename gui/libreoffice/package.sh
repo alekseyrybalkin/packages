@@ -1,12 +1,12 @@
 #!/bin/sh
 
 pkgname=libreoffice
-pkgver=4.1.0.4
-urls="http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-${pkgver}.tar.xz \
-  http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-dictionaries-${pkgver}.tar.xz \
-  http://download.documentfoundation.org/libreoffice/src/4.1.0/libreoffice-help-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-${pkgver}-system_poppler-1.patch \
-  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-${pkgver}-system_neon-1.patch"
+_majorver=4.1.1
+pkgver=4.1.1.2
+urls="http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-${pkgver}.tar.xz \
+  http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-dictionaries-${pkgver}.tar.xz \
+  http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-help-${pkgver}.tar.xz \
+  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-4.1.0.4-system_neon-1.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -19,8 +19,7 @@ kiin_make() {
     -e "s|.1.gz|.1|g" \
     -i bin/distro-install-desktop-integration
   sed -e "/distro-install-file-lists/d" -i Makefile.in
-  patch -Np1 -i ../libreoffice-${pkgver}-system_neon-1.patch
-  patch -Np1 -i ../libreoffice-${pkgver}-system_poppler-1.patch
+  patch -Np1 -i ../libreoffice-4.1.0.4-system_neon-1.patch
   ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --with-vendor="kiin GNU/Linux" \
