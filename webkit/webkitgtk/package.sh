@@ -12,7 +12,6 @@ kiin_make() {
   sed -i '/generate-gtkdoc --rebase/s:^:# :' GNUmakefile.in
   ./configure --prefix=/usr \
     --libexecdir=/usr/lib/WebKitGTK \
-    --with-gstreamer=1.0 \
     --disable-geolocation
   make
 }
