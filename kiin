@@ -969,6 +969,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'ttf-win7-fonts' ]] && continue
     [[ $package = 'proxychains' ]] && continue
     [[ $package = 'jdk' ]] && continue
+    [[ $package = 'jdk7' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'linux-libre' ]] && continue
