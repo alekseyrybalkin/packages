@@ -2,9 +2,11 @@
 
 pkgname=automake
 pkgver=1.14
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=xz
+folder="http://ftp.gnu.org/gnu/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}-${pkgver}

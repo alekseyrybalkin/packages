@@ -2,9 +2,11 @@
 
 pkgname=binutils
 pkgver=2.23.2
-urls="http://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=bz2
+folder="http://ftp.gnu.org/gnu/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   rm -fv etc/standards.info

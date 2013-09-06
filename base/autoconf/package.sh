@@ -2,9 +2,13 @@
 
 pkgname=autoconf
 pkgver=2.69
-urls="http://ftp.gnu.org/gnu/autoconf/autoconf-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+extension=xz
+folder="http://ftp.gnu.org/gnu/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
   ./configure --prefix=/usr
