@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=gstreamer
-pkgver=1.0.10
-urls="http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=1.1.4
+extension=xz
+folder="http://gstreamer.freedesktop.org/src/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
