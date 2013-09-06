@@ -1,10 +1,15 @@
 #!/bin/sh
 
 pkgname=dconf
-pkgver=0.16.1
-urls="http://ftp.gnome.org/pub/gnome/sources/dconf/0.16/dconf-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=0.16
+pkgver=${majorver}.1
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr \
