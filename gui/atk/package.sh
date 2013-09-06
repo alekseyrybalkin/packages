@@ -1,10 +1,15 @@
 #!/bin/sh
 
 pkgname=atk
-pkgver=2.8.0
-urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.8/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.8
+pkgver=${majorver}.0
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr --libdir=$LIBDIR
