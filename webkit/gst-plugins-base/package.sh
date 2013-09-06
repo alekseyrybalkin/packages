@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=gst-plugins-base
-pkgver=1.0.10
-urls="http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=1.1.4
+extension=xz
+folder="http://gstreamer.freedesktop.org/src/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
