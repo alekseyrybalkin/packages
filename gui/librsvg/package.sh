@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=librsvg
-pkgver=2.37.0
-urls=" http://ftp.gnome.org/pub/gnome/sources/librsvg/2.37/librsvg-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.39
+pkgver=${majorver}.0
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \
