@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxmu
-pkgver=1.1.1
+pkgver=1.1.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXmu-${pkgver}.tar.bz2"
 srctar=libXmu-${pkgver}.tar.bz2
 srcdir=${location}/libXmu-${pkgver}
