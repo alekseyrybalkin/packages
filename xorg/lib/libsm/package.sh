@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libsm
-pkgver=1.2.1
+pkgver=1.2.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/libSM-${pkgver}.tar.bz2"
 srctar=libSM-${pkgver}.tar.bz2
 srcdir=${location}/libSM-${pkgver}
