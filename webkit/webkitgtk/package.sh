@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=webkitgtk
-pkgver=2.1.90.1
+pkgver=2.1.91
 extension=xz
 folder="http://webkitgtk.org/releases/"
 check_server=1
