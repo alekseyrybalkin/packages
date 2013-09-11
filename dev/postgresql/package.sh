@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=postgresql
-pkgver=9.2.4
+pkgver=9.3.0
 extension=bz2
-folder="ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/"
+folder="http://ftp.postgresql.org/pub/source/"
 check_server=1
 
 . ${KIIN_HOME}/defaults.sh
