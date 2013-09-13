@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssh
-pkgver=6.2p2
+pkgver=6.3p1
 extension=gz
 folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 check_server=1
