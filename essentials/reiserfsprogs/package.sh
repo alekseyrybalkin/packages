@@ -14,6 +14,4 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  ln -sf reiserfsck ${pkgdir}/sbin/fsck.reiserfs
-  ln -sf mkreiserfs ${pkgdir}/sbin/mkfs.reiserfs
 }
