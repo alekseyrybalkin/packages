@@ -1,14 +1,15 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.3
+pkgver=1.6.4
+_apngver=1.6.3
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://downloads.sourceforge.net/libpng-apng/libpng-${pkgver}-apng.patch.gz"
+  http://downloads.sourceforge.net/libpng-apng/libpng-${_apngver}-apng.patch.gz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  gzip -cd ../libpng-${pkgver}-apng.patch.gz | patch -p1
+  gzip -cd ../libpng-${_apngver}-apng.patch.gz | patch -p1
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static
