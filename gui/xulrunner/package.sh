@@ -2,7 +2,8 @@
 
 pkgname=xulrunner
 pkgver=23.0.1
-urls="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${pkgver}/source/firefox-${pkgver}.source.tar.bz2"
+urls="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${pkgver}/source/firefox-${pkgver}.source.tar.bz2 \
+  http://www.linuxfromscratch.org/patches/blfs/svn/firefox-${pkgver}-system_cairo-1.patch"
 srctar=firefox-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
@@ -12,6 +13,7 @@ kiin_make() {
   cp ../mozconfig .
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
+  patch -Np1 -i ../firefox-${pkgver}-system_cairo-1.patch
   make -f client.mk
 }
 
