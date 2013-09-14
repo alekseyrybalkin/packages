@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr
   make
+  sed -i '/^install-here/ s/install-static//' Makefile
 }
 
 kiin_install() {
