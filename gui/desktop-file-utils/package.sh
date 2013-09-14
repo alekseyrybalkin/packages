@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=desktop-file-utils
-pkgver=0.21
+pkgver=0.22
 urls=" http://freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
