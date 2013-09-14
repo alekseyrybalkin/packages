@@ -14,6 +14,7 @@ kiin_make() {
       --disable-static \
       --enable-gl \
       --enable-egl \
+      --enable-tee \
       --libdir=$LIBDIR
   else
     rm -rf test
