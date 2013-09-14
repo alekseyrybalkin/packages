@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=udev
-pkgver=206
+pkgver=207
 udev_lfs_ver=1
 urls="http://anduin.linuxfromscratch.org/sources/other/udev-lfs-${pkgver}-${udev_lfs_ver}.tar.bz2 \
   http://www.freedesktop.org/software/systemd/systemd-${pkgver}.tar.xz"
