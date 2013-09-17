@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=linux-libre
-pkgver=3.11
+pkgver=3.11.1
 extension=xz
 folder="http://linux-libre.fsfla.org/pub/linux-libre/releases/"
 check_server=1
