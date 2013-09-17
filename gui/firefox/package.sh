@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=23.0.1
+pkgver=24.0
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2 \
-  http://rybalkin.org/kiin-files/firefox-fixed-loading-icon.png \
-  http://www.linuxfromscratch.org/patches/blfs/svn/firefox-${pkgver}-system_cairo-1.patch"
+  http://rybalkin.org/kiin-files/firefox-fixed-loading-icon.png"
 srctar=${pkgname}-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
@@ -17,7 +16,6 @@ kiin_make() {
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
   sed -i 's@ ""@@' browser/base/Makefile.in
-  patch -Np1 -i ../firefox-${pkgver}-system_cairo-1.patch
   make -f client.mk
 }
 
