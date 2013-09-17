@@ -1,10 +1,15 @@
 #!/bin/sh
 
 pkgname=gnome-icon-theme-symbolic
-pkgver=3.8.3
-urls="http://ftp.gnome.org/pub/gnome/sources/gnome-icon-theme-symbolic/3.8/gnome-icon-theme-symbolic-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=3.8
+pkgver=${majorver}.3
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   GTK_UPDATE_ICON_CACHE=/bin/true ./configure --prefix=/usr

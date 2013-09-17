@@ -1,10 +1,15 @@
 #!/bin/sh
 
 pkgname=gdk-pixbuf
-pkgver=2.28.2
-urls="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.28/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=2.28
+pkgver=${majorver}.2
+extension=xz
+major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr --with-x11 --libdir=$LIBDIR
