@@ -991,7 +991,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'libsoup' ]] && continue
     [[ $package = 'gsettings-desktop-schemas' ]] && continue
     [[ $package = 'glib-networking' ]] && continue
-    [[ $package = 'gdk-pixbuf' ]] && continue
+    [[ $package = 'gdk-pixbuf2' ]] && continue
     [[ $package = 'gnome-icon-theme' ]] && continue
     [[ $package = 'gnome-icon-theme-symbolic' ]] && continue
 
