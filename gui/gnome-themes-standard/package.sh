@@ -1,10 +1,15 @@
 #!/bin/sh
 
 pkgname=gnome-themes-standard
-pkgver=3.8.4
-urls="http://download.gnome.org/sources/${pkgname}/3.8/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=3.8
+pkgver=${majorver}.4
+extension=xz
+major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
   ./configure --prefix=/usr
