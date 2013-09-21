@@ -994,6 +994,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'gdk-pixbuf2' ]] && continue
     [[ $package = 'gnome-icon-theme' ]] && continue
     [[ $package = 'gnome-icon-theme-symbolic' ]] && continue
+    [[ $package = 'gnome-themes-standard' ]] && continue
 
     _package=""
     if [ $package != $local_package ]; then
