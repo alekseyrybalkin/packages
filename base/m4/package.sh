@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=m4
-pkgver=1.4.16
+pkgver=1.4.17
 urls="http://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
