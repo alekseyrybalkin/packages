@@ -3,18 +3,18 @@
 pkgname=openjdk
 vcs="mercurial"
 hg_pkgname=icedtea
-hgtag=0a8108854365
+hgtag=c3c661000904
 pkgver=7+
 
 # hotspot.map
-HOTSPOT_CHANGESET=2efa7b70e843
+HOTSPOT_CHANGESET=62c7dcedbbc4
 # Makefile.am
-OPENJDK_CHANGESET=424e7e279ef6
-CORBA_CHANGESET=2abbbec3c03c
-JAXP_CHANGESET=9ce0c87f3e87
-JAXWS_CHANGESET=7278e9a73874
-JDK_CHANGESET=afaedb56b499
-LANGTOOLS_CHANGESET=c523dcea4ff3
+OPENJDK_CHANGESET=51c1d39f82ae
+CORBA_CHANGESET=e5da8ecaf6f9
+JAXP_CHANGESET=fc76c585e6c5
+JAXWS_CHANGESET=b28455339003
+JDK_CHANGESET=99a2c23b1d94
+LANGTOOLS_CHANGESET=db375fd08fa3
 urls="http://icedtea.classpath.org/hg/icedtea7-forest/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/archive/${OPENJDK_CHANGESET}.tar.gz \
   http://icedtea.classpath.org/hg/icedtea7-forest/corba/archive/${CORBA_CHANGESET}.tar.gz \
@@ -42,6 +42,7 @@ kiin_make() {
   ./autogen.sh
   ./configure --with-jdk-home=/opt/openjdk-7+ \
     --enable-nss \
+    --disable-system-kerberos \
     --with-hotspot-src-zip=${srcdir}/${HOTSPOT_CHANGESET}.tar.gz \
     --with-openjdk-src-zip=${srcdir}/${OPENJDK_CHANGESET}.tar.gz \
     --with-corba-src-zip=${srcdir}/${CORBA_CHANGESET}.tar.gz \
