@@ -982,20 +982,21 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
     # gnome packages -- we check server versions
-    [[ $package = 'atk' ]] && continue
-    [[ $package = 'gtk3' ]] && continue
-    [[ $package = 'at-spi2-atk' ]] && continue
-    [[ $package = 'dconf' ]] && continue
-    [[ $package = 'pango' ]] && continue
-    [[ $package = 'at-spi2-core' ]] && continue
-    [[ $package = 'glib2' ]] && continue
-    [[ $package = 'libsoup' ]] && continue
-    [[ $package = 'gsettings-desktop-schemas' ]] && continue
-    [[ $package = 'glib-networking' ]] && continue
-    [[ $package = 'gdk-pixbuf2' ]] && continue
-    [[ $package = 'gnome-icon-theme' ]] && continue
-    [[ $package = 'gnome-icon-theme-symbolic' ]] && continue
-    [[ $package = 'gnome-themes-standard' ]] && continue
+    #[[ $package = 'evince' ]] && continue
+    #[[ $package = 'atk' ]] && continue
+    #[[ $package = 'gtk3' ]] && continue
+    #[[ $package = 'at-spi2-atk' ]] && continue
+    #[[ $package = 'dconf' ]] && continue
+    #[[ $package = 'pango' ]] && continue
+    #[[ $package = 'at-spi2-core' ]] && continue
+    #[[ $package = 'glib2' ]] && continue
+    #[[ $package = 'libsoup' ]] && continue
+    #[[ $package = 'gsettings-desktop-schemas' ]] && continue
+    #[[ $package = 'glib-networking' ]] && continue
+    #[[ $package = 'gdk-pixbuf2' ]] && continue
+    #[[ $package = 'gnome-icon-theme' ]] && continue
+    #[[ $package = 'gnome-icon-theme-symbolic' ]] && continue
+    #[[ $package = 'gnome-themes-standard' ]] && continue
 
     _package=""
     if [ $package != $local_package ]; then

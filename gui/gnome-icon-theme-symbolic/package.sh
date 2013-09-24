@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gnome-icon-theme-symbolic
-majorver=3.8
-pkgver=${majorver}.3
+majorver=3.10
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.34
-pkgver=${majorver}.1
+majorver=1.36
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

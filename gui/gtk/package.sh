@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gtk
-majorver=3.8
-pkgver=${majorver}.4
+majorver=3.10
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
@@ -19,7 +19,10 @@ ver_seds() {
 }
 
 kiin_make() {
-  ./configure --prefix=/usr --sysconfdir=/etc
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --disable-wayland-backend \
+    --enable-x11-backend
   make
 }
 

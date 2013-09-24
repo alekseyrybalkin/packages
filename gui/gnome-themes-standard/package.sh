@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gnome-themes-standard
-majorver=3.8
-pkgver=${majorver}.4
+majorver=3.9
+pkgver=${majorver}.91
 extension=xz
 major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
 check_server=1
