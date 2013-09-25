@@ -1,8 +1,9 @@
 #!/bin/sh
 
 pkgname=tzdata
-pkgver=2013d
-urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
+pkgver=2013f
+urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz \
+  http://www.iana.org/time-zones/repository/releases/tzcode${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
 
@@ -14,6 +15,8 @@ kiin_make() {
 
 kiin_install() {
   cd ${_srcdir}
+  tar xf ../tzcode${pkgver}.tar.gz
+  awk -f leapseconds.awk leap-seconds.list > leapseconds
   ZONEINFO=${pkgdir}/usr/share/zoneinfo
   mkdir -pv $ZONEINFO/{posix,right}
   for tz in etcetera southamerica northamerica europe africa antarctica  \
