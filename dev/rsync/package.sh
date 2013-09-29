@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rsync
-pkgver=3.0.9
+pkgver=3.1.0
 extension=gz
 folder="http://www.samba.org/ftp/rsync/src/"
 check_server=1
