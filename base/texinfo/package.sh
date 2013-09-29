@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=texinfo
-pkgver=5.1
+pkgver=5.2
 urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
