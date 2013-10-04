@@ -2,7 +2,7 @@
 
 pkgname=binutils
 pkgver=2.23.2
-extension=bz2
+extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 
