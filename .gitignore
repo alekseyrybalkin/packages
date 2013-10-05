@@ -10,6 +10,7 @@
 *.diff
 *.png
 *.jar
+*.run
 /_kiin-rename
 /kiin-db/
 /trash/
