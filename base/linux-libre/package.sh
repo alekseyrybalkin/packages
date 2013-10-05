@@ -1,5 +1,7 @@
 #!/bin/sh
 
+KIIN_NO_CLEARING=1
+
 pkgname=linux-libre
 pkgver=3.11.3
 extension=xz
@@ -26,4 +28,8 @@ kiin_make() {
 kiin_install() {
   mkdir -pv ${pkgdir}/boot
   cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-libre-kiin
+  if [ `hostname` == "levison" ]; then
+    mkdir -pv ${pkgdir}/lib/modules
+    make INSTALL_MOD_PATH=${pkgdir} modules_install
+  fi
 }
