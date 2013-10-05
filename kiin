@@ -705,7 +705,7 @@ if [ $1 == 'upgrade' ]; then
         md5sum -b /dev/sda2 > /root/boot_md5
         sha1sum -b /dev/sda2 > /root/boot_sha1
       fi
-      if [ `hostname` == 'snowden' ]; then
+      if [ `hostname` == 'snowden' ] || [ `hostname` == 'levison' ]; then
         md5sum -b /dev/sda1 > /root/boot_md5
         sha1sum -b /dev/sda1 > /root/boot_sha1
       fi
