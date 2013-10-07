@@ -1,14 +1,18 @@
 #!/bin/sh
 
 pkgname=libreoffice
-_majorver=4.1.1
-pkgver=4.1.1.2
-urls="http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-${pkgver}.tar.xz \
-  http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-dictionaries-${pkgver}.tar.xz \
-  http://download.documentfoundation.org/libreoffice/src/${_majorver}/libreoffice-help-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/libreoffice-4.1.0.4-system_neon-1.patch"
-srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+majorver=4.1.2
+pkgver=${majorver}.3
+extension=xz
+major_folder="http://download.documentfoundation.org/libreoffice/src/"
+check_server=1
+
+. ${KIIN_HOME}/defaults.sh
+
+urls="${urls} \
+  ${folder}libreoffice-dictionaries-${pkgver}.tar.xz \
+  ${folder}libreoffice-help-${pkgver}.tar.xz"
+majorver_grep="^[0-9]+\.[0-9]+\.[0-9]+/?$"
 
 kiin_make() {
   install -dm755 src
@@ -19,7 +23,6 @@ kiin_make() {
     -e "s|.1.gz|.1|g" \
     -i bin/distro-install-desktop-integration
   sed -e "/distro-install-file-lists/d" -i Makefile.in
-  patch -Np1 -i ../libreoffice-4.1.0.4-system_neon-1.patch
   ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --with-vendor="kiin GNU/Linux" \
