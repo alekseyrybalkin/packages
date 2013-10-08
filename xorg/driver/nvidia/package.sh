@@ -5,13 +5,13 @@ pkgver=325.15
 urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run \
   http://rybalkin.org/kiin-files/nvidia-linux-3.11.patch"
 
-_modules_dir=`ls /lib/modules | head -n 1`
+_modules_dir=`ls /lib/modules | tail -n 1`
 
 kiin_make() {
   sh NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
   cd NVIDIA-Linux-x86_64-${pkgver}-no-compat32/kernel
   patch -Np2 -i ../../nvidia-linux-3.11.patch
-  make module
+  make SYSSRC=/lib/modules/${_modules_dir}/build module
 }
 
 kiin_install() {
