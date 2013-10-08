@@ -216,6 +216,9 @@ python2-sh
 xcb-util
 libdrm
 lib32-libdrm
+nvidia-utils
+lib32-nvidia-utils
+nvidia
 mesa
 lib32-mesa
 glu
@@ -274,9 +277,6 @@ icu
 harfbuzz
 pango
 gtk2
-nvidia-utils
-lib32-nvidia-utils
-nvidia
 at-spi2-core
 at-spi2-atk
 gtk
