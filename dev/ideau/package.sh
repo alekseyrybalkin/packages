@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=ideau
-pkgver=12.1.5
-_pkgver=129.1328
+pkgver=12.1.6
+_pkgver=129.1359
 urls="http://download.jetbrains.com/idea/ideaIU-${pkgver}.tar.gz"
 srctar=ideaIU-${pkgver}.tar.gz
 srcdir=${location}/idea-IU-${_pkgver}
