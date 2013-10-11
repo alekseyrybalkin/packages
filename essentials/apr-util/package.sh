@@ -13,6 +13,7 @@ kiin_make() {
     --with-apr=/usr \
     --with-gdbm=/usr \
     --with-openssl=/usr \
+    --without-pgsql \
     --with-crypto
   make
 }
