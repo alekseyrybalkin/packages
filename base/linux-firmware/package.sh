@@ -21,7 +21,7 @@ kiin_install() {
     cp -v ./iwlwifi-6000g2a-5.ucode ${pkgdir}/lib/firmware
     cp -v ./iwlwifi-6000g2a-6.ucode ${pkgdir}/lib/firmware
   fi
-  if [ `hostname` == 'alien' ]; then
+  if [ `hostname` == 'levison' ]; then
     cp -v ./iwlwifi-5000-1.ucode ${pkgdir}/lib/firmware
     cp -v ./iwlwifi-5000-2.ucode ${pkgdir}/lib/firmware
     cp -v ./iwlwifi-5000-5.ucode ${pkgdir}/lib/firmware
