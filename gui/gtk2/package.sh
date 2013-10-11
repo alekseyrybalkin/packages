@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gtk2
-pkgver=2.24.21
+pkgver=2.24.22
 urls="http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-${pkgver}.tar.xz"
 srctar=gtk+-${pkgver}.tar.xz
 srcdir=${location}/gtk+-${pkgver}
