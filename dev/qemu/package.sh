@@ -13,7 +13,9 @@ kiin_make() {
     --sysconfdir=/etc \
     --target-list=x86_64-softmmu \
     --disable-docs
-  make
+  # https://aur.archlinux.org/packages/qemu-spice
+  # comment by kris7t 2013-10-09 18:15
+  make ARFLAGS="rc"
 }
 
 kiin_install() {
