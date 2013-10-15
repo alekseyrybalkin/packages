@@ -2,7 +2,7 @@
 
 pkgname=gnome-icon-theme-symbolic
 majorver=3.10
-pkgver=${majorver}.0
+pkgver=${majorver}.1
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

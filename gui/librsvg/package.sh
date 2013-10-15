@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=librsvg
-majorver=2.39
+majorver=2.40
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
