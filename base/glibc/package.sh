@@ -7,6 +7,8 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i -e 's/3\.\[89/4\.\[0/g' configure.in
+  sed -i -e 's/3\.\[89/4\.\[0/g' configure
   mkdir -v glibc-build
   cd glibc-build
   if [ -z "$KIIN_LIB32" ]; then
