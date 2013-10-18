@@ -1,5 +1,6 @@
 TODO LIST
 MAJOR/INTERESTING:
+- duplicates in kiin-known
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - fix setuid for xlockmore somehow
 - run tests/checks for packages
