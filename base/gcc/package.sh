@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=4.8.1
+pkgver=4.8.2
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
