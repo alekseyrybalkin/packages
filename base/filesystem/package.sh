@@ -68,6 +68,9 @@ kiin_install() {
   # for nginx
   install -dv -m 0755 ${pkgdir}/var/log/nginx
 
+  # for mail packages
+  install -dv -m 0755 ${pkgdir}/var/mail
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
