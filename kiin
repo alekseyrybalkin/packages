@@ -361,10 +361,8 @@ EOF
     XORG_PREFIX=${XORG_PREFIX} XORG_CONFIG=${XORG_CONFIG} \
     KIIN_HOME=${KIIN_HOME} SOURCES_HOME=${SOURCES_HOME} \
     fakeroot ${maker}
-  if [ -z "${KIIN_NO_CLEARING}" ]; then
-    cd ${location}
-    kiin clean
-  fi
+  cd ${location}
+  kiin clean
   green='\e[0;32m'
   txtrst='\e[0m'
   printf "${green}kiin: all done!${txtrst}\n"
@@ -1297,12 +1295,14 @@ if [ $1 == 'list-package-dirs' ]; then
 fi
 
 if [ $1 == 'clean' ]; then
-  rm -rf kiin_maker.sh
-  rm -rf ${location}/kiin_make_log
-  rm -rf ${location}/kiin_install_log
-  rm -rf ${pkgdir}
-  if [[ ${srcdir} ]]; then
-    rm -rf ${srcdir}
+  if [ -z "${KIIN_NO_CLEARING}" ]; then
+    rm -rf kiin_maker.sh
+    rm -rf ${location}/kiin_make_log
+    rm -rf ${location}/kiin_install_log
+    rm -rf ${pkgdir}
+    if [[ ${srcdir} ]]; then
+      rm -rf ${srcdir}
+    fi
   fi
   exit 0
 fi
