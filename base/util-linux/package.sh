@@ -2,7 +2,7 @@
 
 pkgname=util-linux
 pkgver=2.24
-urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.23/${pkgname}-${pkgver}.tar.xz"
+urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.24/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
