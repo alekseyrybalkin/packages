@@ -16,4 +16,7 @@ kiin_make() {
 
 kiin_install() {
   make ROOT=${pkgdir} -C src install
+  # mesg, last and lastb are supplied by util-linux since 2.24
+  rm ${pkgdir}/usr/bin/{mesg,lastb,last}
+  rm ${pkgdir}/usr/share/man/man1/{mesg,lastb,last}.1
 }
