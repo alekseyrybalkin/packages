@@ -1,5 +1,7 @@
 TODO LIST
 MAJOR/INTERESTING:
+- add gtk-doc
+- use gnupg2
 - create /run/postgresql somethere
 - duplicates in kiin-known
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
