@@ -2,8 +2,8 @@
 
 pkgname=m4
 pkgver=1.4.17
-urls="http://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+urls="http://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

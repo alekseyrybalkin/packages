@@ -7,7 +7,6 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' gnu/stdio.in.h
   ./configure --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin
   make
 }

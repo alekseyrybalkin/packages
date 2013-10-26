@@ -10,8 +10,7 @@ check_server=1
 
 kiin_make() {
   ./configure --prefix=/usr \
-              --docdir=/usr/share/doc/pcre-${pkgver} \
-              --enable-utf \
+              --docdir=/usr/share/doc/pcre \
               --enable-unicode-properties \
               --enable-pcre16 \
               --enable-pcre32 \
