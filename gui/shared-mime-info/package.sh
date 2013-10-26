@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=shared-mime-info
-pkgver=1.1
+pkgver=1.2
 urls="http://freedesktop.org/~hadess/shared-mime-info-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
