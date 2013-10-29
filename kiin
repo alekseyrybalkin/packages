@@ -961,6 +961,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'db' ]] && [[ $version = '5.3.21' ]] && version='6.0.20'
     [[ $package = 'inetutils' ]] && [[ $version = '1.9.1' ]] && version='1.9.1.341'
     [[ $package = 'winetricks' ]] && [[ $version = '2013' ]] && version='20130707'
+    [[ $package = 'mpfr' ]] && [[ $version = '3.1.2' ]] && version='3.1.2.p3'
     # not found in Arch:
     [[ $package = 'vlock' ]] && continue
     [[ $package = 'sysklogd' ]] && continue
