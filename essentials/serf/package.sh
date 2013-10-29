@@ -2,6 +2,7 @@
 
 pkgname=serf
 pkgver=1.3.2
+_sover=1.3.0
 urls="https://serf.googlecode.com/files/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -16,5 +17,5 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/usr
   scons PREFIX=${pkgdir}/usr install
-  ln -sfv libserf-1.so.3.0.0 ${pkgdir}/usr/lib/libserf-1.so
+  ln -sfv libserf-1.so.${_sover} ${pkgdir}/usr/lib/libserf-1.so
 }
