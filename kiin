@@ -2,7 +2,7 @@
 
 # this script depends on (beyond base LFS packages):
 #  git, mercurial, python 2, sqlite, fakeroot, wget,
-#  python2-sh, sudo, unzip, lsof
+#  python2-sh, sudo, unzip, lsof, rsync
 
 KIIN_HOME=/var/kiin
 KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
@@ -10,6 +10,7 @@ PACKAGE_MANAGER=rybalkin
 ARCH_PACKAGES_REPO=~/sources/packages
 ARCH_COMMUNITY_REPO=~/sources/community
 SOURCES_HOME=/var/src
+HEAVEN=aleksey@rybalkin.org
 umask 0022
 
 PATH=/opt/openjdk-7+/bin:/opt/openjdk-7+/jre/bin:$PATH
@@ -54,6 +55,7 @@ usage() {
   echo "  kiin list-package-dirs"
   echo "  kiin clean"
   echo "  kiin check-server-version <package>"
+  echo "  kiin rsync"
 }
 
 # for upgrade and uninstall
@@ -463,6 +465,7 @@ if [ $1 == 'gen-db' ]; then
     | grep -v kiin-git`; do
     kiin update-links $i
   done
+  kiin rsync
   exit 0
 fi
 
@@ -1374,6 +1377,12 @@ if [ $1 == 'check-server-version' ]; then
   else
     :
   fi
+  exit 0
+fi
+
+if [ $1 == 'rsync' ]; then
+  echo "rsyncing to heaven..."
+  rsync -av --delete /var/kiin/installed/ ${HEAVEN}:~/kiin-repo/`hostname`
   exit 0
 fi
 
