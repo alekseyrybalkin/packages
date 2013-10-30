@@ -8,6 +8,8 @@ check_server=1
 
 . ${KIIN_HOME}/defaults.sh
 
+ver_grep="^${pkgname}-[0-9]\.[02468]\.[0-9]\.tar\.${extension}$"
+
 kiin_make() {
   sed -i '/generate-gtkdoc --rebase/s:^:# :' GNUmakefile.in
   ./configure --prefix=/usr \
