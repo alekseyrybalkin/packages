@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mpd
-pkgver=0.17.6
-urls="http://www.musicpd.org/download/mpd/0.17/${pkgname}-${pkgver}.tar.xz"
+pkgver=0.18
+urls="http://www.musicpd.org/download/mpd/${pkgver}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
