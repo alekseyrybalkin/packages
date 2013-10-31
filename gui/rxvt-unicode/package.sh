@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rxvt-unicode
-pkgver=9.18
+pkgver=9.19
 urls="http://dist.schmorp.de/${pkgname}/Attic/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
