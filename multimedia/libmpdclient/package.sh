@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=libmpdclient
-pkgver=2.8
-urls="http://www.musicpd.org/download/${pkgname}/2/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=2.9
+urls="http://www.musicpd.org/download/${pkgname}/2/${pkgname}-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
