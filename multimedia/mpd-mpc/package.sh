@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=mpd-mpc
-pkgver=0.23
-urls="http://www.musicpd.org/download/mpc/0/mpc-${pkgver}.tar.bz2"
-srctar=mpc-${pkgver}.tar.bz2
+pkgver=0.24
+urls="http://www.musicpd.org/download/mpc/0/mpc-${pkgver}.tar.xz"
+srctar=mpc-${pkgver}.tar.xz
 srcdir=${location}/mpc-${pkgver}
 
 kiin_make() {
