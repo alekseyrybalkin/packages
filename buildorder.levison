@@ -366,6 +366,9 @@ attr
 libcap
 ntp
 fluxbox
+qt
+lib32-qt
+skype
 steam
 gperf
 ruby
