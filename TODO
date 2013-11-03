@@ -1,5 +1,6 @@
 TODO LIST
 MAJOR/INTERESTING:
+- add dri3proto, presentproto, libxshmfence to Xorg
 - add gtk-doc
 - use gnupg2
 - create /run/postgresql somethere
