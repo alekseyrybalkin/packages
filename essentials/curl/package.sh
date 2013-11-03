@@ -11,7 +11,6 @@ check_server=1
 kiin_make() {
   ./configure --prefix=/usr \
     --disable-static \
-    --with-ca-path=/etc/ssl/certs \
     --enable-threaded-resolver
   make
 }
