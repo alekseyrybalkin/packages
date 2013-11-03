@@ -119,8 +119,8 @@ mpg123
 flac
 audiofile
 lame
-mpd
 libmpdclient
+mpd
 mpd-mpc
 libgpg-error
 libgcrypt
