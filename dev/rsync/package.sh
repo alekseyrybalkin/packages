@@ -9,7 +9,7 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --without-included-zlib
   make
 }
 
