@@ -2,15 +2,15 @@
 
 pkgname=nss
 pkgver=3.15.2
-patchver=3.15.1
+patchver=3.15.2
 urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_15_2_RTM/src/nss-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/nss-${patchver}-standalone-2.patch"
+  http://www.linuxfromscratch.org/patches/blfs/svn/nss-${patchver}-standalone-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ../nss-${patchver}-standalone-2.patch
+  patch -Np1 -i ../nss-${patchver}-standalone-1.patch
   cd nss
   make BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=/usr/include/nspr \
