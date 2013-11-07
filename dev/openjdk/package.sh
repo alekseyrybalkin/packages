@@ -2,26 +2,32 @@
 
 pkgname=openjdk
 vcs="mercurial"
-hg_pkgname=icedtea
-hgtag=c3c661000904
-pkgver=7+
+hg_pkgname=icedtea7-2.4
+_icedtea_ver=2.4.3
+hgtag=6dfa95b33cd1
 
 # hotspot.map
-HOTSPOT_CHANGESET=62c7dcedbbc4
+HOTSPOT_CHANGESET=b59e02d9e72b
 # Makefile.am
-OPENJDK_CHANGESET=51c1d39f82ae
-CORBA_CHANGESET=e5da8ecaf6f9
-JAXP_CHANGESET=fc76c585e6c5
-JAXWS_CHANGESET=b28455339003
-JDK_CHANGESET=99a2c23b1d94
-LANGTOOLS_CHANGESET=db375fd08fa3
-urls="http://icedtea.classpath.org/hg/icedtea7-forest/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/archive/${OPENJDK_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/corba/archive/${CORBA_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/jaxp/archive/${JAXP_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/jaxws/archive/${JAXWS_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/jdk/archive/${JDK_CHANGESET}.tar.gz \
-  http://icedtea.classpath.org/hg/icedtea7-forest/langtools/archive/${LANGTOOLS_CHANGESET}.tar.gz \
+JDK_UPDATE_VERSION=45
+OPENJDK_CHANGESET=e2f5917da3c1
+CORBA_CHANGESET=8ed5df839fbc
+JAXP_CHANGESET=8f220f7b51c7
+JAXWS_CHANGESET=652eb396f959
+JDK_CHANGESET=7958751eb9ef
+LANGTOOLS_CHANGESET=3c8eb52a32ea
+
+pkgver=7.u${JDK_UPDATE_VERSION}_${_icedtea_ver}
+
+_hgurl="http://icedtea.classpath.org/hg/release/icedtea7-forest-${_icedtea_ver:0:3}"
+
+urls="${_hgurl}/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
+  ${_hgurl}/archive/${OPENJDK_CHANGESET}.tar.gz \
+  ${_hgurl}/corba/archive/${CORBA_CHANGESET}.tar.gz \
+  ${_hgurl}/jaxp/archive/${JAXP_CHANGESET}.tar.gz \
+  ${_hgurl}/jaxws/archive/${JAXWS_CHANGESET}.tar.gz \
+  ${_hgurl}/jdk/archive/${JDK_CHANGESET}.tar.gz \
+  ${_hgurl}/langtools/archive/${LANGTOOLS_CHANGESET}.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/icedtea-2.3.3-fixed_paths-1.patch"
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -40,7 +46,8 @@ kiin_make() {
   unset J2SDKDIR
   unset J2REDIR
   ./autogen.sh
-  ./configure --with-jdk-home=/opt/openjdk-7+ \
+  _JDK_HOME=`find /opt -maxdepth 1 -name "openjdk-*" | sort | head -n 1`
+  ./configure --with-jdk-home=${_JDK_HOME} \
     --enable-nss \
     --disable-system-kerberos \
     --with-hotspot-src-zip=${srcdir}/${HOTSPOT_CHANGESET}.tar.gz \

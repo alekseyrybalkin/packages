@@ -13,10 +13,10 @@ SOURCES_HOME=/var/src
 HEAVEN=aleksey@rybalkin.org
 umask 0022
 
-PATH=/opt/openjdk-7+/bin:/opt/openjdk-7+/jre/bin:$PATH
-JAVA_HOME=/opt/openjdk-7+
-J2SDKDIR=/opt/openjdk-7+
-J2REDIR=/opt/openjdk-7+/jre
+JAVA_HOME=`find /opt -maxdepth 1 -name "openjdk-*" | sort | head -n 1`
+PATH=${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin:$PATH
+J2SDKDIR=${JAVA_HOME}
+J2REDIR=${JAVA_HOME}/jre
 
 usage() {
   echo "usage:"
@@ -958,7 +958,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'lib32-openssl' ]] && [[ $version = '1.0.1e' ]] && version='1.0.1.e'
     [[ $package = 'ntp' ]] && [[ $version = '4.2.6p5' ]] && version='4.2.6.p5'
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
-    [[ $package = 'java7-openjdk' ]] && [[ $version = '7+' ]] && version='7.u40_2.4.2'
     [[ $package = 'net-tools' ]] && [[ $version = '1.60+' ]] && version='1.60.20130531git'
     [[ $package = 'ruby' ]] && [[ $version = '2.0.0.p247' ]] && version='2.0.0_p247'
     [[ $package = 'db' ]] && [[ $version = '5.3.21' ]] && version='6.0.20'
