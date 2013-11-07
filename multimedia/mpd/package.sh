@@ -1,8 +1,9 @@
 #!/bin/sh
 
 pkgname=mpd
-pkgver=0.18
-urls="http://www.musicpd.org/download/mpd/${pkgver}/${pkgname}-${pkgver}.tar.xz"
+majorver=0.18
+pkgver=${majorver}.1
+urls="http://www.musicpd.org/download/mpd/${majorver}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
