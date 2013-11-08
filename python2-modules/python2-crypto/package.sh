@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python2-crypto
-pkgver=2.6
+pkgver=2.6.1
 urls="http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/pycrypto-${pkgver}.tar.gz"
 srctar=pycrypto-${pkgver}.tar.gz
 srcdir=${location}/pycrypto-${pkgver}
