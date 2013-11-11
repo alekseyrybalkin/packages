@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python
-pkgver=2.7.5
+pkgver=2.7.6
 extension=xz
 folder="http://www.python.org/ftp/${pkgname}/"
 check_server=1
