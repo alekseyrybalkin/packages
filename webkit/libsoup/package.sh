@@ -2,7 +2,7 @@
 
 pkgname=libsoup
 majorver=2.44
-pkgver=${majorver}.1
+pkgver=${majorver}.2
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
