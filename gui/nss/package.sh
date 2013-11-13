@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=nss
-pkgver=3.15.2
+pkgver=3.15.3
 patchver=3.15.2
-urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_15_2_RTM/src/nss-${pkgver}.tar.gz \
+urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_15_3_RTM/src/nss-${pkgver}.tar.gz \
   http://www.linuxfromscratch.org/patches/blfs/svn/nss-${patchver}-standalone-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

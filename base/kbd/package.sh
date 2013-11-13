@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=kbd
-pkgver=2.0.0
+pkgver=2.0.1
 urls="http://ftp.altlinux.org/pub/people/legion/kbd/kbd-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
