@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nvidia-utils
-pkgver=325.15
+pkgver=331.20
 urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run \
   ftp://download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
 

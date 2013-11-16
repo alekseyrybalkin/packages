@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=evince
-pkgver=3.10.2
+pkgver=3.10.3
 urls="http://ftp.gnome.org/pub/gnome/sources/evince/3.10/evince-${pkgver}.tar.xz"
 srctar=evince-${pkgver}.tar.xz
 srcdir=${location}/evince-${pkgver}

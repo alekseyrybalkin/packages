@@ -1,16 +1,14 @@
 #!/bin/sh
 
 pkgname=nvidia
-pkgver=325.15
-urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run \
-  http://rybalkin.org/kiin-files/nvidia-linux-3.12.patch"
+pkgver=331.20
+urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run"
 
 _modules_dir=`ls /lib/modules | tail -n 1`
 
 kiin_make() {
   sh NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
   cd NVIDIA-Linux-x86_64-${pkgver}-no-compat32/kernel
-  patch -Np2 -i ../../nvidia-linux-3.12.patch
   make SYSSRC=/lib/modules/${_modules_dir}/build module
 }
 
