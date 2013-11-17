@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tar
-pkgver=1.27
+pkgver=1.27.1
 urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
