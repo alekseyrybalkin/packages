@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=unrar
-pkgver=5.0.12
+pkgver=5.0.13
 urls="http://www.rarlab.com/rar/unrarsrc-${pkgver}.tar.gz"
 srctar=${pkgname}src-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
