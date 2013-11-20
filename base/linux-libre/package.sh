@@ -3,7 +3,7 @@
 KIIN_NO_CLEARING=1
 
 pkgname=linux-libre
-pkgver=3.12
+pkgver=3.12.1
 extension=xz
 folder="http://linux-libre.fsfla.org/pub/linux-libre/releases/"
 check_server=1
