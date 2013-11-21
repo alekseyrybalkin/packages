@@ -1321,7 +1321,7 @@ if [ $1 == 'check-server-version' ]; then
         FILE_TIME=0
         SERVER_FILE=${KIIN_HOME}/server-listings/${package}.major.listing
         if [ -f "${SERVER_FILE}" ]; then
-          FILE_TIME=`stat -c %Z ${SERVER_FILE}`
+          FILE_TIME=`stat -c %Y ${SERVER_FILE}`
         fi
         let DIFF=$NOW-$FILE_TIME
         # three days (86400*3)
@@ -1348,7 +1348,7 @@ if [ $1 == 'check-server-version' ]; then
       FILE_TIME=0
       SERVER_FILE=${KIIN_HOME}/server-listings/${package}.listing
       if [ -f "${SERVER_FILE}" ]; then
-        FILE_TIME=`stat -c %Z ${SERVER_FILE}`
+        FILE_TIME=`stat -c %Y ${SERVER_FILE}`
       fi
       let DIFF=$NOW-$FILE_TIME
       # three days (86400*3)
