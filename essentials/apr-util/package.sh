@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apr-util
-pkgver=1.5.2
+pkgver=1.5.3
 extension=bz2
 folder="http://archive.apache.org/dist/apr/"
 check_server=1
