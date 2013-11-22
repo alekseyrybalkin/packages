@@ -13,6 +13,9 @@ kiin_make() {
     --docdir=/usr/share/doc/${pkgname}-${pkgver} \
     --disable-docs \
     --disable-static \
+    --with-default-fonts=/usr/share/fonts \
+    --with-add-fonts=/usr/share/fonts \
+    --with-templatedir=/etc/fonts/conf.avail \
     --libdir=$LIBDIR
   make
 }

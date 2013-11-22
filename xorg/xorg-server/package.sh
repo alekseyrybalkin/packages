@@ -10,7 +10,8 @@ kiin_make() {
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
     --enable-install-setuid \
-    --with-sha1=libcrypto
+    --with-sha1=libcrypto \
+    --with-fontrootdir=/usr/share/fonts
   make
 }
 
