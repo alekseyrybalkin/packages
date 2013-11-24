@@ -355,6 +355,7 @@ qemu
 qt
 lib32-qt
 skype
+steam
 gperf
 ruby
 gsettings-desktop-schemas
