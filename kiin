@@ -375,7 +375,11 @@ if [ $1 = "download" ]; then
   for url in $urls; do
     if [ -z "$wget_set_filename" ]; then
       if [ ! -f "`basename $url`" ]; then
-        wget $url
+        if [[ $url == *pciutils* ]]; then
+          wget --no-check-certificate $url
+        else
+          wget $url
+        fi
       fi
     else
       if [ ! -f "${srctar}" ]; then
