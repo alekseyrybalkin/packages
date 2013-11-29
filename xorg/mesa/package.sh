@@ -62,8 +62,4 @@ kiin_install() {
     mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa
     cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/mesa
   fi
-  if [ `hostname` == "levison" ]; then
-    rm -rf ${pkgdir}/usr/lib/libGL.so{,.1}
-    rm -rf ${pkgdir}/usr/lib32/libGL.so{,.1}
-  fi
 }

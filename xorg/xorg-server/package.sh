@@ -20,9 +20,4 @@ kiin_install() {
   mkdir -pv ${pkgdir}/etc/X11/xorg.conf.d
   # remove /var, filesystem package creates everything in there
   rm -rvf ${pkgdir}/var
-  # Needed for non-mesa drivers, libgl will restore it
-  if [ `hostname` == "levison" ]; then
-    mv ${pkgdir}/usr/lib/xorg/modules/extensions/libglx.so \
-      ${pkgdir}/usr/lib/xorg/modules/extensions/libglx.xorg
-  fi
 }
