@@ -69,7 +69,6 @@ tar
 texinfo
 udev
 vim
-linux-libre
 fakeroot
 sqlite
 lib32-sqlite

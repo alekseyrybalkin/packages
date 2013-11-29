@@ -593,7 +593,7 @@ if [ $1 == 'upgrade' ]; then
   echo "upgrading $package from $old_version to $new_version"
   # remount /boot partition in rw mode
   case $package in
-    "linux" | "grub" | "initramfs" | "linux-libre")
+    "linux" | "grub" | "initramfs")
       mount -o remount,rw /boot
       ;;
   esac
@@ -702,7 +702,7 @@ if [ $1 == 'upgrade' ]; then
   sudo -u $PACKAGE_MANAGER kiin gen-db
   # update hashsums for /boot partition
   case $package in
-    "linux" | "grub" | "initramfs" | "linux-libre")
+    "linux" | "grub" | "initramfs")
       echo "updating /boot hashsums..."
       sync
       mount -o remount,ro /boot
@@ -874,10 +874,7 @@ if [ $1 == 'check-updates' ]; then
   #fi
   #exit 0
 
-  package=linux-libre
-  if [ `hostname` == "snowden" ]; then
-    package=linux
-  fi
+  package=linux
   cd $SOURCES_HOME/linux-stable
   newest_tag=`git for-each-ref --sort='*authordate' --format='%(tag)' refs/tags | sort -V | grep -v rc | tail -n 1`
   pkgver=`echo $newest_tag | sed 's/^v//g' | sed 's/-/\./g'`
@@ -973,7 +970,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'jdk7' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
-    [[ $package = 'linux-libre' ]] && continue
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
     [[ $package = 'initramfs' ]] && continue
     [[ $package = 'filesystem' ]] && continue
