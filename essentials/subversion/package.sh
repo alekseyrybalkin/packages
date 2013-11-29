@@ -14,7 +14,9 @@ kiin_make() {
     --with-zlib=/usr --with-serf=/usr --with-neon=/usr \
     --with-sqlite=/usr --disable-static
   make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all
-  make swig-py swig-pl
+  make swig-pl
+  make swig-py swig_pydir=/usr/lib/python2.7/site-packages/libsvn \
+    swig_pydir_extra=/usr/lib/python2.7/site-packages/svn
 }
 
 kiin_install() {
@@ -24,7 +26,8 @@ kiin_install() {
   install -v -m755 -d ${pkgdir}/usr/share/doc/subversion-${pkgver}
   cp -v -R doc/* ${pkgdir}/usr/share/doc/subversion-${pkgver}
   make DESTDIR=${pkgdir} install-swig-pl
-  make DESTDIR=${pkgdir} install-swig-py
+  make DESTDIR=${pkgdir} install-swig-py swig_pydir=/usr/lib/python2.7/site-packages/libsvn \
+    swig_pydir_extra=/usr/lib/python2.7/site-packages/svn
   find ${pkgdir} -name perllocal.pod -delete
   find ${pkgdir} -name .packlist -delete
 }
