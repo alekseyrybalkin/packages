@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.23.2
+pkgver=2.24
 extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
@@ -11,9 +11,6 @@ check_server=1
 kiin_make() {
   rm -fv etc/standards.info
   sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
-  # fix for 2.32.2 and texinfo 5.1 build failure
-  sed -i -e 's/@colophon/@@colophon/' \
-    -e 's/doc@cygnus.com/doc@@cygnus.com/' bfd/doc/bfd.texinfo
   mkdir -v binutils-build
   cd binutils-build
   ../configure --prefix=/usr --enable-shared --enable-multilib
