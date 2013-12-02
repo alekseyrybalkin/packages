@@ -130,11 +130,13 @@ bigreqsproto
 compositeproto
 damageproto
 dri2proto
+dri3proto
 fixesproto
 fontsproto
 glproto
 inputproto
 kbproto
+presentproto
 randrproto
 recordproto
 renderproto
@@ -201,6 +203,7 @@ lib32-libxxf86vm
 libpciaccess
 lib32-libpciaccess
 libxkbfile
+libxshmfence
 python2-sh
 xcb-util
 libdrm
@@ -354,6 +357,7 @@ qemu
 qt
 lib32-qt
 skype
+steam
 gperf
 ruby
 gsettings-desktop-schemas
