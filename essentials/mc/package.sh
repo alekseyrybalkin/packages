@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mc
-pkgver=4.8.10
+pkgver=4.8.11
 extension=xz
 folder="http://ftp.midnight-commander.org/"
 check_server=1

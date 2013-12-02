@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=qemu
-pkgver=1.6.1
+pkgver=1.7.0
 extension=bz2
 folder="http://wiki.qemu.org/download/"
 check_server=1
