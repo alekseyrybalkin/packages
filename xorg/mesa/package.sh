@@ -1,8 +1,9 @@
 #!/bin/sh
 
 pkgname=mesa
-pkgver=9.2.4
-urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
+majorver=10.0
+pkgver=${majorver}.0
+urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${majorver}/MesaLib-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-9.1.5-add_xdemos-1.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
@@ -16,6 +17,7 @@ kiin_make() {
       --with-gallium-drivers='' \
       --with-dri-drivers='i965' \
       --enable-egl \
+      --enable-gbm \
       --with-egl-platforms=x11,drm \
       --enable-shared-glapi \
       --enable-glx-tls \

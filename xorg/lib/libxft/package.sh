@@ -7,6 +7,7 @@ srctar=libXft-${pkgver}.tar.bz2
 srcdir=${location}/libXft-${pkgver}
 
 kiin_make() {
+  sed -i -e 's/<freetype/<freetype2/g' src/xftglyphs.c
   ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
