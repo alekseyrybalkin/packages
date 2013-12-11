@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glproto
-pkgver=1.4.16
+pkgver=1.4.17
 urls="http://xorg.freedesktop.org/releases/individual/proto/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
