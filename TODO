@@ -1,6 +1,5 @@
 TODO LIST
 MAJOR/INTERESTING:
-- add dri3proto, presentproto, libxshmfence to Xorg
 - add gtk-doc
 - use gnupg2
 - create /run/postgresql somethere
@@ -14,6 +13,9 @@ MAJOR/INTERESTING:
 - update git/svn/hg repositories once in a while
 - check version differences in db and package files
   e.g. version 1.3 in package.sh, but 1.2 in system
+- same / git repo --> as a package with seds in kiin?
+  and control that kiin runs commands strictly as root/user
+  and no auto-sudo for kiin
 
 NORMAL:
 - pciutils: https cert failure for download / check-server-version
@@ -27,17 +29,17 @@ NORMAL:
 - fix initramfs for rebuild-world (get rid of sudo)
 - fix running kiin concurrently
 - fix gen-db bug about spaces in file names
-- fix pcre instructions about symlink (need to update 'em every damn time)
+- fix pcre instructions about symlink (need to update 'em every damn time) + nss same shit
 
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
 - add ability to read chm (xchm)
-- control that kiin runs commands strictly as root/user
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, games, wifi firmware, jdk, ideau, skype, etc.)
 - list all packages and make dependencies which are pre-built binaries (jdk, maven, ideau)
 - fix some packages to not need internet connection for building (cacerts, libreoffice)
+- fix code downloaded from internets: gajim/firefox plugins
 - check for new tags in repositories?
 - add p7zip
 - implement kiin_after_uninstall
