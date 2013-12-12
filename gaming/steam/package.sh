@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=steam
-pkgver=1.0.0.43
+pkgver=1.0.0.45
 urls="http://repo.steampowered.com/${pkgname}/pool/${pkgname}/s/${pkgname}/${pkgname}_${pkgver}.tar.gz \
   http://rybalkin.org/kiin-files/steam_alsa_sdl_audiodriver.patch"
 srctar=${pkgname}_${pkgver}.tar.gz
