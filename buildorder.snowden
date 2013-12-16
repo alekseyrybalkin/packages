@@ -306,6 +306,9 @@ miniupnpc
 transmission
 yasm
 cmake
+libdvdcss
+libdvdread
+libdvdnav
 mplayer
 docbook-xsl
 docbook-xml
