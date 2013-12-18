@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnupg
-pkgver=1.4.15
+pkgver=1.4.16
 urls="ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
