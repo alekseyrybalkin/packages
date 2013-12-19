@@ -56,6 +56,7 @@ usage() {
   echo "  kiin clean"
   echo "  kiin check-server-version <package>"
   echo "  kiin rsync"
+  echo "  kiin upgrade-from-repo <hostname> <package-version>"
 }
 
 # for upgrade and uninstall
@@ -1376,6 +1377,20 @@ fi
 if [ $1 == 'rsync' ]; then
   echo "rsyncing to heaven..."
   rsync -av --delete /var/kiin/installed/ ${HEAVEN}:~/kiin-repo/`hostname`
+  exit 0
+fi
+
+if [ $1 == 'upgrade-from-repo' ]; then
+  if [ -z "$2" ]; then
+    echo "please specify hostname"
+    exit 1
+  fi
+  if [ -z "$3" ]; then
+    echo "please specify package-version"
+    exit 1
+  fi
+  scp $HEAVEN:~/kiin-repo/$2/kiin.$3.tar.xz .
+  sudo kiin upgrade kiin.$3.tar.xz noask
   exit 0
 fi
 
