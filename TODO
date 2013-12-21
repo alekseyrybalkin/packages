@@ -1,5 +1,6 @@
 TODO LIST
 MAJOR/INTERESTING:
+- SELinux: http://opensource.com/business/13/11/selinux-policy-guide
 - add gtk-doc
 - use gnupg2
 - create /run/postgresql somethere
@@ -13,7 +14,9 @@ MAJOR/INTERESTING:
 - update git/svn/hg repositories once in a while
 - check version differences in db and package files
   e.g. version 1.3 in package.sh, but 1.2 in system
-- same / git repo --> as a package with seds in kiin?
+- same / git repo --> as a package with seds in kiin (kiin-configs)
+  and add swapfile to snowden
+- package kiin
   and control that kiin runs commands strictly as root/user
   and no auto-sudo for kiin
 
