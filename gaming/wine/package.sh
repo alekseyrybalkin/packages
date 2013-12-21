@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.7.6
-_pkgver=1.7.6
+pkgver=1.7.9
+_pkgver=1.7.9
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${_pkgver}.tar.bz2"
 srctar=${pkgname}-${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${_pkgver}
@@ -48,4 +48,14 @@ kiin_install() {
   cd ..
   rm -rf ${pkgname}-32-build
   rm -rf ${pkgname}-64-build
+}
+
+kiin_after_install() {
+  getent group wine >/dev/null || groupadd wine
+  getent passwd wine >/dev/null || \
+    useradd -m -g wine -G audio,video -s /bin/bash wine
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
 }
