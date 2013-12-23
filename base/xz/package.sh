@@ -7,10 +7,16 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libdir=/lib --docdir=/usr/share/doc/xz-${pkgver}
+  ./configure --prefix=/usr \
+    --docdir=/usr/share/doc/xz
   make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} pkgconfigdir=/usr/lib/pkgconfig install
+  make DESTDIR=${pkgdir} install
+  mkdir ${pkgdir}/{bin,lib}
+  mv -v ${pkgdir}/usr/bin/{unlzma,unxz,xzcat,lzma,xz} ${pkgdir}/bin
+  mv -v ${pkgdir}/usr/lib/liblzma.so.* ${pkgdir}/lib
+  ln -svf ../../lib/$(readlink ${pkgdir}/usr/lib/liblzma.so) \
+    ${pkgdir}/usr/lib/liblzma.so
 }
