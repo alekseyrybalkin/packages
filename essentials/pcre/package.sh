@@ -26,6 +26,6 @@ kiin_install() {
   if [ -z "$KIIN_LIB32" ]; then
     mkdir -pv ${pkgdir}/lib
     mv -v ${pkgdir}/usr/lib/libpcre.so.* ${pkgdir}/lib
-    ln -sfv ../../lib/libpcre.so.1.2.2 ${pkgdir}/usr/lib/libpcre.so
+    ln -sfv ../../lib/$(readlink ${pkgdir}/lib/libpcre.so.*) ${pkgdir}/usr/lib/libpcre.so
   fi
 }

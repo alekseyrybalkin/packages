@@ -32,7 +32,6 @@ NORMAL:
 - fix initramfs for rebuild-world (get rid of sudo)
 - fix running kiin concurrently
 - fix gen-db bug about spaces in file names
-- fix pcre instructions about symlink (need to update 'em every damn time) + nss same shit
 
 MINOR:
 - kiin: checking of hashsums of installed files <- do we need this?
