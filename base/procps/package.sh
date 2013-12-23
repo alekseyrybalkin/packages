@@ -14,7 +14,6 @@ kiin_make() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/${pkgname} \
     --disable-static \
-    --disable-skill \
     --disable-kill
   make
 }
