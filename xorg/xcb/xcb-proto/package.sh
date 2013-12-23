@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xcb-proto
-pkgver=1.9
+pkgver=1.10
 urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
