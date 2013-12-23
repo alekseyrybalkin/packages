@@ -10,17 +10,11 @@ kiin_make() {
   sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
       $(grep -rl '/etc/adjtime' .)
   if [ -z "$KIIN_LIB32" ]; then
-    ./configure --without-udev \
-      --disable-su \
-      --disable-sulogin \
-      --disable-login
+    ./configure --without-udev
     make
   else
     ./configure --without-ncurses \
-      --libdir=/usr/lib32 \
-      --disable-su \
-      --disable-sulogin \
-      --disable-login
+      --libdir=/usr/lib32
     make lib{uuid,blkid,mount}.la
   fi
 }
