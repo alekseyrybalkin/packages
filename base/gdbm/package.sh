@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gdbm
-pkgver=1.10
+pkgver=1.11
 urls="http://ftp.gnu.org/gnu/gdbm/gdbm-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

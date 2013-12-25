@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=automake
-pkgver=1.14
+pkgver=1.14.1
 extension=xz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
@@ -9,7 +9,7 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}-${pkgver}
+  ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}
   make
 }
 
