@@ -15,12 +15,14 @@ majorver_grep="^v[0-9]+\.[0-9]+/?$"
 majorver_seds() {
   sed -r "s/\///g" | sed -r "s/^v//g"
 }
+urls="${urls} http://www.linuxfromscratch.org/patches/blfs/svn/cmake-${pkgver}-freetype-1.patch"
 
 kiin_make() {
+  patch -Np1 -i ../cmake-${pkgver}-freetype-1.patch
   ./bootstrap --prefix=/usr \
     --system-libs \
     --mandir=/share/man \
-    --docdir=/share/doc/cmake-${pkgver} \
+    --docdir=/share/doc/cmake \
     --no-system-libarchive
   make
 }

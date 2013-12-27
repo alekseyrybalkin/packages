@@ -9,20 +9,18 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./autogen.sh
   ./configure --prefix=/usr \
-    --exec-prefix= \
-    --bindir=/usr/bin \
+    --sbindir=/sbin \
     --with-xtlibdir=/lib/xtables \
-    --with-pkgconfigdir=/usr/lib/pkgconfig \
-    --enable-libipq \
-    --enable-devel
+    --enable-libipq
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
   ln -sfv ../../sbin/xtables-multi ${pkgdir}/usr/bin/iptables-xml
-  for file in libip4tc libip6tc libipq libiptc libxtables; do
-    ln -sfv ../../lib/`readlink ${pkgdir}/lib/${file}.so` ${pkgdir}/usr/lib/${file}.so
-    rm -v ${pkgdir}/lib/${file}.so
+  for file in ip4tc ip6tc ipq iptc xtables
+  do
+    mv -v ${pkgdir}/usr/lib/lib${file}.so.* ${pkgdir}/lib
+    ln -sfv ../../lib/$(readlink ${pkgdir}/usr/lib/lib${file}.so) ${pkgdir}/usr/lib/lib${file}.so
   done
 }
