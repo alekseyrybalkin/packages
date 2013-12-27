@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=libdvdread
-pkgver=4.2.0
-urls="http://dvdnav.mplayerhq.hu/releases/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=4.2.1
+urls="http://dvdnav.mplayerhq.hu/releases/${pkgname}-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

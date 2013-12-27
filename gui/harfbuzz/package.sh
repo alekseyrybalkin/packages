@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=harfbuzz
-pkgver=0.9.24
+pkgver=0.9.25
 urls="http://www.freedesktop.org/software/${pkgname}/release/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
