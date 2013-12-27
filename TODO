@@ -4,7 +4,6 @@ MAJOR/INTERESTING:
 - add gtk-doc
 - use gnupg2
 - create /run/postgresql somethere
-- duplicates in kiin-known
 - kiin l/links/linked-by: usage of individual libs (by individual libs/binfiles) is also interesting
 - fix setuid for xlockmore somehow
 - run tests/checks for packages
@@ -22,7 +21,6 @@ MAJOR/INTERESTING:
 
 NORMAL:
 - pciutils: https cert failure for download / check-server-version
-- find out why procps installed some strange hardlinks for man pages
 - maybe we should collect kiin-knowns from responsible packages?
 - maybe even collect check-updates exceptions from packages?
 - add meta-information to packages (e.g. build time, last updated, libraries provided, etc.)

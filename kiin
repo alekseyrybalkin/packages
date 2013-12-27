@@ -355,7 +355,7 @@ echo creating xz archive...
 { echo package.sh && \
   echo kiin_make_log && \
   echo kiin_install_log && \
-  find kiin-dest; } | \
+  find kiin-dest; } | sort | uniq | \
   tar cfa kiin.${pkgname}-${pkgver}.tar.xz -T - --no-recursion
 EOF
   chmod +x ${maker}
@@ -398,7 +398,7 @@ if [ $1 == 'gen-db' ]; then
   cd $tmpdir
   git clone / kiin-dest 1>/dev/null
   rm -rf kiin-dest/.git
-  find kiin-dest | tar cfa kiin.kiin-git-1.tar.xz -T - --no-recursion
+  find kiin-dest | sort | uniq | tar cfa kiin.kiin-git-1.tar.xz -T - --no-recursion
   mv kiin.kiin-git-1.tar.xz $KIIN_HOME/installed
   cd /tmp
   rm -rf $tmpdir
@@ -461,7 +461,7 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/mime/application/vnd.ms-word.document.macroenabled.12.xml
   touch usr/share/mime/application/vnd.ms-word.template.macroenabled.12.xml
   cd ..
-  find kiin-dest | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
+  find kiin-dest | sort | uniq | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
   mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
   cd /tmp
   rm -rf $tmpdir
@@ -1275,7 +1275,7 @@ fi
 
 cd ${location}
 echo creating xz archive...
-find kiin-dest | \
+find kiin-dest | sort | uniq | \
   tar cfa kiin.${pkgname}-${pkgver}.tar.xz -T - --no-recursion
 EOF
   chmod +x ${converter}
