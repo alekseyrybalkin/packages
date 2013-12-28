@@ -96,7 +96,6 @@ openssh
 elfutils
 prelink
 dbus-core
-lib32-dbus-core
 glib
 lib32-glib
 slang
