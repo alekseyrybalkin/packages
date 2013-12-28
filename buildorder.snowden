@@ -66,6 +66,7 @@ tar
 texinfo
 udev
 vim
+bc
 linux
 fakeroot
 sqlite
@@ -341,7 +342,6 @@ libexif
 babl
 gegl
 gimp
-bc
 gdb
 boost
 bitcoin
