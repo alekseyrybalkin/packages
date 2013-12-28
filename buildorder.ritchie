@@ -79,7 +79,6 @@ cacerts
 wget
 curl
 python
-postgresql
 swig
 apr
 apr-util
@@ -352,7 +351,6 @@ attr
 libcap
 ntp
 fluxbox
-qemu
 qt
 lib32-qt
 skype
@@ -370,16 +368,7 @@ dconf
 ttf-win7-fonts
 linux-firmware
 wireless_tools
-libnl
-wpa_supplicant
 ldns
-proxychains
-net-tools
-memcached
 tor
-libmemcached
 perl-archive-zip
 libreoffice
-scrot
-glfw
-steam
