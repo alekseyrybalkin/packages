@@ -260,6 +260,7 @@ libjpeg-turbo
 lib32-libjpeg-turbo
 freeglut
 glew
+glfw
 libtiff
 gdk-pixbuf
 icu
@@ -389,4 +390,3 @@ libmemcached
 perl-archive-zip
 libreoffice
 scrot
-glfw

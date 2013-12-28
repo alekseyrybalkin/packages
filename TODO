@@ -43,3 +43,4 @@ MINOR:
 - check for new tags in repositories?
 - add p7zip
 - implement kiin_after_uninstall
+- check package needness: prelink

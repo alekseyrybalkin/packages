@@ -93,7 +93,6 @@ glib
 slang
 mc
 links
-hdparm
 dhcpcd
 python2-virtualenv
 libevent
@@ -229,6 +228,7 @@ cairo
 libjpeg-turbo
 freeglut
 glew
+glfw
 libtiff
 gdk-pixbuf
 icu
