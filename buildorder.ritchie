@@ -345,14 +345,10 @@ bc
 gdb
 boost
 bitcoin
-apache-ant
 nettle
 gnutls
 cups
 attr
-rhino
-ca-certificates-java
-openjdk
 libcap
 ntp
 fluxbox
