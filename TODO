@@ -20,6 +20,7 @@ MAJOR/INTERESTING:
   and no auto-sudo for kiin
 
 NORMAL:
+- kiin u does not fail when one of packages fails
 - pciutils: https cert failure for download / check-server-version
 - maybe we should collect kiin-knowns from responsible packages?
 - maybe even collect check-updates exceptions from packages?
