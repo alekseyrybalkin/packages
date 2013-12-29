@@ -54,6 +54,5 @@ MINOR:
 - fix some packages to not need internet connection for building (cacerts, libreoffice)
 - fix code downloaded from internets: gajim/firefox plugins
 - check for new tags in repositories?
-- add p7zip
 - implement kiin_after_uninstall
 - check package needness: prelink
