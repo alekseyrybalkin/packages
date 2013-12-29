@@ -11,6 +11,7 @@
 *.png
 *.jar
 *.run
+*.txt
 /_kiin-rename
 /kiin-db/
 /trash/

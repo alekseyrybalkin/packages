@@ -44,13 +44,14 @@ NORMAL:
 - fix gen-db bug about spaces in file names
 
 MINOR:
+- wget_set_filename is not KIIN_WGET_SET_FILENAME and does not support multiple urls
 - kiin: checking of hashsums of installed files <- do we need this?
   kiin: checking of permissions of installed files/dirs <- do we need this?
 - add ability to read chm (xchm)
 - kiin: remove broken symlinks before upgrade (see TODO in the executable file)
 - list all proprietary shit in my system (like bios, games, wifi firmware, jdk, ideau, skype, etc.)
 - list all packages and make dependencies which are pre-built binaries (jdk, maven, ideau)
-- fix some packages to not need internet connection for building (cacerts, libreoffice)
+- fix some packages to not need internet connection for building (libreoffice)
 - fix code downloaded from internets: gajim/firefox plugins
 - check for new tags in repositories?
 - implement kiin_after_uninstall

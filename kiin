@@ -150,14 +150,14 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
   files_fail=0
   if [ -n "$urls" ]; then
     for url in $urls; do
-      if [ -z "$wget_set_filename" ]; then
+      if [ -z "${wget_set_filename}" ]; then
         if [ ! -f "`basename $url`" ]; then
           echo "file `basename $url` not found."
           files_fail=1
         fi
       else
-        if [ ! -f "${srctar}" ]; then
-          echo "file ${srctar} not found."
+        if [ ! -f "${wget_set_filename}" ]; then
+          echo "file ${wget_set_filename} not found."
           files_fail=1
         fi
       fi
@@ -169,13 +169,13 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
       in_urls=0
       if [ -n "$urls" ]; then
         for url in $urls; do
-          if [ -z "$wget_set_filename" ]; then
+          if [ -z "${wget_set_filename}" ]; then
             if [ "$file" == `basename $url` ]; then
               in_urls=1
               break
             fi
           else
-            if [ "$file" == "${srctar}" ]; then
+            if [ "$file" == "${wget_set_filename}" ]; then
               in_urls=1
               break
             fi
@@ -202,13 +202,13 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
           in_urls=0
           if [ -n "$urls" ]; then
             for url in $urls; do
-              if [ -z "$wget_set_filename" ]; then
+              if [ -z "${wget_set_filename}" ]; then
                 if [ "$file" == `basename $url` ]; then
                   in_urls=1
                   break
                 fi
               else
-                if [ "$file" == "${srctar}" ]; then
+                if [ "$file" == "${wget_set_filename}" ]; then
                   in_urls=1
                   break
                 fi
@@ -398,7 +398,7 @@ fi
 
 if [ $1 = "download" ]; then
   for url in $urls; do
-    if [ -z "$wget_set_filename" ]; then
+    if [ -z "${wget_set_filename}" ]; then
       if [ ! -f "`basename $url`" ]; then
         if [[ $url == *pciutils* ]]; then
           wget --no-check-certificate $url
@@ -407,8 +407,8 @@ if [ $1 = "download" ]; then
         fi
       fi
     else
-      if [ ! -f "${srctar}" ]; then
-        wget $url -O $srctar
+      if [ ! -f "${wget_set_filename}" ]; then
+        wget $url -O ${wget_set_filename}
       fi
     fi
   done
@@ -1204,9 +1204,6 @@ if [ $1 == 'rebuild-world' ]; then
     # won't upgrade (never installed them in the first place)
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
-
-    # upgrade only manually
-    [[ $package = 'cacerts' ]] && continue # needs internet access
 
     # big ones
     #[[ $package = 'xulrunner' ]] && continue

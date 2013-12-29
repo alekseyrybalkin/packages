@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=cacerts
-pkgver=1
-#srctar=${pkgname}-${pkgver}.tar.bz2
-#srcdir=${location}/${pkgname}-${pkgver}
+pkgver=20121229
+urls="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt?raw=1"
+wget_set_filename=certdata.txt
 
 kiin_make() {
   cat > make-cert.pl << "EOF"
@@ -217,18 +217,11 @@ done
 EOF
   chmod +x remove-expired-certs.sh
 
-  certhost='http://mxr.mozilla.org'
-  certdir='/mozilla/source/security/nss/lib/ckfw/builtins'
-  url="$certhost$certdir/certdata.txt?raw=1"
-
-  wget --output-document certdata.txt $url
-  unset certhost certdir url
   ./make-ca.sh
   ./remove-expired-certs.sh certs
   rm make-cert.pl
   rm make-ca.sh
   rm remove-expired-certs.sh
-  rm certdata.txt
 }
 
 kiin_install() {
