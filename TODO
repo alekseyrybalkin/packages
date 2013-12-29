@@ -40,7 +40,6 @@ NORMAL:
 - kiin: optimize working on packages with lots of files (e.g. python,ncurses,glibc,perl)
 - kiin rebuild-world: do not fail if some package does not build, just move on
   and in the end show which ones failed
-- fix initramfs for rebuild-world (get rid of sudo)
 - fix running kiin concurrently
 - fix gen-db bug about spaces in file names
 

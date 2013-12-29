@@ -4,10 +4,11 @@ pkgname=initramfs
 pkgver=1
 
 kiin_make() {
-  sudo ./mkinitramfs
+  true
 }
 
 kiin_install() {
+  ./mkinitramfs
   mkdir -p ${pkgdir}/boot
   mv -v initrd.img ${pkgdir}/boot
 }

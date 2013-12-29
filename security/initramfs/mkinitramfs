@@ -40,10 +40,14 @@ INITIN=init.in
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
 
 # Create base directory structure
-mkdir -p $WDIR/{bin,dev/mapper,lib/firmware,run,sbin,sys,proc}
+mkdir -p $WDIR/{bin,dev/mapper,lib/firmware,run,sbin,sys,proc,usr}
 mkdir -p $WDIR/etc/{modprobe.d,udev/rules.d}
 touch $WDIR/etc/modprobe.d/modprobe.conf
 ln -s lib $WDIR/lib64
+ln -s ../lib $WDIR/usr/lib
+ln -s ../lib $WDIR/usr/lib64
+ln -s ../bin $WDIR/usr/bin
+ln -s ../sbin $WDIR/usr/sbin
 
 # Create necessary device nodes
 mknod -m 640 $WDIR/dev/console c 5 1
@@ -82,7 +86,7 @@ if [ -x /lib/udev/udevd ] ; then
 fi
 
 # Install libraries
-sort $unsorted | uniq | while read library ; do
+sort $unsorted | uniq | grep -v fakeroot | while read library ; do
   if [ "$library" == "linux-vdso.so.1" ] ||
      [ "$library" == "linux-gate.so.1" ]; then
     continue
