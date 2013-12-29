@@ -23,6 +23,8 @@ MAJOR/INTERESTING:
   and no auto-sudo for kiin
 
 NORMAL:
+- remove FHS trash like /usr/local from filesystem
+- implement `evaluate-update` to show which links changed, which libs/bins added/removed
 - remove empty dirs from packages
 - check-system-integrity: check for empty dirs in system dirs (used and not used)
 - strip binaries/libs by default, but add option to not strip
