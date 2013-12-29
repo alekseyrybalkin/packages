@@ -13,6 +13,7 @@ kiin_make() {
   cd glibc-build
   echo "sbindir=/usr/bin" >> configparms
   echo "rootsbindir=/usr/bin" >> configparms
+  echo "slibdir=/usr/lib" >> configparms
   if [ -z "$KIIN_LIB32" ]; then
     ../configure \
         --prefix=/usr \
@@ -20,6 +21,7 @@ kiin_make() {
         --enable-kernel=2.6.34 \
         --libexecdir=/usr/lib/glibc \
         --disable-nscd \
+        --libdir=/usr/lib \
         --enable-multi-arch
   else
     echo "slibdir=/usr/lib32" >> configparms
@@ -53,8 +55,8 @@ kiin_install() {
     # We need one 32 bit specific header file
     find ${pkgdir}/usr/include -type f -not -name stubs-32.h -delete
     # Dynamic linker
-    mkdir ${pkgdir}/lib
-    ln -s /usr/lib32/ld-linux.so.2 ${pkgdir}/lib/
+    mkdir -pv ${pkgdir}/usr/lib
+    ln -s /usr/lib32/ld-linux.so.2 ${pkgdir}/usr/lib/
     # Add lib32 paths to the default library search path
     install -Dm644 ../../lib32-glibc.conf ${pkgdir}/etc/ld.so.conf.d/lib32-glibc.conf
     # Symlink /usr/lib32/locale to /usr/lib/locale

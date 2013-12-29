@@ -21,9 +21,6 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   mv ${pkgdir}/sbin/* ${pkgdir}/usr/bin
   rm -rf ${pkgdir}/sbin
-  mkdir -p ${pkgdir}/lib
-  mv -v ${pkgdir}/usr/lib/libfuse.so.* ${pkgdir}/lib
-  ln -sfv ../../lib/libfuse.so.${pkgver} ${pkgdir}/usr/lib/libfuse.so
   rm -rf ${pkgdir}/tmp/init.d
   rm -rf ${pkgdir}/dev
   rm -rf ${pkgdir}/tmp

@@ -18,6 +18,13 @@ kiin_install() {
   MAKEFLAGS=
   make DESTDIR=${pkgdir} -f udev-lfs-${pkgver}-${udev_lfs_ver}/Makefile.lfs install
   mv ${pkgdir}/{sbin,usr/bin}
+  mv ${pkgdir}/{lib/udev,usr/lib}
+  rm -rf ${pkgdir}/{,usr/}lib/firmware
+  mv ${pkgdir}/lib/* ${pkgdir}/usr/lib
+  rmdir ${pkgdir}/lib
+  rm ${pkgdir}/usr/lib/libudev.so
+  ln -sv `readlink ${pkgdir}/usr/lib/libudev.so.*` \
+    ${pkgdir}/usr/lib/libudev.so
 }
 
 kiin_after_install() {

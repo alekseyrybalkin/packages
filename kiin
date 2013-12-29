@@ -285,6 +285,7 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
     --sysconfdir=/etc \
     --localstatedir=/var \
     --disable-static"
+  PKG_CONFIG=/usr/bin/pkg-config
   if [ "$2" == "lib32" ]; then
     pkgname=lib32-${pkgname}
     KIIN_LIB32=1
@@ -293,6 +294,7 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
     export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
     LIBDIR="/usr/lib32"
   else
+    export PKG_CONFIG_PATH="/usr/lib/pkgconfig"
     LIBDIR="/usr/lib"
   fi
   if [ $1 != "repeat-install" ]; then
@@ -349,6 +351,10 @@ if [ "${pkgname}" != "filesystem" ]; then
   fi
   if [ -d ${pkgdir}/usr/sbin ]; then
     echo " *** ERROR ***: package tries to use /usr/sbin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/lib ]; then
+    echo " *** ERROR ***: package tries to use /lib"
     exit 1
   fi
 fi
@@ -1280,6 +1286,10 @@ if [ "${pkgname}" != "filesystem" ]; then
   fi
   if [ -d ${pkgdir}/usr/sbin ]; then
     echo " *** ERROR ***: package tries to use /usr/sbin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/lib ]; then
+    echo " *** ERROR ***: package tries to use /lib"
     exit 1
   fi
 fi

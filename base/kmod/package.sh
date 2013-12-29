@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
-              --libdir=/lib \
+              --libdir=/usr/lib \
               --sysconfdir=/etc \
               --with-xz \
               --with-zlib

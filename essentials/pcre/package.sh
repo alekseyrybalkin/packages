@@ -23,9 +23,4 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  if [ -z "$KIIN_LIB32" ]; then
-    mkdir -pv ${pkgdir}/lib
-    mv -v ${pkgdir}/usr/lib/libpcre.so.* ${pkgdir}/lib
-    ln -sfv ../../lib/$(readlink ${pkgdir}/lib/libpcre.so.*) ${pkgdir}/usr/lib/libpcre.so
-  fi
 }

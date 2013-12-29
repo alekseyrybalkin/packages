@@ -11,27 +11,25 @@ kiin_install() {
   mkdir -v ${pkgdir}/{dev,proc,sys}
   mknod -m 600 ${pkgdir}/dev/console c 5 1
   mknod -m 666 ${pkgdir}/dev/null c 1 3
-  mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,lib,mnt,opt,run}
+  mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,mnt,opt,run}
   mkdir -pv ${pkgdir}/{media/{floppy,cdrom},srv,var}
   install -dv -m 0750 ${pkgdir}/root
   install -dv -m 1777 ${pkgdir}/tmp ${pkgdir}/var/tmp
-  mkdir -pv ${pkgdir}/usr/{,local/}{bin,include,lib,src}
-  mkdir -pv ${pkgdir}/usr/{,local/}share/{doc,info,locale,man}
-  mkdir -v  ${pkgdir}/usr/{,local/}share/{misc,terminfo,zoneinfo}
-  mkdir -pv ${pkgdir}/usr/{,local/}share/man/man{1..8}
+  mkdir -pv ${pkgdir}/usr/{bin,include,lib,src}
+  mkdir -pv ${pkgdir}/usr/share/{doc,info,locale,man}
+  mkdir -v  ${pkgdir}/usr/share/{misc,terminfo,zoneinfo}
+  mkdir -pv ${pkgdir}/usr/share/man/man{1..8}
 
   ln -sv usr/bin ${pkgdir}/bin
   ln -sv usr/bin ${pkgdir}/sbin
   ln -sv bin ${pkgdir}/usr/sbin
 
-  for dir in ${pkgdir}/{usr,usr/local}; do
-    ln -sv share/{man,doc,info} ${dir}
-  done
-  case $(uname -m) in
-  x86_64) ln -sv lib ${pkgdir}/lib64 && \
-    ln -sv lib ${pkgdir}/usr/lib64 && \
-    ln -sv lib ${pkgdir}/usr/local/lib64 ;;
-  esac
+  ln -sv share/{man,doc,info} ${pkgdir}/usr
+
+  ln -sv usr/lib ${pkgdir}/lib
+  ln -sv usr/lib ${pkgdir}/lib64
+  ln -sv lib ${pkgdir}/usr/lib64
+
   mkdir -v ${pkgdir}/var/{log,mail,spool}
   ln -sv /run ${pkgdir}/var/run
   ln -sv /run/lock ${pkgdir}/var/lock

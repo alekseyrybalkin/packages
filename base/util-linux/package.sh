@@ -10,7 +10,9 @@ kiin_make() {
   sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
       $(grep -rl '/etc/adjtime' .)
   if [ -z "$KIIN_LIB32" ]; then
-    ./configure --without-udev --bindir=/usr/bin
+    ./configure --without-udev \
+      --bindir=/usr/bin \
+      --libdir=/usr/lib
     make
   else
     ./configure --without-ncurses \

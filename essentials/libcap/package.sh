@@ -21,7 +21,7 @@ kiin_make() {
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} RAISE_SETFCAP=no install
-  chmod -v 755 ${pkgdir}/lib*/libcap.so
-  mv ${pkgdir}/{sbin,usr/bin}
+  make prefix=/usr lib=/lib DESTDIR=${pkgdir} RAISE_SETFCAP=no install
+  chmod -v 755 ${pkgdir}/usr/lib/libcap.so
+  mv ${pkgdir}/usr/{sbin,bin}
 }

@@ -16,6 +16,7 @@ kiin_make() {
     --disable-libuuid \
     --disable-uuidd \
     --sbindir=/usr/bin \
+    --libdir=/usr/lib \
     --disable-fsck
   make
 }

@@ -11,14 +11,14 @@ kiin_make() {
 }
 
 kiin_install() {
-  mkdir -pv ${pkgdir}/lib/firmware
+  mkdir -pv ${pkgdir}/usr/lib/firmware
   if [ `hostname` == 'ritchie' ]; then
-    mkdir -pv ${pkgdir}/lib/firmware/brcm
-    cp -v ./brcm/bcm43xx-0.fw ${pkgdir}/lib/firmware/brcm
-    cp -v ./brcm/bcm43xx_hdr-0.fw ${pkgdir}/lib/firmware/brcm
+    mkdir -pv ${pkgdir}/usr/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx-0.fw ${pkgdir}/usr/lib/firmware/brcm
+    cp -v ./brcm/bcm43xx_hdr-0.fw ${pkgdir}/usr/lib/firmware/brcm
   fi
   if [ `hostname` == 'snowden' ]; then
-    cp -v ./iwlwifi-6000g2a-5.ucode ${pkgdir}/lib/firmware
-    cp -v ./iwlwifi-6000g2a-6.ucode ${pkgdir}/lib/firmware
+    cp -v ./iwlwifi-6000g2a-5.ucode ${pkgdir}/usr/lib/firmware
+    cp -v ./iwlwifi-6000g2a-6.ucode ${pkgdir}/usr/lib/firmware
   fi
 }

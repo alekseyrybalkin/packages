@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr \
     --mandir=/usr/share/man \
+    --with-pkg-config=/usr/bin/pkg-config \
     --with-shared \
     --without-debug \
     --enable-pc-files \
@@ -21,9 +22,6 @@ kiin_make() {
 kiin_install() {
   make install
   if [ -z "$KIIN_LIB32" ]; then
-    mkdir -pv ${pkgdir}/lib
-    mv -v ${pkgdir}/usr/lib/libncursesw.so.5* ${pkgdir}/lib
-    ln -sfv ../../lib/libncursesw.so.5 ${pkgdir}/usr/lib/libncursesw.so
     for lib in ncurses form panel menu ; do
       rm -vf ${pkgdir}/usr/lib/lib${lib}.so
       echo "INPUT(-l${lib}w)" > ${pkgdir}/usr/lib/lib${lib}.so
@@ -36,8 +34,8 @@ kiin_install() {
     ln -sfv libncurses.so ${pkgdir}/usr/lib/libcurses.so
     ln -sfv libncursesw.a ${pkgdir}/usr/lib/libcursesw.a
     ln -sfv libncurses.a ${pkgdir}/usr/lib/libcurses.a
-    mkdir -pv      ${pkgdir}/usr/share/doc/ncurses-${pkgver}
-    cp -v -R doc/* ${pkgdir}/usr/share/doc/ncurses-${pkgver}
+    mkdir -pv      ${pkgdir}/usr/share/doc/ncurses
+    cp -v -R doc/* ${pkgdir}/usr/share/doc/ncurses
   else
     mv ${pkgdir}/usr/lib/pkgconfig ${pkgdir}/usr/lib32
     rm -rf ${pkgdir}/usr/lib

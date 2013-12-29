@@ -26,8 +26,5 @@ kiin_make() {
 kiin_install() {
   make DIST_ROOT=${pkgdir} install install-dev install-lib
   chmod -v 755 ${pkgdir}/usr/lib/libattr.so
-  mkdir -pv ${pkgdir}/lib
-  mv -v ${pkgdir}/usr/lib/libattr.so.* ${pkgdir}/lib
-  ln -sfv ../../lib/libattr.so.1 ${pkgdir}/usr/lib/libattr.so
   rm -rf ${pkgdir}/usr/share/man/man2
 }

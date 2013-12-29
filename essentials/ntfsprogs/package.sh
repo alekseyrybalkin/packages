@@ -17,7 +17,10 @@ kiin_make() {
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} rootbindir=/usr/bin rootsbindir=/usr/bin install
+  make DESTDIR=${pkgdir} \
+    rootbindir=/usr/bin \
+    rootsbindir=/usr/bin \
+    rootlibdir=/usr/lib install
   ln -sv ntfs-3g ${pkgdir}/usr/bin/mount.ntfs
   ln -sv /usr/share/man/man8/ntfs-3g.8 ${pkgdir}/usr/share/man/man8/mount.ntfs.8
 }

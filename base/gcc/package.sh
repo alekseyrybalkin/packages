@@ -31,8 +31,7 @@ kiin_make() {
 kiin_install() {
   cd gcc-build
   make DESTDIR=${pkgdir} install
-  mkdir ${pkgdir}/lib
-  ln -sv ../usr/bin/cpp ${pkgdir}/lib
+  ln -sv ../bin/cpp ${pkgdir}/usr/lib
   ln -sv gcc ${pkgdir}/usr/bin/cc
   mkdir -pv ${pkgdir}/usr/share/gdb/auto-load/usr/lib
   mv -v ${pkgdir}/usr/lib64/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
