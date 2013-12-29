@@ -12,10 +12,10 @@ kiin_install() {
   mknod -m 600 ${pkgdir}/dev/console c 5 1
   mknod -m 666 ${pkgdir}/dev/null c 1 3
   mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,mnt,opt,run}
-  mkdir -pv ${pkgdir}/{media/{floppy,cdrom},srv,var}
+  mkdir -pv ${pkgdir}/var
   install -dv -m 0750 ${pkgdir}/root
   install -dv -m 1777 ${pkgdir}/tmp ${pkgdir}/var/tmp
-  mkdir -pv ${pkgdir}/usr/{bin,include,lib,src}
+  mkdir -pv ${pkgdir}/usr/{bin,include,lib}
   mkdir -pv ${pkgdir}/usr/share/{doc,info,locale,man}
   mkdir -v  ${pkgdir}/usr/share/{misc,terminfo,zoneinfo}
   mkdir -pv ${pkgdir}/usr/share/man/man{1..8}

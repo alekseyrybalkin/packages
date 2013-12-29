@@ -27,7 +27,6 @@ NORMAL:
 - pull from upstream for /var/src/${pkgname} before building, fail gracefully without network/availability
   update git/svn/hg repositories once in a while
 - check-system-integrity: check for differences in kiin-configs and actual files
-- remove FHS trash like /usr/local from filesystem
 - implement `evaluate-update` to show which links changed, which libs/bins added/removed
 - remove empty dirs from packages
 - check-system-integrity: check for empty dirs in system dirs (used and not used)
