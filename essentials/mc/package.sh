@@ -9,11 +9,12 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr     \
-              --enable-charset  \
-              --disable-static  \
-              --sysconfdir=/etc \
-              --with-screen=slang
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --enable-charset \
+    --disable-static \
+    --sysconfdir=/etc \
+    --with-screen=slang
   make
 }
 
