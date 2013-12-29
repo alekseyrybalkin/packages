@@ -23,6 +23,7 @@ MAJOR/INTERESTING:
   and no auto-sudo for kiin
 
 NORMAL:
+- check-system-integrity: check for differences in kiin-configs and actual files
 - remove FHS trash like /usr/local from filesystem
 - implement `evaluate-update` to show which links changed, which libs/bins added/removed
 - remove empty dirs from packages

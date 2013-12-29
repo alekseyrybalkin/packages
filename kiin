@@ -62,7 +62,7 @@ usage() {
 # for upgrade and uninstall
 check_system_packages() {
   case $1 in
-    "kiin-git" | "kiin-known" | "filesystem")
+    "kiin-known" | "filesystem")
       echo "wouldn't want to $2 $1, would ya?"
       exit 1
       ;;
@@ -416,16 +416,6 @@ if [ $1 = "download" ]; then
 fi
 
 if [ $1 == 'gen-db' ]; then
-  # add kiin-git-1 package
-  tmpdir=/tmp/kiin-user/`uuidgen -t`
-  mkdir -p $tmpdir
-  cd $tmpdir
-  git clone / kiin-dest 1>/dev/null
-  rm -rf kiin-dest/.git
-  find kiin-dest | sort | uniq | tar cfa kiin.kiin-git-1.tar.xz -T - --no-recursion
-  mv kiin.kiin-git-1.tar.xz $KIIN_HOME/installed
-  cd /tmp
-  rm -rf $tmpdir
   # add kiin-known-1 package
   tmpdir=/tmp/kiin-user/`uuidgen -t`
   mkdir -p $tmpdir
@@ -490,8 +480,7 @@ if [ $1 == 'gen-db' ]; then
   cd /tmp
   rm -rf $tmpdir
   # generate db
-  for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known \
-    | grep -v kiin-git`; do
+  for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known`; do
     kiin update-links $i
   done
   kiin rsync
@@ -993,6 +982,7 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'proxychains' ]] && continue
     [[ $package = 'jdk' ]] && continue
     [[ $package = 'jdk7' ]] && continue
+    [[ $package = 'kiin-configs' ]] && continue
     # won't upgrade:
     [[ $package = 'linux' ]] && continue # we use and check git version
     [[ $package = 'gnupg' ]] && continue # we read gnupg-announce@
@@ -1000,7 +990,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'filesystem' ]] && continue
     [[ $package = 'linux-firmware' ]] && continue
     [[ $package = 'cacerts' ]] && continue
-    [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
     # gnome packages -- we check server versions
     #[[ $package = 'evince' ]] && continue
@@ -1214,7 +1203,6 @@ if [ $1 == 'rebuild-world' ]; then
   for package in $packages; do
     # won't upgrade (never installed them in the first place)
     [[ $package = 'filesystem' ]] && continue
-    [[ $package = 'kiin-git' ]] && continue
     [[ $package = 'kiin-known' ]] && continue
 
     # upgrade only manually
