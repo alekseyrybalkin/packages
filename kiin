@@ -338,25 +338,29 @@ fi
 # fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
 if [ "${pkgname}" != "filesystem" ]; then
-  if [ -e ${pkgdir}/var ]; then
-    echo " *** WARNING ***: package tries to use /var"
-  fi
-  if [ -d ${pkgdir}/bin ]; then
-    echo " *** ERROR ***: package tries to use /bin"
+  pushd ${pkgdir}
+  regexp="^$"
+  for i in /opt /boot /etc /usr; do
+    regexp="${regexp}|^${i}$"
+  done
+  baddirs=`find . -maxdepth 1 -type d | sed "s/^\.//g" | grep -v -E "${regexp}"` && true
+  if [ -n "${baddirs}" ]; then
+    echo " *** ERROR ***: package tries to use bad dirs:"
+    echo "${baddirs}"
     exit 1
   fi
-  if [ -d ${pkgdir}/sbin ]; then
-    echo " *** ERROR ***: package tries to use /sbin"
-    exit 1
+  if [ -d usr ]; then
+    for i in /usr/bin /usr/include /usr/lib /usr/lib32 /usr/share; do
+      regexp="${regexp}|^${i}$"
+    done
+    baddirs=`find ./usr -maxdepth 1 -type d | sed "s/^\.//g" | grep -v -E "${regexp}"` && true
+    if [ -n "${baddirs}" ]; then
+      echo " *** ERROR ***: package tries to use bad dirs:"
+      echo "${baddirs}"
+      exit 1
+    fi
   fi
-  if [ -d ${pkgdir}/usr/sbin ]; then
-    echo " *** ERROR ***: package tries to use /usr/sbin"
-    exit 1
-  fi
-  if [ -d ${pkgdir}/lib ]; then
-    echo " *** ERROR ***: package tries to use /lib"
-    exit 1
-  fi
+  popd
 fi
 
 # remove *.la files
@@ -1272,27 +1276,30 @@ rm ${pkgdir}/.INSTALL
 
 # fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
-if [ "${pkgname}" != "filesystem" ]; then
-  if [ -e ${pkgdir}/var ]; then
-    echo " *** WARNING ***: package tries to use /var"
-  fi
-  if [ -d ${pkgdir}/bin ]; then
-    echo " *** ERROR ***: package tries to use /bin"
-    exit 1
-  fi
-  if [ -d ${pkgdir}/sbin ]; then
-    echo " *** ERROR ***: package tries to use /sbin"
-    exit 1
-  fi
-  if [ -d ${pkgdir}/usr/sbin ]; then
-    echo " *** ERROR ***: package tries to use /usr/sbin"
-    exit 1
-  fi
-  if [ -d ${pkgdir}/lib ]; then
-    echo " *** ERROR ***: package tries to use /lib"
+
+pushd ${pkgdir}
+regexp="^$"
+for i in /opt /boot /etc /usr; do
+  regexp="${regexp}|^${i}$"
+done
+baddirs=`find . -maxdepth 1 -type d | sed "s/^\.//g" | grep -v -E "${regexp}"` && true
+if [ -n "${baddirs}" ]; then
+  echo " *** ERROR ***: package tries to use bad dirs:"
+  echo "${baddirs}"
+  exit 1
+fi
+if [ -d usr ]; then
+  for i in /usr/bin /usr/include /usr/lib /usr/lib32 /usr/share; do
+    regexp="${regexp}|^${i}$"
+  done
+  baddirs=`find ./usr -maxdepth 1 -type d | sed "s/^\.//g" | grep -v -E "${regexp}"` && true
+  if [ -n "${baddirs}" ]; then
+    echo " *** ERROR ***: package tries to use bad dirs:"
+    echo "${baddirs}"
     exit 1
   fi
 fi
+popd
 
 # remove *.la files
 if [ -d ${pkgdir}/lib ]; then

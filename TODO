@@ -29,7 +29,6 @@ NORMAL:
 - check-system-integrity: check for empty dirs in system dirs (used and not used)
 - strip binaries/libs by default, but add option to not strip
 - inspect all suid files, do we need them?
-- enforce that packages other than filesystem don't use unauthorized dirs
 - kiin u does not fail when one of the parameters is not a valid package
 - kiin u does not fail when one of packages fails
 - pciutils: https cert failure for download / check-server-version
