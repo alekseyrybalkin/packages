@@ -10,8 +10,9 @@ check_server=1
 
 kiin_make() {
   ./configure --libexecdir=/lib/dhcpcd \
-              --dbdir=/run             \
-              --sysconfdir=/etc
+    --dbdir=/run \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc
   make
 }
 

@@ -335,8 +335,22 @@ fi
 
 # fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
-if [ -e ${pkgdir}/var ]; then
-  echo " *** WARNING ***: package tries to use /var"
+if [ "${pkgname}" != "filesystem" ]; then
+  if [ -e ${pkgdir}/var ]; then
+    echo " *** WARNING ***: package tries to use /var"
+  fi
+  if [ -d ${pkgdir}/bin ]; then
+    echo " *** ERROR ***: package tries to use /bin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/sbin ]; then
+    echo " *** ERROR ***: package tries to use /sbin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/usr/sbin ]; then
+    echo " *** ERROR ***: package tries to use /usr/sbin"
+    exit 1
+  fi
 fi
 
 # remove *.la files
@@ -686,7 +700,7 @@ if [ $1 == 'upgrade' ]; then
     | awk '{ print length, $0 }' | sort -n -r | cut -d " " --fields=2`; do
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
-    [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && {
+    [[ $user_count = 1 ]] && [[ $users = "$package-$old_version" ]] && [[ ! -d $tmpdir/kiin-dest$dir ]] && [[ ! -h $dir ]] && {
       filecnt=`ls $dir | wc -w`
       if [ $filecnt -eq 0 ]; then
         rm -rv $dir
@@ -758,7 +772,7 @@ if [ $1 == 'uninstall' ]; then
     fi
     users=`kiin who-uses-dir $dir`
     user_count=`echo $users | wc -w`
-    [[ $user_count = 1 ]] && [[ $users = $package ]] && {
+    [[ $user_count = 1 ]] && [[ $users = $package ]] && [[ ! -h $dir ]] && {
       filecnt=`ls $dir | wc -w`
       if [ $filecnt -eq 0 ]; then
         rm -rv $dir
@@ -1252,8 +1266,22 @@ rm ${pkgdir}/.INSTALL
 
 # fix /usr/share/info/dir
 rm -fv ${pkgdir}/usr/share/info/dir
-if [ -e ${pkgdir}/var ]; then
-  echo " *** WARNING ***: package tries to use /var"
+if [ "${pkgname}" != "filesystem" ]; then
+  if [ -e ${pkgdir}/var ]; then
+    echo " *** WARNING ***: package tries to use /var"
+  fi
+  if [ -d ${pkgdir}/bin ]; then
+    echo " *** ERROR ***: package tries to use /bin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/sbin ]; then
+    echo " *** ERROR ***: package tries to use /sbin"
+    exit 1
+  fi
+  if [ -d ${pkgdir}/usr/sbin ]; then
+    echo " *** ERROR ***: package tries to use /usr/sbin"
+    exit 1
+  fi
 fi
 
 # remove *.la files

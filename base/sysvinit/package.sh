@@ -14,4 +14,5 @@ kiin_make() {
 
 kiin_install() {
   make ROOT=${pkgdir} -C src install
+  mv ${pkgdir}/{sbin,usr/bin}
 }

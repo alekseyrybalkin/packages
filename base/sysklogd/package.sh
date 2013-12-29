@@ -11,10 +11,10 @@ kiin_make() {
 }
 
 kiin_install() {
-  mkdir -pv ${pkgdir}/{etc,sbin}
+  mkdir -pv ${pkgdir}/{usr/bin,usr/sbin}
   mkdir -pv ${pkgdir}/usr/share/man/man5
   mkdir -pv ${pkgdir}/usr/share/man/man8
-  mkdir -pv ${pkgdir}/usr/sbin
   make prefix=${pkgdir} install
-  mv -v ${pkgdir}/usr/sbin/* ${pkgdir}/sbin
+  mv -v ${pkgdir}/usr/sbin/* ${pkgdir}/usr/bin
+  rmdir ${pkgdir}/usr/sbin
 }

@@ -9,10 +9,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   sed -i -e '/gets is a/d' gnu/stdio.in.h
   ./configure --prefix=/usr     \
-              --bindir=/bin     \
               --libexecdir=/tmp \
               --enable-mt       \
-              --with-rmt=/usr/sbin/rmt
+              --with-rmt=/usr/bin/rmt
   make
   makeinfo --html            -o doc/html      doc/cpio.texi
   makeinfo --html --no-split -o doc/cpio.html doc/cpio.texi

@@ -11,7 +11,6 @@ kiin_make() {
     --libdir=/usr/lib \
     --enable-lib \
     --enable-util \
-    --bindir=/bin \
     --with-gnu-ld \
     INIT_D_PATH=/tmp/init.d
     #--extra-ldflags=-ldl \
@@ -20,6 +19,8 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  mv ${pkgdir}/sbin/* ${pkgdir}/usr/bin
+  rm -rf ${pkgdir}/sbin
   mkdir -p ${pkgdir}/lib
   mv -v ${pkgdir}/usr/lib/libfuse.so.* ${pkgdir}/lib
   ln -sfv ../../lib/libfuse.so.${pkgver} ${pkgdir}/usr/lib/libfuse.so

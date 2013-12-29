@@ -9,13 +9,14 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr                   \
-              --libexecdir=/usr/lib/sudo      \
-              --docdir=/usr/share/doc/${pkgname}-${pkgver} \
-              --with-all-insults              \
-              --with-env-editor               \
-              --without-pam                   \
-              --without-sendmail
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/sudo \
+    --docdir=/usr/share/doc/${pkgname} \
+    --with-all-insults \
+    --with-env-editor \
+    --without-pam \
+    --without-sendmail
   make
 }
 

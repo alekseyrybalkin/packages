@@ -26,14 +26,14 @@ kiin_make() {
 
 kiin_install() {
   if [ -z "$KIIN_LIB32" ]; then
-    mkdir ${pkgdir}/{usr,bin,lib}
+    mkdir ${pkgdir}/{usr,lib}
     make PREFIX=${pkgdir}/usr install
-    cp -v bzip2-shared ${pkgdir}/bin/bzip2
+    rm -v ${pkgdir}/usr/bin/{bunzip2,bzcat,bzip2}
+    cp -v bzip2-shared ${pkgdir}/usr/bin/bzip2
+    ln -sv bzip2 ${pkgdir}/usr/bin/bunzip2
+    ln -sv bzip2 ${pkgdir}/usr/bin/bzcat
     cp -av libbz2.so* ${pkgdir}/lib
     ln -sv ../../lib/libbz2.so.1.0 ${pkgdir}/usr/lib/libbz2.so
-    rm -v ${pkgdir}/usr/bin/{bunzip2,bzcat,bzip2}
-    ln -sv bzip2 ${pkgdir}/bin/bunzip2
-    ln -sv bzip2 ${pkgdir}/bin/bzcat
   else
     install -Dm755 libbz2.so.${pkgver} ${pkgdir}/usr/lib32/libbz2.so.${pkgver}
     ln -s libbz2.so.${pkgver} ${pkgdir}/usr/lib32/libbz2.so

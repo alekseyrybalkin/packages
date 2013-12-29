@@ -18,12 +18,13 @@ majorver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc \
-    --with-binsubdir=sbin --enable-linuxcaps
+    --with-binsubdir=bin --enable-linuxcaps
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  rmdir ${pkgdir}/usr/{sbin,lib}
 }
 
 kiin_after_install() {

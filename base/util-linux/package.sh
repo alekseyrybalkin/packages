@@ -10,7 +10,7 @@ kiin_make() {
   sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
       $(grep -rl '/etc/adjtime' .)
   if [ -z "$KIIN_LIB32" ]; then
-    ./configure --without-udev
+    ./configure --without-udev --bindir=/usr/bin
     make
   else
     ./configure --without-ncurses \
@@ -22,6 +22,8 @@ kiin_make() {
 kiin_install() {
   if [ -z "$KIIN_LIB32" ]; then
     make DESTDIR=${pkgdir} install
+    mv ${pkgdir}/{sbin,usr/sbin}/* ${pkgdir}/usr/bin
+    rmdir ${pkgdir}/{sbin,usr/sbin}
   else
     make DESTDIR=${pkgdir} \
     install-usrlib_execLTLIBRARIES \

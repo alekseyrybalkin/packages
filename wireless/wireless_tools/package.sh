@@ -12,6 +12,7 @@ kiin_make() {
 
 kiin_install() {
   make PREFIX=${pkgdir}/usr \
+    INSTALL_DIR=${pkgdir}/usr/bin \
     INSTALL_MAN=${pkgdir}/usr/share/man \
     ldconfig=/bin/true install
 }

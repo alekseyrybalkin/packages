@@ -17,4 +17,5 @@ kiin_install() {
   make DESTDIR=${pkgdir}              \
       MANDIR=/usr/share/man           \
       DOCDIR=/usr/share/doc/${pkgname} install
+  mv ${pkgdir}/{sbin,usr/bin}
 }

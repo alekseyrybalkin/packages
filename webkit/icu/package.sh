@@ -9,7 +9,7 @@ srcdir=${location}/icu
 
 kiin_make() {
   cd source
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --sbindir=/usr/bin
   make
 }
 

@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure \
     --prefix=/usr \
+    --sbindir=/usr/bin \
     --enable-password-save \
     --mandir=/usr/share/man \
     --disable-plugin-auth-pam \

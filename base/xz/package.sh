@@ -14,8 +14,7 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  mkdir ${pkgdir}/{bin,lib}
-  mv -v ${pkgdir}/usr/bin/{unlzma,unxz,xzcat,lzma,xz,lzcat} ${pkgdir}/bin
+  mkdir ${pkgdir}/lib
   mv -v ${pkgdir}/usr/lib/liblzma.so.* ${pkgdir}/lib
   ln -svf ../../lib/$(readlink ${pkgdir}/usr/lib/liblzma.so) \
     ${pkgdir}/usr/lib/liblzma.so

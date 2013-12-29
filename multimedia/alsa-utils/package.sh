@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --disable-alsaconf --disable-xmlto \
-    --without-systemdsystemunitdir
+    --without-systemdsystemunitdir --sbindir=/usr/bin
   make
 }
 

@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   autoreconf -i -f
-  ./configure --prefix=/usr --sbindir=/sbin
+  ./configure --prefix=/usr --sbindir=/usr/bin
   make
 }
 

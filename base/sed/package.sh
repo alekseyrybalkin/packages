@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --bindir=/bin --htmldir=/usr/share/doc/sed-${pkgver}
+  ./configure --prefix=/usr --htmldir=/usr/share/doc/sed
   make
   make html
 }

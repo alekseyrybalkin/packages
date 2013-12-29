@@ -28,8 +28,8 @@ kiin_make() {
 
 kiin_install() {
   cd ${pkgname}_${pkgver}_src
-  mkdir -p ${pkgdir}/usr/sbin
-  install -Dm0755 -o root -g root lsof ${pkgdir}/usr/sbin
+  mkdir -p ${pkgdir}/usr/bin
+  install -Dm0755 -o root -g root lsof ${pkgdir}/usr/bin
   mkdir -p ${pkgdir}/usr/share/man/man8
   install -Dm0644 -o root -g root lsof.8 ${pkgdir}/usr/share/man/man8
 }

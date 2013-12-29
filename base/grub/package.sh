@@ -13,13 +13,14 @@ kiin_make() {
   #don't build against fuse (will not build /usr/bin/grub-mount
   sed -i -e 's/fuse_main_real/fuse_main_real_fail/g' configure
   sed -i -e 's/fuse_main_real/fuse_main_real_fail/g' configure.ac
-  ./configure --prefix=/usr           \
-              --sysconfdir=/etc       \
-              --disable-grub-emu-usb  \
-              --disable-efiemu        \
-              --disable-device-mapper \
-              --disable-grub-mkfont   \
-              --disable-werror
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --disable-grub-emu-usb \
+    --disable-efiemu \
+    --disable-device-mapper \
+    --disable-grub-mkfont \
+    --disable-werror
   make
 }
 

@@ -13,7 +13,4 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  mkdir -pv ${pkgdir}/bin
-  mv -v ${pkgdir}/usr/bin/fuser   ${pkgdir}/bin
-  mv -v ${pkgdir}/usr/bin/killall ${pkgdir}/bin
 }

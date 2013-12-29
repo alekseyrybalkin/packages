@@ -10,12 +10,14 @@ check_server=1
 
 kiin_make() {
   make PREFIX=/usr \
+    SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/misc \
     SHARED=yes
 }
 
 kiin_install() {
   make PREFIX=/usr \
+    SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/misc \
     SHARED=yes \
     DESTDIR=${pkgdir} install install-lib

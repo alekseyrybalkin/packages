@@ -7,12 +7,13 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --enable-shadow=yes
+  ./configure --prefix=/usr --sbindir=/usr/bin --enable-shadow=yes
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} VLOCK_GROUP=129 install
+  rmdir ${pkgdir}/usr/sbin
 }
 
 kiin_after_install() {

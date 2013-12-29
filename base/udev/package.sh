@@ -17,6 +17,7 @@ kiin_make() {
 kiin_install() {
   MAKEFLAGS=
   make DESTDIR=${pkgdir} -f udev-lfs-${pkgver}-${udev_lfs_ver}/Makefile.lfs install
+  mv ${pkgdir}/{sbin,usr/bin}
 }
 
 kiin_after_install() {

@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin
+  ./configure --prefix=/usr --libexecdir=/usr/bin
   make
 }
 

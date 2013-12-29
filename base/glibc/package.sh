@@ -11,6 +11,8 @@ kiin_make() {
   sed -i -e 's/3\.\[89/4\.\[0/g' configure
   mkdir -v glibc-build
   cd glibc-build
+  echo "sbindir=/usr/bin" >> configparms
+  echo "rootsbindir=/usr/bin" >> configparms
   if [ -z "$KIIN_LIB32" ]; then
     ../configure \
         --prefix=/usr \

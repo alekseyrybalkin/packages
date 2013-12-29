@@ -10,6 +10,7 @@ check_server=1
 
 kiin_make() {
   ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
     --libexecdir=/usr/lib/openssh \
     --sysconfdir=/etc/ssh \
     --datadir=/usr/share/sshd \

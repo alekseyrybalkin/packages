@@ -16,16 +16,14 @@ kiin_make() {
   for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
     patch -Np0 -i ../bash42-$(printf "%03d" $p)
   done
-  ./configure --prefix=/usr                     \
-              --bindir=/bin                     \
-              --htmldir=/usr/share/doc/bash-4.2 \
-              --without-bash-malloc             \
+  ./configure --prefix=/usr \
+              --htmldir=/usr/share/doc/bash \
+              --without-bash-malloc \
               --with-installed-readline
   make
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  mkdir -pv ${pkgdir}/bin
-  ln -sv bash ${pkgdir}/bin/sh
+  ln -sv bash ${pkgdir}/usr/bin/sh
 }
