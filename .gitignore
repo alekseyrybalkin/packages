@@ -12,7 +12,7 @@
 *.jar
 *.run
 *.txt
+*.sqlite3
 /_kiin-rename
-/kiin-db/
 /server-listings/
 /base/bash/bash42*

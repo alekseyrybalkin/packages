@@ -33,7 +33,7 @@ def create_db(conn):
     conn.execute('create index provider_package_id on depends(provider_id)')
 
 def gen_db(conn):
-    packages_path = '/var/kiin/installed/'
+    packages_path = '/var/lib/kiin/installed/'
     installed_packages = os.listdir(packages_path)
     actual_package_list = []
     for package_file in installed_packages:
@@ -109,7 +109,7 @@ def list_untracked(conn):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        conn = sqlite3.connect('/var/kiin/kiin-db/kiin.sqlite3')
+        conn = sqlite3.connect('/var/lib/kiin/kiin.sqlite3')
         if sys.argv[1] == 'gen-db': gen_db(conn)
         if sys.argv[1] == 'create-db': create_db(conn)
         if sys.argv[1] == 'list-untracked': list_untracked(conn)

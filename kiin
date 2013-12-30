@@ -4,22 +4,18 @@
 #  git, mercurial, python 2, sqlite, fakeroot, wget,
 #  python2-sh, sudo, unzip, lsof, rsync
 
-KIIN_HOME=/var/kiin
-KIIN_DB=$KIIN_HOME/kiin-db/kiin.sqlite3
-PACKAGE_MANAGER=rybalkin
-ARCH_PACKAGES_REPO=~/sources/packages
-ARCH_COMMUNITY_REPO=~/sources/community
-SOURCES_HOME=/var/src
-HEAVEN=aleksey@rybalkin.org
+if [ -f /etc/kiin.conf.bash ]; then
+  . /etc/kiin.conf.bash
+fi
 umask 0022
-
-KIIN_TRASH=/tmp/kiin-trash
 mkdir -p ${KIIN_TRASH}
 
 JAVA_HOME=`find /opt -maxdepth 1 -name "openjdk-*" | sort | head -n 1`
-PATH=${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin:$PATH
-J2SDKDIR=${JAVA_HOME}
-J2REDIR=${JAVA_HOME}/jre
+if [ -n "${JAVA_HOME}" ]; then
+  PATH=${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin:$PATH
+  J2SDKDIR=${JAVA_HOME}
+  J2REDIR=${JAVA_HOME}/jre
+fi
 
 usage() {
   echo "usage:"
@@ -478,11 +474,11 @@ if [ $1 == 'gen-db' ]; then
   touch usr/share/mime/application/vnd.ms-word.template.macroenabled.12.xml
   cd ..
   find kiin-dest | sort | uniq | tar cfa kiin.kiin-known-1.tar.xz -T - --no-recursion
-  mv kiin.kiin-known-1.tar.xz $KIIN_HOME/installed
+  mv kiin.kiin-known-1.tar.xz ${KIIN_HOME}/installed
   cd /tmp
   rm -rf $tmpdir
   # generate db
-  for i in `db_manager.py gen-db | sort | uniq | grep -v kiin-known`; do
+  for i in `kiin-db-manager.py gen-db | sort | uniq | grep -v kiin-known`; do
     kiin update-links $i
   done
   kiin rsync
@@ -575,8 +571,8 @@ if [ $1 == 'install' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
-  sudo -u $PACKAGE_MANAGER kiin gen-db
+  sudo -u ${PACMAN} mv -v $2 ${KIIN_HOME}/installed
+  sudo -u ${PACMAN} kiin gen-db
   if [ -f $tmpdir/package.sh ]; then
     grep -q "kiin_after_install" $tmpdir/package.sh
     if [ $? -eq 0 ]; then
@@ -712,10 +708,10 @@ if [ $1 == 'upgrade' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u $PACKAGE_MANAGER mv -v $KIIN_HOME/installed/kiin.$package-$old_version.tar.xz \
-    $KIIN_HOME/uninstalled
-  sudo -u $PACKAGE_MANAGER mv -v $2 $KIIN_HOME/installed
-  sudo -u $PACKAGE_MANAGER kiin gen-db
+  sudo -u ${PACMAN} mv -v ${KIIN_HOME}/installed/kiin.$package-$old_version.tar.xz \
+    ${KIIN_HOME}/uninstalled
+  sudo -u ${PACMAN} mv -v $2 ${KIIN_HOME}/installed
+  sudo -u ${PACMAN} kiin gen-db
   # update hashsums for /boot partition
   case $package in
     "linux" | "grub" | "initramfs")
@@ -783,9 +779,9 @@ if [ $1 == 'uninstall' ]; then
   if [ $do_recreate_info_dir -eq 1 ]; then
     recreate_info_dir
   fi
-  sudo -u $PACKAGE_MANAGER mv -v $KIIN_HOME/installed/kiin.$package.tar.xz \
-    $KIIN_HOME/uninstalled
-  sudo -u $PACKAGE_MANAGER kiin gen-db
+  sudo -u ${PACMAN} mv -v ${KIIN_HOME}/installed/kiin.$package.tar.xz \
+    ${KIIN_HOME}/uninstalled
+  sudo -u ${PACMAN} kiin gen-db
   echo "running ldconfig..."
   ldconfig
   exit 0
@@ -1119,28 +1115,28 @@ fi
 if [ $1 == 'check-buildorder' ]; then
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    grep -q "^$package$" $KIIN_HOME/buildorder.`hostname`
+    grep -q "^$package$" ${KIIN_REPO}/buildorder.`hostname`
     if [ $? -gt 0 ]; then
       echo "$package is missing from buildorder"
     fi
   done
-  for i in `cat $KIIN_HOME/buildorder.$(hostname)`; do
+  for i in `cat ${KIIN_REPO}/buildorder.$(hostname)`; do
     count=`echo "select * from package where name='$i';" | sqlite3 $KIIN_DB | wc -l`
     if [ $count -lt 1 ]; then
       echo "$i is not installed, but is in buildorder"
     fi
   done
-  dups=`cat $KIIN_HOME/buildorder.$(hostname) | sort | uniq -d`
+  dups=`cat ${KIIN_REPO}/buildorder.$(hostname) | sort | uniq -d`
   if [ ! -z $dups ]; then
     echo "duplicates in buildorder: $dups"
   fi
   echo "order offenders:"
   for i in `kiin ls`; do
     package=`echo $i | sed 's/\-[^-]*$//g'`
-    order=`grep -n "^$package$" $KIIN_HOME/buildorder.$(hostname) | cut -d ":" --fields 1`
+    order=`grep -n "^$package$" ${KIIN_REPO}/buildorder.$(hostname) | cut -d ":" --fields 1`
     offending=""
     for j in `kiin links $i`; do
-      dep_order=`grep -n "^$j$" $KIIN_HOME/buildorder.$(hostname) | cut -d ":" --fields 1`
+      dep_order=`grep -n "^$j$" ${KIIN_REPO}/buildorder.$(hostname) | cut -d ":" --fields 1`
       if [ $dep_order -gt $order ]; then
         offending="$offending $j"
       fi
@@ -1157,8 +1153,8 @@ if [ $1 == 'u' ]; then
   set -e
   for package in `for item in $@; do
       if [ $item != 'u' ]; then
-        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
-        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
+        cat ${KIIN_REPO}/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
+        cat ${KIIN_REPO}/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
       fi
     done | sort -n | cut -d " " -f 2`; do
     kiin rebuild-world $package $package
@@ -1170,8 +1166,8 @@ if [ $1 == 'sort' ]; then
   set -e
   for package in `for item in $@; do
       if [ $item != 'u' ]; then
-        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
-        cat $KIIN_HOME/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
+        cat ${KIIN_REPO}/buildorder.$(hostname) | grep -n "^$item$" | sed 's/:/\ /g'
+        cat ${KIIN_REPO}/buildorder.$(hostname) | grep -n "^lib32-$item$" | sed 's/:/\ /g'
       fi
     done | sort -n | cut -d " " -f 2`; do
     echo ${package}
@@ -1194,12 +1190,12 @@ fi
 if [ $1 == 'rebuild-world' ]; then
   set -e
   date > /tmp/kiin-rebuild-world
-  packages=`cat $KIIN_HOME/buildorder.$(hostname)`
+  packages=`cat ${KIIN_REPO}/buildorder.$(hostname)`
   if [ -n "$2" ]; then
-    packages=`cat $KIIN_HOME/buildorder.$(hostname) | grep -A 10000 "^$2$"`
+    packages=`cat ${KIIN_REPO}/buildorder.$(hostname) | grep -A 10000 "^$2$"`
   fi
   if [ -n "$3" ]; then
-    packages=`cat $KIIN_HOME/buildorder.$(hostname) | grep -A 10000 "^$2$" | grep -B 10000 "^$3$"`
+    packages=`cat ${KIIN_REPO}/buildorder.$(hostname) | grep -A 10000 "^$2$" | grep -B 10000 "^$3$"`
   fi
   for package in $packages; do
     # won't upgrade (never installed them in the first place)
@@ -1223,7 +1219,7 @@ if [ $1 == 'rebuild-world' ]; then
     fi
     echo "rebuilding $package (lib32=$lib32)"
     for package_dir in `kiin list-package-dirs`; do
-      found=`find $KIIN_HOME/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
+      found=`find ${KIIN_REPO}/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
       if [ -n "$found" ]; then
         break
       fi
@@ -1339,7 +1335,7 @@ fi
 if [ $1 == 'check-server-version' ]; then
   package=`echo $package | sed 's/\-[^-]*$//g'`
   for package_dir in `kiin list-package-dirs`; do
-    found=`find $KIIN_HOME/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
+    found=`find ${KIIN_REPO}/${package_dir} -depth -maxdepth 2 -type d -name $package | head -n 1`
     if [ -n "$found" ]; then
       break
     fi
@@ -1407,7 +1403,7 @@ fi
 
 if [ $1 == 'rsync' ]; then
   echo "rsyncing to heaven..."
-  rsync -av --delete /var/kiin/installed/ ${HEAVEN}:~/kiin-repo/`hostname`
+  rsync -av --delete ${KIIN_HOME}/installed/ ${HEAVEN}:~/kiin-repo/`hostname`
   exit 0
 fi
 

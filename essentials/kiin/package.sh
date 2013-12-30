@@ -7,13 +7,11 @@ pkgver=1.0.0
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  gcc -o _kiin-rename kiin-rename.c
+  true
 }
 
 kiin_install() {
-  mkdir ${pkgdir}/usr/bin
-  cp kiin ${pkgdir}/usr/bin/kiin
-  cp _kiin-rename ${pkgdir}/usr/bin/_kiin-rename
-  cp db_manager.py ${pkgdir}/usr/bin/_kiin-db-manager.py
-  cp fix_symlinks.py ${pkgdir}/usr/bin/_kiin-fix-symlinks.py
+  mkdir -p ${pkgdir}/{etc,usr/bin}
+  cp kiin kiin-db-manager.py ${pkgdir}/usr/bin
+  cp kiin.conf.bash ${pkgdir}/etc
 }
