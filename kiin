@@ -13,6 +13,9 @@ SOURCES_HOME=/var/src
 HEAVEN=aleksey@rybalkin.org
 umask 0022
 
+KIIN_TRASH=/tmp/kiin-trash
+mkdir -p ${KIIN_TRASH}
+
 JAVA_HOME=`find /opt -maxdepth 1 -name "openjdk-*" | sort | head -n 1`
 PATH=${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin:$PATH
 J2SDKDIR=${JAVA_HOME}
@@ -216,14 +219,14 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
             done
           fi
           if [ $in_urls -eq 0 ]; then
-            if [ ! -f $KIIN_HOME/trash/`basename $file` ]; then
-              mv -v $file $KIIN_HOME/trash/`basename $file`
+            if [ ! -f ${KIIN_TRASH}/`basename $file` ]; then
+              mv -v $file ${KIIN_TRASH}/`basename $file`
             else
               cnt=1
-              while [ -f $KIIN_HOME/trash/`basename $file`.$cnt ]; do
+              while [ -f ${KIIN_TRASH}/`basename $file`.$cnt ]; do
                 let cnt=$cnt+1
               done
-              mv -v $file $KIIN_HOME/trash/`basename $file`.$cnt
+              mv -v $file ${KIIN_TRASH}/`basename $file`.$cnt
             fi
           fi
         fi
