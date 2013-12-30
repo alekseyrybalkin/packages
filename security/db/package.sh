@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=db
-pkgver=5.3.21
+pkgver=5.3.28
 urls="http://download.oracle.com/berkeley-db/db-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

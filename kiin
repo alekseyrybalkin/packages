@@ -969,7 +969,6 @@ if [ $1 == 'check-updates' ]; then
     [[ $package = 'nss' ]] && [[ $version = '3.14.1' ]] && version='3.14.1.1.93'
     [[ $package = 'net-tools' ]] && [[ $version = '1.60+' ]] && version='1.60.20130531git'
     [[ $package = 'ruby' ]] && [[ $version = '2.0.0.p353' ]] && version='2.0.0_p353'
-    [[ $package = 'db' ]] && [[ $version = '5.3.21' ]] && version='6.0.20'
     [[ $package = 'inetutils' ]] && [[ $version = '1.9.1' ]] && version='1.9.1.341'
     [[ $package = 'winetricks' ]] && [[ $version = '2013' ]] && version='20130707'
     [[ $package = 'mpfr' ]] && [[ $version = '3.1.2' ]] && version='3.1.2.p5'
