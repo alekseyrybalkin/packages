@@ -13,6 +13,7 @@ kiin_make() {
   sed -i -e '2,55d' util/pod2mantest
   if [ -z "$KIIN_LIB32" ]; then
     ./config --prefix=/usr \
+      --libdir=lib \
       zlib-dynamic \
       --openssldir=/etc/ssl \
       shared

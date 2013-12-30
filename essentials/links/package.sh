@@ -11,7 +11,7 @@ check_server=1
 ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --mandir=/usr/share/man
   make
 }
 

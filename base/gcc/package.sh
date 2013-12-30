@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
   # --disable-install-libiberty does not work as of now
   sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in
   # do not use AVX
@@ -16,6 +17,7 @@ kiin_make() {
   cd gcc-build
   ../configure --prefix=/usr \
     --libexecdir=/usr/lib \
+    --libdir=/usr/lib \
     --enable-shared \
     --enable-threads=posix \
     --enable-__cxa_atexit \
@@ -34,6 +36,6 @@ kiin_install() {
   ln -sv ../bin/cpp ${pkgdir}/usr/lib
   ln -sv gcc ${pkgdir}/usr/bin/cc
   mkdir -pv ${pkgdir}/usr/share/gdb/auto-load/usr/lib
-  mv -v ${pkgdir}/usr/lib64/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
+  mv -v ${pkgdir}/usr/lib/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
   rm -v ${pkgdir}/usr/lib32/*gdb.py
 }

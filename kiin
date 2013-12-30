@@ -324,7 +324,6 @@ install_exit_status=${PIPESTATUS[0]}
 if [ ${install_exit_status} -gt 0 ]; then
   exit ${install_exit_status}
 fi
-fix_symlinks.py
 
 # remove trash from lib32 version
 if [ -n "$KIIN_LIB32" ]; then

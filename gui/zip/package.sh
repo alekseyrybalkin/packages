@@ -11,5 +11,7 @@ kiin_make() {
 }
 
 kiin_install() {
-  make prefix=${pkgdir}/usr -f unix/Makefile install
+  make prefix=${pkgdir}/usr \
+    MANDIR=${pkgdir}/usr/share/man/man1 \
+    -f unix/Makefile install
 }

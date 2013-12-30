@@ -9,7 +9,10 @@ check_server=1
 . ${KIIN_HOME}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr --with-readline
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man \
+    --infodir=/usr/share/info \
+    --with-readline
   make
 }
 
