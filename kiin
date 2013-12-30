@@ -683,7 +683,7 @@ if [ $1 == 'upgrade' ]; then
     fi
     # the only place with overwriting
     cp -avf $prototype ${file}.kiin
-    $KIIN_HOME/_kiin-rename ${file}.kiin $file
+    mv -T ${file}.kiin $file
   done
   # remove old files
   for file in `kiin db-list-files $package-$old_version`; do
