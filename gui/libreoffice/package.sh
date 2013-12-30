@@ -16,9 +16,9 @@ majorver_grep="^[0-9]+\.[0-9]+\.[0-9]+/?$"
 
 kiin_make() {
   install -dm755 src
-  tar -xf ../libreoffice-dictionaries-${pkgver}.tar.xz --no-overwrite-dir --strip-components=1
-  ln -sv ../../libreoffice-dictionaries-${pkgver}.tar.xz src/
-  ln -sv ../../libreoffice-help-${pkgver}.tar.xz src/
+  tar -xf ${KIIN_HOME}/tarballs/libreoffice-dictionaries-${pkgver}.tar.xz --no-overwrite-dir --strip-components=1
+  ln -sv ${KIIN_HOME}/tarballs/libreoffice-dictionaries-${pkgver}.tar.xz src/
+  ln -sv ${KIIN_HOME}/tarballs/libreoffice-help-${pkgver}.tar.xz src/
   sed -e "/gzip -f/d" \
     -e "s|.1.gz|.1|g" \
     -i bin/distro-install-desktop-integration

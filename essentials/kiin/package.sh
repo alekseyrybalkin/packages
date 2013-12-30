@@ -2,7 +2,7 @@
 
 pkgname=kiin
 vcs="git"
-gittag=v1.0.0
+gittag=master
 pkgver=1.0.0
 srcdir=${location}/${pkgname}-${pkgver}
 

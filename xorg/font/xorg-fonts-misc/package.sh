@@ -21,7 +21,9 @@ urls="${url}/releases/individual/font/font-arabic-misc-${pkgver}.tar.bz2 \
 kiin_make() {
   mkdir build
   cd build
-  for i in ../*.bz2; do
+  for i in ${KIIN_HOME}/tarballs/font-{arabic,cursor,daewoo,dec,isas,jis,micro,mutt,sony,sun}-misc-${pkgver}.tar.bz2 \
+    ${KIIN_HOME}/tarballs/font-misc-misc-1.1.2.tar.bz2 \
+    ${KIIN_HOME}/tarballs/font-schumacher-misc-1.1.2.tar.bz2; do
     tar xvf $i
   done
   for dir in *; do

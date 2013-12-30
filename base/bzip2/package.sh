@@ -12,7 +12,7 @@ kiin_make() {
     sed -i "s|CC=gcc|CC=gcc -m32|" Makefile
     sed -i "s|CC=gcc|CC=gcc -m32|" Makefile-libbz2_so
   fi
-  patch -Np1 -i ../bzip2-${pkgver}-install_docs-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/bzip2-${pkgver}-install_docs-1.patch
   sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
   make -f Makefile-libbz2_so

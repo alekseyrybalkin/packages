@@ -75,7 +75,8 @@ kiin_install() {
   install -dv -m 0755 ${pkgdir}/var/mail
 
   # for kiin
-  mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,sources,server-listings}
+  mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,server-listings}
+  chown rybalkin:rybalkin ${pkgdir}/var/lib/kiin/{tarballs,sources,server-listings}
 
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog

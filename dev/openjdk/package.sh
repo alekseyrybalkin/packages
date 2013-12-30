@@ -32,14 +32,14 @@ urls="${_hgurl}/hotspot/archive/${HOTSPOT_CHANGESET}.tar.gz \
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cp ../${HOTSPOT_CHANGESET}.tar.gz .
-  cp ../${OPENJDK_CHANGESET}.tar.gz .
-  cp ../${CORBA_CHANGESET}.tar.gz .
-  cp ../${JAXP_CHANGESET}.tar.gz .
-  cp ../${JAXWS_CHANGESET}.tar.gz .
-  cp ../${JDK_CHANGESET}.tar.gz .
-  cp ../${LANGTOOLS_CHANGESET}.tar.gz .
-  patch -Np1 -i ../icedtea-2.3.3-fixed_paths-1.patch
+  cp ${KIIN_HOME}/tarballs/${HOTSPOT_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${OPENJDK_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${CORBA_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${JAXP_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${JAXWS_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${JDK_CHANGESET}.tar.gz .
+  cp ${KIIN_HOME}/tarballs/${LANGTOOLS_CHANGESET}.tar.gz .
+  patch -Np1 -i ${KIIN_HOME}/tarballs/icedtea-2.3.3-fixed_paths-1.patch
 
   unset JAVA_HOME
   unset _JAVA_OPTIONS

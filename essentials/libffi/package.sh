@@ -12,7 +12,7 @@ ver_grep="^${pkgname}-[^-rc]*\.tar\.${extension}$"
 urls="$urls http://www.linuxfromscratch.org/patches/blfs/svn/libffi-${pkgver}-includedir-1.patch"
 
 kiin_make() {
-  patch -Np1 -i ../libffi-${pkgver}-includedir-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/libffi-${pkgver}-includedir-1.patch
   ./configure --prefix=/usr \
     --disable-static \
     --libdir=$LIBDIR

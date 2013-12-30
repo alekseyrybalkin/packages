@@ -7,9 +7,9 @@ urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_
 
 kiin_make() {
   if [ -z "${KIIN_LIB32}" ]; then
-    sh NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
+    sh ${KIIN_HOME}/tarballs/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
   else
-    sh NVIDIA-Linux-x86-${pkgver}.run --extract-only
+    sh ${KIIN_HOME}/tarballs/NVIDIA-Linux-x86-${pkgver}.run --extract-only
   fi
 }
 

@@ -9,7 +9,7 @@ urls="http://archive.apache.org/dist/xmlbeans/binaries/xmlbeans-${xmlbeans_ver}.
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  tar xvf ../xmlbeans-${xmlbeans_ver}.tgz
+  tar xvf ${KIIN_HOME}/tarballs/xmlbeans-${xmlbeans_ver}.tgz
   ant -Dxbean.jar=xmlbeans-${xmlbeans_ver}/lib/xbean.jar \
     -Djsr173.jar=xmlbeans-${xmlbeans_ver}/lib/jsr173_1.0_api.jar \
     jar

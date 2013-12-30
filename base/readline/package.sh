@@ -10,7 +10,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   sed -i '/MV.*old/d' Makefile.in
   sed -i '/{OLDSUFF}/c:' support/shlib-install
-  patch -Np1 -i ../readline-${pkgver}-fixes-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/readline-${pkgver}-fixes-1.patch
   ./configure --prefix=/usr --libdir=/usr/lib
   make SHLIB_LIBS=-lncurses
 }

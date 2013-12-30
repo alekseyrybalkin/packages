@@ -9,7 +9,7 @@ srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../MesaLib-9.1.5-add_xdemos-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/MesaLib-9.1.5-add_xdemos-1.patch
   autoreconf -fi
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=$XORG_PREFIX \

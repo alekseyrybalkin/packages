@@ -96,7 +96,8 @@ case $1 in
 esac
 case $1 in
   "install" | "upgrade" | "uninstall" | "list-untracked" \
-    | "check-system-integrity" | "list-missing" | "who-uses-now")
+    | "check-system-integrity" | "list-missing" | "who-uses-now" \
+    | "gen-db")
     if [ `whoami` != 'root' ]; then
       echo "you must be root to run kiin $1"
       exit 1
@@ -150,12 +151,12 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
   if [ -n "$urls" ]; then
     for url in $urls; do
       if [ -z "${wget_set_filename}" ]; then
-        if [ ! -f "`basename $url`" ]; then
+        if [ ! -f "${KIIN_HOME}/tarballs/`basename $url`" ]; then
           echo "file `basename $url` not found."
           files_fail=1
         fi
       else
-        if [ ! -f "${wget_set_filename}" ]; then
+        if [ ! -f "${KIIN_HOME}/tarballs/${wget_set_filename}" ]; then
           echo "file ${wget_set_filename} not found."
           files_fail=1
         fi
@@ -165,26 +166,8 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
   for file in `ls`; do
     git ls-files $file --error-unmatch >/dev/null 2>&1
     if [ $? -ne 0 ]; then
-      in_urls=0
-      if [ -n "$urls" ]; then
-        for url in $urls; do
-          if [ -z "${wget_set_filename}" ]; then
-            if [ "$file" == `basename $url` ]; then
-              in_urls=1
-              break
-            fi
-          else
-            if [ "$file" == "${wget_set_filename}" ]; then
-              in_urls=1
-              break
-            fi
-          fi
-        done
-      fi
-      if [ $in_urls -eq 0 ]; then
-        echo "$file is untracked and not in urls"
-        files_fail=1
-      fi
+      echo "$file is untracked and not in urls"
+      files_fail=1
     fi
   done
   if [ $1 == "repeat-install" ]; then
@@ -198,32 +181,14 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
       for file in `ls`; do
         git ls-files $file --error-unmatch >/dev/null 2>&1
         if [ $? -ne 0 ]; then
-          in_urls=0
-          if [ -n "$urls" ]; then
-            for url in $urls; do
-              if [ -z "${wget_set_filename}" ]; then
-                if [ "$file" == `basename $url` ]; then
-                  in_urls=1
-                  break
-                fi
-              else
-                if [ "$file" == "${wget_set_filename}" ]; then
-                  in_urls=1
-                  break
-                fi
-              fi
+          if [ ! -f ${KIIN_TRASH}/`basename $file` ]; then
+            mv -v $file ${KIIN_TRASH}/`basename $file`
+          else
+            cnt=1
+            while [ -f ${KIIN_TRASH}/`basename $file`.$cnt ]; do
+              let cnt=$cnt+1
             done
-          fi
-          if [ $in_urls -eq 0 ]; then
-            if [ ! -f ${KIIN_TRASH}/`basename $file` ]; then
-              mv -v $file ${KIIN_TRASH}/`basename $file`
-            else
-              cnt=1
-              while [ -f ${KIIN_TRASH}/`basename $file`.$cnt ]; do
-                let cnt=$cnt+1
-              done
-              mv -v $file ${KIIN_TRASH}/`basename $file`.$cnt
-            fi
+            mv -v $file ${KIIN_TRASH}/`basename $file`.$cnt
           fi
         fi
       done
@@ -265,14 +230,14 @@ if [ $1 == "make" ] || [ $1 == "repeat-install" ]; then
     else
       if [[ ${srctar} ]]; then
         echo "unpacking ${srctar}..."
-        tar xf ${srctar}
+        tar xf ${KIIN_HOME}/tarballs/${srctar}
         if [[ ${srcdir} ]]; then
           cd ${srcdir}
         fi
       fi
       if [[ ${srczip} ]]; then
         echo "unpacking ${srczip}..."
-        unzip ${srczip}
+        unzip ${KIIN_HOME}/tarballs/${srczip}
         if [[ ${srcdir} ]]; then
           cd ${srcdir}
         fi
@@ -397,16 +362,16 @@ fi
 if [ $1 = "download" ]; then
   for url in $urls; do
     if [ -z "${wget_set_filename}" ]; then
-      if [ ! -f "`basename $url`" ]; then
+      if [ ! -f "${KIIN_HOME}/tarballs/`basename $url`" ]; then
         if [[ $url == *pciutils* ]]; then
-          wget --no-check-certificate $url
+          wget --no-check-certificate $url -O ${KIIN_HOME}/tarballs/`basename $url`
         else
-          wget $url
+          wget $url -O ${KIIN_HOME}/tarballs/`basename $url`
         fi
       fi
     else
-      if [ ! -f "${wget_set_filename}" ]; then
-        wget $url -O ${wget_set_filename}
+      if [ ! -f "${KIIN_HOME}/tarballs/${wget_set_filename}" ]; then
+        wget $url -O ${KIIN_HOME}/tarballs/${wget_set_filename}
       fi
     fi
   done
@@ -571,8 +536,8 @@ if [ $1 == 'install' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u ${PACMAN} mv -v $2 ${KIIN_HOME}/installed
-  sudo -u ${PACMAN} kiin gen-db
+  mv -v $2 ${KIIN_HOME}/installed
+  kiin gen-db
   if [ -f $tmpdir/package.sh ]; then
     grep -q "kiin_after_install" $tmpdir/package.sh
     if [ $? -eq 0 ]; then
@@ -708,10 +673,10 @@ if [ $1 == 'upgrade' ]; then
     recreate_info_dir
   fi
   cd $startdir
-  sudo -u ${PACMAN} mv -v ${KIIN_HOME}/installed/kiin.$package-$old_version.tar.xz \
+  mv -v ${KIIN_HOME}/installed/kiin.$package-$old_version.tar.xz \
     ${KIIN_HOME}/uninstalled
-  sudo -u ${PACMAN} mv -v $2 ${KIIN_HOME}/installed
-  sudo -u ${PACMAN} kiin gen-db
+  mv -v $2 ${KIIN_HOME}/installed
+  kiin gen-db
   # update hashsums for /boot partition
   case $package in
     "linux" | "grub" | "initramfs")
@@ -779,9 +744,9 @@ if [ $1 == 'uninstall' ]; then
   if [ $do_recreate_info_dir -eq 1 ]; then
     recreate_info_dir
   fi
-  sudo -u ${PACMAN} mv -v ${KIIN_HOME}/installed/kiin.$package.tar.xz \
+  mv -v ${KIIN_HOME}/installed/kiin.$package.tar.xz \
     ${KIIN_HOME}/uninstalled
-  sudo -u ${PACMAN} kiin gen-db
+  kiin gen-db
   echo "running ldconfig..."
   ldconfig
   exit 0

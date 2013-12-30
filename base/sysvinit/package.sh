@@ -8,7 +8,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../sysvinit-${pkgver}-consolidated-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/sysvinit-${pkgver}-consolidated-1.patch
   make -C src
 }
 

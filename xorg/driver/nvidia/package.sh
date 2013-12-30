@@ -7,7 +7,7 @@ urls="ftp://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_
 _modules_dir=`ls /lib/modules | tail -n 1`
 
 kiin_make() {
-  sh NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
+  sh ${KIIN_HOME}/tarballs/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run --extract-only
   cd NVIDIA-Linux-x86_64-${pkgver}-no-compat32/kernel
   make SYSSRC=/lib/modules/${_modules_dir}/build module
 }

@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   mkdir ${pkgname}-${pkgver}
   cd ${pkgname}-${pkgver}
-  unzip ../${pkgname}-${pkgver}.zip
+  unzip ${KIIN_HOME}/tarballs/${pkgname}-${pkgver}.zip
 }
 
 kiin_install() {

@@ -11,7 +11,7 @@ kiin_make() {
   CFLAGS="${CFLAGS} -mno-avx"
   CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
-  cp ../firefox-fixed-loading-icon.png \
+  cp ${KIIN_HOME}/tarballs/firefox-fixed-loading-icon.png \
     browser/themes/linux/tabbrowser/loading.png
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig

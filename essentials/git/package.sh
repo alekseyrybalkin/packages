@@ -17,7 +17,7 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  tar -xf ../${pkgname}-manpages-${pkgver}.tar.gz -C ${pkgdir}/usr/share/man \
+  tar -xf ${KIIN_HOME}/tarballs/${pkgname}-manpages-${pkgver}.tar.gz -C ${pkgdir}/usr/share/man \
     --no-same-owner --no-overwrite-dir
   find ${pkgdir} -name perllocal.pod -delete
   find ${pkgdir} -name .packlist -delete

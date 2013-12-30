@@ -217,11 +217,14 @@ done
 EOF
   chmod +x remove-expired-certs.sh
 
+  cp ${KIIN_HOME}/tarballs/certdata.txt .
+
   ./make-ca.sh
   ./remove-expired-certs.sh certs
   rm make-cert.pl
   rm make-ca.sh
   rm remove-expired-certs.sh
+  rm certdata.txt
 }
 
 kiin_install() {

@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   # Fix build with GCC 4.8 (patch from Debian)
-  patch -Np1 -i ../libmemcached-gcc-4.8.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/libmemcached-gcc-4.8.patch
   ./configure --prefix=/usr
   make
 }

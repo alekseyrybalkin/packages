@@ -10,7 +10,7 @@ srcdir=${location}/systemd-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  tar -xvf ../udev-lfs-${pkgver}-${udev_lfs_ver}.tar.bz2
+  tar -xvf ${KIIN_HOME}/tarballs/udev-lfs-${pkgver}-${udev_lfs_ver}.tar.bz2
   make -f udev-lfs-${pkgver}-${udev_lfs_ver}/Makefile.lfs
 }
 

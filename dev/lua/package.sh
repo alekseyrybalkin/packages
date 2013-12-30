@@ -8,7 +8,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -p1 -i ../liblua.so.patch
+  patch -p1 -i ${KIIN_HOME}/tarballs/liblua.so.patch
   export CFLAGS="$CFLAGS -fPIC"
   make MYCFLAGS="$CFLAGS" MYLDFLAGS="$LDFLAGS" linux
   sed "s/%VER%/${pkgver%.*}/g;s/%REL%/${pkgver}/g" ../lua.pc > lua.pc

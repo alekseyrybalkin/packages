@@ -11,7 +11,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ../nss-${patchver}-standalone-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/nss-${patchver}-standalone-1.patch
   cd nss
   make BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=/usr/include/nspr \

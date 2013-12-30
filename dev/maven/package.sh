@@ -9,7 +9,7 @@ srcdir=${location}/apache-maven-${pkgver}
 
 kiin_make() {
   echo "nothing to make..."
-  tar xvf ../settings.xml.tar.gz
+  tar xvf ${KIIN_HOME}/tarballs/settings.xml.tar.gz
   mv settings.xml conf
 }
 

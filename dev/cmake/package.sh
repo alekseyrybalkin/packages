@@ -18,7 +18,7 @@ majorver_seds() {
 urls="${urls} http://www.linuxfromscratch.org/patches/blfs/svn/cmake-${pkgver}-freetype-1.patch"
 
 kiin_make() {
-  patch -Np1 -i ../cmake-${pkgver}-freetype-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/cmake-${pkgver}-freetype-1.patch
   ./bootstrap --prefix=/usr \
     --system-libs \
     --mandir=/share/man \

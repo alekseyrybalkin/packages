@@ -14,7 +14,7 @@ srcdir=${location}/${pkgname}-4.2
 
 kiin_make() {
   for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
-    patch -Np0 -i ../bash42-$(printf "%03d" $p)
+    patch -Np0 -i ${KIIN_HOME}/tarballs/bash42-$(printf "%03d" $p)
   done
   ./configure --prefix=/usr \
               --htmldir=/usr/share/doc/bash \

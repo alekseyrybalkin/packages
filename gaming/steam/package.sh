@@ -8,7 +8,7 @@ srctar=${pkgname}_${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
 
 kiin_make() {
-  patch -Np1 -i ../steam_alsa_sdl_audiodriver.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/steam_alsa_sdl_audiodriver.patch
   echo "nothing to make..."
 }
 

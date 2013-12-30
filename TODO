@@ -1,5 +1,7 @@
 TODO LIST
 MAJOR/INTERESTING:
+- fix winetricks files
+- prevent uncontrolled growing of tarballs dir
 - repair libcap 2.23 [ https://sites.google.com/site/fullycapable ] and fakeroot build
 - sandboxing
 - systemd ?

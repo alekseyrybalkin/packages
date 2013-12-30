@@ -36,5 +36,5 @@ kiin_install() {
   done
   cp -av ${pkgdir}/boot/grub/locale/en@quot.mo ${pkgdir}/boot/grub/locale/en.mo
   mkdir ${pkgdir}/boot/grub/fonts
-  cp -av ../unicode.pf2 ${pkgdir}/boot/grub/fonts
+  cp -av ${KIIN_HOME}/tarballs/unicode.pf2 ${pkgdir}/boot/grub/fonts
 }
