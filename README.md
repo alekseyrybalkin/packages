@@ -1,6 +1,6 @@
 # kiin
 
-Package manager software (inspired by pacman of [Arch Linux](http://www.archlinux.org)) for my [LFS](http://www.linuxfromscratch.org)-based and very own GNU/Linux (running on Lenovo ThinkPad X131e).
+Package manager software (inspired by pacman of [Arch Linux](http://www.archlinux.org)) for my [LFS](http://www.linuxfromscratch.org)-based and very own GNU/Linux (running on Lenovo ThinkPad X131e at home and Lenovo ThinkPad X230 at work).
 
 Genesis of the name `kiin`:
 dovahkiin --> rybalkiin --> kiin
