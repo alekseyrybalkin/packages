@@ -4,11 +4,3 @@
 `find /var/kiin -name "kiin*xz" | grep -v installed`
 check if kiin `rebuild-world` looks into all folders under /var/kiin
 # check and update TODO
-PACKAGES=`kiin ls | wc -l`
-FILES=`find . -name package.sh | wc -l`
-LIB32=`kiin ls | grep lib32 | wc -l`
-let SUM=$FILES+$LIB32
-let SUM=$SUM+2
-if [ $SUM -ne $PACKAGES ]; then
-  echo "package.sh count mismatch"
-fi
