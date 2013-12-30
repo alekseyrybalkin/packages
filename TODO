@@ -1,5 +1,6 @@
 TODO LIST
 MAJOR/INTERESTING:
+- repair libcap 2.23 [ https://sites.google.com/site/fullycapable ] and fakeroot build
 - sandboxing
 - systemd ?
 - btrfs ? snaphosts as backups?
@@ -23,6 +24,7 @@ MAJOR/INTERESTING:
   and no auto-sudo for kiin
 
 NORMAL:
+- forbid installing plain files into /usr
 - get rid of fix_symlinks.py, all packages should put things in the right places without it
 - pull from upstream for /var/src/${pkgname} before building, fail gracefully without network/availability
   update git/svn/hg repositories once in a while
@@ -55,4 +57,4 @@ MINOR:
 - fix code downloaded from internets: gajim/firefox plugins
 - check for new tags in repositories?
 - implement kiin_after_uninstall
-- check package needness: prelink
+- check package needness: prelink, lcms
