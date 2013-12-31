@@ -8,7 +8,7 @@ _srcdir=${location}/${pkgname}${pkgver}
 
 kiin_make() {
   mkdir ${_srcdir}
-  tar xf ${_srctar} -C ${_srcdir}
+  tar xf ${KIIN_HOME}/tarballs/${_srctar} -C ${_srcdir}
   echo "nothing to make..."
 }
 
