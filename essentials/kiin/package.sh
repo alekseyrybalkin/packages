@@ -12,6 +12,6 @@ kiin_make() {
 
 kiin_install() {
   mkdir -p ${pkgdir}/{etc,usr/bin}
-  cp kiin kiin-db-manager.py ${pkgdir}/usr/bin
+  cp kiin kiin-utils.py ${pkgdir}/usr/bin
   cp kiin.conf.bash ${pkgdir}/etc
 }
