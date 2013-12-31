@@ -6,7 +6,7 @@ extension=gz
 folder="http://carlo17.home.xs4all.nl/${pkgname}/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr

@@ -6,7 +6,7 @@ extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   MAKEFLAGS=

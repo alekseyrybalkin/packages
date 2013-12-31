@@ -6,7 +6,7 @@ extension=bz2
 folder="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \

@@ -6,7 +6,7 @@ extension=gz
 folder="ftp://sourceware.org/pub/${pkgname}/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[^-rc]*\.tar\.${extension}$"
 urls="$urls http://www.linuxfromscratch.org/patches/blfs/svn/libffi-${pkgver}-includedir-1.patch"

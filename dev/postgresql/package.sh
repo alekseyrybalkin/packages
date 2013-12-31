@@ -6,7 +6,7 @@ extension=bz2
 folder="http://ftp.postgresql.org/pub/source/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 urls="${folder}v${pkgver}/${srctar}"
 ver_grep="^v[0-9\.]+$"

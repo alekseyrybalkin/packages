@@ -6,7 +6,7 @@ extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   rm -fv etc/standards.info

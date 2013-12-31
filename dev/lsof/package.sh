@@ -8,7 +8,7 @@ check_server=1
 
 srctar=${pkgname}_${pkgver}.tar.bz2
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 srcdir=${location}/${pkgname}_${pkgver}
 

@@ -6,7 +6,7 @@ extension=xz
 folder="http://ftp.midnight-commander.org/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   ./configure --prefix=/usr \

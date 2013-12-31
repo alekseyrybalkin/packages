@@ -9,7 +9,7 @@ check_server=1
 srctar=Python-${pkgver}.tar.${extension}
 srcdir=${location}/Python-${pkgver}
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 urls="${folder}${pkgver}/${srctar}"
 ver_grep="^2\.[0-9]+\.[0-9]+/$"

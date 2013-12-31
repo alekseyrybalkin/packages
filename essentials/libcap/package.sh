@@ -8,7 +8,7 @@ check_server=1
 
 srctar=${pkgname}2_${pkgver}.orig.tar.${extension}
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}2_.*\.orig\.tar\.${extension}$"
 ver_seds() {

@@ -6,7 +6,7 @@ extension=bz2
 folder="http://people.redhat.com/jakub/prelink/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 srcdir=${location}/${pkgname}
 

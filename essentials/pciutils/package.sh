@@ -6,7 +6,7 @@ extension=xz
 folder="https://ftp.kernel.org/pub/software/utils/${pkgname}/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   make PREFIX=/usr \

@@ -7,7 +7,7 @@ extension=gz
 major_folder="http://www.cmake.org/files/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 folder="${major_folder}v${majorver}/"
 urls="${folder}${srctar}"

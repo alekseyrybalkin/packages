@@ -7,7 +7,7 @@ extension=xz
 major_folder="http://download.documentfoundation.org/libreoffice/src/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 urls="${urls} \
   ${folder}libreoffice-dictionaries-${pkgver}.tar.xz \

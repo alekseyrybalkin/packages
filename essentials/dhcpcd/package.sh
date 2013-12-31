@@ -6,7 +6,7 @@ extension=bz2
 folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   ./configure --libexecdir=/usr/lib/dhcpcd \

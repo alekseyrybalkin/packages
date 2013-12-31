@@ -7,7 +7,7 @@ extension=gz
 major_folder="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 folder="${major_folder}ntp-${majorver}/"
 urls="${folder}${srctar}"

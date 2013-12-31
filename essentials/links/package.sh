@@ -6,7 +6,7 @@ extension=bz2
 folder="http://${pkgname}.twibright.com/download/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 

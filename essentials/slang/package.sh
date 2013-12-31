@@ -7,7 +7,7 @@ extension=bz2
 major_folder="ftp://space.mit.edu/pub/davis/slang/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 folder="${major_folder}v${majorver}/"
 urls="${folder}${srctar}"

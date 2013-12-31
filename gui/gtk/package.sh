@@ -10,7 +10,7 @@ check_server=1
 srctar=${pkgname}+-${pkgver}.tar.${extension}
 srcdir=${location}/${pkgname}+-${pkgver}
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 ver_grep="^${pkgname}\+-.*\.tar\.${extension}$"

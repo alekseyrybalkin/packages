@@ -6,7 +6,7 @@ extension=xz
 folder="http://webkitgtk.org/releases/"
 check_server=1
 
-. ${KIIN_HOME}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[0-9]\.[02468]\.[0-9]\.tar\.${extension}$"
 
