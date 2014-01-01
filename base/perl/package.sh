@@ -16,15 +16,10 @@ kiin_make() {
                     -Dman1dir=/usr/share/man/man1 \
                     -Dman3dir=/usr/share/man/man3 \
                     -Dpager="/usr/bin/less -isR"  \
-                    -Duseshrplib                  \
-                    -Dinstallprefix=${pkgdir}/usr
+                    -Duseshrplib
   make
 }
 
 kiin_install() {
-  make install
-  sed -i -e 's/\/var\/kiin\/base\/perl\/kiin-dest//g' \
-    ${pkgdir}/usr/lib/perl5/${pkgver}/x86_64-linux/Config_heavy.pl
-  sed -i -e 's/\/var\/kiin\/base\/perl\/kiin-dest//g' \
-    ${pkgdir}/usr/lib/perl5/${pkgver}/x86_64-linux/.packlist
+  make DESTDIR=${pkgdir} install
 }
