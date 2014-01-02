@@ -1,21 +1,18 @@
 #!/bin/sh
 
 pkgname=libcap
-pkgver=2.22
-extension=gz
-folder="http://ftp.de.debian.org/debian/pool/main/libc/${pkgname}2/"
+pkgver=2.23
+extension=xz
+folder="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/"
 check_server=1
-
-srctar=${pkgname}2_${pkgver}.orig.tar.${extension}
 
 . ${KIIN_REPO}/defaults.sh
 
-ver_grep="^${pkgname}2_.*\.orig\.tar\.${extension}$"
-ver_seds() {
-  sed -r "s/^${pkgname}2_//g" | sed -r "s/\.orig\.tar\.${extension}$//g"
-}
+urls="${urls} http://rybalkin.org/kiin-files/libcap-${pkgver}-header.patch"
 
 kiin_make() {
+  patch -p1 -i ${KIIN_HOME}/tarballs/libcap-${pkgver}-header.patch
+  sed -i "s#uapi/##" libcap/Makefile
   sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
   make
 }

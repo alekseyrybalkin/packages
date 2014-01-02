@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=acpi
-pkgver=1.6
+pkgver=1.7
 urls="http://downloads.sourceforge.net/acpiclient/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
