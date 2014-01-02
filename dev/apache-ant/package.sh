@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apache-ant
-pkgver=1.9.2
+pkgver=1.9.3
 extension=bz2
 folder="http://archive.apache.org/dist/ant/source/"
 check_server=1
