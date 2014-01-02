@@ -8,6 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
     --sysconfdir=/etc \
     --disable-static
   make

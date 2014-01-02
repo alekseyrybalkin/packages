@@ -1,5 +1,5 @@
 filesystem
-kiin-git
+kiin-configs
 kiin-known
 linux-api-headers
 glibc
@@ -97,13 +97,11 @@ openssh
 elfutils
 prelink
 dbus-core
-lib32-dbus-core
 glib
 lib32-glib
 slang
 mc
 links
-hdparm
 dhcpcd
 python2-virtualenv
 libevent
@@ -378,7 +376,6 @@ wireless_tools
 libnl
 wpa_supplicant
 ldns
-proxychains
 jdk
 jdk7
 maven
@@ -390,3 +387,4 @@ libmemcached
 perl-archive-zip
 libreoffice
 scrot
+kiin

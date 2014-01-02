@@ -11,5 +11,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+  make DESTDIR=${pkgdir} sbindir=/usr/bin install
 }

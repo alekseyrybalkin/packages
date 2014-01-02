@@ -8,6 +8,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
+  sed -i "s#/sbin#/bin#" Makefile
+  sed -i "s#/usr##" man/Makefile
   yes "" | make || :
 }
 
@@ -15,4 +17,5 @@ kiin_install() {
   MAKEFLAGS=
   make DESTDIR=${pkgdir}/usr update
   rm ${pkgdir}/usr/bin/*name
+  rm ${pkgdir}/usr/share/man/man1/hostname.1
 }
