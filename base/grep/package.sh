@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=grep
-pkgver=2.15
+pkgver=2.16
 urls="http://ftp.gnu.org/gnu/grep/grep-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
