@@ -42,3 +42,5 @@ kiin_install() {
   # Review the dhcpcd man page for switches to add to the DHCP_START
   # value.
 }
+
+known="etc/dhcpcd.duid"

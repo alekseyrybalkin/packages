@@ -29,3 +29,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/lib/pango/1.8.0/modules.cache"

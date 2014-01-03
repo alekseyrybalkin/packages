@@ -27,3 +27,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"

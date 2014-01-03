@@ -15,3 +15,5 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   make DESTDIR=${pkgdir} TEXMF=/usr/share/texmf install-tex
 }
+
+known="usr/share/info/dir"

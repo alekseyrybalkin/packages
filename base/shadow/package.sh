@@ -29,3 +29,13 @@ kiin_after_install() {
   pwconv
   grpconv
 }
+
+known="etc/group \
+  etc/gshadow- \
+  etc/shadow- \
+  etc/gshadow \
+  etc/passwd \
+  etc/shadow \
+  etc/.pwd.lock \
+  etc/passwd- \
+  etc/group-"

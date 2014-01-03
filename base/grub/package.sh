@@ -38,3 +38,6 @@ kiin_install() {
   mkdir ${pkgdir}/boot/grub/fonts
   cp -av ${KIIN_HOME}/tarballs/unicode.pf2 ${pkgdir}/boot/grub/fonts
 }
+
+known="boot/grub/i386-pc/core.img \
+  boot/grub/grubenv"

@@ -25,3 +25,5 @@ kiin_install() {
   rm -rf ${pkgdir}/dev
   rm -rf ${pkgdir}/tmp
 }
+
+known="etc/mtab.fuselock"

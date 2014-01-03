@@ -14,3 +14,5 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
 }
+
+known="usr/share/icons/hicolor/icon-theme.cache"

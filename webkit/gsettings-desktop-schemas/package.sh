@@ -27,3 +27,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/share/glib-2.0/schemas/gschemas.compiled"

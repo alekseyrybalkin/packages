@@ -43,3 +43,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="etc/machine-id"

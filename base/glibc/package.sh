@@ -71,3 +71,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/lib/locale/locale-archive"

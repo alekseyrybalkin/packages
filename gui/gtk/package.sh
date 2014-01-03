@@ -38,3 +38,5 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/lib/gtk-3.0/3.0.0/immodules.cache"

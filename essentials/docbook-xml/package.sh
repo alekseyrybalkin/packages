@@ -115,3 +115,6 @@ kiin_after_install() {
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="etc/xml/docbook \
+  etc/xml/catalog"
