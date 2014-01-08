@@ -10,7 +10,6 @@ kiin_make() {
   rm -rf .git
   find . -type f | xargs sed -i -e "s/%KIIN_HOSTNAME%/`hostname`/g"
   if [ "`hostname`" == "snowden" ]; then
-    sed -i -e "s/#clientid/clientid/g" etc/dhcpcd.conf
     echo "domain pyn.ru
 search pyn.ru
 nameserver 94.124.205.83
