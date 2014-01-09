@@ -2,8 +2,8 @@
 
 pkgname=vim
 vcs="mercurial"
-hgtag="f6940759212d"
-pkgver=7.4.86
+hgtag="bc19475ed196"
+pkgver=7.4.135
 srcdir=${location}/${pkgname}74
 
 kiin_make() {

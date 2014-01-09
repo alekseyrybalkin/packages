@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=memcached
-pkgver=1.4.15
-urls="http://memcached.googlecode.com/files/${pkgname}-${pkgver}.tar.gz"
+pkgver=1.4.17
+urls="http://www.memcached.org/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
