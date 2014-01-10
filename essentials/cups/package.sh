@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cups
-pkgver=1.7.0
+pkgver=1.7.1
 urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
 srctar=cups-${pkgver}-source.tar.bz2
 srcdir=${location}/cups-${pkgver}

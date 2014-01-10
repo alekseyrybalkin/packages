@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glfw
-pkgver=3.0.3
+pkgver=3.0.4
 urls="http://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
