@@ -2,7 +2,7 @@
 
 pkgname=grub
 pkgver=2.00
-arch_version_exception="2.00.5043"
+ARCH_VERSION=2.02.beta2
 urls="http://ftp.gnu.org/gnu/grub/grub-${pkgver}.tar.xz \
   http://rybalkin.org/kiin-files/unicode.pf2"
 srctar=${pkgname}-${pkgver}.tar.xz

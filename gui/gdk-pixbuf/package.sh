@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=gdk-pixbuf
+ARCH_NAME=gdk-pixbuf2
 majorver=2.30
 pkgver=${majorver}.2
 extension=xz

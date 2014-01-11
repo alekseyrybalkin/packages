@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python2-pyasn1
+ARCH_NAME=python-pyasn1
 pkgver=0.1.7
 urls="http://downloads.sourceforge.net/sourceforge/pyasn1/pyasn1-${pkgver}.tar.gz"
 srctar=pyasn1-${pkgver}.tar.gz

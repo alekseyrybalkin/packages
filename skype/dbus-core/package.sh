@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=dbus-core
+ARCH_NAME=dbus
 pkgver=1.6.18
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz

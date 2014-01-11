@@ -2,6 +2,7 @@
 
 pkgname=readline
 pkgver=6.2
+ARCH_VERSION=6.2.004
 urls="http://ftp.gnu.org/gnu/readline/readline-${pkgver}.tar.gz \
   http://www.linuxfromscratch.org/patches/lfs/development/readline-${pkgver}-fixes-1.patch"
 srctar=${pkgname}-${pkgver}.tar.gz

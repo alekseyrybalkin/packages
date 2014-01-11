@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=jdk7
+SKIP_ARCH_CHECK=1
 pkgver=1.7.0_25
 urls="somethere/jdk-7u25-linux-x64.tar.gz"
 srctar=jdk-7u25-linux-x64.tar.gz

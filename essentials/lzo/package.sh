@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=lzo
+ARCH_NAME=lzo2
 pkgver=2.06
 extension=gz
 folder="http://www.oberhumer.com/opensource/${pkgname}/download/"

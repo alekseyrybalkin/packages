@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=freeglut
+ARCH_NAME_LIB32=freeglut
 pkgver=2.8.1
 urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz

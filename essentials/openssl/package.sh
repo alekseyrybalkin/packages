@@ -2,6 +2,7 @@
 
 pkgname=openssl
 pkgver=1.0.1f
+ARCH_VERSION=1.0.1.f
 extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1

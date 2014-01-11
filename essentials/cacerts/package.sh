@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=cacerts
+SKIP_ARCH_CHECK=1
 pkgver=20121229
 urls="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt?raw=1"
 wget_set_filename=certdata.txt

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=sysvinit
+SKIP_ARCH_CHECK=1
 pkgver=2.88dsf
 urls="http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/lfs/development/sysvinit-${pkgver}-consolidated-1.patch"

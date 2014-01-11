@@ -2,6 +2,7 @@
 
 pkgname=inetutils
 pkgver=1.9.1
+ARCH_VERSION=1.9.1.341
 urls="http://ftp.gnu.org/gnu/inetutils/inetutils-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

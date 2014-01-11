@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=vlock
+SKIP_ARCH_CHECK=1
 pkgver=2.2.3
 urls="http://rybalkin.org/kiin-files/vlock-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2

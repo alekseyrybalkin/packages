@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=procps
+ARCH_NAME=procps-ng
 vcs="git"
 gittag=v3.3.9
 pkgver=3.3.9

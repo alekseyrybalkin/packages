@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=linux
+SKIP_ARCH_CHECK=1
 git_pkgname=linux-stable
 vcs="git"
 gittag=v3.12.7

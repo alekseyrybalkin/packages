@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=linux-firmware
+SKIP_ARCH_CHECK=1
 vcs="git"
 gittag=2892af06dc38a764938f0583a2eac30595108799
 pkgver=1

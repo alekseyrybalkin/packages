@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=openjdk
+ACRH_NAME=java7-openjdk
 vcs="mercurial"
 hg_pkgname=icedtea7-2.4
 _icedtea_ver=2.4.3

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=ttf-win7-fonts
+SKIP_ARCH_CHECK=1
 pkgver=7.1
 urls="got-from-windows7-installation/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz

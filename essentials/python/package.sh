@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python
+ARCH_NAME=python2
 pkgver=2.7.6
 extension=xz
 folder="http://www.python.org/ftp/${pkgname}/"

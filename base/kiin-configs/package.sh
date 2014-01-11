@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=kiin-configs
+SKIP_ARCH_CHECK=1
 vcs="git"
 gittag=master
 pkgver=1

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=glib
+ARCH_NAME=glib2
 majorver=2.38
 pkgver=${majorver}.2
 extension=xz

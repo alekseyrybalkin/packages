@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python2-gobject2
+ARCH_NAME=pygobject2
 pkgver=2.28.6
 urls="http://ftp.gnome.org/pub/gnome/sources/pygobject/${pkgver%.*}/pygobject-${pkgver}.tar.xz"
 srctar=pygobject-${pkgver}.tar.xz

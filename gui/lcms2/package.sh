@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=lcms2
+ARCH_NAME_LIB32=lcms2
 pkgver=2.5
 urls="http://downloads.sourceforge.net/lcms/lcms2-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=gtk
+ARCH_NAME=gtk3
 majorver=3.10
 pkgver=${majorver}.6
 extension=xz
