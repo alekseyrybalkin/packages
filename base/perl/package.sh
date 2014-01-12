@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl
-pkgver=5.18.1
+pkgver=5.18.2
 urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
