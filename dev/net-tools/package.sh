@@ -19,4 +19,5 @@ kiin_install() {
   make DESTDIR=${pkgdir}/usr update
   rm ${pkgdir}/usr/bin/*name
   rm ${pkgdir}/usr/share/man/man1/hostname.1
+  rm ${pkgdir}/usr/share/man/man1/dnsdomainname.1
 }
