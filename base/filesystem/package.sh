@@ -25,8 +25,6 @@ kiin_install() {
   ln -sv usr/bin ${pkgdir}/sbin
   ln -sv bin ${pkgdir}/usr/sbin
 
-  ln -sv share/{man,doc,info} ${pkgdir}/usr
-
   ln -sv usr/lib ${pkgdir}/lib
   ln -sv usr/lib ${pkgdir}/lib64
   ln -sv lib ${pkgdir}/usr/lib64
