@@ -85,8 +85,6 @@ git
 mercurial
 sudo
 openssh
-elfutils
-prelink
 dbus-core
 glib
 slang

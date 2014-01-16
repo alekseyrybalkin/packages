@@ -19,6 +19,7 @@ kiin_make() {
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
               --with-pcre=system \
+              --disable-libelf \
               --libdir=$LIBDIR
   make
 }
