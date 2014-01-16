@@ -12,8 +12,8 @@ kiin_make() {
 }
 
 kiin_install() {
-  mkdir -p ${pkgdir}/{etc,usr/bin}
+  mkdir -p ${pkgdir}/{etc,usr/bin,usr/lib/kiin}
   cp kiin.bash ${pkgdir}/usr/bin/kiin
-  cp kiin-utils.py ${pkgdir}/usr/bin
+  cp kiin-utils.py ${pkgdir}/usr/lib/kiin
   cp kiin.conf.bash ${pkgdir}/etc
 }
