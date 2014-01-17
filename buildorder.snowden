@@ -93,8 +93,6 @@ git
 mercurial
 sudo
 openssh
-elfutils
-prelink
 dbus-core
 lib32-dbus-core
 glib
@@ -300,7 +298,6 @@ hicolor-icon-theme
 gajim
 desktop-file-utils
 giflib
-lcms
 lcms2
 miniupnpc
 transmission
