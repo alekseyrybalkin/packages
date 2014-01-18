@@ -8,7 +8,6 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' lib/stdio.in.h
   ./configure --prefix=/usr \
       --libexecdir=/usr/bin \
       --localstatedir=/var \
