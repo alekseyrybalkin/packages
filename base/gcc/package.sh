@@ -8,8 +8,6 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
-  # --disable-install-libiberty does not work as of now
-  sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in
   # do not use AVX
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
   sed -i -e 's/#ifdef HAVE_AS_AVX/#if defined(HAVE_AS_AVX) \&\& defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
@@ -17,7 +15,7 @@ kiin_make() {
   sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
   mkdir -v gcc-build
   cd gcc-build
-  ../configure --prefix=/usr \
+  SED=sed ../configure --prefix=/usr \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
     --enable-shared \
@@ -27,7 +25,6 @@ kiin_make() {
     --enable-languages=c,c++ \
     --enable-multilib \
     --disable-bootstrap \
-    --disable-install-libiberty \
     --with-system-zlib
   make
 }
