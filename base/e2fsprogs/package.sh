@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=e2fsprogs
-pkgver=1.42.8
+pkgver=1.42.9
 urls=" http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
