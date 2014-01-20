@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libwebp
-pkgver=0.3.1
+pkgver=0.4.0
 urls="http://webp.googlecode.com/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

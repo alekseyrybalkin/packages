@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ldns
-pkgver=1.6.16
+pkgver=1.6.17
 urls="http://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=gnutls
-pkgver=3.2.8
+pkgver=3.2.8.1
 urls="ftp://ftp.gnutls.org/gcrypt/gnutls/v3.2/gnutls-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
+srcdir=${location}/${pkgname}-3.2.8
 
 kiin_make() {
   ./configure --prefix=/usr \

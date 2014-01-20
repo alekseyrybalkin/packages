@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=itstool
-pkgver=2.0.0
+pkgver=2.0.2
 urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
