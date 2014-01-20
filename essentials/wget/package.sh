@@ -7,7 +7,6 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e 's/COMMENT_IF_NO_POD2MAN=$/COMMENT_IF_NO_POD2MAN="# "/g' configure
   ./configure --prefix=/usr      \
               --sysconfdir=/etc  \
               --with-ssl=openssl
