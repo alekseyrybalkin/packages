@@ -2,7 +2,7 @@
 
 pkgname=dbus-core
 ARCH_NAME=dbus
-pkgver=1.6.18
+pkgver=1.8.0
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz
 srcdir=${location}/dbus-${pkgver}
