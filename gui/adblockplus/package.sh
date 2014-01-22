@@ -8,7 +8,7 @@ pkgver=2.4.1
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  python build.py build
+  python build.py build -r
 }
 
 kiin_install() {
