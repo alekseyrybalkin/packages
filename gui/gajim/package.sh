@@ -13,4 +13,5 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  rm -rf ${pkgdir}/usr/share/gajim/plugins/*
 }
