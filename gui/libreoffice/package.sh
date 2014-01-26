@@ -2,7 +2,7 @@
 
 pkgname=libreoffice
 majorver=4.2.0
-pkgver=${majorver}.2
+pkgver=${majorver}.3
 extension=xz
 major_folder="http://download.documentfoundation.org/libreoffice/src/"
 check_server=1
