@@ -9,6 +9,9 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  sed -e '/#include <sys\/capability.h>/ d' \
+    -e '/#include "virtio-9p-marshal.h"/ i#include <sys\/capability.h>' \
+    -i fsdev/virtfs-proxy-helper.c
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --libexecdir=/usr/lib/qemu \
