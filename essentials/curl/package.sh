@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.34.0
+pkgver=7.35.0
 extension=bz2
 folder="http://${pkgname}.haxx.se/download/"
 check_server=1
