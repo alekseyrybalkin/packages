@@ -2,6 +2,7 @@
 
 pkgname=wireless_tools
 pkgver=29
+ARCH_VERSION=30.pre9
 urls="http://hpl.hp.com/personal/Jean_Tourrilhes/Linux/${pkgname}.${pkgver}.tar.gz"
 srctar=${pkgname}.${pkgver}.tar.gz
 srcdir=${location}/${pkgname}.${pkgver}
