@@ -257,6 +257,7 @@ lib32-libjpeg-turbo
 freeglut
 glew
 glfw
+glm
 libtiff
 gdk-pixbuf
 icu
