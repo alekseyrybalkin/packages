@@ -2,7 +2,7 @@
 
 pkgname=python2-setuptools
 ARCH_NAME=python-setuptools
-pkgver=2.1
+pkgver=2.1.2
 urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.tar.gz"
 srctar=setuptools-${pkgver}.tar.gz
 srcdir=${location}/setuptools-${pkgver}
