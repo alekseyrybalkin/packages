@@ -239,6 +239,7 @@ freeglut
 glew
 glfw
 glm
+soil
 libtiff
 gdk-pixbuf
 icu
