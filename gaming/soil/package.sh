@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=soil
+SKIP_ARCH_CHECK=1
 pkgver=1.16
 urls="http://www.lonesock.net/files/soil.zip"
 srczip=${pkgname}.zip
