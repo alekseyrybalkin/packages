@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=27.0
+pkgver=27.0.1
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2 \
   http://rybalkin.org/kiin-files/firefox-fixed-loading-icon.png"
 srctar=${pkgname}-${pkgver}.source.tar.bz2

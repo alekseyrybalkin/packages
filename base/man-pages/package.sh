@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=man-pages
-pkgver=3.57
-urls="http://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.xz"
+pkgver=3.58
+urls="https://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 

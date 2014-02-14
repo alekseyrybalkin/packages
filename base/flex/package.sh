@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=flex
-pkgver=2.5.37
+pkgver=2.5.38
 urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-error
-pkgver=0.17021
+pkgver=0.17022
 urls="http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/Error-${pkgver}.tar.gz"
 srctar=Error-${pkgver}.tar.gz
 srcdir=${location}/Error-${pkgver}
