@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-archive-zip
-pkgver=1.36
+pkgver=1.37
 urls="http://search.cpan.org/CPAN/authors/id/P/PH/PHRED/Archive-Zip-${pkgver}.tar.gz"
 srctar=Archive-Zip-${pkgver}.tar.gz
 srcdir=${location}/Archive-Zip-${pkgver}
