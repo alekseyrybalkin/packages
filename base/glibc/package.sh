@@ -1,14 +1,12 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.18
+pkgver=2.19
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e 's/3\.\[89/4\.\[0/g' configure.in
-  sed -i -e 's/3\.\[89/4\.\[0/g' configure
   mkdir -v glibc-build
   cd glibc-build
   echo "sbindir=/usr/bin" >> configparms
@@ -18,7 +16,7 @@ kiin_make() {
     ../configure \
         --prefix=/usr \
         --disable-profile \
-        --enable-kernel=2.6.34 \
+        --enable-kernel=3.13.3 \
         --libexecdir=/usr/lib/glibc \
         --disable-nscd \
         --libdir=/usr/lib \
@@ -28,7 +26,7 @@ kiin_make() {
     ../configure \
         --prefix=/usr \
         --disable-profile \
-        --enable-kernel=2.6.25 \
+        --enable-kernel=3.13.3 \
         --libexecdir=/usr/lib32 \
         --disable-nscd \
         --libdir=/usr/lib32 \
