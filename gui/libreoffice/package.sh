@@ -5,7 +5,7 @@ majorver=4.2.0
 pkgver=${majorver}.4
 extension=xz
 major_folder="http://download.documentfoundation.org/libreoffice/src/"
-check_server=1
+#check_server=1
 
 . ${KIIN_REPO}/defaults.sh
 
