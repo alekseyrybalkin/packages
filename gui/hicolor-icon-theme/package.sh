@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=hicolor-icon-theme
-pkgver=0.12
+pkgver=0.13
 urls="http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
