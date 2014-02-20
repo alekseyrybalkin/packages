@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=libreoffice
-majorver=4.2.0
-pkgver=${majorver}.4
+majorver=4.2.1
+pkgver=${majorver}.1
 extension=xz
 major_folder="http://download.documentfoundation.org/libreoffice/src/"
 #check_server=1
