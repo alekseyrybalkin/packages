@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=kmod
+ARCH_NAME_LIB32=kmod
 pkgver=16
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
