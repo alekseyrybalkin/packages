@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

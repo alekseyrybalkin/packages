@@ -8,10 +8,10 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
-              --libdir=/usr/lib \
               --sysconfdir=/etc \
               --with-xz \
-              --with-zlib
+              --with-zlib \
+              --libdir=${LIBDIR}
   make
 }
 
@@ -21,4 +21,8 @@ kiin_install() {
     ln -sv kmod ${pkgdir}/usr/bin/${target}
   done
   ln -sv kmod ${pkgdir}/usr/bin/lsmod
+  if [ -n "${KIIN_LIB32}" ]; then
+    mv ${pkgdir}/usr/lib/* ${pkgdir}/usr/lib32
+    rm -rf ${pkgdir}/usr/lib
+  fi
 }

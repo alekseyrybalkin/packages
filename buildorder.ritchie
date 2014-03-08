@@ -5,6 +5,7 @@ glibc
 lib32-glibc
 tzdata
 zlib
+lib32-zlib
 binutils
 man-pages
 file
@@ -18,6 +19,7 @@ pkg-config
 ncurses
 shadow
 util-linux
+lib32-util-linux
 psmisc
 procps
 e2fsprogs
@@ -41,6 +43,7 @@ diffutils
 gawk
 findutils
 xz
+lib32-xz
 gettext
 groff
 grub
@@ -51,6 +54,7 @@ iproute2
 check
 kbd
 kmod
+lib32-kmod
 libpipeline
 make
 man-db
@@ -60,6 +64,7 @@ sysvinit
 tar
 texinfo
 udev
+lib32-udev
 vim
 bc
 linux
@@ -183,6 +188,7 @@ libpciaccess
 lib32-libpciaccess
 libxkbfile
 libxshmfence
+lib32-libxshmfence
 python2-sh
 xcb-util
 libdrm

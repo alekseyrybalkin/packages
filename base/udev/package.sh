@@ -12,6 +12,9 @@ srcdir=${location}/systemd-${pkgver}
 kiin_make() {
   MAKEFLAGS=
   tar -xvf ${KIIN_HOME}/tarballs/udev-lfs-${pkgver}-${udev_lfs_ver}.tar.bz2
+  if [ -n "${KIIN_LIB32}" ]; then
+    sed -i -e 's/gcc/gcc\ -m32/g' udev-lfs-${pkgver}-${udev_lfs_ver}/Makefile.lfs
+  fi
   make -f udev-lfs-${pkgver}-${udev_lfs_ver}/Makefile.lfs
 }
 
@@ -26,6 +29,9 @@ kiin_install() {
   rm ${pkgdir}/usr/lib/libudev.so
   ln -sv `readlink ${pkgdir}/usr/lib/libudev.so.*` \
     ${pkgdir}/usr/lib/libudev.so
+  if [ -n "${KIIN_LIB32}" ]; then
+    mv ${pkgdir}/usr/lib{,32}
+  fi
 }
 
 kiin_after_install() {

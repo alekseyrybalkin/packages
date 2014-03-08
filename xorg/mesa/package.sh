@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=10.0
-pkgver=${majorver}.3
-urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
+majorver=10.1
+pkgver=${majorver}.0
+urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${majorver}/MesaLib-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-9.1.5-add_xdemos-1.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
 srcdir=${location}/Mesa-${pkgver}
@@ -32,12 +32,13 @@ kiin_make() {
     make
     make -C xdemos DEMOS_PREFIX=/usr
   else
-    sed -i -e "s/libudev/libudevfail/g" configure
-    sed -i -e "s/libudev/libudevfail/g" configure.ac
     ./configure --prefix=$XORG_PREFIX \
       --sysconfdir=/etc \
       --with-gallium-drivers='' \
       --with-dri-drivers='i965' \
+      --enable-egl \
+      --enable-gbm \
+      --with-egl-platforms=x11,drm \
       --enable-shared-glapi \
       --enable-glx-tls \
       --enable-dri \
@@ -48,8 +49,6 @@ kiin_make() {
       --enable-texture-float \
       --enable-shared-dricore \
       --without-nouveau \
-      --disable-egl \
-      --disable-gbm \
       --enable-32-bit \
       --with-dri-driverdir=/usr/lib32/xorg/modules/dri \
       --libdir=/usr/lib32
