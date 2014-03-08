@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=cryptsetup
-pkgver=1.6.3
-urls="http://cryptsetup.googlecode.com/files/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=1.6.4
+urls="https://www.kernel.org/pub/linux/utils/${pkgname}/v1.6/${pkgname}-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

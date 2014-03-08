@@ -3,7 +3,7 @@
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
 majorver=2.30
-pkgver=${majorver}.5
+pkgver=${majorver}.6
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

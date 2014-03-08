@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=subversion
-pkgver=1.8.5
+pkgver=1.8.8
 extension=bz2
-folder="http://archive.apache.org/dist/${pkgname}/"
+folder="http://www.apache.org/dist/${pkgname}/"
 check_server=1
 
 . ${KIIN_REPO}/defaults.sh

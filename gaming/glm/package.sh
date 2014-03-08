@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glm
-pkgver=0.9.5.1
+pkgver=0.9.5.2
 urls="http://sourceforge.net/projects/ogl-math/files/glm-${pkgver}/glm-${pkgver}.zip"
 srczip=${pkgname}-${pkgver}.zip
 srcdir=${location}/${pkgname}
