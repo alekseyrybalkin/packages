@@ -11,7 +11,7 @@ check_server=1
 
 folder="${major_folder}v${majorver}/"
 urls="${folder}${srctar}"
-majorver_grep="^v[0-9]+\.[0-9]+/?$"
+majorver_grep="^v2\.[0-9]+/?$"
 majorver_seds() {
   sed -r "s/\///g" | sed -r "s/^v//g"
 }
