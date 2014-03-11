@@ -11,7 +11,11 @@ kiin_make() {
     -i modules.cfg
   sed -e "/#.*.SUBPIXEL/s@/\* @@" -e "/#.*.SUBPIXEL/s@ \*/@@" \
     -i include/config/ftoption.h
-  ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+  if [ -z "${KIIN_LIB32}" ]; then
+    ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+  else
+    ./configure --prefix=/usr --disable-static --with-harfbuzz=no --libdir=$LIBDIR
+  fi
   make
 }
 
