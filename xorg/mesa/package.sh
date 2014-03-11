@@ -22,6 +22,7 @@ kiin_make() {
       --enable-shared-glapi \
       --enable-glx-tls \
       --enable-dri \
+      --enable-dri3 \
       --enable-glx \
       --enable-osmesa \
       --enable-gles1 \
@@ -42,6 +43,7 @@ kiin_make() {
       --enable-shared-glapi \
       --enable-glx-tls \
       --enable-dri \
+      --enable-dri3 \
       --enable-glx \
       --enable-osmesa \
       --enable-gles1 \
