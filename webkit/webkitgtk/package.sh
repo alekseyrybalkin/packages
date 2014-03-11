@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=webkitgtk
-pkgver=2.2.4
+pkgver=2.2.5
 extension=xz
 folder="http://webkitgtk.org/releases/"
 check_server=1
