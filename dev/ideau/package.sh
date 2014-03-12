@@ -2,6 +2,7 @@
 
 pkgname=ideau
 ARCH_NAME=intellij-idea-community-edition
+SKIP_ARCH_CHECK=1
 pkgver=12.1.6
 _pkgver=129.1359
 urls="http://download.jetbrains.com/idea/ideaIU-${pkgver}.tar.gz"
