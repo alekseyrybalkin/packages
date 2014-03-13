@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.5.22
-urls="ftp://ftp.mutt.org/mutt/devel/mutt-${pkgver}.tar.gz"
+pkgver=1.5.23
+urls="ftp://ftp.mutt.org/mutt/mutt-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
