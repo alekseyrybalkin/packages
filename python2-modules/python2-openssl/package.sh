@@ -2,7 +2,7 @@
 
 pkgname=python2-openssl
 ARCH_NAME=pyopenssl
-pkgver=0.14
+pkgver=0.13.1
 urls="http://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-${pkgver}.tar.gz"
 srctar=pyOpenSSL-${pkgver}.tar.gz
 srcdir=${location}/pyOpenSSL-${pkgver}
