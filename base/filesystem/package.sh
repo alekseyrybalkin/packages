@@ -79,6 +79,7 @@ kiin_install() {
 
   # for glhack
   mkdir -pv ${pkgdir}/var/games/glhack/save
+  touch ${pkgdir}/var/games/glhack/{logfile,perm}
   chown -R gamer:gamer ${pkgdir}/var/games/glhack
 
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
