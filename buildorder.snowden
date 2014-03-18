@@ -65,8 +65,8 @@ sysklogd
 sysvinit
 tar
 texinfo
-udev
-lib32-udev
+eudev
+lib32-eudev
 vim
 bc
 linux

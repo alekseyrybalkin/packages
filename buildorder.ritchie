@@ -59,7 +59,7 @@ sysklogd
 sysvinit
 tar
 texinfo
-udev
+eudev
 vim
 bc
 linux
