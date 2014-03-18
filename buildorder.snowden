@@ -115,7 +115,6 @@ libogg
 libvorbis
 openal
 sdl
-sdl2
 mpg123
 flac
 audiofile
