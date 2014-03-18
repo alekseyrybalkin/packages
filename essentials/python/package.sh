@@ -4,7 +4,7 @@ pkgname=python
 ARCH_NAME=python2
 pkgver=2.7.6
 extension=xz
-folder="http://www.python.org/ftp/${pkgname}/"
+folder="http://legacy.python.org/ftp/${pkgname}/"
 check_server=1
 
 srctar=Python-${pkgver}.tar.${extension}
