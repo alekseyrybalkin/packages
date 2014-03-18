@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=serf
-pkgver=1.3.3
+pkgver=1.3.4
 _sover=1.3.0
 urls="https://serf.googlecode.com/files/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
@@ -11,7 +11,6 @@ kiin_make() {
   sed -i "/Append/s:RPATH=libdir,::" SConstruct
   sed -i "/Default/s:lib_static,::" SConstruct
   sed -i "/Alias/s:install_static,::" SConstruct
-  sed -i '/get.*_LIBS/s:)):, '\'\''&:' SConstruct
   scons PREFIX=/usr
 }
 
