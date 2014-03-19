@@ -36,15 +36,19 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/lib/udev/rules.d
   mkdir -pv ${pkgdir}/etc/udev/rules.d
   make DESTDIR=${pkgdir} install
-  rm -rf ${pkgdir}/usr/lib/udev/rules.d
-  mv ${pkgdir}/lib/udev/* ${pkgdir}/usr/lib/udev/
+  if [ -z "${KIIN_LIB32}" ]; then
+    rm -rf ${pkgdir}/usr/lib/udev/rules.d
+    mv ${pkgdir}/lib/udev/* ${pkgdir}/usr/lib/udev/
+
+    mv ${pkgdir}/usr/share/pkgconfig/* ${pkgdir}/usr/lib/pkgconfig
+    rm -rf ${pkgdir}/usr/share/pkgconfig
+    sed -i -e "s/\/lib/\/usr\/lib/g" ${pkgdir}/usr/lib/pkgconfig/udev.pc
+
+    mv ${pkgdir}/usr/bin/udevd ${pkgdir}/usr/lib/udev/
+  else
+    rm -rf ${pkgdir}/usr/lib
+  fi
   rm -rf ${pkgdir}/lib
-
-  mv ${pkgdir}/usr/share/pkgconfig/* ${pkgdir}/usr/lib/pkgconfig
-  rm -rf ${pkgdir}/usr/share/pkgconfig
-  sed -i -e "s/\/lib/\/usr\/lib/g" ${pkgdir}/usr/lib/pkgconfig/udev.pc
-
-  mv ${pkgdir}/usr/bin/udevd ${pkgdir}/usr/lib/udev/
 
   tar -xvf ${KIIN_HOME}/tarballs/eudev-${pkgver}-manpages.tar.bz2 -C ${pkgdir}/usr/share
 }

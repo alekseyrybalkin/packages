@@ -3,7 +3,7 @@
 pkgname=serf
 pkgver=1.3.4
 _sover=1.3.0
-urls="https://serf.googlecode.com/files/serf-${pkgver}.tar.bz2"
+urls="http://serf.googlecode.com/svn/src_releases/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
