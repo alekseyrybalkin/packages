@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=freeciv
-pkgver=2.4.1
+pkgver=2.4.2
 urls="http://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

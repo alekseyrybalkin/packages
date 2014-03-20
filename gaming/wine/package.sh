@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.7.9
-_pkgver=1.7.9
+pkgver=1.7.14
+_pkgver=1.7.14
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${_pkgver}.tar.bz2"
 srctar=${pkgname}-${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${_pkgver}
@@ -51,9 +51,9 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  getent group wine >/dev/null || groupadd wine
-  getent passwd wine >/dev/null || \
-    useradd -m -g wine -G audio,video -s /bin/bash wine
+  getent group gamer >/dev/null || groupadd gamer
+  getent passwd gamer >/dev/null || \
+    useradd -m -g gamer -G audio,video -s /bin/bash gamer
 }
 
 kiin_after_upgrade() {
