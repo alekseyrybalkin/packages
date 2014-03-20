@@ -2,7 +2,7 @@
 
 pkgname=winetricks
 pkgver=2014
-ARCH_VERSION=20130707
+ARCH_VERSION=20140302
 urls="http://winetricks.googlecode.com/svn-history/trunk/src/winetricks \
   http://winetricks.googlecode.com/svn-history/trunk/src/winetricks.1"
 
