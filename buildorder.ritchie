@@ -97,6 +97,7 @@ mercurial
 sudo
 openssh
 dbus-core
+lib32-dbus-core
 glib
 slang
 mc
