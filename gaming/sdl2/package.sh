@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=sdl2
-pkgver=2.0.2
+pkgver=2.0.3
 urls="http://www.libsdl.org/release/SDL2-${pkgver}.tar.gz"
 srctar=SDL2-${pkgver}.tar.gz
 srcdir=${location}/SDL2-${pkgver}
