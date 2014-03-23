@@ -11,7 +11,8 @@ check_server=1
 kiin_make() {
   ./configure --prefix=/usr \
     --disable-static \
-    --enable-threaded-resolver
+    --enable-threaded-resolver \
+    --libdir=${LIBDIR}
   make
 }
 
