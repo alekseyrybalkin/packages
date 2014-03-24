@@ -69,6 +69,9 @@ kiin_install() {
 
   # for nginx
   install -dv -m 0755 ${pkgdir}/var/log/nginx
+  chown nginx:nginx ${pkgdir}/var/log/nginx
+  install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
+  chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
   # for mail packages
   install -dv -m 0755 ${pkgdir}/var/mail

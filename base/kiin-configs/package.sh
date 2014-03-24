@@ -19,6 +19,7 @@ nameserver 192.168.0.3" > etc/resolv.conf.snow
   fi
   if [ "`hostname`" == "ritchie" ]; then
     find etc/rc.d -name "*postgresql*" | xargs rm
+    rm -rf etc/nginx
   fi
 }
 
