@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fontconfig
-pkgver=2.11.0
+pkgver=2.11.1
 urls="http://${pkgname}.org/release/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
