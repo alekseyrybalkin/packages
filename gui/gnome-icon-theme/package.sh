@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnome-icon-theme
-majorver=3.10
+majorver=3.12
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"

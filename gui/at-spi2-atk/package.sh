@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=at-spi2-atk
-majorver=2.10
-pkgver=${majorver}.2
+majorver=2.12
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=glib-networking
-majorver=2.38
-pkgver=${majorver}.2
+majorver=2.40
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1

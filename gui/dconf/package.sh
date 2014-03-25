@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dconf
-majorver=0.18
+majorver=0.20
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
