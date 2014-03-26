@@ -2,9 +2,9 @@
 
 pkgname=jdk7
 SKIP_ARCH_CHECK=1
-pkgver=1.7.0_25
-urls="somethere/jdk-7u25-linux-x64.tar.gz"
-srctar=jdk-7u25-linux-x64.tar.gz
+pkgver=1.7.0_51
+urls="somethere/jdk-7u51-linux-x64.tar.gz"
+srctar=jdk-7u51-linux-x64.tar.gz
 srcdir=${location}/jdk${pkgver}
 
 kiin_make() {
@@ -14,4 +14,7 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/opt/${pkgname}-${pkgver}
   cp -r ./* ${pkgdir}/opt/${pkgname}-${pkgver}
+  if [ `hostname` == 'snowden' ]; then
+    ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
+  fi
 }

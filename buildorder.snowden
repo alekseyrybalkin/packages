@@ -354,7 +354,6 @@ cups
 attr
 rhino
 ca-certificates-java
-openjdk
 libcap
 ntp
 fluxbox
@@ -380,7 +379,6 @@ wireless_tools
 libnl
 wpa_supplicant
 ldns
-jdk
 jdk7
 maven
 ideau

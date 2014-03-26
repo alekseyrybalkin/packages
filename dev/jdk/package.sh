@@ -14,8 +14,4 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/opt/${pkgname}-${pkgver}
   cp -r ./* ${pkgdir}/opt/${pkgname}-${pkgver}
-  # use openjdk at home, oracle jdk at work, for now
-  if [ `hostname` == 'snowden' ]; then
-    ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
-  fi
 }
