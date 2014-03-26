@@ -14,6 +14,7 @@ kiin_make() {
 kiin_install() {
   install -d -m 755 ${pkgdir}/usr/share/fonts/TTF
   install -m 644 *.ttf ${pkgdir}/usr/share/fonts/TTF
+  rm ${pkgdir}/usr/share/fonts/TTF/calibri*
 }
 
 kiin_after_install() {
