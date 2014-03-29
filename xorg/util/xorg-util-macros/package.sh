@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-util-macros
-pkgver=1.18.0
+pkgver=1.19.0
 urls="http://xorg.freedesktop.org/releases/individual/util/util-macros-${pkgver}.tar.bz2"
 srctar=util-macros-${pkgver}.tar.bz2
 srcdir=${location}/util-macros-${pkgver}
