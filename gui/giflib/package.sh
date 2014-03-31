@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=giflib
-pkgver=5.0.5
+pkgver=5.0.6
 urls="http://downloads.sourceforge.net/giflib/giflib-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
