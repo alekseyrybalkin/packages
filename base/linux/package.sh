@@ -4,8 +4,8 @@ pkgname=linux
 SKIP_ARCH_CHECK=1
 git_pkgname=linux-stable
 vcs="git"
-gittag=v3.13.7
-pkgver=3.13.7
+gittag=v3.13.9
+pkgver=3.13.9
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
