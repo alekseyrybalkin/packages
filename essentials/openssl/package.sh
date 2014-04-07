@@ -1,19 +1,18 @@
 #!/bin/sh
 
 pkgname=openssl
-pkgver=1.0.1f
-ARCH_VERSION=1.0.1.f
+pkgver=1.0.1g
+ARCH_VERSION=1.0.1.g
 extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1
 
 . ${KIIN_REPO}/defaults.sh
 
-urls="${urls} http://rybalkin.org/kiin-files/Makefile.org-Fix-usage-of-CC-gcc-m32.patch"
+urls="${urls}"
 
 kiin_make() {
   MAKEFLAGS=
-  patch -p1 -i ${KIIN_HOME}/tarballs/Makefile.org-Fix-usage-of-CC-gcc-m32.patch
   sed -i -e '2,55d' util/pod2mantest
   if [ -z "$KIIN_LIB32" ]; then
     ./config --prefix=/usr \
