@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=gnutls
-pkgver=3.2.12.1
-_pkgfolder=3.2.12
+pkgver=3.2.13
+_pkgfolder=3.2.13
 urls="ftp://ftp.gnutls.org/gcrypt/gnutls/v3.2/gnutls-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${_pkgfolder}
