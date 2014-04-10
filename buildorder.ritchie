@@ -411,7 +411,6 @@ libtxc_dxtn
 lib32-libtxc_dxtn
 dosbox
 freeciv
-angband
 sdl2
 lib32-sdl2
 sdl2_image
