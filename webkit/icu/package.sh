@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=icu
-pkgver=52.1
-_pkgver=52_1
+pkgver=53.1
+_pkgver=53_1
 urls="http://download.icu-project.org/files/icu4c/${pkgver}/icu4c-${_pkgver}-src.tgz"
 srctar=icu4c-${_pkgver}-src.tgz
 srcdir=${location}/icu

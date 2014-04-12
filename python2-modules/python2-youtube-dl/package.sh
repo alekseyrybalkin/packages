@@ -2,7 +2,7 @@
 
 pkgname=python2-youtube-dl
 ARCH_NAME=youtube-dl
-pkgver=2014.04.07.1
+pkgver=2014.04.11.2
 urls="http://youtube-dl.org/downloads/${pkgver}/youtube-dl-${pkgver}.tar.gz"
 srctar=youtube-dl-${pkgver}.tar.gz
 srcdir=${location}/youtube-dl
