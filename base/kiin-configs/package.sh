@@ -16,7 +16,6 @@ nameserver 94.124.205.83
 nameserver 192.168.0.3" > etc/resolv.conf.snow
     cat etc/resolv.conf >> etc/resolv.conf.snow
     mv etc/resolv.conf{.snow,}
-    sed -i -e '/gamer/d' etc/rc.d/rc.iptables
   fi
   if [ "`hostname`" == "ritchie" ]; then
     find etc/rc.d -name "*postgresql*" | xargs rm
