@@ -2,7 +2,7 @@
 
 pkgname=lcms2
 ARCH_NAME_LIB32=lcms2
-pkgver=2.5
+pkgver=2.6
 urls="http://downloads.sourceforge.net/lcms/lcms2-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
