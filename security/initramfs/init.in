@@ -9,12 +9,7 @@ mount -n -t proc     proc     /proc
 mount -n -t sysfs    sysfs    /sys
 mount -n -t tmpfs    tmpfs    /run
 
-# udevd location depends on version
-if [ -x /sbin/udevd ]; then
-  UDEV_PATH=/sbin
-else
-  UDEV_PATH=/lib/udev
-fi
+UDEV_PATH=/lib/udev
 
 ${UDEV_PATH}/udevd --daemon --resolve-names=never
 udevadm trigger
@@ -25,6 +20,6 @@ cryptsetup luksOpen /dev/sda2 root
 mkdir /.root
 mount -t ext4 /dev/mapper/root /.root
 
-killall -w ${UDEV_PATH}/udevd
+killall -w udevd
 
 exec switch_root /.root "$init" "$@"

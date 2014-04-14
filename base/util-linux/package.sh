@@ -2,11 +2,13 @@
 
 pkgname=util-linux
 pkgver=2.24.1
-urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.24/${pkgname}-${pkgver}.tar.xz"
+urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.24/${pkgname}-${pkgver}.tar.xz \
+  http://rybalkin.org/kiin-files/0001-switch_root-verify-initramfs-by-f_type-not-devno.patch"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -p1 -i ${KIIN_HOME}/tarballs/0001-switch_root-verify-initramfs-by-f_type-not-devno.patch
   sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
       $(grep -rl '/etc/adjtime' .)
   if [ -z "$KIIN_LIB32" ]; then
