@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mtdev
-pkgver=1.1.4
+pkgver=1.1.5
 urls="http://bitmath.org/code/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
