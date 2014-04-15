@@ -2,8 +2,8 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=1.5.1
-_manpages_ver=1.5.1
+pkgver=1.5.3
+_manpages_ver=1.5.3
 urls="http://dev.gentoo.org/~blueness/eudev/eudev-${pkgver}.tar.gz \
   http://anduin.linuxfromscratch.org/sources/other/eudev-${_manpages_ver}-manpages.tar.bz2"
 srctar=eudev-${pkgver}.tar.gz
