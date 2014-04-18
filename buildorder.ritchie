@@ -5,6 +5,7 @@ glibc
 lib32-glibc
 tzdata
 zlib
+flex
 binutils
 man-pages
 file
@@ -24,7 +25,6 @@ e2fsprogs
 coreutils
 iana-etc
 m4
-flex
 bison
 pcre
 grep
@@ -142,6 +142,7 @@ libxdmcp
 xcb-proto
 libxcb
 libpng
+harfbuzz
 freetype2
 fontconfig
 xtrans
@@ -231,7 +232,6 @@ soil
 libtiff
 gdk-pixbuf
 icu
-harfbuzz
 pango
 gtk2
 at-spi2-core
@@ -301,6 +301,9 @@ evince
 libexif
 babl
 gegl
+python2-gobject2
+python2-cairo
+python2-gtk
 gimp
 gdb
 nettle
