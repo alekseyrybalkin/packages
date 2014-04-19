@@ -11,7 +11,8 @@ kiin_make() {
   patch -Np1 -i ${KIIN_HOME}/tarballs/gimp-${pkgver}-freetype-1.patch
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
-    --without-gvfs
+    --without-gvfs \
+    --with-gimpdir=.config/gimp
   make
 }
 
