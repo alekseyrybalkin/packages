@@ -17,4 +17,7 @@ kiin_make() {
 kiin_install() {
   cd build
   make DESTDIR=${pkgdir} install
+  mkdir -p ${pkgdir}/usr/share/doc
+  cp -r docs ${pkgdir}/usr/share/doc/glfw
+  cp -r examples ${pkgdir}/usr/share/doc/glfw/
 }
