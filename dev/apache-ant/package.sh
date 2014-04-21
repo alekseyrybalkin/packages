@@ -20,7 +20,7 @@ kiin_make() {
 }
 
 kiin_install() {
-  export JAVA_HOME=`find /opt -maxdepth 1 -name "openjdk-*" | sort | head -n 1`
+  export JAVA_HOME=/opt/jdk
   unset _JAVA_OPTIONS
   unset J2SDKDIR
   unset J2REDIR
