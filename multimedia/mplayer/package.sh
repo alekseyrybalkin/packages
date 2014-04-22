@@ -2,15 +2,16 @@
 
 pkgname=mplayer
 vcs="git"
-pkgver=37061
+pkgver=37154
 gittag=`pushd ${SOURCES_HOME}/mplayer >/dev/null && git log | head -n 1000 | grep "^    git-svn-id\|^commit" | grep -B 1 "trunk@${pkgver}" | head -n 1 | cut -d ' ' --fields=2 && popd >/dev/null`
 srcdir=${location}/MPlayer-${pkgver}
 
 kiin_make() {
   git clone $SOURCES_HOME/ffmpeg ffmpeg
   cd ffmpeg
-  git checkout n2.1.1
+  git checkout n2.1.4
   cd ..
+  sed -i -e 's/\.mplayer/\.config\/mplayer/g' path.c
   ./configure --prefix=/usr \
     --confdir=/etc/mplayer \
     --enable-dynamic-plugins \
