@@ -2,7 +2,7 @@
 
 pkgname=qt
 ARCH_NAME=qt4
-pkgver=4.8.5
+pkgver=4.8.6
 urls="http://download.qt-project.org/official_releases/qt/4.8/${pkgver}/qt-everywhere-opensource-src-${pkgver}.tar.gz"
 srctar=qt-everywhere-opensource-src-${pkgver}.tar.gz
 srcdir=${location}/qt-everywhere-opensource-src-${pkgver}
