@@ -2,7 +2,7 @@
 
 pkgname=python2-markupsafe
 ARCH_NAME=python-markupsafe
-pkgver=0.19
+pkgver=0.21
 urls="http://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${pkgver}.tar.gz"
 srctar=MarkupSafe-${pkgver}.tar.gz
 srcdir=${location}/MarkupSafe-${pkgver}
