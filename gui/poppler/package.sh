@@ -2,8 +2,8 @@
 
 pkgname=poppler
 vcs="git"
-gittag=poppler-0.24.5
-pkgver=0.24.5
+gittag=poppler-0.26.0
+pkgver=0.26.0
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
