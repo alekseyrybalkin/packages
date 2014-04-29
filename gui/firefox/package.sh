@@ -1,15 +1,13 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=28.0
+pkgver=29.0
 urls="ftp://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2 \
   http://rybalkin.org/kiin-files/firefox-fixed-loading-icon.png"
 srctar=${pkgname}-${pkgver}.source.tar.bz2
 srcdir=${location}/mozilla-release
 
 kiin_make() {
-  sed -i -e 's/-\$(MOZ_APP_VERSION)//g' config/baseconfig.mk
-  sed -i -e 's/-\$(MOZ_APP_VERSION)//g' js/src/config/baseconfig.mk
   CFLAGS="${CFLAGS} -mno-avx"
   CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
@@ -24,6 +22,7 @@ kiin_install() {
   make -C firefox-build-dir DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/usr/bin
   ln -sfv ../lib/firefox/firefox ${pkgdir}/usr/bin
+  mv ${pkgdir}/usr/lib/firefox{-${pkgver},}
   ln -sfv ../xulrunner-${pkgver} ${pkgdir}/usr/lib/firefox/xulrunner
   mkdir -pv ${pkgdir}/usr/lib/mozilla/plugins
   ln -sfv ../mozilla/plugins ${pkgdir}/usr/lib/firefox
