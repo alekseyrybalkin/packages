@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=1.5.3
+pkgver=1.6
 _manpages_ver=1.5.3
 urls="http://dev.gentoo.org/~blueness/eudev/eudev-${pkgver}.tar.gz \
   http://anduin.linuxfromscratch.org/sources/other/eudev-${_manpages_ver}-manpages.tar.bz2"
@@ -50,7 +50,7 @@ kiin_install() {
   fi
   rm -rf ${pkgdir}/lib
 
-  tar -xvf ${KIIN_HOME}/tarballs/eudev-${pkgver}-manpages.tar.bz2 -C ${pkgdir}/usr/share
+  tar -xvf ${KIIN_HOME}/tarballs/eudev-${_manpages_ver}-manpages.tar.bz2 -C ${pkgdir}/usr/share
 }
 
 kiin_after_install() {
