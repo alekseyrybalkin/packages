@@ -5,7 +5,6 @@ glibc
 lib32-glibc
 tzdata
 zlib
-lib32-zlib
 flex
 binutils
 man-pages
@@ -20,7 +19,6 @@ pkg-config
 ncurses
 shadow
 util-linux
-lib32-util-linux
 psmisc
 procps
 e2fsprogs
@@ -43,7 +41,6 @@ diffutils
 gawk
 findutils
 xz
-lib32-xz
 gettext
 groff
 grub
@@ -54,7 +51,6 @@ iproute2
 check
 kbd
 kmod
-lib32-kmod
 libpipeline
 make
 man-db
@@ -64,7 +60,6 @@ sysvinit
 tar
 texinfo
 eudev
-lib32-eudev
 vim
 bc
 linux
@@ -72,7 +67,6 @@ fakeroot
 sqlite
 libffi
 expat
-lib32-expat
 openssl
 cacerts
 wget
@@ -144,21 +138,16 @@ xineramaproto
 xproto
 xorg-makedepend
 libxau
-lib32-libxau
 libxdmcp
-lib32-libxdmcp
 xcb-proto
 libxcb
-lib32-libxcb
 libpng
 harfbuzz
 freetype2
 fontconfig
 xtrans
 libx11
-lib32-libx11
 libxext
-lib32-libxext
 libice
 libsm
 libxt
@@ -166,12 +155,10 @@ libxmu
 libxpm
 libxaw
 libxfixes
-lib32-libxfixes
 libxcomposite
 libxrender
 libxcursor
 libxdamage
-lib32-libxdamage
 libfontenc
 libxfont
 libxft
@@ -184,18 +171,13 @@ libxss
 libxvmc
 libxxf86dga
 libxxf86vm
-lib32-libxxf86vm
 libpciaccess
-lib32-libpciaccess
 libxkbfile
 libxshmfence
-lib32-libxshmfence
 python2-sh
 xcb-util
 libdrm
-lib32-libdrm
 mesa
-lib32-mesa
 glu
 xbitmaps
 xorg-bdftopcf
@@ -356,4 +338,3 @@ python2-jinja2
 adblockplus
 python2-youtube-dl
 python3
-steam
