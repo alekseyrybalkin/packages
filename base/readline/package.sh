@@ -19,7 +19,7 @@ kiin_make() {
   done
   sed -i '/MV.*old/d' Makefile.in
   sed -i '/{OLDSUFF}/c:' support/shlib-install
-  ./configure --prefix=/usr --libdir=/usr/lib
+  ./configure --prefix=/usr --libdir=${LIBDIR}
   make SHLIB_LIBS=-lncurses
 }
 
