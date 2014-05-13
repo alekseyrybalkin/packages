@@ -385,3 +385,5 @@ adblockplus
 python2-youtube-dl
 python3
 nginx
+nodejs
+lessc
