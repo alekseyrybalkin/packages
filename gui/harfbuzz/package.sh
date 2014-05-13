@@ -7,7 +7,11 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libdir=$LIBDIR
+  if [ -z "${KIIN_LIB32}" ]; then
+    ./configure --prefix=/usr --libdir=$LIBDIR
+  else
+    ./configure --prefix=/usr --with-icu=no --with-cairo=no --libdir=$LIBDIR
+  fi
   make
 }
 
