@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=shadow
-pkgver=4.1.5.1
-urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=4.2.1
+urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
