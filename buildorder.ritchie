@@ -421,3 +421,5 @@ sdl2_image
 lib32-sdl2_image
 libvpx
 lib32-libvpx
+dbus-glib
+gconf
