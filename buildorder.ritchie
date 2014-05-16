@@ -268,6 +268,7 @@ pixman
 lib32-pixman
 xorg-server
 mtdev
+libevdev
 xf86-input-evdev
 xf86-input-keyboard
 xf86-input-mouse
