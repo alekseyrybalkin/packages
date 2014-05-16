@@ -2,8 +2,8 @@
 
 pkgname=libxfont
 vcs="git"
+pkgver=1.4.8+
 gittag=master
-pkgver=1.4.7+
 srcdir=${location}/libXfont-${pkgver}
 
 kiin_make() {
