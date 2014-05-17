@@ -424,3 +424,5 @@ libvpx
 lib32-libvpx
 dbus-glib
 gconf
+libidn
+lib32-libidn
