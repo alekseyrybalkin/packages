@@ -24,4 +24,8 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   # remove /var, filesystem package creates everything in there
   rm -rvf ${pkgdir}/var
+  if [ -n "${KIIN_LIB32}" ]; then
+    mkdir -pv ${pkgdir}/usr/lib32/fontconfig
+    mv ${pkgdir}/usr/bin/fc-cache ${pkgdir}/usr/lib32/fontconfig/
+  fi
 }
