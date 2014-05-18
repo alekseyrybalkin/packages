@@ -435,3 +435,4 @@ dbus-glib
 gconf
 libidn
 lib32-libidn
+sdl_image
