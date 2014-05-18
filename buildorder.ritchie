@@ -76,6 +76,7 @@ bc
 linux
 fakeroot
 sqlite
+lib32-sqlite
 libffi
 lib32-libffi
 expat
@@ -304,7 +305,9 @@ at-spi2-atk
 gtk
 which
 nspr
+lib32-nspr
 nss
+lib32-nss
 xulrunner
 firefox
 xlockmore
