@@ -23,7 +23,9 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  mv ${pkgdir}/usr/bin/pango-querymodules ${pkgdir}/usr/lib32/pango
+  if [ -n "${KIIN_LIB32}" ]; then
+    mv ${pkgdir}/usr/bin/pango-querymodules ${pkgdir}/usr/lib32/pango
+  fi
 }
 
 kiin_after_install() {
