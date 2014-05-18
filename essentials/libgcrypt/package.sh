@@ -9,7 +9,10 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr
+  if [ -n "${KIIN_LIB32}" ]; then
+    sed 's:path="amd64":path="i586 i386":' -i mpi/config.links
+  fi
+  ./configure --prefix=/usr --libdir=${LIBDIR}
   make
 }
 

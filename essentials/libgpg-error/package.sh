@@ -9,7 +9,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static
+  ./configure --prefix=/usr --disable-static --libdir=${LIBDIR}
   make
 }
 

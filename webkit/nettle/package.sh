@@ -7,7 +7,12 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  if [ -z "${KIIN_LIB32}" ]; then
+    ./configure --prefix=/usr --libdir=${LIBDIR}
+  else
+    ./configure --prefix=/usr --libdir=${LIBDIR} \
+      --enable-shared --with-include-path=/usr/lib32/gmp
+  fi
   make
   sed -i '/^install-here/ s/install-static//' Makefile
 }

@@ -1,13 +1,17 @@
 #!/bin/sh
 
 pkgname=wine
-pkgver=1.7.18
-_pkgver=1.7.18
+pkgver=1.7.19
+_pkgver=1.7.19
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${_pkgver}.tar.bz2"
 srctar=${pkgname}-${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${_pkgver}
 
 kiin_make() {
+  # ncurses fix
+  sed -i 's|libncurses|libncursesw|g' configure
+  sed -i 's|lncurses|lncursesw|g' configure
+
   mkdir ${location}/${pkgname}-32-build
   mkdir ${location}/${pkgname}-64-build
 

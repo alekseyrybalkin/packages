@@ -9,8 +9,13 @@ srcdir=${location}/${pkgname}-${_pkgfolder}
 
 kiin_make() {
   ./configure --prefix=/usr \
+    --with-zlib \
     --disable-static \
-    --with-default-trust-store-file=/etc/ssl/ca-bundle.crt
+    --disable-guile \
+    --disable-valgrind-tests \
+    --disable-hardware-acceleration \
+    --with-default-trust-store-file=/etc/ssl/ca-bundle.crt \
+    --libdir=${LIBDIR}
   make
 }
 

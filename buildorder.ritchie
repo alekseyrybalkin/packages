@@ -11,6 +11,7 @@ binutils
 man-pages
 file
 gmp
+lib32-gmp
 mpfr
 mpc
 gcc
@@ -136,8 +137,11 @@ libmpdclient
 mpd
 mpd-mpc
 libgpg-error
+lib32-libgpg-error
 libgcrypt
+lib32-libgcrypt
 libxslt
+lib32-libxslt
 xorg-util-macros
 bigreqsproto
 compositeproto
@@ -377,7 +381,9 @@ python2-gtk
 gimp
 gdb
 nettle
+lib32-nettle
 gnutls
+lib32-gnutls
 attr
 libcap
 ntp

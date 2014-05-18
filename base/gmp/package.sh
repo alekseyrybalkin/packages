@@ -7,7 +7,14 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --enable-cxx
+  if [ -z "${KIIN_LIB32}" ]; then
+    ./configure --prefix=/usr --enable-cxx --libdir=${LIBDIR}
+  else
+    export ABI=32
+    ./configure --prefix=/usr --enable-cxx --libdir=${LIBDIR} \
+      --includedir=/usr/lib32/gmp
+    sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
+  fi
   make
 }
 

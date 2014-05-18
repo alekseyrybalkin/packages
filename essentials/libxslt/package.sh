@@ -9,7 +9,11 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static
+  if [ -z "${KIIN_LIB32}" ]; then
+    ./configure --prefix=/usr --disable-static --libdir=${LIBDIR}
+  else
+    ./configure --prefix=/usr --disable-static --libdir=${LIBDIR} --with-python=/tmp
+  fi
   make
 }
 
