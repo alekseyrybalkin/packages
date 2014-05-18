@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=libxslt
+ARCH_NAME_LIB32=libxslt
 pkgver=1.1.28
 extension=gz
 folder="http://xmlsoft.org/sources/"
