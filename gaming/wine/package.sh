@@ -15,8 +15,8 @@ kiin_make() {
   mkdir ${location}/${pkgname}-32-build
   mkdir ${location}/${pkgname}-64-build
 
-  export CFLAGS="${CFLAGS/-D_FORTIFY_SOURCE=2/} -D_FORTIFY_SOURCE=0"
-  export CXXFLAGS="${CXXFLAGS/-D_FORTIFY_SOURCE=2/} -D_FORTIFY_SOURCE=0"
+  export CFLAGS="-march=native -O0 -pipe -D_FORTIFY_SOURCE=0"
+  export CXXFLAGS="-march=native -O0 -pipe -D_FORTIFY_SOURCE=0"
 
   cd ${location}/${pkgname}-64-build
   ../${pkgname}-${_pkgver}/configure \
@@ -24,8 +24,18 @@ kiin_make() {
     --libdir=/usr/lib \
     --with-x \
     --without-gstreamer \
+    --without-opencl \
+    --without-hal \
+    --without-sane \
+    --without-v4l \
+    --without-gphoto \
+    --without-oss \
+    --without-capi \
+    --without-cups \
+    --without-gsm \
+    --without-ldap \
     --enable-win64
-  make CFLAGS+="-fno-builtin-memcpy" CXXFLAGS+="-fno-builtin-memcpy"
+  make
 
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
   cd ${location}/${pkgname}-32-build
@@ -34,6 +44,16 @@ kiin_make() {
     --libdir=/usr/lib32 \
     --with-x \
     --without-gstreamer \
+    --without-opencl \
+    --without-hal \
+    --without-sane \
+    --without-v4l \
+    --without-gphoto \
+    --without-oss \
+    --without-capi \
+    --without-cups \
+    --without-gsm \
+    --without-ldap \
     --with-wine64=${location}/${pkgname}-64-build
   make CFLAGS+="-mstackrealign -mincoming-stack-boundary=2" CXXFLAGS+="-mstackrealign -mincoming-stack-boundary=2"
 }
