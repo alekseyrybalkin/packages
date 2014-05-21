@@ -221,7 +221,9 @@ lib32-libxrandr
 libxtst
 lib32-libxtst
 libxv
+lib32-libxv
 libxss
+lib32-libxss
 libxvmc
 libxxf86dga
 libxxf86vm
@@ -388,6 +390,8 @@ attr
 libcap
 ntp
 fluxbox
+qt
+lib32-qt
 gperf
 ruby
 gsettings-desktop-schemas
