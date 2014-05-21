@@ -2,7 +2,7 @@
 
 pkgname=mesa
 majorver=10.1
-pkgver=${majorver}.3
+pkgver=${majorver}.4
 urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-9.1.5-add_xdemos-1.patch"
 srctar=MesaLib-${pkgver}.tar.bz2
