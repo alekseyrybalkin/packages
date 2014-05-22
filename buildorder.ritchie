@@ -392,6 +392,7 @@ ntp
 fluxbox
 qt
 lib32-qt
+skype
 gperf
 ruby
 gsettings-desktop-schemas
