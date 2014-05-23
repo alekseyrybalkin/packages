@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gst-plugins-base
-pkgver=1.3.1
+pkgver=1.3.2
 extension=xz
 folder="http://gstreamer.freedesktop.org/src/${pkgname}/"
 check_server=1

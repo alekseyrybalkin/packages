@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=transmission
-pkgver=2.82
+pkgver=2.83
 extension=xz
 folder="http://download-origin.transmissionbt.com/files/"
 check_server=1
