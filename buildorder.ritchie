@@ -442,3 +442,8 @@ gconf
 libidn
 lib32-libidn
 sdl_image
+fluidsynth
+faad2
+libmad
+libtheora
+scummvm
