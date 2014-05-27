@@ -19,4 +19,11 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # remove broken symlinks
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Microsoft.Build.dll
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Microsoft.Build.Engine.dll
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Microsoft.Build.Framework.dll
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Microsoft.Build.Tasks.v12.0.dll
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Microsoft.Build.Utilities.v12.0.dll
+  rm ${pkgdir}/usr/lib/mono/xbuild/12.0/bin/Mono.XBuild.Tasks.dll
 }
