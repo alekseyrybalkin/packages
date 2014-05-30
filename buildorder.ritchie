@@ -442,6 +442,7 @@ gconf
 libidn
 lib32-libidn
 sdl_image
+lib32-sdl_image
 fluidsynth
 faad2
 libmad
