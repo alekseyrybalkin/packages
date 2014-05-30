@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=inputproto
-pkgver=2.3
+pkgver=2.3.1
 urls="http://xorg.freedesktop.org/releases/individual/proto/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
