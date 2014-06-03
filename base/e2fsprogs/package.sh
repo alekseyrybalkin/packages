@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   mkdir -v build
   cd build
   ../configure --prefix=/usr \

@@ -10,7 +10,7 @@ kiin_make() {
   export ac_cv_lib_lzo2_lzo2a_decompress="no"
   ./autogen.sh
   if [ -z "$KIIN_LIB32" ]; then
-    ./configure --prefix=/usr \
+    CFLAGS="${CFLAGS} -ffat-lto-objects" ./configure --prefix=/usr \
       --disable-static \
       --enable-gl \
       --enable-egl \
@@ -27,7 +27,7 @@ kiin_make() {
     sed -i -e 's/test\/pdiff\/Makefile//g' configure.ac
     sed -i -e 's/perf\/micro\/Makefile//g' configure
     sed -i -e 's/perf\/micro\/Makefile//g' configure.ac
-    ./configure --prefix=/usr \
+    CFLAGS="${CFLAGS} -ffat-lto-objects" ./configure --prefix=/usr \
       --disable-static \
       --disable-xlib-xcb \
       --libdir=$LIBDIR

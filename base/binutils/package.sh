@@ -13,7 +13,7 @@ kiin_make() {
   sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
   mkdir -v binutils-build
   cd binutils-build
-  ../configure --prefix=/usr --enable-shared --enable-multilib
+  ../configure --prefix=/usr --enable-shared --enable-multilib --disable-werror
   make tooldir=${pkgdir}/usr
 }
 

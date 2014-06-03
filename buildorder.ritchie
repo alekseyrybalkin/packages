@@ -85,6 +85,8 @@ lib32-expat
 openssl
 lib32-openssl
 cacerts
+libidn
+lib32-libidn
 wget
 curl
 lib32-curl
@@ -133,6 +135,8 @@ lib32-mpg123
 flac
 audiofile
 lame
+fluidsynth
+faad2
 libmpdclient
 mpd
 mpd-mpc
@@ -439,12 +443,8 @@ libvpx
 lib32-libvpx
 dbus-glib
 gconf
-libidn
-lib32-libidn
 sdl_image
 lib32-sdl_image
-fluidsynth
-faad2
 libmad
 libtheora
 scummvm
