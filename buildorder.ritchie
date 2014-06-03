@@ -394,6 +394,8 @@ attr
 libcap
 ntp
 fluxbox
+qemu
+postgresql
 qt
 lib32-qt
 skype
@@ -414,7 +416,9 @@ wireless_tools
 libnl
 wpa_supplicant
 ldns
+memcached
 tor
+libmemcached
 scrot
 kiin
 python2-setuptools
@@ -450,3 +454,5 @@ libtheora
 scummvm
 libgdiplus
 mono
+nginx
+nodejs

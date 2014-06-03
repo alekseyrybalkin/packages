@@ -91,7 +91,6 @@ wget
 curl
 lib32-curl
 python
-postgresql
 swig
 apr
 apr-util
@@ -398,6 +397,7 @@ libcap
 ntp
 fluxbox
 qemu
+postgresql
 qt
 lib32-qt
 skype
