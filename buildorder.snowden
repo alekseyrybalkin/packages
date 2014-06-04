@@ -350,6 +350,8 @@ cmake
 libdvdcss
 libdvdread
 libdvdnav
+libmad
+libtheora
 mplayer
 docbook-xsl
 docbook-xml
@@ -384,6 +386,7 @@ gegl
 python2-gobject2
 python2-cairo
 python2-gtk
+dbus-glib
 gimp
 gdb
 apache-ant
@@ -450,12 +453,9 @@ sdl2_image
 lib32-sdl2_image
 libvpx
 lib32-libvpx
-dbus-glib
 gconf
 sdl_image
 lib32-sdl_image
-libmad
-libtheora
 scummvm
 libgdiplus
 mono
