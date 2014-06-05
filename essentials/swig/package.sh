@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=swig
-pkgver=3.0.1
+pkgver=3.0.2
 urls="http://prdownloads.sourceforge.net/swig/swig-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
