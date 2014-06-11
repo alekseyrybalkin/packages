@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxft
-pkgver=2.3.1
+pkgver=2.3.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXft-${pkgver}.tar.bz2"
 srctar=libXft-${pkgver}.tar.bz2
 srcdir=${location}/libXft-${pkgver}

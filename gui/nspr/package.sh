@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nspr
-pkgver=4.10.5
+pkgver=4.10.6
 urls="http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${pkgver}/src/nspr-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

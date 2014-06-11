@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libice
-pkgver=1.0.8
+pkgver=1.0.9
 urls="http://xorg.freedesktop.org/releases/individual/lib/libICE-${pkgver}.tar.bz2"
 srctar=libICE-${pkgver}.tar.bz2
 srcdir=${location}/libICE-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nodejs
-pkgver=0.10.28
+pkgver=0.10.29
 urls="http://nodejs.org/dist/v$pkgver/node-v$pkgver.tar.gz"
 srctar=node-v${pkgver}.tar.gz
 srcdir=${location}/node-v${pkgver}

@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 3.14.5 Kernel Configuration
+# Linux/x86 3.14.6 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -505,6 +505,7 @@ CONFIG_PM_SLEEP_DEBUG=y
 CONFIG_ACPI=y
 CONFIG_ACPI_SLEEP=y
 # CONFIG_ACPI_PROCFS is not set
+# CONFIG_ACPI_PROCFS_POWER is not set
 # CONFIG_ACPI_EC_DEBUGFS is not set
 CONFIG_ACPI_AC=y
 CONFIG_ACPI_BATTERY=y
