@@ -28,5 +28,5 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   # remove files with spaces
-  rm -rf /usr/share/cmake-3.0/Help/generator
+  rm -rf ${pkgdir}/usr/share/cmake-3.0/Help/generator
 }
