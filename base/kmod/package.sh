@@ -2,7 +2,7 @@
 
 pkgname=kmod
 ARCH_NAME_LIB32=kmod
-pkgver=17
+pkgver=18
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

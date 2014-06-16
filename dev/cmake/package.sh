@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=cmake
-majorver=2.8
-pkgver=${majorver}.12.2
+majorver=3.0
+pkgver=${majorver}.0
 extension=gz
 major_folder="http://www.cmake.org/files/"
 check_server=1
@@ -11,14 +11,12 @@ check_server=1
 
 folder="${major_folder}v${majorver}/"
 urls="${folder}${srctar}"
-majorver_grep="^v2\.[0-9]+/?$"
+majorver_grep="^v3\.[0-9]+/?$"
 majorver_seds() {
   sed -r "s/\///g" | sed -r "s/^v//g"
 }
-urls="${urls} http://www.linuxfromscratch.org/patches/blfs/svn/cmake-${pkgver}-freetype-1.patch"
 
 kiin_make() {
-  patch -Np1 -i ${KIIN_HOME}/tarballs/cmake-${pkgver}-freetype-1.patch
   ./bootstrap --prefix=/usr \
     --system-libs \
     --mandir=/share/man \
@@ -29,4 +27,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # remove files with spaces
+  rm -rf /usr/share/cmake-3.0/Help/generator
 }
