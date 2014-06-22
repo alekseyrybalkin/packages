@@ -2,13 +2,11 @@
 
 pkgname=shadow
 pkgver=4.2.1
-urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz \
-  http://rybalkin.org/kiin-files/shadow_kiin_gaming_restrictions.diff"
+urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -p1 -i ${KIIN_HOME}/tarballs/shadow_kiin_gaming_restrictions.diff
   sed -i 's/groups$(EXEEXT) //' src/Makefile.in
   find man -name Makefile.in -exec sed -i 's/groups\.1 / /' {} \;
   sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
