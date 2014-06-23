@@ -330,6 +330,7 @@ perl-ack
 parted
 initramfs
 reiserfsprogs
+attr
 rsync
 fuse
 ntfsprogs
@@ -394,7 +395,6 @@ nettle
 lib32-nettle
 gnutls
 lib32-gnutls
-attr
 ca-certificates-java
 libcap
 ntp

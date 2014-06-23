@@ -330,6 +330,7 @@ perl-ack
 parted
 initramfs
 reiserfsprogs
+attr
 rsync
 fuse
 ntfsprogs
@@ -393,7 +394,6 @@ nettle
 lib32-nettle
 gnutls
 lib32-gnutls
-attr
 libcap
 ntp
 fluxbox
