@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=skype
-pkgver=4.2.0.13
+pkgver=4.3.0.37
 urls="http://download.skype.com/linux/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
