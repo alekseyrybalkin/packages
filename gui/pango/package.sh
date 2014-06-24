@@ -2,7 +2,7 @@
 
 pkgname=pango
 majorver=1.36
-pkgver=${majorver}.3
+pkgver=${majorver}.5
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
