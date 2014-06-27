@@ -2,7 +2,7 @@
 
 pkgname=lzo
 ARCH_NAME=lzo2
-pkgver=2.06
+pkgver=2.07
 extension=gz
 folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
 check_server=1
