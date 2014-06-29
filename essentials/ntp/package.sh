@@ -3,7 +3,7 @@
 pkgname=ntp
 majorver=4.2
 pkgver=${majorver}.6p5
-ARCH_VERSION=${majorver}.7.p441
+ARCH_VERSION=${majorver}.7.p446
 extension=gz
 major_folder="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
 check_server=1
