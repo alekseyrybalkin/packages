@@ -2,7 +2,7 @@
 
 pkgname=gnupg
 SKIP_ARCH_CHECK=1
-pkgver=1.4.17
+pkgver=1.4.18
 urls="ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
