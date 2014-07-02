@@ -2,7 +2,7 @@
 
 pkgname=python
 ARCH_NAME=python2
-pkgver=2.7.7
+pkgver=2.7.8
 extension=xz
 folder="http://legacy.python.org/ftp/${pkgname}/"
 check_server=1
