@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gstreamer
-pkgver=1.3.3
+pkgver=1.3.90
 extension=xz
 folder="http://gstreamer.freedesktop.org/src/${pkgname}/"
 check_server=1
