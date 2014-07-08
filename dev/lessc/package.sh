@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=lessc
-pkgver=1.7.0
+pkgver=1.7.3
 urls="https://registry.npmjs.org/less/-/less-${pkgver}.tgz"
 srctar=less-${pkgver}.tgz
 srcdir=${location}/package
