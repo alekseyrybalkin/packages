@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxi
-pkgver=1.7.2
+pkgver=1.7.3
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXi-${pkgver}.tar.bz2"
 srctar=libXi-${pkgver}.tar.bz2
 srcdir=${location}/libXi-${pkgver}
