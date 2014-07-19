@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=coreutils
-pkgver=8.22
+pkgver=8.23
 urls="http://ftp.gnu.org/gnu/coreutils/coreutils-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fakeroot
-pkgver=1.20
+pkgver=1.20.1
 extension=bz2
 folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
 check_server=1

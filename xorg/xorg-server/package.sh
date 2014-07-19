@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.15.2
+pkgver=1.16.0
 urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -9,8 +9,10 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
+    --enable-suid-wrapper \
     --enable-install-setuid \
     --with-sha1=libcrypto \
+    --libexecdir=/usr/bin \
     --with-fontrootdir=/usr/share/fonts
   make
 }

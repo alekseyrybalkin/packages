@@ -1,14 +1,12 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=4.9.0
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2 \
-  http://www.linuxfromscratch.org/patches/lfs/development/gcc-${pkgver}-upstream_fixes-1.patch"
+pkgver=4.9.1
+urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ${KIIN_HOME}/tarballs/gcc-${pkgver}-upstream_fixes-1.patch
   sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
   # do not use AVX
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
