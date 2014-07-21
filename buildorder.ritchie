@@ -318,6 +318,8 @@ nspr
 lib32-nspr
 nss
 lib32-nss
+libvpx
+lib32-libvpx
 xulrunner
 firefox
 xlockmore
@@ -446,8 +448,6 @@ sdl2
 lib32-sdl2
 sdl2_image
 lib32-sdl2_image
-libvpx
-lib32-libvpx
 gconf
 sdl_image
 lib32-sdl_image
