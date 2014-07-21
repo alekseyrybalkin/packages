@@ -24,7 +24,7 @@ kiin_install() {
 
   chmod -v 755 ${pkgdir}/usr/lib/xulrunner-devel-${pkgver}/sdk/bin/xpcshell
 
-  for library in libmozalloc.so libmozjs.so libxul.so; do
+  for library in libmozalloc.so libxul.so; do
     ln -sfv ../../../xulrunner-${pkgver}/$library \
       ${pkgdir}/usr/lib/xulrunner-devel-${pkgver}/sdk/lib/$library
     ln -sfv xulrunner-${pkgver}/$library ${pkgdir}/usr/lib/$library

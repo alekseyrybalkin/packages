@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=scons
-pkgver=2.3.1
+pkgver=2.3.2
 urls="http://downloads.sourceforge.net/scons/scons-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

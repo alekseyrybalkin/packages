@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gettext
-pkgver=0.19.1
+pkgver=0.19.2
 urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

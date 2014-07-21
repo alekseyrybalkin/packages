@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=scummvm
-pkgver=1.6.0
+pkgver=1.7.0
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

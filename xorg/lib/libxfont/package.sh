@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=libxfont
-vcs="git"
-pkgver=1.4.8+
-gittag=master
+pkgver=1.5.0
+urls="http://xorg.freedesktop.org/releases/individual/lib/libXfont-${pkgver}.tar.bz2"
+srctar=libXfont-${pkgver}.tar.bz2
 srcdir=${location}/libXfont-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
   ./configure $XORG_CONFIG --disable-devel-docs
   make
 }
