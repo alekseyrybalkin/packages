@@ -466,3 +466,5 @@ boost
 cups
 perl-archive-zip
 libreoffice
+rrdtool
+lapack
