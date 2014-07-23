@@ -1,22 +1,22 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.24.2
-urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.24/${pkgname}-${pkgver}.tar.xz"
+pkgver=2.25
+urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.25/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
-      $(grep -rl '/etc/adjtime' .)
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --without-udev \
       --bindir=/usr/bin \
-      --libdir=/usr/lib
+      --libdir=/usr/lib \
+      ADJTIME_PATH=/var/lib/hwclock
     make
   else
     ./configure --without-ncurses \
-      --libdir=/usr/lib32
+      --libdir=/usr/lib32 \
+      ADJTIME_PATH=/var/lib/hwclock
     make lib{uuid,blkid,mount}.la
   fi
 }
