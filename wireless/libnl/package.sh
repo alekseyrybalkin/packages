@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libnl
-pkgver=3.2.24
+pkgver=3.2.25
 urls="http://www.infradead.org/~tgr/${pkgname}/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
