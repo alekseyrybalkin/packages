@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=gdb
-pkgver=7.7.1
-urls="http://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=7.8
+urls="http://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
