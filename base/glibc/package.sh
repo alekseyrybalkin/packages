@@ -16,7 +16,7 @@ kiin_make() {
     ../configure \
         --prefix=/usr \
         --disable-profile \
-        --enable-kernel=3.15.5 \
+        --enable-kernel=3.15.7 \
         --libexecdir=/usr/lib/glibc \
         --disable-nscd \
         --libdir=/usr/lib \
@@ -26,7 +26,7 @@ kiin_make() {
     ../configure \
         --prefix=/usr \
         --disable-profile \
-        --enable-kernel=3.15.5 \
+        --enable-kernel=3.15.7 \
         --libexecdir=/usr/lib32 \
         --disable-nscd \
         --libdir=/usr/lib32 \
