@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxcb
-pkgver=1.10
+pkgver=1.11
 urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
