@@ -303,6 +303,7 @@ gnome-icon-theme-symbolic
 gnome-icon-theme
 gnome-themes-standard
 itstool
+gsettings-desktop-schemas
 evince
 libexif
 babl
