@@ -12,6 +12,7 @@ kiin_make() {
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --without-gvfs \
+    --without-dbus \
     --with-gimpdir=.config/gimp
   make
 }
