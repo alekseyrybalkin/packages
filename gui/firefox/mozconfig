@@ -4,7 +4,7 @@ ac_add_options --disable-dash
 ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
 ac_add_options --disable-libnotify
-ac_add_options --enable-gstreamer=1.0
+ac_add_options --disable-gstreamer
 ac_add_options --disable-pulseaudio
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
