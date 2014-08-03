@@ -77,7 +77,6 @@ swig
 apr
 apr-util
 libxml2
-neon
 scons
 serf
 subversion
@@ -139,7 +138,6 @@ xf86driproto
 xf86vidmodeproto
 xineramaproto
 xproto
-xorg-makedepend
 libxau
 libxdmcp
 xcb-proto
@@ -170,7 +168,6 @@ libxinerama
 libxrandr
 libxtst
 libxv
-libxss
 libxvmc
 libxxf86dga
 libxxf86vm
@@ -283,7 +280,6 @@ tidyhtml
 pciutils
 nmap
 imlib2
-giblib
 feh
 gnupg
 mutt
