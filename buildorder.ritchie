@@ -263,8 +263,6 @@ fuse
 ntfsprogs
 acpi
 unrar
-lzo
-openvpn
 hicolor-icon-theme
 desktop-file-utils
 giflib
@@ -322,14 +320,10 @@ linux-firmware
 wireless_tools
 libnl
 wpa_supplicant
-ldns
 tor
-scrot
 kiin
 python2-setuptools
 python2-markupsafe
 python2-jinja2
 adblockplus
 python2-youtube-dl
-python3
-ffmpeg
