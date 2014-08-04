@@ -105,8 +105,6 @@ mpg123
 flac
 audiofile
 lame
-fluidsynth
-faad2
 libmpdclient
 mpd
 mpd-mpc
@@ -173,7 +171,6 @@ libxxf86vm
 libpciaccess
 libxkbfile
 libxshmfence
-python2-sh
 xcb-util
 libdrm
 mesa
@@ -247,8 +244,6 @@ initramfs
 reiserfsprogs
 attr
 rsync
-fuse
-ntfsprogs
 acpi
 unrar
 hicolor-icon-theme
@@ -259,10 +254,6 @@ miniupnpc
 transmission
 yasm
 cmake
-libdvdcss
-libdvdread
-libdvdnav
-libmad
 libtheora
 mplayer
 docbook-xsl

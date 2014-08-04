@@ -19,6 +19,8 @@ kiin_make() {
     --disable-shout \
     --disable-jack \
     --disable-soup \
+    --disable-fluidsynth \
+    --disable-aac \
     --enable-mpg123 \
     --enable-flac \
     --enable-audiofile

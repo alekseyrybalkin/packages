@@ -24,9 +24,11 @@ kiin_make() {
     --enable-dynamic-plugins \
     --disable-libvpx-lavc \
     --disable-gui \
+    --disable-dvdread \
     --disable-dvdread-internal \
     --disable-xss \
-    --disable-liblzo
+    --disable-liblzo \
+    --disable-faad
   make
 }
 
