@@ -80,6 +80,11 @@ kiin_install() {
   mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,server-listings}
   chown rybalkin:rybalkin ${pkgdir}/var/lib/kiin/{tarballs,sources,server-listings}
 
+  # for glhack
+  mkdir -pv ${pkgdir}/var/games/glhack/save
+  touch ${pkgdir}/var/games/glhack/{logfile,perm}
+  chown -R gamer:gamer ${pkgdir}/var/games/glhack
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
