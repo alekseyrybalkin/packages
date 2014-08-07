@@ -1,0 +1,12 @@
+diff -Naur gtk-doc-1.21/style/style.css gtk-doc-1.21-p/style/style.css
+--- gtk-doc-1.21/style/style.css	2014-03-06 16:38:07.000000000 +0400
++++ gtk-doc-1.21-p/style/style.css	2014-08-08 02:12:16.716484412 +0400
+@@ -369,7 +369,7 @@
+   body
+   {
+     padding-top: 2.5em;
+-    padding-bottom: 500px;
++    padding-bottom: 20px;
+     max-width: 60em;
+   }
+   p
