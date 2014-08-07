@@ -22,7 +22,7 @@ kiin_make() {
     --enable-threads=posix \
     --enable-__cxa_atexit \
     --enable-clocale=gnu \
-    --enable-languages=c,c++,fortran \
+    --enable-languages=c,c++ \
     --enable-multilib \
     --disable-bootstrap \
     --with-system-zlib
