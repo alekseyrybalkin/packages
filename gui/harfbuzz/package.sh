@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=harfbuzz
-pkgver=0.9.32
-urls="http://www.freedesktop.org/software/${pkgname}/release/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=0.9.34
+extension=bz2
+folder="http://www.freedesktop.org/software/${pkgname}/release/"
+check_server=1
+
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   if [ -z "${KIIN_LIB32}" ]; then

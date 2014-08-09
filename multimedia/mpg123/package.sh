@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=mpg123
-pkgver=1.20.0
-urls="http://downloads.sourceforge.net/mpg123/mpg123-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
+pkgver=1.20.1
+extension=bz2
+folder="http://mpg123.orgis.org/download/"
+check_server=1
+
+. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
