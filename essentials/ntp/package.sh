@@ -19,7 +19,7 @@ majorver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc \
-    --with-binsubdir=bin --enable-linuxcaps
+    --with-binsubdir=bin --disable-linuxcaps
   make
 }
 

@@ -242,7 +242,6 @@ perl-ack
 parted
 initramfs
 reiserfsprogs
-attr
 rsync
 acpi
 unrar
@@ -291,7 +290,6 @@ python2-cairo
 python2-gtk
 gimp
 gdb
-libcap
 ntp
 fluxbox
 ttf-win7-fonts
