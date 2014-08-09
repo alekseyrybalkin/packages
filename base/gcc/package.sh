@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i 's/if \((code.*))\)/if (\1 \&\& \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c
   sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
   # do not use AVX
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
@@ -24,7 +25,6 @@ kiin_make() {
     --enable-clocale=gnu \
     --enable-languages=c,c++ \
     --enable-multilib \
-    --disable-bootstrap \
     --with-system-zlib
   make
 }
