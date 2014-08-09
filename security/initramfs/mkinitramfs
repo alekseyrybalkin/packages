@@ -28,7 +28,7 @@ printf "Creating $INITRAMFS_FILE... "
 binfiles="sh cat cp dd killall ls mkdir mknod mount "
 binfiles="$binfiles umount sed sleep ln rm uname"
 
-sbinfiles="udevadm modprobe blkid switch_root"
+sbinfiles="udevd udevadm modprobe blkid switch_root"
 usrsbinfiles="cryptsetup"
 
 unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
@@ -81,9 +81,7 @@ for f in $usrsbinfiles ; do
 done
 
 # Add udevd libraries if not in /sbin
-if [ -x /lib/udev/udevd ] ; then
-  ldd /lib/udev/udevd | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-fi
+ldd /usr/bin/udevd | sed "s/\t//" | cut -d " " -f1 >> $unsorted
 
 # Install libraries
 sort $unsorted | uniq | grep -v fakeroot | while read library ; do
@@ -94,7 +92,7 @@ sort $unsorted | uniq | grep -v fakeroot | while read library ; do
   copy $library lib
 done
 
-cp -a /lib/udev $WDIR/lib
+cp -a /usr/lib/udev $WDIR/lib
 
 ( cd $WDIR ; find . | cpio -o -H newc --quiet | gzip -9 ) > $INITRAMFS_FILE
 

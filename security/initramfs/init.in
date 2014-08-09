@@ -9,9 +9,7 @@ mount -n -t proc     proc     /proc
 mount -n -t sysfs    sysfs    /sys
 mount -n -t tmpfs    tmpfs    /run
 
-UDEV_PATH=/lib/udev
-
-${UDEV_PATH}/udevd --daemon --resolve-names=never
+udevd --daemon --resolve-names=never
 udevadm trigger
 udevadm settle
 

@@ -2,12 +2,15 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=1.8
-_manpages_ver=1.5.3
-urls="http://dev.gentoo.org/~blueness/eudev/eudev-${pkgver}.tar.gz \
-  http://anduin.linuxfromscratch.org/sources/other/eudev-${_manpages_ver}-manpages.tar.bz2"
-srctar=eudev-${pkgver}.tar.gz
-srcdir=${location}/eudev-${pkgver}
+pkgver=1.9
+extension=gz
+folder="http://dev.gentoo.org/~blueness/eudev/"
+check_server=1
+
+. ${KIIN_REPO}/defaults.sh
+
+ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
+urls="${urls} http://anduin.linuxfromscratch.org/sources/other/eudev-${pkgver}-manpages.tar.bz2"
 
 kiin_make() {
   sed -i '/struct ucred/i struct ucred;' src/libudev/util.h
@@ -33,24 +36,13 @@ kiin_make() {
 
 kiin_install() {
   mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
-  mkdir -pv ${pkgdir}/usr/lib/udev/rules.d
   mkdir -pv ${pkgdir}/etc/udev/rules.d
   make DESTDIR=${pkgdir} install
-  if [ -z "${KIIN_LIB32}" ]; then
-    rm -rf ${pkgdir}/usr/lib/udev/rules.d
-    mv ${pkgdir}/lib/udev/* ${pkgdir}/usr/lib/udev/
-
-    mv ${pkgdir}/usr/share/pkgconfig/* ${pkgdir}/usr/lib/pkgconfig
-    rm -rf ${pkgdir}/usr/share/pkgconfig
-    sed -i -e "s/\/lib/\/usr\/lib/g" ${pkgdir}/usr/lib/pkgconfig/udev.pc
-
-    mv ${pkgdir}/usr/bin/udevd ${pkgdir}/usr/lib/udev/
-  else
+  if [ -n "${KIIN_LIB32}" ]; then
     rm -rf ${pkgdir}/usr/lib
   fi
-  rm -rf ${pkgdir}/lib
-
-  tar -xvf ${KIIN_HOME}/tarballs/eudev-${_manpages_ver}-manpages.tar.bz2 -C ${pkgdir}/usr/share
+  tar -xvf ${KIIN_HOME}/tarballs/eudev-${pkgver}-manpages.tar.bz2 -C ${pkgdir}/usr/share \
+    --no-same-owner
 }
 
 kiin_after_install() {
