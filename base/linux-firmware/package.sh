@@ -18,8 +18,4 @@ kiin_install() {
     cp -v ./brcm/bcm43xx-0.fw ${pkgdir}/usr/lib/firmware/brcm
     cp -v ./brcm/bcm43xx_hdr-0.fw ${pkgdir}/usr/lib/firmware/brcm
   fi
-  if [ `hostname` == 'snowden' ]; then
-    cp -v ./iwlwifi-6000g2a-5.ucode ${pkgdir}/usr/lib/firmware
-    cp -v ./iwlwifi-6000g2a-6.ucode ${pkgdir}/usr/lib/firmware
-  fi
 }

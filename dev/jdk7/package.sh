@@ -14,7 +14,4 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/opt/${pkgname}-${pkgver}
   cp -r ./* ${pkgdir}/opt/${pkgname}-${pkgver}
-  if [ `hostname` == 'snowden' ]; then
-    ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
-  fi
 }
