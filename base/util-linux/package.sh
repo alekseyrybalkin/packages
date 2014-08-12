@@ -12,13 +12,13 @@ kiin_make() {
       --bindir=/usr/bin \
       --libdir=/usr/lib \
       --without-python \
-      ADJTIME_PATH=/var/lib/hwclock
+      ADJTIME_PATH=/var/lib/hwclock/adjtime
     make
   else
     ./configure --without-ncurses \
       --libdir=/usr/lib32 \
       --without-python \
-      ADJTIME_PATH=/var/lib/hwclock
+      ADJTIME_PATH=/var/lib/hwclock/adjtime
     make lib{uuid,blkid,mount}.la
   fi
 }
