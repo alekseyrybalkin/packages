@@ -10,6 +10,8 @@ kiin_make() {
   ./configure --prefix=/usr \
     --enable-appdefaultdir=/usr/share/X11/app-defaults \
     --without-esound \
+    --without-gtk \
+    --without-gtk2 \
     --without-ftgl
   make
 }
