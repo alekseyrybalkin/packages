@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=1.9
+pkgver=1.10
 extension=gz
 folder="http://dev.gentoo.org/~blueness/eudev/"
 check_server=1
@@ -13,8 +13,6 @@ ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 urls="${urls} http://anduin.linuxfromscratch.org/sources/other/eudev-${pkgver}-manpages.tar.bz2"
 
 kiin_make() {
-  sed -i '/struct ucred/i struct ucred;' src/libudev/util.h
-  sed -r -i 's|/usr(/bin/test)|\1|' test/udev-test.pl
   ./configure --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \

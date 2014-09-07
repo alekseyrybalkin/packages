@@ -2,7 +2,7 @@
 
 pkgname=bash
 _basever=4.3
-_patchlevel=022
+_patchlevel=024
 pkgver="${_basever}.$_patchlevel"
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${_basever}.tar.gz"
 if [ ${_patchlevel} -gt 000 ]; then

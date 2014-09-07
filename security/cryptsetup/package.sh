@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cryptsetup
-pkgver=1.6.5
+pkgver=1.6.6
 urls="https://www.kernel.org/pub/linux/utils/${pkgname}/v1.6/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

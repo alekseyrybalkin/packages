@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openal
-pkgver=1.15.1
+pkgver=1.16.0
 urls="http://kcat.strangesoft.net/openal-releases/${pkgname}-soft-${pkgver}.tar.bz2"
 srctar=${pkgname}-soft-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-soft-${pkgver}

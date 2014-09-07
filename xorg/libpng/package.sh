@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.12
-_apngver=1.6.12
+pkgver=1.6.13
+_apngver=1.6.13
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
   http://downloads.sourceforge.net/libpng-apng/libpng-${_apngver}-apng.patch.gz"
 srctar=${pkgname}-${pkgver}.tar.xz
