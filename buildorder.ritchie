@@ -17,6 +17,9 @@ sed
 bzip2
 pkg-config
 ncurses
+attr
+acl
+libcap
 shadow
 util-linux
 psmisc

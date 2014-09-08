@@ -13,7 +13,6 @@ kiin_make() {
     --with-included-glib \
     --with-included-libcroco \
     --without-git \
-    --disable-acl \
     --libdir=$LIBDIR
   make
 }

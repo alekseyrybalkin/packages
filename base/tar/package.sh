@@ -7,8 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libexecdir=/usr/bin --disable-acl \
-    --without-posix-acls --without-xattrs
+  ./configure --prefix=/usr --libexecdir=/usr/bin
   make
 }
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-pkgname=attr
-pkgver=2.4.47
+pkgname=acl
+pkgver=2.2.52
 extension=gz
 folder="http://download.savannah.gnu.org/releases/${pkgname}/"
 check_server=1
@@ -16,13 +16,15 @@ ver_seds() {
 }
 
 kiin_make() {
-  sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in
-  INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr --disable-static
+  sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
+    libacl/__acl_to_any_text.c
+  INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr \
+    --bindir=/usr/bin \
+    --libexecdir=/usr/lib
   make
 }
 
 kiin_install() {
   make DIST_ROOT=${pkgdir} install install-dev install-lib
-  chmod -v 755 ${pkgdir}/usr/lib/libattr.so
-  rm -rf ${pkgdir}/usr/share/man/man2
+  chmod -v 755 ${pkgdir}/usr/lib/libacl.so
 }
