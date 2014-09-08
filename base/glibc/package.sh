@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.19
+pkgver=2.20
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
@@ -48,6 +48,7 @@ kiin_install() {
     # remove /var, filesystem package creates everything in there
     # TODO: decide with /var/db/Makefile
     rm -rvf ${pkgdir}/var
+    rm -rvf ${pkgdir}/lib64
   else
     rm -rf ${pkgdir}/{etc,sbin,usr/{bin,sbin,share},var}
     # We need one 32 bit specific header file
@@ -59,6 +60,7 @@ kiin_install() {
     install -Dm644 ../../lib32-glibc.conf ${pkgdir}/etc/ld.so.conf.d/lib32-glibc.conf
     # Symlink /usr/lib32/locale to /usr/lib/locale
     ln -s ../lib/locale ${pkgdir}/usr/lib32/locale
+    rm -rvf ${pkgdir}/lib
   fi
 }
 
