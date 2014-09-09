@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.25
+pkgver=2.25.1
 urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.25/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
