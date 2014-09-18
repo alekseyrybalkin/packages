@@ -3,7 +3,7 @@
 pkgname=dbus-core
 ARCH_NAME=dbus
 ARCH_NAME_LIB32=lib32-libdbus
-pkgver=1.8.6
+pkgver=1.8.8
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz
 srcdir=${location}/dbus-${pkgver}
