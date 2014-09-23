@@ -2,7 +2,7 @@
 
 pkgname=glib
 ARCH_NAME=glib2
-majorver=2.40
+majorver=2.42
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"

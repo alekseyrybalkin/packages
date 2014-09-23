@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgpg-error
-pkgver=1.15
+pkgver=1.16
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/${pkgname}/"
 check_server=1

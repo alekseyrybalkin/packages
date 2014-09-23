@@ -1,7 +1,7 @@
 #!/bin/sh
 
-pkgname=at-spi2-atk
-majorver=2.14
+pkgname=adwaita-icon-theme
+majorver=3.14
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
@@ -21,9 +21,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  glib-compile-schemas /usr/share/glib-2.0/schemas
+  gtk-update-icon-cache -q -t -f /usr/share/icons/Adwaita
 }
 
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/share/icons/Adwaita/icon-theme.cache"

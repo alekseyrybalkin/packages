@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xtrans
-pkgver=1.3.4
+pkgver=1.3.5
 urls="http://xorg.freedesktop.org/releases/individual/lib/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

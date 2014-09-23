@@ -13,13 +13,13 @@ gmp
 mpfr
 mpc
 gcc
-sed
 bzip2
 pkg-config
 ncurses
 attr
 acl
 libcap
+sed
 shadow
 util-linux
 psmisc
@@ -281,6 +281,7 @@ perl-xml-simple
 icon-naming-utils
 gnome-icon-theme-symbolic
 gnome-icon-theme
+adwaita-icon-theme
 gnome-themes-standard
 itstool
 gsettings-desktop-schemas
