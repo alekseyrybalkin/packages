@@ -17,6 +17,8 @@ kiin_make() {
   for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
     patch -Np0 -i ${KIIN_HOME}/tarballs/bash${_basever//.}-$(printf "%03d" $p)
   done
+  # CVE-2014-6271 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271
+  patch -p0 -i ../funcdef-import.patch
   ./configure --prefix=/usr \
               --htmldir=/usr/share/doc/bash \
               --without-bash-malloc \
