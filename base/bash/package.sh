@@ -2,7 +2,7 @@
 
 pkgname=bash
 _basever=4.3
-_patchlevel=024
+_patchlevel=025
 pkgver="${_basever}.$_patchlevel"
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${_basever}.tar.gz"
 if [ ${_patchlevel} -gt 000 ]; then
@@ -17,8 +17,6 @@ kiin_make() {
   for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
     patch -Np0 -i ${KIIN_HOME}/tarballs/bash${_basever//.}-$(printf "%03d" $p)
   done
-  # CVE-2014-6271 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271
-  patch -p0 -i ../funcdef-import.patch
   ./configure --prefix=/usr \
               --htmldir=/usr/share/doc/bash \
               --without-bash-malloc \
