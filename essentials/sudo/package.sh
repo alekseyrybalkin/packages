@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=sudo
-pkgver=1.8.10p3
-ARCH_VERSION=1.8.10.p3
+pkgver=1.8.11
+ARCH_VERSION=1.8.11
 extension=gz
 folder="http://www.sudo.ws/${pkgname}/dist/"
 check_server=1
@@ -10,6 +10,8 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  sed -i -e 's/-lshadow//g' configure
+  sed -i -e 's/-lshadow//g' configure.ac
   ./configure --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/sudo \
@@ -17,6 +19,7 @@ kiin_make() {
     --with-all-insults \
     --with-env-editor \
     --without-pam \
+    --disable-static \
     --without-sendmail
   make
 }
