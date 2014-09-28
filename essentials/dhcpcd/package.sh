@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=6.4.5
+pkgver=6.4.6
 extension=bz2
 folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
