@@ -1,8 +1,10 @@
 #!/bin/sh
 
 pkgname=evince
-pkgver=3.14.0
-urls="http://ftp.gnome.org/pub/gnome/sources/evince/3.14/evince-${pkgver}.tar.xz"
+# downgraded because of commit 279070fcbd2f390fd0a56f228d8b763e6d3ad468
+# which broke the alt+mouse window drag/resize
+pkgver=3.12.2
+urls="http://ftp.gnome.org/pub/gnome/sources/evince/3.12/evince-${pkgver}.tar.xz"
 srctar=evince-${pkgver}.tar.xz
 srcdir=${location}/evince-${pkgver}
 
