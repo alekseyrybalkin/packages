@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=make
-pkgver=4.0
+pkgver=4.1
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
