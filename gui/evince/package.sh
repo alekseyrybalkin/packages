@@ -13,6 +13,8 @@ kiin_make() {
     --disable-nautilus \
     --without-keyring \
     --disable-dbus \
+    --disable-libgnome-desktop \
+    --disable-browser-plugin \
     --disable-static
   make
 }
