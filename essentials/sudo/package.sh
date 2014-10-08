@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=sudo
-pkgver=1.8.11
-ARCH_VERSION=1.8.11
+pkgver=1.8.11p1
+ARCH_VERSION=1.8.11.p1
 extension=gz
 folder="http://www.sudo.ws/${pkgname}/dist/"
 check_server=1

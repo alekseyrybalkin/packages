@@ -2,7 +2,7 @@
 
 pkgname=readline
 _basever=6.3
-_patchlevel=006
+_patchlevel=008
 pkgver="${_basever}.${_patchlevel}"
 urls="http://ftp.gnu.org/gnu/readline/readline-${_basever}.tar.gz"
 if [ ${_patchlevel} -gt 000 ]; then

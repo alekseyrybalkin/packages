@@ -2,7 +2,7 @@
 
 pkgname=sysklogd
 SKIP_ARCH_CHECK=1
-pkgver=1.5
+pkgver=1.5.1
 urls="http://www.infodrom.org/projects/sysklogd/download/sysklogd-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

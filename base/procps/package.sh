@@ -3,8 +3,8 @@
 pkgname=procps
 ARCH_NAME=procps-ng
 vcs="git"
-gittag=v3.3.9
-pkgver=3.3.9
+gittag=b0767bd391da2c868ccabe1f0213e1593f1e2eed
+pkgver=3.3.9+
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
