@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=less
-pkgver=468
+pkgver=470
 urls="http://www.greenwoodsoftware.com/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
