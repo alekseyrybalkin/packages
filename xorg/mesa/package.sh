@@ -35,6 +35,8 @@ kiin_make() {
     make -C xdemos DEMOS_PREFIX=/usr
   else
     ./configure --prefix=$XORG_PREFIX \
+      --build=i686-pc-linux-gnu \
+      --host=i686-pc-linux-gnu \
       --sysconfdir=/etc \
       --with-gallium-drivers='' \
       --with-dri-drivers='i965' \
@@ -52,7 +54,6 @@ kiin_make() {
       --enable-texture-float \
       --enable-shared-dricore \
       --without-nouveau \
-      --enable-32-bit \
       --with-dri-driverdir=/usr/lib32/xorg/modules/dri \
       --libdir=/usr/lib32
     make

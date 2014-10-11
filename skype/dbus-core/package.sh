@@ -17,7 +17,7 @@ kiin_make() {
       --enable-inotify --disable-dnotify \
       --disable-verbose-mode --disable-static \
       --disable-tests --disable-asserts \
-      --disable-systemd --libdir=$LIBDIR
+      --disable-systemd --without-x --libdir=$LIBDIR
   make
 }
 
