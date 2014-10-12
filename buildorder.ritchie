@@ -132,6 +132,8 @@ sdl
 lib32-sdl
 sdl_mixer
 lib32-sdl_mixer
+sdl_image
+lib32-sdl_image
 mpg123
 lib32-mpg123
 flac
@@ -200,6 +202,9 @@ lib32-libxt
 libxmu
 lib32-libxmu
 libxpm
+lib32-libxpm
+libxaw
+lib32-libxaw
 libxfixes
 lib32-libxfixes
 libxcomposite
@@ -392,3 +397,9 @@ python2-youtube-dl
 glhack
 lightlang
 steam
+libtxc_dxtn
+lib32-libtxc_dxtn
+sdl2
+lib32-sdl2
+sdl2_image
+lib32-sdl2_image

@@ -7,7 +7,7 @@ srctar=libXpm-${pkgver}.tar.bz2
 srcdir=${location}/libXpm-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./configure $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 
