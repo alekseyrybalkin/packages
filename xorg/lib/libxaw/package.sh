@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=libxaw
+ARCH_NAME_LIB32=libxaw
 pkgver=1.0.12
 urls="http://xorg.freedesktop.org/releases/individual/lib/libXaw-${pkgver}.tar.bz2"
 srctar=libXaw-${pkgver}.tar.bz2
