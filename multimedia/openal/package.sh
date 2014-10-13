@@ -9,9 +9,9 @@ srcdir=${location}/${pkgname}-soft-${pkgver}
 kiin_make() {
   cd build
   if [ -z "$KIIN_LIB32" ]; then
-    cmake -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release ..
+    cmake -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release -D ALSOFT_NO_CONFIG_UTIL=ON ..
   else
-    cmake -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release -D LIB_SUFFIX=32 ..
+    cmake -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release -D ALSOFT_NO_CONFIG_UTIL=ON -D LIB_SUFFIX=32 ..
   fi
   make
 }
