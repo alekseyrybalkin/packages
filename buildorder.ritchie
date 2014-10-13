@@ -139,6 +139,7 @@ lib32-mpg123
 flac
 audiofile
 lame
+boost
 libmpdclient
 mpd
 mpd-mpc
