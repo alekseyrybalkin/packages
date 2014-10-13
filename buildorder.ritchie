@@ -139,6 +139,7 @@ lib32-mpg123
 flac
 audiofile
 lame
+icu
 boost
 libmpdclient
 mpd
@@ -300,7 +301,6 @@ libtiff
 lib32-libtiff
 gdk-pixbuf
 lib32-gdk-pixbuf
-icu
 pango
 lib32-pango
 gtk2
