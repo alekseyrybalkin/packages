@@ -405,3 +405,6 @@ lib32-sdl2
 sdl2_image
 lib32-sdl2_image
 dosbox
+scummvm
+libgdiplus
+mono
