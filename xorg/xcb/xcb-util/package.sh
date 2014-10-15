@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xcb-util
-pkgver=0.3.9
+pkgver=0.4.0
 urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
