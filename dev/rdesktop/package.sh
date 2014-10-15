@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rdesktop
-pkgver=1.8.1
+pkgver=1.8.2
 urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
