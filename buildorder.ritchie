@@ -407,3 +407,7 @@ dosbox
 scummvm
 libgdiplus
 mono
+elfutils
+prelink
+wine-mono
+wine
