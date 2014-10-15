@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=iproute2
-pkgver=3.16.0
-urls="http://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs="git"
+pkgver=3.17.0
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
