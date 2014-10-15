@@ -315,7 +315,6 @@ nss
 lib32-nss
 libvpx
 lib32-libvpx
-xulrunner
 firefox
 xlockmore
 cpio
