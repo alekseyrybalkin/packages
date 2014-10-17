@@ -73,6 +73,15 @@ kiin_install() {
   install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
   chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
+  # for apache
+  install -dv -m 0755 ${pkgdir}/srv/www
+  echo "<html><body><h1>It works\!</h1></body></html>" > ${pkgdir}/srv/www/index.html
+  chown -R apache:apache ${pkgdir}/srv/www
+  install -dv -m 0755 ${pkgdir}/var/log/httpd
+  #chown apache:apache ${pkgdir}/var/log/httpd
+  install -dv -m 0755 ${pkgdir}/var/run/httpd
+  #chown -R apache:apache ${pkgdir}/var/run/httpd
+
   # for mail packages
   install -dv -m 0755 ${pkgdir}/var/mail
 

@@ -8,10 +8,14 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
     --sysconfdir=/etc \
     --localstatedir=/var \
     --datadir=/usr/share/php \
     --mandir=/usr/share/man \
+    --enable-fpm \
+    --with-fpm-user=apache \
+    --with-fpm-group=apache \
     --with-config-file-path=/etc \
     --with-zlib \
     --enable-bcmath \
@@ -29,5 +33,9 @@ kiin_make() {
 
 kiin_install() {
   make -j1 INSTALL_ROOT=${pkgdir} install
+  install -v -m644 php.ini-production ${pkgdir}/etc/php.ini
+  mv -v ${pkgdir}/etc/php-fpm.conf{.default,}
+  sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
+    ${pkgdir}/etc/php.ini
   rm -rf ${pkgdir}/{var,.channels,.registry,.depdb,.depdblock,.filemap,.lock}
 }

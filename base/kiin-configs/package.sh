@@ -10,8 +10,9 @@ kiin_make() {
   rm -rf .git
   find . -type f | xargs sed -i -e "s/%KIIN_HOSTNAME%/`hostname`/g"
   if [ "`hostname`" == "ritchie" ]; then
-    find etc/rc.d -name "*postgresql*" | xargs rm
-    rm -rf etc/nginx
+    # disable autostart for some services
+    find etc/rc.d -type l -name "*postgresql*" | xargs rm
+    find etc/rc.d -type l -name "*httpd*" | xargs rm
   fi
 }
 
