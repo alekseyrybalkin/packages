@@ -14,6 +14,7 @@ kiin_make() {
     find etc/rc.d -type l -name "*postgresql*" | xargs rm
     find etc/rc.d -type l -name "*httpd*" | xargs rm
     find etc/rc.d -type l -name "*php-fpm*" | xargs rm
+    find etc/rc.d -type l -name "*mysql*" | xargs rm
   fi
 }
 

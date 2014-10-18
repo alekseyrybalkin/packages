@@ -431,3 +431,4 @@ postgresql
 apache
 php
 nginx
+mariadb
