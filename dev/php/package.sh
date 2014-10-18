@@ -27,15 +27,19 @@ kiin_make() {
     --enable-ftp \
     --with-gettext \
     --enable-mbstring \
+    --with-mysql=shared,mysqlnd \
+    --with-mysqli=shared,mysqlnd \
+    --with-mysql-sock=/var/run/mysqld/mysqld.sock \
+    --with-pdo-mysql=shared,mysqlnd \
     --with-readline
   make
 }
 
 kiin_install() {
   make -j1 INSTALL_ROOT=${pkgdir} install
-  install -v -m644 php.ini-production ${pkgdir}/etc/php.ini
+  install -v -m644 php.ini-production ${pkgdir}/etc/php.ini.packaged
   mv -v ${pkgdir}/etc/php-fpm.conf{.default,}
   sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
-    ${pkgdir}/etc/php.ini
+    ${pkgdir}/etc/php.ini.packaged
   rm -rf ${pkgdir}/{var,.channels,.registry,.depdb,.depdblock,.filemap,.lock}
 }
