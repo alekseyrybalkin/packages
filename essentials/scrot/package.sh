@@ -2,6 +2,7 @@
 
 pkgname=scrot
 pkgver=0.8
+ARCH_VERSION=0.8.13
 urls="http://linuxbrit.co.uk/downloads/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
