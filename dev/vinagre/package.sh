@@ -20,8 +20,12 @@ kiin_after_install() {
   glib-compile-schemas /usr/share/glib-2.0/schemas
   update-desktop-database -q
   gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
-  update-mime-database usr/share/mime > /dev/null
+  update-mime-database /usr/share/mime > /dev/null
 }
+
 kiin_after_upgrade() {
   kiin_after_install
 }
+
+known="usr/share/mime/application/x-vnc.xml \
+  usr/share/mime/application/x-remote-connection.xml"
