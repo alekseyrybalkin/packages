@@ -12,7 +12,8 @@ kiin_make() {
   MAKEFLAGS=
   ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
     --with-zlib=/usr --with-serf=/usr --with-neon=/usr \
-    --with-sqlite=/usr --disable-static
+    --with-sqlite=/usr --disable-static \
+    --with-apache-libexecdir=/usr/lib/httpd/modules
   make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all
   make swig-pl
   make swig-py swig_pydir=/usr/lib/python2.7/site-packages/libsvn \
