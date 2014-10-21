@@ -17,6 +17,7 @@ ver_seds() {
 kiin_make() {
   ./configure --prefix=/usr \
     --enable-thread-safety \
+    --with-system-tzdata=/usr/share/zoneinfo \
     --docdir=/usr/share/doc/postgresql
   make
 }
