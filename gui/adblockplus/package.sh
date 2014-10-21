@@ -3,8 +3,8 @@
 pkgname=adblockplus
 ARCH_NAME=firefox-adblock-plus
 vcs="mercurial"
-hgtag="2.6.4"
-pkgver=2.6.4
+hgtag="2.6.5"
+pkgver=2.6.5
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
@@ -17,9 +17,9 @@ kiin_install() {
   cd xpi
   unzip adblockplus*.xpi
   emid=$(sed -n -e '/<\?em:id>\?/!d; s/.*\([\"{].*[}\"]\).*/\1/; s/\"//g; p; q' install.rdf)
-  mkdir -p ${pkgdir}/usr/lib/firefox-33.0/browser/extensions/${emid}
+  mkdir -p ${pkgdir}/usr/lib/firefox/browser/extensions/${emid}
   rm adblockplus*.xpi
-  cp -r * ${pkgdir}/usr/lib/firefox-33.0/browser/extensions/${emid}
+  cp -r * ${pkgdir}/usr/lib/firefox/browser/extensions/${emid}
   find ${pkgdir} -type d -exec chmod 0755 {} \;
   find ${pkgdir} -type f -exec chmod 0644 {} \;
 }
