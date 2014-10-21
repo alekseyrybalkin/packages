@@ -379,9 +379,6 @@ gimp
 gdb
 ntp
 fluxbox
-qt
-lib32-qt
-skype
 ttf-win7-fonts
 linux-firmware
 wireless_tools
@@ -416,11 +413,11 @@ nettle
 gnutls
 gtk-vnc
 vinagre
-qemu
 rdesktop
 ldns
 lzo
 openvpn
+qemu
 jdk7
 apache-ant
 maven
@@ -432,5 +429,8 @@ apache
 php
 nginx
 mariadb
+qt
+lib32-qt
+skype
 giblib
 scrot
