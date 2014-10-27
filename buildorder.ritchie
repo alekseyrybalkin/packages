@@ -431,6 +431,12 @@ nginx
 mariadb
 qt
 lib32-qt
+json-c
+lib32-json-c
+libsndfile
+lib32-libsndfile
+pulseaudio
+lib32-pulseaudio
 skype
 giblib
 scrot
