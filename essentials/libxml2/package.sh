@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxml2
-pkgver=2.9.2
+pkgver=2.9.1
 extension=gz
 folder="http://xmlsoft.org/sources/"
 check_server=1
