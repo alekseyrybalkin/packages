@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=pulseaudio
+ARCH_NAME_LIB32=pulseaudio
 pkgver=5.0
 urls="http://freedesktop.org/software/pulseaudio/releases/pulseaudio-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
