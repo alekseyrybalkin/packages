@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static --disable-manpages
+  ./configure --prefix=/usr --disable-static
   make
 }
 
