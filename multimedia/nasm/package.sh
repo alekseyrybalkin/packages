@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nasm
-pkgver=2.11.05
+pkgver=2.11.06
 urls="http://www.nasm.us/pub/nasm/releasebuilds/${pkgver}/nasm-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
