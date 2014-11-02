@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=serf
-pkgver=1.3.7
+pkgver=1.3.8
 _sover=1.3.0
 urls="http://serf.googlecode.com/svn/src_releases/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
