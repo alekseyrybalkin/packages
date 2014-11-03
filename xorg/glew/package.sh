@@ -14,4 +14,6 @@ kiin_make() {
 kiin_install() {
   make GLEW_DEST=${pkgdir}/usr install.all
   rm ${pkgdir}/usr/lib/{libGLEW,libGLEWmx}.a
+  mkdir -p ${pkgdir}/usr/share/doc
+  cp -r doc ${pkgdir}/usr/share/doc/glew
 }
