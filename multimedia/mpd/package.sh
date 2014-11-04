@@ -21,6 +21,7 @@ kiin_make() {
     --disable-soup \
     --disable-fluidsynth \
     --disable-aac \
+    --disable-pulse \
     --enable-mpg123 \
     --enable-flac \
     --enable-audiofile
