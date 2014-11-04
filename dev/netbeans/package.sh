@@ -3,6 +3,7 @@
 pkgname=netbeans
 pkgver=8.0.1
 _subver=201408251540
+SKIP_ARCH_CHECK=1
 urls="http://dlc.sun.com.edgesuite.net/${pkgname}/${pkgver}/final/zip/${pkgname}-${pkgver}-${_subver}.zip"
 srczip=${pkgname}-${pkgver}-${_subver}.zip
 srcdir=${location}/${pkgname}
