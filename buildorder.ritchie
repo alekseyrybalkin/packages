@@ -137,6 +137,8 @@ lib32-sdl_image
 mpg123
 lib32-mpg123
 flac
+libsndfile
+lib32-libsndfile
 audiofile
 lame
 icu
@@ -433,8 +435,6 @@ qt
 lib32-qt
 json-c
 lib32-json-c
-libsndfile
-lib32-libsndfile
 pulseaudio
 lib32-pulseaudio
 skype
