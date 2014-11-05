@@ -31,7 +31,7 @@ kiin_install() {
   MAKEFLAGS=
   make DESTDIR=${pkgdir} install
   rm ${pkgdir}/etc/dbus-1/system.d/pulseaudio-system.conf
-  sed '/load-module module-console-kit/s/^/#/' -i ${pkgdir}/etc/pulse/default.pa
+  mv ${pkgdir}/etc/pulse/default.pa{,.packaged}
   if [ -z "${KIIN_LIB32}" ]; then
     chmod 700 ${pkgdir}/usr/bin/*
     chown skype:skype ${pkgdir}/usr/bin/*
