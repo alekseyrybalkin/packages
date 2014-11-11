@@ -2,7 +2,7 @@
 
 pkgname=mpd
 majorver=0.19
-pkgver=${majorver}.1
+pkgver=${majorver}.2
 urls="http://www.musicpd.org/download/mpd/${majorver}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

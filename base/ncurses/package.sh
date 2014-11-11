@@ -2,6 +2,7 @@
 
 pkgname=ncurses
 pkgver=5.9
+ARCH_VERSION=5.9_20141101
 urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

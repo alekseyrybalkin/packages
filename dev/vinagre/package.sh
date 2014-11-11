@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=vinagre
-pkgver=3.14.1
+pkgver=3.14.2
 urls="http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
