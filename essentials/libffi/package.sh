@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libffi
-pkgver=3.1
+pkgver=3.2.1
 extension=gz
 folder="ftp://sourceware.org/pub/${pkgname}/"
 check_server=1
