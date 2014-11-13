@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=php
-pkgver=5.6.2
+pkgver=5.6.3
 urls="http://us2.php.net/distributions/php-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
