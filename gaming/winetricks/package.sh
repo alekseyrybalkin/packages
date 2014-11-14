@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=winetricks
-pkgver=2014
-ARCH_VERSION=20140302
+pkgver=20140817
+ARCH_VERSION=20140817
 urls="http://winetricks.googlecode.com/svn-history/trunk/src/winetricks \
   http://winetricks.googlecode.com/svn-history/trunk/src/winetricks.1"
 

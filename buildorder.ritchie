@@ -410,6 +410,8 @@ elfutils
 prelink
 wine-mono
 wine
+cabextract
+winetricks
 libsecret
 nettle
 gnutls
