@@ -3,8 +3,8 @@
 pkgname=ideau
 ARCH_NAME=intellij-idea-community-edition
 SKIP_ARCH_CHECK=1
-pkgver=13.1.5
-_pkgver=135.1289
+pkgver=13.1.6
+_pkgver=135.1306
 urls="http://download.jetbrains.com/idea/ideaIU-${pkgver}.tar.gz"
 srctar=ideaIU-${pkgver}.tar.gz
 srcdir=${location}/idea-IU-${_pkgver}
