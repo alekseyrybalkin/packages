@@ -2,7 +2,7 @@
 
 pkgname=gnome-themes-standard
 majorver=3.14
-pkgver=${majorver}.2
+pkgver=${majorver}.2.1
 extension=xz
 major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
 check_server=1
