@@ -426,7 +426,6 @@ jdk7
 apache-ant
 maven
 ca-certificates-java
-idea
 ideau
 postgresql
 apache
@@ -443,5 +442,4 @@ skype
 giblib
 scrot
 memcached
-netbeans
 ttf-ubuntu
