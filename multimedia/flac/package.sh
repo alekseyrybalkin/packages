@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=flac
-pkgver=1.3.0
+pkgver=1.3.1
 urls="http://downloads.xiph.org/releases/flac/flac-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
