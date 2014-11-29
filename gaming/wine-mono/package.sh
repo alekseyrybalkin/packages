@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=wine-mono
-pkgver=4.5.2
+pkgver=4.5.4
 urls="http://downloads.sourceforge.net/project/wine/Wine%20Mono/${pkgver}/$pkgname-${pkgver}.msi"
 
 kiin_make() {
