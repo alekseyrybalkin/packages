@@ -11,12 +11,12 @@ urls="http://rybalkin.org/kiin-files/mplayer-revert-icl-fixes.patch \
 
 kiin_make() {
   git clone $SOURCES_HOME/ffmpeg ffmpeg
-  
+
   patch -Np0 -i ${KIIN_HOME}/tarballs/mplayer-revert-icl-fixes.patch
   patch -Np0 -i ${KIIN_HOME}/tarballs/mplayer-giflib51.patch
 
   cd ffmpeg
-  git checkout n2.2.3
+  git checkout n2.2.10
   cd ..
   sed -i -e 's/\.mplayer/\.config\/mplayer/g' path.c
   ./configure --prefix=/usr \
