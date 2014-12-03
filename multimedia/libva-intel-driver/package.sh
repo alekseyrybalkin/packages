@@ -10,6 +10,7 @@ check_server=1
 
 kiin_make() {
   mkdir -p m4
+  autoreconf -fi
   ./configure $XORG_CONFIG
   make
 }

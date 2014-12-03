@@ -10,7 +10,8 @@ check_server=1
 
 kiin_make() {
   mkdir -p m4
-  ./configure $XORG_CONFIG --disable-wayland --disable-docs
+  autoreconf -fi
+  ./configure $XORG_CONFIG
   make
 }
 
