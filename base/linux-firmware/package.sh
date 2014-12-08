@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=linux-firmware
 SKIP_ARCH_CHECK=1
 vcs="git"

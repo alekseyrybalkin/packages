@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=skype
 pkgver=4.3.0.37
 urls="http://download.skype.com/linux/${pkgname}-${pkgver}.tar.bz2"

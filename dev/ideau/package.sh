@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=ideau
 ARCH_NAME=intellij-idea-community-edition
 SKIP_ARCH_CHECK=1

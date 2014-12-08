@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=jdk7
 SKIP_ARCH_CHECK=1
 pkgver=1.7.0_71

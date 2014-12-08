@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=steam
 pkgver=1.0.0.49
 urls="http://repo.steampowered.com/${pkgname}/pool/${pkgname}/s/${pkgname}/${pkgname}_${pkgver}.tar.gz \
