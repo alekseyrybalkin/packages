@@ -413,7 +413,6 @@ libgdiplus
 mono
 elfutils
 prelink
-wine-mono
 wine
 cabextract
 winetricks
