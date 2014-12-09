@@ -9,6 +9,8 @@ srcdir=${location}/gtk+-${pkgver}
 kiin_make() {
   sed -i 's#l \(gtk-.*\).sgml#& -o \1#' docs/{faq,tutorial}/Makefile.in
   sed -i 's#.*@man_#man_#' docs/reference/gtk/Makefile.in
+  # remove this with 2.24.26 release [ http://wiki.linuxfromscratch.org/blfs/ticket/5852 ]
+  sed -i '/GDK_PIXBUF_DISABLE_DEPRECATED/d' configure
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --libdir=$LIBDIR
