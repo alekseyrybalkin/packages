@@ -11,6 +11,8 @@ check_server=1
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
+      --with-audio="alsa,sdl,openal" \
+      --with-default-audio=alsa \
       --disable-static
   else
     ./configure --prefix=/usr \
