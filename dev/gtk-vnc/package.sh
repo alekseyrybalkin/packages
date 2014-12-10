@@ -12,6 +12,7 @@ kiin_make() {
     --with-examples \
     --disable-static \
     --without-sasl \
+    --with-pulseaudio=no \
     --with-gtk=3.0
   make
 }
