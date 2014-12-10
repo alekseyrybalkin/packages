@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1
 pkgname=ca-certificates-java
 pkgver=20140324
 extension=xz
