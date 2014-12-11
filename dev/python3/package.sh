@@ -2,7 +2,7 @@
 
 pkgname=python3
 ARCH_NAME=python
-pkgver=3.4.1
+pkgver=3.4.2
 urls="http://www.python.org/ftp/python/${pkgver}/Python-${pkgver}.tar.xz \
   http://docs.python.org/3/archives/python-${pkgver}-docs-html.tar.bz2"
 srctar=Python-${pkgver}.tar.xz
