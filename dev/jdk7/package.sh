@@ -28,3 +28,15 @@ kiin_install() {
   cp -r ./* ${pkgdir}/opt/${pkgname}-${pkgver}
   ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
 }
+
+kiin_after_install() {
+  chmod go-rwx /opt/jdk/{,jre/,db/}bin/*
+  getent group javer >/dev/null || groupadd javer
+  getent passwd javer >/dev/null || \
+    useradd -m -g javer -s /bin/bash javer
+  chown javer:javer /opt/jdk/{,jre/,db/}bin/*
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
