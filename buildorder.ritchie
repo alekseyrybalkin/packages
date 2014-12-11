@@ -362,7 +362,7 @@ ldns
 lzo
 openvpn
 qemu
-jdk7
+jdk
 maven
 ideau
 postgresql

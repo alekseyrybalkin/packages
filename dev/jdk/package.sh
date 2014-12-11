@@ -1,7 +1,7 @@
 #!/bin/sh
 
 KIIN_NON_FREE=1
-pkgname=jdk7
+pkgname=jdk
 SKIP_ARCH_CHECK=1
 pkgver=1.7.0_71
 urls="somethere/jdk-7u71-linux-x64.tar.gz \
@@ -24,9 +24,8 @@ kiin_make() {
 }
 
 kiin_install() {
-  mkdir -p ${pkgdir}/opt/${pkgname}-${pkgver}
-  cp -r ./* ${pkgdir}/opt/${pkgname}-${pkgver}
-  ln -sv ${pkgname}-${pkgver} ${pkgdir}/opt/jdk
+  mkdir -p ${pkgdir}/opt/jdk
+  cp -r ./* ${pkgdir}/opt/jdk
 }
 
 kiin_after_install() {
