@@ -16,6 +16,7 @@ ver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr \
+    --sysconfdir=/etc \
     --enable-thread-safety \
     --with-system-tzdata=/usr/share/zoneinfo \
     --docdir=/usr/share/doc/postgresql
@@ -25,6 +26,8 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   make DESTDIR=${pkgdir} install-docs
+  mkdir -p ${pkgdir}/etc/postgresql
+  echo '\set HISTFILE /dev/null' > ${pkgdir}/etc/postgresql/psqlrc
 }
 
 kiin_after_install() {
