@@ -383,3 +383,5 @@ memcached
 ttf-ubuntu
 freeciv
 python3
+llvm
+blender
