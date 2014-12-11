@@ -411,11 +411,6 @@ dosbox
 scummvm
 libgdiplus
 mono
-elfutils
-prelink
-wine
-cabextract
-winetricks
 ldns
 lzo
 openvpn
