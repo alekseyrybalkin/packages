@@ -21,3 +21,15 @@ kiin_install() {
   sed -i '/.*read IGNORE.*/ d' ${pkgdir}/usr/share/ideau/bin/idea.sh
   install -D -m755 ../idea.sh ${pkgdir}/usr/bin/ideau
 }
+
+kiin_after_install() {
+  chmod 700 /usr/bin/ideau
+  getent group javer >/dev/null || groupadd javer
+  getent passwd javer >/dev/null || \
+    useradd -m -g javer -s /bin/bash javer
+  chown javer:javer /usr/bin/ideau
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
