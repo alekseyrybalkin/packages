@@ -427,9 +427,7 @@ lzo
 openvpn
 qemu
 jdk7
-apache-ant
 maven
-ca-certificates-java
 ideau
 postgresql
 apache
