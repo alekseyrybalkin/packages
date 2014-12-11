@@ -416,12 +416,6 @@ prelink
 wine
 cabextract
 winetricks
-libsecret
-nettle
-gnutls
-gtk-vnc
-vinagre
-rdesktop
 ldns
 lzo
 openvpn
