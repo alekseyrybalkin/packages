@@ -35,6 +35,11 @@ kiin_after_install() {
       /usr/bin/init-jks-keystore
     fi
   fi
+  chmod 700 /usr/bin/init-jks-keystore
+  getent group javer >/dev/null || groupadd javer
+  getent passwd javer >/dev/null || \
+    useradd -m -g javer -s /bin/bash javer
+  chown javer:javer /usr/bin/init-jks-keystore
 }
 
 kiin_after_upgrade() {
