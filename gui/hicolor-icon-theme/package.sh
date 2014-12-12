@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=hicolor-icon-theme
-pkgver=0.13
-urls="http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=0.14
+urls="http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
