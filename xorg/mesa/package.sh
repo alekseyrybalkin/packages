@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=10.3
-pkgver=${majorver}.5
+majorver=10.4
+pkgver=${majorver}.0
 patchver=10.3.5
 urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/MesaLib-${pkgver}.tar.bz2 \
   http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-${patchver}-add_xdemos-1.patch"
