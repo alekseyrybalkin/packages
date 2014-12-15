@@ -2,7 +2,7 @@
 
 pkgname=mpfr
 pkgver=3.1.2
-ARCH_VERSION=3.1.2.p10
+ARCH_VERSION=3.1.2.p11
 urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
