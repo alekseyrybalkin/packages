@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=cmake
-majorver=3.0
-pkgver=${majorver}.2
+majorver=3.1
+pkgver=${majorver}.0
 extension=gz
 major_folder="http://www.cmake.org/files/"
 check_server=1
@@ -28,5 +28,5 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   # remove files with spaces
-  rm -rf ${pkgdir}/usr/share/cmake-3.0/Help/generator
+  rm -rf ${pkgdir}/usr/share/cmake-${majorver}/Help/generator
 }
