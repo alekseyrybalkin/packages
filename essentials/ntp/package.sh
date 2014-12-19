@@ -2,8 +2,7 @@
 
 pkgname=ntp
 majorver=4.2
-pkgver=${majorver}.6p5
-ARCH_VERSION=${majorver}.7.p465
+pkgver=${majorver}.8
 extension=gz
 major_folder="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
 check_server=1
@@ -19,7 +18,8 @@ majorver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr --sysconfdir=/etc \
-    --with-binsubdir=bin --enable-linuxcaps
+    --with-binsubdir=bin --enable-linuxcaps \
+    --libexecdir=/usr/lib
   make
 }
 
