@@ -2,7 +2,7 @@
 
 pkgname=mpv
 vcs="git"
-pkgver=0.7.1
+pkgver=0.7.2
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
