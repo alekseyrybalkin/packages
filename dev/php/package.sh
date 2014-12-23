@@ -42,4 +42,6 @@ kiin_install() {
   sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
     ${pkgdir}/etc/php.ini.packaged
   rm -rf ${pkgdir}/{var,.channels,.registry,.depdb,.depdblock,.filemap,.lock}
+  rm ${pkgdir}/usr/bin/phar
+  ln -sv phar.phar ${pkgdir}/usr/bin/phar
 }
