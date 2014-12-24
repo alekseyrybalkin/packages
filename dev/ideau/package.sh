@@ -2,10 +2,9 @@
 
 KIIN_NON_FREE=1
 pkgname=ideau
-ARCH_NAME=intellij-idea-community-edition
 SKIP_ARCH_CHECK=1
-pkgver=13.1.6
-_pkgver=135.1306
+pkgver=14.0.2
+_pkgver=139.659.2
 urls="http://download.jetbrains.com/idea/ideaIU-${pkgver}.tar.gz"
 srctar=ideaIU-${pkgver}.tar.gz
 srcdir=${location}/idea-IU-${_pkgver}
