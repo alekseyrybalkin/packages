@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=links
-pkgver=2.8
+pkgver=2.9
 extension=bz2
 folder="http://${pkgname}.twibright.com/download/"
 check_server=1
