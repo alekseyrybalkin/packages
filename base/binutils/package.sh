@@ -9,8 +9,6 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  rm -fv etc/standards.info
-  sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in
   mkdir -v binutils-build
   cd binutils-build
   ../configure --prefix=/usr --enable-shared --enable-multilib
