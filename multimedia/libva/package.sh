@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libva
-pkgver=1.4.1
+pkgver=1.5.0
 extension=bz2
 folder="http://www.freedesktop.org/software/vaapi/releases/libva/"
 check_server=1
