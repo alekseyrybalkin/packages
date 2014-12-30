@@ -119,7 +119,6 @@ libogg
 libvorbis
 openal
 sdl
-sdl_mixer
 mpg123
 flac
 libsndfile
@@ -207,7 +206,6 @@ lib32-libxv
 libxss
 lib32-libxss
 libxvmc
-libxxf86dga
 libxxf86vm
 lib32-libxxf86vm
 libpciaccess
@@ -221,13 +219,11 @@ lib32-libdrm
 mesa
 lib32-mesa
 glu
-xbitmaps
 xorg-bdftopcf
 xorg-mkfontdir
 xorg-mkfontscale
 xorg-setxkbmap
 xorg-xauth
-xorg-xcursorgen
 xorg-xinit
 xorg-xinput
 xorg-xkbcomp
@@ -235,7 +231,6 @@ xorg-xmodmap
 xorg-xrandr
 xorg-xrdb
 xorg-xset
-xcursor-themes
 xorg-font-util
 xorg-fonts-encodings
 xorg-fonts-alias
@@ -381,12 +376,9 @@ giblib
 scrot
 memcached
 ttf-ubuntu
-freeciv
 python3
 llvm
 blender
-naev
-rarian
 libgsf
 goffice
 gnumeric
