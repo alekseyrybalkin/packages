@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xproto
-pkgver=7.0.26
+pkgver=7.0.27
 urls="http://xorg.freedesktop.org/releases/individual/proto/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
