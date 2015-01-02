@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxshmfence
-pkgver=1.1
+pkgver=1.2
 urls="http://xorg.freedesktop.org/releases/individual/lib/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
