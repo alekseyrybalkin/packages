@@ -14,8 +14,8 @@ kiin_make() {
     --datadir=/usr/share/php \
     --mandir=/usr/share/man \
     --enable-fpm \
-    --with-fpm-user=rybalkin \
-    --with-fpm-group=rybalkin \
+    --with-fpm-user=${PACMAN} \
+    --with-fpm-group=${PACMAN} \
     --with-config-file-path=/etc \
     --with-zlib \
     --enable-bcmath \

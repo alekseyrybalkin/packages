@@ -20,15 +20,3 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
 }
-
-kiin_after_install() {
-  chmod 700 /usr/bin/freeciv-{gtk2,manual,modpack,server}
-  getent group gamer >/dev/null || groupadd gamer
-  getent passwd gamer >/dev/null || \
-    useradd -m -g gamer -G audio,video -s /bin/bash gamer
-  chown gamer:gamer /usr/bin/freeciv-{gtk2,manual,modpack,server}
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
-}

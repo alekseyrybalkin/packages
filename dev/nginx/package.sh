@@ -12,8 +12,8 @@ kiin_make() {
     --sbin-path=/usr/bin/nginx \
     --pid-path=/run/nginx.pid \
     --lock-path=/run/lock/nginx.lock \
-    --user=rybalkin \
-    --group=rybalkin \
+    --user=${PACMAN} \
+    --group=${PACMAN} \
     --http-log-path=/var/log/nginx/access.log \
     --error-log-path=/var/log/nginx/error.log \
     --http-client-body-temp-path=/var/lib/nginx/client-body \

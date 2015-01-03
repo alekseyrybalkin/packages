@@ -19,7 +19,7 @@ kiin_make() {
     --with-apr=/usr/bin/apr-1-config \
     --with-apr-util=/usr/bin/apu-1-config \
     --with-suexec-bin=/usr/lib/httpd/suexec \
-    --with-suexec-caller=rybalkin \
+    --with-suexec-caller=${PACMAN} \
     --with-suexec-docroot=/srv/www \
     --with-suexec-logfile=/var/log/httpd/suexec.log \
     --with-suexec-uidmin=100 \
@@ -30,7 +30,7 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   mv -v ${pkgdir}/usr/bin/suexec ${pkgdir}/usr/lib/httpd/suexec
-  chgrp rybalkin ${pkgdir}/usr/lib/httpd/suexec
+  chgrp ${PACMAN} ${pkgdir}/usr/lib/httpd/suexec
   chmod 4754 ${pkgdir}/usr/lib/httpd/suexec
   rm -rf ${pkgdir}/var
   rm -rf ${pkgdir}/srv

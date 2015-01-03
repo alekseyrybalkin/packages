@@ -73,13 +73,3 @@ kiin_install() {
   rm -rf ${pkgname}-32-build
   rm -rf ${pkgname}-64-build
 }
-
-kiin_after_install() {
-  getent group gamer >/dev/null || groupadd gamer
-  getent passwd gamer >/dev/null || \
-    useradd -m -g gamer -G audio,video -s /bin/bash gamer
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
-}
