@@ -118,6 +118,7 @@ alsa-utils
 libogg
 libvorbis
 openal
+lib32-openal
 sdl
 mpg123
 flac
