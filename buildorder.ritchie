@@ -120,6 +120,7 @@ libvorbis
 openal
 lib32-openal
 sdl
+sdl_mixer
 mpg123
 flac
 libsndfile
