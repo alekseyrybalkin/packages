@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=automake
-pkgver=1.14.1
+pkgver=1.15
 extension=xz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
