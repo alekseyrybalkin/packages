@@ -190,6 +190,7 @@ libxcomposite
 libxrender
 lib32-libxrender
 libxcursor
+lib32-libxcursor
 libxdamage
 lib32-libxdamage
 libfontenc
@@ -219,6 +220,7 @@ lib32-libdrm
 mesa
 lib32-mesa
 glu
+lib32-glu
 xorg-bdftopcf
 xorg-mkfontdir
 xorg-mkfontscale
