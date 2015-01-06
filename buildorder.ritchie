@@ -202,6 +202,7 @@ libxi
 lib32-libxi
 libxinerama
 libxrandr
+lib32-libxrandr
 libxtst
 lib32-libxtst
 libxv
