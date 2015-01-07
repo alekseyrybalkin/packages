@@ -87,6 +87,7 @@ cacerts
 libidn
 wget
 curl
+lib32-curl
 python
 swig
 apr
@@ -116,7 +117,9 @@ alsa-lib
 lib32-alsa-lib
 alsa-utils
 libogg
+lib32-libogg
 libvorbis
+lib32-libvorbis
 openal
 lib32-openal
 sdl
