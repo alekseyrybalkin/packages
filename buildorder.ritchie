@@ -123,6 +123,7 @@ lib32-libvorbis
 openal
 lib32-openal
 sdl
+lib32-sdl
 sdl_mixer
 sdl_image
 mpg123
