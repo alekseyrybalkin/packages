@@ -400,3 +400,5 @@ mono
 nettle
 gnutls
 cups
+dbus-glib
+gconf
