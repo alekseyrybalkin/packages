@@ -403,3 +403,5 @@ gnutls
 cups
 dbus-glib
 gconf
+sdl2
+lib32-sdl2
