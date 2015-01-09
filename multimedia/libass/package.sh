@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libass
-pkgver=0.12.0
+pkgver=0.12.1
 urls="https://github.com/libass/libass/releases/download/${pkgver}/libass-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
