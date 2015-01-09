@@ -17,6 +17,10 @@ kiin_make() {
     --libexecdir=/usr/lib/qemu \
     --localstatedir=/var \
     --target-list=x86_64-softmmu \
+    --disable-vnc-ws \
+    --disable-vnc-tls \
+    --disable-vnc-sasl \
+    --disable-quorum \
     --disable-docs
   # https://aur.archlinux.org/packages/qemu-spice
   # comment by kris7t 2013-10-09 18:15
