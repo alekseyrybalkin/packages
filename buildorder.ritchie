@@ -393,6 +393,7 @@ libgsf
 goffice
 gnumeric
 wv
+dbus-glib
 abiword
 libtxc_dxtn
 lib32-libtxc_dxtn
@@ -401,7 +402,6 @@ mono
 nettle
 gnutls
 cups
-dbus-glib
 gconf
 sdl2
 lib32-sdl2
