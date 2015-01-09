@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=libevent
-pkgver=2.0.21
-urls="https://github.com/downloads/libevent/libevent/libevent-${pkgver}-stable.tar.gz"
+pkgver=2.0.22
+urls="http://sourceforge.net/projects/levent/files/libevent/libevent-${pkgver%.*}/libevent-${pkgver}-stable.tar.gz"
 srctar=${pkgname}-${pkgver}-stable.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}-stable
 
