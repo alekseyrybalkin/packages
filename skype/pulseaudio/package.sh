@@ -15,8 +15,10 @@ kiin_make() {
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
+    --libexecdir=/usr/lib \
     --disable-bluez4 \
     --disable-rpath \
+    --disable-gconf \
     --with-udev-rules-dir=${LIBDIR}/udev/rules.d \
     --with-module-dir=${LIBDIR}/pulse/modules \
     ${ADDITIONAL_OPTS} \
