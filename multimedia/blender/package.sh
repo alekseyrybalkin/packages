@@ -3,6 +3,7 @@
 pkgname=blender
 vcs="git"
 pkgver=2.73
+ARCH_VERSION=2.73.git1.b4d8fb57
 gittag=v2.73
 srcdir=${location}/${pkgname}-${pkgver}
 
