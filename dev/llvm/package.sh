@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=llvm
-pkgver=3.5.0
+pkgver=3.5.1
 urls="http://llvm.org/releases/${pkgver}/llvm-${pkgver}.src.tar.xz"
 srctar=${pkgname}-${pkgver}.src.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}.src
