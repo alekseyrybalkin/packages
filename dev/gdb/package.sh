@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gdb
-pkgver=7.8.1
+pkgver=7.8.2
 urls="http://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
