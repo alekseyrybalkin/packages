@@ -241,6 +241,7 @@ xorg-xmodmap
 xorg-xrandr
 xorg-xrdb
 xorg-xset
+xorg-xprop
 xorg-font-util
 xorg-fonts-encodings
 xorg-fonts-alias
