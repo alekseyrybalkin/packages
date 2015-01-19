@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgdiplus
-pkgver=3.8
+pkgver=3.12
 urls="http://download.mono-project.com/sources/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

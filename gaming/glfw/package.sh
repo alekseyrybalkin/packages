@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=glfw
-pkgver=3.0.4
-urls="http://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=3.1
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -p1 -i ../glfw-revert-0c58df06d507.diff
   mkdir build
   cd build
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr \

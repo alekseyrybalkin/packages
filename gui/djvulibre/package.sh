@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=djvulibre
-pkgver=3.5.25.3
-_major=3.5.25
-urls="http://downloads.sourceforge.net/project/djvu/DjVuLibre/${_major}/djvulibre-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${_major}
+pkgver=3.5.26+
+vcs=git
+gittag=ba74358d382e3c71489f203aa07aa03ac7bf9fa9
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr --disable-desktopfiles
   make
 }

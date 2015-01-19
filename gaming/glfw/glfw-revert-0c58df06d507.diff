@@ -1,0 +1,81 @@
+diff -Naur glfw-original/src/x11_init.c glfw/src/x11_init.c
+--- glfw-original/src/x11_init.c	2015-01-19 14:04:59.268950718 +0300
++++ glfw/src/x11_init.c	2015-01-19 14:00:07.815642810 +0300
+@@ -453,8 +453,6 @@
+         getSupportedAtom(supportedAtoms, atomCount, "_NET_ACTIVE_WINDOW");
+     _glfw.x11.NET_FRAME_EXTENTS =
+         getSupportedAtom(supportedAtoms, atomCount, "_NET_FRAME_EXTENTS");
+-    _glfw.x11.NET_REQUEST_FRAME_EXTENTS =
+-        getSupportedAtom(supportedAtoms, atomCount, "_NET_REQUEST_FRAME_EXTENTS");
+     _glfw.x11.NET_WM_BYPASS_COMPOSITOR =
+         getSupportedAtom(supportedAtoms, atomCount, "_NET_WM_BYPASS_COMPOSITOR");
+ 
+diff -Naur glfw-original/src/x11_platform.h glfw/src/x11_platform.h
+--- glfw-original/src/x11_platform.h	2015-01-19 14:04:59.268950718 +0300
++++ glfw/src/x11_platform.h	2015-01-19 14:00:07.812309477 +0300
+@@ -136,7 +136,6 @@
+     Atom            NET_WM_FULLSCREEN_MONITORS;
+     Atom            NET_ACTIVE_WINDOW;
+     Atom            NET_FRAME_EXTENTS;
+-    Atom            NET_REQUEST_FRAME_EXTENTS;
+     Atom            MOTIF_WM_HINTS;
+ 
+     // Xdnd (drag and drop) atoms
+diff -Naur glfw-original/src/x11_window.c glfw/src/x11_window.c
+--- glfw-original/src/x11_window.c	2015-01-19 14:04:59.268950718 +0300
++++ glfw/src/x11_window.c	2015-01-19 14:02:52.745628423 +0300
+@@ -79,16 +79,6 @@
+     return result;
+ }
+ 
+-// Returns whether the event is a selection event
+-//
+-static Bool isFrameExtentsEvent(Display* display, XEvent* event, XPointer pointer)
+-{
+-    _GLFWwindow* window = (_GLFWwindow*) pointer;
+-    return event->type == PropertyNotify &&
+-           event->xproperty.state == PropertyNewValue &&
+-           event->xproperty.window == window->x11.handle &&
+-           event->xproperty.atom == _glfw.x11.NET_FRAME_EXTENTS;
+-}
+ 
+ // Translates a GLFW standard cursor to a font cursor shape
+ //
+@@ -435,37 +425,6 @@
+                         PropModeReplace, (unsigned char*) &version, 1);
+     }
+ 
+-    if (_glfw.x11.NET_REQUEST_FRAME_EXTENTS)
+-    {
+-        // Ensure _NET_FRAME_EXTENTS is set, allowing glfwGetWindowFrameSize to
+-        // function before the window is mapped
+-
+-        XEvent event;
+-        memset(&event, 0, sizeof(event));
+-
+-        event.type = ClientMessage;
+-        event.xclient.window = window->x11.handle;
+-        event.xclient.format = 32; // Data is 32-bit longs
+-        event.xclient.message_type = _glfw.x11.NET_REQUEST_FRAME_EXTENTS;
+-
+-        XSendEvent(_glfw.x11.display,
+-                   _glfw.x11.root,
+-                   False,
+-                   SubstructureNotifyMask | SubstructureRedirectMask,
+-                   &event);
+-        XIfEvent(_glfw.x11.display, &event, isFrameExtentsEvent, (XPointer) window);
+-    }
+-
+-    if (wndconfig->floating && !wndconfig->monitor)
+-    {
+-        if (_glfw.x11.NET_WM_STATE && _glfw.x11.NET_WM_STATE_ABOVE)
+-        {
+-            changeWindowState(window,
+-                              _glfw.x11.NET_WM_STATE_ABOVE,
+-                              _NET_WM_STATE_ADD);
+-        }
+-    }
+-
+     _glfwPlatformSetWindowTitle(window, wndconfig->title);
+ 
+     XRRSelectInput(_glfw.x11.display, window->x11.handle,
