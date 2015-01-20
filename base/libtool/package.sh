@@ -2,7 +2,7 @@
 
 pkgname=libtool
 ARCH_NAME_LIB32=libtool-multilib
-pkgver=2.4.4
+pkgver=2.4.5
 urls="http://ftp.gnu.org/gnu/libtool/libtool-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
