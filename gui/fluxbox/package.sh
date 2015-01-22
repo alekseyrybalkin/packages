@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -p1 -i ../fix_screen_search.diff
   ./configure --prefix=/usr --disable-imlib2
   make
 }
