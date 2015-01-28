@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mariadb
-pkgver=10.0.15
+pkgver=10.0.16
 urls="https://downloads.mariadb.org/interstitial/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
