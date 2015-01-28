@@ -1,14 +1,15 @@
 #!/bin/sh
 
 pkgname=apache
-pkgver=2.4.10
+pkgver=2.4.12
+_patchver=2.4.10
 urls="http://archive.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2 \
-  http://www.linuxfromscratch.org/patches/blfs/svn/httpd-${pkgver}-blfs_layout-1.patch"
+  http://www.linuxfromscratch.org/patches/blfs/svn/httpd-${_patchver}-blfs_layout-1.patch"
 srctar=httpd-${pkgver}.tar.bz2
 srcdir=${location}/httpd-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ${KIIN_HOME}/tarballs/httpd-2.4.10-blfs_layout-1.patch
+  patch -Np1 -i ${KIIN_HOME}/tarballs/httpd-${_patchver}-blfs_layout-1.patch
   sed '/dir.*CFG_PREFIX/s@^@#@' -i support/apxs.in
   ./configure --sbindir=/usr/bin \
     --enable-authnz-fcgi \
