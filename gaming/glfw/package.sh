@@ -7,6 +7,7 @@ gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -Np1 -i ../0001-Issue-309-hide-cursor-on-EnterNotify-and-LeaveNotify.patch
   mkdir build
   cd build
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
