@@ -89,6 +89,11 @@ kiin_install() {
   touch ${pkgdir}/var/games/glhack/{logfile,perm}
   chown -R ${PACMAN}:${PACMAN} ${pkgdir}/var/games/glhack
 
+  # for fcron
+  mkdir -pv ${pkgdir}/var/spool/fcron
+  chown fcron:fcron ${pkgdir}/var/spool/fcron
+  chmod 770 ${pkgdir}/var/spool/fcron
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
