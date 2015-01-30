@@ -2,18 +2,18 @@
 
 pkgname=poppler
 vcs="git"
-pkgver=0.29.0
+pkgver=0.30.0
 gittag=poppler-${pkgver}
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
   ./autogen.sh
-  ./configure --prefix=/usr     \
-              --sysconfdir=/etc \
-              --enable-zlib     \
-              --disable-static  \
-              --enable-xpdf-headers \
-              --disable-poppler-qt4
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-zlib \
+    --disable-static \
+    --enable-xpdf-headers \
+    --disable-poppler-qt4
   make
 }
 

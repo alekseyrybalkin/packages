@@ -308,6 +308,7 @@ transmission
 yasm
 cmake
 libtheora
+openjpeg
 ffmpeg
 fribidi
 libass

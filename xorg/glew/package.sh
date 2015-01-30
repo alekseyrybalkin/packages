@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glew
-pkgver=1.11.0
+pkgver=1.12.0
 urls="http://downloads.sourceforge.net/glew/glew-${pkgver}.tgz"
 srctar=${pkgname}-${pkgver}.tgz
 srcdir=${location}/${pkgname}-${pkgver}
