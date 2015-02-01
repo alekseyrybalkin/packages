@@ -3,7 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.14
-pkgver=${majorver}.7
+pkgver=${majorver}.8
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
