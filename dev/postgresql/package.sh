@@ -25,6 +25,7 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  make -C contrib DESTDIR=${pkgdir} install
   make DESTDIR=${pkgdir} install-docs
   mkdir -p ${pkgdir}/etc/postgresql
   echo '\set HISTFILE /dev/null' > ${pkgdir}/etc/postgresql/psqlrc
