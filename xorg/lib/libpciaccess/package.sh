@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpciaccess
-pkgver=0.13.2
+pkgver=0.13.3
 urls="http://xorg.freedesktop.org/releases/individual/lib/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
