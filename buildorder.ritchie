@@ -223,6 +223,7 @@ libxkbfile
 libxshmfence
 lib32-libxshmfence
 xcb-util
+xcb-util-keysyms
 libdrm
 lib32-libdrm
 mesa
