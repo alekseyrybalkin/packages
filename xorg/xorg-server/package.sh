@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.16.3
+pkgver=1.17.0
 urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -12,7 +12,7 @@ kiin_make() {
     --enable-suid-wrapper \
     --enable-install-setuid \
     --with-sha1=libcrypto \
-    --libexecdir=/usr/bin \
+    --libexecdir=/usr/lib/xorg-server \
     --with-fontrootdir=/usr/share/fonts
   make
 }
