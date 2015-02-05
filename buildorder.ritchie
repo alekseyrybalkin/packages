@@ -297,6 +297,8 @@ perl-file-next
 perl-ack
 parted
 initramfs
+fcron
+logrotate
 reiserfsprogs
 rsync
 acpi
