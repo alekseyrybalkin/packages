@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.20
+pkgver=2.21
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
