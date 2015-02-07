@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgsf
-pkgver=1.14.30
+pkgver=1.14.31
 urls="http://ftp.gnome.org/pub/gnome/sources/libgsf/1.14/libgsf-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
