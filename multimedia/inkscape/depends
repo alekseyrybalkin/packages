@@ -1,0 +1,9 @@
+libatomic_ops
+GC
+Gsl
+libsigc++
+GLibmm
+Atkmm
+Cairomm
+Pangomm
+Gtkmm
