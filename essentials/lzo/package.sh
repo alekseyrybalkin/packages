@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=lzo
-pkgver=2.08
+pkgver=2.09
 extension=gz
 folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
 check_server=1
