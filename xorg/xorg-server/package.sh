@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.17.0
+pkgver=1.17.1
 urls="http://xorg.freedesktop.org/releases/individual/xserver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
