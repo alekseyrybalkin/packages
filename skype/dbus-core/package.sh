@@ -29,7 +29,7 @@ kiin_install() {
   sed -i -e 's|<user>81</user>|<user>dbus</user>|' ${pkgdir}/etc/dbus-1/system.conf
   if [ -z "$KIIN_LIB32" ]; then
     chmod 640 ${pkgdir}/usr/lib/dbus-1.0/dbus-daemon-launch-helper
-    chmod -x ${pkgdir}/usr/bin/dbus-{send,daemon,monitor,cleanup-sockets,uuidgen}
+    chmod -x ${pkgdir}/usr/bin/dbus-{send,daemon,monitor,cleanup-sockets,uuidgen,run-session}
     chown root:root ${pkgdir}/usr/lib/dbus-1.0/dbus-daemon-launch-helper
   else
     rm -rf ${pkgdir}/usr/lib
