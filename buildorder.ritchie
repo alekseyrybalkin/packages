@@ -431,6 +431,7 @@ lib32-cups
 gconf
 sdl2
 lib32-sdl2
+dosbox
 elfutils
 prelink
 wine
