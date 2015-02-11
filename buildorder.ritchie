@@ -121,8 +121,6 @@ vlock
 alsa-lib
 lib32-alsa-lib
 alsa-utils
-alsa-plugins
-lib32-alsa-plugins
 libogg
 lib32-libogg
 libvorbis
