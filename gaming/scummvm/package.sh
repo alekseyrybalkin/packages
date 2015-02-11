@@ -14,3 +14,13 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
 }
+
+kiin_after_install() {
+  getent group gandalf >/dev/null || groupadd gandalf
+  getent passwd gandalf >/dev/null || \
+    useradd -m -g gandalf -G audio,video -s /bin/bash gandalf
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
