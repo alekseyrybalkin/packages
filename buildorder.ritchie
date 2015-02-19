@@ -358,6 +358,7 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 itstool
+gtk-doc
 gsettings-desktop-schemas
 evince
 libexif
