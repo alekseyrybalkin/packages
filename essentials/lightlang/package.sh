@@ -17,4 +17,7 @@ kiin_install() {
 }
 
 known="usr/share/sl/dicts/Mueller-24.en-ru \
-  usr/share/sl/dicts/Mova-Magus.en-ru"
+  usr/share/sl/dicts/Mova-Magus.en-ru \
+  usr/share/sl/dicts/Babylon_Dictionary.ru-en \
+  usr/share/sl/dicts/SDict_Dictionary.ru-en \
+  usr/share/sl/dicts/Sokrat-Mova.ru-en"
