@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=glfw
-pkgver=3.1
+pkgver=3.1+
 vcs=git
-gittag=${pkgver}
+gittag=8d910d7950bffb25a0782f361d73db42b18fc61e
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../0001-Issue-309-hide-cursor-on-EnterNotify-and-LeaveNotify.patch
   mkdir build
   cd build
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
