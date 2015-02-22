@@ -1,17 +1,17 @@
-From 5a7ea8a05e347754aa15508a2466017279ed3d9a Mon Sep 17 00:00:00 2001
+From d7a1cd14b7916e301e9719c44a8167fcb9d3565f Mon Sep 17 00:00:00 2001
 From: Aleksey Rybalkin <aleksey@rybalkin.org>
 Date: Fri, 23 Jan 2015 20:38:12 +0300
-Subject: [PATCH] Issue 309: hide cursor on EnterNotify and LeaveNotify
+Subject: [PATCH] Issue 309: hide cursor on EnterNotify
 
 ---
- src/x11_window.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ src/x11_window.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/src/x11_window.c b/src/x11_window.c
-index 0380b58..6835345 100644
+index 0380b58..5caa900 100644
 --- a/src/x11_window.c
 +++ b/src/x11_window.c
-@@ -1054,12 +1054,18 @@ static void processEvent(XEvent *event)
+@@ -1054,6 +1054,9 @@ static void processEvent(XEvent *event)
  
          case EnterNotify:
          {
@@ -21,15 +21,6 @@ index 0380b58..6835345 100644
              _glfwInputCursorEnter(window, GL_TRUE);
              break;
          }
- 
-         case LeaveNotify:
-         {
-+            if (window->cursorMode == GLFW_CURSOR_HIDDEN)
-+                hideCursor(window);
-+
-             _glfwInputCursorEnter(window, GL_FALSE);
-             break;
-         }
 -- 
-2.2.2
+2.3.0
 
