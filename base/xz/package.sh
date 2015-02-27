@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xz
-pkgver=5.2.0
+pkgver=5.2.1
 urls="http://tukaani.org/xz/xz-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
