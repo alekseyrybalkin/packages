@@ -2,7 +2,7 @@
 
 pkgname=librsvg
 majorver=2.40
-pkgver=${majorver}.7
+pkgver=${majorver}.8
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
