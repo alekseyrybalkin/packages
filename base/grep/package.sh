@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i -e '/tp++/a  if (ep <= tp) break;' src/kwset.c
   ./configure --prefix=/usr
   make
 }

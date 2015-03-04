@@ -8,6 +8,9 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
+  sed -e '/int.*old_desc_blocks/s/int/blk64_t/' \
+    -e '/if (old_desc_blocks/s/super->s_first_meta_bg/desc_blocks/' \
+    -i lib/ext2fs/closefs.c
   mkdir -v build
   cd build
   ../configure --prefix=/usr \
