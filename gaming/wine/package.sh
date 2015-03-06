@@ -2,7 +2,7 @@
 
 KIIN_NO_STRIPPING=1
 pkgname=wine
-pkgver=1.7.37
+pkgver=1.7.38
 urls="http://mirrors.ibiblio.org/wine/source/1.7/wine-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
