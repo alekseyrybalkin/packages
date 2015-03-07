@@ -240,6 +240,7 @@ xcb-util-keysyms
 xcb-util-renderutil
 libdrm
 lib32-libdrm
+python2-mako
 mesa
 lib32-mesa
 glu
