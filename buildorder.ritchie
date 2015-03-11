@@ -326,6 +326,7 @@ lib32-lcms2
 miniupnpc
 transmission
 yasm
+jsoncpp
 cmake
 libtheora
 openjpeg

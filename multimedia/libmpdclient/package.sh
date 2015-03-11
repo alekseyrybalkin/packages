@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libmpdclient
-pkgver=2.9
+pkgver=2.10
 urls="http://www.musicpd.org/download/${pkgname}/2/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
