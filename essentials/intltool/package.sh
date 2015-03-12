@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=intltool
-pkgver=0.50.2
+pkgver=0.51.0
 urls="http://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
