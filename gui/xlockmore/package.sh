@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=xlockmore
-pkgver=5.45
-urls="http://www.tux.org/~bagleyd/xlock/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=5.46
+urls="http://www.tux.org/~bagleyd/xlock/${pkgname}-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
