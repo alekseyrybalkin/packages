@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mono
-pkgver=3.12.0
+pkgver=3.12.1
 urls="http://download.mono-project.com/sources/mono/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
