@@ -438,3 +438,13 @@ prelink
 wine
 scummvm
 gemrb
+libatomic_ops
+gc
+gsl
+libsigc++
+glibmm
+atkmm
+cairomm
+pangomm
+gtkmm
+inkscape
