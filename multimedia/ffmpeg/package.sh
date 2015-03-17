@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ffmpeg
-pkgver=2.6
+pkgver=2.6.1
 urls="http://ffmpeg.org/releases/ffmpeg-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
