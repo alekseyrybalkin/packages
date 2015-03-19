@@ -2,7 +2,7 @@
 
 KIIN_NON_FREE=1
 pkgname=maven
-pkgver=3.2.5
+pkgver=3.3.1
 urls="http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/${pkgver}/binaries/apache-maven-${pkgver}-bin.tar.gz"
 srctar=apache-maven-${pkgver}-bin.tar.gz
 srcdir=${location}/apache-maven-${pkgver}
