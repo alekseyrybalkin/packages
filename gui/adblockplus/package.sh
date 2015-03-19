@@ -3,8 +3,8 @@
 pkgname=adblockplus
 ARCH_NAME=firefox-adblock-plus
 vcs="mercurial"
-hgtag="2.6.7"
-pkgver=2.6.7
+hgtag="2.6.8"
+pkgver=2.6.8
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
