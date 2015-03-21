@@ -72,6 +72,7 @@ sysklogd
 sysvinit
 tar
 texinfo
+gperf
 eudev
 lib32-eudev
 vim

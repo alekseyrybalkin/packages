@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=which
-pkgver=2.20
+pkgver=2.21
 extension=gz
-folder="http://carlo17.home.xs4all.nl/${pkgname}/"
+folder="http://ftp.gnu.org/gnu/which/"
 check_server=1
 
 . ${KIIN_REPO}/defaults.sh

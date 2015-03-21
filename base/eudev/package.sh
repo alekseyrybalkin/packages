@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=2.1.1
+pkgver=3.0
 manpagesver=1.10
 extension=gz
 folder="http://dev.gentoo.org/~blueness/eudev/"
@@ -11,7 +11,6 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
-urls="${urls} http://anduin.linuxfromscratch.org/sources/other/eudev-${manpagesver}-manpages.tar.bz2"
 
 kiin_make() {
   ./configure --prefix=/usr \
@@ -40,8 +39,6 @@ kiin_install() {
   if [ -n "${KIIN_LIB32}" ]; then
     rm -rf ${pkgdir}/usr/lib
   fi
-  tar -xvf ${KIIN_HOME}/tarballs/eudev-${manpagesver}-manpages.tar.bz2 -C ${pkgdir}/usr/share \
-    --no-same-owner
 }
 
 kiin_after_install() {
