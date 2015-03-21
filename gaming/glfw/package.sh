@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=glfw
-pkgver=3.1+
+pkgver=3.1.1
 vcs=git
-gittag=8d910d7950bffb25a0782f361d73db42b18fc61e
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
