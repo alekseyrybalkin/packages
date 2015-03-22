@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=harfbuzz
-pkgver=0.9.39
+pkgver=0.9.40
 extension=bz2
 folder="http://www.freedesktop.org/software/${pkgname}/release/"
 check_server=1

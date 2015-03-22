@@ -2,16 +2,22 @@
 
 pkgname=freeglut
 ARCH_NAME_LIB32=freeglut
-pkgver=2.8.1
+pkgver=3.0.0
 urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+  mkdir build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_BUILD_TYPE=Release \
+    ..
   make
 }
 
 kiin_install() {
+  cd build
   make DESTDIR=${pkgdir} install
 }
