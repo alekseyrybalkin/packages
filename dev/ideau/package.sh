@@ -3,8 +3,8 @@
 KIIN_NON_FREE=1
 pkgname=ideau
 SKIP_ARCH_CHECK=1
-pkgver=14.0.3
-_pkgver=139.1117.1
+pkgver=14.1
+_pkgver=141.177.4
 urls="http://download.jetbrains.com/idea/ideaIU-${pkgver}.tar.gz"
 srctar=ideaIU-${pkgver}.tar.gz
 srcdir=${location}/idea-IU-${_pkgver}
