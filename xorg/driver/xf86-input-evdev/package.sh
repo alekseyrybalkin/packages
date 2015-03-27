@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xf86-input-evdev
-pkgver=2.9.1
+pkgver=2.9.2
 urls="http://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
