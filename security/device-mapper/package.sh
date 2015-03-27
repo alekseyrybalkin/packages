@@ -2,7 +2,7 @@
 
 pkgname=device-mapper
 ARCH_NAME=lvm2
-pkgver=2.02.117
+pkgver=2.02.118
 urls="ftp://sources.redhat.com/pub/lvm2/LVM2.${pkgver}.tgz"
 srctar=LVM2.${pkgver}.tgz
 srcdir=${location}/LVM2.${pkgver}

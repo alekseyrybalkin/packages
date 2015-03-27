@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pangomm
-_majorver=2.34
+_majorver=2.36
 pkgver=${_majorver}.0
 urls="http://ftp.gnome.org/pub/gnome/sources/pangomm/${_majorver}/pangomm-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz

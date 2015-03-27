@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=atk
-majorver=2.14
+majorver=2.16
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"

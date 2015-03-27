@@ -297,6 +297,7 @@ pango
 gtk2
 at-spi2-core
 at-spi2-atk
+libepoxy
 gtk
 which
 nspr

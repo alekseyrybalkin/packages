@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=at-spi2-core
-majorver=2.14
-pkgver=${majorver}.1
+majorver=2.16
+pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
