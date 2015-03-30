@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=wpa_supplicant
-pkgver=2.3
+pkgver=2.4
 urls="http://hostap.epitest.fi/releases/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

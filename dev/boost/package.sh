@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}_${_pkgver}
 
 kiin_make() {
   ./bootstrap.sh --prefix=/usr
-  ./b2 stage threading=multi link=shared
+  ./b2 stage threading=multi link=shared `sed -e 's/.*\(-j *[0-9]\+\).*/\1/' <<< ${MAKEFLAGS}`
 }
 
 kiin_install() {
