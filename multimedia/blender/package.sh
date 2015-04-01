@@ -2,8 +2,8 @@
 
 pkgname=blender
 vcs="git"
-pkgver=2.73a
-gittag=v2.73a
+pkgver=2.74
+gittag=v2.74
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
