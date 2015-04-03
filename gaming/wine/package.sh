@@ -2,7 +2,7 @@
 
 KIIN_NO_STRIPPING=1
 pkgname=wine
-pkgver=1.7.39
+pkgver=1.7.40
 urls="http://prdownloads.sourceforge.net/wine/wine-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
