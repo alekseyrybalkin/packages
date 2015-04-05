@@ -2,9 +2,9 @@
 
 pkgname=libvpx
 ARCH_NAME_LIB32=libvpx
-pkgver=1.3.0
-urls="http://anduin.linuxfromscratch.org/sources/other/libvpx-v${pkgver}.tar.xz"
-srctar=${pkgname}-v${pkgver}.tar.xz
+pkgver=1.4.0
+vcs="git"
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-v${pkgver}
 
 kiin_make() {
