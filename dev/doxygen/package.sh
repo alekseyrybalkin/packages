@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=doxygen
-pkgver=1.8.7
-urls="http://ftp.stack.nl/pub/doxygen/doxygen-${pkgver}.src.tar.gz"
-srctar=${pkgname}-${pkgver}.src.tar.gz
+pkgver=1.8.9.1
+vcs=git
+gittag=Release_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

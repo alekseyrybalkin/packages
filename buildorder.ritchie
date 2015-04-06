@@ -426,3 +426,5 @@ gtkmm
 inkscape
 groovy
 grails
+valgrind
+doxygen
