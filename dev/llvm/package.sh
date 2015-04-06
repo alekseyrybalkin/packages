@@ -36,6 +36,6 @@ kiin_install() {
     ln -sfv ../lib/clang-analyzer/${prog}/${prog} ${pkgdir}/usr/bin/
   done
 
-  ln -sfv ${pkgdir}/usr/bin/clang ${pkgdir}/usr/lib/clang-analyzer/scan-build/
+  ln -sfv /usr/bin/clang ${pkgdir}/usr/lib/clang-analyzer/scan-build/
   mv -v ${pkgdir}/usr/lib/clang-analyzer/scan-build/scan-build.1 ${pkgdir}/usr/share/man/man1/
 }
