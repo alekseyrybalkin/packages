@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xf86-input-keyboard
-pkgver=1.8.0
+pkgver=1.8.1
 urls="http://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
