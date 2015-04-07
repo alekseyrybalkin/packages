@@ -2,7 +2,7 @@
 
 pkgname=python2-virtualenv
 ARCH_NAME=python-virtualenv
-pkgver=12.0.7
+pkgver=12.1.1
 urls="http://pypi.python.org/packages/source/v/virtualenv/virtualenv-${pkgver}.tar.gz"
 srctar=virtualenv-${pkgver}.tar.gz
 srcdir=${location}/virtualenv-${pkgver}
