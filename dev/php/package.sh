@@ -31,7 +31,8 @@ kiin_make() {
     --with-mysqli=shared,mysqlnd \
     --with-mysql-sock=/var/run/mysqld/mysqld.sock \
     --with-pdo-mysql=shared,mysqlnd \
-    --with-readline
+    --with-readline \
+    --with-curl=shared
   make
 }
 
