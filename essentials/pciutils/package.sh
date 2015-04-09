@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pciutils
-pkgver=3.3.0
+pkgver=3.3.1
 extension=xz
 folder="https://www.kernel.org/pub/software/utils/${pkgname}/"
 check_server=1
