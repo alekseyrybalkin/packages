@@ -195,6 +195,7 @@ lib32-libxt
 libxmu
 lib32-libxmu
 libxpm
+libxaw
 libxfixes
 lib32-libxfixes
 libxcomposite
@@ -428,3 +429,10 @@ groovy
 grails
 valgrind
 doxygen
+sdl2
+ois
+freeimage
+ogre
+mygui
+enet
+stuntrally
