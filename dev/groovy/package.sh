@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=groovy
-pkgver=2.4.2
+pkgver=2.4.3
 urls="http://dl.bintray.com/groovy/maven/${pkgname}-binary-${pkgver}.zip"
 srczip=${pkgname}-binary-${pkgver}.zip
 srcdir=${location}/${pkgname}-${pkgver}

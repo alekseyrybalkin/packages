@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnumeric
-pkgver=1.12.21
+pkgver=1.12.22
 urls="http://ftp.gnome.org/pub/gnome/sources/gnumeric/1.12/gnumeric-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
