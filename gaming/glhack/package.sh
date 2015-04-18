@@ -40,8 +40,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
+  getent group bilbo >/dev/null || groupadd bilbo
+  getent passwd bilbo >/dev/null || \
+    useradd -m -g bilbo -G audio,video -s /bin/bash bilbo
   chmod 700 /usr/bin/{,recover_}glhack
-  chown ${PACMAN}:${PACMAN} /usr/bin/{,recover_}glhack
+  chown bilbo:bilbo /usr/bin/{,recover_}glhack
 }
 
 kiin_after_upgrade() {

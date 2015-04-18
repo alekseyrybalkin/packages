@@ -39,3 +39,15 @@ kiin_install() {
 
   rm "${pkgdir}/usr/share/stuntrally/objects0/_readme 0 A.D.txt"
 }
+
+kiin_after_install() {
+  getent group bilbo >/dev/null || groupadd bilbo
+  getent passwd bilbo >/dev/null || \
+    useradd -m -g bilbo -G audio,video -s /bin/bash bilbo
+  chmod 700 /usr/bin/{sr-editor,stuntrally}
+  chown bilbo:bilbo /usr/bin/{sr-editor,stuntrally}
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}

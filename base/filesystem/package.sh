@@ -87,7 +87,7 @@ kiin_install() {
   # for glhack
   mkdir -pv ${pkgdir}/var/games/glhack/save
   touch ${pkgdir}/var/games/glhack/{logfile,perm}
-  chown -R ${PACMAN}:${PACMAN} ${pkgdir}/var/games/glhack
+  chown -R bilbo:bilbo ${pkgdir}/var/games/glhack
 
   # for fcron
   mkdir -pv ${pkgdir}/var/spool/fcron
