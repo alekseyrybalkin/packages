@@ -94,6 +94,11 @@ kiin_install() {
   chown fcron:fcron ${pkgdir}/var/spool/fcron
   chmod 770 ${pkgdir}/var/spool/fcron
 
+  # for backups
+  mkdir -pv ${pkgdir}/var/backups
+  chown ${PACMAN}:${PACMAN} ${pkgdir}/var/backups
+  chmod 700 ${pkgdir}/var/backups
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
