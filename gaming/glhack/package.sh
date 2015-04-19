@@ -2,14 +2,13 @@
 
 pkgname=glhack
 pkgver=1.2
-urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz \
-  http://rybalkin.org/kiin-files/glhack-libpng15.patch"
+urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   MAKEFLAGS=
-  patch -p0 -i ${KIIN_HOME}/tarballs/glhack-libpng15.patch
+  patch -p0 -i ../glhack-libpng15.patch
   sed -i 's|/usr/lib/games|/usr/share|' include/config.h
   sed -i 's|/var/lib/games/glhack|/var/games/glhack|' include/unixconf.h
   sed -i -e 's|PREFIX	 = /usr|PREFIX	 = $(DESTDIR)/usr|' Makefile
