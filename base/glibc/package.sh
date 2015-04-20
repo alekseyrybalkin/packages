@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.21
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+pkgver=2.21.1
+vcs="git"
+gittag=75adf430d2d7ee16eaf3166680de83b498444720
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
