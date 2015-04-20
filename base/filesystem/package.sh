@@ -99,6 +99,11 @@ kiin_install() {
   chown ${PACMAN}:${PACMAN} ${pkgdir}/var/backups
   chmod 700 ${pkgdir}/var/backups
 
+  # for multimedia
+  mkdir -pv ${pkgdir}/var/multimedia/{music,video}
+  chown -R ${PACMAN}:${PACMAN} ${pkgdir}/var/multimedia
+  chmod -R 700 ${pkgdir}/var/multimedia
+
   touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
   chgrp -v utmp ${pkgdir}/var/log/lastlog
   chmod -v 664  ${pkgdir}/var/log/lastlog
