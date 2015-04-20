@@ -22,4 +22,5 @@ kiin_install() {
   cp -av ./* ${pkgdir}
   chmod 440 ${pkgdir}/etc/sudoers
   chmod o-x ${pkgdir}/etc/rc.d/init.d/*
+  chmod 700 ${pkgdir}/usr/bin/*
 }
