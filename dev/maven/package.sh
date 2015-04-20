@@ -1,6 +1,6 @@
 #!/bin/sh
 
-KIIN_NON_FREE=1
+KIIN_NON_FREE=1 # because binary
 pkgname=maven
 pkgver=3.3.1
 urls="http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/${pkgver}/binaries/apache-maven-${pkgver}-bin.tar.gz"

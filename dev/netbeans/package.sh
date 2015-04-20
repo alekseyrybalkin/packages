@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1 # because binary
 pkgname=netbeans
 pkgver=8.0.1
 _subver=201408251540

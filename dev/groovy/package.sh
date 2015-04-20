@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1 # because binary
 pkgname=groovy
 pkgver=2.4.3
 urls="http://dl.bintray.com/groovy/maven/${pkgname}-binary-${pkgver}.zip"

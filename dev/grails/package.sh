@@ -1,5 +1,6 @@
 #!/bin/sh
 
+KIIN_NON_FREE=1 # because binary
 pkgname=grails
 pkgver=2.4.4
 urls="http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/${pkgname}-${pkgver}.zip"
