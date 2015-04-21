@@ -52,18 +52,6 @@ kiin_install() {
   # for fontconfig
   install -dv -m 0755 ${pkgdir}/var/cache/fontconfig
 
-  # for xorg-server
-  install -dv -m 0775 ${pkgdir}/var/lib/xkb
-
-  # for cups
-  install -dv -m 0755 ${pkgdir}/var/log/cups
-  install -dv -m 0775 ${pkgdir}/var/cache/cups
-  install -dv -m 0775 ${pkgdir}/var/cache/cups/rss
-  chown -R root:lp ${pkgdir}/var/cache/cups
-  install -dv -m 0710 ${pkgdir}/var/spool/cups
-  install -dv -m 1770 ${pkgdir}/var/spool/cups/tmp
-  chown -R root:lp ${pkgdir}/var/spool/cups
-
   # for tor
   install -dv -m 0700 ${pkgdir}/var/lib/tor
 
@@ -83,11 +71,6 @@ kiin_install() {
   # for kiin
   mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,server-listings}
   chown ${PACMAN}:${PACMAN} ${pkgdir}/var/lib/kiin/{tarballs,sources,server-listings}
-
-  # for glhack
-  mkdir -pv ${pkgdir}/var/games/glhack/save
-  touch ${pkgdir}/var/games/glhack/{logfile,perm}
-  chown -R bilbo:bilbo ${pkgdir}/var/games/glhack
 
   # for fcron
   mkdir -pv ${pkgdir}/var/spool/fcron
