@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=2.3.5
+pkgver=2.3.6
 urls="https://www.kernel.org/pub/software/scm/git/${pkgname}-${pkgver}.tar.xz \
   https://www.kernel.org/pub/software/scm/git/${pkgname}-manpages-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
