@@ -3,7 +3,7 @@
 pkgname=glibc
 pkgver=2.21.1
 vcs="git"
-gittag=75adf430d2d7ee16eaf3166680de83b498444720
+gittag=01b07c70ad77ef28b6a3661ed3142ebff35b6e69
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
