@@ -7,16 +7,15 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e "s|BUILD_ZLIB\s*= True|BUILD_ZLIB = False|"           \
-        -e "s|INCLUDE\s*= ./zlib-src|INCLUDE    = /usr/include|" \
-        -e "s|LIB\s*= ./zlib-src|LIB        = /usr/lib|"         \
-      cpan/Compress-Raw-Zlib/config.in
+  patch -Np1 -i ../perl-${pkgver}-gcc5_fixes-1.patch
+  export BUILD_ZLIB=False
+  export BUILD_BZIP2=0
   sh Configure -des -Dprefix=/usr                 \
-                    -Dvendorprefix=/usr           \
-                    -Dman1dir=/usr/share/man/man1 \
-                    -Dman3dir=/usr/share/man/man3 \
-                    -Dpager="/usr/bin/less -isR"  \
-                    -Duseshrplib
+    -Dvendorprefix=/usr           \
+    -Dman1dir=/usr/share/man/man1 \
+    -Dman3dir=/usr/share/man/man3 \
+    -Dpager="/usr/bin/less -isR"  \
+    -Duseshrplib
   make
 }
 

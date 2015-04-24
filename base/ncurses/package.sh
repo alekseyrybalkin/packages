@@ -8,6 +8,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  patch -Np1 -i ../ncurses-${pkgver}-gcc5_buildfixes-1.patch
   mkdir ncurses{,w}-build
 
   cd ${srcdir}/ncursesw-build

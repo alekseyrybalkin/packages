@@ -1,14 +1,12 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=4.9.2
+pkgver=5.1.0
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/if \((code.*))\)/if (\1 \&\& \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c
-  sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
   # do not use AVX
   sed -i -e 's/#ifndef HAVE_AS_AVX/#if !defined(HAVE_AS_AVX) || !defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
   sed -i -e 's/#ifdef HAVE_AS_AVX/#if defined(HAVE_AS_AVX) \&\& defined(__AVX__)/g' libitm/config/x86/x86_avx.cc
@@ -16,13 +14,9 @@ kiin_make() {
   sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
   mkdir -v gcc-build
   cd gcc-build
-  SED=sed ../configure --prefix=/usr \
+  ../configure --prefix=/usr \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
-    --enable-shared \
-    --enable-threads=posix \
-    --enable-__cxa_atexit \
-    --enable-clocale=gnu \
     --enable-languages=c,c++ \
     --enable-multilib \
     --with-system-zlib
@@ -34,6 +28,8 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   ln -sv ../bin/cpp ${pkgdir}/usr/lib
   ln -sv gcc ${pkgdir}/usr/bin/cc
+  mv ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib/
+  rmdir ${pkgdir}/usr/lib64
   mkdir -pv ${pkgdir}/usr/share/gdb/auto-load/usr/lib
   mv -v ${pkgdir}/usr/lib/*gdb.py ${pkgdir}/usr/share/gdb/auto-load/usr/lib
   rm -v ${pkgdir}/usr/lib32/*gdb.py
