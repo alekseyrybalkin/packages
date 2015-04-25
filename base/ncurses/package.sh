@@ -21,6 +21,8 @@ kiin_make() {
     --enable-widec \
     --enable-pc-files \
     --with-pkg-config=/usr/bin/pkg-config \
+    --with-cxx-binding \
+    --with-cxx-shared \
     --libdir=${LIBDIR}
   make
 
@@ -35,6 +37,8 @@ kiin_make() {
     --without-debug \
     --without-ada \
     ${CONFIGFLAG} \
+    --with-cxx-binding \
+    --with-cxx-shared \
     --libdir=${LIBDIR}
   make
 }
@@ -43,7 +47,7 @@ kiin_install() {
   cd ${srcdir}/ncursesw-build
   make DESTDIR=${pkgdir} install
   if [ -z "$KIIN_LIB32" ]; then
-    for lib in ncurses form panel menu; do
+    for lib in ncurses ncurses++ form panel menu; do
       echo "INPUT(-l${lib}w)" > ${pkgdir}/usr/lib/lib${lib}.so
     done
 
@@ -57,8 +61,8 @@ kiin_install() {
 
     cd ${srcdir}/ncurses-build
     for lib in ncurses form panel menu; do
-      install -Dm755 lib/lib${lib}.so.${pkgver} ${pkgdir}/usr/lib/lib${lib}.so.${pkgver}
-      ln -s lib${lib}.so.${pkgver} ${pkgdir}/usr/lib/lib${lib}.so.5
+      install -Dm755 lib/lib${lib}.so.${pkgver%_*} ${pkgdir}/usr/lib/lib${lib}.so.${pkgver%_*}
+      ln -s lib${lib}.so.${pkgver%_*} ${pkgdir}/usr/lib/lib${lib}.so.5
     done
   else
     install -dm755 ${pkgdir}/usr/lib32
