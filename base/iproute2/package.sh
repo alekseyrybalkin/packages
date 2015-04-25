@@ -2,7 +2,7 @@
 
 pkgname=iproute2
 vcs="git"
-pkgver=3.19.0
+pkgver=4.0.0
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
