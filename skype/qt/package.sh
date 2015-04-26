@@ -8,6 +8,7 @@ srctar=qt-everywhere-opensource-src-${pkgver}.tar.gz
 srcdir=${location}/qt-everywhere-opensource-src-${pkgver}
 
 kiin_make() {
+  patch -Np1 -i../qt-everywhere-opensource-src-${pkgver}-gcc5_fixes-1.patch
   if [ -z "$KIIN_LIB32" ]; then
     ./configure -prefix /usr \
       -docdir /usr/share/doc/qt \

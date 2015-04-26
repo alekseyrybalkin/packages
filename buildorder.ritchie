@@ -191,6 +191,7 @@ libxcomposite
 libxrender
 lib32-libxrender
 libxcursor
+lib32-libxcursor
 libxdamage
 lib32-libxdamage
 libfontenc
@@ -199,7 +200,9 @@ libxft
 libxi
 lib32-libxi
 libxinerama
+lib32-libxinerama
 libxrandr
+lib32-libxrandr
 libxtst
 lib32-libxtst
 libxv
