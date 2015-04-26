@@ -21,4 +21,8 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  if [ -z "${KIIN_LIB32}" ]; then
+    mv ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib/
+    rmdir ${pkgdir}/usr/lib64
+  fi
 }
