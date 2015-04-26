@@ -10,6 +10,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   patch -Np1 -i ${KIIN_HOME}/tarballs/valgrind-${pkgver}-glibc_2.21-1.patch
   sed -i 's/-mt//g' configure
+  # Linux 4.0 fix
+  sed -i -e "s/2\.6\.\*|3\.\*)/2\.6\.\*|3\.\*|4\.\*)/g" configure
   ./configure --prefix=/usr --datadir=/usr/share/doc/valgrind
   make
 }
