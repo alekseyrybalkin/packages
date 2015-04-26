@@ -15,7 +15,6 @@ kiin_install() {
   libdir="usr/lib32"
   install -d ${pkgdir}/usr/bin
   cp ../skype-wrapper ${pkgdir}/usr/bin/skype
-  chmod 755 ${pkgdir}/usr/bin/skype
   install -D skype "$pkgdir/$libdir/skype/skype"
   mkdir -p "$pkgdir"/usr/share/skype/{avatars,lang,sounds}
   install -m 644 lang/*    "$pkgdir/usr/share/skype/lang"
@@ -29,11 +28,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod 700 /usr/bin/skype
+  chmod 750 /usr/bin/skype
   getent group skype >/dev/null || groupadd skype
   getent passwd skype >/dev/null || \
     useradd -m -g skype -G audio,video -s /bin/bash skype
-  chown skype:skype /usr/bin/skype
+  chown root:skype /usr/bin/skype
 }
 
 kiin_after_upgrade() {

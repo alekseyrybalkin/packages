@@ -35,7 +35,7 @@ kiin_install() {
   rm ${pkgdir}/etc/dbus-1/system.d/pulseaudio-system.conf
   mv ${pkgdir}/etc/pulse/default.pa{,.packaged}
   if [ -z "${KIIN_LIB32}" ]; then
-    chmod 700 ${pkgdir}/usr/bin/*
-    chown skype:skype ${pkgdir}/usr/bin/*
+    chmod 750 ${pkgdir}/usr/bin/*
+    chown root:skype ${pkgdir}/usr/bin/*
   fi
 }
