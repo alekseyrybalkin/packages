@@ -270,6 +270,7 @@ libtiff
 lib32-libtiff
 gdk-pixbuf
 pango
+gtk-doc
 gtk2
 at-spi2-core
 at-spi2-atk
@@ -336,7 +337,6 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 itstool
-gtk-doc
 gsettings-desktop-schemas
 evince
 libexif
