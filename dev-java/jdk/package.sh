@@ -15,16 +15,7 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/opt/jdk
   cp -r ./* ${pkgdir}/opt/jdk
-}
 
-kiin_after_install() {
-  chmod o-rwx,g-w /opt/jdk/{,jre/,db/}bin/*
-  getent group javer >/dev/null || groupadd javer
-  getent passwd javer >/dev/null || \
-    useradd -m -g javer -s /bin/bash javer
-  chown root:javer /opt/jdk/{,jre/,db/}bin/*
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
+  chmod o-rwx,g-w ${pkgdir}/opt/jdk/{,jre/,db/}bin/*
+  chown root:javer ${pkgdir}/opt/jdk/{,jre/,db/}bin/*
 }

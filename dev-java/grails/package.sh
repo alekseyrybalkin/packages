@@ -26,20 +26,11 @@ kiin_install() {
   cd ${pkgdir}/usr/share/grails
   rm -rf doc INSTALL LICENSE README
   find ${pkgdir}/usr/share -name "*.bat" -exec rm {} \;
-}
 
-kiin_after_install() {
-  chmod o-rwx,g-w /usr/bin/grails \
-    /usr/share/grails/bin/grails \
-    /usr/share/grails/{,bin/}startGrails
-  getent group javer >/dev/null || groupadd javer
-  getent passwd javer >/dev/null || \
-    useradd -m -g javer -s /bin/bash javer
-  chown root:javer /usr/bin/grails \
-    /usr/share/grails/bin/grails \
-    /usr/share/grails/{,bin/}startGrails
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
+  chmod o-rwx,g-w ${pkgdir}/usr/bin/* \
+    ${pkgdir}/usr/share/grails/bin/* \
+    ${pkgdir}/usr/share/grails/startGrails
+  chown root:javer ${pkgdir}/usr/bin/* \
+    ${pkgdir}/usr/share/grails/bin/* \
+    ${pkgdir}/usr/share/grails/startGrails
 }

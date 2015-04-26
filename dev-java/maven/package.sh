@@ -14,16 +14,7 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/opt
   cp -r . ${pkgdir}/opt/maven
-}
 
-kiin_after_install() {
-  chmod o-rwx,g-w /opt/maven/bin/*
-  getent group javer >/dev/null || groupadd javer
-  getent passwd javer >/dev/null || \
-    useradd -m -g javer -s /bin/bash javer
-  chown root:javer /opt/maven/bin/*
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
+  chmod o-rwx,g-w ${pkgdir}/opt/maven/bin/*
+  chown root:javer ${pkgdir}/opt/maven/bin/*
 }

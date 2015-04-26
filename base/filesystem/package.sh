@@ -88,3 +88,14 @@ kiin_install() {
   chmod -v 664  ${pkgdir}/var/log/lastlog
   chmod -v 600  ${pkgdir}/var/log/btmp
 }
+
+kiin_after_install() {
+  # for dev-java packages
+  getent group javer >/dev/null || groupadd javer
+  getent passwd javer >/dev/null || \
+    useradd -m -g javer -s /bin/bash javer
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}
