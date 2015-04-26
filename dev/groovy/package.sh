@@ -25,11 +25,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod go-rwx /usr/bin/{grape,groovy,groovyConsole,groovyc,groovydoc,groovysh,java2groovy,startGroovy}
+  chmod o-rwx,g-w /usr/bin/{grape,groovy,groovyConsole,groovyc,groovydoc,groovysh,java2groovy,startGroovy}
   getent group javer >/dev/null || groupadd javer
   getent passwd javer >/dev/null || \
     useradd -m -g javer -s /bin/bash javer
-  chown javer:javer /usr/bin/{grape,groovy,groovyConsole,groovyc,groovydoc,groovysh,java2groovy,startGroovy}
+  chown root:javer /usr/bin/{grape,groovy,groovyConsole,groovyc,groovydoc,groovysh,java2groovy,startGroovy}
 }
 
 kiin_after_upgrade() {

@@ -29,13 +29,13 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod go-rwx /usr/bin/grails \
+  chmod o-rwx,g-w /usr/bin/grails \
     /usr/share/grails/bin/grails \
     /usr/share/grails/{,bin/}startGrails
   getent group javer >/dev/null || groupadd javer
   getent passwd javer >/dev/null || \
     useradd -m -g javer -s /bin/bash javer
-  chown javer:javer /usr/bin/grails \
+  chown root:javer /usr/bin/grails \
     /usr/share/grails/bin/grails \
     /usr/share/grails/{,bin/}startGrails
 }

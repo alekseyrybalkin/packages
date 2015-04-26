@@ -17,11 +17,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod go-rwx /opt/maven/bin/*
+  chmod o-rwx,g-w /opt/maven/bin/*
   getent group javer >/dev/null || groupadd javer
   getent passwd javer >/dev/null || \
     useradd -m -g javer -s /bin/bash javer
-  chown javer:javer /opt/maven/bin/*
+  chown root:javer /opt/maven/bin/*
 }
 
 kiin_after_upgrade() {

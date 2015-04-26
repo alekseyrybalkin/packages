@@ -369,6 +369,8 @@ qemu
 jdk
 maven
 ideau
+groovy
+grails
 postgresql
 php
 nginx
@@ -392,8 +394,6 @@ goffice
 gnumeric
 wv
 abiword
-groovy
-grails
 gsl
 valgrind
 doxygen

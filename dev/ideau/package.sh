@@ -22,11 +22,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod 700 /usr/bin/ideau
+  chmod 750 /usr/bin/ideau
   getent group javer >/dev/null || groupadd javer
   getent passwd javer >/dev/null || \
     useradd -m -g javer -s /bin/bash javer
-  chown javer:javer /usr/bin/ideau
+  chown root:javer /usr/bin/ideau
 }
 
 kiin_after_upgrade() {

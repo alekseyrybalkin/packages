@@ -18,11 +18,11 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  chmod go-rwx /opt/jdk/{,jre/,db/}bin/*
+  chmod o-rwx,g-w /opt/jdk/{,jre/,db/}bin/*
   getent group javer >/dev/null || groupadd javer
   getent passwd javer >/dev/null || \
     useradd -m -g javer -s /bin/bash javer
-  chown javer:javer /opt/jdk/{,jre/,db/}bin/*
+  chown root:javer /opt/jdk/{,jre/,db/}bin/*
 }
 
 kiin_after_upgrade() {
