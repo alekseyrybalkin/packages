@@ -9,6 +9,9 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  # linux 4.0 fix
+  sed -i -e 's/BSD_SOURCE/GNU_SOURCE/g' configure
+
   ./configure --libexecdir=/usr/lib/dhcpcd \
     --dbdir=/run \
     --sbindir=/usr/bin \
