@@ -59,7 +59,7 @@ kiin_make() {
       -translationdir /usr/share/qt/translations \
       -examplesdir /usr/share/doc/qt/examples \
       -demosdir /usr/share/doc/qt/demos \
-      -release \
+      -debug \
       -nomake examples \
       -nomake demos \
       -nomake docs \
@@ -83,7 +83,7 @@ kiin_make() {
 kiin_install() {
   make INSTALL_ROOT=${pkgdir} install
   rm -rf ${pkgdir}/usr/share/doc/qt
-  if [ -n "$KIIN_LIB32" ]; then
+  if [ -n "${KIIN_LIB32}" ]; then
     # Fix wrong path in pkgconfig files
     find ${pkgdir}/usr/lib32/pkgconfig -type f -name '*.pc' \
       -exec perl -pi -e "s, -L${srcdir}/?\S+,,g" {} \;
@@ -91,5 +91,7 @@ kiin_install() {
     find ${pkgdir}/usr/lib32 -type f -name '*.prl' \
       -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d;s/\(QMAKE_PRL_LIBS =\).*/\1/' {} \;
     rm -rf "${pkgdir}"/usr/{include,share,bin,tests}
+    # Strip all libraries
+    find ${pkgdir}/usr/lib32 -type f -exec strip --strip-debug '{}' ';' >/dev/null 2>&1
   fi
 }
