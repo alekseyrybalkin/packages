@@ -8,6 +8,7 @@ urls="http://ftp.gnu.org/gnu/grub/grub-${pkgver}.tar.xz \
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
+# FIXME: grub is broken if built with gcc5
 kiin_make() {
   sed -i -e '/gets is a/d' grub-core/gnulib/stdio.in.h
   #don't build against fuse (will not build /usr/bin/grub-mount
