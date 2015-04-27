@@ -1,7 +1,9 @@
 #!/bin/sh
 
 pkgname=qemu
-pkgver=2.2.1
+pkgver=2.3.0
+vcs=git
+gittag=v${pkgver}
 extension=bz2
 folder="http://wiki.qemu.org/download/"
 check_server=1
