@@ -30,4 +30,5 @@ kiin_install() {
 }
 
 known="boot/grub/i386-pc/core.img \
+  boot/grub/i386-pc/modinfo.sh \
   boot/grub/grubenv"
