@@ -3,12 +3,13 @@
 pkgname=adblockplus
 ARCH_NAME=firefox-adblock-plus
 vcs="mercurial"
-hgtag="2.6.8"
-pkgver=2.6.8
+hgtag="2.6.9"
+pkgver=2.6.9
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   hg clone ${KIIN_HOME}/sources/buildtools buildtools
+  hg clone ${KIIN_HOME}/sources/adblockplusui adblockplusui
   python build.py build -r
 }
 
