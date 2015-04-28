@@ -97,6 +97,8 @@ scons
 serf
 subversion
 perl-error
+asciidoc
+xmlto
 git
 mercurial
 sudo
