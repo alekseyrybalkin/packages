@@ -1,22 +1,12 @@
 #!/bin/sh
 
 pkgname=readline
-_basever=6.3
-_patchlevel=008
-pkgver="${_basever}.${_patchlevel}"
-urls="http://ftp.gnu.org/gnu/readline/readline-${_basever}.tar.gz"
-if [ ${_patchlevel} -gt 000 ]; then
-  for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
-    urls="${urls} http://ftp.gnu.org/gnu/readline/readline-${_basever}-patches/readline${_basever//.}-$(printf "%03d" $p)"
-  done
-fi
-srctar=${pkgname}-${_basever}.tar.gz
-srcdir=${location}/${pkgname}-${_basever}
+pkgver=6.3.008
+vcs=git
+gittag=a73b98f779b388a5d0624e02e8bb187246e3e396
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  for (( p=1; p<=$((10#${_patchlevel})); p++ )); do
-    patch -Np0 -i ${KIIN_HOME}/tarballs/readline${_basever//.}-$(printf "%03d" $p)
-  done
   sed -i '/MV.*old/d' Makefile.in
   sed -i '/{OLDSUFF}/c:' support/shlib-install
   ./configure --prefix=/usr --libdir=${LIBDIR}
