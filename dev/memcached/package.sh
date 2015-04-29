@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=memcached
-pkgver=1.4.23
-urls="http://www.memcached.org/files/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=1.4.24
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr
   make
 }
