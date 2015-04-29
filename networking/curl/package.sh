@@ -1,7 +1,9 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.42.0
+pkgver=7.42.1
+vcs=git
+gittag=curl-${pkgver//\./_}
 extension=bz2
 folder="http://${pkgname}.haxx.se/download/"
 check_server=1
@@ -9,6 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  ./buildconf
   ./configure --prefix=/usr \
     --disable-static \
     --enable-threaded-resolver \
