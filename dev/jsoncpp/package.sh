@@ -3,7 +3,8 @@
 pkgname=jsoncpp
 pkgver=1.4.4
 urls="https://github.com/open-source-parsers/${pkgname}/archive/${pkgver}.tar.gz"
-srctar=${pkgver}.tar.gz
+wget_set_filename=${pkgname}-${pkgver}.tar.gz
+srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
