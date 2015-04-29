@@ -2,12 +2,11 @@
 
 pkgname=nspr
 pkgver=4.10.8
-urls="http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${pkgver}/src/nspr-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=mercurial
+hgtag=NSPR_${pkgver//\./_}_RTM
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cd nspr
   sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
   sed -i 's#$(LIBRARY) ##' config/rules.mk
   ./configure --prefix=/usr \
@@ -19,6 +18,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  cd nspr
   make DESTDIR=${pkgdir} install
 }

@@ -3,14 +3,12 @@
 pkgname=mesa
 majorver=10.5
 pkgver=${majorver}.4
-patchver=10.4.2
-urls="ftp://ftp.freedesktop.org/pub/${pkgname}/${pkgver}/mesa-${pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-${patchver}-add_xdemos-1.patch"
-srctar=mesa-${pkgver}.tar.xz
+vcs=git
+gittag=mesa-${pkgver}
 srcdir=${location}/mesa-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ${KIIN_HOME}/tarballs/MesaLib-${patchver}-add_xdemos-1.patch
+  patch -Np1 -i ../MesaLib-add_xdemos.patch
   autoreconf -fi
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=$XORG_PREFIX \

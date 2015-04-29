@@ -2,16 +2,14 @@
 
 pkgname=nss
 pkgver=3.18.1
-patchver=3.18.1
-folderver=3_18_1
-urls="http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${folderver}_RTM/src/nss-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/blfs/svn/nss-${patchver}-standalone-1.patch"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+vcs=mercurial
+hgtag=NSS_${pkgver//\./_}_RTM
+srcdir=${location}/nss
 
 kiin_make() {
   MAKEFLAGS=
-  patch -Np1 -i ${KIIN_HOME}/tarballs/nss-${patchver}-standalone-1.patch
+  cd ../
+  patch -Np1 -i nss-standalone.patch
   cd nss
   make BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=/usr/include/nspr \
@@ -27,7 +25,7 @@ kiin_install() {
   if [ -n "$KIIN_LIB32" ]; then
     LIB=lib32
   fi
-  cd dist
+  cd ../dist
   mkdir -p ${pkgdir}/usr/$LIB/pkgconfig
   mkdir -p ${pkgdir}/usr/bin
   install -v -m755 Linux*/lib/*.so ${pkgdir}/usr/$LIB
@@ -37,4 +35,6 @@ kiin_install() {
   chmod 644 ${pkgdir}/usr/include/nss/*
   install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} ${pkgdir}/usr/bin
   install -v -m644 Linux*/lib/pkgconfig/nss.pc ${pkgdir}/usr/$LIB/pkgconfig
+  cd ../
+  rm -rf dist
 }

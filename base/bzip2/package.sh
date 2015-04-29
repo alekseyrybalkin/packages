@@ -2,8 +2,7 @@
 
 pkgname=bzip2
 pkgver=1.0.6
-urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz \
-  http://www.linuxfromscratch.org/patches/lfs/development/bzip2-${pkgver}-install_docs-1.patch"
+urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -12,7 +11,7 @@ kiin_make() {
     sed -i "s|CC=gcc|CC=gcc -m32|" Makefile
     sed -i "s|CC=gcc|CC=gcc -m32|" Makefile-libbz2_so
   fi
-  patch -Np1 -i ${KIIN_HOME}/tarballs/bzip2-${pkgver}-install_docs-1.patch
+  patch -Np1 -i ../bzip2-install_docs.patch
   sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
   make -f Makefile-libbz2_so

@@ -3,13 +3,12 @@
 pkgname=mpfr
 _pkgver=3.1.2
 pkgver=${_pkgver}.p11
-urls="http://www.mpfr.org/mpfr-${_pkgver}/mpfr-${_pkgver}.tar.xz \
-  http://www.linuxfromscratch.org/patches/lfs/development/mpfr-${_pkgver}-upstream_fixes-3.patch"
+urls="http://www.mpfr.org/mpfr-${_pkgver}/mpfr-${_pkgver}.tar.xz"
 srctar=${pkgname}-${_pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${_pkgver}
 
 kiin_make() {
-  patch -Np1 -i ${KIIN_HOME}/tarballs/mpfr-${_pkgver}-upstream_fixes-3.patch
+  patch -Np1 -i ../mpfr-upstream_fixes.patch
   ./configure --prefix=/usr \
     --enable-thread-safe \
     --docdir=/usr/share/doc/mpfr
