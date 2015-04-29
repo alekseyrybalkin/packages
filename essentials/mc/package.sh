@@ -2,6 +2,8 @@
 
 pkgname=mc
 pkgver=4.8.14
+vcs=git
+gittag=${pkgver}
 extension=xz
 folder="http://ftp.midnight-commander.org/"
 check_server=1
@@ -9,6 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr \
     --libexecdir=/usr/lib \
     --enable-charset \
