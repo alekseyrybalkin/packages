@@ -2,11 +2,12 @@
 
 pkgname=util-linux
 pkgver=2.26.1
-urls="http://www.kernel.org/pub/linux/utils/${pkgname}/v2.26/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --without-udev \
       --bindir=/usr/bin \

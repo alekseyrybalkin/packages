@@ -2,14 +2,16 @@
 
 pkgname=wget
 pkgver=1.16.3
-urls="http://ftp.gnu.org/gnu/wget/wget-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr      \
-              --sysconfdir=/etc  \
-              --with-ssl=openssl
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --with-ssl=openssl
   make
 }
 

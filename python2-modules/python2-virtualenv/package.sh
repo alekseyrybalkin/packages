@@ -3,8 +3,9 @@
 pkgname=python2-virtualenv
 ARCH_NAME=python-virtualenv
 pkgver=12.1.1
-urls="http://pypi.python.org/packages/source/v/virtualenv/virtualenv-${pkgver}.tar.gz"
-srctar=virtualenv-${pkgver}.tar.gz
+vcs=git
+git_pkgname=virtualenv
+gittag=${pkgver}
 srcdir=${location}/virtualenv-${pkgver}
 
 kiin_make() {
