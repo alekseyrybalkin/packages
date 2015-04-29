@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=gawk
-pkgver=4.1.1
-urls="http://ftp.gnu.org/gnu/gawk/gawk-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+pkgver=4.1.2
+vcs=git
+gittag=gawk-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
