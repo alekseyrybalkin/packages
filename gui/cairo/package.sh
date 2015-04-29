@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   export ac_cv_lib_lzo2_lzo2a_decompress="no"
-  ./autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
   if [ -z "$KIIN_LIB32" ]; then
     CFLAGS="${CFLAGS} -ffat-lto-objects" ./configure --prefix=/usr \
       --disable-static \

@@ -2,13 +2,13 @@
 
 _pkgname=xmodmap
 pkgname=xorg-${_pkgname}
-vcs="git"
-gittag=xmodmap-1.0.9
 pkgver=1.0.9
+vcs="git"
+gittag=xmodmap-${pkgver}
 srcdir=${location}/${_pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
   ./configure $XORG_CONFIG
   make
 }

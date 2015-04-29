@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   # gcc5 fix
   git cherry-pick 21b896939c5bb242f3aacc37baf12379e43254b6
-  ./autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
     --enable-suid-wrapper \

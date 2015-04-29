@@ -15,7 +15,7 @@ majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 kiin_make() {
   # https://bugs.archlinux.org/task/34630
   export CFLAGS+=" -Wall"
-  ./autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
               --with-pcre=system \

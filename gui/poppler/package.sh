@@ -7,7 +7,7 @@ gittag=poppler-${pkgver}
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --enable-zlib \

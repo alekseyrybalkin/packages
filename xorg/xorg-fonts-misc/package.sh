@@ -12,7 +12,7 @@ kiin_make() {
   for dir in *; do
     if [ -d "${dir}" ]; then
       pushd "${dir}"
-      ./autogen.sh
+      NOCONFIGURE=1 ./autogen.sh
       ./configure $XORG_CONFIG
       make
       popd
