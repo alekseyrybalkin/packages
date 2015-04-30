@@ -13,10 +13,9 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
+  git cherry-pick a357718b081f1678748ead5d7cb67c766c930441
   autoreconf -fi
   ./configure --prefix=/usr
-  echo -e "all:\n\ninstall:" > doc/Makefile
-  echo -e "all:\n\ninstall:" > man/Makefile
   make
 }
 
