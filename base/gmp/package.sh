@@ -2,11 +2,12 @@
 
 pkgname=gmp
 pkgver=6.0.0
-urls="ftp://ftp.gmplib.org/pub/gmp-${pkgver}/gmp-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=mercurial
+hgtag=d70561d6581e
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./.bootstrap
   if [ -z "${KIIN_LIB32}" ]; then
     ./configure --prefix=/usr --enable-cxx --libdir=${LIBDIR}
   else

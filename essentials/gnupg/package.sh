@@ -3,12 +3,13 @@
 pkgname=gnupg
 SKIP_ARCH_CHECK=1
 pkgver=1.4.19
-urls="ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=gnupg-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libexecdir=/usr/lib
+  ./autogen.sh
+  ./configure --prefix=/usr --libexecdir=/usr/lib --enable-maintainer-mode
   make
 }
 

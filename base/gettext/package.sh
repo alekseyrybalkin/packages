@@ -2,11 +2,14 @@
 
 pkgname=gettext
 pkgver=0.19.4
-urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./autogen.sh
   ./configure --prefix=/usr \
     --docdir=/usr/share/doc/gettext \
     --with-included-libxml \
@@ -18,5 +21,6 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }

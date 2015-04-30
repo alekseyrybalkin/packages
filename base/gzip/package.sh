@@ -2,11 +2,13 @@
 
 pkgname=gzip
 pkgver=1.6
-urls="http://ftp.gnu.org/gnu/gzip/gzip-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure --prefix=/usr
   make
 }

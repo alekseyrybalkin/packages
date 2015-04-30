@@ -2,11 +2,12 @@
 
 pkgname=freetype2
 pkgver=2.5.5
-urls="http://downloads.sourceforge.net/freetype/freetype-${pkgver}.tar.bz2"
-srctar=freetype-${pkgver}.tar.bz2
+vcs=git
+gittag=VER-${pkgver//\./-}
 srcdir=${location}/freetype-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   sed -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" \
     -i modules.cfg
   sed -e "/#.*.SUBPIXEL/s@/\* @@" -e "/#.*.SUBPIXEL/s@ \*/@@" \

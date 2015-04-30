@@ -4,6 +4,8 @@ pkgname=glib
 ARCH_NAME=glib2
 majorver=2.44
 pkgver=${majorver}.0
+vcs=git
+gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
@@ -15,12 +17,11 @@ majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 kiin_make() {
   # https://bugs.archlinux.org/task/34630
   export CFLAGS+=" -Wall"
-  NOCONFIGURE=1 ./autogen.sh
-  ./configure --prefix=/usr \
-              --sysconfdir=/etc \
-              --with-pcre=system \
-              --disable-libelf \
-              --libdir=$LIBDIR
+  ./autogen.sh --prefix=/usr \
+    --sysconfdir=/etc \
+    --with-pcre=system \
+    --disable-libelf \
+    --libdir=$LIBDIR
   make
 }
 

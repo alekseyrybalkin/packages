@@ -2,12 +2,13 @@
 
 pkgname=gperf
 pkgver=3.0.4
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}
+  ./configure --prefix=/usr
+  echo -e "all:\n\ninstall:" > doc/Makefile
   make
 }
 
