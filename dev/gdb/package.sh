@@ -1,12 +1,15 @@
 #!/bin/sh
 
 pkgname=gdb
-pkgver=7.9
-urls="http://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+pkgver=7.9.0
+ARCH_VERSION=7.9
+vcs=git
+git_pkgname=binutils-gdb
+gittag=gdb-${pkgver}-release
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  rm -rf binutils elfcpp gas gold gprof ld zlib
   ./configure --prefix=/usr
   make
 }

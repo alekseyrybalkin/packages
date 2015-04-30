@@ -3,6 +3,8 @@
 pkgname=atk
 majorver=2.16
 pkgver=${majorver}.0
+vcs=git
+gittag=ATK_${pkgver//\./_}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
@@ -12,6 +14,7 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
+  NOCONFIGURE=1 ./autogen.sh
   ./configure --prefix=/usr --libdir=$LIBDIR
   make
 }

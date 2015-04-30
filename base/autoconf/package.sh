@@ -2,6 +2,8 @@
 
 pkgname=autoconf
 pkgver=2.69
+vcs=git
+gittag=v${pkgver}
 extension=xz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
@@ -11,7 +13,10 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
+  autoreconf -fi
   ./configure --prefix=/usr
+  echo -e "all:\n\ninstall:" > doc/Makefile
+  echo -e "all:\n\ninstall:" > man/Makefile
   make
 }
 
