@@ -2,12 +2,12 @@
 
 pkgname=libxv
 pkgver=1.0.10
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXv-${pkgver}.tar.bz2"
-srctar=libXv-${pkgver}.tar.bz2
+vcs=git
+gittag=libXv-${pkgver}
 srcdir=${location}/libXv-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

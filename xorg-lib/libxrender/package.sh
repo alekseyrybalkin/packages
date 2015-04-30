@@ -2,12 +2,12 @@
 
 pkgname=libxrender
 pkgver=0.9.8
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXrender-${pkgver}.tar.bz2"
-srctar=libXrender-${pkgver}.tar.bz2
+vcs=git
+gittag=libXrender-${pkgver}
 srcdir=${location}/libXrender-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

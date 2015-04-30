@@ -2,12 +2,12 @@
 
 pkgname=libxi
 pkgver=1.7.4
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXi-${pkgver}.tar.bz2"
-srctar=libXi-${pkgver}.tar.bz2
+vcs=git
+gittag=libXi-${pkgver}
 srcdir=${location}/libXi-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

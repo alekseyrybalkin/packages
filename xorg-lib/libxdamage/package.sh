@@ -2,12 +2,12 @@
 
 pkgname=libxdamage
 pkgver=1.1.4
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXdamage-${pkgver}.tar.bz2"
-srctar=libXdamage-${pkgver}.tar.bz2
+vcs=git
+gittag=libXdamage-${pkgver}
 srcdir=${location}/libXdamage-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

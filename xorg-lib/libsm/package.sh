@@ -2,12 +2,12 @@
 
 pkgname=libsm
 pkgver=1.2.2
-urls="http://xorg.freedesktop.org/releases/individual/lib/libSM-${pkgver}.tar.bz2"
-srctar=libSM-${pkgver}.tar.bz2
+vcs=git
+gittag=libSM-${pkgver}
 srcdir=${location}/libSM-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

@@ -2,12 +2,12 @@
 
 pkgname=libice
 pkgver=1.0.9
-urls="http://xorg.freedesktop.org/releases/individual/lib/libICE-${pkgver}.tar.bz2"
-srctar=libICE-${pkgver}.tar.bz2
+vcs=git
+gittag=libICE-${pkgver}
 srcdir=${location}/libICE-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

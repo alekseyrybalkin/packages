@@ -2,12 +2,12 @@
 
 pkgname=libxtst
 pkgver=1.2.2
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXtst-${pkgver}.tar.bz2"
-srctar=libXtst-${pkgver}.tar.bz2
+vcs=git
+gittag=libXtst-${pkgver}
 srcdir=${location}/libXtst-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

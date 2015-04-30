@@ -2,12 +2,12 @@
 
 pkgname=libxvmc
 pkgver=1.0.9
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXvMC-${pkgver}.tar.bz2"
-srctar=libXvMC-${pkgver}.tar.bz2
+vcs=git
+gittag=libXvMC-${pkgver}
 srcdir=${location}/libXvMC-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 

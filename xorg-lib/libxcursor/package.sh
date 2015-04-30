@@ -2,12 +2,12 @@
 
 pkgname=libxcursor
 pkgver=1.1.14
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXcursor-${pkgver}.tar.bz2"
-srctar=libXcursor-${pkgver}.tar.bz2
+vcs=git
+gittag=libXcursor-${pkgver}
 srcdir=${location}/libXcursor-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 

@@ -2,12 +2,12 @@
 
 pkgname=libxt
 pkgver=1.1.4
-urls="http://xorg.freedesktop.org/releases/individual/lib/libXt-${pkgver}.tar.bz2"
-srctar=libXt-${pkgver}.tar.bz2
+vcs=git
+gittag=libXt-${pkgver}
 srcdir=${location}/libXt-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG \
+  ./autogen.sh $XORG_CONFIG \
     --with-appdefaultdir=/etc/X11/app-defaults \
     --libdir=$LIBDIR
   make

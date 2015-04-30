@@ -2,12 +2,12 @@
 
 pkgname=libx11
 pkgver=1.6.3
-urls="http://xorg.freedesktop.org/releases/individual/lib/libX11-${pkgver}.tar.bz2"
-srctar=libX11-${pkgver}.tar.bz2
+vcs=git
+gittag=libX11-${pkgver}
 srcdir=${location}/libX11-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --libdir=$LIBDIR
+  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
   make
 }
 
