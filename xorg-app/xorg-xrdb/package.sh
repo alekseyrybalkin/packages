@@ -3,12 +3,12 @@
 _pkgname=xrdb
 pkgname=xorg-${_pkgname}
 pkgver=1.1.0
-urls="http://xorg.freedesktop.org/releases/individual/app/${_pkgname}-${pkgver}.tar.bz2"
-srctar=${_pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=${_pkgname}-${pkgver}
 srcdir=${location}/${_pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 
