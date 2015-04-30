@@ -2,12 +2,13 @@
 
 pkgname=diffutils
 pkgver=3.3
-urls="http://ftp.gnu.org/gnu/diffutils/diffutils-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's:= @mkdir_p@:= /bin/mkdir -p:' po/Makefile.in.in
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure --prefix=/usr
   make
 }

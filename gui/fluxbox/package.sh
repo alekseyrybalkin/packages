@@ -2,11 +2,12 @@
 
 pkgname=fluxbox
 pkgver=1.3.7
-urls="http://downloads.sourceforge.net/fluxbox/fluxbox-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=Release-${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr --disable-imlib2
   make
 }

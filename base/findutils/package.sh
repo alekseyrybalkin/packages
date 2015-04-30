@@ -1,15 +1,18 @@
 #!/bin/sh
 
 pkgname=findutils
-pkgver=4.4.2
-urls="http://ftp.gnu.org/gnu/findutils/findutils-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=4.5.14
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr                   \
-              --libexecdir=/usr/lib/findutils \
-              --localstatedir=/var/lib/locate
+  export DO_NOT_WANT_CHANGELOG_DRIVER=1
+  git clone ${KIIN_HOME}/sources/gnulib
+  sh import-gnulib.sh
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib/findutils \
+    --localstatedir=/var/lib/locate
   make
 }
 

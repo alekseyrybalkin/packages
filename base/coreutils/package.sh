@@ -2,11 +2,14 @@
 
 pkgname=coreutils
 pkgver=8.23
-urls="http://ftp.gnu.org/gnu/coreutils/coreutils-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  git cherry-pick 8878c4ef1b88fd07a48ccd7df6bff7ba0929dad7
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure \
     --prefix=/usr \
     --libexecdir=/usr/lib \

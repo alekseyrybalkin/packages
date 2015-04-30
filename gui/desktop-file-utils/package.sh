@@ -2,11 +2,12 @@
 
 pkgname=desktop-file-utils
 pkgver=0.22
-urls=" http://freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  NOCONFIGURE=1 ./autogen.sh
   ./configure --prefix=/usr
   make
 }

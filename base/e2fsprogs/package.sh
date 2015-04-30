@@ -2,8 +2,8 @@
 
 pkgname=e2fsprogs
 pkgver=1.42.12
-urls=" http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

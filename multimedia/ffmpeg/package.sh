@@ -2,8 +2,8 @@
 
 pkgname=ffmpeg
 pkgver=2.6.2
-urls="http://ffmpeg.org/releases/ffmpeg-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=n${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
