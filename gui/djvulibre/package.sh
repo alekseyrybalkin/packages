@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=djvulibre
-pkgver=3.5.27
+pkgver=3.5.27.1
 vcs=git
 gittag=release.${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
