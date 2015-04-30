@@ -2,11 +2,12 @@
 
 pkgname=alsa-lib
 pkgver=1.0.29
-urls="ftp://ftp.alsa-project.org/pub/lib/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  autoreconf -fi
   ./configure --libdir=$LIBDIR --disable-python
   make
 }

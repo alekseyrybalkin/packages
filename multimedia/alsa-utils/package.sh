@@ -2,11 +2,12 @@
 
 pkgname=alsa-utils
 pkgver=1.0.29
-urls="ftp://ftp.alsa-project.org/pub/utils/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  autoreconf -fi
   ./configure --disable-alsaconf --disable-xmlto \
     --without-systemdsystemunitdir --sbindir=/usr/bin \
     --with-udev-rules-dir=/usr/lib/udev/rules.d
