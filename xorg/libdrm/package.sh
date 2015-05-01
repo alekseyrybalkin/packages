@@ -2,14 +2,13 @@
 
 pkgname=libdrm
 pkgver=2.4.60
-urls="http://dri.freedesktop.org/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -e "/pthread-stubs/d" -i configure.ac
-  autoreconf --force --install
-  ./configure --prefix=$XORG_PREFIX \
+  ./autogen.sh --prefix=$XORG_PREFIX \
     --enable-udev \
     --disable-cairo-tests \
     --libdir=$LIBDIR

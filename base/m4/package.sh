@@ -2,12 +2,13 @@
 
 pkgname=m4
 pkgver=1.4.17
-urls="http://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' lib/stdio.in.h
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure --prefix=/usr
   make
 }

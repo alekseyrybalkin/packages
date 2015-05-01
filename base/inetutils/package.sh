@@ -2,20 +2,21 @@
 
 pkgname=inetutils
 pkgver=1.9.2
-#ARCH_VERSION=1.9.1.341
-urls="http://ftp.gnu.org/gnu/inetutils/inetutils-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=inetutils-${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure --prefix=/usr \
-      --libexecdir=/usr/bin \
-      --localstatedir=/var \
-      --disable-ifconfig \
-      --disable-logger \
-      --disable-syslogd \
-      --disable-whois \
-      --disable-servers
+    --libexecdir=/usr/bin \
+    --localstatedir=/var \
+    --disable-ifconfig \
+    --disable-logger \
+    --disable-syslogd \
+    --disable-whois \
+    --disable-servers
   make
 }
 

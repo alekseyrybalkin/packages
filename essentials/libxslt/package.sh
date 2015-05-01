@@ -3,6 +3,8 @@
 pkgname=libxslt
 ARCH_NAME_LIB32=libxslt
 pkgver=1.1.28
+vcs=git
+gittag=v${pkgver}
 extension=gz
 folder="http://xmlsoft.org/sources/"
 check_server=1
@@ -11,9 +13,9 @@ check_server=1
 
 kiin_make() {
   if [ -z "${KIIN_LIB32}" ]; then
-    ./configure --prefix=/usr --disable-static --libdir=${LIBDIR}
+    ./autogen.sh --prefix=/usr --disable-static --libdir=${LIBDIR}
   else
-    ./configure --prefix=/usr --disable-static --libdir=${LIBDIR} --with-python=/tmp
+    ./autogen.sh --prefix=/usr --disable-static --libdir=${LIBDIR} --with-python=/tmp
   fi
   make
 }

@@ -3,11 +3,12 @@
 pkgname=mpd
 majorver=0.19
 pkgver=${majorver}.9
-urls="http://www.musicpd.org/download/mpd/${majorver}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \

@@ -2,14 +2,13 @@
 
 pkgname=libpng
 pkgver=1.6.17
-_apngver=1.6.17
-urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz \
-  http://downloads.sourceforge.net/libpng-apng/libpng-${_apngver}-apng.patch.gz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=libpng-${pkgver}-signed
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  gzip -cd ${KIIN_HOME}/tarballs/libpng-${_apngver}-apng.patch.gz | patch -p1
+  patch -Np1 -i ../libpng-apng.patch
+  autoreconf -fi
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --disable-static

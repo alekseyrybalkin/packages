@@ -3,12 +3,12 @@
 pkgname=mpd-mpc
 ARCH_NAME=mpc
 pkgver=0.26
-urls="http://www.musicpd.org/download/mpc/0/mpc-${pkgver}.tar.xz"
-srctar=mpc-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/mpc-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 

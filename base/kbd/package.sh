@@ -2,11 +2,12 @@
 
 pkgname=kbd
 pkgver=2.0.2
-urls="http://ftp.altlinux.org/pub/people/legion/kbd/kbd-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr \
     --disable-vlock
   make
