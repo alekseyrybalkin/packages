@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libfontenc
-pkgver=1.1.2
+pkgver=1.1.3
 vcs=git
 gittag=libfontenc-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

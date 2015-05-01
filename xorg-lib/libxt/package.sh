@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxt
-pkgver=1.1.4
+pkgver=1.1.5
 vcs=git
 gittag=libXt-${pkgver}
 srcdir=${location}/libXt-${pkgver}

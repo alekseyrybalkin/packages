@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxkbfile
-pkgver=1.0.8
+pkgver=1.0.9
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

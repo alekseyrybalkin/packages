@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=kbproto
-pkgver=1.0.6
+pkgver=1.0.7
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

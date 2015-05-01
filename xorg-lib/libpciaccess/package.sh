@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpciaccess
-pkgver=0.13.3
+pkgver=0.13.4
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

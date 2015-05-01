@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxrender
-pkgver=0.9.8
+pkgver=0.9.9
 vcs=git
 gittag=libXrender-${pkgver}
 srcdir=${location}/libXrender-${pkgver}
