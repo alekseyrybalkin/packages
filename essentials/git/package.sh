@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=2.3.7
+pkgver=2.4.0
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
