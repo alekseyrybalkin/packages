@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#vcs=subversion
+#svn_repo=http://svn.abisource.com/abiword/trunk
 pkgname=abiword
 pkgver=3.0.1
 urls="http://www.abisource.com/downloads/abiword/${pkgver}/source/abiword-${pkgver}.tar.gz"
