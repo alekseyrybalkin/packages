@@ -2,13 +2,15 @@
 
 pkgname=device-mapper
 ARCH_NAME=lvm2
-pkgver=2.02.118
-urls="ftp://sources.redhat.com/pub/lvm2/LVM2.${pkgver}.tgz"
-srctar=LVM2.${pkgver}.tgz
+pkgver=2.02.119
+vcs=git
+git_pkgname=lvm2
+gittag=v${pkgver//\./_}
 srcdir=${location}/LVM2.${pkgver}
 
 kiin_make() {
   unset LDFLAGS
+  autoreconf -fi
   ./configure --prefix=/ --sbindir=/usr/bin --sysconfdir=/etc \
     --localstatedir=/var --datarootdir=/usr/share \
     --includedir=/usr/include --with-usrlibdir=/usr/lib \
