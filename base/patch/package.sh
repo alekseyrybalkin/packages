@@ -2,11 +2,13 @@
 
 pkgname=patch
 pkgver=2.7.5
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  git clone ${KIIN_HOME}/sources/gnulib
+  ./bootstrap --skip-po
   ./configure --prefix=/usr
   make
 }

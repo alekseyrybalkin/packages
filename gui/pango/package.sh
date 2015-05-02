@@ -3,6 +3,8 @@
 pkgname=pango
 majorver=1.36
 pkgver=${majorver}.8
+vcs=git
+gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
@@ -15,7 +17,7 @@ kiin_make() {
   if [ -n "${KIIN_LIB32}" ]; then
     sed -i 's#"pango.modules"#"pango.modules-32"#' pango/modules.c
   fi
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --libdir=$LIBDIR
   make

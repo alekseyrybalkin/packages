@@ -1,14 +1,13 @@
 #!/bin/sh
 
 pkgname=poppler
-vcs="git"
 pkgver=0.32.0
+vcs=git
 gittag=poppler-${pkgver}
 srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
-  NOCONFIGURE=1 ./autogen.sh
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --enable-zlib \
     --disable-static \

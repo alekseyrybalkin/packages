@@ -2,12 +2,12 @@
 
 pkgname=pixman
 pkgver=0.32.6
-urls="http://cairographics.org/releases/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+gittag=pixman-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static --disable-gtk --libdir=$LIBDIR
+  ./autogen.sh --prefix=/usr --disable-static --disable-gtk --libdir=$LIBDIR
   make
 }
 

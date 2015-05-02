@@ -3,8 +3,8 @@
 pkgname=perl-ack
 ARCH_NAME=ack
 pkgver=2.14
-urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/ack-${pkgver}.tar.gz"
-srctar=ack-${pkgver}.tar.gz
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/ack-${pkgver}
 
 kiin_make() {
