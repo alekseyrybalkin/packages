@@ -2,15 +2,16 @@
 
 pkgname=fontconfig
 pkgver=2.11.1
-urls="http://${pkgname}.org/release/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/fontconfig
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
-    --docdir=/usr/share/doc/${pkgname}-${pkgver} \
+    --docdir=/usr/share/doc/${pkgname} \
     --disable-docs \
     --disable-static \
     --with-default-fonts=/usr/share/fonts \

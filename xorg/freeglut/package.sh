@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#vcs=subversion
+#svn_repo=svn://svn.code.sf.net/p/freeglut/code/trunk
 pkgname=freeglut
 ARCH_NAME_LIB32=freeglut
 pkgver=3.0.0
