@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.gnome.org/pygobject
+#git_problem="requires gnome-common"
 pkgname=python2-gobject2
 ARCH_NAME=pygobject2
 pkgver=2.28.6

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.savannah.gnu.org/tar.git
+#git_problem="fails to build."
 pkgname=tar
 pkgver=1.28
 urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"

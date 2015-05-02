@@ -2,11 +2,13 @@
 
 pkgname=acpi
 pkgver=1.7
-urls="http://downloads.sourceforge.net/acpiclient/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+git_repo=git://git.code.sf.net/p/acpiclient/code
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  autoreconf -fi
   ./configure --prefix=/usr
   make
 }

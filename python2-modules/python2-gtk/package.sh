@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.gnome.org/pygtk
+#git_problem="requires gnome-common"
 pkgname=python2-gtk
 ARCH_NAME=pygtk
 pkgver=2.24.0

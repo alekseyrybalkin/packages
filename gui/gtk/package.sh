@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.gnome.org/gtk+
+#git_problem="requires gobject-introspection"
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.16

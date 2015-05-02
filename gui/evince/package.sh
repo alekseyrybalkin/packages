@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.gnome.org/evince
+#git_problem="requires gnome-common"
 pkgname=evince
 pkgver=3.16.0
 urls="http://ftp.gnome.org/pub/gnome/sources/evince/3.16/evince-${pkgver}.tar.xz"

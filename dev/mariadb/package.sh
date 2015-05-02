@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#vcs=bazaar
+#bzr_repo=https://code.launchpad.net/maria
 pkgname=mariadb
 pkgver=10.0.17
 urls="https://downloads.mariadb.org/interstitial/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"

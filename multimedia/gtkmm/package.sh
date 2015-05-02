@@ -3,12 +3,13 @@
 pkgname=gtkmm
 _majorver=2.24
 pkgver=${_majorver}.4
-urls="http://ftp.gnome.org/pub/gnome/sources/gtkmm/${_majorver}/gtkmm-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+git_repo=git://git.gnome.org/gtkmm
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 

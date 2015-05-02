@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://glew.git.sourceforge.net/gitroot/glew/glew
+#git_problem="looks like it needs extensions/registry from internets"
 pkgname=glew
 pkgver=1.12.0
 urls="http://downloads.sourceforge.net/glew/glew-${pkgver}.tgz"

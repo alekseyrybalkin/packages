@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.savannah.gnu.org/sed.git
+#git_problem="fails to build"
 pkgname=sed
 pkgver=4.2.2
 urls="http://ftp.gnu.org/gnu/sed/sed-${pkgver}.tar.bz2"

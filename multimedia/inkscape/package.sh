@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#vcs=bazaar
+#bzr_repo=https://code.launchpad.net/~inkscape.dev/inkscape/trunk
 pkgname=inkscape
 pkgver=0.91
 urls="https://launchpad.net/inkscape/${pkgver}.x/${pkgver}/+download/inkscape-${pkgver}.tar.bz2"

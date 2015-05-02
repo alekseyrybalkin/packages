@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://anongit.freedesktop.org/harfbuzz
+#git_problem="requires ragel"
 pkgname=harfbuzz
 pkgver=0.9.40
 extension=bz2

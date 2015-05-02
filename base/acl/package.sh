@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.savannah.nongnu.org/acl.git
+#git_problem="cannot build?"
 pkgname=acl
 pkgver=2.2.52
 extension=gz

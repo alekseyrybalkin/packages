@@ -404,6 +404,7 @@ doxygen
 libatomic_ops
 gc
 libsigc++
+mm-common
 glibmm
 atkmm
 cairomm

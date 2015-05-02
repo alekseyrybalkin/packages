@@ -3,6 +3,9 @@
 pkgname=sudo
 pkgver=1.8.13
 ARCH_VERSION=1.8.13
+vcs=mercurial
+hg_repo=http://www.sudo.ws/repos/sudo
+hgtag=SUDO_${pkgver//\./_}
 extension=gz
 folder="http://www.sudo.ws/${pkgname}/dist/"
 check_server=1
@@ -10,6 +13,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  ./autogen.sh
   sed -i -e 's/-lshadow//g' configure
   sed -i -e 's/-lshadow//g' configure.ac
   ./configure --prefix=/usr \

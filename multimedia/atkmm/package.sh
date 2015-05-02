@@ -3,12 +3,13 @@
 pkgname=atkmm
 _majorver=2.22
 pkgver=${_majorver}.7
-urls="http://ftp.gnome.org/pub/gnome/sources/atkmm/${_majorver}/atkmm-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+git_repo=git://git.gnome.org/atkmm
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 

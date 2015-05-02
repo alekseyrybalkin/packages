@@ -3,8 +3,9 @@
 pkgname=sysklogd
 SKIP_ARCH_CHECK=1
 pkgver=1.5.1
-urls="http://www.infodrom.org/projects/sysklogd/download/sysklogd-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs=git
+git_repo=git://git.infodrom.org/infodrom/sysklogd
+gittag=9abddd6b552a341b9b7c63c8bddfc95863821abd
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
