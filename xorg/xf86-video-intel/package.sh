@@ -2,12 +2,13 @@
 
 pkgname=xf86-video-intel
 pkgver=2.99.917
-urls="http://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xorg/driver/xf86-video-intel
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --enable-dri --libexecdir=/usr/lib $XORG_CONFIG
+  ./autogen.sh --enable-dri --libexecdir=/usr/lib $XORG_CONFIG
   make
 }
 

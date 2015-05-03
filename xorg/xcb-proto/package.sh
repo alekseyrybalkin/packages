@@ -2,12 +2,13 @@
 
 pkgname=xcb-proto
 pkgver=1.11
-urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xcb/proto
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 

@@ -2,12 +2,13 @@
 
 pkgname=xf86-input-mouse
 pkgver=1.9.1
-urls="http://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xorg/driver/xf86-input-mouse
+gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 

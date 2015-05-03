@@ -2,14 +2,14 @@
 
 pkgname=libxcb
 pkgver=1.11
-urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xcb/libxcb
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   sed -e "s/pthread-stubs//" -i configure.ac
-  autoreconf -fi
-  ./configure $XORG_CONFIG \
+  ./autogen.sh $XORG_CONFIG \
     --enable-xinput --enable-xkb \
     --docdir='${datadir}'/doc/${pkgname} \
     --libdir=$LIBDIR

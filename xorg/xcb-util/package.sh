@@ -2,12 +2,15 @@
 
 pkgname=xcb-util
 pkgver=0.4.0
-urls="http://xcb.freedesktop.org/dist/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xcb/util
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  git clone ${KIIN_HOME}/sources/util-common-m4 m4
+  git submodule update --init
+  ./autogen.sh $XORG_CONFIG
   make
 }
 

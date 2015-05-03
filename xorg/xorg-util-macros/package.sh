@@ -2,12 +2,13 @@
 
 pkgname=xorg-util-macros
 pkgver=1.19.0
-urls="http://xorg.freedesktop.org/releases/individual/util/util-macros-${pkgver}.tar.bz2"
-srctar=util-macros-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xorg/util/macros
+gittag=util-macros-${pkgver}
 srcdir=${location}/util-macros-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 

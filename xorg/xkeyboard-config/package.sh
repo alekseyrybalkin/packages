@@ -2,12 +2,13 @@
 
 pkgname=xkeyboard-config
 pkgver=2.14
-urls="http://xorg.freedesktop.org/releases/individual/data/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=git://anongit.freedesktop.org/xkeyboard-config
+gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure $XORG_CONFIG --with-xkb-rules-symlink=xorg
+  ./autogen.sh $XORG_CONFIG --with-xkb-rules-symlink=xorg
   make
 }
 

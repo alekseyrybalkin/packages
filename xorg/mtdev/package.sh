@@ -2,11 +2,13 @@
 
 pkgname=mtdev
 pkgver=1.1.5
-urls="http://bitmath.org/code/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+git_repo=http://bitmath.org/git/mtdev.git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr --disable-static
   make
 }
