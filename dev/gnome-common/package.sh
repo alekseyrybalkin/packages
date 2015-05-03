@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=gnumeric
-pkgver=1.12.22
+pkgname=gnome-common
+pkgver=3.14.0
 vcs=git
-git_repo=git://git.gnome.org/gnumeric
-gittag=GNUMERIC_${pkgver//\./_}
+git_repo=git://git.gnome.org/gnome-common
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

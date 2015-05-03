@@ -2,12 +2,13 @@
 
 pkgname=libgsf
 pkgver=1.14.33
-urls="http://ftp.gnome.org/pub/gnome/sources/libgsf/1.14/libgsf-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+git_repo=git://git.gnome.org/libgsf
+gittag=LIBGSF_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static
+  ./autogen.sh --prefix=/usr --disable-static
   make
 }
 

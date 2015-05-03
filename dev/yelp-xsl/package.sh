@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=gnumeric
-pkgver=1.12.22
+pkgname=yelp-xsl
+pkgver=3.16.1
 vcs=git
-git_repo=git://git.gnome.org/gnumeric
-gittag=GNUMERIC_${pkgver//\./_}
+git_repo=git://git.gnome.org/yelp-xsl
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

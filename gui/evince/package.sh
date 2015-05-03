@@ -1,16 +1,14 @@
 #!/bin/sh
 
-#vcs=git
-#git_repo=git://git.gnome.org/evince
-#git_problem="requires gnome-common"
 pkgname=evince
 pkgver=3.16.0
-urls="http://ftp.gnome.org/pub/gnome/sources/evince/3.16/evince-${pkgver}.tar.xz"
-srctar=evince-${pkgver}.tar.xz
+vcs=git
+git_repo=git://git.gnome.org/evince
+gittag=${pkgver}
 srcdir=${location}/evince-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --libexecdir=/usr/lib/evince \
     --disable-introspection \
     --disable-nautilus \
@@ -18,6 +16,7 @@ kiin_make() {
     --disable-dbus \
     --disable-libgnome-desktop \
     --disable-browser-plugin \
+    --disable-help \
     --disable-static
   make
 }

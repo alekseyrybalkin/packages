@@ -259,6 +259,10 @@ xf86-input-synaptics
 xf86-video-intel
 libva
 libva-intel-driver
+gnome-common
+yelp-xsl
+yelp-tools
+gobject-introspection
 rxvt-unicode
 ttf-dejavu
 zip

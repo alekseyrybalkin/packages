@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=gnumeric
-pkgver=1.12.22
+pkgname=gobject-introspection
+pkgver=1.44.0
 vcs=git
-git_repo=git://git.gnome.org/gnumeric
-gittag=GNUMERIC_${pkgver//\./_}
+git_repo=git://git.gnome.org/gobject-introspection
+gittag=GOBJECT_INTROSPECTION_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

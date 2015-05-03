@@ -1,12 +1,13 @@
 #!/bin/sh
 
-#vcs=git
-#git_repo=git://git.gnome.org/gtk+
-#git_problem="requires gobject-introspection"
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.16
 pkgver=${majorver}.2
+vcs=git
+git_repo=git://git.gnome.org/gtk+
+git_pkgname=gtk+
+gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
@@ -23,7 +24,7 @@ ver_seds() {
 }
 
 kiin_make() {
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --disable-wayland-backend \
     --enable-x11-backend
