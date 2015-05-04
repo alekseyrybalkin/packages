@@ -24,6 +24,7 @@ kiin_make() {
     --enable-shared \
     --with-system-expat \
     --with-system-ffi \
+    --with-dbmliborder=gdbm:ndbm \
     --enable-unicode=ucs4
   make
 }
@@ -31,5 +32,4 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   chmod -v 755 ${pkgdir}/usr/lib/libpython2.7.so.1.0
-  # docs anyone?
 }

@@ -41,7 +41,6 @@ libtool
 lib32-libtool
 gdbm
 inetutils
-db
 perl
 autoconf
 automake
