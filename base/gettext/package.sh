@@ -1,15 +1,15 @@
 #!/bin/sh
 
+#vcs=git
+#git_repo=git://git.savannah.gnu.org/gettext.git
+#git_problem="requires to download archive.dir.tar.xz from internets"
 pkgname=gettext
 pkgver=0.19.4
-vcs=git
-gittag=v${pkgver}
+urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  MAKEFLAGS=
-  git clone ${KIIN_HOME}/sources/gnulib
-  ./autogen.sh
   ./configure --prefix=/usr \
     --docdir=/usr/share/doc/gettext \
     --with-included-libxml \
@@ -21,6 +21,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }
