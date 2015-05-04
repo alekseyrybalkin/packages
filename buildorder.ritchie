@@ -404,14 +404,4 @@ abiword
 gsl
 valgrind
 doxygen
-libatomic_ops
-gc
-libsigc++
-mm-common
-glibmm
-atkmm
-cairomm
-pangomm
-gtkmm
-inkscape
 help2man
