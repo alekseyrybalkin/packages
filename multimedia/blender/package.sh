@@ -1,9 +1,10 @@
 #!/bin/sh
 
 pkgname=blender
-vcs="git"
 pkgver=2.74
-gittag=v2.74
+vcs=git
+git_repo=git://git.blender.org/blender.git
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
