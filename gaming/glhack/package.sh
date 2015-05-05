@@ -1,0 +1,51 @@
+#!/bin/sh
+
+pkgname=glhack
+pkgver=1.2
+urls="http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
+srcdir=${location}/${pkgname}-${pkgver}
+
+kiin_make() {
+  MAKEFLAGS=
+  patch -p0 -i ../glhack-libpng15.patch
+  sed -i 's|/usr/lib/games|/usr/share|' include/config.h
+  sed -i 's|/var/lib/games/glhack|/var/games/glhack|' include/unixconf.h
+  sed -i -e 's|PREFIX	 = /usr|PREFIX	 = $(DESTDIR)/usr|' Makefile
+  sed -i -e 's|VARDIR   = /var/lib/games/glhack|VARDIR   = $(DESTDIR)/var/games/glhack|' Makefile
+  sed -i -e 's|/usr/man/man6|$(DESTDIR)/usr/share/man/man6|' doc/Makefile
+  sed -i -e 's|GAMEDIR  = $(PREFIX)/lib/games/$(GAME)|GAMEDIR  = $(PREFIX)/share/$(GAME)|' Makefile
+  sed -i -e 's|GAMEGRP  = games|GAMEGRP  = root|' Makefile
+  make
+}
+
+kiin_install() {
+  MAKEFLAGS=
+  install -d ${pkgdir}/usr/share/man/man{5,6}
+  make DESTDIR=${pkgdir} install
+  pushd ${pkgdir}/usr/share/man/man6
+  for manpage in dgn_comp dlb lev_comp nethack recover; do
+    mv $manpage.6 $manpage-glhack.6
+  done
+  popd
+
+  mv ${pkgdir}/usr/share/glhack/glhack ${pkgdir}/usr/bin/glhack
+  mv ${pkgdir}/usr/share/glhack/recover_glhack ${pkgdir}/usr/bin/recover_glhack
+
+  chown -R root:root ${pkgdir}/usr/share/glhack
+  chmod 700 ${pkgdir}/usr/bin/{,recover_}glhack
+
+  rm -r ${pkgdir}/var
+}
+
+kiin_after_install() {
+  getent group bilbo >/dev/null || groupadd bilbo
+  getent passwd bilbo >/dev/null || \
+    useradd -m -g bilbo -G audio,video -s /bin/bash bilbo
+  chmod 700 /usr/bin/{,recover_}glhack
+  chown bilbo:bilbo /usr/bin/{,recover_}glhack
+}
+
+kiin_after_upgrade() {
+  kiin_after_install
+}

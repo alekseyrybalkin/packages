@@ -68,6 +68,11 @@ kiin_install() {
   mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
   chown ${PACMAN}:${PACMAN} ${pkgdir}/var/lib/kiin/{tarballs,sources,external-repos,server-listings}
 
+  # for glhack
+  mkdir -pv ${pkgdir}/var/games/glhack/save
+  touch ${pkgdir}/var/games/glhack/{logfile,perm}
+  chown -R bilbo:bilbo ${pkgdir}/var/games/glhack
+
   # for fcron
   mkdir -pv ${pkgdir}/var/spool/fcron
   chown fcron:fcron ${pkgdir}/var/spool/fcron
