@@ -399,8 +399,9 @@ goffice
 gnumeric
 wv
 abiword
-llvm
 gsl
 valgrind
 doxygen
 python3
+llvm
+blender
