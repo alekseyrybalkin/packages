@@ -100,6 +100,7 @@ asciidoc
 xmlto
 git
 mercurial
+help2man
 sudo
 openssh
 dbus-core
@@ -393,14 +394,13 @@ giblib
 scrot
 memcached
 ttf-ubuntu
-python3
-llvm
 libgsf
 goffice
 gnumeric
 wv
 abiword
+llvm
 gsl
 valgrind
 doxygen
-help2man
+python3
