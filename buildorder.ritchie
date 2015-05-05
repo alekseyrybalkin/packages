@@ -405,3 +405,12 @@ doxygen
 python3
 llvm
 blender
+libatomic_ops
+libgc
+libsigc++
+glibmm
+atkmm
+cairomm
+pangomm
+gtkmm
+inkscape
