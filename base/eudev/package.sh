@@ -40,6 +40,9 @@ kiin_install() {
   make DESTDIR=${pkgdir} install
   if [ -n "${KIIN_LIB32}" ]; then
     rm -rf ${pkgdir}/usr/lib
+    ln -sv libudev.so ${pkgdir}/usr/lib32/libudev.so.0
+  else
+    ln -sv libudev.so ${pkgdir}/usr/lib/libudev.so.0
   fi
 }
 

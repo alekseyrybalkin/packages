@@ -11,6 +11,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   ./configure --prefix=/usr \
     --without-evolution-data-server \
+    --disable-collab-backend-telepathy \
+    --disable-collab-backend-sugar \
     --enable-plugins
   make
 }
