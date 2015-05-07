@@ -448,3 +448,10 @@ sdl2
 lib32-sdl2
 dbus-glib
 gconf
+libxaw
+ois
+freeimage
+ogre
+mygui
+enet
+stuntrally
