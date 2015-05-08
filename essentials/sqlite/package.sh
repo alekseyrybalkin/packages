@@ -1,13 +1,14 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.8.9.0
-_pkgver=3080900
+pkgver=3.8.10
+_pkgver=3081000
 srctar=${pkgname}-autoconf-${_pkgver}.tar.gz
 urls="http://sqlite.org/2015/${pkgname}-autoconf-${_pkgver}.tar.gz"
 srcdir=${location}/${pkgname}-autoconf-${_pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   patch -p1 -i ../sqlite-history-file-location.diff
   export CFLAGS="$CFLAGS -DSQLITE_ENABLE_FTS3=1 \
     -DSQLITE_ENABLE_COLUMN_METADATA=1 \
@@ -20,5 +21,6 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }

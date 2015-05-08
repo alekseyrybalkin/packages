@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=man-pages
-pkgver=3.83
+pkgver=4.00
 urls="https://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
@@ -15,4 +15,5 @@ kiin_install() {
   # these are included in shadow
   rm -f ${pkgdir}/usr/share/man/man5/passwd.5
   rm -f ${pkgdir}/usr/share/man/man3/getspnam.3
+  rm -f ${pkgdir}/usr/share/man/man5/attr.5
 }

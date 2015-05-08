@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=tmux
-pkgver=1.9a
-ARCH_VERSION=1.9_a
+pkgver=2.0
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

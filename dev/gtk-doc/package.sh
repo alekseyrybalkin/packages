@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gtk-doc
-pkgver=1.21
+pkgver=1.22
 urls="http://ftp.gnome.org/pub/gnome/sources/gtk-doc/${pkgver}/gtk-doc-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

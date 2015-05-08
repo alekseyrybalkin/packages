@@ -3,7 +3,7 @@
 #vcs=bazaar
 #bzr_repo=https://code.launchpad.net/maria
 pkgname=mariadb
-pkgver=10.0.17
+pkgver=10.0.18
 urls="https://downloads.mariadb.org/interstitial/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
