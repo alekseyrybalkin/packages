@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=3.0
+pkgver=3.1.2
 vcs=git
 gittag=v${pkgver}
 extension=gz
@@ -18,11 +18,11 @@ kiin_make() {
   ./configure --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libdir=${LIBDIR} \
+    --libdir=/usr/lib \
     --sysconfdir=/etc \
     --libexecdir=/usr/lib \
     --with-rootprefix= \
-    --with-rootlibdir=${LIBDIR} \
+    --with-rootlibdir=/usr/lib \
     --enable-libkmod \
     --enable-rule_generator \
     --disable-introspection \
@@ -38,12 +38,6 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
   mkdir -pv ${pkgdir}/etc/udev/rules.d
   make DESTDIR=${pkgdir} install
-  if [ -n "${KIIN_LIB32}" ]; then
-    rm -rf ${pkgdir}/usr/lib
-    ln -sv libudev.so ${pkgdir}/usr/lib32/libudev.so.0
-  else
-    ln -sv libudev.so ${pkgdir}/usr/lib/libudev.so.0
-  fi
 }
 
 kiin_after_install() {
@@ -54,5 +48,4 @@ kiin_after_upgrade() {
   kiin_after_install
 }
 
-known="etc/udev/hwdb.bin \
-  etc/udev/rules.d/70-persistent-net.rules"
+known="etc/udev/hwdb.bin"

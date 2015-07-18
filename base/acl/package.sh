@@ -23,6 +23,7 @@ kiin_make() {
     libacl/__acl_to_any_text.c
   INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr \
     --bindir=/usr/bin \
+    --disable-static \
     --libexecdir=/usr/lib
   make
 }

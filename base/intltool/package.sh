@@ -14,5 +14,5 @@ kiin_make() {
 kiin_install() {
   make DESTDIR=${pkgdir} install
   install -v -m644 -D doc/I18N-HOWTO \
-    ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}/I18N-HOWTO
+    ${pkgdir}/usr/share/doc/${pkgname}/I18N-HOWTO
 }

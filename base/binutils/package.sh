@@ -15,7 +15,7 @@ kiin_make() {
   rm -rf gdb libdecnumber readline sim zlib
   mkdir -v binutils-build
   cd binutils-build
-  ../configure --prefix=/usr --enable-shared --enable-multilib
+  ../configure --prefix=/usr --enable-shared
   make tooldir=${pkgdir}/usr
 }
 

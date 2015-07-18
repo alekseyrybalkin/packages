@@ -12,7 +12,7 @@ kiin_make() {
   git clone ${KIIN_HOME}/sources/autoconf
   cd ../
   ./bootstrap --skip-po
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --docdir=/usr/share/doc/bison
   make
 }
 

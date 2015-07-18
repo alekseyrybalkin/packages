@@ -11,6 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  sed -i 's:/\\\${:/\\\$\\{:' bin/automake.in
   ./bootstrap.sh
   ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}
   make

@@ -9,7 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   MAKEFLAGS=
   autoreconf -fi
-  ./configure --prefix=/usr --enable-libgdbm-compat
+  ./configure --prefix=/usr --disable-static --enable-libgdbm-compat
   make
 }
 

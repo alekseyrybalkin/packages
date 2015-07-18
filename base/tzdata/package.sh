@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tzdata
-pkgver=2015d
+pkgver=2015e
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
@@ -19,12 +19,12 @@ kiin_install() {
   for tz in etcetera southamerica northamerica europe africa antarctica  \
             asia australasia backward pacificnew \
             systemv; do
-      /usr/sbin/zic -L /dev/null   -d $ZONEINFO       -y "sh yearistype.sh" ${tz}
-      /usr/sbin/zic -L /dev/null   -d $ZONEINFO/posix -y "sh yearistype.sh" ${tz}
-      /usr/sbin/zic -L leapseconds -d $ZONEINFO/right -y "sh yearistype.sh" ${tz}
+      zic -L /dev/null   -d $ZONEINFO       -y "sh yearistype.sh" ${tz}
+      zic -L /dev/null   -d $ZONEINFO/posix -y "sh yearistype.sh" ${tz}
+      zic -L leapseconds -d $ZONEINFO/right -y "sh yearistype.sh" ${tz}
   done
-  cp -v zone.tab iso3166.tab $ZONEINFO
-  /usr/sbin/zic -d $ZONEINFO -p America/New_York
+  cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
+  zic -d $ZONEINFO -p America/New_York
   unset ZONEINFO
 
   mkdir ${pkgdir}/etc

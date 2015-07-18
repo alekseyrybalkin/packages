@@ -14,14 +14,5 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  ln -sv libfl.a ${pkgdir}/usr/lib/libl.a
-  cat > ${pkgdir}/usr/bin/lex << "EOF"
-#!/bin/sh
-# Begin /usr/bin/lex
-
-exec /usr/bin/flex -l "$@"
-
-# End /usr/bin/lex
-EOF
-  chmod -v 755 ${pkgdir}/usr/bin/lex
+  ln -sv flex ${pkgdir}/usr/bin/lex
 }

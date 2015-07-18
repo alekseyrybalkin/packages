@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.42.1
+pkgver=7.43.0
 vcs=git
 gittag=curl-${pkgver//\./_}
 extension=bz2
@@ -14,8 +14,7 @@ kiin_make() {
   ./buildconf
   ./configure --prefix=/usr \
     --disable-static \
-    --enable-threaded-resolver \
-    --libdir=${LIBDIR}
+    --enable-threaded-resolver
   make
 }
 

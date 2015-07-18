@@ -8,8 +8,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr \
-    --docdir=/usr/share/doc/xz \
-    --libdir=${LIBDIR}
+    --disable-static \
+    --docdir=/usr/share/doc/xz
   make
 }
 

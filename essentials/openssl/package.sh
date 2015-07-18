@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=openssl
-pkgver=1.0.2a
-ARCH_VERSION=1.0.2.a
+pkgver=1.0.2d
+ARCH_VERSION=1.0.2.d
 extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1

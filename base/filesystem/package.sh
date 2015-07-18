@@ -9,10 +9,10 @@ kiin_make() {
 }
 
 kiin_install() {
-  mkdir -v ${pkgdir}/{dev,proc,sys}
+  mkdir -v ${pkgdir}/{dev,proc,sys,run}
   mknod -m 600 ${pkgdir}/dev/console c 5 1
   mknod -m 666 ${pkgdir}/dev/null c 1 3
-  mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,mnt,opt,run}
+  mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,mnt,opt}
   mkdir -pv ${pkgdir}/var
   install -dv -m 0750 ${pkgdir}/root
   install -dv -m 1777 ${pkgdir}/tmp ${pkgdir}/var/tmp
@@ -34,6 +34,15 @@ kiin_install() {
   ln -sv /run/lock ${pkgdir}/var/lock
   mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
   ln -sv /proc/self/mounts ${pkgdir}/etc/mtab
+
+  touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
+  chgrp -v utmp ${pkgdir}/var/log/lastlog
+  chmod -v 664  ${pkgdir}/var/log/lastlog
+  chmod -v 600  ${pkgdir}/var/log/btmp
+
+  # for glibc
+  install -dv -m 0755 ${pkgdir}/usr/lib/locale
+  install -dv -m 0755 ${pkgdir}/var/lib/nss_db
 
   # for util-linux
   install -dv -m 0755 ${pkgdir}/var/lib/hwclock
@@ -82,11 +91,6 @@ kiin_install() {
   mkdir -pv ${pkgdir}/var/multimedia/{music,video}
   chown -R ${PACMAN}:${PACMAN} ${pkgdir}/var/multimedia
   chmod -R 700 ${pkgdir}/var/multimedia
-
-  touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
-  chgrp -v utmp ${pkgdir}/var/log/lastlog
-  chmod -v 664  ${pkgdir}/var/log/lastlog
-  chmod -v 600  ${pkgdir}/var/log/btmp
 }
 
 kiin_after_install() {

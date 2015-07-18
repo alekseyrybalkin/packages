@@ -16,7 +16,7 @@ ver_seds() {
 }
 
 kiin_make() {
-  sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in
+  sed -i -e "/SUBDIRS/s|man2||" man/Makefile
   INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr --disable-static
   make
 }
@@ -24,5 +24,4 @@ kiin_make() {
 kiin_install() {
   make DIST_ROOT=${pkgdir} install install-dev install-lib
   chmod -v 755 ${pkgdir}/usr/lib/libattr.so
-  rm -rf ${pkgdir}/usr/share/man/man2
 }

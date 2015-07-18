@@ -9,10 +9,12 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   autoreconf -fi
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/mpc
   make
+  make html
 }
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  make DESTDIR=${pkgdir} install html
 }

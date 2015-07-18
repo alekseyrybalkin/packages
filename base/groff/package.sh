@@ -15,7 +15,5 @@ kiin_make() {
 kiin_install() {
   MAKEFLAGS=
   make prefix=${pkgdir}/usr install
-  ln -sv eqn ${pkgdir}/usr/bin/geqn
-  ln -sv tbl ${pkgdir}/usr/bin/gtbl
   rm -rf ${pkgdir}/usr/share/doc/groff-${pkgver}/pdf
 }

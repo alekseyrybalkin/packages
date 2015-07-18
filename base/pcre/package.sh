@@ -12,14 +12,13 @@ check_server=1
 
 kiin_make() {
   ./configure --prefix=/usr \
-              --docdir=/usr/share/doc/pcre \
-              --enable-unicode-properties \
-              --enable-pcre16 \
-              --enable-pcre32 \
-              --enable-pcregrep-libz \
-              --enable-pcregrep-libbz2 \
-              --disable-static \
-              --libdir=$LIBDIR
+    --docdir=/usr/share/doc/pcre \
+    --enable-unicode-properties \
+    --enable-pcre16 \
+    --enable-pcre32 \
+    --enable-pcregrep-libz \
+    --enable-pcregrep-libbz2 \
+    --disable-static
   make
 }
 

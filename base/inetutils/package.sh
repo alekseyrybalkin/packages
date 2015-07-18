@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=inetutils
-pkgver=1.9.2
+pkgver=1.9.4
 vcs=git
 gittag=inetutils-${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}

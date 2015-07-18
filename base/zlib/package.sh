@@ -7,7 +7,7 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --libdir=$LIBDIR
+  ./configure --prefix=/usr
   make
 }
 

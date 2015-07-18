@@ -4,7 +4,7 @@
 #git_repo=git://git.savannah.gnu.org/gettext.git
 #git_problem="requires to download archive.dir.tar.xz from internets"
 pkgname=gettext
-pkgver=0.19.4
+pkgver=0.19.5
 urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
@@ -15,8 +15,8 @@ kiin_make() {
     --with-included-libxml \
     --with-included-glib \
     --with-included-libcroco \
-    --without-git \
-    --libdir=$LIBDIR
+    --disable-static \
+    --without-git
   make
 }
 
