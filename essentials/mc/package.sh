@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mc
-pkgver=4.8.14
+pkgver=4.8.15
 vcs=git
 gittag=${pkgver}
 extension=xz

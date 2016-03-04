@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=glibc
-pkgver=2.21.1
+pkgver=2.23.1
 vcs="git"
-gittag=01b07c70ad77ef28b6a3661ed3142ebff35b6e69
+gittag=0a321a461c726096585c22f735266b31328232ec
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

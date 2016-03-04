@@ -2,7 +2,7 @@
 
 pkgname=libevent
 pkgver=2.0.22
-urls="http://sourceforge.net/projects/levent/files/libevent/libevent-${pkgver%.*}/libevent-${pkgver}-stable.tar.gz"
+urls="http://downloads.sourceforge.net/levent/libevent-${pkgver}-stable.tar.gz"
 srctar=${pkgname}-${pkgver}-stable.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}-stable
 

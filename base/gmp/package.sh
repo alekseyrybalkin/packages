@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=gmp
-pkgver=6.0.0+
+pkgver=6.1.0
 vcs=mercurial
-hgtag=b9a904a2a7a7
+hgtag=gmp-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=lsof
-pkgver=4.88
+pkgver=4.89
 extension=bz2
 folder="ftp://sunsite.ualberta.ca/pub/Mirror/lsof/"
 check_server=1
