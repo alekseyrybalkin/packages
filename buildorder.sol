@@ -6,6 +6,7 @@ glibc
 tzdata
 zlib
 file
+flex
 binutils
 gmp
 mpfr
@@ -21,12 +22,10 @@ sed
 shadow
 psmisc
 procps
-e2fsprogs
 rsync
 iana-etc
 m4
 bison
-flex
 pcre
 grep
 readline
@@ -66,13 +65,10 @@ sysklogd
 sysvinit
 tar
 texinfo
-libxml2
-libxslt
-docbook-xsl
 unzip
-docbook-xml
-eudev
 util-linux
+e2fsprogs
+eudev
 man-db
 vim
 linux
@@ -85,6 +81,10 @@ libidn
 wget
 curl
 python
+libxml2
+libxslt
+docbook-xsl
+docbook-xml
 swig
 apr
 apr-util
@@ -103,3 +103,5 @@ dbus-core
 glib
 slang
 mc
+libevent
+tmux
