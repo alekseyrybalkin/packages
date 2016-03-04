@@ -35,17 +35,15 @@ kiin_after_install() {
   getent passwd sshd >/dev/null || \
     useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd \
     -s /bin/false -u 50 sshd
-  [ -f /etc/ssh/ssh_host_key ] || ssh-keygen -A
+  [ -f /etc/ssh/ssh_host_rsa_key ] || ssh-keygen -A
 }
 
 kiin_after_upgrade() {
   kiin_after_install
 }
 
-known="etc/ssh/ssh_host_key.pub \
-  etc/ssh/ssh_host_dsa_key \
+known="etc/ssh/ssh_host_dsa_key \
   etc/ssh/ssh_host_rsa_key.pub \
-  etc/ssh/ssh_host_key \
   etc/ssh/ssh_host_dsa_key.pub \
   etc/ssh/ssh_host_ecdsa_key.pub \
   etc/ssh/ssh_host_rsa_key \
