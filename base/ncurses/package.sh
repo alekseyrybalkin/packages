@@ -21,6 +21,11 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  if [ -d ${pkgdir}/usr/share/pkgconfig ]; then
+      mkdir -p ${pkgdir}/usr/lib/pkgconfig
+      mv ${pkgdir}/usr/share/pkgconfig/* ${pkgdir}/usr/lib/pkgconfig/
+      rm -rf ${pkgdir}/usr/share/pkgconfig
+  fi
   for lib in ncurses form panel menu; do
     echo "INPUT(-l${lib}w)" > ${pkgdir}/usr/lib/lib${lib}.so
     ln -s ${lib}w.pc ${pkgdir}/usr/lib/pkgconfig/${lib}.pc

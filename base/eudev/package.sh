@@ -12,7 +12,7 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
-  PKG_CONFIG_LIBDIR=/usr/lib/pkgconfig ./configure --prefix=/usr \
+  ./configure --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
     --libdir=/usr/lib \
@@ -35,8 +35,6 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
   mkdir -pv ${pkgdir}/etc/udev/rules.d
   make DESTDIR=${pkgdir} install
-  mv ${pkgdir}/usr/share/pkgconfig/* ${pkgdir}/usr/lib/pkgconfig/
-  rm -rf ${pkgdir}/usr/share
 }
 
 kiin_after_install() {
