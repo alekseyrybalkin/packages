@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xmlto
-pkgver=0.0.26
+pkgver=0.0.28
 urls="https://fedorahosted.org/releases/x/m/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
