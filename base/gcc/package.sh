@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=5.1.0
+pkgver=5.3.0
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
