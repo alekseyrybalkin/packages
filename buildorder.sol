@@ -103,8 +103,8 @@ dbus-core
 glib
 slang
 mc
-links
 dhcpcd
 python2-virtualenv
 libevent
 tmux
+links
