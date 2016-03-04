@@ -7,6 +7,7 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   git clone ${KIIN_HOME}/sources/gnulib
   ./bootstrap --skip-po
   ./configure --prefix=/usr
@@ -14,5 +15,6 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }

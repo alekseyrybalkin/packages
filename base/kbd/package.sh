@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=kbd
-pkgver=2.0.2
+pkgver=2.0.3
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

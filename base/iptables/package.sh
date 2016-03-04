@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=iptables
+pkgver=1.6.0
 vcs="git"
-gittag=v1.4.21
-pkgver=1.4.21
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
@@ -11,6 +11,7 @@ kiin_make() {
   ./configure --prefix=/usr \
     --sbindir=/usr/bin \
     --with-xtlibdir=/usr/lib/xtables \
+    --disable-nftables \
     --enable-libipq
   make
 }

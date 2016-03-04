@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libcap
-pkgver=2.24
+pkgver=2.25
 extension=xz
 folder="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/"
 check_server=1

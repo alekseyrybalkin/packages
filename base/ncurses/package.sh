@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=ncurses
-pkgver=5.9
+pkgver=6.0
 urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../ncurses-${pkgver}-gcc5_buildfixes-1.patch
   sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
 
   ./configure --prefix=/usr \
