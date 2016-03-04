@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pkg-config
-pkgver=0.28
+pkgver=0.29
 vcs=git
 gittag=pkg-config-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

@@ -5,8 +5,8 @@
 #git_problem="fails to build."
 pkgname=tar
 pkgver=1.28
-urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

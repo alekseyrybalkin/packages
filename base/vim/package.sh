@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=vim
-vcs="mercurial"
-hgtag="a784dfdc4467"
-pkgver=7.4.725
+pkgver=7.4.1485
+vcs="git"
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}74
 
 kiin_make() {
