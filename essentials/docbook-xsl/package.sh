@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=docbook-xsl
-pkgver=1.78.1
+pkgver=1.79.1
 urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

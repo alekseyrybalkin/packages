@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=sudo
-pkgver=1.8.13
-ARCH_VERSION=1.8.13
+pkgver=1.8.15
+ARCH_VERSION=1.8.15
 vcs=mercurial
 hg_repo=http://www.sudo.ws/repos/sudo
 hgtag=SUDO_${pkgver//\./_}

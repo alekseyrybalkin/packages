@@ -14,6 +14,9 @@ ver_grep="^${pkgname}-[^-rc]*\.tar\.${extension}$"
 
 kiin_make() {
   ./autogen.sh
+  # Make package install headers into /usr/include instead of /usr/lib/libffi-${pkgver}/include
+  sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in
+  sed -e '/^includedir/ s/=.*$/=@includedir@/' -e 's/^Cflags: -I${includedir}/Cflags:/' -i libffi.pc.in
   ./configure --prefix=/usr \
     --disable-static \
     --libdir=$LIBDIR

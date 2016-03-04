@@ -3,7 +3,7 @@
 pkgname=cacerts
 SKIP_ARCH_CHECK=1
 pkgver=20121229
-urls="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt?raw=1"
+urls="http://anduin.linuxfromscratch.org/BLFS/other/certdata.txt"
 wget_set_filename=certdata.txt
 
 kiin_make() {

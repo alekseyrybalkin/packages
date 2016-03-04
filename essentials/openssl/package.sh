@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=openssl
-pkgver=1.0.2d
-ARCH_VERSION=1.0.2.d
+pkgver=1.0.2g
+ARCH_VERSION=1.0.2.g
 extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1
@@ -36,6 +36,6 @@ kiin_install() {
   sed -i 's# libcrypto.a##;s# libssl.a##' Makefile
   make INSTALL_PREFIX=${pkgdir} MANDIR=/usr/share/man MANSUFFIX=ssl install
   install -v -d -m755 ${pkgdir}/usr/share/doc/openssl
-  cp -v -r doc/{HOWTO,README,*.{txt,html,gif}} \
+  cp -v -r doc/* \
       ${pkgdir}/usr/share/doc/openssl
 }

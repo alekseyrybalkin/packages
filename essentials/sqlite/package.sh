@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.8.10.2
-_pkgver=3081002
+pkgver=3.11.1
+_pkgver=3110100
 srctar=${pkgname}-autoconf-${_pkgver}.tar.gz
-urls="http://sqlite.org/2015/${pkgname}-autoconf-${_pkgver}.tar.gz"
+urls="http://sqlite.org/2016/${pkgname}-autoconf-${_pkgver}.tar.gz"
 srcdir=${location}/${pkgname}-autoconf-${_pkgver}
 
 kiin_make() {
