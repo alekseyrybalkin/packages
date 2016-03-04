@@ -2,7 +2,7 @@
 
 pkgname=python2-virtualenv
 ARCH_NAME=python-virtualenv
-pkgver=12.1.1
+pkgver=14.0.6
 vcs=git
 git_pkgname=virtualenv
 gittag=${pkgver}
