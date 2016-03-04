@@ -23,11 +23,10 @@ psmisc
 procps
 e2fsprogs
 rsync
-coreutils
 iana-etc
 m4
-flex
 bison
+flex
 pcre
 grep
 readline
@@ -43,6 +42,7 @@ perl-xml-parser
 help2man
 autoconf
 automake
+coreutils
 diffutils
 gawk
 findutils
