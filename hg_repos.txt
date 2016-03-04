@@ -11,4 +11,3 @@ default = https://hg.mozilla.org/projects/nss
 default = http://bitbucket.org/sinbad/ogre/
 default = http://hg.libsdl.org/SDL
 default = http://www.sudo.ws/repos/sudo
-default = https://vim.googlecode.com/hg/
