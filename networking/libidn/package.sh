@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libidn
-pkgver=1.30
+pkgver=1.32
 urls="http://ftp.gnu.org/gnu/libidn/libidn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

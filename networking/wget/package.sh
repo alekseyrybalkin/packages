@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=wget
-pkgver=1.16.3
+pkgver=1.17.1
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
