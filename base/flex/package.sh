@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=flex
-pkgver=2.5.39
-urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=2.6.0
+urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
