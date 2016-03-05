@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fribidi
-pkgver=0.19.6
+pkgver=0.19.7
 urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

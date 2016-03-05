@@ -119,6 +119,7 @@ libogg
 libvorbis
 mpg123
 flac
+lame
 icu
 boost
 libmpdclient
@@ -267,3 +268,19 @@ logrotate
 reiserfsprogs
 acpi
 unrar
+hicolor-icon-theme
+desktop-file-utils
+giflib
+lcms2
+miniupnpc
+transmission
+libtheora
+openjpeg
+ffmpeg
+fribidi
+libass
+mpv
+tidy-html5
+nmap
+imlib2
+feh

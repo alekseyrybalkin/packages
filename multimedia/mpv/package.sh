@@ -2,7 +2,7 @@
 
 pkgname=mpv
 vcs="git"
-pkgver=0.9.1
+pkgver=0.16.0
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -18,9 +18,4 @@ kiin_make() {
 
 kiin_install() {
   ./waf install --destdir=${pkgdir}
-  install -d ${pkgdir}/usr/share/doc/mpv/examples
-  install -m644 etc/{input,example}.conf \
-    ${pkgdir}/usr/share/doc/mpv/examples
-  install -m644 DOCS/{encoding.rst,tech-overview.txt} \
-    ${pkgdir}/usr/share/doc/mpv
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ffmpeg
-pkgver=2.6.2
+pkgver=3.0
 vcs=git
 gittag=n${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
