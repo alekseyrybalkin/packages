@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.38
-pkgver=${majorver}.1
+majorver=1.39
+pkgver=${majorver}.0
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -29,18 +29,3 @@ kiin_install() {
     mv ${pkgdir}/usr/bin/pango-querymodules ${pkgdir}/usr/lib32/pango
   fi
 }
-
-kiin_after_install() {
-  pango-querymodules --update-cache
-  if [ -f /usr/lib32/pango/pango-querymodules ]; then
-    /usr/lib32/pango/pango-querymodules > \
-      /usr/lib32/pango/1.8.0/modules.cache
-  fi
-}
-
-kiin_after_upgrade() {
-  kiin_after_install
-}
-
-known="usr/lib/pango/1.8.0/modules.cache \
-  usr/lib32/pango/1.8.0/modules.cache"
