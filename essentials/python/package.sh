@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=python
-pkgver=3.5.1
+_pybasever=3.5
+pkgver=${_pybasever}.1
 extension=xz
 folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1
@@ -38,5 +39,5 @@ kiin_install() {
   ln -s python3-config        ${pkgdir}/usr/bin/python-config
   ln -s idle3                 ${pkgdir}/usr/bin/idle
   ln -s pydoc3                ${pkgdir}/usr/bin/pydoc
-  ln -s python${_pybasever}.1 ${pkgdir}/usr/share/man/man1/python.1
+  ln -s python${pkgver} ${pkgdir}/usr/share/man/man1/python.1
 }
