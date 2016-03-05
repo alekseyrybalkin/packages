@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gtk2
-pkgver=2.24.27
+pkgver=2.24.29
 vcs=git
 git_pkgname=gtk+
 gittag=${pkgver}

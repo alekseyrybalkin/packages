@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=libepoxy
-pkgver=1.2
-urls="http://crux.nu/files/libepoxy-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=1.3.1
+urls="http://crux.nu/files/libepoxy-${pkgver}.tar.bz2"
+srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr
+  ./configure --prefix=/usr
   make
 }
 

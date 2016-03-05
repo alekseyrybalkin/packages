@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=cmake
-majorver=3.2
-pkgver=${majorver}.2
+majorver=3.4
+pkgver=${majorver}.3
 extension=gz
 folder="http://www.cmake.org/files/v${majorver}/"
 check_server=1
@@ -14,6 +14,7 @@ kiin_make() {
     --system-libs \
     --mandir=/share/man \
     --docdir=/share/doc/cmake \
+    --no-system-jsoncpp \
     --no-system-libarchive
   make
 }

@@ -1,12 +1,13 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=37.0.2
-urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.bz2"
-srctar=${pkgname}-${pkgver}.source.tar.bz2
-srcdir=${location}/mozilla-release
+pkgver=44.0.2
+urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
+srctar=${pkgname}-${pkgver}.source.tar.xz
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  export PYTHON="/usr/bin/python2"
   CFLAGS="${CFLAGS} -mno-avx"
   CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
@@ -14,14 +15,15 @@ kiin_make() {
     browser/themes/linux/tabbrowser/loading.png
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
+
+  # WebRTC build tries to execute "python" and expects Python 2
+  mkdir path
+  ln -s /usr/bin/python2 "$srcdir/path/python"
+
   make -f client.mk
 }
 
 kiin_install() {
   make -C firefox-build-dir DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/usr/lib/mozilla/plugins
-  mv ${pkgdir}/usr/lib/firefox{-${pkgver},}
-  ln -sfv ../lib/firefox/firefox ${pkgdir}/usr/bin
-  rm ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
-  ln -sfv /usr/lib/firefox ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
 }

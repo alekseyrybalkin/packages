@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.36
-pkgver=${majorver}.8
+majorver=1.38
+pkgver=${majorver}.1
 vcs=git
 gittag=${pkgver}
 extension=xz

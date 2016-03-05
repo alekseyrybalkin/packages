@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=jsoncpp
-pkgver=1.4.4
+pkgver=1.6.5
 urls="https://github.com/open-source-parsers/${pkgname}/archive/${pkgver}.tar.gz"
 wget_set_filename=${pkgname}-${pkgver}.tar.gz
 srctar=${pkgname}-${pkgver}.tar.gz
