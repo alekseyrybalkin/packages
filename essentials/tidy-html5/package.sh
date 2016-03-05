@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=tidy-html5
+ARCH_NAME=tidy
 pkgver=5.1.25
 vcs=git
 gittag=${pkgver}
