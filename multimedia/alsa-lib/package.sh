@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=alsa-lib
-pkgver=1.0.29
+pkgver=1.1.0
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

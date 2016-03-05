@@ -1,14 +1,14 @@
 #!/bin/sh
 
 pkgname=alsa-utils
-pkgver=1.0.29
+pkgver=1.1.0
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   autoreconf -fi
-  ./configure --disable-alsaconf --disable-xmlto \
+  ./configure --disable-alsaconf --disable-xmlto --disable-bat \
     --without-systemdsystemunitdir --sbindir=/usr/bin \
     --with-udev-rules-dir=/usr/lib/udev/rules.d
   make

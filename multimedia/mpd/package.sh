@@ -2,7 +2,7 @@
 
 pkgname=mpd
 majorver=0.19
-pkgver=${majorver}.9
+pkgver=${majorver}.13
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
@@ -23,9 +23,9 @@ kiin_make() {
     --disable-fluidsynth \
     --disable-aac \
     --disable-pulse \
-    --enable-mpg123 \
+    --disable-mpg123 \
     --enable-flac \
-    --enable-audiofile
+    --disable-audiofile
   make
 }
 

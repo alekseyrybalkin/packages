@@ -2,7 +2,7 @@
 
 pkgname=mpd-mpc
 ARCH_NAME=mpc
-pkgver=0.26
+pkgver=0.27
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/mpc-${pkgver}
