@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpg123
-pkgver=1.22.1
+pkgver=1.23.0
 extension=bz2
 folder="http://mpg123.orgis.org/download/"
 check_server=1
@@ -11,7 +11,7 @@ check_server=1
 kiin_make() {
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
-      --with-audio="alsa,sdl,openal" \
+      --with-audio="alsa" \
       --with-default-audio=alsa \
       --disable-static
   else

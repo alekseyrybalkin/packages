@@ -23,7 +23,7 @@ kiin_make() {
     --disable-fluidsynth \
     --disable-aac \
     --disable-pulse \
-    --disable-mpg123 \
+    --enable-mpg123 \
     --enable-flac \
     --disable-audiofile
   make

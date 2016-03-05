@@ -113,6 +113,7 @@ alsa-lib
 alsa-utils
 libogg
 libvorbis
+mpg123
 flac
 icu
 boost
