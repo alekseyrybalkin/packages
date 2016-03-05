@@ -1,14 +1,15 @@
 #!/bin/sh
 
 pkgname=gobject-introspection
-pkgver=1.44.0
+pkgver=1.46.0
 vcs=git
 git_repo=git://git.gnome.org/gobject-introspection
-gittag=GOBJECT_INTROSPECTION_${pkgver//\./_}
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr
+  sed -i '1s|#!/usr/bin/env python$|&2|' giscanner/*.py
+  PYTHON=/usr/bin/python2 ./autogen.sh --prefix=/usr
   make
 }
 

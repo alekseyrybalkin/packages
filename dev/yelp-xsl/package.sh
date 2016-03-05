@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=yelp-xsl
-pkgver=3.16.1
+pkgver=3.18.1
 vcs=git
 git_repo=git://git.gnome.org/yelp-xsl
 gittag=${pkgver}

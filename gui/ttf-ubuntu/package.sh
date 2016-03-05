@@ -2,7 +2,7 @@
 
 pkgname=ttf-ubuntu
 ARCH_NAME=ttf-ubuntu-font-family
-pkgver=0.80
+pkgver=0.83
 urls="http://font.ubuntu.com/download/ubuntu-font-family-${pkgver}.zip"
 srczip=ubuntu-font-family-${pkgver}.zip
 srcdir=${location}/ubuntu-font-family-${pkgver}

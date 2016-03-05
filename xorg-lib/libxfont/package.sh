@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=libxfont
-pkgver=2.0.1
+pkgver=1.5.1
 vcs=git
-gittag=libXfont2-${pkgver}
-srcdir=${location}/libXfont2-${pkgver}
+gittag=libXfont-${pkgver}
+srcdir=${location}/libXfont-${pkgver}
 
 kiin_make() {
   ./autogen.sh $XORG_CONFIG --disable-devel-docs

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pixman
-pkgver=0.32.6
+pkgver=0.34.0
 vcs=git
 gittag=pixman-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

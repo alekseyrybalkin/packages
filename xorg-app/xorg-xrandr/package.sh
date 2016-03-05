@@ -2,7 +2,7 @@
 
 _pkgname=xrandr
 pkgname=xorg-${_pkgname}
-pkgver=1.4.3
+pkgver=1.5.0
 vcs=git
 gittag=${_pkgname}-${pkgver}
 srcdir=${location}/${_pkgname}-${pkgver}

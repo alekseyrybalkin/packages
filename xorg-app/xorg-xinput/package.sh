@@ -2,7 +2,7 @@
 
 _pkgname=xinput
 pkgname=xorg-${_pkgname}
-pkgver=1.6.1
+pkgver=1.6.2
 vcs=git
 gittag=${_pkgname}-${pkgver}
 srcdir=${location}/${_pkgname}-${pkgver}

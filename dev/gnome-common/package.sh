@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=gnome-common
-pkgver=3.14.0
+pkgver=3.18.0
 vcs=git
 git_repo=git://git.gnome.org/gnome-common
-gittag=${pkgver}
+gittag=1df0aa160b1ce6d1e1f01085253b665fe6d0d1ef
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

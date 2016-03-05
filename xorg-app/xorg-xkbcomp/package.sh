@@ -2,7 +2,7 @@
 
 _pkgname=xkbcomp
 pkgname=xorg-${_pkgname}
-pkgver=1.3.0
+pkgver=1.3.1
 vcs=git
 gittag=${_pkgname}-${pkgver}
 srcdir=${location}/${_pkgname}-${pkgver}
