@@ -248,5 +248,6 @@ nspr
 nss
 yasm
 libvpx
+gsettings-desktop-schemas
 gtk2
 firefox
