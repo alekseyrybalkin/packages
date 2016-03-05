@@ -262,3 +262,8 @@ intel-ucode
 libnl
 iw
 wpa_supplicant
+fcron
+logrotate
+reiserfsprogs
+acpi
+unrar
