@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxrandr
-pkgver=1.4.2
+pkgver=1.5.0
 vcs=git
 gittag=libXrandr-${pkgver}
 srcdir=${location}/libXrandr-${pkgver}
