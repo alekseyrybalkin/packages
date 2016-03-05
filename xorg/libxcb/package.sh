@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxcb
-pkgver=1.11
+pkgver=1.11.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/libxcb
 gittag=${pkgver}

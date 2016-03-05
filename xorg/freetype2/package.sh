@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=freetype2
-pkgver=2.5.5
+pkgver=2.6.3
 vcs=git
 gittag=VER-${pkgver//\./-}
 srcdir=${location}/freetype-${pkgver}
@@ -11,7 +11,7 @@ kiin_make() {
   sed -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" \
     -i modules.cfg
   sed -e "/#.*.SUBPIXEL/s@/\* @@" -e "/#.*.SUBPIXEL/s@ \*/@@" \
-    -i include/config/ftoption.h
+    -i include/freetype/config/ftoption.h
   if [ -z "${KIIN_LIB32}" ]; then
     ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
   else
