@@ -251,3 +251,11 @@ libvpx
 gsettings-desktop-schemas
 gtk2
 firefox
+xlockmore
+cpio
+popt
+device-mapper
+cryptsetup
+linux-firmware
+initramfs
+intel-ucode

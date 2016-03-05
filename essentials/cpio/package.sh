@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cpio
-pkgver=2.11
+pkgver=2.12
 urls="http://ftp.gnu.org/pub/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -25,6 +25,4 @@ kiin_install() {
                       ${pkgdir}/usr/share/doc/cpio-${pkgver}/html
   install -v -m644    doc/cpio.{html,txt} \
                       ${pkgdir}/usr/share/doc/cpio-${pkgver}
-  # remove /tmp dir, it is created by filesystem package
-  rm -r ${pkgdir}/tmp
 }
