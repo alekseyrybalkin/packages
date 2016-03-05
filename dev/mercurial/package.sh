@@ -9,9 +9,12 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  make build
+  sed -i -e 's#env python#env python2#' mercurial/lsprof.py
 }
 
 kiin_install() {
-  make PREFIX=${pkgdir}/usr install-bin
+  python2 setup.py install --root=${pkgdir}/ --optimize=1
+  install -d ${pkgdir}/usr/share/man/{man1,man5}
+  install -m644 doc/hg.1 ${pkgdir}/usr/share/man/man1
+  install -m644 doc/{hgrc.5,hgignore.5} ${pkgdir}/usr/share/man/man5
 }

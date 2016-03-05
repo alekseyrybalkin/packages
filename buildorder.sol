@@ -81,6 +81,7 @@ libidn
 wget
 curl
 python
+python2
 libxml2
 libxslt
 docbook-xsl

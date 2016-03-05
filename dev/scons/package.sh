@@ -11,9 +11,12 @@ kiin_make() {
 }
 
 kiin_install() {
-  python setup.py install --standard-lib \
+  python2 setup.py install --standard-lib \
     --prefix=/usr \
     --install-data=/usr/share \
     --optimize=1 \
     --root=${pkgdir}
+
+  # fix for python 2.7
+  sed -i 's:^#!.*bin/env python:#!/usr/bin/env python2:' ${pkgdir}/usr/bin/*
 }
