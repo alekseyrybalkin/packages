@@ -11,8 +11,6 @@ check_server=1
 
 . ${KIIN_REPO}/defaults.sh
 
-majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
-
 kiin_make() {
   if [ -n "${KIIN_LIB32}" ]; then
     sed -i 's#"pango.modules"#"pango.modules-32"#' pango/modules.c
