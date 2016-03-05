@@ -16,6 +16,7 @@ kiin_make() {
     -DSQLITE_SECURE_DELETE=1"
   ./configure --prefix=/usr \
     --disable-static \
+    --enable-readline \
     --libdir=$LIBDIR
   make
 }
