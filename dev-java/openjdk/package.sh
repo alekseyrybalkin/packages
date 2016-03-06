@@ -37,7 +37,7 @@ kiin_make() {
 }
 
 kiin_install() {
-    mkdir -p ${pkgdir}/usr/lib/openjdk-${pkgver}
-    ln -sv openjdk-${pkgver} ${pkgdir}/usr/lib/openjdk
-    cp -rv build/linux-x86_64-normal-server-release/images/j2sdk-image/* ${pkgdir}/usr/lib/openjdk-${pkgver}/
+    mkdir -p ${pkgdir}/usr/lib/openjdk
+    cp -rv build/linux-x86_64-normal-server-release/images/j2sdk-image/* ${pkgdir}/usr/lib/openjdk/
+    rm -vf ${pkgdir}/usr/lib/openjdk/jre/lib/security/cacerts
 }

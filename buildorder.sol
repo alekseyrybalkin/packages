@@ -334,5 +334,6 @@ gegl
 gimp
 cups
 openjdk
+cacerts-java
 maven
 intellij-idea
