@@ -4,7 +4,7 @@ pkgname=ntp
 majorver=4.2
 pkgver=${majorver}.8p6
 extension=gz
-major_folder="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
+major_folder="https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
 check_server=1
 
 . ${KIIN_REPO}/defaults.sh
