@@ -306,3 +306,16 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 evince
+gdb
+ntp
+fluxbox
+tor
+python2-markupsafe
+python2-jinja
+adblockplus
+python-youtube-dl
+lightlang
+ldns
+lzo
+openvpn
+qemu

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=qemu
-pkgver=2.3.0
+pkgver=2.5.0
 vcs=git
 gittag=v${pkgver}
 extension=bz2
@@ -19,11 +19,10 @@ kiin_make() {
     --libexecdir=/usr/lib/qemu \
     --localstatedir=/var \
     --target-list=x86_64-softmmu \
-    --disable-vnc-ws \
-    --disable-vnc-tls \
+    --audio-drv-list=alsa \
     --disable-vnc-sasl \
-    --disable-quorum \
-    --disable-docs
+    --disable-docs \
+    --python=/usr/bin/python2
   # https://aur.archlinux.org/packages/qemu-spice
   # comment by kris7t 2013-10-09 18:15
   make ARFLAGS="rc"

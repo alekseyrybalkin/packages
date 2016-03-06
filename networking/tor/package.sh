@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tor
-pkgver=0.2.6.7
+pkgver=0.2.7.6
 urls="http://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

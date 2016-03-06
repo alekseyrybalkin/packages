@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=gdb
-pkgver=7.9.0
-ARCH_VERSION=7.9
+pkgver=7.11
 vcs=git
 git_pkgname=binutils-gdb
 gittag=gdb-${pkgver}-release

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=python2-youtube-dl
+pkgname=python-youtube-dl
 ARCH_NAME=youtube-dl
 # updated too often...
 SKIP_ARCH_CHECK=1
-pkgver=2015.04.17
+pkgver=2016.03.06
 urls="http://youtube-dl.org/downloads/${pkgver}/youtube-dl-${pkgver}.tar.gz"
 srctar=youtube-dl-${pkgver}.tar.gz
 srcdir=${location}/youtube-dl
@@ -14,6 +14,6 @@ kiin_make() {
 }
 
 kiin_install() {
-  python2 setup.py install --root=${pkgdir} --optimize=1
+  python setup.py install --root=${pkgdir} --optimize=1
   rm -rf ${pkgdir}/usr/etc
 }

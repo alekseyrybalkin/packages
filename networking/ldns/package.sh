@@ -7,6 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i 's/defined(@$also)/@$also/' doc/doxyparse.pl
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
