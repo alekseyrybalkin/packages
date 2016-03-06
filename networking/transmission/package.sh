@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=transmission
-pkgver=2.90
+pkgver=2.91
 extension=xz
-folder="http://download-origin.transmissionbt.com/files/"
+folder="https://download.transmissionbt.com/files/"
 check_server=1
 
 . ${KIIN_REPO}/defaults.sh
