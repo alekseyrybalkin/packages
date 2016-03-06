@@ -207,6 +207,7 @@ xorg-xrandr
 xorg-xrdb
 xorg-xset
 xorg-xprop
+xorg-xbacklight
 xorg-fonts-encodings
 xorg-fonts-alias
 xorg-fonts-misc
