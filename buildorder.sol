@@ -338,3 +338,14 @@ openjdk
 cacerts-java
 maven
 intellij-idea
+gsl
+libatomic_ops
+libgc
+libsigc++
+glibmm
+atkmm
+cairomm
+pangomm
+gtkmm
+gdl
+inkscape

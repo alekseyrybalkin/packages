@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gsl
-pkgver=1.16
+pkgver=2.1
 urls="http://ftp.gnu.org/pub/gnu/gsl/gsl-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

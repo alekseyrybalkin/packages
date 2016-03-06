@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cairomm
-pkgver=1.10.0
+pkgver=1.12.0
 urls="http://cairographics.org/releases/cairomm-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
