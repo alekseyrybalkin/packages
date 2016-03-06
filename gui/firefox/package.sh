@@ -26,4 +26,8 @@ kiin_make() {
 kiin_install() {
   make -C firefox-build-dir DESTDIR=${pkgdir} install
   mkdir -pv ${pkgdir}/usr/lib/mozilla/plugins
+  mv ${pkgdir}/usr/lib/firefox{-${pkgver},}
+  ln -sfv ../lib/firefox/firefox ${pkgdir}/usr/bin
+  rm ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
+  ln -sfv /usr/lib/firefox ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
 }
