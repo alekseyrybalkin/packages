@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=evince
-pkgver=3.16.0
+pkgver=3.18.2
 vcs=git
 git_repo=git://git.gnome.org/evince
 gittag=${pkgver}

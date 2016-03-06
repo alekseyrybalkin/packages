@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.5.23
+pkgver=1.5.24
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
 srcdir=${location}/${pkgname}-${pkgver}

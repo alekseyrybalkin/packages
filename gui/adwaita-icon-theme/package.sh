@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=adwaita-icon-theme
-majorver=3.16
+majorver=3.18
 pkgver=${majorver}.0
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
@@ -18,8 +18,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
-  mkdir -p ${pkgdir}/usr/share
-  mv ${pkgdir}/usr/locale ${pkgdir}/usr/share/
 }
 
 kiin_after_install() {

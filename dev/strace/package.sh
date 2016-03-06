@@ -2,8 +2,8 @@
 
 pkgname=strace
 vcs="git"
-gittag=v4.10
-pkgver=4.10
+pkgver=4.11
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

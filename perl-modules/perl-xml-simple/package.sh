@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-xml-simple
-pkgver=2.20
+pkgver=2.22
 urls="http://search.cpan.org/CPAN/authors/id/G/GR/GRANTM/XML-Simple-${pkgver}.tar.gz"
 srctar=XML-Simple-${pkgver}.tar.gz
 srcdir=${location}/XML-Simple-${pkgver}
