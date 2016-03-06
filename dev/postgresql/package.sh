@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=postgresql
-pkgver=9.4.1
+pkgver=9.5.1
 extension=bz2
 folder="http://ftp.postgresql.org/pub/source/"
 check_server=1

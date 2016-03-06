@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nginx
-pkgver=1.8.0
+pkgver=1.8.1
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

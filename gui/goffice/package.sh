@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=goffice
-pkgver=0.10.22
+pkgver=0.10.27
 vcs=git
 git_repo=git://git.gnome.org/goffice
 gittag=GOFFICE_${pkgver//\./_}

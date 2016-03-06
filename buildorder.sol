@@ -319,3 +319,16 @@ ldns
 lzo
 openvpn
 qemu
+postgresql
+nginx
+giblib
+scrot
+memcached
+libgsf
+goffice
+gnumeric
+wv
+abiword
+babl
+gegl
+gimp
