@@ -332,3 +332,7 @@ abiword
 babl
 gegl
 gimp
+cups
+openjdk
+maven
+intellij-idea
