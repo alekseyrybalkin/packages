@@ -3,6 +3,8 @@
 pkgname=cmake
 majorver=3.4
 pkgver=${majorver}.3
+vcs=git
+gittag=v${pkgver}
 extension=gz
 folder="http://www.cmake.org/files/v${majorver}/"
 check_server=1
