@@ -90,10 +90,7 @@ kiin_install() {
 }
 
 kiin_after_install() {
-  # for dev-java packages
-  getent group javer >/dev/null || groupadd javer
-  getent passwd javer >/dev/null || \
-    useradd -m -g javer -s /bin/bash javer
+    :
 }
 
 kiin_after_upgrade() {
