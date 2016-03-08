@@ -29,7 +29,7 @@ kiin_install() {
   ln -sv usr/lib ${pkgdir}/lib64
   ln -sv lib ${pkgdir}/usr/lib64
 
-  mkdir -v ${pkgdir}/var/{log,mail,spool}
+  mkdir -v ${pkgdir}/var/{log,spool}
   ln -sv /run ${pkgdir}/var/run
   ln -sv /run/lock ${pkgdir}/var/lock
   mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
@@ -71,7 +71,8 @@ kiin_install() {
   chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
   # for mail packages
-  install -dv -m 0755 ${pkgdir}/var/mail
+  install -dv -m 0755 ${pkgdir}/var/spool/mail
+  ln -sv spool/mail ${pkgdir}/var/mail
 
   # for kiin
   mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
