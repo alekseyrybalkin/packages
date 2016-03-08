@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=44.0.2
+pkgver=45.0
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
