@@ -11,7 +11,10 @@ kiin_make() {
   NOCONFIGURE=1 ./autogen.sh
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
-    --enable-gtk-doc \
+    --disable-gtk-doc \
+    --disable-gtk-doc-html \
+    --disable-gtk-doc-pdf \
+    --disable-man \
     --libdir=$LIBDIR
   make
 }
