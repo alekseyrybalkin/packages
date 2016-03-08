@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpfr
-_pkgver=3.1.3
+_pkgver=3.1.4
 pkgver=${_pkgver}
 urls="http://www.mpfr.org/mpfr-${_pkgver}/mpfr-${_pkgver}.tar.xz"
 srctar=${pkgname}-${_pkgver}.tar.xz
