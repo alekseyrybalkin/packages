@@ -1,15 +1,16 @@
 #!/bin/sh
 
-pkgname=dbus-core
-ARCH_NAME=dbus
+pkgname=dbus
 ARCH_NAME_LIB32=lib32-libdbus
-pkgver=1.10.6
+pkgver=1.10.8
+vcs=git
+gittag=dbus-${pkgver}
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz
 srcdir=${location}/dbus-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+  ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
       --libexecdir=/usr/lib/dbus-1.0 --with-dbus-user=81 \
       --with-system-pid-file=/run/dbus/pid \
       --with-system-socket=/run/dbus/system_bus_socket \
@@ -17,7 +18,8 @@ kiin_make() {
       --enable-inotify --disable-dnotify \
       --disable-verbose-mode --disable-static \
       --disable-tests --disable-asserts \
-      --disable-systemd --without-x --libdir=$LIBDIR
+      --disable-systemd --without-x --disable-Werror \
+      --libdir=$LIBDIR
   make
 }
 

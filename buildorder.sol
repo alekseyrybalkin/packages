@@ -102,7 +102,7 @@ mercurial
 sudo
 openssh
 kiin
-dbus-core
+dbus
 glib
 slang
 mc
