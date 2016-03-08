@@ -22,7 +22,6 @@ sed
 shadow
 psmisc
 procps
-rsync
 iana-etc
 m4
 bison
@@ -264,6 +263,7 @@ intel-ucode
 libnl
 iw
 wpa_supplicant
+rsync
 fcron
 logrotate
 reiserfsprogs
