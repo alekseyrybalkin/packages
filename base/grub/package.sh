@@ -13,7 +13,7 @@ kiin_make() {
     --sysconfdir=/etc \
     --disable-grub-emu-usb \
     --disable-efiemu \
-    --disable-device-mapper \
+    --enable-device-mapper \
     --disable-grub-mkfont \
     --disable-werror
   make
