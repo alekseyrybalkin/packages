@@ -15,4 +15,5 @@ kiin_make() {
 kiin_install() {
   mkdir -p ${pkgdir}/usr/lib
   cp -r . ${pkgdir}/usr/lib/maven
+  mv ${pkgdir}/usr/lib/maven/conf/settings.xml{,.packaged}
 }
