@@ -50,6 +50,7 @@ intltool
 gperf
 groff
 xz
+device-mapper
 grub
 less
 gzip
@@ -256,7 +257,6 @@ firefox
 xlockmore
 cpio
 popt
-device-mapper
 cryptsetup
 linux-firmware
 initramfs

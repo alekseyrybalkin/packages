@@ -45,4 +45,5 @@ kiin_after_upgrade() {
   kiin_after_install
 }
 
-known="etc/udev/hwdb.bin"
+known="etc/udev/hwdb.bin \
+  etc/udev/rules.d/70-persistent-net.rules"
