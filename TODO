@@ -1,1 +1,4 @@
 source PKGBUILD is unsafe
+
+xorg: --disable-install-setuid
+Xwrapper.config: needs_root_rights=no
