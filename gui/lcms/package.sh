@@ -1,11 +1,12 @@
 #!/bin/sh
 
-pkgname=lcms2
+pkgname=lcms
+ARCH_NAME=lcms2
 ARCH_NAME_LIB32=lcms2
 pkgver=2.7
 urls="http://downloads.sourceforge.net/lcms/lcms2-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
+srctar=lcms2-${pkgver}.tar.gz
+srcdir=${location}/lcms2-${pkgver}
 
 kiin_make() {
   ./configure --prefix=/usr --disable-static --libdir=$LIBDIR

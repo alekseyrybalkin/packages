@@ -272,7 +272,7 @@ unrar
 hicolor-icon-theme
 desktop-file-utils
 giflib
-lcms2
+lcms
 miniupnpc
 transmission
 libtheora
