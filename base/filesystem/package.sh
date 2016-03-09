@@ -12,7 +12,7 @@ kiin_install() {
   mkdir -v ${pkgdir}/{dev,proc,sys,run}
   mknod -m 600 ${pkgdir}/dev/console c 5 1
   mknod -m 666 ${pkgdir}/dev/null c 1 3
-  mkdir -pv ${pkgdir}/{boot,etc/{opt,sysconfig},home,mnt,opt}
+  mkdir -pv ${pkgdir}/{boot,etc/sysconfig,home,mnt}
   mkdir -pv ${pkgdir}/var
   install -dv -m 0750 ${pkgdir}/root
   install -dv -m 1777 ${pkgdir}/tmp ${pkgdir}/var/tmp
