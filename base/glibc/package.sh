@@ -15,7 +15,7 @@ kiin_make() {
   ../configure \
     --prefix=/usr \
     --disable-profile \
-    --enable-kernel=3.18 \
+    --enable-kernel=3.2 \
     --enable-obsolete-rpc \
     --libexecdir=/usr/lib/glibc \
     --disable-build-nscd \
