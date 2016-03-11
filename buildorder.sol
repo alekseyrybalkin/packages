@@ -196,16 +196,11 @@ glu
 xorg-bdftopcf
 xorg-mkfontdir
 xorg-mkfontscale
-xorg-setxkbmap
 xorg-xauth
 xorg-xinit
-xorg-xinput
-xorg-xkbcomp
 xorg-xmodmap
 xorg-xrandr
-xorg-xrdb
 xorg-xset
-xorg-xprop
 xorg-xbacklight
 xorg-fonts-encodings
 xorg-fonts-alias
