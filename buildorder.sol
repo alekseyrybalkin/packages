@@ -198,6 +198,7 @@ xorg-mkfontdir
 xorg-mkfontscale
 xorg-xauth
 xorg-xinit
+xorg-xkbcomp
 xorg-xmodmap
 xorg-xrandr
 xorg-xset
