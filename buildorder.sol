@@ -349,3 +349,4 @@ pangomm
 gtkmm
 gdl
 inkscape
+memtest86+
