@@ -102,7 +102,6 @@ mercurial
 sudo
 openssh
 kiin
-dbus
 glib
 slang
 mc
@@ -242,8 +241,6 @@ freeglut
 libtiff
 gdk-pixbuf
 pango
-at-spi2-core
-at-spi2-atk
 libepoxy
 gtk
 nspr

@@ -24,6 +24,8 @@ ver_seds() {
 }
 
 kiin_make() {
+  sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
+  sed -i -e 's/ atk-bridge-2.0//g' configure.ac
   ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --disable-wayland-backend \
