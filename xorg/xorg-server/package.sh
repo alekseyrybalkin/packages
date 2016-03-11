@@ -14,6 +14,7 @@ kiin_make() {
     --enable-install-setuid \
     --with-sha1=libcrypto \
     --libexecdir=/usr/lib/xorg-server \
+    --disable-systemd-logind \
     --with-fontrootdir=/usr/share/fonts
   make
 }
