@@ -2,11 +2,14 @@
 
 pkgname=perl
 pkgver=5.22.1
+vcs=git
+gittag=v${pkgver}
 urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  git cherry-pick ae37b791a73a9e78dedb89fb2429d2628cf58076
   export BUILD_ZLIB=False
   export BUILD_BZIP2=0
   sh Configure -des -Dprefix=/usr \
