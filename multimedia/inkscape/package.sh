@@ -7,7 +7,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  CXXFLAGS="${CXXFLAGS} -std=c++11" ./configure --prefix=/usr --enable-gtk3-experimental
+  CXXFLAGS="${CXXFLAGS} -std=c++11" ./configure --prefix=/usr
   make
 }
 

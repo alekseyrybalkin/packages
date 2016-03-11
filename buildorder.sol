@@ -338,6 +338,5 @@ glibmm
 atkmm
 cairomm
 pangomm
-gtkmm
-gdl
+gtkmm2
 inkscape
