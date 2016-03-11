@@ -2,7 +2,7 @@
 
 pkgname=python2-mako
 ARCH_NAME=python-mako
-pkgver=1.0.3
+pkgver=1.0.4
 urls="https://pypi.python.org/packages/source/M/Mako/Mako-${pkgver}.tar.gz"
 srctar=Mako-${pkgver}.tar.gz
 srcdir=${location}/Mako-${pkgver}
