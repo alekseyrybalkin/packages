@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=gtkmm2
+ARCH_NAME=gtkmm
 _majorver=2.24
 pkgver=${_majorver}.4
 urls="http://ftp.gnome.org/pub/gnome/sources/gtkmm/${_majorver}/gtkmm-${pkgver}.tar.xz"
