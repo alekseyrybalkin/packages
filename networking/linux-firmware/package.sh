@@ -16,5 +16,6 @@ kiin_install() {
   mkdir -pv ${pkgdir}/usr/lib/firmware
   if [ `hostname` == 'sol' ]; then
     cp -v ./iwlwifi-6*.ucode ${pkgdir}/usr/lib/firmware/
+    cp -v ./iwlwifi*7265* ${pkgdir}/usr/lib/firmware/
   fi
 }
