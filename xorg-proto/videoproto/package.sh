@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=videoproto
-pkgver=2.3.2
+pkgver=2.3.3
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
