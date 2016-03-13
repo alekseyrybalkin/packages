@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.18.2
+pkgver=1.17.4
 vcs=git
 gittag=xorg-server-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
@@ -24,4 +24,5 @@ kiin_install() {
   mkdir -pv ${pkgdir}/etc/X11/xorg.conf.d
   # remove /var, filesystem package creates everything in there
   rm -rvf ${pkgdir}/var
+  rm ${pkgdir}/usr/share/X11/xorg.conf.d/10-evdev.conf
 }
