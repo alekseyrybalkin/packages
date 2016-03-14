@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=iw
-pkgver=4.1
+pkgver=4.3
 urls="https://www.kernel.org/pub/software/network/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
