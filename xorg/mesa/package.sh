@@ -26,9 +26,7 @@ kiin_make() {
       --enable-osmesa \
       --enable-gles1 \
       --enable-gles2 \
-      --enable-texture-float \
-      --enable-shared-dricore \
-      --without-nouveau
+      --enable-texture-float
     make
     make -C xdemos DEMOS_PREFIX=/usr
   else
@@ -49,9 +47,7 @@ kiin_make() {
       --enable-osmesa \
       --enable-gles1 \
       --enable-gles2 \
-      --enable-texture-float \
-      --enable-shared-dricore \
-      --without-nouveau \
+      --enable-texture-float
       --with-dri-driverdir=/usr/lib32/xorg/modules/dri \
       --libdir=/usr/lib32
     make
