@@ -4,8 +4,8 @@
 KIIN_NON_FREE=1
 pkgname=intellij-idea
 SKIP_ARCH_CHECK=1
-pkgver=15.0.4
-_pkgver=143.2287.1
+pkgver=2016.1
+_pkgver=145.258.11
 urls="http://download.jetbrains.com/idea/ideaIC-${pkgver}.tar.gz"
 srctar=ideaIC-${pkgver}.tar.gz
 srcdir=${location}/idea-IC-${_pkgver}
