@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   autoreconf -i -f
-  export CFLAGS="-fgnu89-inline"
+  export CFLAGS="${CFLAGS} -fgnu89-inline"
   ./configure --prefix=/usr --sbindir=/usr/bin
   make
 }
