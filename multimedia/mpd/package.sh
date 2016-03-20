@@ -2,7 +2,7 @@
 
 pkgname=mpd
 majorver=0.19
-pkgver=${majorver}.13
+pkgver=${majorver}.14
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
