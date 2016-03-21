@@ -4,7 +4,7 @@
 #git_repo=git://anongit.freedesktop.org/harfbuzz
 #git_problem="requires ragel"
 pkgname=harfbuzz
-pkgver=1.2.3
+pkgver=1.2.4
 extension=bz2
 folder="http://www.freedesktop.org/software/${pkgname}/release/"
 check_server=1
