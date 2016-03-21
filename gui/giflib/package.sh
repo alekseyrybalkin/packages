@@ -1,13 +1,15 @@
 #!/bin/sh
 
 pkgname=giflib
-pkgver=5.1.2
+pkgver=5.1.3
+vcs=git
+gittag=${pkgver}
 urls="http://downloads.sourceforge.net/giflib/giflib-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+  ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
   make
 }
 

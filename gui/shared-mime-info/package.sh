@@ -1,7 +1,9 @@
 #!/bin/sh
 
 pkgname=shared-mime-info
-pkgver=1.5
+pkgver=1.6
+vcs=git
+gittag=Release-${pkgver//\./-}
 urls="http://freedesktop.org/~hadess/shared-mime-info-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
@@ -9,7 +11,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
   MAKEFLAGS=
   export ac_cv_func_fdatasync=no
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 
