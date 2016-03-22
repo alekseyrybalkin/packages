@@ -8,7 +8,7 @@ folder="ftp://ftp.gnupg.org/gcrypt/pinentry/"
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr --enable-pinentry-gtk2=no --enable-pinentry-gnome3=no
     make
 }
 
