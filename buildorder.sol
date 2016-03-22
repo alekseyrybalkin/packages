@@ -54,7 +54,6 @@ less
 gzip
 iptables
 iproute2
-check
 kbd
 kmod
 libpipeline
