@@ -285,7 +285,6 @@ gnupg
 mutt
 procmail
 fetchmail
-lsof
 strace
 shared-mime-info
 poppler
