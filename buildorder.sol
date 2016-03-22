@@ -22,7 +22,6 @@ sed
 shadow
 psmisc
 procps
-iana-etc
 m4
 bison
 pcre
