@@ -315,8 +315,7 @@ openvpn
 qemu
 postgresql
 nginx
-giblib
-scrot
+maim
 memcached
 libgsf
 goffice
