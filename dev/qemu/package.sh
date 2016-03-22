@@ -22,6 +22,7 @@ kiin_make() {
     --audio-drv-list=alsa \
     --disable-vnc-sasl \
     --disable-docs \
+    --with-gtkabi=3.0 \
     --python=/usr/bin/python2
   # https://aur.archlinux.org/packages/qemu-spice
   # comment by kris7t 2013-10-09 18:15
