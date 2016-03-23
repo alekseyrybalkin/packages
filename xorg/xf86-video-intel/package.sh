@@ -5,7 +5,7 @@ pkgver=2.99.917+
 ARCH_VERSION=2.99.917+579+g74cd4d0
 vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/driver/xf86-video-intel
-gittag=74cd4d09ae051d3a1f4cb9fe29e656b044f03ece
+gittag=f656f6afa288c63968f45d6d32c96a4cf6213117
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
