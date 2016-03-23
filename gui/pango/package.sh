@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.39
+majorver=1.40
 pkgver=${majorver}.0
 vcs=git
 gittag=${pkgver}

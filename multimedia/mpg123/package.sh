@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpg123
-pkgver=1.23.2
+pkgver=1.23.3
 extension=bz2
 folder="http://mpg123.orgis.org/download/"
 check_server=1
