@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.18.1
+pkgver=1.18.2
 vcs=git
 gittag=xorg-server-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
