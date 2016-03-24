@@ -9,6 +9,8 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  sed -i -e '/gtr_get_favicon/d' gtk/details.c
+  sed -i -e '/gtr_get_favicon/d' gtk/filter.c
   ./configure --prefix=/usr
   make
 }
