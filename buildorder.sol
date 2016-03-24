@@ -332,6 +332,8 @@ gsl
 libatomic_ops
 libgc
 libsigc++
+doxygen
+mm-common
 glibmm
 atkmm
 cairomm
