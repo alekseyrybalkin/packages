@@ -199,6 +199,7 @@ xorg-xinit
 xorg-xkbcomp
 xorg-xmodmap
 xorg-xrandr
+xorg-xrdb
 xorg-xset
 xorg-xbacklight
 xorg-fonts-encodings
