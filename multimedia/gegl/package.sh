@@ -8,6 +8,8 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  # disable plug-in dir creation
+  sed -i -e 's/g_mkdir_with_parents (module_path/0 \&\& g_mkdir_with_parents (module_path/g'  gegl/gegl-init.c
   ./configure --prefix=/usr
   make
 }
