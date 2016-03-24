@@ -16,4 +16,6 @@ kiin_make() {
 
 kiin_install() {
   make DESTDIR=${pkgdir} install
+  # use xinitrc from kiin-configs
+  mv ${pkgdir}/etc/X11/app-defaults/xinitrc{,.packaged}
 }
