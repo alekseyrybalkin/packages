@@ -3,6 +3,8 @@
 pkgname=adwaita-icon-theme
 majorver=3.20
 pkgver=${majorver}
+vcs=git
+gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
@@ -12,6 +14,7 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr
   make
 }

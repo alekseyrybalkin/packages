@@ -3,6 +3,9 @@
 pkgname=python2-mako
 ARCH_NAME=python-mako
 pkgver=1.0.4
+vcs=git
+git_pkgname=mako
+gittag=rel_${pkgver//\./_}
 urls="https://pypi.python.org/packages/source/M/Mako/Mako-${pkgver}.tar.gz"
 srctar=Mako-${pkgver}.tar.gz
 srcdir=${location}/Mako-${pkgver}

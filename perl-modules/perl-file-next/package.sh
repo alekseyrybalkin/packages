@@ -2,6 +2,8 @@
 
 pkgname=perl-file-next
 pkgver=1.12
+vcs=git
+gittag=${pkgver}
 urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.tar.gz"
 srctar=File-Next-${pkgver}.tar.gz
 srcdir=${location}/File-Next-${pkgver}
