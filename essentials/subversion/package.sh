@@ -9,6 +9,9 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  # move configuration to ~/.config
+  sed -i -e 's/SVN_CONFIG__USR_DIRECTORY   "\.subversion"/SVN_CONFIG__USR_DIRECTORY   "\.config\/subversion"/g' \
+      subversion/libsvn_subr/config_impl.h
   MAKEFLAGS=
   ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
     --with-zlib=/usr --with-serf=/usr --with-neon=/usr \
