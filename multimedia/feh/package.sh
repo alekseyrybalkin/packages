@@ -2,6 +2,8 @@
 
 pkgname=feh
 pkgver=2.14.2
+vcs=git
+gittag=${pkgver}
 urls="http://feh.finalrewind.org/feh-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

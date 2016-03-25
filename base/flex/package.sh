@@ -1,12 +1,15 @@
 #!/bin/sh
 
 pkgname=flex
-pkgver=2.6.0
+pkgver=2.6.1
+vcs=git
+gittag=v${pkgver}
 urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr \
     --docdir=/usr/share/doc/${pkgname}
   make

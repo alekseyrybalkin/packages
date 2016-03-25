@@ -3,6 +3,8 @@
 pkgname=eudev
 SKIP_ARCH_CHECK=1
 pkgver=3.1.5
+vcs=git
+gittag=v${pkgver}
 extension=gz
 folder="http://dev.gentoo.org/~blueness/eudev/"
 check_server=1
@@ -12,6 +14,7 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
