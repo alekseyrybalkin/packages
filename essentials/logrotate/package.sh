@@ -1,7 +1,9 @@
 #!/bin/sh
 
 pkgname=logrotate
-pkgver=3.9.1
+pkgver=3.9.2
+vcs=git
+gittag=${pkgver}
 urls="http://fedorahosted.org/releases/l/o/logrotate/logrotate-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

@@ -2,7 +2,7 @@
 
 pkgname=cmake
 majorver=3.5
-pkgver=${majorver}.0
+pkgver=${majorver}.1
 vcs=git
 gittag=v${pkgver}
 extension=gz
