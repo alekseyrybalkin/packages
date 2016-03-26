@@ -2,13 +2,16 @@
 
 pkgname=libksba
 pkgver=1.3.3
+vcs=git
+gittag=libksba-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/libksba/"
 
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    ./configure --prefix=/usr
+    ./autogen.sh
+    ./configure --prefix=/usr --enable-maintainer-mode
     make
 }
 

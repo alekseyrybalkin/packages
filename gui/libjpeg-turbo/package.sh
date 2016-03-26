@@ -2,11 +2,14 @@
 
 pkgname=libjpeg-turbo
 pkgver=1.4.2
+vcs=git
+gittag=${pkgver}
 urls="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  autoreconf -fi
   if [ -z "$KIIN_LIB32" ]; then
     ./configure --prefix=/usr \
       --mandir=/usr/share/man \

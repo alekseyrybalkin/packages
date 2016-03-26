@@ -3,6 +3,8 @@
 pkgname=librsvg
 majorver=2.40
 pkgver=${majorver}.13
+vcs=git
+gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
@@ -10,7 +12,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./configure --prefix=/usr \
+  ./autogen.sh --prefix=/usr \
     --disable-static \
     --disable-introspection
   make

@@ -2,6 +2,8 @@
 
 pkgname=libva-intel-driver
 pkgver=1.7.0
+vcs=git
+gittag=${pkgver}
 extension=bz2
 folder="http://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/"
 check_server=1
@@ -9,9 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  mkdir -p m4
-  autoreconf -fi
-  ./configure $XORG_CONFIG
+  ./autogen.sh $XORG_CONFIG
   make
 }
 
