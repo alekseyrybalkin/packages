@@ -2,6 +2,8 @@
 
 pkgname=itstool
 pkgver=2.0.2
+vcs=git
+gittag=${pkgver}
 urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

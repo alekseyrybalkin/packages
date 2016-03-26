@@ -2,6 +2,8 @@
 
 pkgname=iw
 pkgver=4.3
+vcs=git
+gittag=v${pkgver}
 urls="https://www.kernel.org/pub/software/network/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
