@@ -3,6 +3,8 @@
 pkgname=python
 _pybasever=3.5
 pkgver=${_pybasever}.1
+vcs=mercurial
+hgtag=v${pkgver}
 extension=xz
 folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1

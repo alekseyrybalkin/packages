@@ -11,6 +11,7 @@ binutils
 gmp
 mpfr
 mpc
+doxygen
 gcc
 bzip2
 pkg-config
@@ -332,7 +333,6 @@ gsl
 libatomic_ops
 libgc
 libsigc++
-doxygen
 mm-common
 glibmm
 atkmm

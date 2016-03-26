@@ -3,12 +3,14 @@
 pkgname=glibmm
 _majorver=2.46
 pkgver=${_majorver}.3
+vcs=git
+gittag=${pkgver}
 urls="http://ftp.gnome.org/pub/gnome/sources/glibmm/${_majorver}/glibmm-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 

@@ -6,6 +6,9 @@
 pkgname=python2
 _pybasever=2.7
 pkgver=${_pybasever}.11
+vcs=mercurial
+hg_pkgname=python
+hgtag=v${pkgver}
 extension=xz
 folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1
