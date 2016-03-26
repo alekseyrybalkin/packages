@@ -2,6 +2,8 @@
 
 pkgname=libcap
 pkgver=2.25
+vcs=git
+gittag=libcap-${pkgver}
 extension=xz
 folder="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/"
 check_server=1
