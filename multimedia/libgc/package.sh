@@ -3,13 +3,15 @@
 pkgname=libgc
 ARCH_NAME=gc
 pkgver=7.4.2
+vcs=git
+gittag=gc${pkgver//\./_}
 urls="http://www.hboehm.info/gc/gc_source/gc-${pkgver}.tar.gz"
 srctar=gc-${pkgver}.tar.gz
 srcdir=${location}/gc-${pkgver}
 
 kiin_make() {
   sed -i 's#pkgdata#doc#' doc/doc.am
-  autoreconf -fi
+  ./autogen.sh
   ./configure --prefix=/usr \
     --enable-cplusplus \
     --disable-static \
