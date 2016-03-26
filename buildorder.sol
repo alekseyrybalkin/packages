@@ -223,6 +223,7 @@ yelp-xsl
 yelp-tools
 gobject-introspection
 rxvt-unicode
+ttf-dejavu
 ttf-ubuntu
 zip
 gtk-doc
