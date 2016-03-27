@@ -97,6 +97,7 @@ perl-error
 asciidoc
 xmlto
 git
+python2-docutils
 mercurial
 sudo
 openssh

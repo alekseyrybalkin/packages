@@ -2,12 +2,14 @@
 
 pkgname=nginx
 pkgver=1.8.1
+vcs=mercurial
+hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/etc/nginx \
+  ./auto/configure --prefix=/etc/nginx \
     --conf-path=/etc/nginx/nginx.conf \
     --sbin-path=/usr/bin/nginx \
     --pid-path=/run/nginx.pid \

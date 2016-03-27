@@ -2,13 +2,19 @@
 
 pkgname=pinentry
 pkgver=0.9.7
+vcs=git
+gittag=pinentry-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/pinentry/"
 
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    ./configure --prefix=/usr --enable-pinentry-gtk2=no --enable-pinentry-gnome3=no
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --enable-pinentry-gtk2=no \
+        --enable-pinentry-gnome3=no \
+        --enable-maintainer-mode
     make
 }
 

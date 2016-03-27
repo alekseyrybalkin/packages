@@ -2,6 +2,8 @@
 
 pkgname=man-pages
 pkgver=4.05
+vcs=git
+gittag=man-pages-${pkgver}
 urls="https://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

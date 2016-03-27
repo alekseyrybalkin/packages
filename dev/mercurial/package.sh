@@ -2,6 +2,8 @@
 
 pkgname=mercurial
 pkgver=3.7.2
+vcs=mercurial
+hgtag=${pkgver}
 extension=gz
 folder="http://mercurial.selenic.com/release/"
 check_server=1
@@ -10,6 +12,9 @@ check_server=1
 
 kiin_make() {
   sed -i -e 's#env python#env python2#' mercurial/lsprof.py
+  sed -i -e 's/python/python2/g' doc/{docchecker,check-seclevel.py,runrst,Makefile,gendoc.py}
+  cd doc
+  make
 }
 
 kiin_install() {
