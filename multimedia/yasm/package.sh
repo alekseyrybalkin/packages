@@ -9,10 +9,12 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   ./autogen.sh --prefix=/usr
   make
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }
