@@ -2,6 +2,8 @@
 
 pkgname=openssh
 pkgver=7.2p2
+vcs=git
+gittag=V_7_2_P2
 extension=gz
 folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 check_server=1
@@ -9,6 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+  autoreconf -fi
   ./configure --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/openssh \

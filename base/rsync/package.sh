@@ -2,6 +2,8 @@
 
 pkgname=rsync
 pkgver=3.1.2
+vcs=git
+gittag=v${pkgver}
 extension=gz
 folder="http://www.samba.org/ftp/rsync/src/"
 check_server=1

@@ -3,6 +3,8 @@
 pkgname=openssl
 pkgver=1.0.2g
 ARCH_VERSION=1.0.2.g
+vcs=git
+gittag=OpenSSL_${pkgver//\./_}
 extension=gz
 folder="http://www.openssl.org/source/"
 check_server=1

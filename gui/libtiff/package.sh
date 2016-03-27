@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=cvs
 pkgname=libtiff
 pkgver=4.0.6
 urls="http://download.osgeo.org/${pkgname}/tiff-${pkgver}.tar.gz"

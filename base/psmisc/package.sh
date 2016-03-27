@@ -2,12 +2,14 @@
 
 pkgname=psmisc
 pkgver=22.21
+vcs=git
+gittag=v${pkgver}
 urls="http://prdownloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr
+  ./autogen.sh --prefix=/usr
   make
 }
 

@@ -2,6 +2,8 @@
 
 pkgname=openjpeg
 pkgver=1.5.2
+vcs=git
+gittag=version.${pkgver}
 urls="http://downloads.sourceforge.net/openjpeg.mirror/openjpeg-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

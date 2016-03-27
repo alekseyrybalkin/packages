@@ -2,15 +2,20 @@
 
 pkgname=scons
 pkgver=2.4.1
+vcs=mercurial
+hgtag=${pkgver}
 urls="http://downloads.sourceforge.net/scons/scons-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  echo "nothing to make..."
+    :
 }
 
 kiin_install() {
+  python2 bootstrap.py
+  tar xvf build/dist/scons-${pkgver}.tar.gz
+  cd scons-${pkgver}
   python2 setup.py install --standard-lib \
     --prefix=/usr \
     --install-data=/usr/share \

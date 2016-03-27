@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=fossil
 pkgname=dhcpcd
 pkgver=6.10.1
 extension=xz

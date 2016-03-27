@@ -2,11 +2,14 @@
 
 pkgname=tor
 pkgver=0.2.7.6
+vcs=git
+gittag=tor-${pkgver}
 urls="http://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  ./autogen.sh
   ./configure --prefix=/usr --sysconfdir=/etc
   make
 }
