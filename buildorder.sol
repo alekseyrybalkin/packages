@@ -11,9 +11,12 @@ binutils
 gmp
 mpfr
 mpc
-doxygen
 gcc
+doxygen
 bzip2
+pcre
+libffi
+glib
 pkg-config
 ncurses
 attr
@@ -25,7 +28,6 @@ psmisc
 procps
 m4
 bison
-pcre
 grep
 readline
 bash
@@ -73,7 +75,6 @@ vim
 linux
 fakeroot
 sqlite
-libffi
 openssl
 cacerts
 libidn
@@ -102,7 +103,6 @@ mercurial
 sudo
 openssh
 kiin
-glib
 slang
 mc
 dhcpcd
