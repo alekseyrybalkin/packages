@@ -329,7 +329,6 @@ gimp
 cups
 openjdk
 cacerts-java
-apache-ant
 maven
 intellij-idea
 gsl

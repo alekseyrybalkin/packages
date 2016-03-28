@@ -1,28 +1,22 @@
 #!/bin/sh
 
-KIIN_NON_FREE=1 # has jars in source tree
+# TODO: build from sources
+KIIN_NON_FREE=1
 pkgname=intellij-idea
 SKIP_ARCH_CHECK=1
-pkgver=145.258.11
-vcs=git
-gittag=idea/${pkgver}
-srcdir=${location}/idea-IC-${pkgver}
+pkgver=2016.1
+_pkgver=145.258.11
+urls="http://download.jetbrains.com/idea/ideaIC-${pkgver}.tar.gz"
+srctar=ideaIC-${pkgver}.tar.gz
+srcdir=${location}/idea-IC-${_pkgver}
 
 kiin_make() {
-    sed -i -e 's/buildNumber = new URL(buildLocator.buildNumberUrl).text/buildNumber = "1.0.0-release-IJ143-78"/g' \
-        build/scripts/download_kotlin.gant
-    cp ${KIIN_HOME}/tarballs/kotlin-plugin-1.0.0-release-IJ143-78.zip build/
-    rm -rf python/{ipnb,educational-{core,python}}
-    sed -i -e 's/if (p("jdk.linux") != "false")/if (false)/g' build/scripts/dist.gant
-    export PATH=${PATH}:/usr/lib/openjdk/bin:/usr/lib/apache-ant/bin
-    ant
+  echo "nothing to make..."
 }
 
 kiin_install() {
-    tar xvf out/artifacts/ideaIC-*.SNAPSHOT-no-jdk.tar.gz
-    cd idea-IC-*.SNAPSHOT
-    mkdir -p ${pkgdir}/usr/lib/intellij-idea
-    cp -a ./* ${pkgdir}/usr/lib/intellij-idea
-    chown -R root:root ${pkgdir}/usr/lib/intellij-idea
-    install -D -m755 ../../idea.sh ${pkgdir}/usr/bin/intellij-idea
+  mkdir -p ${pkgdir}/usr/lib/intellij-idea
+  cp -a ./* ${pkgdir}/usr/lib/intellij-idea
+  chown -R root:root ${pkgdir}/usr/lib/intellij-idea
+  install -D -m755 ../idea.sh ${pkgdir}/usr/bin/intellij-idea
 }
