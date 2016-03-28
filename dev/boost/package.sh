@@ -19,9 +19,19 @@ kiin_make() {
     done
     cd ../
     mv libs/{inspect,boostbook,bcp,build,quickbook,litre,auto_index,boostdep} tools/
+    mkdir boost
+    for lib in `find libs -maxdepth 1 -mindepth 1 -type d`; do
+        if [ -d ${lib}/include/boost ]; then
+            cp -rv ${lib}/include/boost/* boost/
+            rm -rf ${lib}/include
+        fi
+    done
     sed -e '/using python/ s@;@: /usr/include/python${PYTHON_VERSION/3*/${PYTHON_VERSION}m} ;@' -i bootstrap.sh
     ./bootstrap.sh --prefix=/usr
-    ./b2 stage threading=multi link=shared `sed -e 's/.*\(-j *[0-9]\+\).*/\1/' <<< ${MAKEFLAGS}`
+    ./b2 stage \
+        threading=multi \
+        link=shared \
+        `sed -e 's/.*\(-j *[0-9]\+\).*/\1/' <<< ${MAKEFLAGS}`
 }
 
 kiin_install() {
