@@ -19,7 +19,7 @@ majorver_seds() {
 }
 
 kiin_make() {
-  sed -i -e 's/lynx/links/g' Makefile.am
+  sed -i -e 's/lynx/CONFIG_DIR=\.config links/g' Makefile.am
   ./bootstrap
   ./configure --prefix=/usr --sysconfdir=/etc \
     --with-binsubdir=bin --enable-linuxcaps \
