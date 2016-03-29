@@ -2,6 +2,7 @@
 
 pkgname=miniupnpc
 pkgver=1.9+
+ARCH_VERSION=1.9.20151026
 vcs=git
 git_pkgname=miniupnp
 gittag=dc9eb0df1c8ee36101b7c269a4695d247d0a48cc

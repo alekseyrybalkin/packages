@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gzip
-pkgver=1.6
+pkgver=1.7
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
