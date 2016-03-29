@@ -29,6 +29,7 @@ kiin_make() {
   ./autogen.sh --prefix=/usr \
     --sysconfdir=/etc \
     --disable-wayland-backend \
+    --enable-gtk-doc \
     --enable-x11-backend
   make
 }
