@@ -2,8 +2,8 @@
 
 #vcs=fossil
 pkgname=sqlite
-pkgver=3.11.1
-_pkgver=3110100
+pkgver=3.12.0
+_pkgver=3120000
 srctar=${pkgname}-autoconf-${_pkgver}.tar.gz
 urls="http://sqlite.org/2016/${pkgname}-autoconf-${_pkgver}.tar.gz"
 srcdir=${location}/${pkgname}-autoconf-${_pkgver}
