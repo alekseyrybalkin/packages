@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nmap
-pkgver=7.11
+pkgver=7.12
 extension=bz2
 folder="http://nmap.org/dist/"
 check_server=1
