@@ -344,3 +344,17 @@ gtkmm2
 inkscape
 emacs
 llvm
+python-setuptools
+python-markupsafe
+python-mako
+python-six
+python-sqlalchemy
+python-gunicorn
+python-mimeparse
+python-falcon
+python-psycopg
+python-cffi
+python-pycparser
+python-bcrypt
+python-untangle
+python-requests
