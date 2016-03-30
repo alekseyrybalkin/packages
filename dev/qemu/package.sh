@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=qemu
-pkgver=2.5.0
+pkgver=2.5.1
 vcs=git
 gittag=v${pkgver}
 extension=bz2

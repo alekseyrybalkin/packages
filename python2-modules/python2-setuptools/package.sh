@@ -2,10 +2,10 @@
 
 pkgname=python2-setuptools
 ARCH_NAME=python-setuptools
-pkgver=20.3.1
-vcs=mercurial
-hg_pkgname=setuptools
-hgtag=${pkgver}
+pkgver=20.6.5
+vcs=git
+git_pkgname=setuptools
+gittag=v${pkgver}
 urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.tar.gz"
 srctar=setuptools-${pkgver}.tar.gz
 srcdir=${location}/setuptools-${pkgver}

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=glibmm
-_majorver=2.46
-pkgver=${_majorver}.3
+_majorver=2.48
+pkgver=${_majorver}.0
 vcs=git
 gittag=${pkgver}
 urls="http://ftp.gnome.org/pub/gnome/sources/glibmm/${_majorver}/glibmm-${pkgver}.tar.xz"
