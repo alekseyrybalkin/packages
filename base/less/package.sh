@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=less
 pkgver=481
 urls="http://www.greenwoodsoftware.com/${pkgname}/${pkgname}-${pkgver}.tar.gz"

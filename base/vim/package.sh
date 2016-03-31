@@ -2,7 +2,7 @@
 
 pkgname=vim
 pkgver=7.4.1689
-vcs="git"
+vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}74
 

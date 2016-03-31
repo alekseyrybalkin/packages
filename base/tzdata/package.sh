@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=tzdata
 pkgver=2016c
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"

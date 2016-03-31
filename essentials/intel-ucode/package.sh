@@ -1,6 +1,7 @@
 #!/bin/sh
 
 KIIN_NON_FREE=1
+#vcs=none
 pkgname=intel-ucode
 pkgver=20151106
 _dlid=25512

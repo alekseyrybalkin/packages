@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=bazaar
 pkgname=intltool
 pkgver=0.51.0
 urls="http://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkgver}.tar.gz"

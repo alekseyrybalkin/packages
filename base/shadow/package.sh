@@ -2,15 +2,18 @@
 
 pkgname=shadow
 pkgver=4.2.1
+vcs=git
+gittag=upstream/${pkgver}
 urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/groups$(EXEEXT) //' src/Makefile.in
-  find man -name Makefile.in -exec sed -i 's/groups\.1 / /' {} \;
   sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
         -e 's@/var/spool/mail@/var/mail@' etc/login.defs
+  autoreconf -fi
+  sed -i 's/groups$(EXEEXT) //' src/Makefile.in
+  find man -name Makefile.in -exec sed -i 's/groups\.1 / /' {} \;
   ./configure --sysconfdir=/etc --bindir=/usr/bin --with-group-name-max-length=32
   make
 }

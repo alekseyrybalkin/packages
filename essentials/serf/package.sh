@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=serf
 pkgver=1.3.8
 _sover=1.3.0

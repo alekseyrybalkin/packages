@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=texinfo
 pkgver=6.1
 urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"

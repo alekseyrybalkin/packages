@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpv
-vcs="git"
+vcs=git
 pkgver=0.16.0
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

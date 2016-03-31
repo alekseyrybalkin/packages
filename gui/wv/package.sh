@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#vcs=svn
+#vcs=subversion
 pkgname=wv
 pkgver=1.2.9
 urls="http://www.abisource.com/downloads/wv/${pkgver}/wv-${pkgver}.tar.gz"

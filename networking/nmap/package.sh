@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=nmap
 pkgver=7.12
 extension=bz2

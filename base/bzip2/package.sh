@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=bzip2
 pkgver=1.0.6
 urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz"

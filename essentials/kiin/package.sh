@@ -2,7 +2,7 @@
 
 pkgname=kiin
 SKIP_ARCH_CHECK=1
-vcs="git"
+vcs=git
 pkgver=1.0.0
 srcdir=${location}/${pkgname}-${pkgver}
 

@@ -2,6 +2,8 @@
 
 pkgname=kmod
 pkgver=22
+#vcs=git
+#gittag=v${pkgver}
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}

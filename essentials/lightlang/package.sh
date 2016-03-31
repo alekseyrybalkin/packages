@@ -2,7 +2,7 @@
 
 pkgname=lightlang
 SKIP_ARCH_CHECK=1
-vcs="git"
+vcs=git
 pkgver=20140809
 srcdir=${location}/${pkgname}-${pkgver}
 

@@ -2,7 +2,7 @@
 
 pkgname=glibc
 pkgver=2.23.1
-vcs="git"
+vcs=git
 gittag=0a321a461c726096585c22f735266b31328232ec
 srcdir=${location}/${pkgname}-${pkgver}
 

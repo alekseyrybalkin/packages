@@ -2,7 +2,7 @@
 
 pkgname=iptables
 pkgver=1.6.0
-vcs="git"
+vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

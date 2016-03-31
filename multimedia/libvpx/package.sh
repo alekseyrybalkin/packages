@@ -3,7 +3,7 @@
 pkgname=libvpx
 ARCH_NAME_LIB32=libvpx
 pkgver=1.5.0
-vcs="git"
+vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-v${pkgver}
 

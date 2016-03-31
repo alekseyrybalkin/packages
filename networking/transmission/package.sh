@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=transmission
 pkgver=2.92
 extension=xz
