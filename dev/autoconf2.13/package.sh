@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=autoconf2.13
 pkgver=2.13
 urls="http://ftpmirror.gnu.org/autoconf/autoconf-${pkgver}.tar.gz"

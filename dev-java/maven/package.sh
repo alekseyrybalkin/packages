@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# TODO: build from sources
 KIIN_NON_FREE=1 # because binary
+#vcs=git
 pkgname=maven
 pkgver=3.3.9
 urls="http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/${pkgver}/binaries/apache-maven-${pkgver}-bin.tar.gz"

@@ -2,6 +2,8 @@
 
 pkgname=perl-xml-parser
 pkgver=2.44
+vcs=git
+gittag=beb9a3cc1145f67b00267cd7b5dc172cf2b57b68
 urls="http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-${pkgver}.tar.gz"
 srctar=XML-Parser-${pkgver}.tar.gz
 srcdir=${location}/XML-Parser-${pkgver}

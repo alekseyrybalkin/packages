@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=help2man
 pkgver=1.47.3
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"

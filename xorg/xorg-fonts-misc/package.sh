@@ -2,8 +2,11 @@
 
 pkgname=xorg-fonts-misc
 pkgver=1.0.3
+vcs=git
+git_pkgname=font-misc-misc
 
 kiin_make() {
+  cd ${location}
   mkdir build
   cd build
   for i in ${KIIN_HOME}/sources/font-{arabic,cursor,daewoo,dec,isas,jis,micro,mutt,sony,sun,misc,schumacher}-misc; do
@@ -22,7 +25,7 @@ kiin_make() {
 }
 
 kiin_install() {
-  cd build
+  cd ${location}/build
   for dir in *; do
     if [ -d "${dir}" ]; then
       pushd "${dir}"
@@ -31,5 +34,5 @@ kiin_install() {
     fi
   done
   cd ..
-  rm -rf build
+  rm -rf build font-misc-misc
 }

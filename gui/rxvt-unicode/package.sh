@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=cvs
 pkgname=rxvt-unicode
 pkgver=9.22
 urls="http://dist.schmorp.de/${pkgname}/Attic/${pkgname}-${pkgver}.tar.bz2"

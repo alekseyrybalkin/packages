@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=xlockmore
 pkgver=5.46
 urls="http://www.tux.org/~bagleyd/xlock/${pkgname}-${pkgver}.tar.xz"
