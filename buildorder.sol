@@ -261,7 +261,6 @@ wpa_supplicant
 rsync
 fcron
 logrotate
-reiserfsprogs
 acpi
 unrar
 hicolor-icon-theme
