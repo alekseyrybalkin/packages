@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=subversion
 pkgver=1.9.3
 extension=bz2

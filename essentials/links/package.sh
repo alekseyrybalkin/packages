@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=links
 pkgver=2.12
 extension=bz2

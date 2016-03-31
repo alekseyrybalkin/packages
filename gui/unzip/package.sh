@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=unzip
 pkgver=6.0
 urls="http://downloads.sourceforge.net/infozip/unzip60.tar.gz"

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=ttf-ubuntu
 ARCH_NAME=ttf-ubuntu-font-family
 pkgver=0.83

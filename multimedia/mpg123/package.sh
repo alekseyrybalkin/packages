@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=mpg123
 pkgver=1.23.3
 extension=bz2

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=perl-error
 pkgver=0.17024
 urls="http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/Error-${pkgver}.tar.gz"

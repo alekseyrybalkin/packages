@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=cvs
 pkgname=popt
 pkgver=1.16
 urls="ftp://anduin.linuxfromscratch.org/BLFS/svn/p/${pkgname}-${pkgver}.tar.gz"

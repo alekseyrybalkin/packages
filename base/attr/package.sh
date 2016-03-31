@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=attr
 pkgver=2.4.47
 extension=gz

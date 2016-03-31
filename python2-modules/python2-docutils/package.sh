@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=python2-docutils
 ARCH_NAME=docutils
 pkgver=0.12

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=procmail
 pkgver=3.22
 urls="http://www.ring.gr.jp/archives/net/mail/procmail/procmail-${pkgver}.tar.gz"

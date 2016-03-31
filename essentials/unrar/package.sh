@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=unrar
 pkgver=5.3.11
 urls="http://www.rarlab.com/rar/unrarsrc-${pkgver}.tar.gz"

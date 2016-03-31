@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=docbook-xsl
 pkgver=1.79.1
 urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=cpio
 pkgver=2.12
 urls="http://ftp.gnu.org/pub/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"

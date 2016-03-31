@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=docbook-xml
 pkgver=4.5
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"

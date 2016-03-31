@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=bc
 pkgver=1.06.95
 extension=bz2

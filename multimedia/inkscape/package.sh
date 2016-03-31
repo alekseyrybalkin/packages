@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=bazaar
 pkgname=inkscape
 pkgver=0.91
 urls="https://launchpad.net/inkscape/${pkgver}.x/${pkgver}/+download/inkscape-${pkgver}.tar.bz2"

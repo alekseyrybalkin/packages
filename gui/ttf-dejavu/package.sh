@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#vcs=git
+#git_pkgname=dejavu-fonts
 pkgname=ttf-dejavu
 pkgver=2.35
 urls="http://downloads.sourceforge.net/project/dejavu/dejavu/${pkgver}/dejavu-fonts-ttf-${pkgver}.tar.bz2"

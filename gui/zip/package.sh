@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=zip
 pkgver=3.0
 urls="http://downloads.sourceforge.net/infozip/zip30.tar.gz"

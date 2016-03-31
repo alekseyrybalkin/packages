@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=fakeroot
 pkgver=1.20.2
 extension=bz2
@@ -17,7 +18,7 @@ ver_seds() {
 
 kiin_make() {
   ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot \
-              --disable-static --with-ipc=sysv
+    --disable-static --with-ipc=sysv
   make
 }
 

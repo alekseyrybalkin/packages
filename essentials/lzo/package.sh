@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=lzo
 pkgver=2.09
 extension=gz

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=fcron
 pkgver=3.2.0
 urls="http://fcron.free.fr/archives/fcron-${pkgver}.src.tar.gz"

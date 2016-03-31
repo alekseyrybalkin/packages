@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=fribidi
 pkgver=0.19.7
 urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"

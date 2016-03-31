@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=icu
 pkgver=57.1
 _pkgver=${pkgver//\./_}

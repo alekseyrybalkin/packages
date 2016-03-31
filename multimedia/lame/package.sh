@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=cvs
 pkgname=lame
 pkgver=3.99.5
 urls="http://downloads.sourceforge.net/lame/lame-${pkgver}.tar.gz"
