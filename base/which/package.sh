@@ -1,18 +1,16 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=which
-pkgver=2.21
-extension=gz
-folder="http://ftp.gnu.org/gnu/which/"
-check_server=1
-
-. ${KIIN_REPO}/defaults.sh
+SKIP_ARCH_CHECK=1
+pkgver=1
 
 kiin_make() {
-  ./configure --prefix=/usr
-  make
+    :
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    mkdir -p ${pkgdir}/usr/bin
+    cp which.sh ${pkgdir}/usr/bin/which
+    chmod 755 ${pkgdir}/usr/bin/which
 }

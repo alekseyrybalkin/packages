@@ -2,6 +2,8 @@
 
 pkgname=ncurses
 pkgver=6.0
+vcs=git
+gittag=v${pkgver}
 urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

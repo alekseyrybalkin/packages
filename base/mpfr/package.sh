@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=mpfr
 _pkgver=3.1.4
 pkgver=${_pkgver}

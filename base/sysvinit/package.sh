@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=subversion
 pkgname=sysvinit
 SKIP_ARCH_CHECK=1
 pkgver=2.88dsf
