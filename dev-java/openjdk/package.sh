@@ -22,6 +22,12 @@ kiin_make() {
         hg update -r ${hgtag}
         cd ../
     done
+    # Apply infinality patches
+    cd jdk
+    patch -p1 < ../../004_add-fontconfig.patch
+    patch -p1 < ../../005_enable-infinality.patch
+    cd ../
+
     export PATH=${PATH}:/usr/lib/openjdk/bin
     sh ./configure \
         --with-update-version=${_jdk_update} \
