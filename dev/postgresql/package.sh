@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=postgresql
-pkgver=9.5.1
+pkgver=9.5.2
 vcs=git
 gittag=REL${pkgver//\./_}
 extension=bz2
