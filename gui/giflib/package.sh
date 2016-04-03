@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=giflib
-pkgver=5.1.3
+pkgver=5.1.4
 vcs=git
 gittag=${pkgver}
 urls="http://downloads.sourceforge.net/giflib/giflib-${pkgver}.tar.bz2"
