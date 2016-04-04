@@ -116,14 +116,8 @@ alsa-lib
 alsa-utils
 libogg
 libvorbis
-mpg123
-flac
 lame
 icu
-boost
-libmpdclient
-mpd
-mpd-mpc
 xorg-util-macros
 bigreqsproto
 compositeproto
@@ -225,7 +219,6 @@ yelp-xsl
 yelp-tools
 gobject-introspection
 rxvt-unicode
-ttf-dejavu
 ttf-ubuntu
 zip
 gtk-doc
@@ -286,7 +279,6 @@ gnupg
 mutt
 procmail
 fetchmail
-strace
 shared-mime-info
 poppler
 libcroco
@@ -299,7 +291,6 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 evince
-gdb
 ntp
 fluxbox
 tor
@@ -311,7 +302,6 @@ lightlang
 ldns
 lzo
 openvpn
-qemu
 postgresql
 nginx
 maim
@@ -330,19 +320,6 @@ cacerts-java
 apache-ant
 maven
 intellij-idea
-gsl
-libatomic_ops
-libgc
-libsigc++
-mm-common
-glibmm
-atkmm
-cairomm
-pangomm
-gtkmm2
-inkscape
-emacs
-llvm
 python-setuptools
 python-markupsafe
 python-mako
