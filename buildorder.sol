@@ -109,7 +109,7 @@ dhcpcd
 libevent
 tmux
 links
-vlock
+physlock
 perl-file-next
 perl-ack
 alsa-lib
@@ -248,7 +248,6 @@ gsettings-desktop-schemas
 gtk2
 autoconf2.13
 firefox
-sflock
 cpio
 popt
 cryptsetup
