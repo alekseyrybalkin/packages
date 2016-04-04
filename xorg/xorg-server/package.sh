@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.18.2
+pkgver=1.18.3
 vcs=git
 gittag=xorg-server-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  git cherry-pick 3b385105b2d19a1c55e9779ae88d775185eea231
   NOCONFIGURE=1 ./autogen.sh
   ./configure $XORG_CONFIG \
     --with-xkb-output=/var/lib/xkb \
