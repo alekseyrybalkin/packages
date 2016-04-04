@@ -248,7 +248,7 @@ gsettings-desktop-schemas
 gtk2
 autoconf2.13
 firefox
-xlockmore
+sflock
 cpio
 popt
 cryptsetup
