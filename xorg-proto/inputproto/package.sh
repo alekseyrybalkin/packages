@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=inputproto
-pkgver=2.3.1
+pkgver=2.3.2
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
