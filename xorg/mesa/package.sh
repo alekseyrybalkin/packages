@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=11.1
-pkgver=${majorver}.2
+majorver=11.2
+pkgver=${majorver}.0
 vcs=git
 gittag=mesa-${pkgver}
 srcdir=${location}/mesa-${pkgver}

@@ -2,6 +2,7 @@
 
 pkgname=mutt
 pkgver=1.6
+ARCH_VERSION=1.6.0
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
 srcdir=${location}/${pkgname}-${pkgver}
