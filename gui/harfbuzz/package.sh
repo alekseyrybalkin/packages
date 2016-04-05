@@ -1,10 +1,9 @@
 #!/bin/sh
 
-#vcs=git
-#git_repo=git://anongit.freedesktop.org/harfbuzz
-#git_problem="requires ragel"
 pkgname=harfbuzz
-pkgver=1.2.4
+pkgver=1.2.5
+vcs=git
+gittag=${pkgver}
 extension=bz2
 folder="http://www.freedesktop.org/software/${pkgname}/release/"
 check_server=1
@@ -13,9 +12,9 @@ check_server=1
 
 kiin_make() {
   if [ -z "${KIIN_LIB32}" ]; then
-    ./configure --prefix=/usr --libdir=$LIBDIR
+    ./autogen.sh --prefix=/usr --libdir=$LIBDIR
   else
-    ./configure --prefix=/usr --with-icu=no --with-cairo=no --libdir=$LIBDIR
+    ./autogen.sh --prefix=/usr --with-icu=no --with-cairo=no --libdir=$LIBDIR
   fi
   make
 }

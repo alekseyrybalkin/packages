@@ -148,6 +148,8 @@ libxdmcp
 xcb-proto
 libxcb
 libpng
+colm
+ragel
 harfbuzz
 freetype2
 fontconfig
