@@ -56,7 +56,7 @@ grub
 less
 gzip
 iptables
-iproute2
+iproute
 kbd
 kmod
 libpipeline
