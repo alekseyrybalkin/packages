@@ -2,7 +2,7 @@
 
 pkgname=tidy-html5
 ARCH_NAME=tidy
-pkgver=5.1.25
+pkgver=5.2.0
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/tidy-html5-${pkgver}
