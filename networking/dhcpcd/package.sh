@@ -2,7 +2,7 @@
 
 #vcs=fossil
 pkgname=dhcpcd
-pkgver=6.10.1
+pkgver=6.10.2
 extension=xz
 folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
