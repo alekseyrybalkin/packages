@@ -118,6 +118,7 @@ libogg
 libvorbis
 lame
 icu
+boost
 xorg-util-macros
 bigreqsproto
 compositeproto
