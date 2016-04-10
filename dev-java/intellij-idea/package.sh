@@ -3,7 +3,7 @@
 KIIN_NON_FREE=1 # has jars in source tree
 pkgname=intellij-idea
 SKIP_ARCH_CHECK=1
-pkgver=145.760
+pkgver=145.944
 vcs=git
 gittag=idea/${pkgver}
 srcdir=${location}/idea-IC-${pkgver}
