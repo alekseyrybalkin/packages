@@ -1,8 +1,11 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=docbook-xml
 pkgver=4.5
+# git-svn build requires at least https://github.com/ndw/xjparse/
+#vcs=git-svn
+#git_pkgname=docbook-git-svn
+#svnrev=6340
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 srcdir=${location}/${pkgname}-${pkgver}
 
@@ -10,9 +13,12 @@ kiin_make() {
   mkdir ${pkgname}-${pkgver}
   cd ${pkgname}-${pkgver}
   unzip ${KIIN_HOME}/tarballs/${pkgname}-${pkgver}.zip
+  #cd docbook/xml
+  #make
 }
 
 kiin_install() {
+  #cd docbook/xml
   install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
   install -v -d -m755 ${pkgdir}/etc/xml
   chown -R root:root .

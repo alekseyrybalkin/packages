@@ -1,17 +1,22 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=docbook-xsl
 pkgver=1.79.1
+# build from svn requires at least perl-xml-xpath
+#vcs=git-svn
+#git_pkgname=docbook-git-svn
+#svnrev=10010
 urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   echo "nothing to make..."
+  #cd xsl
 }
 
 kiin_install() {
+  #cd xsl
   install -v -m755 -d ${pkgdir}/usr/share/xml/docbook/xsl-stylesheets-${pkgver}
   cp -v -R VERSION common eclipse epub extensions fo highlighting html \
           htmlhelp images javahelp lib manpages params profiling \
@@ -22,8 +27,6 @@ kiin_install() {
   mkdir -p ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}
   install -v -m644 -D README \
                       ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}/README.txt
-  install -v -m755    RELEASE-NOTES* NEWS* \
-                      ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}
 }
 
 kiin_after_install() {
