@@ -1,9 +1,11 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=icu
 pkgver=57.1
 _pkgver=${pkgver//\./_}
+vcs=git-svn
+git_pkgname=icu-git-svn
+svnrev=38551
 urls="http://download.icu-project.org/files/icu4c/${pkgver}/icu4c-${_pkgver}-src.tgz"
 srctar=icu4c-${_pkgver}-src.tgz
 srcdir=${location}/icu

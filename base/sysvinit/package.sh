@@ -1,19 +1,24 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=sysvinit
 SKIP_ARCH_CHECK=1
-pkgver=2.88dsf
+pkgver=2.89
+vcs=git-svn
+git_pkgname=sysvinit-git-svn
+svnrev=174
 urls="http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  patch -Np1 -i ../sysvinit-${pkgver}-consolidated-1.patch
   make -C src
 }
 
 kiin_install() {
   make ROOT=${pkgdir} -C src install
-  mv ${pkgdir}/{sbin,usr/bin}
+  rm -rf ${pkgdir}/bin ${pkgdir}/usr/bin
+  mv ${pkgdir}/sbin ${pkgdir}/usr/bin
+  rm ${pkgdir}/usr/bin/sulogin
+  rm -rf ${pkgdir}/usr/share/man/man{1,5}
+  rm -rf ${pkgdir}/usr/share/man/man8/{pidof.8,sulogin.8}
 }

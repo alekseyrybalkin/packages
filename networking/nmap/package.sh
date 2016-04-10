@@ -1,8 +1,10 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=nmap
 pkgver=7.12
+vcs=git-svn
+git_pkgname=nmap-git-svn
+svnrev=35746
 extension=bz2
 folder="http://nmap.org/dist/"
 check_server=1

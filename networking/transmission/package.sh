@@ -1,8 +1,10 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=transmission
 pkgver=2.92
+vcs=git-svn
+git_pkgname=transmission-git-svn
+svnrev=14713
 extension=xz
 folder="https://download.transmissionbt.com/files/"
 check_server=1
@@ -12,7 +14,8 @@ check_server=1
 kiin_make() {
   sed -i -e '/gtr_get_favicon/d' gtk/details.c
   sed -i -e '/gtr_get_favicon/d' gtk/filter.c
-  ./configure --prefix=/usr
+  rm m4/glib-gettext.m4
+  ./autogen.sh --prefix=/usr
   make
 }
 

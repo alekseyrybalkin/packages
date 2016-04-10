@@ -1,10 +1,11 @@
 #!/bin/sh
 
-#vcs=subversion
-#svn_repo=svn://svn.code.sf.net/p/freeglut/code/trunk
 pkgname=freeglut
 ARCH_NAME_LIB32=freeglut
 pkgver=3.0.0
+vcs=git-svn
+git_pkgname=freeglut-git-svn
+svnrev=1752
 urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

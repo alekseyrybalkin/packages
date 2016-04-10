@@ -1,14 +1,17 @@
 #!/bin/sh
 
-#vcs=subversion
 pkgname=mpfr
-_pkgver=3.1.4
-pkgver=${_pkgver}
-urls="http://www.mpfr.org/mpfr-${_pkgver}/mpfr-${_pkgver}.tar.xz"
-srctar=${pkgname}-${_pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${_pkgver}
+pkgver=3.1.4
+vcs=git-svn
+git_pkgname=mpfr-git-svn
+svnrev=10201
+urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
+srctar=${pkgname}-${pkgver}.tar.xz
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  cd branches/3.1
+  ./autogen.sh
   ./configure --prefix=/usr \
     --enable-thread-safe \
     --disable-static \
@@ -18,6 +21,7 @@ kiin_make() {
 }
 
 kiin_install() {
+  cd branches/3.1
   make DESTDIR=${pkgdir} install
   make DESTDIR=${pkgdir} install-html
 }
