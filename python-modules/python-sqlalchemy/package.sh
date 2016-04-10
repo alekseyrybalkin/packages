@@ -4,7 +4,7 @@ pkgname=python-sqlalchemy
 pkgver=1.0.12
 vcs=git
 git_pkgname=sqlalchemy
-hgtag=rel_${pkgver//\./_}
+gittag=rel_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

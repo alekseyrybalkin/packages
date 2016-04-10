@@ -14,7 +14,4 @@ kiin_make() {
 
 kiin_install() {
   python setup.py install --prefix=/usr --root=${pkgdir}
-  mkdir ${pkgdir}/usr/bin
-  cp ../gunicorn.py ${pkgdir}/usr/bin/gunicorn
-  chmod 755 ${pkgdir}/usr/bin/gunicorn
 }

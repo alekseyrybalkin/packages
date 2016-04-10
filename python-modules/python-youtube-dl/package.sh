@@ -2,7 +2,7 @@
 
 pkgname=python-youtube-dl
 ARCH_NAME=youtube-dl
-pkgver=2016.03.26
+pkgver=2016.04.06
 vcs=git
 git_pkgname=youtube-dl
 gittag=${pkgver}
@@ -11,7 +11,7 @@ srctar=youtube-dl-${pkgver}.tar.gz
 srcdir=${location}/youtube-dl
 
 kiin_make() {
-    :
+    python setup.py build
 }
 
 kiin_install() {

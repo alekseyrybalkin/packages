@@ -9,9 +9,6 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   python setup.py build
-  cd pycparser
-  python _build_tables.py
-  mkdir ../build/scripts-3.5
 }
 
 kiin_install() {

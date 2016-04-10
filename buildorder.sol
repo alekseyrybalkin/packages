@@ -300,7 +300,6 @@ tor
 python2-markupsafe
 python2-jinja
 adblockplus
-python-youtube-dl
 lightlang
 ldns
 lzo
@@ -324,6 +323,7 @@ apache-ant
 maven
 intellij-idea
 python-setuptools
+python-youtube-dl
 python-markupsafe
 python-mako
 python-six
