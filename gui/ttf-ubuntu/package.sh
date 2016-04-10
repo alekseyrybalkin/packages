@@ -16,12 +16,12 @@ kiin_install() {
   install -m755 -d ${pkgdir}/usr/share/fonts/TTF
   install -m644 Ubuntu-{L,R,B,C}*.ttf ${pkgdir}/usr/share/fonts/TTF/
   install -m644 UbuntuMono-*.ttf ${pkgdir}/usr/share/fonts/TTF/
+  mkfontscale ${pkgdir}/usr/share/fonts/TTF
+  mkfontdir ${pkgdir}/usr/share/fonts/TTF
 }
 
 kiin_after_install() {
   fc-cache -fs > /dev/null
-  mkfontscale /usr/share/fonts/TTF
-  mkfontdir /usr/share/fonts/TTF
 }
 
 kiin_after_upgrade() {
