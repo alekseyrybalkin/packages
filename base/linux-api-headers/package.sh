@@ -2,6 +2,7 @@
 
 pkgname=linux-api-headers
 vcs=git
+git_pkgname=linux
 pkgver=4.6.rc3
 gittag=v4.6-rc3
 srcdir=${location}/linux-${pkgver}
