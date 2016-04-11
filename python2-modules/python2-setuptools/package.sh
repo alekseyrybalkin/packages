@@ -2,7 +2,7 @@
 
 pkgname=python2-setuptools
 ARCH_NAME=python-setuptools
-pkgver=20.6.7
+pkgver=20.7.0
 vcs=git
 git_pkgname=setuptools
 gittag=v${pkgver}
@@ -11,6 +11,7 @@ srctar=setuptools-${pkgver}.tar.gz
 srcdir=${location}/setuptools-${pkgver}
 
 kiin_make() {
+  python2 bootstrap.py
   python2 setup.py build
 }
 
