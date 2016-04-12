@@ -249,7 +249,6 @@ popt
 cryptsetup
 linux-firmware
 initramfs
-intel-ucode
 libnl
 iw
 wpa_supplicant
