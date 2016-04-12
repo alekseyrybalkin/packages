@@ -20,6 +20,7 @@ kiin_make() {
     --libexecdir=/usr/lib/glibc \
     --disable-build-nscd \
     --disable-nscd \
+    --enable-lock-elision=no \
     --libdir=/usr/lib
   make
 }
