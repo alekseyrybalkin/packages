@@ -2,9 +2,9 @@
 
 pkgname=linux-api-headers
 vcs=git
-git_pkgname=linux
-pkgver=4.6.rc3
-gittag=v4.6-rc3
+git_pkgname=linux-stable
+pkgver=4.5
+gittag=v${pkgver}
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
