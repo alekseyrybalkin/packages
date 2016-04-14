@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=apache-ant
-pkgver=1.9.6
+pkgver=1.9.7
 vcs=git
-gittag=ANT_${pkgver//\./}
+gittag=rel/${pkgver}
 extension=bz2
 folder="http://archive.apache.org/dist/ant/source/"
 check_server=1
