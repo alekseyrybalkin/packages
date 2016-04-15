@@ -336,3 +336,4 @@ python-pycparser
 python-bcrypt
 python-untangle
 python-requests
+gdb
