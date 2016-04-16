@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgcrypt
-pkgver=1.6.5
+pkgver=1.7.0
 vcs=git
 gittag=libgcrypt-${pkgver}
 extension=bz2
@@ -14,13 +14,8 @@ kiin_make() {
     if [ -n "${KIIN_LIB32}" ]; then
         sed 's:path="amd64":path="i586 i386":' -i mpi/config.links
     fi
-    # disable docs, building them requires fig2dev from xfig
-    sed -i -e '/doc\/Makefile/d' configure.ac
-    sed -i -e 's/doc\/ChangeLog-2011//g' Makefile.am
-    sed -i -e 's/doc//g' Makefile.am
-    rm -rf doc
     ./autogen.sh
-    ./configure --enable-maintainer-mode --prefix=/usr --libdir=${LIBDIR}
+    ./configure --disable-doc --enable-maintainer-mode --prefix=/usr --libdir=${LIBDIR}
     make
 }
 
