@@ -337,3 +337,6 @@ python-bcrypt
 python-untangle
 python-requests
 gdb
+llvm
+strace
+qemu
