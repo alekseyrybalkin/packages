@@ -3,8 +3,8 @@
 pkgname=openjdk
 ARCH_NAME=java8-openjdk
 _java_ver=8
-_jdk_update=77
-_jdk_build=03
+_jdk_update=102
+_jdk_build=02
 _repo_ver=jdk${_java_ver}u${_jdk_update}-b${_jdk_build}
 pkgver=${_java_ver}.u${_jdk_update}
 vcs=mercurial
