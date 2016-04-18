@@ -83,10 +83,10 @@ kiin_install() {
   chown fcron:fcron ${pkgdir}/var/spool/fcron
   chmod 770 ${pkgdir}/var/spool/fcron
 
-  # for multimedia and backups
-  mkdir -pv ${pkgdir}/var/{multimedia,backups}
-  chown ${PACMAN}:${PACMAN} ${pkgdir}/var/{multimedia,backups}
-  chmod 700 ${pkgdir}/var/{multimedia,backups}
+  # for backups
+  mkdir -pv ${pkgdir}/var/backups
+  chown ${PACMAN}:${PACMAN} ${pkgdir}/var/backups
+  chmod 700 ${pkgdir}/var/backups
 }
 
 kiin_after_install() {
