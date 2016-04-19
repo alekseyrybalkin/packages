@@ -1,13 +1,16 @@
 #!/bin/sh
 
-#vcs=git
 pkgname=autoconf2.13
 pkgver=2.13
+vcs=git
+git_pkgname=autoconf
+gittag=df646e7699865557f342782df1134d9e75eb4628
 urls="http://ftpmirror.gnu.org/autoconf/autoconf-${pkgver}.tar.gz"
 srctar=autoconf-${pkgver}.tar.gz
 srcdir=${location}/autoconf-${pkgver}
 
 kiin_make() {
+    cp ../autoupdate.sh .
     ./configure --prefix=/usr \
         --infodir=/usr/share/info \
         --program-suffix=-2.13

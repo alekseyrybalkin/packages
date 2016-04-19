@@ -1,8 +1,9 @@
 #!/bin/sh
 
-#vcs=git
 pkgname=fakeroot
 pkgver=1.20.2
+vcs=git
+gittag=b5159a93f0ea7f1d7cf788754ef4d8c7d30dd22e
 extension=bz2
 folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
 check_server=1
@@ -17,6 +18,9 @@ ver_seds() {
 }
 
 kiin_make() {
+  sed -i -e '/man_MANS/d' doc/Makefile.am
+  sed -i -e 's/de es fr sv nl//g' doc/Makefile.am
+  ./bootstrap
   ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot \
     --disable-static --with-ipc=sysv
   make

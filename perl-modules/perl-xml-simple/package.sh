@@ -2,6 +2,7 @@
 
 pkgname=perl-xml-simple
 pkgver=2.22
+# building from git requires perl-dist-zilla which requires perl-app-cmd and maybe more
 #vcs=git
 #gittag=v${pkgver}
 urls="http://search.cpan.org/CPAN/authors/id/G/GR/GRANTM/XML-Simple-${pkgver}.tar.gz"

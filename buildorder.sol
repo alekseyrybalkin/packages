@@ -77,6 +77,7 @@ fakeroot
 sqlite
 openssl
 cacerts
+gengetopt
 libidn
 wget
 curl

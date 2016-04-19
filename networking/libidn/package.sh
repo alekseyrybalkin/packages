@@ -1,13 +1,21 @@
 #!/bin/sh
 
-#vcs=git
 pkgname=libidn
 pkgver=1.32
+vcs=git
+gittag=libidn-${pkgver//\./-}
 urls="http://ftp.gnu.org/gnu/libidn/libidn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  sed -i -e 's/\ doc//g' Makefile.am
+  sed -i -e 's/\ po//g' Makefile.am
+  sed -i -e '/doc\//d' configure.ac
+  sed -i -e '/po\//d' configure.ac
+  sed -i -e '/AM_GNU_GETTEXT/d' configure.ac
+  touch ChangeLog
+  autoreconf -fi
   ./configure --prefix=/usr --disable-static --libdir=${LIBDIR}
   make
 }
