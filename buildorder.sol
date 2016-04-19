@@ -341,3 +341,4 @@ gdb
 llvm
 strace
 qemu
+fossil

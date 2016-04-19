@@ -1,8 +1,9 @@
 #!/bin/sh
 
-#vcs=fossil
 pkgname=dhcpcd
 pkgver=6.10.2
+vcs=fossil
+fossiltag=dhcpcd-${pkgver}
 extension=xz
 folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
