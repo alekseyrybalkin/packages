@@ -74,6 +74,7 @@ man-db
 vim
 linux
 fakeroot
+tcl
 sqlite
 openssl
 cacerts
