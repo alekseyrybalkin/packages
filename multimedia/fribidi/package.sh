@@ -1,17 +1,17 @@
 #!/bin/sh
 
-#vcs=git
 pkgname=fribidi
 pkgver=0.19.7
+vcs=git
+gittag=${pkgver}
 urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i "s|glib/gstrfuncs\.h|glib.h|" charset/fribidi-char-sets.c
-  sed -i "s|glib/gmem\.h|glib.h|" lib/mem.h
+  sed -i -e 's/\ doc//g' Makefile.am
+  ./bootstrap
   ./configure --prefix=/usr
-  make
 }
 
 kiin_install() {

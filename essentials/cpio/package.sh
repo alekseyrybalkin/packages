@@ -1,14 +1,20 @@
 #!/bin/sh
 
-#vcs=git
 pkgname=cpio
 pkgver=2.12
+vcs=git
+gittag=release_${pkgver//\./_}
 urls="http://ftp.gnu.org/pub/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e '/gets is a/d' gnu/stdio.in.h
+  git clone ${KIIN_HOME}/sources/gnulib
+  git clone ${KIIN_HOME}/sources/paxutils
+  sed -i -e 's/lib\ pax/lib/g' bootstrap.conf
+  ./bootstrap --skip-po
+  m4 -DMODE=C sysdep.m4 > lib/sysdep.c
+  m4 -DMODE=H sysdep.m4 > lib/sysdep.h
   ./configure --prefix=/usr     \
               --libexecdir=/tmp \
               --enable-mt       \
