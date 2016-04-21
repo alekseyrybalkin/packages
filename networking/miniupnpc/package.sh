@@ -1,11 +1,10 @@
 #!/bin/sh
 
 pkgname=miniupnpc
-pkgver=1.9+
-ARCH_VERSION=1.9.20151026
+pkgver=2.0
 vcs=git
 git_pkgname=miniupnp
-gittag=dc9eb0df1c8ee36101b7c269a4695d247d0a48cc
+gittag=miniupnpc_${pkgver//\./_}
 urls="http://miniupnp.free.fr/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=6.10.2
+pkgver=6.10.3
 vcs=fossil
 fossiltag=dhcpcd-${pkgver}
 extension=xz
