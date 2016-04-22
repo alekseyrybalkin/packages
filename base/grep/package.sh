@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=grep
-pkgver=2.24
+pkgver=2.25
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
