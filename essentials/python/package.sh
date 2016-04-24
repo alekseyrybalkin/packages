@@ -32,6 +32,8 @@ kiin_make() {
     --with-system-ffi \
     --without-ensurepip
   make
+  cd Doc
+  make html
 }
 
 kiin_install() {
@@ -42,4 +44,6 @@ kiin_install() {
   ln -s idle3                 ${pkgdir}/usr/bin/idle
   ln -s pydoc3                ${pkgdir}/usr/bin/pydoc
   ln -s python${pkgver} ${pkgdir}/usr/share/man/man1/python.1
+  mkdir -p ${pkgdir}/usr/share/doc/python
+  cp -r Doc/build/html ${pkgdir}/usr/share/doc/python
 }

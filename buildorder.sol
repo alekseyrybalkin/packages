@@ -343,3 +343,12 @@ llvm
 strace
 qemu
 fossil
+python-jinja
+python-imagesize
+python-alabaster
+python-pytz
+python-babel
+python-snowballstemmer
+python-docutils
+python-pygments
+python-sphinx

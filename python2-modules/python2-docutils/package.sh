@@ -21,4 +21,7 @@ kiin_install() {
   cd docutils
   python2 setup.py install --root=${pkgdir}
   find ${pkgdir}/usr/lib/python2.7/site-packages -type f | xargs chmod 644
+  for _f in ${pkgdir}/usr/bin/*.py; do
+    mv -v "$_f" "${_f%.py}2.py"
+  done
 }
