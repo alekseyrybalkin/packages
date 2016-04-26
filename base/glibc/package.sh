@@ -1,9 +1,10 @@
 #!/bin/sh
 
+KIIN_NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.23.1
 vcs=git
-gittag=f1e182acaaa84e844eb96462a92ba532e1c1fff4
+gittag=5769d5d17cdb4770f1e08167b76c1684ad4e1f73
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
@@ -15,12 +16,13 @@ kiin_make() {
   ../configure \
     --prefix=/usr \
     --disable-profile \
-    --enable-kernel=3.2 \
+    --enable-kernel=4.4 \
     --enable-obsolete-rpc \
     --libexecdir=/usr/lib/glibc \
     --disable-build-nscd \
     --disable-nscd \
     --enable-lock-elision=no \
+    --build=x86_64-unknown-linux-gnu \
     --libdir=/usr/lib
   make
 }
