@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=45.0.2
+pkgver=46.0
 vcs=mercurial
 hg_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
@@ -11,13 +11,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   rm -rf .hg .hgignore .hgtags
-  export PYTHON="/usr/bin/python2"
-  CFLAGS="${CFLAGS} -mno-avx"
-  CXXFLAGS="${CFLAGS}"
   cp ../mozconfig .
   patch -Np1 -i ../firefox-gtk3-20.patch
-  cp ../firefox-fixed-loading-icon.png \
-    browser/themes/linux/tabbrowser/loading.png
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nginx
-pkgver=1.8.1
+pkgver=1.10.0
 vcs=mercurial
 hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
@@ -23,8 +23,11 @@ kiin_make() {
     --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
     --http-scgi-temp-path=/var/lib/nginx/scgi \
     --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \
-    --with-imap \
-    --with-imap_ssl_module \
+    --with-mail \
+    --with-mail_ssl_module \
+    --with-stream \
+    --with-stream_ssl_module \
+    --with-threads \
     --with-ipv6 \
     --with-pcre-jit \
     --with-file-aio \
@@ -32,7 +35,7 @@ kiin_make() {
     --with-http_gunzip_module \
     --with-http_gzip_static_module \
     --with-http_realip_module \
-    --with-http_spdy_module \
+    --with-http_v2_module \
     --with-http_ssl_module \
     --with-http_stub_status_module \
     --with-http_addition_module \

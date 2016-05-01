@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=python-mimeparse
-pkgver=1.5.1
+pkgver=1.5.2
 vcs=git
-gittag=5cc99617c1a4d4cb859a66f9e5fd140f2fcf4f9b
+gittag=cc66740c6e46b85ac55e989fd4883d5697e15c35
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
