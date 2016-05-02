@@ -16,7 +16,7 @@ kiin_make() {
   ../configure --prefix=/usr \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
-    --enable-languages=c,c++ \
+    --enable-languages=c,c++,fortran \
     --disable-multilib \
     --with-system-zlib
   make

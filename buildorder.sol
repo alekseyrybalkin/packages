@@ -352,3 +352,7 @@ python-snowballstemmer
 python-docutils
 python-pygments
 python-sphinx
+python-cython
+lapack
+python-numpy
+python-scipy
