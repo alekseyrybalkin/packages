@@ -9,11 +9,13 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   sed -i -e 's/\ doc//g' Makefile.am
   ./bootstrap
   ./configure --prefix=/usr
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }

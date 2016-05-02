@@ -9,6 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  MAKEFLAGS=
   sed -i -e 's/\ doc//g' Makefile.am
   sed -i -e 's/\ po//g' Makefile.am
   sed -i -e '/doc\//d' configure.ac
@@ -21,5 +22,6 @@ kiin_make() {
 }
 
 kiin_install() {
+  MAKEFLAGS=
   make DESTDIR=${pkgdir} install
 }

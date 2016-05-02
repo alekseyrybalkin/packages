@@ -13,7 +13,7 @@ kiin_make() {
   git clone ${KIIN_HOME}/sources/paxutils
   # use `file-has-acl` (instead of `acl`) gnulib module
   git cherry-pick d95457e0071f26b1e524c754adf211abdd53d0fa
-  ./bootstrap
+  ./bootstrap --skip-po
   ./configure --prefix=/usr --enable-gcc-warnings=no --libexecdir=/usr/bin
   make
 }
