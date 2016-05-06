@@ -84,7 +84,8 @@ wget
 curl
 python
 python2
-python2-bzr
+python2-cython
+bzr
 libgpg-error
 libgcrypt
 libxml2

@@ -1,8 +1,9 @@
 #!/bin/sh
 
-pkgname=python2-bzr
-ARCH_NAME=bzr
+pkgname=bzr
 pkgver=2.7.0
+vcs=bzr
+bzrtag=bzr-${pkgver}
 urls="http://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.tar.gz"
 srctar=bzr-${pkgver}.tar.gz
 srcdir=${location}/bzr-${pkgver}
