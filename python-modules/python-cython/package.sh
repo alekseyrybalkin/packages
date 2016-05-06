@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python-cython
+ARCH_NAME=cython
 pkgver=0.24
 vcs=git
 git_pkgname=cython
