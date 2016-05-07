@@ -360,3 +360,4 @@ python-numpy
 python-scipy
 python-opengl
 glfw
+python-pillow
