@@ -11,6 +11,15 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   rm -rf .hg .hgignore .hgtags
+
+  sed -e '/#include/i\
+    print OUT "#define _GLIBCXX_INCLUDE_NEXT_C_HEADERS\\n"\;' \
+    -i nsprpub/config/make-system-wrappers.pl
+
+  sed -e '/#include/a\
+    print OUT "#undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS\\n"\;' \
+    -i nsprpub/config/make-system-wrappers.pl
+
   cp ../mozconfig .
   patch -Np1 -i ../firefox-gtk3-20.patch
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
@@ -20,7 +29,7 @@ kiin_make() {
   mkdir path
   ln -s /usr/bin/python2 "$srcdir/path/python"
 
-  make -f client.mk
+  CXX='g++ -std=c++11' make -f client.mk
 }
 
 kiin_install() {

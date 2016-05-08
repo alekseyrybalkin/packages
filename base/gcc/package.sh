@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=5.3.0
+pkgver=6.1.1
 vcs=git
-gittag=gcc_${pkgver//\./_}_release
+gittag=617dbccc4bb11903cee7841eacc0cd1cf459aee0
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -21,7 +21,7 @@ kiin_make() {
     --with-system-zlib
   make
   cd ../libstdc++-v3
-  bash scripts/run_doxygen --mode=html --host_alias=x86_64-unknown-linux-gnu . . NO
+  bash scripts/run_doxygen --mode=html --host_alias=x86_64-pc-linux-gnu . . NO
 }
 
 kiin_install() {

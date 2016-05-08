@@ -34,9 +34,11 @@ kiin_make() {
         --with-build-number=b${_jdk_build} \
         --with-milestone=kiin \
         --enable-unlimited-crypto \
-        --with-zlib=system
+        --with-zlib=system \
+        --with-extra-cflags="-std=c++98 -Wno-error -fno-delete-null-pointer-checks -fno-lifetime-dse" \
+        --with-extra-cxxflags="-std=c++98 -fno-delete-null-pointer-checks -fno-lifetime-dse"
     # --with-giflib=system \
-    make DEBUG_BINARIES=true all
+    make SCTP_WERROR= all
     find build/*/images/j2sdk-image -iname \*.diz -delete
     find build/*/images/j2sdk-image -iname \*.debuginfo -delete
 }

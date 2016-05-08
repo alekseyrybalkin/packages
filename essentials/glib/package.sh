@@ -19,7 +19,6 @@ kiin_make() {
     --sysconfdir=/etc \
     --with-pcre=system \
     --disable-libelf \
-    --enable-gtk-doc \
     --libdir=/usr/lib
   make
 }

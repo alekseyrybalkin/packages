@@ -8,6 +8,7 @@ gittag=${pkgver}
 srcdir=${location}/evince-${pkgver}
 
 kiin_make() {
+  export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"
   ./autogen.sh --prefix=/usr \
     --libexecdir=/usr/lib/evince \
     --disable-introspection \

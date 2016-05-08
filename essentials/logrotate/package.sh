@@ -9,6 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+  export CFLAGS="${CFLAGS} -Wno-misleading-indentation"
   ./autogen.sh
   ./configure --prefix=/usr --sbindir=/usr/bin
   make

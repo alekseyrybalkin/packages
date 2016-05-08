@@ -13,7 +13,11 @@ kiin_make() {
     --without-evolution-data-server \
     --disable-collab-backend-telepathy \
     --disable-collab-backend-sugar \
-    --enable-plugins
+    --enable-plugins="applix babelfish freetranslation eml urldict
+      mswrite paint epub garble mif t602 goffice s5 passepartout sdw gimp
+      google hancom opml kword collab openwriter pdb opendocument pdf mht
+      iscii loadbindings clarisworks docbook gdict wikipedia hrtext bmp
+      command openxml presentation wml"
   make
 }
 

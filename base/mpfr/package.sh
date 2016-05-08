@@ -2,6 +2,7 @@
 
 pkgname=mpfr
 pkgver=3.1.4
+ARCH_VERSION=3.1.4.p1
 vcs=git-svn
 git_pkgname=mpfr-git-svn
 svnrev=10201

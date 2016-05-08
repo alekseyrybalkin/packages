@@ -22,7 +22,7 @@ kiin_make() {
     --disable-build-nscd \
     --disable-nscd \
     --enable-lock-elision=no \
-    --build=x86_64-unknown-linux-gnu \
+    --build=x86_64-pc-linux-gnu \
     --libdir=/usr/lib
   make
 }
