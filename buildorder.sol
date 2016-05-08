@@ -361,3 +361,4 @@ python-scipy
 python-opengl
 glfw
 python-pillow
+blender
