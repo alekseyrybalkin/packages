@@ -1,0 +1,50 @@
+diff --git a/xpcom/ds/nsCRT.h b/xpcom/ds/nsCRT.h
+--- a/xpcom/ds/nsCRT.h
++++ b/xpcom/ds/nsCRT.h
+@@ -19,24 +19,28 @@
+ #  ifdef XP_UNIX
+ #    define NS_LINEBREAK         "\012"
+ #    define NS_LINEBREAK_LEN     1
+ #  endif /* XP_UNIX */
+ #endif /* XP_WIN */
+ 
+ extern const char16_t kIsoLatin1ToUCS2[256];
+ 
++#define COMPILER_BARRIER \
++  __asm__ __volatile__("":::"cc","memory")
++
+ // This macro can be used in a class declaration for classes that want
+ // to ensure that their instance memory is zeroed.
+ #define NS_DECL_AND_IMPL_ZEROING_OPERATOR_NEW   \
+   void* operator new(size_t sz) CPP_THROW_NEW { \
+     void* rv = ::operator new(sz);              \
+     if (rv) {                                   \
+       memset(rv, 0, sz);                        \
+     }                                           \
++    COMPILER_BARRIER;                           \
+     return rv;                                  \
+   }                                             \
+   void operator delete(void* ptr) {             \
+     ::operator delete(ptr);                     \
+   }
+ 
+ // This macro works with the next macro to declare a non-inlined
+ // version of the above.
+@@ -45,16 +49,17 @@ extern const char16_t kIsoLatin1ToUCS2[2
+   void operator delete(void* ptr);
+ 
+ #define NS_IMPL_ZEROING_OPERATOR_NEW(_class)            \
+   void* _class::operator new(size_t sz) CPP_THROW_NEW { \
+     void* rv = ::operator new(sz);                      \
+     if (rv) {                                           \
+       memset(rv, 0, sz);                                \
+     }                                                   \
++    COMPILER_BARRIER;                                   \
+     return rv;                                          \
+   }                                                     \
+   void _class::operator delete(void* ptr) {             \
+     ::operator delete(ptr);                             \
+   }
+ 
+ // Freeing helper
+ #define CRTFREEIF(x) if (x) { nsCRT::free(x); x = 0; }

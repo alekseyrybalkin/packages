@@ -10,9 +10,6 @@ srctar=${pkgname}-${pkgver}.source.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  export CFLAGS="${CFLAGS} -flifetime-dse=1 -fno-delete-null-pointer-checks"
-  export CXXFLAGS="${CXXFLAGS} -flifetime-dse=1 -fno-delete-null-pointer-checks"
-
   rm -rf .hg .hgignore .hgtags
 
   sed -e '/#include/i\
@@ -25,6 +22,7 @@ kiin_make() {
 
   cp ../mozconfig .
   patch -Np1 -i ../firefox-gtk3-20.patch
+  patch -Np1 -i ../firefox-gcc6.patch
   sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
   echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 
