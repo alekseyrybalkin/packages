@@ -4,6 +4,7 @@ pkgname=python-opengl
 ARCH_NAME=pyopengl
 pkgver=3.1.0
 vcs=bzr
+vcs_pkgname=pyopengl
 bzrtag=release-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
