@@ -3,7 +3,7 @@
 pkgname=python-scipy
 pkgver=0.17.0
 vcs=git
-git_pkgname=scipy
+vcs_pkgname=scipy
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

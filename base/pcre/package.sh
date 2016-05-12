@@ -3,7 +3,7 @@
 pkgname=pcre
 pkgver=8.38
 vcs=git-svn
-git_pkgname=pcre-git-svn
+vcs_pkgname=pcre-git-svn
 svnrev=1609
 extension=bz2
 folder="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"

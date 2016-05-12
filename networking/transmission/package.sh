@@ -3,7 +3,7 @@
 pkgname=transmission
 pkgver=2.92
 vcs=git-svn
-git_pkgname=transmission-git-svn
+vcs_pkgname=transmission-git-svn
 svnrev=14713
 extension=xz
 folder="https://download.transmissionbt.com/files/"

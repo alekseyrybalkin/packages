@@ -3,7 +3,7 @@
 pkgname=python-sqlalchemy
 pkgver=1.0.12
 vcs=git
-git_pkgname=sqlalchemy
+vcs_pkgname=sqlalchemy
 gittag=rel_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 

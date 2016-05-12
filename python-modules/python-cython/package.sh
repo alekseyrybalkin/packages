@@ -4,7 +4,7 @@ pkgname=python-cython
 ARCH_NAME=cython
 pkgver=0.24
 vcs=git
-git_pkgname=cython
+vcs_pkgname=cython
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

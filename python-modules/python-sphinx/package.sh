@@ -3,7 +3,7 @@
 pkgname=python-sphinx
 pkgver=1.4.1
 vcs=git
-git_pkgname=sphinx
+vcs_pkgname=sphinx
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

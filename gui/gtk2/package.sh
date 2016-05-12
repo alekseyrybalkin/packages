@@ -3,7 +3,7 @@
 pkgname=gtk2
 pkgver=2.24.30
 vcs=git
-git_pkgname=gtk+
+vcs_pkgname=gtk+
 gittag=${pkgver}
 srcdir=${location}/gtk+-${pkgver}
 

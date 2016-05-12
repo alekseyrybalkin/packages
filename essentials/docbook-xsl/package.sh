@@ -4,7 +4,7 @@ pkgname=docbook-xsl
 pkgver=1.79.1
 # build from svn requires at least perl-xml-xpath
 #vcs=git-svn
-#git_pkgname=docbook-git-svn
+#vcs_pkgname=docbook-git-svn
 #svnrev=10010
 urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2

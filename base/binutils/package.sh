@@ -3,7 +3,7 @@
 pkgname=binutils
 pkgver=2.26
 vcs=git
-git_pkgname=binutils-gdb
+vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}
 extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"

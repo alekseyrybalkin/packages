@@ -3,7 +3,7 @@
 pkgname=serf
 pkgver=1.3.8
 vcs=git-svn
-git_pkgname=serf-git-svn
+vcs_pkgname=serf-git-svn
 svnrev=1699970
 urls="https://archive.apache.org/dist/serf/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2

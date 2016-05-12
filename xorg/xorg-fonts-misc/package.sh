@@ -3,7 +3,7 @@
 pkgname=xorg-fonts-misc
 pkgver=1.0.3
 vcs=git
-git_pkgname=font-misc-misc
+vcs_pkgname=font-misc-misc
 
 kiin_make() {
     cd ${location}

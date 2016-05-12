@@ -3,7 +3,7 @@
 pkgname=miniupnpc
 pkgver=2.0
 vcs=git
-git_pkgname=miniupnp
+vcs_pkgname=miniupnp
 gittag=miniupnpc_${pkgver//\./_}
 urls="http://miniupnp.free.fr/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz

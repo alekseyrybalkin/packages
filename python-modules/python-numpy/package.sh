@@ -3,7 +3,7 @@
 pkgname=python-numpy
 pkgver=1.11.0
 vcs=git
-git_pkgname=numpy
+vcs_pkgname=numpy
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

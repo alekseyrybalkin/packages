@@ -3,7 +3,7 @@
 pkgname=python-pycparser
 pkgver=2.14
 vcs=git
-git_pkgname=pycparser
+vcs_pkgname=pycparser
 gittag=release_v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

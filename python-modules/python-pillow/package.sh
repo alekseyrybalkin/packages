@@ -3,7 +3,7 @@
 pkgname=python-pillow
 pkgver=3.2.0
 vcs=git
-git_pkgname=pillow
+vcs_pkgname=pillow
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

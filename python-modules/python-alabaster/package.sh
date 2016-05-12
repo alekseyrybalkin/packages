@@ -4,7 +4,7 @@ pkgname=python-alabaster
 ARCH_NAME=python-sphinx-alabaster-theme
 pkgver=0.7.8
 vcs=git
-git_pkgname=alabaster
+vcs_pkgname=alabaster
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

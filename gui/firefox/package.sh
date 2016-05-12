@@ -3,7 +3,7 @@
 pkgname=firefox
 pkgver=46.0.1
 vcs=mercurial
-hg_pkgname=firefox-release
+vcs_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz

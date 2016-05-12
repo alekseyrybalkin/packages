@@ -3,7 +3,7 @@
 pkgname=python-six
 pkgver=1.10.0
 vcs=mercurial
-hg_pkgname=six
+vcs_pkgname=six
 hgtag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

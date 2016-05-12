@@ -3,7 +3,7 @@
 pkgname=python-markupsafe
 pkgver=0.23
 vcs=git
-git_pkgname=markupsafe
+vcs_pkgname=markupsafe
 gittag=${pkgver}
 urls="http://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${pkgver}.tar.gz"
 srctar=MarkupSafe-${pkgver}.tar.gz

@@ -3,7 +3,7 @@
 pkgname=python-pygments
 pkgver=2.1.3
 vcs=mercurial
-hg_pkgname=pygments
+vcs_pkgname=pygments
 hgtag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

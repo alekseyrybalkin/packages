@@ -3,7 +3,7 @@
 pkgname=gdb
 pkgver=7.11
 vcs=git
-git_pkgname=binutils-gdb
+vcs_pkgname=binutils-gdb
 gittag=gdb-${pkgver}-release
 srcdir=${location}/${pkgname}-${pkgver}
 

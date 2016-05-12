@@ -3,7 +3,7 @@
 pkgname=python-setuptools
 pkgver=21.0.0
 vcs=git
-git_pkgname=setuptools
+vcs_pkgname=setuptools
 gittag=v${pkgver}
 urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.tar.gz"
 srctar=setuptools-${pkgver}.tar.gz

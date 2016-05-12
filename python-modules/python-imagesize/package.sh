@@ -3,7 +3,7 @@
 pkgname=python-imagesize
 pkgver=0.7.1
 vcs=git
-git_pkgname=imagesize_py
+vcs_pkgname=imagesize_py
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

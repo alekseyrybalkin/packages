@@ -3,7 +3,7 @@
 pkgname=lapack
 pkgver=3.6.0+
 vcs=git-svn
-git_pkgname=lapack-git-svn
+vcs_pkgname=lapack-git-svn
 svnrev=1744
 srcdir=${location}/${pkgname}-${pkgver}
 

@@ -4,7 +4,7 @@ pkgname=docbook-xml
 pkgver=4.5
 # git-svn build requires at least https://github.com/ndw/xjparse/
 #vcs=git-svn
-#git_pkgname=docbook-git-svn
+#vcs_pkgname=docbook-git-svn
 #svnrev=6340
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 srcdir=${location}/${pkgname}-${pkgver}

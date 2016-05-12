@@ -4,7 +4,7 @@ pkgname=python-falcon
 SKIP_ARCH_CHECK=1
 pkgver=0.3.0
 vcs=git
-git_pkgname=falcon
+vcs_pkgname=falcon
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

@@ -3,7 +3,7 @@
 pkgname=python-babel
 pkgver=2.3.4
 vcs=git
-git_pkgname=babel
+vcs_pkgname=babel
 gittag=${pkgver}
 extra_urls="http://unicode.org/Public/cldr/28/core.zip"
 srcdir=${location}/${pkgname}-${pkgver}

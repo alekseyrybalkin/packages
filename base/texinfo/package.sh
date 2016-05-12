@@ -4,7 +4,7 @@ pkgname=texinfo
 pkgver=6.1
 # git-svn only from r5000 (git-svn crashes for -r 4000:HEAD or earlier)
 vcs=git-svn
-git_pkgname=texinfo-git-svn
+vcs_pkgname=texinfo-git-svn
 svnrev=6991
 urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
