@@ -15,14 +15,14 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr \
-    --sysconfdir=/etc \
-    --with-pcre=system \
-    --disable-libelf \
-    --libdir=/usr/lib
-  make
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --with-pcre=system \
+        --disable-libelf \
+        --libdir=/usr/lib
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

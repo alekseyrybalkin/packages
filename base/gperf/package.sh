@@ -7,11 +7,11 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr --docdir=/usr/share/doc/gperf
-  echo -e "all:\n\ninstall:" > doc/Makefile
-  make
+    ./configure --prefix=/usr --docdir=/usr/share/doc/gperf
+    echo -e "all:\n\ninstall:" > doc/Makefile
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

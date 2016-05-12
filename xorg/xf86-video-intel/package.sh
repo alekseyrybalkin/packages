@@ -9,10 +9,10 @@ gittag=e4ef6e9e5b2c8b637356621c60b28d064d40d29c
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --enable-dri --libexecdir=/usr/lib $XORG_CONFIG
-  make
+    ./autogen.sh --enable-dri --libexecdir=/usr/lib $XORG_CONFIG
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

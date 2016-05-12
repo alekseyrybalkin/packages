@@ -8,12 +8,12 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./configure --prefix=/usr \
-    --enable-mp3rtp \
-    --disable-static
-  make
+    ./configure --prefix=/usr \
+        --enable-mp3rtp \
+        --disable-static
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} pkghtmldir=/usr/share/doc/lame-${pkgver} install
+    make DESTDIR=${pkgdir} pkghtmldir=/usr/share/doc/lame-${pkgver} install
 }

@@ -9,9 +9,9 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  make PREFIX=/usr
+    make PREFIX=/usr
 }
 
 kiin_install() {
-  make PREFIX=/usr DESTDIR=${pkgdir} install
+    make PREFIX=/usr DESTDIR=${pkgdir} install
 }

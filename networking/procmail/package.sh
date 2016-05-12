@@ -8,10 +8,10 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/getline/get_line/' src/*.[ch]
-  yes n | make LOCKINGTEST=/tmp
+    sed -i 's/getline/get_line/' src/*.[ch]
+    yes n | make LOCKINGTEST=/tmp
 }
 
 kiin_install() {
-  make BASENAME=${pkgdir}/usr MANDIR=${pkgdir}/usr/share/man install
+    make BASENAME=${pkgdir}/usr MANDIR=${pkgdir}/usr/share/man install
 }

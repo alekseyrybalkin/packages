@@ -11,14 +11,14 @@ srctar=setuptools-${pkgver}.tar.gz
 srcdir=${location}/setuptools-${pkgver}
 
 kiin_make() {
-  python2 bootstrap.py
-  python2 setup.py build
+    python2 bootstrap.py
+    python2 setup.py build
 }
 
 kiin_install() {
-  python2 setup.py install --prefix=/usr \
-    --root=${pkgdir} --optimize=1 --skip-build
-  # remove files with spaces in filenames
-  rm ${pkgdir}/usr/lib/python2.7/site-packages/setuptools/script*
-  rm ${pkgdir}/usr/bin/easy_install
+    python2 setup.py install --prefix=/usr \
+        --root=${pkgdir} --optimize=1 --skip-build
+    # remove files with spaces in filenames
+    rm ${pkgdir}/usr/lib/python2.7/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/bin/easy_install
 }

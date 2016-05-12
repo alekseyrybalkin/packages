@@ -18,5 +18,5 @@ kiin_make() {
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

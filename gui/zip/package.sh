@@ -8,11 +8,11 @@ srctar=zip30.tar.gz
 srcdir=${location}/zip30
 
 kiin_make() {
-  make -f unix/Makefile generic_gcc
+    make -f unix/Makefile generic_gcc
 }
 
 kiin_install() {
-  make prefix=${pkgdir}/usr \
-    MANDIR=${pkgdir}/usr/share/man/man1 \
-    -f unix/Makefile install
+    make prefix=${pkgdir}/usr \
+        MANDIR=${pkgdir}/usr/share/man/man1 \
+        -f unix/Makefile install
 }

@@ -9,23 +9,23 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  MAKEFLAGS=
-  export ac_cv_func_fdatasync=no
-  ./autogen.sh --prefix=/usr
-  make
+    MAKEFLAGS=
+    export ac_cv_func_fdatasync=no
+    ./autogen.sh --prefix=/usr
+    make
 }
 
 kiin_install() {
-  MAKEFLAGS=
-  make DESTDIR=${pkgdir} install
+    MAKEFLAGS=
+    make DESTDIR=${pkgdir} install
 }
 
 kiin_after_install() {
-  update-mime-database -n /usr/share/mime
+    update-mime-database -n /usr/share/mime
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }
 
 known="usr/share/applications/mimeinfo.cache"

@@ -11,16 +11,16 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  mkdir build
-  cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_BUILD_TYPE=Release \
-    ..
-  make
+    mkdir build
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_BUILD_TYPE=Release \
+        ..
+    make
 }
 
 kiin_install() {
-  cd build
-  make DESTDIR=${pkgdir} install
+    cd build
+    make DESTDIR=${pkgdir} install
 }

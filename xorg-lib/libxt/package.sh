@@ -7,12 +7,12 @@ gittag=libXt-${pkgver}
 srcdir=${location}/libXt-${pkgver}
 
 kiin_make() {
-  ./autogen.sh $XORG_CONFIG \
-    --with-appdefaultdir=/etc/X11/app-defaults \
-    --libdir=$LIBDIR
-  make
+    ./autogen.sh $XORG_CONFIG \
+        --with-appdefaultdir=/etc/X11/app-defaults \
+        --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

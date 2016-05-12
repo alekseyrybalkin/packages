@@ -8,10 +8,10 @@ gittag=1df0aa160b1ce6d1e1f01085253b665fe6d0d1ef
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr
-  make
+    ./autogen.sh --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

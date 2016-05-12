@@ -14,7 +14,7 @@ kiin_make() {
 
 kiin_install() {
     python2 setup.py install --root=${pkgdir}
-  mv ${pkgdir}/usr/bin/cygdb ${pkgdir}/usr/bin/cygdb2
-  mv ${pkgdir}/usr/bin/cython ${pkgdir}/usr/bin/cython2
-  mv ${pkgdir}/usr/bin/cythonize ${pkgdir}/usr/bin/cythonize2
+    mv ${pkgdir}/usr/bin/cygdb ${pkgdir}/usr/bin/cygdb2
+    mv ${pkgdir}/usr/bin/cython ${pkgdir}/usr/bin/cython2
+    mv ${pkgdir}/usr/bin/cythonize ${pkgdir}/usr/bin/cythonize2
 }

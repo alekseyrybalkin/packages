@@ -9,15 +9,15 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr \
-    --disable-static \
-    --libdir=$LIBDIR
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --disable-static \
+        --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  mkdir -pv ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
-  install -v -m644 doc/Vorbis* ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
+    make DESTDIR=${pkgdir} install
+    mkdir -pv ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
+    install -v -m644 doc/Vorbis* ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
 }

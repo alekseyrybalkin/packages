@@ -8,12 +8,12 @@ gittag=${pkgver}
 srcdir=${location}/ack-${pkgver}
 
 kiin_make() {
-  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
-  make
+    PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  find ${pkgdir} -name perllocal.pod -delete
-  find ${pkgdir} -name .packlist -delete
+    make DESTDIR=${pkgdir} install
+    find ${pkgdir} -name perllocal.pod -delete
+    find ${pkgdir} -name .packlist -delete
 }

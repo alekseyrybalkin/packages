@@ -7,11 +7,11 @@ gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  NOCONFIGURE=1 ./autogen.sh
-  ./configure --prefix=/usr
-  make
+    NOCONFIGURE=1 ./autogen.sh
+    ./configure --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

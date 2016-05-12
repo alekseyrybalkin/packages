@@ -14,23 +14,23 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr --datadir=/usr/share
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr --datadir=/usr/share
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  mkdir -p ${pkgdir}/usr/share
-  mv ${pkgdir}/usr/locale ${pkgdir}/usr/share/
+    make DESTDIR=${pkgdir} install
+    mkdir -p ${pkgdir}/usr/share
+    mv ${pkgdir}/usr/locale ${pkgdir}/usr/share/
 }
 
 kiin_after_install() {
-  gtk-update-icon-cache -q -t -f /usr/share/icons/gnome
+    gtk-update-icon-cache -q -t -f /usr/share/icons/gnome
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }
 
 known="usr/share/icons/gnome/icon-theme.cache"

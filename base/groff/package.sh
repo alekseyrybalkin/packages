@@ -9,13 +9,13 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  MAKEFLAGS=
-  PAGE=A4 ./configure --prefix=/usr --without-x --with-doc=no
-  make
+    MAKEFLAGS=
+    PAGE=A4 ./configure --prefix=/usr --without-x --with-doc=no
+    make
 }
 
 kiin_install() {
-  MAKEFLAGS=
-  make prefix=${pkgdir}/usr install
-  rm -rf ${pkgdir}/usr/share/doc/groff-${pkgver}/pdf
+    MAKEFLAGS=
+    make prefix=${pkgdir}/usr install
+    rm -rf ${pkgdir}/usr/share/doc/groff-${pkgver}/pdf
 }

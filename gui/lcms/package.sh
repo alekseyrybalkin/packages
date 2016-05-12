@@ -11,10 +11,10 @@ srctar=lcms2-${pkgver}.tar.gz
 srcdir=${location}/lcms2-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
-  make
+    ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

@@ -12,20 +12,20 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr \
-    --disable-static \
-    --disable-introspection
-  make
+    ./autogen.sh --prefix=/usr \
+        --disable-static \
+        --disable-introspection
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }
 
 kiin_after_install() {
-  gdk-pixbuf-query-loaders --update-cache
+    gdk-pixbuf-query-loaders --update-cache
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }

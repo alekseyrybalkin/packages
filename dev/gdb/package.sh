@@ -8,11 +8,11 @@ gittag=gdb-${pkgver}-release
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  rm -rf binutils elfcpp gas gold gprof ld zlib
-  ./configure --prefix=/usr
-  make
+    rm -rf binutils elfcpp gas gold gprof ld zlib
+    ./configure --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} -C gdb install
+    make DESTDIR=${pkgdir} -C gdb install
 }

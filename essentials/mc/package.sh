@@ -11,17 +11,17 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr \
-    --libexecdir=/usr/lib \
-    --enable-charset \
-    --disable-static \
-    --sysconfdir=/etc \
-    --with-screen=slang
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --enable-charset \
+        --disable-static \
+        --sysconfdir=/etc \
+        --with-screen=slang
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  cp -v doc/keybind-migration.txt ${pkgdir}/usr/share/mc
+    make DESTDIR=${pkgdir} install
+    cp -v doc/keybind-migration.txt ${pkgdir}/usr/share/mc
 }

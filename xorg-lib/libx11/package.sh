@@ -7,10 +7,10 @@ gittag=libX11-${pkgver}
 srcdir=${location}/libX11-${pkgver}
 
 kiin_make() {
-  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
-  make
+    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

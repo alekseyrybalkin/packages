@@ -11,12 +11,12 @@ srctar=docutils-${pkgver}.tar.gz
 srcdir=${location}/docutils-${pkgver}
 
 kiin_make() {
-  cd docutils
-  python setup.py build
+    cd docutils
+    python setup.py build
 }
 
 kiin_install() {
-  cd docutils
-  python setup.py install --root=${pkgdir}
-  find ${pkgdir}/usr/lib/python3*/site-packages -type f | xargs chmod 644
+    cd docutils
+    python setup.py install --root=${pkgdir}
+    find ${pkgdir}/usr/lib/python3*/site-packages -type f | xargs chmod 644
 }

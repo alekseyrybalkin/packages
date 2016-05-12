@@ -11,9 +11,9 @@ srctar=Jinja2-${pkgver}.tar.gz
 srcdir=${location}/Jinja2-${pkgver}
 
 kiin_make() {
-  python2 setup.py build
+    python2 setup.py build
 }
 
 kiin_install() {
-  python2 setup.py install --root=${pkgdir}
+    python2 setup.py install --root=${pkgdir}
 }

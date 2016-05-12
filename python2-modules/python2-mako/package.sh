@@ -11,10 +11,10 @@ srctar=Mako-${pkgver}.tar.gz
 srcdir=${location}/Mako-${pkgver}
 
 kiin_make() {
-  python2 setup.py build
+    python2 setup.py build
 }
 
 kiin_install() {
-  python2 setup.py install --root=${pkgdir}
-  mv ${pkgdir}/usr/bin/mako-render{,2}
+    python2 setup.py install --root=${pkgdir}
+    mv ${pkgdir}/usr/bin/mako-render{,2}
 }

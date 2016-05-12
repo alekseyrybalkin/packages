@@ -9,9 +9,9 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  make
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} SBINDIR=/usr/bin install
+    make DESTDIR=${pkgdir} SBINDIR=/usr/bin install
 }

@@ -8,11 +8,11 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr --disable-static
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr --disable-static
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

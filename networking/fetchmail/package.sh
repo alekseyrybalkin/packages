@@ -9,11 +9,11 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr --with-ssl --enable-fallback=procmail
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr --with-ssl --enable-fallback=procmail
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

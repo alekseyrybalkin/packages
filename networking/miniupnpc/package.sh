@@ -10,12 +10,12 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cd miniupnpc
-  make
+    cd miniupnpc
+    make
 }
 
 kiin_install() {
-  cd miniupnpc
-  make PREFIX=${pkgdir} install
-  install -Dm644 man3/miniupnpc.3 ${pkgdir}/usr/share/man/man3/miniupnpc.3
+    cd miniupnpc
+    make PREFIX=${pkgdir} install
+    install -Dm644 man3/miniupnpc.3 ${pkgdir}/usr/share/man/man3/miniupnpc.3
 }

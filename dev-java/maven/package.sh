@@ -9,11 +9,11 @@ srctar=apache-maven-${pkgver}-bin.tar.gz
 srcdir=${location}/apache-maven-${pkgver}
 
 kiin_make() {
-  echo "nothing to make..."
+    :
 }
 
 kiin_install() {
-  mkdir -p ${pkgdir}/usr/lib
-  cp -r . ${pkgdir}/usr/lib/maven
-  mv ${pkgdir}/usr/lib/maven/conf/settings.xml{,.packaged}
+    mkdir -p ${pkgdir}/usr/lib
+    cp -r . ${pkgdir}/usr/lib/maven
+    mv ${pkgdir}/usr/lib/maven/conf/settings.xml{,.packaged}
 }

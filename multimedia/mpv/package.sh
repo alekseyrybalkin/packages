@@ -7,15 +7,15 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cp -r ${KIIN_HOME}/sources/waf/{waf-light,waflib} ./
-  mv ./waf{-light,}
-  ./waf configure --prefix=/usr \
-    --confdir=/etc/mpv \
-    --disable-pulse \
-    --enable-libmpv-shared
-  ./waf build
+    cp -r ${SOURCES_HOME}/waf/{waf-light,waflib} ./
+    mv ./waf{-light,}
+    ./waf configure --prefix=/usr \
+        --confdir=/etc/mpv \
+        --disable-pulse \
+        --enable-libmpv-shared
+    ./waf build
 }
 
 kiin_install() {
-  ./waf install --destdir=${pkgdir}
+    ./waf install --destdir=${pkgdir}
 }

@@ -7,10 +7,10 @@ gittag=libXi-${pkgver}
 srcdir=${location}/libXi-${pkgver}
 
 kiin_make() {
-  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
-  make
+    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

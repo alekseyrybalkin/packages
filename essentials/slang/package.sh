@@ -12,14 +12,14 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  MAKEFLAGS=
-  ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --without-png
-  make
+    MAKEFLAGS=
+    ./configure --prefix=/usr \
+        --sysconfdir=/etc \
+        --without-png
+    make
 }
 
 kiin_install() {
-  MAKEFLAGS=
-  make DESTDIR=${pkgdir} install-all
+    MAKEFLAGS=
+    make DESTDIR=${pkgdir} install-all
 }

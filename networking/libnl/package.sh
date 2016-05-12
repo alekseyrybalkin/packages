@@ -9,14 +9,14 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr \
-    --sbindir=/usr/bin \
-    --sysconfdir=/etc \
-    --disable-static
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --sbindir=/usr/bin \
+        --sysconfdir=/etc \
+        --disable-static
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

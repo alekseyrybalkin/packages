@@ -14,21 +14,21 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }
 
 kiin_after_install() {
-  gtk-update-icon-cache -q -t -f /usr/share/icons/Adwaita
+    gtk-update-icon-cache -q -t -f /usr/share/icons/Adwaita
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }
 
 known="usr/share/icons/Adwaita/icon-theme.cache"

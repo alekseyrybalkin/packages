@@ -12,14 +12,14 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  rm -rf gdb libdecnumber readline sim zlib
-  mkdir -v binutils-build
-  cd binutils-build
-  ../configure --prefix=/usr --enable-shared
-  make tooldir=${pkgdir}/usr
+    rm -rf gdb libdecnumber readline sim zlib
+    mkdir -v binutils-build
+    cd binutils-build
+    ../configure --prefix=/usr --enable-shared
+    make tooldir=${pkgdir}/usr
 }
 
 kiin_install() {
-  cd binutils-build
-  make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
+    cd binutils-build
+    make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
 }

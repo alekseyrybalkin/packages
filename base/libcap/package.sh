@@ -11,12 +11,12 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
-  make
+    sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
+    make
 }
 
 kiin_install() {
-  make prefix=/usr lib=/lib DESTDIR=${pkgdir} RAISE_SETFCAP=no install
-  chmod -v 755 ${pkgdir}/usr/lib/libcap.so
-  mv ${pkgdir}/usr/{sbin,bin}
+    make prefix=/usr lib=/lib DESTDIR=${pkgdir} RAISE_SETFCAP=no install
+    chmod -v 755 ${pkgdir}/usr/lib/libcap.so
+    mv ${pkgdir}/usr/{sbin,bin}
 }

@@ -7,10 +7,10 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  cmake -DCMAKE_INSTALL_PREFIX=/usr .
-  make
+    cmake -DCMAKE_INSTALL_PREFIX=/usr .
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

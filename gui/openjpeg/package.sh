@@ -9,11 +9,11 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  autoreconf -f -i
-  ./configure --prefix=/usr --disable-static
-  make
+    autoreconf -f -i
+    ./configure --prefix=/usr --disable-static
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

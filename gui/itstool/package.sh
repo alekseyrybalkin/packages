@@ -9,12 +9,12 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i 's/| python/&2/' configure.ac
-  autoreconf -fi
-  ./configure --prefix=/usr PYTHON=/usr/bin/python2
-  make
+    sed -i 's/| python/&2/' configure.ac
+    autoreconf -fi
+    ./configure --prefix=/usr PYTHON=/usr/bin/python2
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

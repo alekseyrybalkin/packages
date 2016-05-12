@@ -10,9 +10,9 @@ srctar=MarkupSafe-${pkgver}.tar.gz
 srcdir=${location}/MarkupSafe-${pkgver}
 
 kiin_make() {
-  python setup.py build
+    python setup.py build
 }
 
 kiin_install() {
-  python setup.py install --root=${pkgdir}
+    python setup.py install --root=${pkgdir}
 }

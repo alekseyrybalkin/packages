@@ -9,13 +9,13 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  sed -i -e 's/po //g' Makefile.am
-  sed -i -e 's/doc //g' Makefile.am
-  autoreconf -fi
-  ./configure --prefix=/usr
-  make
+    sed -i -e 's/po //g' Makefile.am
+    sed -i -e 's/doc //g' Makefile.am
+    autoreconf -fi
+    ./configure --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

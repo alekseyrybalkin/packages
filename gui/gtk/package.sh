@@ -20,30 +20,30 @@ srcdir=${location}/${pkgname}+-${pkgver}
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 ver_grep="^${pkgname}\+-.*\.tar\.${extension}$"
 ver_seds() {
-  sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar\.${extension}$//g"
+    sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar\.${extension}$//g"
 }
 
 kiin_make() {
-  sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
-  sed -i -e 's/ atk-bridge-2.0//g' configure.ac
-  ./autogen.sh --prefix=/usr \
-    --sysconfdir=/etc \
-    --disable-wayland-backend \
-    --enable-x11-backend
-  make
+    sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
+    sed -i -e 's/ atk-bridge-2.0//g' configure.ac
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-wayland-backend \
+        --enable-x11-backend
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }
 
 kiin_after_install() {
-  gtk-query-immodules-3.0 --update-cache
-  glib-compile-schemas /usr/share/glib-2.0/schemas
+    gtk-query-immodules-3.0 --update-cache
+    glib-compile-schemas /usr/share/glib-2.0/schemas
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }
 
 known="usr/lib/gtk-3.0/3.0.0/immodules.cache"

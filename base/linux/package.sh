@@ -9,12 +9,12 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  make mrproper
-  cp -v ../config-x86_64-`hostname` .config
-  make
+    make mrproper
+    cp -v ../config-x86_64-`hostname` .config
+    make
 }
 
 kiin_install() {
-  mkdir -pv ${pkgdir}/boot
-  cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-kiin
+    mkdir -pv ${pkgdir}/boot
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-kiin
 }

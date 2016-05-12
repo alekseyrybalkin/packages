@@ -9,12 +9,12 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr
-  make
+    ./autogen.sh --prefix=/usr
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  install -v -m644 -D doc/I18N-HOWTO \
-    ${pkgdir}/usr/share/doc/${pkgname}/I18N-HOWTO
+    make DESTDIR=${pkgdir} install
+    install -v -m644 -D doc/I18N-HOWTO \
+        ${pkgdir}/usr/share/doc/${pkgname}/I18N-HOWTO
 }

@@ -9,21 +9,21 @@ srczip=ubuntu-font-family-${pkgver}.zip
 srcdir=${location}/ubuntu-font-family-${pkgver}
 
 kiin_make() {
-  echo "nothing to make..."
+    :
 }
 
 kiin_install() {
-  install -m755 -d ${pkgdir}/usr/share/fonts/TTF
-  install -m644 Ubuntu-{L,R,B,C}*.ttf ${pkgdir}/usr/share/fonts/TTF/
-  install -m644 UbuntuMono-*.ttf ${pkgdir}/usr/share/fonts/TTF/
-  mkfontscale ${pkgdir}/usr/share/fonts/TTF
-  mkfontdir ${pkgdir}/usr/share/fonts/TTF
+    install -m755 -d ${pkgdir}/usr/share/fonts/TTF
+    install -m644 Ubuntu-{L,R,B,C}*.ttf ${pkgdir}/usr/share/fonts/TTF/
+    install -m644 UbuntuMono-*.ttf ${pkgdir}/usr/share/fonts/TTF/
+    mkfontscale ${pkgdir}/usr/share/fonts/TTF
+    mkfontdir ${pkgdir}/usr/share/fonts/TTF
 }
 
 kiin_after_install() {
-  fc-cache -fs > /dev/null
+    fc-cache -fs > /dev/null
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }

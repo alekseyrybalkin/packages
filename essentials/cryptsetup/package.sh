@@ -9,14 +9,14 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr \
-    --disable-static \
-    --with-crypto_backend=openssl \
-    --enable-cryptsetup-reencrypt
-  make
+    ./autogen.sh --prefix=/usr \
+        --disable-static \
+        --with-crypto_backend=openssl \
+        --enable-cryptsetup-reencrypt
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  mv ${pkgdir}/usr/{sbin,bin}
+    make DESTDIR=${pkgdir} install
+    mv ${pkgdir}/usr/{sbin,bin}
 }

@@ -14,39 +14,39 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libdir=/usr/lib \
-    --sysconfdir=/etc \
-    --libexecdir=/usr/lib \
-    --with-rootprefix= \
-    --with-rootlibdir=/usr/lib \
-    --enable-libkmod \
-    --enable-rule_generator \
-    --disable-introspection \
-    --disable-keymap \
-    --disable-gudev \
-    --disable-gtk-doc-html \
-    --disable-static \
-    --with-firmware-path=/usr/lib/firmware
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --bindir=/usr/bin \
+        --sbindir=/usr/bin \
+        --libdir=/usr/lib \
+        --sysconfdir=/etc \
+        --libexecdir=/usr/lib \
+        --with-rootprefix= \
+        --with-rootlibdir=/usr/lib \
+        --enable-libkmod \
+        --enable-rule_generator \
+        --disable-introspection \
+        --disable-keymap \
+        --disable-gudev \
+        --disable-gtk-doc-html \
+        --disable-static \
+        --with-firmware-path=/usr/lib/firmware
+    make
 }
 
 kiin_install() {
-  mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
-  mkdir -pv ${pkgdir}/etc/udev/rules.d
-  make DESTDIR=${pkgdir} install
+    mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
+    mkdir -pv ${pkgdir}/etc/udev/rules.d
+    make DESTDIR=${pkgdir} install
 }
 
 kiin_after_install() {
-  udevadm hwdb --update
+    udevadm hwdb --update
 }
 
 kiin_after_upgrade() {
-  kiin_after_install
+    kiin_after_install
 }
 
 known="etc/udev/hwdb.bin \
-  etc/udev/rules.d/70-persistent-net.rules"
+    etc/udev/rules.d/70-persistent-net.rules"

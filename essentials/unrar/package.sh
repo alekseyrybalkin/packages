@@ -8,11 +8,11 @@ srctar=${pkgname}src-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
 
 kiin_make() {
-  MAKEFLAGS=
-  make -f makefile CXXFLAGS="-fPIC ${CXXFLAGS}" STRIP="true"
+    MAKEFLAGS=
+    make -f makefile CXXFLAGS="-fPIC ${CXXFLAGS}" STRIP="true"
 }
 
 kiin_install() {
-  MAKEFLAGS=
-  install -Dm755 unrar ${pkgdir}/usr/bin/unrar
+    MAKEFLAGS=
+    install -Dm755 unrar ${pkgdir}/usr/bin/unrar
 }

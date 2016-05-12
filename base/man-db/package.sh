@@ -9,19 +9,19 @@ srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  autoreconf -fi
-  ./configure --prefix=/usr \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib \
-    --docdir=/usr/share/doc/man-db \
-    --sysconfdir=/etc \
-    --disable-setuid \
-    --with-browser=/usr/bin/lynx \
-    --with-vgrind=/usr/bin/vgrind \
-    --with-grap=/usr/bin/grap
-  make
+    autoreconf -fi
+    ./configure --prefix=/usr \
+        --sbindir=/usr/bin \
+        --libexecdir=/usr/lib \
+        --docdir=/usr/share/doc/man-db \
+        --sysconfdir=/etc \
+        --disable-setuid \
+        --with-browser=/usr/bin/lynx \
+        --with-vgrind=/usr/bin/vgrind \
+        --with-grap=/usr/bin/grap
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

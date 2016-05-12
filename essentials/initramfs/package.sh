@@ -6,11 +6,11 @@ SKIP_ARCH_CHECK=1
 pkgver=1
 
 kiin_make() {
-  true
+    true
 }
 
 kiin_install() {
-  ./mkinitramfs
-  mkdir -p ${pkgdir}/boot
-  mv -v initrd.img ${pkgdir}/boot
+    ./mkinitramfs
+    mkdir -p ${pkgdir}/boot
+    mv -v initrd.img ${pkgdir}/boot
 }

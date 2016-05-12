@@ -11,12 +11,12 @@ srctar=icu4c-${_pkgver}-src.tgz
 srcdir=${location}/icu
 
 kiin_make() {
-  cd source
-  ./configure --prefix=/usr --sbindir=/usr/bin
-  make
+    cd source
+    ./configure --prefix=/usr --sbindir=/usr/bin
+    make
 }
 
 kiin_install() {
-  cd source
-  make DESTDIR=${pkgdir} install
+    cd source
+    make DESTDIR=${pkgdir} install
 }

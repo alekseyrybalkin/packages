@@ -11,11 +11,11 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

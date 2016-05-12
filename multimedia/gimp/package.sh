@@ -8,15 +8,15 @@ gittag=GIMP_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=/usr \
-    --sysconfdir=/etc \
-    --without-gvfs \
-    --without-dbus \
-    --disable-python \
-    --with-gimpdir=.config/gimp
-  make
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --without-gvfs \
+        --without-dbus \
+        --disable-python \
+        --with-gimpdir=.config/gimp
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

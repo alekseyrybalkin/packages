@@ -8,12 +8,12 @@ gittag=glu-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh --prefix=$XORG_PREFIX \
-    --disable-static \
-    --libdir=$LIBDIR
-  make
+    ./autogen.sh --prefix=$XORG_PREFIX \
+        --disable-static \
+        --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

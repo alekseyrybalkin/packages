@@ -14,20 +14,20 @@ srctar=${pkgname}-${pkgver}.src.tar.${extension}
 
 ver_grep="^${pkgname}-.*\.src\.tar\.${extension}$"
 ver_seds() {
-  sed -r "s/^${pkgname}-//g" | sed -r "s/\.src\.tar\.${extension}$//g"
+    sed -r "s/^${pkgname}-//g" | sed -r "s/\.src\.tar\.${extension}$//g"
 }
 
 kiin_make() {
-  sed -i -e "/SUBDIRS/s|man2||" man/Makefile
-  libtoolize -i
-  autoreconf -f -i
-  echo "#include <libintl.h>" >> include/config.h.in
-  echo "#define _(x) gettext(x)" >> include/config.h.in
-  INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr --disable-static
-  make
+    sed -i -e "/SUBDIRS/s|man2||" man/Makefile
+    libtoolize -i
+    autoreconf -f -i
+    echo "#include <libintl.h>" >> include/config.h.in
+    echo "#define _(x) gettext(x)" >> include/config.h.in
+    INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr --disable-static
+    make
 }
 
 kiin_install() {
-  make DIST_ROOT=${pkgdir} install install-dev install-lib
-  chmod -v 755 ${pkgdir}/usr/lib/libattr.so
+    make DIST_ROOT=${pkgdir} install install-dev install-lib
+    chmod -v 755 ${pkgdir}/usr/lib/libattr.so
 }

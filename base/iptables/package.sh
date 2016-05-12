@@ -7,16 +7,16 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-  ./autogen.sh
-  ./configure --prefix=/usr \
-    --sbindir=/usr/bin \
-    --with-xtlibdir=/usr/lib/xtables \
-    --disable-nftables \
-    --enable-libipq
-  make
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --sbindir=/usr/bin \
+        --with-xtlibdir=/usr/lib/xtables \
+        --disable-nftables \
+        --enable-libipq
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
-  ln -sfv xtables-multi ${pkgdir}/usr/bin/iptables-xml
+    make DESTDIR=${pkgdir} install
+    ln -sfv xtables-multi ${pkgdir}/usr/bin/iptables-xml
 }

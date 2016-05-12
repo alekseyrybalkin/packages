@@ -7,10 +7,10 @@ gittag=libICE-${pkgver}
 srcdir=${location}/libICE-${pkgver}
 
 kiin_make() {
-  ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
-  make
+    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    make
 }
 
 kiin_install() {
-  make DESTDIR=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }
