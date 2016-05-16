@@ -5,8 +5,8 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/driver/xf86-video-intel
 
 pkgver=2.99.917+
-ARCH_VERSION=2.99.917+645+g88733a7
-gittag=88733a7874f7c9b45da5d612802947a9de12893a
+ARCH_VERSION=2.99.917+631+gf2a4645
+gittag=f2a46458a257777438361f74d7e6abee92c7f294
 
 srcdir=${location}/${pkgname}-${pkgver}
 
