@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=qemu
-pkgver=2.5.1
 vcs=git
+
+pkgver=2.6.0
 gittag=v${pkgver}
+
 extension=bz2
 folder="http://wiki.qemu.org/download/"
 check_server=1
@@ -11,9 +13,6 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    sed -e '/#include <sys\/capability.h>/ d' \
-        -e '/#include "virtio-9p-marshal.h"/ i#include <sys\/capability.h>' \
-        -i fsdev/virtfs-proxy-helper.c
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --libexecdir=/usr/lib/qemu \
@@ -27,7 +26,7 @@ kiin_make() {
         --python=/usr/bin/python2
     # https://aur.archlinux.org/packages/qemu-spice
     # comment by kris7t 2013-10-09 18:15
-    make ARFLAGS="rc"
+    #make ARFLAGS="rc"
 }
 
 kiin_install() {

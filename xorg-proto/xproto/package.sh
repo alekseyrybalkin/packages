@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xproto
-pkgver=7.0.28
+pkgver=7.0.29
 vcs=git
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

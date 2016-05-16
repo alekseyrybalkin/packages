@@ -1,10 +1,12 @@
 #!/bin/sh
 
 pkgname=gnome-themes-standard
+
 majorver=3.20
-pkgver=${majorver}
+pkgver=${majorver}.2
+gittag=fe51d709655d8d6c1dd18a45d7c26ea51225d9fa
+
 vcs=git
-gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
 check_server=1

@@ -2,7 +2,7 @@
 
 pkgname=python-gunicorn
 SKIP_ARCH_CHECK=1
-pkgver=19.4.5
+pkgver=19.5.0
 vcs=git
 vcs_pkgname=gunicorn
 gittag=${pkgver}

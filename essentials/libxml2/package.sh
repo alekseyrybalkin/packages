@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=libxml2
-pkgver=2.9.3
 vcs=git
-gittag=v${pkgver}
+
+pkgver=2.9.3+
+gittag=v2.9.4-rc2
+
 extension=gz
 folder="http://xmlsoft.org/sources/"
 check_server=1

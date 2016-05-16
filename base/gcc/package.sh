@@ -3,7 +3,7 @@
 pkgname=gcc
 pkgver=6.1.1
 vcs=git
-gittag=617dbccc4bb11903cee7841eacc0cd1cf459aee0
+gittag=d4ed167487453552ef870d7c189b80bc46582843
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

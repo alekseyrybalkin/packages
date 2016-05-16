@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=boost
-pkgver=1.60.0
+pkgver=1.61.0
 vcs=git
 gittag=boost-${pkgver}
 _pkgver=${pkgver//\./_}
