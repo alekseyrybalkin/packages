@@ -2,8 +2,8 @@
 
 pkgname=asciidoc
 pkgver=8.6.9
-vcs=mercurial
-hgtag=${pkgver}
+vcs=git
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
