@@ -318,6 +318,7 @@ gnumeric
 wv
 abiword
 babl
+json-glib
 gegl
 gimp
 cups

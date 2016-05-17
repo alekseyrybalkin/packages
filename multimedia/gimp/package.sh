@@ -8,6 +8,7 @@ gittag=GIMP_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+    sed -i '/gegl/s/2/3/' configure.ac
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --without-gvfs \

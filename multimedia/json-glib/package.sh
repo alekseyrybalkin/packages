@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=gegl
+pkgname=json-glib
 vcs=git
 
-pkgver=0.3.6
-gittag=GEGL_${pkgver//\./_}
+pkgver=1.2.0
+gittag=${pkgver}
 
 srcdir=${location}/${pkgname}-${pkgver}
 
