@@ -121,6 +121,7 @@ alsa-utils
 libogg
 libvorbis
 lame
+llvm
 icu
 boost
 xorg-util-macros
@@ -341,7 +342,6 @@ python-bcrypt
 python-untangle
 python-requests
 gdb
-llvm
 strace
 qemu
 fossil

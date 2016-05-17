@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=gcc
-pkgver=6.1.1
 vcs=git
-gittag=d4ed167487453552ef870d7c189b80bc46582843
+
+pkgver=5.3.0
+gittag=gcc_${pkgver//\./_}_release
+
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -18,6 +20,7 @@ kiin_make() {
         --libdir=/usr/lib \
         --enable-languages=c,c++,fortran \
         --disable-multilib \
+        --build=x86_64-pc-linux-gnu \
         --with-system-zlib
     make
     cd ../libstdc++-v3

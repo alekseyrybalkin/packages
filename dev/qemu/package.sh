@@ -24,9 +24,6 @@ kiin_make() {
         --with-gtkabi=3.0 \
         --disable-werror \
         --python=/usr/bin/python2
-    # https://aur.archlinux.org/packages/qemu-spice
-    # comment by kris7t 2013-10-09 18:15
-    #make ARFLAGS="rc"
 }
 
 kiin_install() {
