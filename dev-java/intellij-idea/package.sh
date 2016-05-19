@@ -3,10 +3,12 @@
 KIIN_NON_FREE=1 # has jars in source tree
 pkgname=intellij-idea
 SKIP_ARCH_CHECK=1
-pkgver=145
 vcs=git
-gittag=21a002dbd680e677fbdf945b21cde83475b86cbe
+
+pkgver=145
+gittag=d3d64226920d1d15a97c11c6a9b0c57124bd7d03
 kotlinver=1.0.0-release-IJ143-78
+
 extra_urls="https://teamcity.jetbrains.com/guestAuth/repository/download/Kotlin_Rc_Idea142branch150versionNoTests/${kotlinver}/kotlin-plugin-${kotlinver}.zip"
 srcdir=${location}/idea-IC-${pkgver}
 

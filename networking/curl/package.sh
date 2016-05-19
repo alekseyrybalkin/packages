@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=curl
-pkgver=7.48.0
+pkgver=7.49.0
 vcs=git
 gittag=curl-${pkgver//\./_}
 extension=bz2

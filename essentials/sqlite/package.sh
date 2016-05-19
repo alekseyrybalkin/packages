@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.12.2
 vcs=fossil
+
+pkgver=3.13.0
 fossiltag=version-${pkgver}
+
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
