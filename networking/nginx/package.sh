@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nginx
-pkgver=1.10.0
+pkgver=1.10.1
 vcs=mercurial
 hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
