@@ -6,7 +6,7 @@ SKIP_ARCH_CHECK=1
 vcs=git
 
 pkgver=145
-gittag=d3d64226920d1d15a97c11c6a9b0c57124bd7d03
+gittag=ab8aa376cc5f4ee8e07d92d4c8857aabb7750b9f
 kotlinver=1.0.0-release-IJ143-78
 
 extra_urls="https://teamcity.jetbrains.com/guestAuth/repository/download/Kotlin_Rc_Idea142branch150versionNoTests/${kotlinver}/kotlin-plugin-${kotlinver}.zip"

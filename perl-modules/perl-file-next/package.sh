@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-file-next
-pkgver=1.12
+pkgver=1.13_01
 vcs=git
 gittag=${pkgver}
 urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.tar.gz"

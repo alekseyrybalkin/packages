@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=gdbm
-pkgver=1.11
+pkgver=1.12
 vcs=git
-gittag=82fe16f532fdd46744c51ba931ecd3fee2b10365
+gittag=e742ba10077685ea2453236b50188683d32abb41
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

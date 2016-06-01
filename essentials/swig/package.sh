@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=swig
-pkgver=3.0.8
+pkgver=3.0.9
 vcs=git
 gittag=rel-${pkgver}
 urls="http://prdownloads.sourceforge.net/swig/swig-${pkgver}.tar.gz"

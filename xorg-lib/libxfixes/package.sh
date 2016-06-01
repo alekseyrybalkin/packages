@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfixes
-pkgver=5.0.1
+pkgver=5.0.2
 vcs=git
 gittag=libXfixes-${pkgver}
 srcdir=${location}/libXfixes-${pkgver}

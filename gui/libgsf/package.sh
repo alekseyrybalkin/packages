@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgsf
-pkgver=1.14.36
+pkgver=1.14.37
 vcs=git
 git_repo=git://git.gnome.org/libgsf
 gittag=LIBGSF_${pkgver//\./_}

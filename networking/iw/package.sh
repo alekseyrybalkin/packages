@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=iw
-pkgver=4.3
+pkgver=4.7
 vcs=git
 gittag=v${pkgver}
 urls="https://www.kernel.org/pub/software/network/${pkgname}/${pkgname}-${pkgver}.tar.xz"
