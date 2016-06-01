@@ -1,7 +1,5 @@
 libpng 1.6.22 (no signed tag?)
 make 4.2 (build fails because of po/doc)
-linux 4.6+ (possibly cpufreq governor-related freezes)
-iproute 4.6.0+ (sync with linux)
 gcc 6.1+ (firefox miscompilation)
 tar 1.29+ (duplicates with tar tvf after archiving)
 ntp 4.2.8p7+ (git repo sync troubles)

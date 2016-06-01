@@ -3,7 +3,7 @@
 pkgname=iproute
 ARCH_NAME=iproute2
 vcs=git
-pkgver=4.5.0
+pkgver=4.6.0
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
