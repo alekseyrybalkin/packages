@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.21
+pkgver=1.6.22
 vcs=git
-gittag=libpng-${pkgver}-signed
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

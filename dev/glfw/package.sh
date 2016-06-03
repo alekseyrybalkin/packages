@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=glfw
-pkgver=3.1.2
+pkgver=3.2
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
