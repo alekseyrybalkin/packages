@@ -1,3 +1,2 @@
-libpng 1.6.22 (no signed tag?)
 gcc 6.1+ (firefox miscompilation)
 ntp 4.2.8p7+ (git repo sync troubles)
