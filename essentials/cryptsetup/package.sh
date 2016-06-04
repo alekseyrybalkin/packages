@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cryptsetup
-pkgver=1.7.1
+pkgver=1.7.2
 vcs=git
 gittag=v${pkgver//\./_}
 urls="https://www.kernel.org/pub/linux/utils/${pkgname}/v1.6/${pkgname}-${pkgver}.tar.xz"
