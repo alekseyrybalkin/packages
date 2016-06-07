@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=46.0.1
+pkgver=47.0
 vcs=mercurial
 vcs_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
