@@ -1,3 +1,2 @@
 gcc 6.1+ (firefox miscompilation)
 ntp 4.2.8p7+ (git repo sync troubles)
-firefox 47+ (serious rendering problems)

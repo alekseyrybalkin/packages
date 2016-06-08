@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=46.0.1
+pkgver=47.0
 vcs=mercurial
 vcs_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
@@ -13,12 +13,21 @@ kiin_make() {
     rm -rf .hg .hgignore .hgtags
     cp ../mozconfig .
     patch -Np1 -i ../firefox-gtk3-20.patch
+
+    # gcc6
+    patch -Np1 -i ../mozilla-1245076.patch
+    patch -Np1 -i ../mozilla-1245076-1.patch
+
     sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
     echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 
     # WebRTC build tries to execute "python" and expects Python 2
     mkdir path
     ln -s /usr/bin/python2 "$srcdir/path/python"
+
+    # gcc6
+    CFLAGS+=" -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-schedule-insns2"
+    CXXFLAGS+=" -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-schedule-insns2"
 
     make -f client.mk
 }
