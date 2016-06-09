@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libjpeg-turbo
-pkgver=1.4.2
+pkgver=1.5.0
 vcs=git
 gittag=${pkgver}
 urls="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-${pkgver}.tar.gz"

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=e2fsprogs
-pkgver=1.43
+pkgver=1.43.1
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
