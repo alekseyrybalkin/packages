@@ -2,7 +2,7 @@
 
 pkgname=device-mapper
 ARCH_NAME=lvm2
-pkgver=2.02.155
+pkgver=2.02.156
 vcs=git
 vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
