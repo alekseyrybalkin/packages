@@ -6,8 +6,8 @@ git_repo=git://anongit.freedesktop.org/xorg/driver/xf86-video-intel
 
 pkgver=2.99.917+
 # git describe --long | sed 's/-/+/g'
-ARCH_VERSION=2.99.917+662+gb617f80
-gittag=b617f80ca5d386c1c248bab64276a9f283173a21
+ARCH_VERSION=2.99.917+590+g094924f
+gittag=094924f7f882da1f32395d4c982db6ad8e0f609f
 
 srcdir=${location}/${pkgname}-${pkgver}
 
