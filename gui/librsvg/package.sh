@@ -2,7 +2,7 @@
 
 pkgname=librsvg
 majorver=2.40
-pkgver=${majorver}.15
+pkgver=${majorver}.16
 vcs=git
 gittag=${pkgver}
 extension=xz
