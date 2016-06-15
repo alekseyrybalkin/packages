@@ -3,9 +3,9 @@
 pkgname=gcc
 vcs=git
 
-pkgver=5.4.0
+pkgver=6.1.1
 #gittag=gcc_${pkgver//\./_}_release
-gittag=9d0507742960aa9f2b99bc6e9584655ecc611792
+gittag=3f246efc07ce33391ad852e2347ea5888ceabc91
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
