@@ -2,9 +2,9 @@
 
 pkgname=ntp
 majorver=4.2
-pkgver=${majorver}.8p6
-vcs=git
-gittag=0e6dbb8f4f1f6fdb61180f2765fe087d23c8a7c6
+pkgver=${majorver}.8p8
+#vcs=git
+#gittag=0e6dbb8f4f1f6fdb61180f2765fe087d23c8a7c6
 extension=gz
 major_folder="https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
 check_server=1
@@ -19,8 +19,8 @@ majorver_seds() {
 }
 
 kiin_make() {
-    sed -i -e 's/lynx/CONFIG_DIR=\.config links/g' Makefile.am
-    ./bootstrap
+    #sed -i -e 's/lynx/CONFIG_DIR=\.config links/g' Makefile.am
+    #./bootstrap
     ./configure --prefix=/usr --sysconfdir=/etc \
         --with-binsubdir=bin --enable-linuxcaps \
         --libexecdir=/usr/lib
