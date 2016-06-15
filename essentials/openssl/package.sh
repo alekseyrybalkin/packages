@@ -1,6 +1,8 @@
 #!/bin/sh
 
 pkgname=openssl
+# pkgver too complex to parse, we check git tags instead
+SKIP_ARCH_CHECK=1
 pkgver=1.0.2h
 ARCH_VERSION=1.0.2.h
 vcs=git

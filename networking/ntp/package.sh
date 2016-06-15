@@ -1,6 +1,8 @@
 #!/bin/sh
 
 pkgname=ntp
+# pkgver is too complex to parse, we check server versions instead
+SKIP_ARCH_CHECK=1
 majorver=4.2
 pkgver=${majorver}.8p8
 #vcs=git

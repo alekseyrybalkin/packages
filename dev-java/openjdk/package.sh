@@ -2,6 +2,8 @@
 
 pkgname=openjdk
 ARCH_NAME=java8-openjdk
+# pkgver too complex to parse, we check hg tags instead
+SKIP_ARCH_CHECK=1
 _java_ver=8
 _jdk_update=102
 _jdk_build=04
