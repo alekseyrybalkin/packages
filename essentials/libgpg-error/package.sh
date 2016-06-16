@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgpg-error
-pkgver=1.22
+pkgver=1.23
 vcs=git
 gittag=libgpg-error-${pkgver}
 extension=bz2
