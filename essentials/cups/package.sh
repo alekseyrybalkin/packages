@@ -2,7 +2,7 @@
 
 pkgname=cups
 ARCH_NAME_LIB32=cups
-pkgver=2.1.3
+pkgver=2.1.4
 vcs=git
 gittag=release-${pkgver}
 urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"

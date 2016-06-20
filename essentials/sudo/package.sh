@@ -3,7 +3,7 @@
 pkgname=sudo
 # pkgver too complex to parse, we check hg tags instead
 SKIP_ARCH_CHECK=1
-pkgver=1.8.16
+pkgver=1.8.17
 vcs=mercurial
 hg_repo=http://www.sudo.ws/repos/sudo
 hgtag=SUDO_${pkgver//\./_}
