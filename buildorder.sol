@@ -211,6 +211,7 @@ xorg-fonts-alias
 xorg-fonts-misc
 xkeyboard-config
 pixman
+libepoxy
 xorg-server
 mtdev
 libevdev
@@ -238,7 +239,6 @@ freeglut
 libtiff
 gdk-pixbuf
 pango
-libepoxy
 gtk
 nspr
 nss
