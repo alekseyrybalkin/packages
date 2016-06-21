@@ -15,6 +15,8 @@ kiin_make() {
         --with-sha1=libcrypto \
         --libexecdir=/usr/lib/xorg-server \
         --disable-systemd-logind \
+        --enable-dri \
+        --enable-glamor \
         --with-fontrootdir=/usr/share/fonts
     make
 }
