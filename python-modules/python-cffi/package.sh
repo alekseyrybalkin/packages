@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=python-cffi
-pkgver=1.6.0
+pkgver=1.7.0
 vcs=mercurial
 vcs_pkgname=cffi
-hgtag=a61429d5ad2d
+hgtag=338244197c0d
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
