@@ -3,7 +3,7 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux-stable
-pkgver=4.6.2
+pkgver=4.6.3
 gittag=v${pkgver}
 srcdir=${location}/linux-${pkgver}
 
