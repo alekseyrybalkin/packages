@@ -2,7 +2,7 @@
 
 pkgname=python
 _pybasever=3.5
-pkgver=${_pybasever}.1
+pkgver=${_pybasever}.2
 vcs=mercurial
 hgtag=v${pkgver}
 extension=xz
