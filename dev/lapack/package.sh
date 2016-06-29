@@ -1,10 +1,11 @@
 #!/bin/sh
 
 pkgname=lapack
-pkgver=3.6.0+
-vcs=git-svn
-vcs_pkgname=lapack-git-svn
-svnrev=1744
+vcs=git
+
+pkgver=3.6.1
+gittag=5efe3599486cc73ceead93f61ce1999eed96be11
+
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
