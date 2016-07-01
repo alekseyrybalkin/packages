@@ -252,7 +252,6 @@ cpio
 popt
 cryptsetup
 linux-firmware
-initramfs
 libnl
 iw
 wpa_supplicant
@@ -362,3 +361,4 @@ python-opengl
 glfw
 python-pillow
 blender
+initramfs

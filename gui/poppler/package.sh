@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.44
+pkgver=0.45
 vcs=git
 gittag=poppler-${pkgver}
 srcdir=${location}/poppler-${pkgver}

@@ -1,0 +1,1 @@
+gegl-0.3.8 (multiline prop type/handling removed, wait for new gimp release)

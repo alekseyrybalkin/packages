@@ -3,7 +3,7 @@
 pkgname=fcron
 pkgver=3.2.1
 vcs=git
-gittag=adea4b8bfbb82a8c5faf3da9c6b3a82a43eedf0b
+gittag=ver${pkgver//\./_}
 urls="http://fcron.free.fr/archives/fcron-${pkgver}.src.tar.gz"
 srctar=${pkgname}-${pkgver}.src.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}

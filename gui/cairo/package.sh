@@ -2,8 +2,8 @@
 
 pkgname=cairo
 vcs=git
-gittag=1.14.6
-pkgver=${gittag}
+pkgver=1.14.6
+gittag=${gittag}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
