@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=freetype2
-pkgver=2.6.3
+pkgver=2.6.4
 vcs=git
 gittag=VER-${pkgver//\./-}
 srcdir=${location}/freetype-${pkgver}
