@@ -1,15 +1,14 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=12.0
-pkgver=${majorver}.0
+majorver=11.2
+pkgver=${majorver}.2
 vcs=git
 gittag=mesa-${pkgver}
 srcdir=${location}/mesa-${pkgver}
 
 kiin_make() {
     patch -Np1 -i ../MesaLib-add_xdemos.patch
-    sed -i -e '/PTHREADSTUBS/d' configure.ac
     autoreconf -fi
     if [ -z "$KIIN_LIB32" ]; then
         ./configure --prefix=$XORG_PREFIX \
