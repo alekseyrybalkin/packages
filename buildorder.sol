@@ -361,5 +361,4 @@ python-opengl
 glfw
 python-pillow
 blender
-compton
 initramfs
