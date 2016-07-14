@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libassuan
-pkgver=2.4.2
+pkgver=2.4.3
 vcs=git
 gittag=libassuan-${pkgver}
 extension=bz2
