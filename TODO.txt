@@ -2,3 +2,4 @@ gegl-0.3.8 (multiline prop type/handling removed, wait for new gimp release)
 llvm-3.8.1
 mesa-12.0.1
 pytz-2016.6.1
+man-pages-4.07 (git not updated)
