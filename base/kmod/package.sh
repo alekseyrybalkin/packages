@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=kmod
-pkgver=22
+pkgver=23
 vcs=git
 gittag=v${pkgver}
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
