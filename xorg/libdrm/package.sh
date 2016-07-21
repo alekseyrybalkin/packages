@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libdrm
-pkgver=2.4.68
+pkgver=2.4.69
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
