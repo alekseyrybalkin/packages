@@ -25,4 +25,6 @@ kiin_install() {
     sed -e "s#${srcdir}/unix#/usr/lib#g" \
         -e "s#${srcdir}#/usr/include#g" \
         -i "${pkgdir}/usr/lib/tclConfig.sh"
+    # remove man pages
+    rm -rf ${pkgdir}/usr/share
 }
