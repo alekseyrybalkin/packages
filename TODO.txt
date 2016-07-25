@@ -4,3 +4,5 @@ mesa-12.0.1
 pytz-2016.6.1
 man-pages-4.07 (git not updated)
 libidn-1.33
+libvpx-1.6.0
+harfbuzz-1.3.0

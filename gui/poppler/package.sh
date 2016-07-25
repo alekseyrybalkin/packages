@@ -2,6 +2,7 @@
 
 pkgname=poppler
 pkgver=0.45
+ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=poppler-${pkgver}
 srcdir=${location}/poppler-${pkgver}
