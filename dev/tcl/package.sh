@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tcl
-pkgver=8.6.5
+pkgver=8.6.6
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 srcdir=${location}/${pkgname}-${pkgver}
