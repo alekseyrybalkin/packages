@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=man-pages
-pkgver=4.06
+pkgver=4.07
 vcs=git
 gittag=man-pages-${pkgver}
 urls="https://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.xz"
