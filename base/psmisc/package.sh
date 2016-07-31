@@ -9,6 +9,8 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+    # Typo in fuser makes -M on all the time
+    git cherry-pick 3638cc55b4d08851faba46635d737b24d016665b
     ./autogen.sh --prefix=/usr
     make
 }
