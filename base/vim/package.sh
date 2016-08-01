@@ -7,6 +7,7 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}74
 
 kiin_make() {
+    echo 'set viminfo=' >> runtime/defaults.vim
     echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
     ./configure --prefix=/usr \
         --enable-multibyte \
