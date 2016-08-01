@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i '/gegl/s/2/3/' configure.ac
+    sed -i '70,75 d' app/core/gimpparamspecs-duplicate.c
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --without-gvfs \

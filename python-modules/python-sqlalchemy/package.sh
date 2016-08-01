@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-sqlalchemy
-pkgver=1.0.13
+pkgver=1.0.14
 vcs=git
 vcs_pkgname=sqlalchemy
 gittag=rel_${pkgver//\./_}

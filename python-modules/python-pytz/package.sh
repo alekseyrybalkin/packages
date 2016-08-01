@@ -1,17 +1,17 @@
 #!/bin/sh
 
 pkgname=python-pytz
-pkgver=2016.4
-vcs=bzr
+pkgver=2016.6.1
+vcs=git
 vcs_pkgname=pytz
-bzrtag=release_${pkgver}
+gittag=release_${pkgver}
 urls="https://pypi.python.org/packages/ad/30/5ab2298c902ac92fdf649cc07d1b7d491a241c5cac8be84dd84464db7d8b/pytz-${pkgver}.tar.gz"
 srctar=pytz-${pkgver}.tar.gz
 srcdir=${location}/pytz-${pkgver}
 
 kiin_make() {
+    git apply ../2016.6.1.patch
     MAKEFLAGS=
-    export LC_ALL=en_US.UTF-8
     sed -i -e 's/python2.4/python2.7/g' Makefile
     sed -i -e 's/python2.5/python2.7/g' Makefile
     sed -i -e 's/python2.6/python2.7/g' Makefile

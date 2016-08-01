@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mercurial
-pkgver=3.8.3
+pkgver=3.8.4
 vcs=mercurial
 hgtag=${pkgver}
 extension=gz

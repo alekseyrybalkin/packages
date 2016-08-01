@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.45
+pkgver=0.46
 ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=poppler-${pkgver}

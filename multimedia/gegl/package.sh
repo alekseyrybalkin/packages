@@ -3,7 +3,7 @@
 pkgname=gegl
 vcs=git
 
-pkgver=0.3.6
+pkgver=0.3.8
 gittag=GEGL_${pkgver//\./_}
 
 srcdir=${location}/${pkgname}-${pkgver}

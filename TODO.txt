@@ -1,9 +1,1 @@
-gegl-0.3.8 (multiline prop type/handling removed, wait for new gimp release)
-llvm-3.8.1
-pytz-2016.6.1
-libidn-1.33
-libvpx-1.6.0
-harfbuzz-1.3.0
 [drm:intel_dp_start_link_train] *ERROR* failed to train DP, aborting
-dhcpcd-6.11.2 (no tag)
-json-glib-1.2.2

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libidn
-pkgver=1.32
+pkgver=1.33
 vcs=git
 gittag=libidn-${pkgver//\./-}
 urls="http://ftp.gnu.org/gnu/libidn/libidn-${pkgver}.tar.gz"

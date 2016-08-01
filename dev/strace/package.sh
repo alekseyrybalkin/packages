@@ -2,7 +2,7 @@
 
 pkgname=strace
 vcs=git
-pkgver=4.12
+pkgver=4.13
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

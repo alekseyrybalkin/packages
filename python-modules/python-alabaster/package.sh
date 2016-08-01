@@ -2,7 +2,7 @@
 
 pkgname=python-alabaster
 ARCH_NAME=python-sphinx-alabaster-theme
-pkgver=0.7.8
+pkgver=0.7.9
 vcs=git
 vcs_pkgname=alabaster
 gittag=${pkgver}

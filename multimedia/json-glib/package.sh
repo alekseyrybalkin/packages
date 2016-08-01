@@ -3,7 +3,7 @@
 pkgname=json-glib
 vcs=git
 
-pkgver=1.2.0
+pkgver=1.2.2
 gittag=${pkgver}
 
 srcdir=${location}/${pkgname}-${pkgver}

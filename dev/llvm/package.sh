@@ -1,19 +1,19 @@
 #!/bin/sh
 
 pkgname=llvm
-pkgver=3.8.0
+pkgver=3.8.1
 vcs=git
-gittag=ad5750369cc5b19f36c149f7b13151c99c7be47a
+gittag=051e787f26dbfdc26cf61a57bc82ca00dcb812e8
 srcdir=${location}/${pkgname}-${pkgver}.src
 
 kiin_make() {
     git clone ${SOURCES_HOME}/clang tools/clang
     cd tools/clang
-    git checkout 47ba141ac03f73cbf4b5f9953954044b127070d9
+    git checkout 2cb088be9c6a3d1ef9a050d44e1b01393983fc4d
     cd ../../
     git clone ${SOURCES_HOME}/compiler-rt projects/compiler-rt
     cd projects/compiler-rt
-    git checkout 31769223eb782e7b03655810d00dfdec66467d51
+    git checkout baf33ca40a468d3416c26e19a479db89eb571958
     cd ../../
     mkdir -v build
     cd build

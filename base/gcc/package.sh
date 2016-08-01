@@ -5,7 +5,7 @@ vcs=git
 
 pkgver=6.1.1
 #gittag=gcc_${pkgver//\./_}_release
-gittag=1ffa778d4910302e7388ed052d1ed5007ac65e9c
+gittag=22724c5ed601cf5aecf29408d473fe0612998508
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
