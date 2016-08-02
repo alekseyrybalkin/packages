@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=47.0.1
+pkgver=48.0
 vcs=mercurial
 vcs_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
@@ -14,10 +14,6 @@ kiin_make() {
     cp ../mozconfig .
     patch -Np1 -i ../firefox-gtk3-20.patch
 
-    # gcc6
-    patch -Np1 -i ../mozilla-1245076.patch
-    patch -Np1 -i ../mozilla-1245076-1.patch
-
     sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
     echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 
@@ -26,7 +22,6 @@ kiin_make() {
     ln -s /usr/bin/python2 "$srcdir/path/python"
 
     # gcc6
-    CFLAGS+=" -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-schedule-insns2"
     CXXFLAGS+=" -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-schedule-insns2"
 
     make -f client.mk

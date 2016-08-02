@@ -1,10 +1,7 @@
 mk_add_options MOZ_MAKE_FLAGS="-j3"
 
-ac_add_options --disable-dash
 ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
-ac_add_options --disable-libnotify
-ac_add_options --disable-gstreamer
 ac_add_options --disable-pulseaudio
 ac_add_options --disable-gconf
 
@@ -16,11 +13,8 @@ ac_add_options --enable-application=browser
 ac_add_options --disable-crashreporter
 ac_add_options --disable-debug
 ac_add_options --disable-debug-symbols
-ac_add_options --disable-installer
-ac_add_options --disable-static
 ac_add_options --disable-tests
 ac_add_options --disable-updater
-ac_add_options --enable-shared
 ac_add_options --enable-system-ffi
 ac_add_options --enable-system-pixman
 ac_add_options --enable-system-sqlite
