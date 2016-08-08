@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=diffutils
-pkgver=3.3
+pkgver=3.4
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
