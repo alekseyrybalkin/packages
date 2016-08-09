@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pkgname=nginx
-pkgver=1.10.1
+ARCH_NAME=nginx-mainline
+pkgver=1.11.3
 vcs=mercurial
 hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
