@@ -361,4 +361,5 @@ python-opengl
 glfw
 python-pillow
 blender
+python-chardet
 initramfs
