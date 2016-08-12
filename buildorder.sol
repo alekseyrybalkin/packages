@@ -362,4 +362,7 @@ glfw
 python-pillow
 blender
 python-chardet
+python-webencodings
+python-html5lib
+python-bleach
 initramfs
