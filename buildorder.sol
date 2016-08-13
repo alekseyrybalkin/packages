@@ -365,4 +365,6 @@ python-chardet
 python-webencodings
 python-html5lib
 python-bleach
+python-greenlet
+python-gevent
 initramfs
