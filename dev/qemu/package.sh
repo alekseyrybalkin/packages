@@ -3,7 +3,7 @@
 pkgname=qemu
 vcs=git
 
-pkgver=2.6.0
+pkgver=2.6.1
 gittag=v${pkgver}
 
 extension=bz2
