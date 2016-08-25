@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gawk
-pkgver=4.1.3
+pkgver=4.1.4
 vcs=git
 gittag=gawk-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
