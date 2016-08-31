@@ -1,14 +1,14 @@
 #!/bin/sh
 
 pkgname=fontconfig
-pkgver=2.12.0
+pkgver=2.12.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    patch -p1 -i ../fc-blanks.diff
+    git apply ../fc-blanks.diff
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \

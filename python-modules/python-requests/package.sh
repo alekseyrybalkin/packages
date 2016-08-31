@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-requests
-pkgver=2.10.0
+pkgver=2.11.1
 vcs=git
 vcs_pkgname=requests
 gittag=v${pkgver}

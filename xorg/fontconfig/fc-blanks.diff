@@ -1,13 +1,18 @@
-diff -Naur fontconfig/fc-blanks/fc-blanks.py fontconfig-2/fc-blanks/fc-blanks.py
---- fontconfig/fc-blanks/fc-blanks.py	2016-06-20 23:55:52.381794212 +0300
-+++ fontconfig-2/fc-blanks/fc-blanks.py	2016-06-21 00:10:48.085139300 +0300
-@@ -1,34 +1,12 @@
--#! /usr/bin/python
-+#! /usr/bin/python2
+diff --git a/fc-blanks/fc-blanks.py b/fc-blanks/fc-blanks.py
+index cc23cde..0ba3dc4 100755
+--- a/fc-blanks/fc-blanks.py
++++ b/fc-blanks/fc-blanks.py
+@@ -2,39 +2,11 @@
  
  from __future__ import absolute_import
  from __future__ import print_function
--import urllib2
+-try:
+-    from urllib2 import urlopen
+-    from urllib2 import URLError
+-except ImportError:
+-    from urllib.request import urlopen
+-    from urllib.error import URLError
+-
  import sys
  import os
 -from lxml import html
@@ -15,13 +20,13 @@ diff -Naur fontconfig/fc-blanks/fc-blanks.py fontconfig-2/fc-blanks/fc-blanks.py
  
 -datafile = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'list-unicodeset.html')
 -try:
--    fp = urllib2.urlopen('http://unicode.org/cldr/utility/list-unicodeset.jsp?a=[%3AGC%3DZs%3A][%3ADI%3A]&abb=on&ucd=on&esc=on&g')
+-    fp = urlopen('http://unicode.org/cldr/utility/list-unicodeset.jsp?a=[%3AGC%3DZs%3A][%3ADI%3A]&abb=on&ucd=on&esc=on&g')
 -    data = fp.read()
 -    fp.close()
--    fp = open(datafile, 'w');
+-    fp = open(datafile, 'wb');
 -    fp.write(data);
 -    fp.close();
--except urllib2.URLError:
+-except URLError:
 -    # fall back reading the static data in repo
 -    try:
 -        fp = open(datafile)
@@ -38,7 +43,7 @@ diff -Naur fontconfig/fc-blanks/fc-blanks.py fontconfig-2/fc-blanks/fc-blanks.py
  if p[0] == '[' and p[-1] == ']':
      p = p.replace('[', '').replace(']', '')
  else:
-@@ -117,7 +95,7 @@
+@@ -123,7 +95,7 @@ ncode = 0
  for i in l:
      ncode += (i[1] - i[0] + 1)
  

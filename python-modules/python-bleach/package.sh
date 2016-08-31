@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python-bleach
+SKIP_ARCH_CHECK=1
 pkgver=1.4.3
 vcs=git
 vcs_pkgname=bleach

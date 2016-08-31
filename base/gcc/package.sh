@@ -4,6 +4,7 @@ pkgname=gcc
 vcs=git
 
 pkgver=6.2.0
+ARCH_VERSION=6.2.1
 gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"

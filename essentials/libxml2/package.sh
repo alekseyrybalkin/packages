@@ -4,7 +4,7 @@ pkgname=libxml2
 vcs=git
 
 pkgver=2.9.4
-ARCH_VERSION=2.9.4+0+gbdec218
+ARCH_VERSION=2.9.4+4+g3169602
 gittag=v${pkgver}
 
 extension=gz

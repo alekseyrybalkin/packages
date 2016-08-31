@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.28
+pkgver=2.28.1
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
