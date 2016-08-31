@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfont
-pkgver=1.5.1
+pkgver=1.5.2
 vcs=git
 gittag=libXfont-${pkgver}
 srcdir=${location}/libXfont-${pkgver}
