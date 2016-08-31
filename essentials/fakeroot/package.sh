@@ -20,6 +20,7 @@ ver_seds() {
 kiin_make() {
     sed -i -e '/man_MANS/d' doc/Makefile.am
     sed -i -e 's/de es fr nl pt sv//g' doc/Makefile.am
+    patch -p1 -i ../silence-dlerror.patch
     ./bootstrap
     ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot \
         --disable-static --with-ipc=sysv

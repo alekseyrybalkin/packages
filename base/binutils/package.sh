@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.26.1
+pkgver=2.27
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}

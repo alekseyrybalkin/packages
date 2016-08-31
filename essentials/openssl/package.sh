@@ -4,7 +4,6 @@ pkgname=openssl
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
 pkgver=1.0.2h
-ARCH_VERSION=1.0.2.h
 vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 extension=gz
@@ -21,12 +20,10 @@ kiin_make() {
     if [ -z "$KIIN_LIB32" ]; then
         ./config --prefix=/usr \
             --libdir=lib \
-            zlib-dynamic \
             --openssldir=/etc/ssl \
             shared
     else
         ./Configure --prefix=/usr \
-            zlib-dynamic \
             --openssldir=/etc/ssl \
             shared \
             linux-elf \
