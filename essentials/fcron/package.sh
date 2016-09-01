@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fcron
-pkgver=3.2.1
+pkgver=3.3.0
 vcs=git
 gittag=ver${pkgver//\./_}
 urls="http://fcron.free.fr/archives/fcron-${pkgver}.src.tar.gz"

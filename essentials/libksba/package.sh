@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libksba
-pkgver=1.3.4
+pkgver=1.3.5
 vcs=git
 gittag=libksba-${pkgver}
 extension=bz2
