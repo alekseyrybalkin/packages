@@ -1,19 +1,21 @@
 #!/bin/sh
 
+# used by icu and blender
+
 pkgname=llvm
-pkgver=3.8.1
+pkgver=3.9.0
 vcs=git
-gittag=051e787f26dbfdc26cf61a57bc82ca00dcb812e8
+gittag=fbbabf3203c01be7bf5fe904be52aa16f2abf895
 srcdir=${location}/${pkgname}-${pkgver}.src
 
 kiin_make() {
     git clone ${SOURCES_HOME}/clang tools/clang
     cd tools/clang
-    git checkout 2cb088be9c6a3d1ef9a050d44e1b01393983fc4d
+    git checkout 07307f95d5c82d453cdc5c23f9ccd53d5ff75426
     cd ../../
     git clone ${SOURCES_HOME}/compiler-rt projects/compiler-rt
     cd projects/compiler-rt
-    git checkout baf33ca40a468d3416c26e19a479db89eb571958
+    git checkout 38631afc1dec4d5b13b6460e808b5dae6c009081
     cd ../../
     mkdir -v build
     cd build
