@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=doxygen
-pkgver=1.8.11
+pkgver=1.8.12
 vcs=git
 gittag=Release_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
