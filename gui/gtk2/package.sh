@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=gtk2
-pkgver=2.24.30
-ARCH_VERSION=${pkgver}+95+g876b5f7
+pkgver=2.24.31
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}

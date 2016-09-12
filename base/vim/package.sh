@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=vim
-pkgver=7.4.2342
+pkgver=8.0.0002
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}74
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     echo 'set viminfo=' >> runtime/defaults.vim
