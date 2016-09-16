@@ -13,6 +13,7 @@ kiin_make() {
     ./configure
     make amalgamation-tarball
     tar xvf sqlite-autoconf-*.tar.gz
+    rm sqlite-autoconf-*.tar.gz
     cd sqlite-autoconf-*
     patch -p1 -i ../../sqlite-history-file-location.diff
     export CFLAGS="$CFLAGS -DSQLITE_ENABLE_FTS3=1 \

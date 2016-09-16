@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=bash
-pkgver=4.3.046
+pkgver=4.4
 vcs=git
-gittag=30a978b7d808c067219c95be88c4979b6a7aa251
+gittag=bash-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

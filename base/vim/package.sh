@@ -25,6 +25,6 @@ kiin_install() {
         ln -sv vim.1 $(dirname $L)/vi.1
     done
     mkdir -pv ${pkgdir}/usr/share/doc
-    ln -sv ../vim/vim74/doc ${pkgdir}/usr/share/doc/vim
+    ln -sv ../vim/vim80/doc ${pkgdir}/usr/share/doc/vim
     mkdir -pv ${pkgdir}/etc
 }
