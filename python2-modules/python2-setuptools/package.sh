@@ -2,7 +2,7 @@
 
 pkgname=python2-setuptools
 ARCH_NAME=python-setuptools
-pkgver=27.1.2
+pkgver=27.2.0
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
