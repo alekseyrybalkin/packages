@@ -1,9 +1,10 @@
 #!/bin/sh
 
-pkgname=libxfont
-pkgver=2.0.1
+pkgname=libxfont1
+pkgver=1.5.2
 vcs=git
-gittag=libXfont2-${pkgver}
+vcs_pkgname=libxfont
+gittag=libXfont-${pkgver}
 srcdir=${location}/libXfont-${pkgver}
 
 kiin_make() {

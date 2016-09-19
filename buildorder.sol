@@ -195,6 +195,7 @@ python2-setuptools
 python2-mako
 mesa
 glu
+libxfont1
 xorg-bdftopcf
 xorg-mkfontdir
 xorg-mkfontscale
