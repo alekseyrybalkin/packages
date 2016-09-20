@@ -272,6 +272,12 @@ openjpeg
 ffmpeg
 fribidi
 libass
+libsndfile
+libsamplerate
+fftw
+vamp-plugin-sdk
+ladspa
+rubberband
 mpv
 tidy-html5
 nmap
