@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfont1
+SKIP_ARCH_CHECK=1
 pkgver=1.5.2
 vcs=git
 vcs_pkgname=libxfont
