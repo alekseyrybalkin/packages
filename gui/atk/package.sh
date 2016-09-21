@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=atk
-majorver=2.20
-pkgver=${majorver}.0
+majorver=2.22
+pkgver=${majorver}
 vcs=git
 gittag=ATK_${pkgver//\./_}
 extension=xz
