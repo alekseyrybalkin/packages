@@ -375,4 +375,5 @@ python-bleach
 python-greenlet
 python-gevent
 hhpc
+freeciv
 initramfs
