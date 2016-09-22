@@ -3,7 +3,7 @@
 pkgname=openssl
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
-pkgver=1.0.2h
+pkgver=1.0.2i
 vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 extension=gz
