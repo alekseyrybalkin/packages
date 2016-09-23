@@ -374,6 +374,4 @@ python-html5lib
 python-bleach
 python-greenlet
 python-gevent
-hhpc
-freeciv
 initramfs
