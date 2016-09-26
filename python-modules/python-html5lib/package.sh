@@ -2,7 +2,6 @@
 
 pkgname=python-html5lib
 pkgver=0.9999999
-ARCH_VERSION=0.999999999
 vcs=git
 vcs_pkgname=html5lib-python
 gittag=${pkgver}
