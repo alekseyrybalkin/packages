@@ -5,20 +5,7 @@ _pybasever=3.5
 pkgver=${_pybasever}.2
 vcs=mercurial
 hgtag=v${pkgver}
-extension=xz
-folder="https://www.python.org/ftp/${pkgname}/"
-check_server=1
-
-srctar=Python-${pkgver}.tar.${extension}
 srcdir=${location}/Python-${pkgver}
-
-. ${KIIN_REPO}/defaults.sh
-
-urls="${folder}${pkgver}/${srctar}"
-ver_grep="^3\.[0-9]+\.[0-9]+/$"
-ver_seds() {
-    sed -r "s/\///g"
-}
 
 kiin_make() {
     MAKEFLAGS=
