@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-scipy
-pkgver=0.18.0
+pkgver=0.18.1
 vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}
