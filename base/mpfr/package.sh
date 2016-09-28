@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=mpfr
-pkgver=3.1.4
+pkgver=3.1.5
 vcs=git-svn
 vcs_pkgname=mpfr-git-svn
-svnrev=10201
+svnrev=10893
 urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
