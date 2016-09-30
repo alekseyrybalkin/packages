@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=vim
-pkgver=8.0.0014
+pkgver=8.0.0019
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

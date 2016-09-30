@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nspr
-pkgver=4.12
+pkgver=4.13
 vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
 srcdir=${location}/${pkgname}-${pkgver}

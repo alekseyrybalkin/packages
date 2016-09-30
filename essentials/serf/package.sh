@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=serf
-pkgver=1.3.8
+pkgver=1.3.9
 vcs=git-svn
 vcs_pkgname=serf-git-svn
-svnrev=1699970
+svnrev=1761053
 urls="https://archive.apache.org/dist/serf/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

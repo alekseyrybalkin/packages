@@ -4,7 +4,7 @@ pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux-stable
-pkgver=4.7.5
+pkgver=4.7.6
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
