@@ -19,4 +19,5 @@ kiin_make() {
 kiin_install() {
     mkdir -p ${pkgdir}/usr
     scons PREFIX=${pkgdir}/usr install
+    chmod 644 ${pkgdir}/usr/include/serf-2/*
 }
