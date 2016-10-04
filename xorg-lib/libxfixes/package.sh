@@ -7,6 +7,7 @@ gittag=libXfixes-${pkgver}
 srcdir=${location}/libXfixes-${pkgver}
 
 kiin_make() {
+    git cherry-pick 61c1039
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
