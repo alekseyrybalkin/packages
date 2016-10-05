@@ -1,14 +1,12 @@
 #!/bin/sh
 
 pkgname=libxrender
-pkgver=0.9.9
+pkgver=0.9.10
 vcs=git
 gittag=libXrender-${pkgver}
 srcdir=${location}/libXrender-${pkgver}
 
 kiin_make() {
-    git cherry-pick 9362c7d
-    git cherry-pick 8fad00b
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }

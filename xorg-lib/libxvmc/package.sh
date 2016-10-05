@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=libxvmc
-pkgver=1.0.9
+pkgver=1.0.10
 vcs=git
 gittag=libXvMC-${pkgver}
 srcdir=${location}/libXvMC-${pkgver}
 
 kiin_make() {
-    git cherry-pick 2cd95e7
     ./autogen.sh $XORG_CONFIG
     make
 }

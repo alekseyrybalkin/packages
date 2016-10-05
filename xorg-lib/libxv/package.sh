@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=libxv
-pkgver=1.0.10
+pkgver=1.0.11
 vcs=git
 gittag=libXv-${pkgver}
 srcdir=${location}/libXv-${pkgver}
 
 kiin_make() {
-    git cherry-pick d9da580
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
