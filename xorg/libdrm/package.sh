@@ -1,9 +1,10 @@
 #!/bin/sh
 
 pkgname=libdrm
-pkgver=2.4.70
+pkgver=2.4.71
 vcs=git
-gittag=${pkgver}
+#gittag=${pkgver}
+gittag=a44c9c31b7b38b3eedf3d26648f9e68dcc377c4c
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

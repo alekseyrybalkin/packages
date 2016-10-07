@@ -2,9 +2,9 @@
 
 pkgname=gnome-themes-standard
 
-majorver=3.20
+majorver=3.22
 pkgver=${majorver}.2
-gittag=fe51d709655d8d6c1dd18a45d7c26ea51225d9fa
+gittag=${pkgver}
 
 vcs=git
 extension=xz
