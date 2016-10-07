@@ -228,7 +228,7 @@ yelp-xsl
 yelp-tools
 gobject-introspection
 rxvt-unicode
-ttf-ubuntu
+ttf-noto
 zip
 gtk-doc
 atk
