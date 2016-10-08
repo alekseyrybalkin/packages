@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gdb
-pkgver=7.11.1
+pkgver=7.12
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=gdb-${pkgver}-release
