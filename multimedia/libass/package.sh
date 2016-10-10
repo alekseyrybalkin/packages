@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libass
-pkgver=0.13.3
+pkgver=0.13.4
 vcs=git
 gittag=${pkgver}
 urls="https://github.com/libass/libass/releases/download/${pkgver}/libass-${pkgver}.tar.xz"
