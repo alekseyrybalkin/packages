@@ -9,7 +9,7 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git revert --no-edit d352cf47d93e39494b44b792cca8d35a3a0bd9b3
+    git apply ../conservative.diff
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make
