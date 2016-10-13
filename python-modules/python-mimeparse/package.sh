@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-mimeparse
-pkgver=1.5.3
+pkgver=1.5.5
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

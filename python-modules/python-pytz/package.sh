@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pytz
-pkgver=2016.6.1
+pkgver=2016.7
 vcs=git
 vcs_pkgname=pytz
 gittag=release_${pkgver}
