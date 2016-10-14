@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=shadow
-pkgver=4.3+
+pkgver=4.4
 vcs=git
-gittag=68cd195044deb448c865d267499e1e4fd9322057
-#gittag=upstream/${pkgver}
+gittag=d9e428fd63e49486c8fb0f2e03df7a5608b0b0e2
 urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
