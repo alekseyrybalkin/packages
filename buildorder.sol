@@ -16,8 +16,6 @@ doxygen
 bzip2
 pcre
 libffi
-glib
-pkg-config
 ncurses
 attr
 acl
@@ -68,6 +66,8 @@ tar
 texinfo
 unzip
 util-linux
+glib
+pkg-config
 e2fsprogs
 eudev
 man-db
@@ -117,6 +117,8 @@ physlock
 perl-file-next
 perl-ack
 alsa-lib
+libsndfile
+libsamplerate
 alsa-utils
 libogg
 libvorbis
@@ -273,8 +275,6 @@ openjpeg
 ffmpeg
 fribidi
 libass
-libsndfile
-libsamplerate
 fftw
 vamp-plugin-sdk
 ladspa
