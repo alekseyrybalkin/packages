@@ -4,15 +4,23 @@
 pkgname=ttf-noto
 SKIP_ARCH_CHECK=1
 pkgver=1
-urls="http://rybalkin.org/static/noto-fonts.tar.xz"
-srctar=noto-fonts.tar.xz
+extra_urls="https://noto-website.storage.googleapis.com/pkgs/NotoSans-hinted.zip
+    https://noto-website.storage.googleapis.com/pkgs/NotoSerif-hinted.zip
+    https://noto-website.storage.googleapis.com/pkgs/NotoMono-hinted.zip"
 srcdir=${location}/noto-fonts
 
 kiin_make() {
-    :
+    mkdir ${srcdir}
+    cd ${srcdir}
+    unzip ${KIIN_HOME}/tarballs/NotoSans-hinted.zip
+    rm LICENSE_OFL.txt
+    unzip ${KIIN_HOME}/tarballs/NotoSerif-hinted.zip
+    rm LICENSE_OFL.txt
+    unzip ${KIIN_HOME}/tarballs/NotoMono-hinted.zip
 }
 
 kiin_install() {
+    cd ${srcdir}
     install -m755 -d ${pkgdir}/usr/share/fonts/TTF
     install -m644 *.ttf ${pkgdir}/usr/share/fonts/TTF/
 }
