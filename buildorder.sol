@@ -321,8 +321,6 @@ memcached
 libgsf
 goffice
 gnumeric
-wv
-abiword
 babl
 json-glib
 gegl
