@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=nmap
-pkgver=7.30
+pkgver=7.31
 vcs=git-svn
 vcs_pkgname=nmap-git-svn
-svnrev=36344
+svnrev=36383
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
