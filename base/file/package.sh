@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=file
-pkgver=5.28
+pkgver=5.29
 vcs=git
 gittag=FILE${pkgver//\./_}
 urls="ftp://ftp.astron.com/pub/file/file-${pkgver}.tar.gz"

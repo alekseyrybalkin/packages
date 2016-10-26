@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.25
+pkgver=1.6.26
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    patch -p0 -i ../libpng-apng.patch
+    patch -Np1 -i../libpng-apng.patch
     autoreconf -fi
     if [ -z "$KIIN_LIB32" ]; then
         ./configure --prefix=/usr \

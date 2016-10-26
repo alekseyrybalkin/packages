@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=blender
-pkgver=2.78
-ARCH_VERSION=2.78
+pkgver=2.78a
+ARCH_VERSION=2.78.a
 vcs=git
 git_repo=git://git.blender.org/blender.git
 gittag=v${pkgver}
