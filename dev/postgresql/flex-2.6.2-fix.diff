@@ -1,0 +1,52 @@
+diff --git a/src/backend/parser/Makefile b/src/backend/parser/Makefile
+index fdd8485..875894e 100644
+--- a/src/backend/parser/Makefile
++++ b/src/backend/parser/Makefile
+@@ -39,7 +39,7 @@ gram.c: BISONFLAGS += -d
+ gram.c: BISON_CHECK_CMD = $(PERL) $(srcdir)/check_keywords.pl $< $(top_srcdir)/src/include/parser/kwlist.h
+ 
+ 
+-scan.c: FLEXFLAGS = -CF -p -p
++scan.c: FLEXFLAGS = -CF -p -p --unsafe-no-m4-sect3-escape
+ scan.c: FLEX_NO_BACKUP=yes
+ 
+ 
+diff --git a/src/backend/replication/Makefile b/src/backend/replication/Makefile
+index c99717e..8c0874a 100644
+--- a/src/backend/replication/Makefile
++++ b/src/backend/replication/Makefile
+@@ -26,7 +26,7 @@ repl_gram.o: repl_scanner.c
+ 
+ # syncrep_scanner is complied as part of syncrep_gram
+ syncrep_gram.o: syncrep_scanner.c
+-syncrep_scanner.c: FLEXFLAGS = -CF -p
++syncrep_scanner.c: FLEXFLAGS = -CF -p --unsafe-no-m4-sect3-escape
+ syncrep_scanner.c: FLEX_NO_BACKUP=yes
+ 
+ # repl_gram.c, repl_scanner.c, syncrep_gram.c and syncrep_scanner.c
+diff --git a/src/bin/psql/Makefile b/src/bin/psql/Makefile
+index 1f6a289..0726de8 100644
+--- a/src/bin/psql/Makefile
++++ b/src/bin/psql/Makefile
+@@ -39,7 +39,7 @@ sql_help.c: sql_help.h ;
+ sql_help.h: create_help.pl $(wildcard $(REFDOCDIR)/*.sgml)
+ 	$(PERL) $< $(REFDOCDIR) $*
+ 
+-psqlscanslash.c: FLEXFLAGS = -Cfe -p -p
++psqlscanslash.c: FLEXFLAGS = -Cfe -p -p --unsafe-no-m4-sect3-escape
+ psqlscanslash.c: FLEX_NO_BACKUP=yes
+ 
+ # Latest flex causes warnings in this file.
+diff --git a/src/fe_utils/Makefile b/src/fe_utils/Makefile
+index 9da03b1..127cb01 100644
+--- a/src/fe_utils/Makefile
++++ b/src/fe_utils/Makefile
+@@ -27,7 +27,7 @@ libpgfeutils.a: $(OBJS)
+ 	rm -f $@
+ 	$(AR) $(AROPT) $@ $^
+ 
+-psqlscan.c: FLEXFLAGS = -Cfe -p -p
++psqlscan.c: FLEXFLAGS = -Cfe -p -p --unsafe-no-m4-sect3-escape
+ psqlscan.c: FLEX_NO_BACKUP=yes
+ 
+ # Latest flex causes warnings in this file.
