@@ -17,9 +17,6 @@ ver_seds() {
 }
 
 kiin_make() {
-    # see flex commit 9d3ddf572e3744e4cf5e9788b676f423fe69aee8
-    git apply ../flex-2.6.2-fix.diff
-    export FLEXFLAGS="--unsafe-no-m4-sect3-escape"
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --enable-thread-safety \
