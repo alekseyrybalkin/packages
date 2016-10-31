@@ -2,9 +2,9 @@
 
 pkgname=slang
 majorver=2.3
-pkgver=${majorver}.0
+pkgver=${majorver}.1
 vcs=git
-gittag=e105c969039a1ec7f83a89863c84260934896260
+gittag=cf0dec252f4e82b29448c602a8017bb84a36e00d
 extension=bz2
 folder="http://www.jedsoft.org/releases/slang/"
 check_server=1
