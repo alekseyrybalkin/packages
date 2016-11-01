@@ -339,6 +339,9 @@ python-six
 python-sqlalchemy
 python-gunicorn
 python-mimeparse
+python-setuptools-scm
+python-pytest
+python-pytest-runner
 python-falcon
 python-psycopg
 python-cffi

@@ -1,10 +1,9 @@
 #!/bin/sh
 
-pkgname=python-cython
-ARCH_NAME=cython
-pkgver=0.25.1 # also see python-gevent
+pkgname=python-pytest-runner
+pkgver=2.10.1
 vcs=git
-vcs_pkgname=cython
+vcs_pkgname=pytest-runner
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 

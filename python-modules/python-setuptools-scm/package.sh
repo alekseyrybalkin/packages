@@ -1,15 +1,15 @@
 #!/bin/sh
 
-pkgname=python-cython
-ARCH_NAME=cython
-pkgver=0.25.1 # also see python-gevent
+pkgname=python-setuptools-scm
+pkgver=1.15.0
 vcs=git
-vcs_pkgname=cython
+vcs_pkgname=setuptools_scm
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build
+    python setup.py egg_info
 }
 
 kiin_install() {

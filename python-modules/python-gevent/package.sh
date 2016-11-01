@@ -9,8 +9,8 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i 's/C.UTF-8/en_US.UTF-8/' Makefile
-    sed -i -e 's/0\.23\.5/0\.24\.1/' dev-requirements.txt
-    sed -i -e 's/0\.23\.5/0\.24\.1/' setup.py
+    sed -i -e 's/0\.23\.5/0\.25\.1/' dev-requirements.txt
+    sed -i -e 's/0\.23\.5/0\.25\.1/' setup.py
     EMBED=1 \
     CYTHON=cython \
     PYTHON=python \
