@@ -19,6 +19,7 @@ kiin_make() {
         --enable-libtheora \
         --enable-libvorbis \
         --enable-libvpx \
+        --enable-openssl \
         --enable-x11grab
     make
 }
