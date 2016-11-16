@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libva-intel-driver
-pkgver=1.7.2
+pkgver=1.7.3
 vcs=git
 gittag=${pkgver}
 extension=bz2

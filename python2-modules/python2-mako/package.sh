@@ -2,7 +2,7 @@
 
 pkgname=python2-mako
 ARCH_NAME=python-mako
-pkgver=1.0.4
+pkgver=1.0.6
 vcs=git
 vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}

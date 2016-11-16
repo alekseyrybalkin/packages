@@ -1,6 +1,8 @@
 #!/bin/sh
 
 pkgname=ncurses
+# pkgver too complex to parse, we check git tags instead
+SKIP_ARCH_CHECK=1
 pkgver=6.0
 vcs=git
 gittag=v${pkgver}

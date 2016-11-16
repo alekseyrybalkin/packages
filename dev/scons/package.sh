@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=scons
-pkgver=2.5.0
+pkgver=2.5.1
 vcs=mercurial
-#hgtag=${pkgver}
-hgtag=afc0499a6d9b
+hgtag=${pkgver}
 urls="http://downloads.sourceforge.net/scons/scons-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
