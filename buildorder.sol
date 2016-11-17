@@ -362,6 +362,7 @@ python-snowballstemmer
 python-docutils
 python-pygments
 python-sphinx
+python-sphinx_rtd_theme
 python-cython
 lapack
 python-numpy
@@ -376,4 +377,5 @@ python-html5lib
 python-bleach
 python-greenlet
 python-gevent
+python-pycodestyle
 initramfs
