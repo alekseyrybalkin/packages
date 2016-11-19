@@ -378,4 +378,5 @@ python-bleach
 python-greenlet
 python-gevent
 python-pycodestyle
+stockfish
 initramfs
