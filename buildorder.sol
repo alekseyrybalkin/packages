@@ -75,6 +75,7 @@ vim
 linux
 fakeroot
 tcl
+tk
 sqlite
 openssl
 cacerts
@@ -379,4 +380,5 @@ python-greenlet
 python-gevent
 python-pycodestyle
 stockfish
+python-chess
 initramfs
