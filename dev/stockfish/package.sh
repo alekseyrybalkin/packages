@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=stockfish
+SKIP_ARCH_CHECK=1
 pkgver=8
 vcs=git
 gittag=sf_${pkgver}
