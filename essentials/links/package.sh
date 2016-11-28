@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=links
-pkgver=2.13
+pkgver=2.14
 extension=bz2
 folder="http://${pkgname}.twibright.com/download/"
 check_server=1
