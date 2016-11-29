@@ -1,9 +1,10 @@
 #!/bin/sh
 
 pkgname=readline
-pkgver=7.0
+pkgver=7.0.001
 vcs=git
-gittag=readline-${pkgver}
+#gittag=readline-${pkgver}
+gittag=acf3951d483e7b3478db4d731f4a8af99d27327d
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

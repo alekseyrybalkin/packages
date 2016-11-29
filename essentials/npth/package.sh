@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=npth
-pkgver=1.2
+pkgver=1.3
 vcs=git
 gittag=npth-${pkgver}
 extension=bz2

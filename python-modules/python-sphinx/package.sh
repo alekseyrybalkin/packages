@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-sphinx
-pkgver=1.4.8
+pkgver=1.4.9
 vcs=git
 vcs_pkgname=sphinx
 gittag=${pkgver}
