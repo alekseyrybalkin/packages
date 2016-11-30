@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=babl
-pkgver=0.1.18
+pkgver=0.1.22
 vcs=git
 gittag=BABL_${pkgver//\./_}
 urls="http://download.gimp.org/pub/babl/0.1/babl-${pkgver}.tar.bz2"

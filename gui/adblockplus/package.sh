@@ -2,7 +2,7 @@
 
 pkgname=adblockplus
 ARCH_NAME=firefox-adblock-plus
-pkgver=2.8.1
+pkgver=2.8.2
 vcs=mercurial
 hgtag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
