@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=coreutils
-pkgver=8.25
+pkgver=8.26
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

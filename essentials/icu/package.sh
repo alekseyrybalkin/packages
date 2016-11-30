@@ -1,22 +1,20 @@
 #!/bin/sh
 
 pkgname=icu
-pkgver=57.1
-_pkgver=${pkgver//\./_}
+pkgver=58.1
 vcs=git-svn
 vcs_pkgname=icu-git-svn
-svnrev=38551
-urls="http://download.icu-project.org/files/icu4c/${pkgver}/icu4c-${_pkgver}-src.tgz"
-srctar=icu4c-${_pkgver}-src.tgz
-srcdir=${location}/icu
+gittag=origin/tags/release-${pkgver//\./-}
+srcdir=${location}/icu-${pkgver}
 
 kiin_make() {
-    cd source
+    cd icu4c/source
+    patch -Np4 -i ../../../icu-58.1-iterator-reset.patch
     ./configure --prefix=/usr --sbindir=/usr/bin
     make
 }
 
 kiin_install() {
-    cd source
+    cd icu4c/source
     make DESTDIR=${pkgdir} install
 }
