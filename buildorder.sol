@@ -240,6 +240,7 @@ atk
 cairo
 nasm
 libjpeg-turbo
+libuv
 cmake
 freeglut
 libtiff
