@@ -382,4 +382,5 @@ python-gevent
 python-pycodestyle
 stockfish
 python-chess
+erlang
 initramfs
