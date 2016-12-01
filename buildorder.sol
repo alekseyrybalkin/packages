@@ -85,6 +85,7 @@ wget
 curl
 python
 python2
+python2-virtualenv
 python2-cython
 bzr
 libgpg-error
