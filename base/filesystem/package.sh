@@ -87,6 +87,12 @@ kiin_install() {
     mkdir -pv ${pkgdir}/var/backups
     chown ${PACMAN}:${PACMAN} ${pkgdir}/var/backups
     chmod 700 ${pkgdir}/var/backups
+
+    # for rabbitmq
+    install -dm 755 ${pkgdir}/var/log/rabbitmq
+    install -dm 755 ${pkgdir}/var/lib/rabbitmq
+    chown -R 197:197 ${pkgdir}/var/log/rabbitmq
+    chown -R 197:197 ${pkgdir}/var/lib/rabbitmq
 }
 
 kiin_after_install() {

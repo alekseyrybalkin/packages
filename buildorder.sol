@@ -383,4 +383,5 @@ python-pycodestyle
 stockfish
 python-chess
 erlang
+rabbitmq
 initramfs
