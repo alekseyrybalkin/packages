@@ -36,6 +36,7 @@ kiin_install() {
 
 kiin_after_install() {
     localedef -i en_US -f UTF-8 en_US.UTF-8
+    localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
 }
 
 kiin_after_upgrade() {
