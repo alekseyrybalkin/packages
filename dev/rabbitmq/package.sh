@@ -40,8 +40,11 @@ kiin_after_install() {
         useradd -r -u 197 -g rabbitmq -d /var/lib/rabbitmq -s /bin/bash -c 'RabbitMQ user' rabbitmq &>/dev/null
         passwd -l rabbitmq &>/dev/null
     fi
+    chown -R 197:0 ${pkgdir}/etc/rabbitmq
 }
 
 kiin_after_upgrade() {
     kiin_after_install
 }
+
+known="etc/rabbitmq/enabled_plugins"
