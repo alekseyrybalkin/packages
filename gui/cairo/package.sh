@@ -2,7 +2,7 @@
 
 pkgname=cairo
 vcs=git
-pkgver=1.14.6
+pkgver=1.14.8
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
