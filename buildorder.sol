@@ -384,4 +384,5 @@ stockfish
 python-chess
 erlang
 rabbitmq
+kakoune
 initramfs
