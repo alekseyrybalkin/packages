@@ -2,7 +2,7 @@
 
 pkgname=libxpm
 ARCH_NAME_LIB32=libxpm
-pkgver=3.5.11
+pkgver=3.5.12
 vcs=git
 gittag=libXpm-${pkgver}
 srcdir=${location}/libXpm-${pkgver}
