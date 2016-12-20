@@ -4,8 +4,8 @@ KIIN_NON_FREE=1
 pkgname=linux-firmware
 SKIP_ARCH_CHECK=1
 vcs=git
-gittag=8d1fd61a3723ab8cb6b7bfeb8be38e16282cc1ed
-pkgver=1
+gittag=4b9559fb0565f582a21a4070a81a3b6a7d77610b
+pkgver=20161205
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
