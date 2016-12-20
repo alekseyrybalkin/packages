@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=3.2
+pkgver=3.2.1
 vcs=git
 gittag=v${pkgver}
 extension=gz

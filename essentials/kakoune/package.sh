@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=kakoune
+SKIP_ARCH_CHECK=1
 pkgver=20161213
 vcs=git
 gittag=e44129577a010ebb4dc609b806104d3175659074

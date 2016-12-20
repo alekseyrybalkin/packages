@@ -2,10 +2,10 @@
 
 pkgname=python-docutils
 ARCH_NAME=docutils
-pkgver=0.12
+pkgver=0.13.1
 vcs=git-svn
 vcs_pkgname=docutils-git-svn
-svnrev=7760
+svnrev=7984
 urls="http://downloads.sourceforge.net/docutils/docutils-${pkgver}.tar.gz"
 srctar=docutils-${pkgver}.tar.gz
 srcdir=${location}/docutils-${pkgver}

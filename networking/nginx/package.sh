@@ -2,7 +2,7 @@
 
 pkgname=nginx
 ARCH_NAME=nginx-mainline
-pkgver=1.11.6
+pkgver=1.11.7
 vcs=mercurial
 hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"

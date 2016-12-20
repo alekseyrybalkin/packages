@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=man-db
-pkgver=2.7.5
+pkgver=2.7.6.1
 vcs=git
 gittag=${pkgver}
 urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.xz"

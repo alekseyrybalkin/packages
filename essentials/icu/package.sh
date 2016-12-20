@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=icu
-pkgver=58.1
+pkgver=58.2
 vcs=git-svn
 vcs_pkgname=icu-git-svn
 gittag=origin/tags/release-${pkgver//\./-}
