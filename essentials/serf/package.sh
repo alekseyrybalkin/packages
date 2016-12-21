@@ -4,7 +4,8 @@ pkgname=serf
 pkgver=1.3.9
 vcs=git-svn
 vcs_pkgname=serf-git-svn
-svnrev=1761053
+vcs_clone="git svn clone -Ttrunk -ttags https://svn.apache.org/repos/asf/serf/ -r 1698000:HEAD ${vcs_pkgname}"
+gittag=origin/tags/${pkgver}
 urls="https://archive.apache.org/dist/serf/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
@@ -19,5 +20,5 @@ kiin_make() {
 kiin_install() {
     mkdir -p ${pkgdir}/usr
     scons PREFIX=${pkgdir}/usr install
-    chmod 644 ${pkgdir}/usr/include/serf-2/*
+    chmod 644 ${pkgdir}/usr/include/serf-1/*
 }

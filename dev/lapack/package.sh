@@ -2,9 +2,10 @@
 
 pkgname=lapack
 vcs=git
+vcs_clone="git clone git@github.com:Reference-LAPACK/lapack.git"
 
 pkgver=3.6.1
-gittag=5efe3599486cc73ceead93f61ce1999eed96be11
+gittag=v${pkgver}
 
 srcdir=${location}/${pkgname}-${pkgver}
 

@@ -5,6 +5,7 @@ SKIP_ARCH_CHECK=1
 pkgver=2.89
 vcs=git-svn
 vcs_pkgname=sysvinit-git-svn
+vcs_clone="git svn clone -Ttrunk -ttags svn://svn.savannah.nongnu.org/sysvinit/sysvinit ${vcs_pkgname}"
 svnrev=174
 urls="http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
