@@ -2,9 +2,9 @@
 
 pkgname=transmission
 pkgver=2.92
-vcs=git-svn
-vcs_pkgname=transmission-git-svn
-svnrev=14713
+vcs=git
+vcs_clone="git clone git@github.com:transmission/transmission.git"
+gittag=${pkgver}
 extension=xz
 folder="https://download.transmissionbt.com/files/"
 check_server=1
