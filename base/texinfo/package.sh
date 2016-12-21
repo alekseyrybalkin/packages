@@ -2,10 +2,10 @@
 
 pkgname=texinfo
 pkgver=6.3
-# git-svn only from r5000 (git-svn crashes for -r 4000:HEAD or earlier)
 vcs=git-svn
 vcs_pkgname=texinfo-git-svn
-svnrev=7358
+vcs_clone="git svn clone -Ttrunk -ttags svn://svn.savannah.gnu.org/texinfo/ ${vcs_pkgname}"
+gittag=origin/tags/texinfo_${pkgver//\./_}
 urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
