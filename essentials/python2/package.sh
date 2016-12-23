@@ -26,6 +26,8 @@ ver_seds() {
 }
 
 kiin_make() {
+    rm -rf .hg .bzrignore .hgeol .hgignore .hgtags
+
     # Temporary workaround for FS#22322
     # See http://bugs.python.org/issue10835 for upstream report
     sed -i "/progname =/s/python/python${_pybasever}/" Python/pythonrun.c
