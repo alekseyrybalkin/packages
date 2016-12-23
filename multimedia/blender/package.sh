@@ -30,10 +30,10 @@ kiin_make() {
         -DWITH_CYCLES_OSL=OFF \
         -DWITH_FFTW3=OFF \
         -DWITH_MOD_OCEANSIM=OFF \
-        -DPYTHON_VERSION=3.5 \
+        -DPYTHON_VERSION=3.6 \
         -DPYTHON_LIBPATH=/usr/lib \
-        -DPYTHON_LIBRARY=python3.5m \
-        -DPYTHON_INCLUDE_DIRS=/usr/include/python3.5m \
+        -DPYTHON_LIBRARY=python3.6m \
+        -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m \
         -DWITH_SYSTEM_GLEW=OFF
     make
 }

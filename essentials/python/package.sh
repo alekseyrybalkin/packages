@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=python
-_pybasever=3.5
-pkgver=${_pybasever}.2
+_pybasever=3.6
+pkgver=${_pybasever}.0
 vcs=mercurial
 hgtag=v${pkgver}
 srcdir=${location}/Python-${pkgver}

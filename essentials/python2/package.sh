@@ -6,7 +6,7 @@
 
 pkgname=python2
 _pybasever=2.7
-pkgver=${_pybasever}.12
+pkgver=${_pybasever}.13
 vcs=mercurial
 vcs_pkgname=python
 hgtag=v${pkgver}

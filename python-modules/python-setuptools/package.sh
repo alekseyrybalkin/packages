@@ -20,5 +20,5 @@ kiin_install() {
     python setup.py install --prefix=/usr \
         --root=${pkgdir} --optimize=1 --skip-build
     # remove files with spaces in filenames
-    rm ${pkgdir}/usr/lib/python3.5/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/lib/python3.6/site-packages/setuptools/script*
 }
