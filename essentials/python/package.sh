@@ -9,6 +9,7 @@ srcdir=${location}/Python-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=
+    rm -rf .github .hg .bzrignore .hgeol .hgignore .hgtags .hgtouch
     rm -r Modules/expat
     rm -r Modules/zlib
     rm -r Modules/_ctypes/{darwin,libffi}*
