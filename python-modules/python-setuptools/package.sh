@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-setuptools
-pkgver=32.1.2
+pkgver=32.2.0
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
