@@ -2,10 +2,10 @@
 
 pkgname=gmp
 _majorver=6.1
-pkgver=${_majorver}.1
+pkgver=${_majorver}.2
 vcs=mercurial
 vcs_pkgname=gmp-${_majorver}
-hgtag=a393efc6c2be
+hgtag=0f37e9787d28
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
