@@ -17,6 +17,7 @@ ver_seds() {
 }
 
 kiin_make() {
+    git cherry-pick 89d1dfa49aaff7c0b90de2c91dbb314e1a57eb62
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --enable-thread-safety \

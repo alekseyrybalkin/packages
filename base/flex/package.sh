@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=flex
-pkgver=2.6.1
+pkgver=2.6.2+
 vcs=git
-gittag=v${pkgver}
+gittag=6bea32e937058ddba2812581b1396ff35aae8d70
 urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
