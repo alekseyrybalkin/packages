@@ -384,7 +384,6 @@ stockfish
 python-chess
 erlang
 rabbitmq
-kakoune
 db
 bitcoin
 initramfs
