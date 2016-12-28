@@ -28,6 +28,10 @@ ver_seds() {
 kiin_make() {
     rm -rf .hg .bzrignore .hgeol .hgignore .hgtags
 
+    # do not use berkeley db
+    sed -i -e "s/\/usr\/include\/db.h/\/usr\/include\/db_does_not_exist.h/g" setup.py
+    sed -i -e 's/"db\.h"/"db_does_not_exist\.h"/g' setup.py
+
     # Temporary workaround for FS#22322
     # See http://bugs.python.org/issue10835 for upstream report
     sed -i "/progname =/s/python/python${_pybasever}/" Python/pythonrun.c
@@ -58,7 +62,6 @@ kiin_make() {
         --enable-shared \
         --with-system-expat \
         --with-system-ffi \
-        --with-dbmliborder=gdbm:ndbm \
         --enable-unicode=ucs4 \
         --without-ensurepip
     make

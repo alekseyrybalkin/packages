@@ -8,9 +8,10 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    sed -i '/^TARGETS/s@arpd@@g' misc/Makefile
     sed -i /ARPD/d Makefile
     sed -i 's/arpd.8//' man/man8/Makefile
+    ./configure --prefix=/usr
+    sed -i -e '/HAVE_BERKELEY_DB:=y/d' Config
     make DESTDIR=
 }
 
