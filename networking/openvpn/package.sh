@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openvpn
-pkgver=2.3.14
+pkgver=2.4.0
 vcs=git
 gittag=v${pkgver}
 urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
