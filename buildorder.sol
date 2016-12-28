@@ -386,4 +386,5 @@ erlang
 rabbitmq
 db
 bitcoin
+macchanger
 initramfs
