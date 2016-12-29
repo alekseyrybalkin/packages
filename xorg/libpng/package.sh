@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.26
+pkgver=1.6.27
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
