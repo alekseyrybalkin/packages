@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xz
-pkgver=5.2.2
+pkgver=5.2.3
 vcs=git
 gittag=v${pkgver}
 urls="http://tukaani.org/xz/xz-${pkgver}.tar.xz"
