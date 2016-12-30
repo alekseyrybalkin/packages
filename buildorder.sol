@@ -387,4 +387,5 @@ rabbitmq
 db
 bitcoin
 macchanger
+socat
 initramfs
