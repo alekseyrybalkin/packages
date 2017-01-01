@@ -14,7 +14,8 @@ kiin_make() {
     ./buildconf
     ./configure --prefix=/usr \
         --disable-static \
-        --enable-threaded-resolver
+        --enable-threaded-resolver \
+        --with-ca-path=/etc/ssl/certs
     make
 }
 
