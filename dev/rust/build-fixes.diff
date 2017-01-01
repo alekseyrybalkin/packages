@@ -1,0 +1,30 @@
+diff --git a/.gitmodules b/.gitmodules
+index 39288a7ae4..03a3151fb7 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -1,19 +1,19 @@
+ [submodule "src/llvm"]
+ 	path = src/llvm
+-	url = https://github.com/rust-lang/llvm.git
++	url = /var/lib/kiin/sources/rust-llvm
+ 	branch = master
+ [submodule "src/compiler-rt"]
+ 	path = src/compiler-rt
+-	url = https://github.com/rust-lang/compiler-rt.git
++	url = /var/lib/kiin/sources/rust-compiler-rt
+ [submodule "src/rt/hoedown"]
+ 	path = src/rt/hoedown
+-	url = https://github.com/rust-lang/hoedown.git
++	url = /var/lib/kiin/sources/rust-hoedown
+ [submodule "src/jemalloc"]
+ 	path = src/jemalloc
+-	url = https://github.com/rust-lang/jemalloc.git
++	url = /var/lib/kiin/sources/rust-jemalloc
+ [submodule "src/rust-installer"]
+ 	path = src/rust-installer
+-	url = https://github.com/rust-lang/rust-installer.git
++	url = /var/lib/kiin/sources/rust-installer
+ [submodule "src/liblibc"]
+ 	path = src/liblibc
+-	url = https://github.com/rust-lang/libc.git
++	url = /var/lib/kiin/sources/rust-libc

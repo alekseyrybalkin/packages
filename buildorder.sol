@@ -388,4 +388,5 @@ db
 bitcoin
 macchanger
 socat
+rust
 initramfs
