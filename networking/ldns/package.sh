@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ldns
-pkgver=1.6.17
+pkgver=1.7.0
 vcs=git
 gittag=release-${pkgver}
 urls="http://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"
@@ -21,6 +21,7 @@ kiin_make() {
         --enable-static=no \
         --disable-rpath \
         --with-drill \
+        --disable-dane-ta-usage \
         --with-examples
     make
 }

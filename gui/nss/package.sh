@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nss
-pkgver=3.27.2
+pkgver=3.28
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss

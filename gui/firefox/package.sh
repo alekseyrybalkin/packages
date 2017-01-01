@@ -13,6 +13,9 @@ kiin_make() {
     rm -rf .hg .hgignore .hgtags
     cp ../mozconfig .
 
+    # fix for sed 4.3 / autoconf
+    sed -i -e 's/\[\[:space:\]\]/\\\ /g' build/autoconf/icu.m4
+
     sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
     echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 
