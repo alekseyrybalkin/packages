@@ -17,5 +17,5 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    echo "certificate=/etc/ssl/ca-bundle.crt" >> ${pkgdir}/etc/wgetrc
+    echo "ca-directory=/etc/ssl/certs" >> ${pkgdir}/etc/wgetrc
 }
