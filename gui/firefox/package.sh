@@ -1,9 +1,10 @@
 #!/bin/sh
 
 pkgname=firefox
-pkgver=50.1.0
+_pkgbase=51.0
+pkgver=${_pkgbase}b10
 vcs=mercurial
-vcs_pkgname=firefox-release
+vcs_pkgname=firefox-beta
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz
@@ -32,8 +33,8 @@ kiin_make() {
 kiin_install() {
     make -C firefox-build-dir DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}/usr/lib/mozilla/plugins
-    mv ${pkgdir}/usr/lib/firefox{-${pkgver},}
+    mv ${pkgdir}/usr/lib/firefox{-${_pkgbase},}
     ln -sfv ../lib/firefox/firefox ${pkgdir}/usr/bin
-    rm ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
-    ln -sfv /usr/lib/firefox ${pkgdir}/usr/lib/firefox-devel-${pkgver}/bin
+    rm ${pkgdir}/usr/lib/firefox-devel-${_pkgbase}/bin
+    ln -sfv /usr/lib/firefox ${pkgdir}/usr/lib/firefox-devel-${_pkgbase}/bin
 }
