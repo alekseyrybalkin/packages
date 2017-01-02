@@ -7,7 +7,14 @@ gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git apply ../build-fixes.diff
+    SOURCES_HOME_ESCAPED=${SOURCES_HOME//\//\\\/}
+    sed -i -e "s/https:\\/\\/github\\.com\\/rust-lang/${SOURCES_HOME_ESCAPED}/g" .gitmodules
+    sed -i -e 's/llvm\.git/rust-llvm/g' .gitmodules
+    sed -i -e 's/compiler-rt\.git/rust-compiler-rt/g' .gitmodules
+    sed -i -e 's/hoedown\.git/rust-hoedown/g' .gitmodules
+    sed -i -e 's/jemalloc\.git/rust-jemalloc/g' .gitmodules
+    sed -i -e 's/rust-installer\.git/rust-installer/g' .gitmodules
+    sed -i -e 's/libc\.git/rust-libc/g' .gitmodules
 
     ./configure \
         --prefix=/usr \
