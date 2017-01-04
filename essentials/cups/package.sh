@@ -39,6 +39,10 @@ kiin_make() {
 kiin_install() {
     if [ -z "${KIIN_LIB32}" ]; then
         make BUILDROOT=${pkgdir} install-headers install-libs
+        mkdir ${pkgdir}/usr/bin
+        echo '#!/bin/bash' > ${pkgdir}/usr/bin/cups-config
+        echo "echo -lcups -lz -lpthread -lm -lcrypt -lz" >> ${pkgdir}/usr/bin/cups-config
+        chmod +x ${pkgdir}/usr/bin/cups-config
     else
         make BUILDROOT=${pkgdir} install-libs
         rm -rf ${pkgdir}/usr/lib

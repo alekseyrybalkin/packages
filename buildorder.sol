@@ -389,4 +389,7 @@ bitcoin
 macchanger
 socat
 rust
+ninja
+dbus
+chromium
 initramfs
