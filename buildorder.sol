@@ -75,6 +75,7 @@ vim
 linux
 fakeroot
 tcl
+tk
 sqlite
 openssl
 cacerts
