@@ -393,4 +393,5 @@ rust
 ninja
 dbus
 chromium
+bareboard
 initramfs
