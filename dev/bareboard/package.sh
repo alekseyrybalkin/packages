@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=bareboard
-pkgver=0.2
+pkgver=0.3
 vcs=git
 vcs_clone="git clone git@github.com:alekseyrybalkin/bareboard.git"
 gittag=v${pkgver}
