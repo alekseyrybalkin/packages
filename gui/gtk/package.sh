@@ -3,7 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.5
+pkgver=${majorver}.7
 vcs=git
 git_repo=git://git.gnome.org/gtk+
 vcs_pkgname=gtk+
@@ -32,6 +32,7 @@ kiin_make() {
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --disable-wayland-backend \
+        --disable-cups \
         --enable-x11-backend
     make
 }
