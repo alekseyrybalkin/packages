@@ -1,0 +1,27 @@
+diff --git a/platform/build-scripts/groovy/org/jetbrains/intellij/build/impl/BuildTasksImpl.groovy b/platform/build-scripts/groovy/org/jetbrains/intellij/build/impl/BuildTasksImpl.groovy
+index 436b35d365b..735a3f7ce01 100644
+--- a/platform/build-scripts/groovy/org/jetbrains/intellij/build/impl/BuildTasksImpl.groovy
++++ b/platform/build-scripts/groovy/org/jetbrains/intellij/build/impl/BuildTasksImpl.groovy
+@@ -259,15 +259,9 @@ idea.fatal.error.notification=disabled
+ 
+     def propertiesFile = patchIdeaPropertiesFile()
+     List<BuildTaskRunnable<String>> tasks = [
+-      createDistributionForOsTask("win", { BuildContext context ->
+-        context.windowsDistributionCustomizer?.with { new WindowsDistributionBuilder(context, it, propertiesFile, patchedApplicationInfo) }
+-      }),
+       createDistributionForOsTask("linux", { BuildContext context ->
+         context.linuxDistributionCustomizer?.with { new LinuxDistributionBuilder(context, it, propertiesFile) }
+       }),
+-      createDistributionForOsTask("mac", { BuildContext context ->
+-        context.macDistributionCustomizer?.with { new MacDistributionBuilder(context, it, propertiesFile) }
+-      })
+     ]
+ 
+     List<String> paths = runInParallel(tasks).findAll { it != null }
+@@ -519,4 +513,4 @@ idea.fatal.error.notification=disabled
+ 
+     abstract V run(BuildContext context)
+   }
+-}
+\ No newline at end of file
++}

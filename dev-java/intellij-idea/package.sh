@@ -1,46 +1,36 @@
 #!/bin/sh
 
-KIIN_NON_FREE=1 # has jars in source tree
+KIIN_NON_FREE=1 # has jars in source tree, also can't build python plugin from source, also kotlin
 pkgname=intellij-idea
 SKIP_ARCH_CHECK=1
 vcs=git
 
-pkgver=145
-gittag=aa1efb2d6a35756e7c73003548f35f6de5b535d1
-kotlinver=1.0.0-release-IJ143-78
+pkgver=163
+gittag=5d3da45a14cafd7514de2a5e7c568014eb94941f
+kotlinver=1.0.5-release-IJ2016.3-1
 
-extra_urls="https://teamcity.jetbrains.com/guestAuth/repository/download/Kotlin_Rc_Idea142branch150versionNoTests/${kotlinver}/kotlin-plugin-${kotlinver}.zip"
+extra_urls="https://plugins.jetbrains.com/files/6954/30100/kotlin-plugin-${kotlinver}.zip https://plugins.jetbrains.com/files/631/30455/python-community-163.125.zip"
 srcdir=${location}/idea-IC-${pkgver}
 
 kiin_make() {
+    export PATH=${PATH}:/usr/lib/openjdk/bin:/usr/lib/apache-ant/bin
+    cp ${KIIN_HOME}/tarballs/kotlin-plugin-${kotlinver}.zip build/
+
     sed -i -e "s/buildNumber = new URL(buildLocator.buildNumberUrl).text/buildNumber = \"${kotlinver}\"/g" \
         build/scripts/download_kotlin.gant
-    cp ${KIIN_HOME}/tarballs/kotlin-plugin-${kotlinver}.zip build/
-    rm -rf python/{ipnb,educational-{core,python}}
-    sed -i -e 's/if (p("jdk.linux") != "false")/if (false)/g' build/scripts/dist.gant
-    export PATH=${PATH}:/usr/lib/openjdk/bin:/usr/lib/apache-ant/bin
+    sed -i -e 's/"android", //g' build/groovy/org/jetbrains/intellij/build/BaseIdeaProperties.groovy
+    sed -i -e 's/ "javaFX-CE",//g' build/groovy/org/jetbrains/intellij/build/BaseIdeaProperties.groovy
+    sed -i -e '250,268d' build/scripts/layouts.gant
+    rm -rf plugins/javaFX/
+    patch -Np1 -i ../only_linux.diff
     ant
-
-    cd python
-    cp ../out/artifacts/ideaIC-${pkgver}.SNAPSHOT{-no-jdk,}.tar.gz
-    sed -i -e '/ipnb/d' build/plugin-list.txt
-    sed -i -e '/ipnb\/src/d' build/python_plugin_build.gant
-    mkdir trash
-    sed -i -e 's/ipnb\/lib/trash/g' build/python_plugin_build.gant
-    sed -i -e 's/ipnb\/resources/trash/g' build/python_plugin_build.gant
-    _major=`cat python-community-ide-resources/resources/idea/PyCharmCoreApplicationInfo.xml | grep major | sed 's/^.*major="//g' | sed 's/".*$//g'`
-    _minor=`cat python-community-ide-resources/resources/idea/PyCharmCoreApplicationInfo.xml | grep minor | sed 's/^.*minor="//g' | sed 's/".*$//g'`
-    sed -i -e "s/major = .*/major = \"${_major}\"/g" build/python_plugin_build.gant
-    sed -i -e "s/minor = .*/minor = \"${_minor}\"/g" build/python_plugin_build.gant
-    sed -i -e '/ipython/d' build/python-plugin-dependencies.xml
-    ant -Didea.path=../out/artifacts/ -Didea.build.number=${pkgver}.SNAPSHOT plugin
 }
 
 kiin_install() {
     tar xvf out/artifacts/ideaIC-${pkgver}.SNAPSHOT-no-jdk.tar.gz
     cd idea-IC-${pkgver}.SNAPSHOT
     cd plugins
-    unzip ../../python/distCE/python-community-${pkgver}.SNAPSHOT.zip
+    unzip ${KIIN_HOME}/tarballs/python-community-163.125.zip
     cd ../
     mkdir -p ${pkgdir}/usr/lib/intellij-idea
     cp -a ./* ${pkgdir}/usr/lib/intellij-idea
