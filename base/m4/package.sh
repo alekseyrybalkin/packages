@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=m4
-pkgver=1.4.17
+pkgver=1.4.18
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

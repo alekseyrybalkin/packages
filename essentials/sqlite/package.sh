@@ -3,7 +3,7 @@
 pkgname=sqlite
 vcs=fossil
 
-pkgver=3.15.2
+pkgver=3.16.2
 fossiltag=version-${pkgver}
 
 srcdir=${location}/${pkgname}-${pkgver}
