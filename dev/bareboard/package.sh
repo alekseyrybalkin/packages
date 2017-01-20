@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=bareboard
+SKIP_ARCH_CHECK=1
 pkgver=0.4
 vcs=git
 vcs_clone="git clone git@github.com:alekseyrybalkin/bareboard.git"
