@@ -12,6 +12,8 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    patch -Np1 -i ../flex-2.6.3.patch
+    patch -Np1 -i ../flex-2.6.3-2.patch
     rm -rf gdb libdecnumber readline sim zlib
     mkdir -v binutils-build
     cd binutils-build

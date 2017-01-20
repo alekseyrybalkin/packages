@@ -1,0 +1,56 @@
+diff --git a/binutils/syslex.l b/binutils/syslex.l
+index 836a64cf93..25be30305e 100644
+--- a/binutils/syslex.l
++++ b/binutils/syslex.l
+@@ -1,4 +1,4 @@
+-%option noinput nounput
++%option noinput nounput noyywrap
+ 
+ %{
+ /* Copyright (C) 2001-2016 Free Software Foundation, Inc.
+@@ -36,10 +36,6 @@
+ #define YY_NO_UNPUT
+ #endif
+ 
+-#ifndef yywrap
+-static int yywrap (void) { return 1; }
+-#endif
+-
+ extern int yylex (void);
+ %}
+ %%
+diff --git a/ld/ldlex.h b/ld/ldlex.h
+index cf943e425f..2d7e493bd4 100644
+--- a/ld/ldlex.h
++++ b/ld/ldlex.h
+@@ -180,9 +180,6 @@ extern const char* ldlex_filename (void);
+ /* In lexsup.c.  */
+ extern int lex_input (void);
+ extern void lex_unput (int);
+-#ifndef yywrap
+-extern int yywrap (void);
+-#endif
+ extern void parse_args (unsigned, char **);
+ 
+ #endif
+diff --git a/ld/ldlex.l b/ld/ldlex.l
+index 2eb8fc1020..0fd0c87f0e 100644
+--- a/ld/ldlex.l
++++ b/ld/ldlex.l
+@@ -1,4 +1,4 @@
+-%option nounput
++%option nounput noyywrap
+ 
+ %{
+ 
+@@ -87,10 +87,6 @@ static void lex_warn_invalid (char *where, char *what);
+ */
+ #define RTOKEN(x)  {  yylval.token = x; return x; }
+ 
+-/* Some versions of flex want this.  */
+-#ifndef yywrap
+-int yywrap (void) { return 1; }
+-#endif
+ %}
+ 
+ %a 4000
