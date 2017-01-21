@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=gperf
-pkgver=3.1
+pkgver=3.0.4
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    ./autogen.sh
     ./configure --prefix=/usr --docdir=/usr/share/doc/gperf
     echo -e "all:\n\ninstall:" > doc/Makefile
     make
