@@ -1,10 +1,11 @@
 #!/bin/sh
 
 pkgname=python-gevent
-pkgver=1.2.0
+pkgver=1.2.1
 vcs=git
 vcs_pkgname=gevent
-gittag=${pkgver}
+gittag=07a6013eabd762f85846187fb8aa34949d5571d9
+# FIXME gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
