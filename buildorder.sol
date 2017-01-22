@@ -352,7 +352,6 @@ python-pycparser
 python-bcrypt
 python-untangle
 python-requests
-gdb
 strace
 qemu
 fossil
