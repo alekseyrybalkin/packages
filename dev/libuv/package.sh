@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libuv
-pkgver=1.10.1
+pkgver=1.10.2
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libgcrypt
-pkgver=1.7.5
+pkgver=1.7.6
 vcs=git
 gittag=libgcrypt-${pkgver}
 extension=bz2
