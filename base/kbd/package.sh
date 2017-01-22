@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=kbd
-pkgver=2.0.3
+pkgver=2.0.4
 vcs=git
-gittag=baeb5aa827d956bd06492775dc5bd9f89d394149
+gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
