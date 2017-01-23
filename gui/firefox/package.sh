@@ -2,7 +2,7 @@
 
 pkgname=firefox
 _pkgbase=51.0
-pkgver=${_pkgbase}b10
+pkgver=${_pkgbase}b14
 vcs=mercurial
 vcs_pkgname=firefox-beta
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
