@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxi
-pkgver=1.7.8
+pkgver=1.7.9
 vcs=git
 gittag=libXi-${pkgver}
 srcdir=${location}/libXi-${pkgver}
