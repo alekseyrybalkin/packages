@@ -10,7 +10,9 @@ kiin_make() {
 }
 
 kiin_install() {
-    cp ${SOURCES_HOME}/nss/lib/ckfw/builtins/certdata.txt .
+    hg clone ${SOURCES_HOME}/nss
+    cp nss/lib/ckfw/builtins/certdata.txt .
+    rm -rf nss
     pkgdir=${pkgdir} bash make-ca.sh
     rm certdata.txt
 }
