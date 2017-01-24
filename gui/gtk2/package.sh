@@ -15,6 +15,7 @@ kiin_make() {
         --disable-gtk-doc-html \
         --disable-gtk-doc-pdf \
         --disable-man \
+        --disable-cups \
         --libdir=$LIBDIR
     make
 }
