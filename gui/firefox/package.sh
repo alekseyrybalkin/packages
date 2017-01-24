@@ -2,9 +2,9 @@
 
 pkgname=firefox
 _pkgbase=51.0
-pkgver=${_pkgbase}b14
+pkgver=${_pkgbase}
 vcs=mercurial
-vcs_pkgname=firefox-beta
+vcs_pkgname=firefox-release
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz
