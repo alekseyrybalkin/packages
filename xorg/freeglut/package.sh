@@ -1,7 +1,6 @@
 #!/bin/sh
 
 pkgname=freeglut
-ARCH_NAME_LIB32=freeglut
 pkgver=3.0.0
 vcs=git-svn
 vcs_pkgname=freeglut-git-svn

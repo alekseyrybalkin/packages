@@ -1,7 +1,6 @@
 #!/bin/sh
 
 pkgname=cups
-ARCH_NAME_LIB32=cups
 pkgver=2.2.2
 vcs=git
 gittag=v${pkgver}

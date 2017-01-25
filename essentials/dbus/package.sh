@@ -1,7 +1,6 @@
 #!/bin/sh
 
 pkgname=dbus
-ARCH_NAME_LIB32=lib32-libdbus
 pkgver=1.10.14
 vcs=git
 gittag=dbus-${pkgver}

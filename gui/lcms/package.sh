@@ -2,7 +2,6 @@
 
 pkgname=lcms
 ARCH_NAME=lcms2
-ARCH_NAME_LIB32=lcms2
 pkgver=2.8
 vcs=git
 gittag=lcms${pkgver}

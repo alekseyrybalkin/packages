@@ -1,7 +1,6 @@
 #!/bin/sh
 
 pkgname=libvpx
-ARCH_NAME_LIB32=libvpx
 pkgver=1.6.1
 vcs=git
 gittag=v${pkgver}
