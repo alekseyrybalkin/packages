@@ -12,7 +12,7 @@ kiin_make() {
     ./configure --prefix=/usr \
         --with-mozilla \
         --with-pthreads \
-        $([ -z "$KIIN_LIB32" ] && echo --enable-64bit) \
+        --enable-64bit \
         --libdir=$LIBDIR
     make
 }

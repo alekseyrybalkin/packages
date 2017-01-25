@@ -18,32 +18,18 @@ kiin_make() {
         test/ippserver.c
     aclocal -I config-scripts
     autoconf -I config-scripts
-    if [ -z "${KIIN_LIB32}" ]; then
-        CC=gcc ./configure --with-rcdir=/tmp/cupsinit \
-            --with-docdir=/usr/share/cups/doc \
-            --with-system-groups=lpadmin \
-            --disable-systemd \
-            --libdir=${LIBDIR}
-        make
-    else
-        ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-            --enable-raw-printing --disable-gssapi --disable-dbus \
-            --enable-ssl=yes--enable-threads --enable-libusb=no \
-            --disable-avahi --disable-dnssd --disable-systemd \
-            --with-system-groups=lpadmin --libdir=${LIBDIR}
-        make libs
-    fi
+    CC=gcc ./configure --with-rcdir=/tmp/cupsinit \
+        --with-docdir=/usr/share/cups/doc \
+        --with-system-groups=lpadmin \
+        --disable-systemd \
+        --libdir=${LIBDIR}
+    make
 }
 
 kiin_install() {
-    if [ -z "${KIIN_LIB32}" ]; then
-        make BUILDROOT=${pkgdir} install-headers install-libs
-        mkdir ${pkgdir}/usr/bin
-        echo '#!/bin/bash' > ${pkgdir}/usr/bin/cups-config
-        echo "echo -lcups -lz -lpthread -lm -lcrypt -lz" >> ${pkgdir}/usr/bin/cups-config
-        chmod +x ${pkgdir}/usr/bin/cups-config
-    else
-        make BUILDROOT=${pkgdir} install-libs
-        rm -rf ${pkgdir}/usr/lib
-    fi
+    make BUILDROOT=${pkgdir} install-headers install-libs
+    mkdir ${pkgdir}/usr/bin
+    echo '#!/bin/bash' > ${pkgdir}/usr/bin/cups-config
+    echo "echo -lcups -lz -lpthread -lm -lcrypt -lz" >> ${pkgdir}/usr/bin/cups-config
+    chmod +x ${pkgdir}/usr/bin/cups-config
 }

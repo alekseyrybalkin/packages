@@ -11,11 +11,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    if [ -z "${KIIN_LIB32}" ]; then
-        ./autogen.sh --prefix=/usr --libdir=$LIBDIR
-    else
-        ./autogen.sh --prefix=/usr --with-icu=no --with-cairo=no --libdir=$LIBDIR
-    fi
+    ./autogen.sh --prefix=/usr --libdir=$LIBDIR
     make
 }
 

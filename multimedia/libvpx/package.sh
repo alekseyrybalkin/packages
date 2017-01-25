@@ -11,18 +11,10 @@ kiin_make() {
     chmod -v 644 vpx/*.h
     mkdir libvpx-build
     cd libvpx-build
-    if [ -z "${KIIN_LIB32}" ]; then
-        ../configure --prefix=/usr \
-            --enable-shared \
-            --disable-static \
-            --libdir=${LIBDIR}
-    else
-        ../configure --prefix=/usr \
-            --enable-shared \
-            --disable-static \
-            --target=x86-linux-gcc \
-            --libdir=${LIBDIR}
-    fi
+    ../configure --prefix=/usr \
+        --enable-shared \
+        --disable-static \
+        --libdir=${LIBDIR}
     make
 }
 

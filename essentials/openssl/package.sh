@@ -17,18 +17,10 @@ urls="${urls}"
 kiin_make() {
     MAKEFLAGS=
     sed -i -e '2,55d' util/pod2mantest
-    if [ -z "$KIIN_LIB32" ]; then
-        ./config --prefix=/usr \
-            --libdir=lib \
-            --openssldir=/etc/ssl \
-            shared
-    else
-        ./Configure --prefix=/usr \
-            --openssldir=/etc/ssl \
-            shared \
-            linux-elf \
-            --libdir=lib32
-    fi
+    ./config --prefix=/usr \
+        --libdir=lib \
+        --openssldir=/etc/ssl \
+        shared
     make
 }
 
