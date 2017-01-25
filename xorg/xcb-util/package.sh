@@ -8,7 +8,7 @@ gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git clone ${KIIN_HOME}/sources/xcb-util-common-m4 m4
+    git clone -s ${KIIN_HOME}/sources/xcb-util-common-m4 m4
     git submodule update --init
     ./autogen.sh $XORG_CONFIG
     make

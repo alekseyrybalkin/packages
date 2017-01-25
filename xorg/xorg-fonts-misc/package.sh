@@ -10,7 +10,7 @@ kiin_make() {
     mkdir build
     cd build
     for i in ${KIIN_HOME}/sources/font-{arabic,cursor,daewoo,dec,isas,jis,micro,mutt,sony,sun,misc,schumacher}-misc; do
-        git clone ${i}
+        git clone -s ${i}
     done
     for dir in *; do
         if [ -d "${dir}" ]; then

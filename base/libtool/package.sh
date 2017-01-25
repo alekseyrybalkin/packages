@@ -8,7 +8,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=
-    git clone ${KIIN_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr
     make

@@ -7,9 +7,9 @@ gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git clone ${KIIN_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/gnulib
     cd submodules
-    git clone ${KIIN_HOME}/sources/autoconf
+    git clone -s ${KIIN_HOME}/sources/autoconf
     cd ../
     ./bootstrap --skip-po
     ./configure --prefix=/usr --docdir=/usr/share/doc/bison

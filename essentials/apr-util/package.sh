@@ -12,7 +12,7 @@ check_server=1
 
 kiin_make() {
     cd ../
-    git clone ${SOURCES_HOME}/apr apr
+    git clone -s ${SOURCES_HOME}/apr apr
     sed -i -e 's/python/python2/g' apr/build/gen-build.py
     cd ${srcdir}
     ./buildconf

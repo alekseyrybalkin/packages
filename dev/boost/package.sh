@@ -12,7 +12,7 @@ srcdir=${location}/${pkgname}_${_pkgver}
 kiin_make() {
     cd libs
     cat ../.gitmodules | grep submodule | sed 's/\[submodule "//g' | sed 's/"\]//g' | sed 's/libs\///g' | while read module; do
-        git clone ${SOURCES_HOME}/boost-${module} ${module}
+        git clone -s -n ${SOURCES_HOME}/boost-${module} ${module}
         cd ${module}
         git checkout ${gittag}
         cd ../

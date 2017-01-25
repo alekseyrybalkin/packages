@@ -9,8 +9,8 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git clone ${KIIN_HOME}/sources/gnulib
-    git clone ${KIIN_HOME}/sources/paxutils
+    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/paxutils
     sed -i -e 's/lib\ pax/lib/g' bootstrap.conf
     ./bootstrap --skip-po
     m4 -DMODE=C sysdep.m4 > lib/sysdep.c

@@ -9,11 +9,11 @@ gittag=a093ef43dd592b729da46db4ff3057fef9a46023
 srcdir=${location}/${pkgname}-${pkgver}.src
 
 kiin_make() {
-    git clone ${SOURCES_HOME}/clang tools/clang
+    git clone -s -n ${SOURCES_HOME}/clang tools/clang
     cd tools/clang
     git checkout 54f5752c3600d39ee8de62ba9ff304154baf5e80
     cd ../../
-    git clone ${SOURCES_HOME}/compiler-rt projects/compiler-rt
+    git clone -s -n ${SOURCES_HOME}/compiler-rt projects/compiler-rt
     cd projects/compiler-rt
     git checkout 9822763f9403c0740a01b7b5b50e3f15eec76b65
     cd ../../

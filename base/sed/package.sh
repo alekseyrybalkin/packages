@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    git clone ${KIIN_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/gnulib
     sed -i -e '/\/missing/d' bootstrap
     ./bootstrap --skip-po
     ./configure --prefix=/usr
