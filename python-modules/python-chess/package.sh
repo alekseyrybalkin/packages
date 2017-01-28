@@ -2,7 +2,7 @@
 
 pkgname=python-chess
 SKIP_ARCH_CHECK=1
-pkgver=0.16.1
+pkgver=0.16.2
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=socat
-pkgver=1.7.3.1
+pkgver=1.7.3.2
 vcs=git
 gittag=tag-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

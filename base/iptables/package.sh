@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=iptables
-pkgver=1.6.0
+pkgver=1.6.1
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

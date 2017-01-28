@@ -4,7 +4,7 @@ KIIN_NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.24.1
 vcs=git
-gittag=7e4405c50fc374d5e80141554c7887a52d1f9118
+gittag=2762a7145bba9681b30ed5d4aed0c5d1df4329c8
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

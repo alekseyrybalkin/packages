@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pygments
-pkgver=2.1.3
+pkgver=2.2.0
 vcs=mercurial
 vcs_pkgname=pygments
 hgtag=${pkgver}
