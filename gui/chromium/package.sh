@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=55.0.2883.103
+pkgver=56.0.2924.76
 #vcs=git
 #gittag=${pkgver}
 urls="https://commondatastorage.googleapis.com/chromium-browser-official/chromium-${pkgver}.tar.xz"
@@ -9,8 +9,7 @@ srctar=chromium-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    sed 's/#include <sys\/mman\.h>/&\n\n#if defined(MADV_FREE)\n#undef MADV_FREE\n#endif\n/' \
-        -i third_party/WebKit/Source/wtf/allocator/PageAllocator.cpp
+    patch -Np1 -i ../chromium-glib-2.24.patch
     sed "s/^config(\"compiler\") {/&\ncflags_cc = [ \"-fno-delete-null-pointer-checks\" ]/" \
         -i build/config/linux/BUILD.gn
 
