@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=56.0.2924.76
+pkgver=56.0.2924.79
 #vcs=git
 #gittag=${pkgver}
 urls="https://commondatastorage.googleapis.com/chromium-browser-official/chromium-${pkgver}.tar.xz"
