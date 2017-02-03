@@ -199,8 +199,6 @@ python2-setuptools
 python2-mako
 mesa
 glu
-libxfont1
-xorg-bdftopcf
 xorg-mkfontdir
 xorg-mkfontscale
 xorg-xauth
@@ -213,7 +211,6 @@ xorg-xset
 xorg-xbacklight
 xorg-fonts-encodings
 xorg-fonts-alias
-xorg-fonts-misc
 xkeyboard-config
 pixman
 libepoxy
