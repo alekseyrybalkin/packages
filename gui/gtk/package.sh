@@ -27,7 +27,8 @@ kiin_make() {
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
     sed -i -e 's/ atk-bridge-2.0//g' configure.ac
     # revert "file chooser: Allow activating without double-click"
-    #git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
+    # git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
+    # https://bugzilla.gnome.org/show_bug.cgi?id=758065
     git apply ../filechooser.diff
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
