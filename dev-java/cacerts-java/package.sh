@@ -10,8 +10,7 @@ kiin_make() {
 }
 
 kiin_install() {
-    mkdir -p ${pkgdir}/usr/lib/openjdk/bin
-    cp mkcacerts ${pkgdir}/usr/lib/openjdk/bin/mkcacerts
+    install -Dm755 mkcacerts ${pkgdir}/usr/lib/openjdk/bin/mkcacerts
 }
 
 kiin_after_install() {

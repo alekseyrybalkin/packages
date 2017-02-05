@@ -390,4 +390,5 @@ ninja
 dbus
 chromium
 bareboard
+bazel
 initramfs
