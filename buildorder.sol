@@ -195,6 +195,10 @@ xcb-util
 xcb-util-keysyms
 xcb-util-renderutil
 libdrm
+python2-six
+python2-packaging
+python2-pyparsing
+python2-appdirs
 python2-setuptools
 python2-mako
 mesa
@@ -331,6 +335,9 @@ cacerts-java
 apache-ant
 maven
 intellij-idea
+python-packaging
+python-pyparsing
+python-appdirs
 python-setuptools
 python-youtube-dl
 python-markupsafe
