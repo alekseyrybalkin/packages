@@ -234,7 +234,6 @@ yelp-tools
 gobject-introspection
 rxvt-unicode
 ttf-noto
-ttf-ubuntu
 zip
 gtk-doc
 atk
