@@ -17,6 +17,9 @@ kiin_make() {
     # fix for sed 4.3 / autoconf
     sed -i -e 's/\[\[:space:\]\]/\\\ /g' build/autoconf/icu.m4
 
+    # fix for libevent-2.1.8
+    sed -e s/_EVENT_SIZEOF/EVENT__SIZEOF/ -i ipc/chromium/src/base/message_pump_libevent.cc
+
     sed -i -e '/MOZ_MAKE_FLAGS/d' mozconfig
     echo "mk_add_options MOZ_MAKE_FLAGS='${MAKEFLAGS}'" >> mozconfig
 

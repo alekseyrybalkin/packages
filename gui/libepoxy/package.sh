@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libepoxy
-pkgver=1.3.1
+pkgver=1.4
 vcs=git
 gittag=v${pkgver}
 urls="http://crux.nu/files/libepoxy-${pkgver}.tar.bz2"
