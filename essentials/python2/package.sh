@@ -7,9 +7,9 @@
 pkgname=python2
 _pybasever=2.7
 pkgver=${_pybasever}.13
-vcs=mercurial
+vcs=git
 vcs_pkgname=python
-hgtag=v${pkgver}
+gittag=v${pkgver}
 extension=xz
 folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1
@@ -26,7 +26,7 @@ ver_seds() {
 }
 
 kiin_make() {
-    rm -rf .hg .bzrignore .hgeol .hgignore .hgtags
+    rm -rf .git .gitignore .bzrignore .hgeol .hgignore .hgtags
 
     # do not use berkeley db
     sed -i -e "s/\/usr\/include\/db.h/\/usr\/include\/db_does_not_exist.h/g" setup.py

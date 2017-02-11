@@ -3,13 +3,13 @@
 pkgname=python
 _pybasever=3.6
 pkgver=${_pybasever}.0
-vcs=mercurial
-hgtag=v${pkgver}
+vcs=git
+gittag=v${pkgver}
 srcdir=${location}/Python-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=
-    rm -rf .github .hg .bzrignore .hgeol .hgignore .hgtags .hgtouch
+    rm -rf .github .git .gitignore .bzrignore .hgeol .hgignore .hgtags .hgtouch
     rm -r Modules/expat
     rm -r Modules/zlib
     rm -r Modules/_ctypes/{darwin,libffi}*
