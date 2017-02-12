@@ -6,7 +6,7 @@ SKIP_ARCH_CHECK=1
 vcs=git
 
 pkgver=163
-gittag=6f6f44ce1fbd47eaa56f369d25ab3b678a768f72
+gittag=abec70fc85f64e7beb1c064497c45df26dac84e6
 kotlinver=1.0.5-release-IJ2016.3-1
 
 extra_urls="https://plugins.jetbrains.com/files/6954/30100/kotlin-plugin-${kotlinver}.zip https://plugins.jetbrains.com/files/631/30455/python-community-163.125.zip"

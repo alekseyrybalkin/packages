@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apache-ant
-pkgver=1.10.0
+pkgver=1.10.1
 vcs=git
 gittag=rel/${pkgver}
 extension=bz2

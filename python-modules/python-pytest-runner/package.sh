@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pytest-runner
-pkgver=2.10.1
+pkgver=2.11.1
 vcs=git
 vcs_pkgname=pytest-runner
 gittag=${pkgver}

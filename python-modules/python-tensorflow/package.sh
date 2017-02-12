@@ -2,7 +2,7 @@
 
 pkgname=python-tensorflow
 SKIP_ARCH_CHECK=1
-pkgver=1.0.0_rc1
+pkgver=1.0.0_rc2
 vcs=git
 vcs_pkgname=tensorflow
 gittag=v${pkgver//_/-}

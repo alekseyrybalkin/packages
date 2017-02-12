@@ -2,6 +2,7 @@
 
 pkgname=libepoxy
 pkgver=1.4
+ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=v${pkgver}
 urls="http://crux.nu/files/libepoxy-${pkgver}.tar.bz2"
