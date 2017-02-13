@@ -398,4 +398,7 @@ dbus
 chromium
 bareboard
 bazel
+python-wheel
+python-pip
+python-tensorflow
 initramfs
