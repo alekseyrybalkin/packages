@@ -14,7 +14,6 @@ check_server=1
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
-    git cherry-pick 5bab4d8de0dcbb8e2e7d4d5125b4aea1652a0d60
     ./autogen.sh
     ./configure --prefix=/usr \
         --bindir=/usr/bin \
