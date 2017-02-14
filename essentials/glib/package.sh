@@ -3,7 +3,7 @@
 pkgname=glib
 ARCH_NAME=glib2
 majorver=2.50
-pkgver=${majorver}.2
+pkgver=${majorver}.3
 vcs=git
 gittag=${pkgver}
 extension=xz
