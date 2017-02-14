@@ -2,6 +2,7 @@
 
 pkgname=mpfr
 pkgver=3.1.5
+ARCH_VERSION=3.1.5.p2
 vcs=git-svn
 vcs_pkgname=mpfr-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags svn://scm.gforge.inria.fr/svnroot/mpfr ${vcs_pkgname}"

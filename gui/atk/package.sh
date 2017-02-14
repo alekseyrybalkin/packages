@@ -1,17 +1,11 @@
 #!/bin/sh
 
 pkgname=atk
-majorver=2.22
-pkgver=${majorver}
+pkgver=2.22
+ARCH_VERSION=2.22+1+gd57f97d
 vcs=git
 gittag=ATK_${pkgver//\./_}
-extension=xz
-major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
-check_server=1
-
-. ${KIIN_REPO}/defaults.sh
-
-majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
+srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     NOCONFIGURE=1 ./autogen.sh
