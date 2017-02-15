@@ -398,6 +398,8 @@ dbus
 chromium
 bareboard
 bazel
+protobuf
+python-protobuf
 python-wheel
 python-pip
 python-tensorflow
