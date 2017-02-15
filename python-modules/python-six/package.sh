@@ -2,9 +2,9 @@
 
 pkgname=python-six
 pkgver=1.10.0
-vcs=mercurial
+vcs=git
 vcs_pkgname=six
-hgtag=${pkgver}
+gittag=c3ec058bf8c4d6329224eac53366c8e9ce511417
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
