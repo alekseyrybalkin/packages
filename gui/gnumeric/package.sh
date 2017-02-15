@@ -9,6 +9,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git cherry-pick 798755af32c42e395d167d9d49d14cbe449d2842
+    git cherry-pick bf0abd9d3f8bf69f90eb155f0f1c93e0a2e9b2ba
     cp ../*.make .
     ./autogen.sh --prefix=/usr
     make
