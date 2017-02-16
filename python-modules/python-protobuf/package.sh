@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python-protobuf
+ACRH_NAME=protobuf
 # also see dev/protobuf
 pkgver=3.2.0
 _gtestver=1.8.0
