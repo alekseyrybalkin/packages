@@ -4,6 +4,9 @@ import re
 import sys
 import os
 import os.path
+import shutil
+
+import requests
 
 
 value_re = re.compile('".*"')
@@ -17,30 +20,15 @@ dep_tags = (
     'native.http_jar',
     'temp_workaround_http_archive',
 )
+workspace_files = ('WORKSPACE', 'tensorflow/workspace.bzl')
 
 
 class Dep:
-    def __init__(self, name=None, build_file=None, urls=None, strip_prefix=None, line_numbers=None):
-        if line_numbers is None:
-            line_numbers = {}
+    def __init__(self, name=None, urls=None):
         if urls is None:
             urls = []
         self.name = name
-        if self.name:
-            self.name = name.replace('"', '')
-        self.build_file = build_file
-        if self.build_file:
-            self.build_file = build_file.replace('"', '')
         self.urls = list(urls)
-        for i, url in enumerate(self.urls):
-            self.urls[i] = url.replace('"', '')
-        self.strip_prefix = strip_prefix
-        if self.strip_prefix:
-            self.strip_prefix = strip_prefix.replace('"', '')
-        self.line_numbers = dict(line_numbers)
-
-    def __repr__(self):
-        return 'Dep({}, {}, {}, {}, {})'.format(self.name, self.build_file, self.urls, self.strip_prefix, self.line_numbers)
 
     def get_filename(self):
         if len(self.urls) < 1:
@@ -51,6 +39,7 @@ class Dep:
         if len(self.urls) < 1:
             return None
         return self.urls[0]
+
 
 def load_deps(file_path):
     deps = []
@@ -64,15 +53,10 @@ def load_deps(file_path):
                     dep = Dep()
             if dep is not None and line.startswith('name ='):
                 dep.name = value_re.search(line).group().replace('"', '')
-                dep.line_numbers['name'] = index
-            if dep is not None and line.startswith('build_file ='):
-                dep.build_file = value_re.search(line).group().replace('"', '')
             if dep is not None and line.startswith('url ='):
                 dep.urls.append(value_re.search(line).group().replace('"', ''))
             if dep is not None and line.startswith('urls ='):
                 parsing_urls = True
-            if dep is not None and line.startswith('strip_prefix ='):
-                dep.strip_prefix = value_re.search(line).group().replace('"', '')
             if dep is not None and line.startswith(')'):
                 deps.append(dep)
                 dep = None
@@ -84,20 +68,43 @@ def load_deps(file_path):
     return deps
 
 
-def main():
-    deps = []
-    deps += load_deps('WORKSPACE')
-    deps += load_deps('tensorflow/workspace.bzl')
+def fix_urls(file_path, folder, deps):
+    tmp_file_path = file_path + '.new'
+    with open(file_path, 'r') as old, open(tmp_file_path, 'w') as new:
+        for line in old.readlines():
+            for dep in deps:
+                local_file = os.path.join(folder, dep.get_filename())
+                line = line.replace(dep.get_url(), 'file://{}'.format(local_file))
+            new.write(line)
+    shutil.move(tmp_file_path, file_path)
 
+
+def main():
+    # create a folder to store archives
     folder = sys.argv[1]
     os.makedirs(folder, exist_ok=True)
+
+    # read all dependencies from workspace files
+    deps = []
+    for f in workspace_files:
+        deps += load_deps(f)
+
+    # download missing archives
     for dep in deps:
-        if not os.path.isfile(folder + '/' + dep.get_filename()):
-            print(dep)
+        local_file = os.path.join(folder, dep.get_filename())
+        if not os.path.isfile(local_file):
+            print('Downloading {}'.format(dep.get_url()))
+            tarball = requests.get(dep.get_url()).content
+            with open(local_file, 'wb') as f:
+                f.write(tarball)
+
+    # fix urls in workspace files
+    for f in workspace_files:
+        fix_urls(f, folder, deps)
 
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print('need arg')
+        print('need folder arg')
         sys.exit(1)
     main()
