@@ -25,7 +25,8 @@ kiin_make() {
 
     export TEST_TMPDIR=/tmp/.${USER}-cache/bazel
     ./configure
-    bazel build //tensorflow/tools/pip_package:build_pip_package
+    bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-msse4.2 --copt=-msse4.1 --copt=-msse3 \
+        //tensorflow/tools/pip_package:build_pip_package
     bazel-bin/tensorflow/tools/pip_package/build_pip_package ${location}/tmp
     rm -rf ${TEST_TMPDIR}
 }
