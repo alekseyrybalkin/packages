@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=memcached
-pkgver=1.4.34
+pkgver=1.4.35
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

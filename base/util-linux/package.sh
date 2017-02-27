@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.29.1
+pkgver=2.29.2
 vcs=git
-#FIXME gittag=v${pkgver}
-gittag=9ebc8a7a882ddfd93bc3262514791a0dcaadba09
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

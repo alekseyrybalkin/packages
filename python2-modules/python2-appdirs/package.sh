@@ -2,7 +2,7 @@
 
 pkgname=python2-appdirs
 ARCH_NAME=python-appdirs
-pkgver=1.4.1
+pkgver=1.4.2
 vcs=git
 vcs_pkgname=appdirs
 gittag=${pkgver}

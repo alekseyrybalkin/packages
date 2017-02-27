@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libx11
-pkgver=1.6.4
+pkgver=1.6.5
 vcs=git
 gittag=libX11-${pkgver}
 srcdir=${location}/libX11-${pkgver}
