@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnupg
-pkgver=2.1.18
+pkgver=2.1.19
 vcs=git
 gittag=gnupg-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
