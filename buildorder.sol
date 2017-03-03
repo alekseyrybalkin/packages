@@ -403,4 +403,5 @@ python-protobuf
 python-wheel
 python-pip
 python-tensorflow
+dosfstools
 initramfs
