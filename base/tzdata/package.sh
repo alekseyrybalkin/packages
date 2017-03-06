@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=tzdata
-pkgver=2016j
+pkgver=2017a
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
@@ -27,7 +27,7 @@ kiin_install() {
     unset ZONEINFO
 
     mkdir ${pkgdir}/etc
-    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Europe/Moscow \
+    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Asia/Yekaterinburg \
         ${pkgdir}/etc/localtime
     cd ${location}
     rm -rf ${_srcdir}
