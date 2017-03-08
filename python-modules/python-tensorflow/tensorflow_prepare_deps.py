@@ -24,16 +24,19 @@ workspace_files = ('WORKSPACE', 'tensorflow/workspace.bzl')
 
 
 class Dep:
-    def __init__(self, name=None, urls=None):
+    def __init__(self, name=None, urls=None, tag=None):
         if urls is None:
             urls = []
         self.name = name
         self.urls = list(urls)
+        self.tag = tag
 
     def get_filename(self):
         if len(self.urls) < 1:
             return None
-        return self.name + '-' + filename_re.search(self.urls[0]).group(1)
+        if self.tag not in ['http_file', 'native.http_jar']:
+            return self.name + '-' + filename_re.search(self.urls[0]).group(1)
+        return filename_re.search(self.urls[0]).group(1)
 
     def get_url(self):
         if len(self.urls) < 1:
@@ -51,6 +54,7 @@ def load_deps(file_path):
             for dep_tag in dep_tags:
                 if line.startswith(dep_tag):
                     dep = Dep()
+                    dep.tag = dep_tag
             if dep is not None and line.startswith('name ='):
                 dep.name = value_re.search(line).group().replace('"', '')
             if dep is not None and line.startswith('url ='):
