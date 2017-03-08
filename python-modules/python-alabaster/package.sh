@@ -2,10 +2,12 @@
 
 pkgname=python-alabaster
 ARCH_NAME=python-sphinx-alabaster-theme
-pkgver=0.7.9
+pkgver=0.7.10
 vcs=git
 vcs_pkgname=alabaster
-gittag=${pkgver}
+# FIXME
+#gittag=${pkgver}
+gittag=6e3951f9fffc2f6ec50ab39ae7ce5e739aaa0eac
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

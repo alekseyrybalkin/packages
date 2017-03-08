@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rust
-pkgver=1.14.0
+pkgver=1.15.1
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
@@ -22,7 +22,8 @@ kiin_make() {
         --llvm-root=/usr \
         --disable-codegen-tests \
         --disable-docs \
-        --enable-local-rust
+        --enable-local-rust \
+        --disable-rustbuild
 
     export RUSTFLAGS="${RUSTFLAGS} -C link-args=-lffi"
     export CFLAGS="${CFLAGS} -fPIC -w"

@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=lzo
-pkgver=2.09
+pkgver=2.10
 extension=gz
 folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
 check_server=1
