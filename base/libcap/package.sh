@@ -12,6 +12,7 @@ check_server=1
 
 kiin_make() {
     sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
+    patch -Np1 -i ../gperf-3.1.patch
     make
 }
 
