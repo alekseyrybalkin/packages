@@ -2,8 +2,9 @@
 
 pkgname=kiin
 SKIP_ARCH_CHECK=1
+pkgver=1
 vcs=git
-pkgver=1.0.0
+gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
