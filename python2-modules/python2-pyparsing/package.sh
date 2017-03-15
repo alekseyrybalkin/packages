@@ -2,7 +2,7 @@
 
 pkgname=python2-pyparsing
 ARCH_NAME=python-pyparsing
-pkgver=2.1.10
+pkgver=2.2.0
 urls="http://downloads.sourceforge.net/pyparsing/pyparsing-${pkgver}.tar.gz"
 srctar=pyparsing-${pkgver}.tar.gz
 srcdir=${location}/pyparsing-${pkgver}

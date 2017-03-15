@@ -2,7 +2,7 @@
 
 pkgname=perl-ack
 ARCH_NAME=ack
-pkgver=2.15_03
+pkgver=2.16
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/ack-${pkgver}

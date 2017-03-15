@@ -2,7 +2,7 @@
 
 pkgname=python-psycopg
 ARCH_NAME=python-psycopg2
-pkgver=2.7
+pkgver=2.7.1
 vcs=git
 vcs_pkgname=psycopg2
 gittag=${pkgver//\./_}

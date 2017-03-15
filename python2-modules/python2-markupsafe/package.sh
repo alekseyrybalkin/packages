@@ -2,7 +2,7 @@
 
 pkgname=python2-markupsafe
 ARCH_NAME=python-markupsafe
-pkgver=0.23
+pkgver=1.0
 vcs=git
 vcs_pkgname=markupsafe
 gittag=${pkgver}

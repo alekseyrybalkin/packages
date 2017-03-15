@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-appdirs
-pkgver=1.4.2
+pkgver=1.4.3
 vcs=git
 vcs_pkgname=appdirs
 gittag=${pkgver}

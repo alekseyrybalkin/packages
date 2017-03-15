@@ -2,7 +2,7 @@
 
 pkgname=libxslt
 pkgver=1.1.29
-ARCH_VERSION=1.1.29+23+geb1030d
+ARCH_VERSION=1.1.29+42+gac341cbd
 vcs=git
 gittag=v${pkgver}
 extension=gz

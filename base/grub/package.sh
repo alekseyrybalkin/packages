@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=grub
-pkgver=2.02.rc1
+pkgver=2.02.rc2
 vcs=git
-gittag=2.02-rc1
+gittag=2.02-rc2
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {

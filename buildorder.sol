@@ -393,9 +393,6 @@ bitcoin
 macchanger
 socat
 rust
-ninja
-dbus
-chromium
 bareboard
 bazel
 protobuf
@@ -404,4 +401,7 @@ python-wheel
 python-pip
 python-tensorflow
 dosfstools
+ninja
+dbus
+chromium
 initramfs

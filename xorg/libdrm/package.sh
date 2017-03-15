@@ -7,7 +7,6 @@ gittag=libdrm-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    sed -e "/pthread-stubs/d" -i configure.ac
     ./autogen.sh --prefix=$XORG_PREFIX \
         --enable-udev \
         --disable-cairo-tests \
