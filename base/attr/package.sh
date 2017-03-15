@@ -7,6 +7,7 @@ gittag=v${pkgver}
 extension=gz
 folder="http://download.savannah.gnu.org/releases/${pkgname}/"
 check_server=1
+relmon_id=137
 
 srctar=${pkgname}-${pkgver}.src.tar.${extension}
 

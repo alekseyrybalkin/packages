@@ -7,6 +7,7 @@ gittag=v${pkgver}
 extension=xz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
+relmon_id=141
 
 . ${KIIN_REPO}/defaults.sh
 

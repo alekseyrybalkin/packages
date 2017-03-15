@@ -7,6 +7,7 @@ hgtag=${pkgver}
 extension=gz
 folder="http://mercurial.selenic.com/release/"
 check_server=1
+relmon_id=1969
 
 . ${KIIN_REPO}/defaults.sh
 
