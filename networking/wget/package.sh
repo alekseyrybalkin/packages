@@ -3,7 +3,9 @@
 pkgname=wget
 pkgver=1.19.1
 vcs=git
-gittag=v${pkgver}
+# FIXME
+#gittag=v${pkgver}
+gittag=f31b93424befc27f3f056ac4347546a2b17eceb9
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
