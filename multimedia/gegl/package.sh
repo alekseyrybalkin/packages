@@ -9,7 +9,7 @@ gittag=GEGL_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    ./autogen.sh --prefix=/usr
+    ./autogen.sh --prefix=/usr --without-librsvg
     make
 }
 
