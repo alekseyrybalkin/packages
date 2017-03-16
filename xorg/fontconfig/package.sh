@@ -10,6 +10,7 @@ srcdir=${location}/${pkgname}-${pkgver}
 kiin_make() {
     git apply ../fc-blanks.diff
     git cherry-pick 1ab5258f7c2abfafcd63a760ca08bf93591912da
+    git cherry-pick 9878b306f6c673d3d6cd9db487f67eb426cc03df
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
