@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rust
-pkgver=1.15.1
+pkgver=1.16.0
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
