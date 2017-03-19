@@ -3,7 +3,7 @@
 pkgname=transmission
 pkgver=2.92
 vcs=git
-vcs_clone="git clone git@github.com:transmission/transmission.git"
+vcs_clone="git clone https://github.com/transmission/transmission.git"
 gittag=${pkgver}
 extension=xz
 folder="https://download.transmissionbt.com/files/"

@@ -2,7 +2,7 @@
 
 pkgname=lapack
 vcs=git
-vcs_clone="git clone git@github.com:Reference-LAPACK/lapack.git"
+vcs_clone="git clone https://github.com/Reference-LAPACK/lapack.git"
 
 pkgver=3.7.0
 gittag=v${pkgver}
