@@ -2,8 +2,8 @@
 
 pkgname=dhcpcd
 pkgver=6.11.5
-vcs=fossil
-fossiltag=dhcpcd-${pkgver}
+vcs=git
+gittag=dhcpcd-${pkgver}
 extension=xz
 folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
