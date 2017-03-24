@@ -320,6 +320,8 @@ lzo
 openvpn
 postgresql
 nginx
+glm
+slop
 maim
 memcached
 libgsf

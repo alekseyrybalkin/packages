@@ -1,13 +1,13 @@
 #!/bin/sh
 
-pkgname=maim
-pkgver=4.4.62
+pkgname=slop
+pkgver=5.3.37
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
-    cmake -DCMAKE_INSTALL_PREFIX=/usr .
+    cmake -DCMAKE_INSTALL_PREFIX=/usr . .
     make
 }
 
