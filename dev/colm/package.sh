@@ -6,6 +6,7 @@ pkgver=0.13.0.3
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=12622
 
 kiin_make() {
     ./autogen.sh

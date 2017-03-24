@@ -8,6 +8,7 @@ gittag=v${pkgver}
 extension=gz
 folder="http://www.cmake.org/files/v${majorver}/"
 check_server=1
+relmon_id=306
 
 . ${KIIN_REPO}/defaults.sh
 

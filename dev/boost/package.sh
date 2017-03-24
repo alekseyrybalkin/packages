@@ -8,6 +8,7 @@ _pkgver=${pkgver//\./_}
 urls="http://downloads.sourceforge.net/boost/boost_${_pkgver}.tar.bz2"
 srctar=${pkgname}_${_pkgver}.tar.bz2
 srcdir=${location}/${pkgname}_${_pkgver}
+relmon_id=6845
 
 kiin_make() {
     cd libs

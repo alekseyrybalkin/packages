@@ -7,6 +7,7 @@ bzrtag=bzr-${pkgver}
 urls="http://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.tar.gz"
 srctar=bzr-${pkgver}.tar.gz
 srcdir=${location}/bzr-${pkgver}
+relmon_id=238
 
 kiin_make() {
     sed 's|man/man1|share/man/man1|' -i setup.py

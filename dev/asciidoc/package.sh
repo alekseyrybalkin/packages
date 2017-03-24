@@ -5,6 +5,7 @@ pkgver=8.6.9
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=13262
 
 kiin_make() {
     for file in asciidocapi.py a2x.py asciidoc.py filters/music/music2png.py filters/latex/latex2png.py \

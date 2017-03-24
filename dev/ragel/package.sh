@@ -5,6 +5,7 @@ pkgver=7.0.0.6
 vcs=git
 gittag=ragel-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+#relmon_id=12105
 
 kiin_make() {
     export CXXFLAGS="${CXXFLAGS} -Wno-narrowing"
