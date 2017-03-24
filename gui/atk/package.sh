@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=atk
-pkgver=2.22
-ARCH_VERSION=2.22+1+gd57f97d
+pkgver=2.24.0
 vcs=git
 gittag=ATK_${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}

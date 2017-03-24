@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=gobject-introspection
-pkgver=1.50.0
-ARCH_VERSION=1.50.0+1+gb8d92b0
+pkgver=1.52.0
 vcs=git
 git_repo=git://git.gnome.org/gobject-introspection
 gittag=${pkgver}

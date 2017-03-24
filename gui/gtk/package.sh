@@ -3,7 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.10
+pkgver=${majorver}.11
 vcs=git
 git_repo=git://git.gnome.org/gtk+
 vcs_pkgname=gtk+
