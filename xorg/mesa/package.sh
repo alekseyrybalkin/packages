@@ -2,7 +2,7 @@
 
 pkgname=mesa
 majorver=17.0
-pkgver=${majorver}.1
+pkgver=${majorver}.2
 vcs=git
 gittag=mesa-${pkgver}
 srcdir=${location}/mesa-${pkgver}
