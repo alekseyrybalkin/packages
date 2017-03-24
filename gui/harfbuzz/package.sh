@@ -7,6 +7,7 @@ gittag=${pkgver}
 extension=bz2
 folder="http://www.freedesktop.org/software/${pkgname}/release/"
 check_server=1
+relmon_id=1299
 
 . ${KIIN_REPO}/defaults.sh
 
