@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-numpy
-pkgver=1.12.0
+pkgver=1.12.1
 vcs=git
 vcs_pkgname=numpy
 gittag=v${pkgver}

@@ -2,6 +2,7 @@
 
 pkgname=binutils
 pkgver=2.28
+ARCH_VERSION=${pkgver}.0
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}

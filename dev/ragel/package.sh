@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ragel
-pkgver=7.0.0.6
+pkgver=7.0.0.9
 vcs=git
 gittag=ragel-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}

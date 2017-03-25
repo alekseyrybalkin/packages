@@ -4,7 +4,7 @@ pkgname=ntp
 # pkgver is too complex to parse, we check server versions instead
 SKIP_ARCH_CHECK=1
 majorver=4.2
-pkgver=${majorver}.8p9
+pkgver=${majorver}.8p10
 #vcs=git
 #gittag=0e6dbb8f4f1f6fdb61180f2765fe087d23c8a7c6
 extension=gz
