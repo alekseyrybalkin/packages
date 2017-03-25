@@ -5,6 +5,7 @@ pkgver=0.9.8.4
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}
+relmon_id=1181
 
 kiin_make() {
     mkdir build

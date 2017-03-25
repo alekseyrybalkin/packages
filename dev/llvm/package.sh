@@ -7,6 +7,7 @@ pkgver=4.0.0
 vcs=git
 gittag=4423e351176a92975739dd4ea43c2ff5877236ae
 srcdir=${location}/${pkgname}-${pkgver}.src
+relmon_id=1830
 
 kiin_make() {
     git clone -s -n ${SOURCES_HOME}/clang tools/clang

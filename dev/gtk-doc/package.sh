@@ -8,6 +8,7 @@ gittag=GTK_DOC_${pkgver//\./_}
 urls="http://ftp.gnome.org/pub/gnome/sources/gtk-doc/${pkgver}/gtk-doc-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=13140
 
 kiin_make() {
     ./autogen.sh --prefix=/usr

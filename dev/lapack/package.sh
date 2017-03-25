@@ -8,6 +8,7 @@ pkgver=3.7.0
 gittag=v${pkgver}
 
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=1534
 
 kiin_make() {
     sed -e 's|/CMAKE/|/cmake/|' -i CBLAS/CMakeLists.txt

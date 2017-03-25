@@ -5,6 +5,7 @@ pkgver=3.2.1
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+#relmon_id=1180
 
 kiin_make() {
     mkdir build
