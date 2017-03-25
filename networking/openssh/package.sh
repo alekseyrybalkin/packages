@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=openssh
-pkgver=7.4p1
+pkgver=7.5p1
 vcs=git
-gittag=V_7_4_P1
+# FIXME
+#gittag=V_7_4_P1
+gittag=d38f05dbdd291212bc95ea80648b72b7177e9f4e
 extension=gz
 folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 check_server=1

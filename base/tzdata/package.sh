@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=tzdata
-pkgver=2017a
+pkgver=2017b
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
