@@ -2,9 +2,11 @@
 
 pkgname=linux-api-headers
 vcs=git
-vcs_pkgname=linux-stable
-pkgver=4.10.6
-gittag=v${pkgver}
+vcs_pkgname=linux
+pkgver=4.11.rc4
+# FIXME
+gittag=v4.11-rc4
+#gittag=v${pkgver}
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
