@@ -11,6 +11,9 @@ gittag=v4.11-rc4
 srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
+    git remote add custom ${SOURCES_HOME}/linux-${pkgver}
+    git fetch custom
+    git merge custom/eudyptula-suffix
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make
@@ -25,10 +28,9 @@ kiin_install() {
     mv ${pkgdir}/lib/modules ${pkgdir}/usr/lib/
     rmdir ${pkgdir}/lib
 
+    modules_dir=`ls ${pkgdir}/usr/lib/modules`
     for link in build source; do
-        # FIXME
-        rm ${pkgdir}/usr/lib/modules/4.11.0-rc4-kiin/${link}
-        # FIXME
-        ln -sv ${SOURCES_HOME}/${vcs_pkgname}-${pkgver} ${pkgdir}/usr/lib/modules/4.11.0-rc4-kiin/${link}
+        rm ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
+        ln -sv ${SOURCES_HOME}/linux-${pkgver} ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
     done
 }
