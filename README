@@ -1,0 +1,5 @@
+kiin-repo - package repository for kiin GNU/Linux
+
+git clone git://rybalkin.org/kiin-repo
+
+License: GNU GPLv3 or later (see COPYING)
