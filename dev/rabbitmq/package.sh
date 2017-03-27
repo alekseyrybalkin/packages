@@ -2,7 +2,7 @@
 
 pkgname=rabbitmq
 KIIN_NON_FREE=1
-pkgver=3.6.7
+pkgver=3.6.8
 #vcs=git
 #vcs_pkgname=rabbitmq-server-release
 #gittag=rabbitmq_v${pkgver//\./_}

@@ -3,7 +3,7 @@
 pkgname=bazel
 SKIP_ARCH_CHECK=1
 KIIN_NO_STRIPPING=1
-pkgver=0.4.4
+pkgver=0.4.5
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
