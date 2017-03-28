@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=firefox
-_pkgbase=52.0.1
+_pkgbase=52.0.2
 pkgver=${_pkgbase}
 vcs=mercurial
 vcs_pkgname=firefox-release
