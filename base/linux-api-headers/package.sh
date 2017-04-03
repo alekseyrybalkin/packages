@@ -3,13 +3,16 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
-pkgver=4.11.rc4
+pkgver=4.11.rc5
 # FIXME
-gittag=v4.11-rc4
+gittag=v4.11-rc5
 #gittag=v${pkgver}
 srcdir=${location}/linux-${pkgver}
 
 kiin_make() {
+    git remote add custom ${SOURCES_HOME}/linux-${pkgver}
+    git fetch custom
+    git merge custom/eudyptula-suffix
     make mrproper
     make headers_check
 }
