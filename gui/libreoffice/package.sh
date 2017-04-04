@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=libreoffice
+ARCH_NAME=libreoffice-fresh
 majorver=5.3.2
 pkgver=${majorver}.2
 vcs=git

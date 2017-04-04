@@ -5,7 +5,8 @@ pkgver=3.2.1
 vcs=git
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
-#relmon_id=1180
+relmon_id=1180
+relmon_sed='s/\.bin\.WIN64//g'
 
 kiin_make() {
     mkdir build

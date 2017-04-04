@@ -5,8 +5,8 @@ pkgver=1.7.2
 vcs=git
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
-#relmon_id=2089
-#relmon_sed='s/v//g'
+relmon_id=2089
+relmon_sed='s/v//g'
 
 kiin_make() {
     python2 configure.py --bootstrap
