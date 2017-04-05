@@ -5,6 +5,7 @@ pkgver=1.1.5
 vcs=git
 gittag=libXt-${pkgver}
 srcdir=${location}/libXt-${pkgver}
+relmon_id=1793
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG \

@@ -5,6 +5,7 @@ pkgver=1.1.3
 vcs=git
 gittag=libfontenc-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=1613
 
 kiin_make() {
     ./autogen.sh ${XORG_CONFIG}

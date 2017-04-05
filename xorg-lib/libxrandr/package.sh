@@ -5,6 +5,7 @@ pkgver=1.5.1
 vcs=git
 gittag=libXrandr-${pkgver}
 srcdir=${location}/libXrandr-${pkgver}
+relmon_id=1788
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR

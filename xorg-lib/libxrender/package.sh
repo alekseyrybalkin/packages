@@ -5,6 +5,7 @@ pkgver=0.9.10
 vcs=git
 gittag=libXrender-${pkgver}
 srcdir=${location}/libXrender-${pkgver}
+relmon_id=1789
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
