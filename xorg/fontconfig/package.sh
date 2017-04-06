@@ -6,6 +6,7 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=827
 
 kiin_make() {
     git apply ../fc-blanks.diff

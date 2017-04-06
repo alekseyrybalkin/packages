@@ -5,6 +5,7 @@ pkgver=0.34.0
 vcs=git
 gittag=pixman-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=3648
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static --disable-gtk --libdir=$LIBDIR

@@ -6,6 +6,7 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/util-keysyms
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=5168
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/xcb-util-common-m4 m4

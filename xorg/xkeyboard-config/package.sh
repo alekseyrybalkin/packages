@@ -6,6 +6,7 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xkeyboard-config
 gittag=${pkgname}-${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=5191
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG --with-xkb-rules-symlink=xorg

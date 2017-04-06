@@ -9,6 +9,7 @@ gittag=origin/tags/FG_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=846
 
 kiin_make() {
     mkdir build

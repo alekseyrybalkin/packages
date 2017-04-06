@@ -6,6 +6,7 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/libxcb
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=1767
 
 kiin_make() {
     sed -e "s/pthread-stubs//" -i configure.ac
