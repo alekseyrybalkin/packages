@@ -6,6 +6,8 @@ vcs=git
 vcs_pkgname=setuptools_scm
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+# release candidates
+#relmon_id=7874
 
 kiin_make() {
     python setup.py build

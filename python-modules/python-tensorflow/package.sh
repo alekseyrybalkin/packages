@@ -7,6 +7,8 @@ vcs=git
 vcs_pkgname=tensorflow
 gittag=v${pkgver//_/-}
 srcdir=${location}/${pkgname}-${pkgver}
+# release candidates
+#relmon_id=13634
 
 kiin_make() {
     python ../tensorflow_prepare_deps.py ${KIIN_HOME}/tarballs/tensorflow

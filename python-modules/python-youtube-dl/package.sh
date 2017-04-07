@@ -9,6 +9,7 @@ gittag=${pkgver}
 urls="http://youtube-dl.org/downloads/${pkgver}/youtube-dl-${pkgver}.tar.gz"
 srctar=youtube-dl-${pkgver}.tar.gz
 srcdir=${location}/youtube-dl
+relmon_id=5292
 
 kiin_make() {
     python setup.py build

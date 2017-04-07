@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=snowball_py
 gittag=04f57de7f961bbec80efde2fe933fedf5e56ea71
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=7853
 
 kiin_make() {
     python setup.py build

@@ -6,6 +6,8 @@ vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=4768
+relmon_sed='s/v//g'
 
 kiin_make() {
     python setup.py config_fc --fcompiler=gnu95 build
