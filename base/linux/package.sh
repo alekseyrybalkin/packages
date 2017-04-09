@@ -4,9 +4,9 @@ pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.11.rc5
+pkgver=4.11.rc6
 # FIXME
-gittag=v4.11-rc5
+gittag=v4.11-rc6
 #gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
 
