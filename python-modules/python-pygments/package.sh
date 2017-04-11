@@ -6,6 +6,7 @@ vcs=mercurial
 vcs_pkgname=pygments
 hgtag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=3986
 
 kiin_make() {
     python setup.py build

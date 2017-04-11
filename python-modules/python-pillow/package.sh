@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=pillow
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=7974
 
 kiin_make() {
     python setup.py build

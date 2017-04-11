@@ -8,6 +8,7 @@ gittag=release_${pkgver}
 urls="https://pypi.python.org/packages/ad/30/5ab2298c902ac92fdf649cc07d1b7d491a241c5cac8be84dd84464db7d8b/pytz-${pkgver}.tar.gz"
 srctar=pytz-${pkgver}.tar.gz
 srcdir=${location}/pytz-${pkgver}
+relmon_id=6537
 
 kiin_make() {
     git apply ../2016.6.1.patch

@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=requests
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=4004
 
 kiin_make() {
     python setup.py build

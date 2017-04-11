@@ -8,6 +8,7 @@ gittag=${pkgver}
 urls="http://pypi.python.org/packages/source/J/Jinja2/Jinja2-${pkgver}.tar.gz"
 srctar=Jinja2-${pkgver}.tar.gz
 srcdir=${location}/Jinja2-${pkgver}
+relmon_id=3894
 
 kiin_make() {
     python setup.py build

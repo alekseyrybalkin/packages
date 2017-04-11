@@ -7,6 +7,7 @@ vcs=git
 vcs_pkgname=psycopg2
 gittag=${pkgver//\./_}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=3979
 
 kiin_make() {
     python setup.py build

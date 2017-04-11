@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=pytest
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=3765
 
 kiin_make() {
     python setup.py build

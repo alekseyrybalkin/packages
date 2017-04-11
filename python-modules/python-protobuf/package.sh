@@ -9,6 +9,7 @@ vcs=git
 vcs_pkgname=protobuf
 gittag=v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=3715
 
 kiin_make() {
     export CC=/usr/bin/clang CXX=/usr/bin/clang++

@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=pycparser
 gittag=release_v${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=8175
 
 kiin_make() {
     python setup.py build

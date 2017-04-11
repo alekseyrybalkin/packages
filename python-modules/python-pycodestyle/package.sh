@@ -6,6 +6,7 @@ vcs=git
 vcs_pkgname=pycodestyle
 gittag=${pkgver}
 srcdir=${location}/${pkgname}-${pkgver}
+relmon_id=11773
 
 kiin_make() {
     python setup.py build
