@@ -8,6 +8,7 @@ vcs_pkgname=markupsafe
 gittag=${pkgver}
 urls="http://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${pkgver}.tar.gz"
 srctar=MarkupSafe-${pkgver}.tar.gz
+relmon_id=3918
 
 kiin_make() {
     python2 setup.py build

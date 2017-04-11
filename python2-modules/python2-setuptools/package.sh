@@ -8,6 +8,7 @@ vcs_pkgname=setuptools
 gittag=v${pkgver}
 urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.tar.gz"
 srctar=setuptools-${pkgver}.tar.gz
+relmon_id=4021
 
 kiin_make() {
     sed -i -e 's/launcher manifest/launcher_manifest/g' setuptools/command/easy_install.py

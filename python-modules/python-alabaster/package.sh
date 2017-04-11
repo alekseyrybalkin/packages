@@ -8,6 +8,7 @@ vcs_pkgname=alabaster
 # FIXME
 #gittag=${pkgver}
 gittag=6e3951f9fffc2f6ec50ab39ae7ce5e739aaa0eac
+relmon_id=7274
 
 kiin_make() {
     python setup.py build

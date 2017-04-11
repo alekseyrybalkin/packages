@@ -6,6 +6,7 @@ pkgver=19.7.1
 vcs=git
 vcs_pkgname=gunicorn
 gittag=${pkgver}
+relmon_id=3882
 
 kiin_make() {
     python setup.py build

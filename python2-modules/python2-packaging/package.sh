@@ -6,6 +6,7 @@ pkgver=16.8
 vcs=git
 vcs_pkgname=packaging
 gittag=${pkgver}
+relmon_id=11718
 
 kiin_make() {
   python2 setup.py build

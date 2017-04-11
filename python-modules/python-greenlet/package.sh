@@ -5,6 +5,7 @@ pkgver=0.4.12
 vcs=git
 vcs_pkgname=greenlet
 gittag=${pkgver}
+relmon_id=6870
 
 kiin_make() {
     python setup.py build

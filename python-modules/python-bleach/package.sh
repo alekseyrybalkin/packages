@@ -6,6 +6,7 @@ pkgver=2.0
 vcs=git
 vcs_pkgname=bleach
 gittag=v${pkgver}
+relmon_id=11532
 
 kiin_make() {
     python setup.py build

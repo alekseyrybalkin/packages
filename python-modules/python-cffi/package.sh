@@ -6,6 +6,7 @@ vcs=mercurial
 vcs_pkgname=cffi
 # FIXME
 hgtag=486d919c0b87
+relmon_id=5536
 
 kiin_make() {
     python setup.py build

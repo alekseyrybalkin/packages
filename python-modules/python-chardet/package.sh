@@ -5,6 +5,7 @@ pkgver=2.3.0
 vcs=git
 vcs_pkgname=chardet
 gittag=${pkgver}
+relmon_id=9523
 
 kiin_make() {
     python setup.py build
