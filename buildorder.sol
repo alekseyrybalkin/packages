@@ -327,7 +327,7 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 evince
-ntp
+ntpsec
 fluxbox
 tor
 python2-markupsafe
