@@ -4,7 +4,6 @@ pkgname=inputproto
 pkgver=2.3.2
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=13508
 
 kiin_make() {

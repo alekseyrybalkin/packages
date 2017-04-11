@@ -6,7 +6,6 @@ pkgver=2.0
 vcs=git
 vcs_pkgname=bleach
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

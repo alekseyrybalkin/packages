@@ -6,7 +6,6 @@ pkgver=0.25.2
 vcs=git
 vcs_pkgname=cython
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python2 setup.py build

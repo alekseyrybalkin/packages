@@ -4,7 +4,6 @@ pkgname=findutils
 pkgver=4.6.0
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1

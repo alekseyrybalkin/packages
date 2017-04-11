@@ -4,7 +4,6 @@ pkgname=libxau
 pkgver=1.0.8
 vcs=git
 gittag=libXau-${pkgver}
-srcdir=${location}/libXau-${pkgver}
 relmon_id=1765
 
 kiin_make() {

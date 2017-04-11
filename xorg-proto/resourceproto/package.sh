@@ -4,7 +4,6 @@ pkgname=resourceproto
 pkgver=1.2.0
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

@@ -5,7 +5,6 @@ pkgver=0.53
 ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=poppler-${pkgver}
-srcdir=${location}/poppler-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr \

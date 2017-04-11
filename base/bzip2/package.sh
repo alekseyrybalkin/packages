@@ -5,7 +5,6 @@ pkgname=bzip2
 pkgver=1.0.6
 urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     patch -Np1 -i ../bzip2-install_docs.patch

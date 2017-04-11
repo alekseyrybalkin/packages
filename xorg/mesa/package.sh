@@ -5,7 +5,6 @@ majorver=17.0
 pkgver=${majorver}.2
 vcs=git
 gittag=mesa-${pkgver}
-srcdir=${location}/mesa-${pkgver}
 relmon_id=1970
 
 kiin_make() {

@@ -6,7 +6,6 @@ pkgver=16.8
 vcs=git
 vcs_pkgname=packaging
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   python2 setup.py build

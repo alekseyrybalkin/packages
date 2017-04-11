@@ -5,7 +5,6 @@ pkgver=2.20
 vcs=git
 git_repo=git://anongit.freedesktop.org/xkeyboard-config
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=5191
 
 kiin_make() {

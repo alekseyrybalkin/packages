@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver}
 urls="http://downloads.sourceforge.net/enlightenment/imlib2-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static

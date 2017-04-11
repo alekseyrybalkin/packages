@@ -5,7 +5,6 @@ pkgver=9.0.1
 vcs=git
 vcs_pkgname=pip
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=6529
 
 kiin_make() {

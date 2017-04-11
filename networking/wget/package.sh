@@ -6,7 +6,6 @@ vcs=git
 # FIXME
 #gittag=v${pkgver}
 gittag=f31b93424befc27f3f056ac4347546a2b17eceb9
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

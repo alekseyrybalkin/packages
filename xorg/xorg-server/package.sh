@@ -4,7 +4,6 @@ pkgname=xorg-server
 pkgver=1.19.3
 vcs=git
 gittag=xorg-server-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=5250
 
 kiin_make() {

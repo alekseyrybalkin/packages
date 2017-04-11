@@ -5,7 +5,6 @@ pkgver=0.4.0
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/util-keysyms
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=5168
 
 kiin_make() {

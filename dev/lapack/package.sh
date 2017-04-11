@@ -7,7 +7,6 @@ vcs_clone="git clone https://github.com/Reference-LAPACK/lapack.git"
 pkgver=3.7.0
 gittag=v${pkgver}
 
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=1534
 
 kiin_make() {

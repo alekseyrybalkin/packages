@@ -4,7 +4,6 @@ pkgname=libpng
 pkgver=1.6.29
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 # beta versions
 #relmon_id=1705
 

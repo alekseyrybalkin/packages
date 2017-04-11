@@ -4,7 +4,6 @@ pkgname=libxcomposite
 pkgver=0.4.4
 vcs=git
 gittag=libXcomposite-${pkgver}
-srcdir=${location}/libXcomposite-${pkgver}
 relmon_id=1769
 
 kiin_make() {

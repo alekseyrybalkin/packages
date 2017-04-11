@@ -5,7 +5,6 @@ pkgver=1.15.0
 vcs=git
 vcs_pkgname=setuptools_scm
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 # release candidates
 #relmon_id=7874
 

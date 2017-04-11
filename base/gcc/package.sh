@@ -9,7 +9,6 @@ gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     # do not run fixincludes

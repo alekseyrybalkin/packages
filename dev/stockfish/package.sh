@@ -5,7 +5,6 @@ SKIP_ARCH_CHECK=1
 pkgver=8
 vcs=git
 gittag=sf_${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cd src

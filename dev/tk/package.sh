@@ -4,7 +4,6 @@ pkgname=tk
 pkgver=8.6.6
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cd unix

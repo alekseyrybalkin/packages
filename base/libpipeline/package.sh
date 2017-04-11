@@ -6,7 +6,6 @@ vcs=git
 gittag=${pkgver}
 urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

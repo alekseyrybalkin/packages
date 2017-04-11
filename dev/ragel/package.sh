@@ -4,7 +4,6 @@ pkgname=ragel
 pkgver=7.0.0.9
 vcs=git
 gittag=ragel-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=12105
 relmon_sed='s/ragel-//g;s/\.tar\.gz//g'
 

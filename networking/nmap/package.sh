@@ -6,7 +6,6 @@ vcs=git-svn
 vcs_pkgname=nmap-git-svn
 vcs_clone="git svn clone -Tnmap -tnmap-releases https://svn.nmap.org/ ${vcs_pkgname}"
 gittag=origin/tags/nmap-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./configure --prefix=/usr

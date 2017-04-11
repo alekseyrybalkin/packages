@@ -6,7 +6,6 @@ vcs=git
 gittag=Release-${pkgver//\./-}
 urls="http://freedesktop.org/~hadess/shared-mime-info-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver//\./_}
 urls="https://www.kernel.org/pub/linux/utils/${pkgname}/v1.6/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr \

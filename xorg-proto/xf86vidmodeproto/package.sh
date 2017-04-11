@@ -4,7 +4,6 @@ pkgname=xf86vidmodeproto
 pkgver=2.3.1
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

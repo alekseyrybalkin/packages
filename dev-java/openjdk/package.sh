@@ -14,7 +14,6 @@ hgtag=${_repo_ver}
 _url_src="http://hg.openjdk.java.net/jdk8u/jdk8u"
 urls="${_url_src}/archive/${_repo_ver}.tar.bz2"
 srctar=${_repo_ver}.tar.bz2
-srcdir=${location}/jdk8u-${_repo_ver}
 
 kiin_make() {
     MAKEFLAGS=

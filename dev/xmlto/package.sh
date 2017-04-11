@@ -8,7 +8,6 @@ vcs_clone="git svn clone -Thttp://svn.fedorahosted.org/svn/xmlto ${vcs_pkgname}"
 svnrev=85
 urls="https://fedorahosted.org/releases/x/m/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     autoreconf -fi

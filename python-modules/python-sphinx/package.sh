@@ -5,7 +5,6 @@ pkgver=1.5.3
 vcs=git
 vcs_pkgname=sphinx
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=4031
 
 kiin_make() {

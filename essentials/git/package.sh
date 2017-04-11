@@ -4,7 +4,6 @@ pkgname=git
 pkgver=2.12.2
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     make configure

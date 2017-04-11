@@ -8,7 +8,6 @@ vcs_clone="git svn clone -Ttrunk -ttags http://svn.code.sf.net/p/freeglut/code/ 
 gittag=origin/tags/FG_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=846
 
 kiin_make() {

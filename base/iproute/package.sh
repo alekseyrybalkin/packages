@@ -5,7 +5,6 @@ ARCH_NAME=iproute2
 vcs=git
 pkgver=4.10.0
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i /ARPD/d Makefile

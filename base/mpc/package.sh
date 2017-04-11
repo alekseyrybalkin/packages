@@ -5,7 +5,6 @@ ARCH_NAME=libmpc
 pkgver=1.0.3
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     autoreconf -fi

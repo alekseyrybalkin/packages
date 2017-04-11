@@ -4,7 +4,6 @@ pkgname=kiin-configs
 SKIP_ARCH_CHECK=1
 vcs=git
 pkgver=1
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     rm -rf .git

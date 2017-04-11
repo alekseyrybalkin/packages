@@ -9,7 +9,6 @@ vcs_clone="git svn clone -Ttrunk -ttags svn://svn.savannah.nongnu.org/sysvinit/s
 svnrev=174
 urls="http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     make -C src

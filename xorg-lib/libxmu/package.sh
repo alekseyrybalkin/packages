@@ -4,7 +4,6 @@ pkgname=libxmu
 pkgver=1.1.2
 vcs=git
 gittag=libXmu-${pkgver}
-srcdir=${location}/libXmu-${pkgver}
 relmon_id=1785
 
 kiin_make() {

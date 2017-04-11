@@ -10,7 +10,6 @@ gittag=4c126e1ae5180758b23b010934ed6d3b3ef93b0e
 kotlinver=1.0.5-release-IJ2016.3-1
 
 extra_urls="https://plugins.jetbrains.com/files/6954/30100/kotlin-plugin-${kotlinver}.zip https://plugins.jetbrains.com/files/631/30455/python-community-163.125.zip"
-srcdir=${location}/idea-IC-${pkgver}
 
 kiin_make() {
     export PATH=${PATH}:/usr/lib/openjdk/bin:/usr/lib/apache-ant/bin

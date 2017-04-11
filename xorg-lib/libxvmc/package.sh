@@ -4,7 +4,6 @@ pkgname=libxvmc
 pkgver=1.0.10
 vcs=git
 gittag=libXvMC-${pkgver}
-srcdir=${location}/libXvMC-${pkgver}
 relmon_id=1796
 
 kiin_make() {

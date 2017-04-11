@@ -4,7 +4,6 @@ pkgname=libxfixes
 pkgver=5.0.3
 vcs=git
 gittag=libXfixes-${pkgver}
-srcdir=${location}/libXfixes-${pkgver}
 relmon_id=1775
 
 kiin_make() {

@@ -7,7 +7,6 @@ vcs=mercurial
 hgtag=release-${pkgver}
 urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./auto/configure --prefix=/etc/nginx \

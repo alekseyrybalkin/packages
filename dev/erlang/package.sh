@@ -5,7 +5,6 @@ pkgver=19.3
 vcs=git
 vcs_pkgname=otp
 gittag=OTP-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=707
 
 kiin_make() {

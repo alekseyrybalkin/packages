@@ -5,7 +5,6 @@ pkgname=icon-naming-utils
 pkgver=0.8.90
 urls="http://tango.freedesktop.org/releases/icon-naming-utils-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./configure --prefix=/usr \

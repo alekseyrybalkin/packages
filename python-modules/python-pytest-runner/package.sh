@@ -5,7 +5,6 @@ pkgver=2.11.1
 vcs=git
 vcs_pkgname=pytest-runner
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=11466
 
 kiin_make() {

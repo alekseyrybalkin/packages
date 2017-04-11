@@ -4,7 +4,6 @@ pkgname=python-webencodings
 pkgver=0.5
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

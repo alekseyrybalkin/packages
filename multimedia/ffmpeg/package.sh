@@ -4,7 +4,6 @@ pkgname=ffmpeg
 pkgver=3.2.4
 vcs=git
 gittag=n${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i 's/-lflite"/-lflite -lasound"/' configure

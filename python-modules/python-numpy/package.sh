@@ -5,7 +5,6 @@ pkgver=1.12.1
 vcs=git
 vcs_pkgname=numpy
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=2509
 
 kiin_make() {

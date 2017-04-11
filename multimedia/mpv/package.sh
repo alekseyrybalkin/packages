@@ -4,7 +4,6 @@ pkgname=mpv
 vcs=git
 pkgver=0.24.0
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cp -r ${SOURCES_HOME}/waf/{waf-light,waflib} ./

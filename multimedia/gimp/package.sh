@@ -5,7 +5,6 @@ pkgver=2.8.20
 vcs=git
 git_repo=git://git.gnome.org/gimp
 gittag=GIMP_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i '/gegl/s/2/3/' configure.ac

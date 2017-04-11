@@ -6,7 +6,6 @@ pkgver=${_majorver}.2
 vcs=mercurial
 vcs_pkgname=gmp-${_majorver}
 hgtag=0f37e9787d28
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./.bootstrap

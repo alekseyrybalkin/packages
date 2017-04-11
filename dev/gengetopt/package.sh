@@ -4,7 +4,6 @@ pkgname=gengetopt
 pkgver=2.22.6
 vcs=git
 gittag=rel_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=892
 
 kiin_make() {

@@ -4,7 +4,6 @@ pkgname=freetype2
 pkgver=2.7.1
 vcs=git
 gittag=VER-${pkgver//\./-}
-srcdir=${location}/freetype-${pkgver}
 relmon_id=854
 
 kiin_make() {

@@ -5,7 +5,6 @@ pkgver=1.12.34
 vcs=git
 git_repo=git://git.gnome.org/gnumeric
 gittag=GNUMERIC_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cp ../*.make .

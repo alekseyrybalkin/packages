@@ -4,7 +4,6 @@ pkgname=libxxf86vm
 pkgver=1.1.4
 vcs=git
 gittag=libXxf86vm-${pkgver}
-srcdir=${location}/libXxf86vm-${pkgver}
 relmon_id=1799
 
 kiin_make() {

@@ -5,7 +5,6 @@ pkgver=1.12
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/proto
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=13646
 
 kiin_make() {

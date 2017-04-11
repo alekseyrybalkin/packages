@@ -5,7 +5,6 @@ pkgver=1.8
 ARCH_VERSION=${pkgver}.0
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     autoreconf -fi

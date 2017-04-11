@@ -4,7 +4,6 @@ pkgname=dri3proto
 pkgver=1.0
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

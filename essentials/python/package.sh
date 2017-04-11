@@ -5,7 +5,6 @@ _pybasever=3.6
 pkgver=${_pybasever}.1
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/Python-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

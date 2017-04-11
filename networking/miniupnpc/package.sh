@@ -7,7 +7,6 @@ vcs_pkgname=miniupnp
 gittag=miniupnpc_${pkgver//\./_}
 urls="http://miniupnp.free.fr/files/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cd miniupnpc

@@ -6,7 +6,6 @@ pkgver=1.3.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/font/util
 gittag=${_pkgname}-${pkgver}
-srcdir=${location}/${_pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

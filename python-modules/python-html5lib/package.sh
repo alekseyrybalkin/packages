@@ -5,7 +5,6 @@ pkgver=0.999999999
 vcs=git
 vcs_pkgname=html5lib-python
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 # beta versions
 #relmon_id=8053
 

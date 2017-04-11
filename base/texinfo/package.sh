@@ -8,7 +8,6 @@ vcs_clone="git svn clone -Ttrunk -ttags svn://svn.savannah.gnu.org/texinfo/ ${vc
 gittag=origin/tags/texinfo_${pkgver//\./_}
 urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

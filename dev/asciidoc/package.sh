@@ -4,7 +4,6 @@ pkgname=asciidoc
 pkgver=8.6.9
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=13262
 
 kiin_make() {

@@ -6,7 +6,6 @@ vcs=git
 gittag=e9a1fd561632f7c9b7d2f58c95d374f8c9ab24f4
 urls="http://downloads.xiph.org/releases/vorbis/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

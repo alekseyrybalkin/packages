@@ -8,7 +8,6 @@ _gtestver=1.8.0
 vcs=git
 vcs_pkgname=protobuf
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=3715
 
 kiin_make() {

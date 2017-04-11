@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver}
 urls="http://www.tortall.net/projects/yasm/releases/yasm-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

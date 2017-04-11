@@ -6,7 +6,6 @@ vcs=git-svn
 vcs_pkgname=icu-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags http://source.icu-project.org/repos/icu ${vcs_pkgname}"
 gittag=origin/tags/release-${pkgver//\./-}
-srcdir=${location}/icu-${pkgver}
 
 kiin_make() {
     cd icu4c/source

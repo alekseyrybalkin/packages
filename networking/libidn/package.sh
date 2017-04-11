@@ -6,7 +6,6 @@ vcs=git
 gittag=libidn-${pkgver//\./-}
 urls="http://ftp.gnu.org/gnu/libidn/libidn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

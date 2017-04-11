@@ -6,7 +6,6 @@ vcs=git
 gittag=RELEASE_${pkgver//\./-}
 urls="http://downloads.sourceforge.net/fetchmail/fetchmail-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

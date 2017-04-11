@@ -5,7 +5,6 @@ pkgver=0.4.12
 vcs=git
 vcs_pkgname=greenlet
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

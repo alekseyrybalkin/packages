@@ -8,7 +8,6 @@ pkgver=4.11.rc6
 # FIXME
 gittag=v4.11-rc6
 #gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git remote add custom ${SOURCES_HOME}/linux-${pkgver}

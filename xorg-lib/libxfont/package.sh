@@ -4,7 +4,6 @@ pkgname=libxfont
 pkgver=2.0.1
 vcs=git
 gittag=libXfont2-${pkgver}
-srcdir=${location}/libXfont-${pkgver}
 relmon_id=1776
 
 kiin_make() {

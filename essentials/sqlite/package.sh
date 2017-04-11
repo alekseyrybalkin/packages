@@ -6,7 +6,6 @@ vcs=fossil
 pkgver=3.17.0
 fossiltag=version-${pkgver}
 
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

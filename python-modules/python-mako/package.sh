@@ -7,7 +7,6 @@ vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}
 urls="https://pypi.python.org/packages/source/M/Mako/Mako-${pkgver}.tar.gz"
 srctar=Mako-${pkgver}.tar.gz
-srcdir=${location}/Mako-${pkgver}
 relmon_id=3915
 
 kiin_make() {

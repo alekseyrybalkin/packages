@@ -5,7 +5,6 @@ pkgver=0.29.0
 vcs=mercurial
 vcs_pkgname=wheel
 hgtag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 # alpha versions
 #relmon_id=11428
 

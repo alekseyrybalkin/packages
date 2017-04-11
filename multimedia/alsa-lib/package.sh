@@ -4,7 +4,6 @@ pkgname=alsa-lib
 pkgver=1.1.3
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     autoreconf -fi

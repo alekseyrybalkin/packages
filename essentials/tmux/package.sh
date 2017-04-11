@@ -4,7 +4,6 @@ pkgname=tmux
 pkgver=2.3
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

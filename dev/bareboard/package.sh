@@ -5,7 +5,6 @@ SKIP_ARCH_CHECK=1
 pkgver=0.4
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i -e "s/'png'/os.sep, 'usr', 'share', 'bareboard', 'png'/g" bareboard.py

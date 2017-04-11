@@ -6,7 +6,6 @@ pkgver=1.0.27
 #gittag=${pkgver}
 urls="http://www.mega-nerd.com/libsndfile/files/libsndfile-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./configure --prefix=/usr --disable-sqlite

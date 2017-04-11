@@ -6,7 +6,6 @@ pkgver=1.1.0
 vcs=git
 vcs_pkgname=untangle
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

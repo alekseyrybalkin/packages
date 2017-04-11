@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver}
 urls="http://ftp.gnu.org/gnu/sed/sed-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

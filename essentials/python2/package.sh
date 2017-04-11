@@ -15,7 +15,6 @@ folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1
 
 srctar=Python-${pkgver}.tar.${extension}
-srcdir=${location}/Python-${pkgver}
 
 . ${KIIN_REPO}/defaults.sh
 

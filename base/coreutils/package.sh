@@ -4,7 +4,6 @@ pkgname=coreutils
 pkgver=8.27
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

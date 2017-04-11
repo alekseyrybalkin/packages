@@ -4,7 +4,6 @@ pkgname=doxygen
 pkgver=1.8.13
 vcs=git
 gittag=Release_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=457
 relmon_sed='s/\.windows\.x64\.bin//g'
 

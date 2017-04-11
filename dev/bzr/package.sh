@@ -6,7 +6,6 @@ vcs=bzr
 bzrtag=bzr-${pkgver}
 urls="http://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.tar.gz"
 srctar=bzr-${pkgver}.tar.gz
-srcdir=${location}/bzr-${pkgver}
 relmon_id=238
 
 kiin_make() {

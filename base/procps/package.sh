@@ -5,7 +5,6 @@ ARCH_NAME=procps-ng
 pkgver=3.3.12
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

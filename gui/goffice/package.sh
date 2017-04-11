@@ -5,7 +5,6 @@ pkgver=0.10.34
 vcs=git
 git_repo=git://git.gnome.org/goffice
 gittag=GOFFICE_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static

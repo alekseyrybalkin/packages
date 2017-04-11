@@ -4,7 +4,6 @@ pkgname=gnupg
 pkgver=2.1.19
 vcs=git
 gittag=gnupg-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

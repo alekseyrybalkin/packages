@@ -5,7 +5,6 @@ pkgver=3.0.7
 vcs=git
 vcs_pkgname=pytest
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=3765
 
 kiin_make() {

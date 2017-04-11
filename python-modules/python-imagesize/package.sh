@@ -5,7 +5,6 @@ pkgver=0.7.1
 vcs=git
 vcs_pkgname=imagesize_py
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=10626
 
 kiin_make() {

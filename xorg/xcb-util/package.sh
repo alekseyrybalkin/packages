@@ -5,7 +5,6 @@ pkgver=0.4.0
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/util
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=5165
 
 kiin_make() {

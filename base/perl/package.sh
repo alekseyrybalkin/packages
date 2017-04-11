@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver}
 urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     export BUILD_ZLIB=False

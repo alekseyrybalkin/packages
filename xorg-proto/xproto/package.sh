@@ -4,7 +4,6 @@ pkgname=xproto
 pkgver=7.0.31
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=13650
 
 kiin_make() {

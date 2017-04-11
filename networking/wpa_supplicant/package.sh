@@ -4,7 +4,6 @@ pkgname=wpa_supplicant
 pkgver=2.6
 vcs=git
 gittag=hostap_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cp ../config ${pkgname}/.config

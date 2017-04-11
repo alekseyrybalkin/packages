@@ -6,7 +6,6 @@ vcs=git
 gittag=release-${pkgver}
 urls="http://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i 's/defined(@$also)/@$also/' doc/doxyparse.pl

@@ -5,7 +5,6 @@ pkgver=0.19.0
 vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=4768
 relmon_sed='s/v//g'
 

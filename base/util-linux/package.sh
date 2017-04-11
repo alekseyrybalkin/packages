@@ -4,7 +4,6 @@ pkgname=util-linux
 pkgver=2.29.2
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

@@ -5,7 +5,6 @@ ARCH_NAME=firefox-adblock-plus
 pkgver=2.8.2
 vcs=mercurial
 hgtag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     hg clone ${KIIN_HOME}/sources/buildtools buildtools

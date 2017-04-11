@@ -6,7 +6,6 @@ vcs=git
 gittag=v${pkgver}
 urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
 srctar=cups-${pkgver}-source.tar.bz2
-srcdir=${location}/cups-${pkgver}
 
 kiin_make() {
     sed -i 's#@CUPS_HTMLVIEW@#firefox#' desktop/cups.desktop.in

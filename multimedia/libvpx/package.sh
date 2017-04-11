@@ -4,7 +4,6 @@ pkgname=libvpx
 pkgver=1.6.1
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-v${pkgver}
 
 kiin_make() {
     sed -i 's/cp -p/cp/' build/make/Makefile

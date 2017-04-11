@@ -5,7 +5,6 @@ pkgname=glibc
 pkgver=2.25
 vcs=git
 gittag=27ab0d9518746dfb59ed2ba59daefc981dc10e38
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     mkdir -v glibc-build

@@ -5,7 +5,6 @@ pkgver=3.24.0
 vcs=git
 git_repo=git://git.gnome.org/evince
 gittag=${pkgver}
-srcdir=${location}/evince-${pkgver}
 
 kiin_make() {
     export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"

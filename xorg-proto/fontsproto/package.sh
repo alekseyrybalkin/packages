@@ -4,7 +4,6 @@ pkgname=fontsproto
 pkgver=2.1.3
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=13472
 
 kiin_make() {

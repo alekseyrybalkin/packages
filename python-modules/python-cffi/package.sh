@@ -6,7 +6,6 @@ vcs=mercurial
 vcs_pkgname=cffi
 # FIXME
 hgtag=486d919c0b87
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

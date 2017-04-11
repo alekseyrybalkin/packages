@@ -6,7 +6,6 @@ vcs=git
 gittag=d9e428fd63e49486c8fb0f2e03df7a5608b0b0e2
 urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \

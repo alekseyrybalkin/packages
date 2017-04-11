@@ -5,7 +5,6 @@ pkgver=2.13.0
 vcs=git
 vcs_pkgname=requests
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=4004
 
 kiin_make() {

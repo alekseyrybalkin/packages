@@ -6,7 +6,6 @@ KIIN_NO_STRIPPING=1
 pkgver=0.4.5
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     # to bootstrap:

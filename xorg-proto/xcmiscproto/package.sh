@@ -4,7 +4,6 @@ pkgname=xcmiscproto
 pkgver=1.2.2
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=11792
 
 kiin_make() {

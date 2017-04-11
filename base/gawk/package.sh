@@ -4,7 +4,6 @@ pkgname=gawk
 pkgver=4.1.4
 vcs=git
 gittag=gawk-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     MAKEFLAGS=

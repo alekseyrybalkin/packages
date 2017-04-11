@@ -6,7 +6,6 @@ pkgver=2.7.1
 vcs=git
 vcs_pkgname=psycopg2
 gittag=${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=3979
 
 kiin_make() {

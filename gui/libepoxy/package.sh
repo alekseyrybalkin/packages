@@ -7,7 +7,6 @@ vcs=git
 gittag=${pkgver}
 urls="http://crux.nu/files/libepoxy-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr

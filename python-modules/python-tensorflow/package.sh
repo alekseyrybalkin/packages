@@ -6,7 +6,6 @@ pkgver=1.0.1
 vcs=git
 vcs_pkgname=tensorflow
 gittag=v${pkgver//_/-}
-srcdir=${location}/${pkgname}-${pkgver}
 # release candidates
 #relmon_id=13634
 

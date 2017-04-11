@@ -4,7 +4,6 @@ pkgname=libxdmcp
 pkgver=1.1.2
 vcs=git
 gittag=libXdmcp-${pkgver}
-srcdir=${location}/libXdmcp-${pkgver}
 relmon_id=1772
 
 kiin_make() {

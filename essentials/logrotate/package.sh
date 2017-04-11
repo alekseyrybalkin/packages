@@ -6,7 +6,6 @@ vcs=git
 gittag=${pkgver}
 urls="http://fedorahosted.org/releases/l/o/logrotate/logrotate-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     export CFLAGS="${CFLAGS} -Wno-misleading-indentation"

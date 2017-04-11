@@ -4,7 +4,6 @@ pkgname=videoproto
 pkgver=2.3.3
 vcs=git
 gittag=${pkgname}-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

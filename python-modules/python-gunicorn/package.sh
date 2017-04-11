@@ -6,7 +6,6 @@ pkgver=19.7.1
 vcs=git
 vcs_pkgname=gunicorn
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

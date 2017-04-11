@@ -6,7 +6,6 @@ pkgver=1.4.3
 vcs=git
 vcs_pkgname=appdirs
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
   python2 setup.py build

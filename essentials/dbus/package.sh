@@ -6,7 +6,6 @@ vcs=git
 gittag=dbus-${pkgver}
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz
-srcdir=${location}/dbus-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var \

@@ -5,7 +5,6 @@ pkgver=2.3.0
 vcs=git
 vcs_pkgname=chardet
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

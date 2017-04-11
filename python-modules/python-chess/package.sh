@@ -5,7 +5,6 @@ SKIP_ARCH_CHECK=1
 pkgver=0.17.0
 vcs=git
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     python setup.py build

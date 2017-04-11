@@ -6,7 +6,6 @@ vcs=git
 gittag=R_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/expat/expat-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     cd expat

@@ -4,7 +4,6 @@ pkgname=macchanger
 pkgver=1.7.0
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

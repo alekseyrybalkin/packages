@@ -5,7 +5,6 @@ SKIP_ARCH_CHECK=1
 pkgver=0.9.7
 vcs=git
 gittag=NTPsec_${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=12837
 relmon_sed='s/_/\./g'
 

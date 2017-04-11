@@ -13,7 +13,6 @@ major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1
 
 srctar=${pkgname}+-${pkgver}.tar.${extension}
-srcdir=${location}/${pkgname}+-${pkgver}
 
 . ${KIIN_REPO}/defaults.sh
 

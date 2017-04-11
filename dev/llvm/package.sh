@@ -6,7 +6,6 @@ pkgname=llvm
 pkgver=3.9.1
 vcs=git
 gittag=a093ef43dd592b729da46db4ff3057fef9a46023
-srcdir=${location}/${pkgname}-${pkgver}.src
 relmon_id=1830
 
 kiin_make() {

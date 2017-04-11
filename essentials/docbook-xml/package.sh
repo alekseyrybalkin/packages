@@ -7,7 +7,6 @@ pkgver=4.5
 #vcs_pkgname=docbook-git-svn
 #svnrev=6340
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     mkdir ${pkgname}-${pkgver}

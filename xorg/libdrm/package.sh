@@ -4,7 +4,6 @@ pkgname=libdrm
 pkgver=2.4.75
 vcs=git
 gittag=libdrm-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=1596
 
 kiin_make() {

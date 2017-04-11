@@ -6,7 +6,6 @@ vcs=git
 pkgver=1.2.8
 gittag=${pkgver}
 
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh --prefix=/usr

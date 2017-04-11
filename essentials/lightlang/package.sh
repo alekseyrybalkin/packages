@@ -4,7 +4,6 @@ pkgname=lightlang
 SKIP_ARCH_CHECK=1
 vcs=git
 pkgver=20140809
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i -e 's/\.sl/\.config\/sl/g' apps/sl/src/settings.h

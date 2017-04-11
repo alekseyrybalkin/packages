@@ -4,7 +4,6 @@ pkgname=rust
 pkgver=1.16.0
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     SOURCES_HOME_ESCAPED=${SOURCES_HOME//\//\\\/}

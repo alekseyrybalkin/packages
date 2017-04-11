@@ -6,7 +6,6 @@ pkgver=2.02.168
 vcs=git
 vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
-srcdir=${location}/LVM2.${pkgver}
 
 kiin_make() {
     unset LDFLAGS

@@ -4,7 +4,6 @@ pkgname=libice
 pkgver=1.0.9
 vcs=git
 gittag=libICE-${pkgver}
-srcdir=${location}/libICE-${pkgver}
 relmon_id=1638
 
 kiin_make() {

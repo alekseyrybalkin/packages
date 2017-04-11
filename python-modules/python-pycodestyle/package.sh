@@ -5,7 +5,6 @@ pkgver=2.3.1
 vcs=git
 vcs_pkgname=pycodestyle
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=11773
 
 kiin_make() {

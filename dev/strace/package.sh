@@ -4,7 +4,6 @@ pkgname=strace
 vcs=git
 pkgver=4.16
 gittag=v${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./bootstrap

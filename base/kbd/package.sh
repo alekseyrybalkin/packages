@@ -4,7 +4,6 @@ pkgname=kbd
 pkgver=2.0.4
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh

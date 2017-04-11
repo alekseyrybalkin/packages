@@ -6,7 +6,6 @@ vcs=git
 gittag=ver${pkgver//\./_}
 urls="http://fcron.free.fr/archives/fcron-${pkgver}.src.tar.gz"
 srctar=${pkgname}-${pkgver}.src.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i -e '/^documentation/d' Makefile.in

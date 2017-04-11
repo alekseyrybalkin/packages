@@ -5,7 +5,6 @@ pkgver=2.24.31
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
-srcdir=${location}/gtk+-${pkgver}
 
 kiin_make() {
     NOCONFIGURE=1 ./autogen.sh

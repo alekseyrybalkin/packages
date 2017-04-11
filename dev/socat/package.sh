@@ -4,7 +4,6 @@ pkgname=socat
 pkgver=1.7.3.2
 vcs=git
 gittag=tag-${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed -i 's/yodl2html/true/g' Makefile.in

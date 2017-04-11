@@ -5,7 +5,6 @@ ARCH_NAME=ack
 pkgver=2.18
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/ack-${pkgver}
 
 kiin_make() {
     PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor

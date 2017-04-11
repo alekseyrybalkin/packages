@@ -5,7 +5,6 @@ pkgver=2.12.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=827
 
 kiin_make() {

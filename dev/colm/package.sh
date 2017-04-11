@@ -5,7 +5,6 @@ SKIP_ARCH_CHECK=1
 pkgver=0.13.0.4
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=12622
 
 kiin_make() {

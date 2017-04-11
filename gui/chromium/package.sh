@@ -6,7 +6,6 @@ pkgver=57.0.2987.123
 #gittag=${pkgver}
 urls="https://commondatastorage.googleapis.com/chromium-browser-official/chromium-${pkgver}.tar.xz"
 srctar=chromium-${pkgver}.tar.xz
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     sed "s/^config(\"compiler\") {/&\ncflags_cc = [ \"-fno-delete-null-pointer-checks\" ]/" \

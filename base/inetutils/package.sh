@@ -4,7 +4,6 @@ pkgname=inetutils
 pkgver=1.9.4
 vcs=git
 gittag=inetutils-${pkgver//\./_}
-srcdir=${location}/${pkgname}-${pkgver}
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

@@ -5,7 +5,6 @@ ARCH_NAME=tidy
 pkgver=5.4.0
 vcs=git
 gittag=${pkgver}
-srcdir=${location}/tidy-html5-${pkgver}
 
 kiin_make() {
     cd build/cmake
