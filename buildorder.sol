@@ -245,7 +245,7 @@ xf86-input-keyboard
 xf86-input-mouse
 xf86-input-synaptics
 libva
-libva-intel-driver
+intel-vaapi-driver
 gnome-common
 itstool
 yelp-xsl

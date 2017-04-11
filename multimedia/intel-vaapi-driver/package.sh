@@ -1,14 +1,10 @@
 #!/bin/sh
 
-pkgname=libva
+pkgname=intel-vaapi-driver
+ARCH_NAME=libva-intel-driver
 pkgver=1.8.1
 vcs=git
 gittag=${pkgver}
-extension=bz2
-folder="http://www.freedesktop.org/software/vaapi/releases/libva/"
-check_server=1
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG
