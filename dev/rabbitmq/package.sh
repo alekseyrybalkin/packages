@@ -9,6 +9,7 @@ pkgver=3.6.8
 urls="https://www.rabbitmq.com/releases/${pkgname}-server/v${pkgver}/${pkgname}-server-generic-unix-${pkgver}.tar.xz"
 srctar=${pkgname}-server-generic-unix-${pkgver}.tar.xz
 srcdir=${location}/${pkgname}_server-${pkgver}
+relmon_id=5585
 
 kiin_make() {
     #make package-generic-unix VERSION=${pkgver}.build UNOFFICIAL_RELEASE=true

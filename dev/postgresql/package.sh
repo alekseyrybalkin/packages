@@ -7,6 +7,7 @@ gittag=REL${pkgver//\./_}
 extension=bz2
 folder="http://ftp.postgresql.org/pub/source/"
 check_server=1
+relmon_id=5601
 
 . ${KIIN_REPO}/defaults.sh
 

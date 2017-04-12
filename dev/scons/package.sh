@@ -6,6 +6,7 @@ vcs=mercurial
 hgtag=${pkgver}
 urls="http://downloads.sourceforge.net/scons/scons-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=4770
 
 kiin_make() {
     :

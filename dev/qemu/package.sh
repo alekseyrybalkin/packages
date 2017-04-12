@@ -9,6 +9,7 @@ gittag=v${pkgver}
 extension=bz2
 folder="http://wiki.qemu.org/download/"
 check_server=1
+relmon_id=13607
 
 . ${KIIN_REPO}/defaults.sh
 

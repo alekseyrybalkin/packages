@@ -4,6 +4,7 @@ pkgname=strace
 vcs=git
 pkgver=4.16
 gittag=v${pkgver}
+relmon_id=4897
 
 kiin_make() {
     ./bootstrap

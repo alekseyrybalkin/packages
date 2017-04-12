@@ -4,6 +4,7 @@ pkgname=tk
 pkgver=8.6.6
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
+relmon_id=11426
 
 kiin_make() {
     cd unix

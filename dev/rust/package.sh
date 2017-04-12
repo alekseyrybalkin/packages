@@ -4,6 +4,7 @@ pkgname=rust
 pkgver=1.16.0
 vcs=git
 gittag=${pkgver}
+relmon_id=7635
 
 kiin_make() {
     SOURCES_HOME_ESCAPED=${SOURCES_HOME//\//\\\/}

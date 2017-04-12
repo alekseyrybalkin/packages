@@ -4,6 +4,7 @@ pkgname=socat
 pkgver=1.7.3.2
 vcs=git
 gittag=tag-${pkgver}
+relmon_id=4848
 
 kiin_make() {
     sed -i 's/yodl2html/true/g' Makefile.in

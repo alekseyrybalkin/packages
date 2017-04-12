@@ -6,6 +6,7 @@ ARCH_VERSION=3.18.0+1+g193c2bd
 vcs=git
 git_repo=git://git.gnome.org/yelp-tools
 gittag=${pkgver}
+relmon_id=8420
 
 kiin_make() {
     ./autogen.sh --prefix=/usr
