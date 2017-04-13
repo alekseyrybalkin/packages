@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnupg
-pkgver=2.1.19
+pkgver=2.1.20
 vcs=git
 gittag=gnupg-${pkgver}
 
