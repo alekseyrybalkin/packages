@@ -4,6 +4,7 @@ pkgname=bison
 pkgver=3.0.4
 vcs=git
 gittag=v${pkgver}
+relmon_id=193
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

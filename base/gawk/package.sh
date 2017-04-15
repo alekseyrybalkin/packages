@@ -4,6 +4,7 @@ pkgname=gawk
 pkgver=4.1.4
 vcs=git
 gittag=gawk-${pkgver}
+relmon_id=868
 
 kiin_make() {
     MAKEFLAGS=

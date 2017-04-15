@@ -4,6 +4,7 @@ pkgname=findutils
 pkgver=4.6.0
 vcs=git
 gittag=v${pkgver}
+relmon_id=812
 
 kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1

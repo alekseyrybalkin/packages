@@ -4,6 +4,7 @@ pkgname=diffutils
 pkgver=3.5
 vcs=git
 gittag=v${pkgver}
+relmon_id=436
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

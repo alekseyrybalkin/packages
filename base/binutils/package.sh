@@ -9,6 +9,7 @@ gittag=binutils-${pkgver//\./_}
 extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
+relmon_id=7981
 
 . ${KIIN_REPO}/defaults.sh
 

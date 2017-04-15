@@ -4,6 +4,7 @@ pkgname=bash
 pkgver=4.4.012
 vcs=git
 gittag=bc007799f0e1362100375bb95d952d28de4c62fb
+relmon_id=166
 
 kiin_make() {
     ./configure --prefix=/usr \

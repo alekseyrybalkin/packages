@@ -8,6 +8,7 @@ gittag=v${pkgver}
 extension=gz
 folder="http://dev.gentoo.org/~blueness/eudev/"
 check_server=1
+relmon_id=13466
 
 . ${KIIN_REPO}/defaults.sh
 

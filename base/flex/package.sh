@@ -6,6 +6,7 @@ vcs=git
 gittag=v${pkgver}
 urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=819
 
 kiin_make() {
     MAKEFLAGS=

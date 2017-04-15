@@ -4,6 +4,7 @@ pkgname=e2fsprogs
 pkgver=1.43.4
 vcs=git
 gittag=v${pkgver}
+relmon_id=646
 
 kiin_make() {
     MAKEFLAGS=

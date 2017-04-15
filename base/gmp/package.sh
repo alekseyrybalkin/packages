@@ -5,7 +5,9 @@ _majorver=6.1
 pkgver=${_majorver}.2
 vcs=mercurial
 vcs_pkgname=gmp-${_majorver}
+# FIXME
 hgtag=0f37e9787d28
+relmon_id=1186
 
 kiin_make() {
     ./.bootstrap
