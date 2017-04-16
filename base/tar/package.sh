@@ -6,6 +6,7 @@ vcs=git
 gittag=release_${pkgver//\./_}
 urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=4939
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

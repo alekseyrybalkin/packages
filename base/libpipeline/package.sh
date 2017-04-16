@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}
 urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=1704
 
 kiin_make() {
     ./autogen.sh

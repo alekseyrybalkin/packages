@@ -6,6 +6,7 @@ vcs=git
 gittag=v${pkgver}
 urls="http://www.kernel.org/pub/linux/utils/kernel/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=1517
 
 kiin_make() {
     touch libkmod/docs/gtk-doc.make

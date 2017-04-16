@@ -4,6 +4,7 @@ pkgname=libtool
 pkgver=2.4.6
 vcs=git
 gittag=v${pkgver}
+relmon_id=1741
 
 kiin_make() {
     MAKEFLAGS=

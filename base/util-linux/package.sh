@@ -4,6 +4,7 @@ pkgname=util-linux
 pkgver=2.29.2
 vcs=git
 gittag=v${pkgver}
+relmon_id=8179
 
 kiin_make() {
     ./autogen.sh

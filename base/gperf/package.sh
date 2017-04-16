@@ -4,6 +4,7 @@ pkgname=gperf
 pkgver=3.1
 vcs=git
 gittag=v${pkgver}
+relmon_id=1237
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

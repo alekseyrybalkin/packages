@@ -4,6 +4,8 @@ pkgname=grub
 pkgver=2.02.rc2
 vcs=git
 gittag=2.02-rc2
+relmon_id=1258
+relmon_sed='s/~/\./g'
 
 kiin_make() {
     ./autogen.sh

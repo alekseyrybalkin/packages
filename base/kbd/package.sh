@@ -4,6 +4,7 @@ pkgname=kbd
 pkgver=2.0.4
 vcs=git
 gittag=${pkgver}
+relmon_id=1492
 
 kiin_make() {
     ./autogen.sh

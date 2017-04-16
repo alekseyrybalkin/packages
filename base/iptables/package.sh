@@ -4,6 +4,7 @@ pkgname=iptables
 pkgver=1.6.1
 vcs=git
 gittag=v${pkgver}
+relmon_id=1394
 
 kiin_make() {
     ./autogen.sh

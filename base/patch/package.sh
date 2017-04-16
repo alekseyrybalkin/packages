@@ -4,6 +4,7 @@ pkgname=patch
 pkgver=2.7.5
 vcs=git
 gittag=v${pkgver}
+relmon_id=2597
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

@@ -8,6 +8,8 @@ vcs=git
 gittag=v${pkgver}
 urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+# dates in versions
+#relmon_id=2057
 
 kiin_make() {
     sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in

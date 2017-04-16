@@ -9,6 +9,7 @@ vcs_clone="git svn clone -Ttrunk -ttags svn://scm.gforge.inria.fr/svnroot/mpfr $
 gittag=origin/tags/${pkgver}
 urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=2019
 
 kiin_make() {
     ./autogen.sh

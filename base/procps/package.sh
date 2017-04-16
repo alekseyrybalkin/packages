@@ -5,6 +5,7 @@ ARCH_NAME=procps-ng
 pkgver=3.3.12
 vcs=git
 gittag=v${pkgver}
+relmon_id=3708
 
 kiin_make() {
     ./autogen.sh

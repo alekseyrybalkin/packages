@@ -5,6 +5,7 @@ pkgver=7.0.003
 vcs=git
 #gittag=readline-${pkgver}
 gittag=6c32f81cd66bbe86218469063690c84205661a5e
+relmon_id=4173
 
 kiin_make() {
     sed -i '/MV.*old/d' Makefile.in

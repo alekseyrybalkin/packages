@@ -6,6 +6,7 @@ pkgver=2017b
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
+relmon_id=5021
 
 kiin_make() {
     mkdir ${_srcdir}

@@ -5,6 +5,7 @@ ARCH_NAME=libmpc
 pkgver=1.0.3
 vcs=git
 gittag=${pkgver}
+relmon_id=1667
 
 kiin_make() {
     autoreconf -fi

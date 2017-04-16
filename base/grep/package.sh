@@ -4,6 +4,7 @@ pkgname=grep
 pkgver=3.0
 vcs=git
 gittag=v${pkgver}
+relmon_id=1251
 
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib

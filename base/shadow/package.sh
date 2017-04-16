@@ -3,9 +3,11 @@
 pkgname=shadow
 pkgver=4.4
 vcs=git
+# FIXME
 gittag=d9e428fd63e49486c8fb0f2e03df7a5608b0b0e2
 urls="http://pkg-shadow.alioth.debian.org/releases/shadow-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=4802
 
 kiin_make() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \

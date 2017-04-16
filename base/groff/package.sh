@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}.real
 urls="http://ftp.gnu.org/gnu/groff/groff-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=1253
 
 kiin_make() {
     MAKEFLAGS=

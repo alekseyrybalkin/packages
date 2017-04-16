@@ -5,6 +5,7 @@ ARCH_NAME=iproute2
 vcs=git
 pkgver=4.10.0
 gittag=v${pkgver}
+relmon_id=1392
 
 kiin_make() {
     sed -i /ARPD/d Makefile

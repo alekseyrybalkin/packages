@@ -4,6 +4,7 @@ pkgname=pkg-config
 pkgver=0.29.2
 vcs=git
 gittag=pkg-config-${pkgver}
+relmon_id=3649
 
 kiin_make() {
     rm -rf glib

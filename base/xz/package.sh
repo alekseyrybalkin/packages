@@ -6,6 +6,7 @@ vcs=git
 gittag=v${pkgver}
 urls="http://tukaani.org/xz/xz-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=5277
 
 kiin_make() {
     ./autogen.sh

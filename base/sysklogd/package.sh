@@ -5,7 +5,9 @@ SKIP_ARCH_CHECK=1
 pkgver=1.5.1
 vcs=git
 git_repo=git://git.infodrom.org/infodrom/sysklogd
+# FIXME
 gittag=9abddd6b552a341b9b7c63c8bddfc95863821abd
+relmon_id=10331
 
 kiin_make() {
     sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c

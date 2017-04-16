@@ -7,6 +7,7 @@ gittag=v${pkgver}
 extension=gz
 folder="http://www.samba.org/ftp/rsync/src/"
 check_server=1
+relmon_id=4217
 
 . ${KIIN_REPO}/defaults.sh
 
