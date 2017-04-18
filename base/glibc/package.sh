@@ -4,7 +4,7 @@ KIIN_NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.25
 vcs=git
-gittag=27ab0d9518746dfb59ed2ba59daefc981dc10e38
+gittag=903b77defb6f2ee2552c06472339f33091e3c7b4
 relmon_id=5401
 
 kiin_make() {

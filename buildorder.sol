@@ -261,6 +261,7 @@ cairo
 nasm
 libjpeg-turbo
 libuv
+rhash
 cmake
 freeglut
 libtiff

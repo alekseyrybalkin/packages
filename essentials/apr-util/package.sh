@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=apr-util
-pkgver=1.5.4
+pkgver=1.6.0
 vcs=git
 gittag=${pkgver}
 extension=bz2

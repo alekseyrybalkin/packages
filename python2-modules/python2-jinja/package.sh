@@ -2,7 +2,7 @@
 
 pkgname=python2-jinja
 ARCH_NAME=python-jinja
-pkgver=2.9.5
+pkgver=2.9.6
 vcs=git
 vcs_pkgname=jinja2
 gittag=${pkgver}

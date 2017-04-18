@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-webencodings
-pkgver=0.5
+pkgver=0.5.1
 vcs=git
 gittag=v${pkgver}
 

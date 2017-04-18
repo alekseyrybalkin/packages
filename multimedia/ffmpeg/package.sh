@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ffmpeg
-pkgver=3.2.4
+pkgver=3.3
 vcs=git
 gittag=n${pkgver}
 
@@ -19,7 +19,7 @@ kiin_make() {
         --enable-libvorbis \
         --enable-libvpx \
         --enable-openssl \
-        --enable-x11grab
+        --enable-libxcb
     make
 }
 

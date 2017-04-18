@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-chardet
-pkgver=2.3.0
+pkgver=3.0.2
 vcs=git
 vcs_pkgname=chardet
 gittag=${pkgver}

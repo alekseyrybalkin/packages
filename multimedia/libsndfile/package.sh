@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libsndfile
-pkgver=1.0.27
+pkgver=1.0.28
 #vcs=git
 #gittag=${pkgver}
 urls="http://www.mega-nerd.com/libsndfile/files/libsndfile-${pkgver}.tar.gz"

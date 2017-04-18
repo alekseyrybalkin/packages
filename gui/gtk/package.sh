@@ -3,11 +3,14 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.11
+pkgver=${majorver}.12
+ARCH_VERSION=3.22.12+6+g42aa4c138c
 vcs=git
 git_repo=git://git.gnome.org/gtk+
 vcs_pkgname=gtk+
-gittag=${pkgver}
+# FIXME
+#gittag=${pkgver}
+gittag=42aa4c138c5a1ef2aafba3bd4a2b0f55bc822b29
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
 check_server=1

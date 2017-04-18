@@ -3,7 +3,7 @@
 pkgname=sqlite
 vcs=fossil
 
-pkgver=3.17.0
+pkgver=3.18.0
 fossiltag=version-${pkgver}
 
 

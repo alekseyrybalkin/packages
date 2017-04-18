@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=unrar
-pkgver=5.4.5
+pkgver=5.5.1
 urls="http://www.rarlab.com/rar/unrarsrc-${pkgver}.tar.gz"
 srctar=${pkgname}src-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}

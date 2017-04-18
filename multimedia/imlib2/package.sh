@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=imlib2
-pkgver=1.4.9
+pkgver=1.4.10
 vcs=git
 gittag=v${pkgver}
 urls="http://downloads.sourceforge.net/enlightenment/imlib2-${pkgver}.tar.bz2"
