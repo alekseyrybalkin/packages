@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.8.1
+pkgver=1.8.2
 ARCH_VERSION=${pkgver}
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
