@@ -9,8 +9,7 @@ pkgver=4.5
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 
 kiin_make() {
-    mkdir ${pkgname}-${pkgver}
-    cd ${pkgname}-${pkgver}
+    cd ${srcdir}
     unzip ${KIIN_HOME}/tarballs/${pkgname}-${pkgver}.zip
     #cd docbook/xml
     #make
@@ -18,6 +17,7 @@ kiin_make() {
 
 kiin_install() {
     #cd docbook/xml
+    cd ${srcdir}
     install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
     install -v -d -m755 ${pkgdir}/etc/xml
     chown -R root:root .

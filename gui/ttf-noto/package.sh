@@ -8,7 +8,6 @@ extra_urls="https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip"
 srcdir=${location}/noto-fonts
 
 kiin_make() {
-    mkdir ${srcdir}
     cd ${srcdir}
     unzip ${KIIN_HOME}/tarballs/Noto-hinted.zip
 }
