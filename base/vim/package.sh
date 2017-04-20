@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=vim
-pkgver=8.0.0566
+pkgver=8.0.0570
 vcs=git
 gittag=v${pkgver}
 relmon_id=5092
@@ -21,9 +21,6 @@ kiin_make() {
 kiin_install() {
     make DESTDIR=${pkgdir} install
     ln -sv vim ${pkgdir}/usr/bin/vi
-    for L in  ${pkgdir}/usr/share/man/{,*/}man1/vim.1; do
-        ln -sv vim.1 $(dirname $L)/vi.1
-    done
     mkdir -pv ${pkgdir}/usr/share/doc
     ln -sv ../vim/vim80/doc ${pkgdir}/usr/share/doc/vim
     mkdir -pv ${pkgdir}/etc

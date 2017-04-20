@@ -2,7 +2,7 @@
 
 pkgname=eudev
 SKIP_ARCH_CHECK=1
-pkgver=3.2.1
+pkgver=3.2.2
 vcs=git
 gittag=v${pkgver}
 extension=gz
@@ -15,7 +15,6 @@ relmon_id=13466
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
-    git cherry-pick 5bab4d8de0dcbb8e2e7d4d5125b4aea1652a0d60
     ./autogen.sh
     ./configure --prefix=/usr \
         --bindir=/usr/bin \
