@@ -8,6 +8,7 @@ urls="http://downloads.sourceforge.net/fetchmail/fetchmail-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 
 kiin_make() {
+    patch -Np1 -i ../disable-sslv3.patch
     ./autogen.sh
     ./configure --prefix=/usr --with-ssl --enable-fallback=procmail
     make

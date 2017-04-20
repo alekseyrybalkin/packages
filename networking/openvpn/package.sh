@@ -8,6 +8,7 @@ urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 
 kiin_make() {
+    patch -Np1 -i ../openssl-1.1.0.patch
     autoreconf -fi
     ./configure \
         --prefix=/usr \

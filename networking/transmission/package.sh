@@ -12,6 +12,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    patch -Np1 -i ../openssl-1.1.0.patch
     sed -i -e '/gtr_get_favicon/d' gtk/details.c
     sed -i -e '/gtr_get_favicon/d' gtk/filter.c
     rm m4/glib-gettext.m4

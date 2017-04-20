@@ -13,6 +13,7 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    patch -Np1 -i ../openssl-1.1.0.patch
     autoreconf -fi
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
