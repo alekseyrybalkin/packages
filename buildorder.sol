@@ -414,6 +414,8 @@ db
 bitcoin
 macchanger
 socat
+rust
+cargo
 bareboard
 bazel
 protobuf
