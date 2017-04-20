@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tmux
-pkgver=2.3
+pkgver=2.4
 vcs=git
 gittag=${pkgver}
 
