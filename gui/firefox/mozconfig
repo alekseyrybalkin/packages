@@ -4,6 +4,7 @@ ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
 ac_add_options --disable-pulseaudio
 ac_add_options --disable-gconf
+ac_add_options --disable-rust
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 ac_add_options --enable-official-branding

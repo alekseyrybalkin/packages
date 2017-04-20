@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=firefox
-_pkgbase=52.0.2
-pkgver=${_pkgbase}
+_pkgbase=52.1.0
+pkgver=${_pkgbase}esr
 vcs=mercurial
-vcs_pkgname=firefox-release
+vcs_pkgname=mozilla-unified
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz
