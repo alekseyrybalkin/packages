@@ -42,7 +42,6 @@ kiin_make() {
         --with-system-libpng \
         --with-system-libxml \
         --with-system-nss \
-        --with-system-openssl \
         --with-system-poppler \
         --with-system-serf \
         --with-system-zlib \
