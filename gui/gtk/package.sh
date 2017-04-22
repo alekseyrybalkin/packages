@@ -10,20 +10,7 @@ git_repo=git://git.gnome.org/gtk+
 vcs_pkgname=gtk+
 # FIXME
 #gittag=${pkgver}
-gittag=42aa4c138c5a1ef2aafba3bd4a2b0f55bc822b29
-extension=xz
-major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}+/"
-check_server=1
-
-srctar=${pkgname}+-${pkgver}.tar.${extension}
-
-. ${KIIN_REPO}/defaults.sh
-
-majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
-ver_grep="^${pkgname}\+-.*\.tar\.${extension}$"
-ver_seds() {
-    sed -r "s/^${pkgname}\+-//g" | sed -r "s/\.tar\.${extension}$//g"
-}
+gittag=fba4e8fb47d18290ea4a30dea1cd196dbd5b0a30
 
 kiin_make() {
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c

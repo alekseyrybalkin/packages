@@ -5,7 +5,8 @@ majorver=17.0
 pkgver=${majorver}.4
 vcs=git
 gittag=mesa-${pkgver}
-relmon_id=1970
+# rc versions
+#relmon_id=1970
 
 kiin_make() {
     patch -Np1 -i ../MesaLib-add_xdemos.patch
