@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=librsvg
-majorver=2.41
-pkgver=${majorver}.0
+majorver=2.40
+pkgver=${majorver}.17
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -12,7 +12,6 @@ check_server=1
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    export CARGO_HOME=${KIIN_HOME}/tarballs/cargo
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --disable-introspection
@@ -20,7 +19,6 @@ kiin_make() {
 }
 
 kiin_install() {
-    export CARGO_HOME=${KIIN_HOME}/tarballs/cargo
     make DESTDIR=${pkgdir} install
 }
 
