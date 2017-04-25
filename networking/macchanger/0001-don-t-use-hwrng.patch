@@ -1,0 +1,33 @@
+From ef8701579bf8819b354b5017df5fb276d83cc51f Mon Sep 17 00:00:00 2001
+From: Lucian Poston <lucian.poston@gmail.com>
+Date: Tue, 28 Mar 2017 20:27:40 -0700
+Subject: [PATCH] don't use hwrng
+
+---
+ src/main.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/main.c b/src/main.c
+index 711ffe7..d95e3b4 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -94,7 +94,7 @@ random_seed (void)
+ 	struct timeval tv;
+ 	unsigned int   seed;
+ 
+-	if ((fd = open("/dev/hwrng", O_RDONLY)) >= 0 ||
++	if (
+ 	    (fd = open("/dev/random", O_RDONLY)) >= 0 ||
+ 	    (fd = open("/dev/urandom", O_RDONLY)) >= 0)
+ 	{
+@@ -106,6 +106,7 @@ random_seed (void)
+ 	}
+ 
+ 	srandom(seed);
++	random();
+ }
+ 
+ 
+-- 
+2.10.2
+

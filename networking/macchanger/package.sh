@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}
 
 kiin_make() {
+    patch -Np1 -i ../0001-don-t-use-hwrng.patch
     ./autogen.sh
     ./configure --prefix=/usr \
         --mandir=/usr/share/man \
