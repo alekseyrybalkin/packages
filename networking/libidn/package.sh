@@ -1,26 +1,19 @@
 #!/bin/sh
 
 pkgname=libidn
-pkgver=1.33
+pkgver=2.0.1
 vcs=git
-gittag=libidn-${pkgver//\./-}
-urls="http://ftp.gnu.org/gnu/libidn/libidn-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+vcs_pkgname=libidn2
+gittag=libidn2-${pkgver}
+relmon_id=5597
 
 kiin_make() {
-    MAKEFLAGS=
-    sed -i -e 's/\ doc//g' Makefile.am
-    sed -i -e 's/\ po//g' Makefile.am
-    sed -i -e '/doc\//d' configure.ac
-    sed -i -e '/po\//d' configure.ac
-    sed -i -e '/AM_GNU_GETTEXT/d' configure.ac
-    touch ChangeLog
-    autoreconf -fi
-    ./configure --prefix=/usr --disable-static --libdir=${LIBDIR}
+    git clone -s ${KIIN_HOME}/sources/gnulib
+    ./bootstrap --skip-po
+    ./configure --prefix=/usr --disable-static
     make
 }
 
 kiin_install() {
-    MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }
