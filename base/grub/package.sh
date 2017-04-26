@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=grub
-pkgver=2.02.rc2
+pkgver=2.02
 vcs=git
-gittag=2.02-rc2
+gittag=${pkgver}
 relmon_id=1258
 relmon_sed='s/~/\./g'
 
