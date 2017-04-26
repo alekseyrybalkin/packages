@@ -1,15 +1,11 @@
 #!/bin/sh
 
 pkgname=librsvg
-majorver=2.40
-pkgver=${majorver}.17
+pkgver=2.40.17
 vcs=git
 gittag=${pkgver}
-extension=xz
-major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
-check_server=1
-
-. ${KIIN_REPO}/defaults.sh
+# 2.41.0 cannot be built without network and cargo
+#relmon_id=5420
 
 kiin_make() {
     ./autogen.sh --prefix=/usr \

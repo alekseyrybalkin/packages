@@ -6,7 +6,8 @@ pkgver=3.2.1
 _gtestver=1.8.0
 vcs=git
 gittag=v${pkgver}
-relmon_id=3715
+# rc versions
+#relmon_id=3715
 
 kiin_make() {
     export CC=/usr/bin/clang CXX=/usr/bin/clang++

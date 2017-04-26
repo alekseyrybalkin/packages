@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # used by icu, blender, protobuf, python-protobuf and rust
+# version locked by rust
 
 pkgname=llvm
 pkgver=3.9.1

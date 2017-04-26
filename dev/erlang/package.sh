@@ -5,7 +5,8 @@ pkgver=19.3
 vcs=git
 vcs_pkgname=otp
 gittag=OTP-${pkgver}
-relmon_id=707
+# minor versions
+#relmon_id=707
 
 kiin_make() {
     git cherry-pick -n 25aa0128340d819e85e641f0ef8b9e0fd5fdda0b

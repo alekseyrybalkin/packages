@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=rust
+# also check llvm version, which is locked by rust
 pkgver=1.16.0
 vcs=git
 gittag=${pkgver}

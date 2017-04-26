@@ -5,7 +5,8 @@ pkgver=1.52.1
 vcs=git
 git_repo=git://git.gnome.org/gobject-introspection
 gittag=${pkgver}
-relmon_id=1223
+# beta versions
+#relmon_id=1223
 
 kiin_make() {
     sed -i '1s|#!/usr/bin/env python$|&2|' giscanner/*.py
