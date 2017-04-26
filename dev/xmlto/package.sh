@@ -2,12 +2,9 @@
 
 pkgname=xmlto
 pkgver=0.0.28
-vcs=git-svn
-vcs_pkgname=xmlto-git-svn
-vcs_clone="git svn clone -Thttp://svn.fedorahosted.org/svn/xmlto ${vcs_pkgname}"
-svnrev=85
-urls="https://fedorahosted.org/releases/x/m/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+vcs=git
+# FIXME
+gittag=b128bdcf7b15865aaae49635a1dcbcaca07fc6ef
 relmon_id=13307
 
 kiin_make() {
