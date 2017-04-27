@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=firefox
-_pkgbase=53.0
-pkgver=${_pkgbase}
+_pkgbase=52.1.0
+pkgver=${_pkgbase}esr
 vcs=mercurial
 vcs_pkgname=mozilla-unified
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
@@ -10,7 +10,6 @@ urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/sour
 srctar=${pkgname}-${pkgver}.source.tar.xz
 
 kiin_make() {
-    export CARGO_HOME=${KIIN_HOME}/tarballs/cargo
     rm -rf .hg .hgignore .hgtags
     cp ../mozconfig .
 
@@ -34,9 +33,10 @@ kiin_make() {
 }
 
 kiin_install() {
-    export CARGO_HOME=${KIIN_HOME}/tarballs/cargo
     make -C firefox-build-dir DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}/usr/lib/mozilla/plugins
     mv ${pkgdir}/usr/lib/firefox{-${_pkgbase},}
     ln -sfv ../lib/firefox/firefox ${pkgdir}/usr/bin
+    rm ${pkgdir}/usr/lib/firefox-devel-${_pkgbase}/bin
+    ln -sfv /usr/lib/firefox ${pkgdir}/usr/lib/firefox-devel-${_pkgbase}/bin
 }
