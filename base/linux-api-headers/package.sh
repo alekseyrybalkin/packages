@@ -3,9 +3,9 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
-pkgver=4.11.rc8
+pkgver=next.20170428
 # FIXME
-gittag=v4.11-rc8
+gittag=next-20170428
 #gittag=v${pkgver}
 
 kiin_make() {
