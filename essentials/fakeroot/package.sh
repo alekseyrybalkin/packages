@@ -3,10 +3,13 @@
 pkgname=fakeroot
 pkgver=1.21
 vcs=git
+# FIXME
 gittag=dc15d86e54aab301820d30e8cbfb7626ab14bb8d
 extension=bz2
 folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
 check_server=1
+relmon_id=12048
+relmon_sed='s/\.orig//g'
 
 srctar=${pkgname}_${pkgver}.orig.tar.${extension}
 

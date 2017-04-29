@@ -4,6 +4,7 @@ pkgname=nspr
 pkgver=4.14
 vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
+relmon_id=7953
 
 kiin_make() {
     sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in

@@ -7,6 +7,7 @@ gittag=curl-${pkgver//\./_}
 extension=bz2
 folder="http://${pkgname}.haxx.se/download/"
 check_server=1
+relmon_id=381
 
 . ${KIIN_REPO}/defaults.sh
 

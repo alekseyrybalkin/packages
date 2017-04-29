@@ -6,6 +6,7 @@ vcs=git
 gittag=nasm-${pkgver}
 urls="http://www.nasm.us/pub/nasm/releasebuilds/${pkgver}/nasm-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=2048
 
 kiin_make() {
     ./autogen.sh

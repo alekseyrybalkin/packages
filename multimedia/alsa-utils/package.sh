@@ -4,6 +4,7 @@ pkgname=alsa-utils
 pkgver=1.1.3
 vcs=git
 gittag=v${pkgver}
+relmon_id=37
 
 kiin_make() {
     autoreconf -fi

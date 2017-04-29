@@ -4,6 +4,7 @@ pkgname=ffmpeg
 pkgver=3.3
 vcs=git
 gittag=n${pkgver}
+relmon_id=5405
 
 kiin_make() {
     sed -i 's/-lflite"/-lflite -lasound"/' configure

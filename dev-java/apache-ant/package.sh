@@ -8,6 +8,7 @@ extension=bz2
 folder="http://archive.apache.org/dist/ant/source/"
 check_server=1
 srctar=${pkgname}-${pkgver}-src.tar.${extension}
+relmon_id=50
 
 . ${KIIN_REPO}/defaults.sh
 

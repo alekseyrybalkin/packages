@@ -8,6 +8,7 @@ pkgver=3.3.6
 urls="http://www.fftw.org/${pkgname}-${pkgver}-pl1.tar.gz"
 srctar=${pkgname}-${pkgver}-pl1.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}-pl1
+relmon_id=803
 
 kiin_make() {
     CFLAGS+=" -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math"

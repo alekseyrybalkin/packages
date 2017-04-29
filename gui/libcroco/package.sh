@@ -7,6 +7,7 @@ vcs=git
 gittag=${pkgver}
 urls="http://ftp.gnome.org/pub/gnome/sources/libcroco/0.6/libcroco-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=11787
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static

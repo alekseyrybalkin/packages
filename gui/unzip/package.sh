@@ -6,6 +6,7 @@ pkgver=6.0
 urls="http://downloads.sourceforge.net/infozip/unzip60.tar.gz"
 srctar=unzip60.tar.gz
 srcdir=${location}/unzip60
+relmon_id=8684
 
 kiin_make() {
     sed -i "/MANDIR =/s#)/#)/share/#" unix/Makefile

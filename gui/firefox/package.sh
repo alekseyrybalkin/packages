@@ -10,6 +10,8 @@ vcs_pkgname=mozilla-unified
 hgtag=FIREFOX_${pkgver//\./_}_RELEASE
 urls="https://ftp.mozilla.org/pub/mozilla.org/${pkgname}/releases/${pkgver}/source/${pkgname}-${pkgver}.source.tar.xz"
 srctar=${pkgname}-${pkgver}.source.tar.xz
+# not esr versions
+#relmon_id=5506
 
 kiin_make() {
     rm -rf .hg .hgignore .hgtags

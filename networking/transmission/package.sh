@@ -8,6 +8,7 @@ gittag=${pkgver}
 extension=xz
 folder="https://download.transmissionbt.com/files/"
 check_server=1
+relmon_id=5002
 
 . ${KIIN_REPO}/defaults.sh
 

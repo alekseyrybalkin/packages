@@ -10,6 +10,7 @@ gittag=v${pkgver}
 extension=gz
 folder="http://xmlsoft.org/sources/"
 check_server=1
+relmon_id=1783
 
 . ${KIIN_REPO}/defaults.sh
 

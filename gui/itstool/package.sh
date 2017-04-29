@@ -7,6 +7,7 @@ vcs=git
 gittag=${pkgver}
 urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
+relmon_id=13109
 
 kiin_make() {
     sed -i 's/| python/&2/' configure.ac

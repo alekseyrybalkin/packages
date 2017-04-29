@@ -6,6 +6,7 @@ ARCH_VERSION=2.78.c
 vcs=git
 git_repo=git://git.blender.org/blender.git
 gittag=v${pkgver}
+relmon_id=201
 
 kiin_make() {
     mkdir build

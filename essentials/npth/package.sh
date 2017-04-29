@@ -6,6 +6,7 @@ vcs=git
 gittag=npth-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/npth/"
+relmon_id=2505
 
 . ${KIIN_REPO}/defaults.sh
 

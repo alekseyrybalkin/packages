@@ -6,6 +6,8 @@ vcs=git
 gittag=dbus-${pkgver}
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
 srctar=dbus-${pkgver}.tar.gz
+# beta versions
+#relmon_id=5356
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var \

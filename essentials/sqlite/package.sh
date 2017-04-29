@@ -5,6 +5,7 @@ vcs=fossil
 
 pkgver=3.18.0
 fossiltag=version-${pkgver}
+relmon_id=4877
 
 
 kiin_make() {

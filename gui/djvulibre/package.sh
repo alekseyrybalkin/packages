@@ -4,6 +4,7 @@ pkgname=djvulibre
 pkgver=3.5.27.1
 vcs=git
 gittag=release.${pkgver}
+relmon_id=10159
 
 kiin_make() {
     NOCONFIGURE=1 ./autogen.sh

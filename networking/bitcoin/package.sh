@@ -5,6 +5,7 @@ pkgver=0.14.1
 vcs=git
 vcs_clone="git clone https://github.com/bitcoin/bitcoin.git"
 gittag=v${pkgver}
+relmon_id=13618
 
 kiin_make() {
     ./autogen.sh

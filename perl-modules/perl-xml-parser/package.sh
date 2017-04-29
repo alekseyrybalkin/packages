@@ -6,6 +6,7 @@ vcs=git
 gittag=v2.44_01
 urls="http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-${pkgver}.tar.gz"
 srctar=XML-Parser-${pkgver}.tar.gz
+relmon_id=3531
 
 kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor

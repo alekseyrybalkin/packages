@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}
 urls="https://github.com/libass/libass/releases/download/${pkgver}/libass-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=1560
 
 kiin_make() {
     ./autogen.sh

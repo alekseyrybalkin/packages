@@ -4,6 +4,7 @@ pkgname=gnupg
 pkgver=2.1.20
 vcs=git
 gittag=gnupg-${pkgver}
+relmon_id=1215
 
 kiin_make() {
     ./autogen.sh

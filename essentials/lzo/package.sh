@@ -6,6 +6,7 @@ pkgver=2.10
 extension=gz
 folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
 check_server=1
+relmon_id=1868
 
 . ${KIIN_REPO}/defaults.sh
 

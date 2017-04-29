@@ -6,6 +6,7 @@ vcs=git
 gittag=tor-${pkgver}
 urls="http://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=4991
 
 kiin_make() {
     ./autogen.sh

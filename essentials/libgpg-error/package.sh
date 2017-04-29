@@ -7,6 +7,7 @@ gittag=libgpg-error-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/${pkgname}/"
 check_server=1
+relmon_id=1628
 
 . ${KIIN_REPO}/defaults.sh
 

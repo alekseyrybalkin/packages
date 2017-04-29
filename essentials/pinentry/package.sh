@@ -6,6 +6,7 @@ vcs=git
 gittag=pinentry-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/pinentry/"
+relmon_id=3643
 
 . ${KIIN_REPO}/defaults.sh
 

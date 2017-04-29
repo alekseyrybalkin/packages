@@ -5,6 +5,7 @@ pkgname=procmail
 pkgver=3.22
 urls="http://www.ring.gr.jp/archives/net/mail/procmail/procmail-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=3713
 
 kiin_make() {
     sed -i 's/getline/get_line/' src/*.[ch]

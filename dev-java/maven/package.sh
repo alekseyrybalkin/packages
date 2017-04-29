@@ -7,6 +7,7 @@ pkgver=3.5.0
 urls="http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/${pkgver}/binaries/apache-maven-${pkgver}-bin.tar.gz"
 srctar=apache-maven-${pkgver}-bin.tar.gz
 srcdir=${location}/apache-maven-${pkgver}
+relmon_id=13532
 
 kiin_make() {
     :

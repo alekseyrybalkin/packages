@@ -7,6 +7,7 @@ gittag=v${pkgver}
 extension=gz
 folder="ftp://sourceware.org/pub/${pkgname}/"
 check_server=1
+relmon_id=1611
 
 . ${KIIN_REPO}/defaults.sh
 

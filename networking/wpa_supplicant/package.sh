@@ -4,6 +4,7 @@ pkgname=wpa_supplicant
 pkgver=2.6
 vcs=git
 gittag=hostap_${pkgver//\./_}
+relmon_id=5146
 
 kiin_make() {
     cp ../config ${pkgname}/.config

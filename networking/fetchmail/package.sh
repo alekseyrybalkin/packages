@@ -6,6 +6,8 @@ vcs=git
 gittag=RELEASE_${pkgver//\./-}
 urls="http://downloads.sourceforge.net/fetchmail/fetchmail-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+# beta versions
+#relmon_id=801
 
 kiin_make() {
     patch -Np1 -i ../disable-sslv3.patch

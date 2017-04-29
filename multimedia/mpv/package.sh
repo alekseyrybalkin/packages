@@ -4,6 +4,8 @@ pkgname=mpv
 vcs=git
 pkgver=0.25.0
 gittag=v${pkgver}
+relmon_id=5348
+relmon_sed='s/v//g'
 
 kiin_make() {
     cp -r ${SOURCES_HOME}/waf/{waf-light,waflib} ./

@@ -5,6 +5,7 @@ pkgname=rxvt-unicode
 pkgver=9.22
 urls="http://dist.schmorp.de/${pkgname}/Attic/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
+relmon_id=4750
 
 kiin_make() {
     ./configure --prefix=/usr \

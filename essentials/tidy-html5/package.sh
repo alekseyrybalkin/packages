@@ -5,6 +5,7 @@ ARCH_NAME=tidy
 pkgver=5.4.0
 vcs=git
 gittag=${pkgver}
+relmon_id=13267
 
 kiin_make() {
     cd build/cmake

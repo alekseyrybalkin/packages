@@ -6,6 +6,7 @@ vcs=git
 gittag=libksba-${pkgver}
 extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/libksba/"
+relmon_id=1649
 
 . ${KIIN_REPO}/defaults.sh
 

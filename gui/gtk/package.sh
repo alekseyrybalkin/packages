@@ -11,6 +11,8 @@ vcs_pkgname=gtk+
 # FIXME
 #gittag=${pkgver}
 gittag=fba4e8fb47d18290ea4a30dea1cd196dbd5b0a30
+# beta versions
+#relmon_id=10018
 
 kiin_make() {
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c

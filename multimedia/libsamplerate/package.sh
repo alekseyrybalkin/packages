@@ -3,7 +3,9 @@
 pkgname=libsamplerate
 pkgver=0.1.9
 vcs=git
+# FIXME
 gittag=f6730d03c3e7660bb6ecad8816f1b09c5825142a
+relmon_id=1716
 
 kiin_make() {
     ./autogen.sh --prefix=/usr

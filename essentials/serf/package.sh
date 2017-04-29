@@ -8,6 +8,7 @@ vcs_clone="git svn clone -Ttrunk -ttags https://svn.apache.org/repos/asf/serf/ -
 gittag=origin/tags/${pkgver}
 urls="https://archive.apache.org/dist/serf/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
+relmon_id=1720
 
 kiin_make() {
     sed -i "/Append/s:RPATH=libdir,::" SConstruct

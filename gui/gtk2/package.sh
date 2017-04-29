@@ -5,6 +5,7 @@ pkgver=2.24.31
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
+relmon_id=13942
 
 kiin_make() {
     NOCONFIGURE=1 ./autogen.sh

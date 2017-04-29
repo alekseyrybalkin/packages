@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}
 urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
+relmon_id=857
 
 kiin_make() {
     MAKEFLAGS=

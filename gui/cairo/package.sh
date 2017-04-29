@@ -4,6 +4,8 @@ pkgname=cairo
 vcs=git
 pkgver=1.14.8
 gittag=${pkgver}
+# beta version
+#relmon_id=247
 
 kiin_make() {
     export ac_cv_lib_lzo2_lzo2a_decompress="no"

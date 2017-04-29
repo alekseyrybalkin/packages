@@ -13,6 +13,7 @@ gittag=v${pkgver}
 extension=xz
 folder="https://www.python.org/ftp/${pkgname}/"
 check_server=1
+relmon_id=13255
 
 srctar=Python-${pkgver}.tar.${extension}
 

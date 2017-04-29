@@ -6,6 +6,7 @@ pkgver=0.17024
 urls="http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/Error-${pkgver}.tar.gz"
 srctar=Error-${pkgver}.tar.gz
 srcdir=${location}/Error-${pkgver}
+relmon_id=7092
 
 kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor

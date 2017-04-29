@@ -8,6 +8,7 @@ pkgver=2.24
 urls="http://search.cpan.org/CPAN/authors/id/G/GR/GRANTM/XML-Simple-${pkgver}.tar.gz"
 srctar=XML-Simple-${pkgver}.tar.gz
 srcdir=${location}/XML-Simple-${pkgver}
+relmon_id=3537
 
 kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor

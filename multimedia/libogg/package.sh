@@ -7,6 +7,7 @@ gittag=v${pkgver}
 extension=xz
 folder="http://downloads.xiph.org/releases/ogg/"
 check_server=1
+relmon_id=1694
 
 . ${KIIN_REPO}/defaults.sh
 

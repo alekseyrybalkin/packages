@@ -10,6 +10,7 @@ vcs=git
 extension=xz
 major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
 check_server=1
+relmon_id=10894
 
 . ${KIIN_REPO}/defaults.sh
 

@@ -6,6 +6,7 @@ ARCH_VERSION=1.14.41+3+gc7b4b53
 vcs=git
 git_repo=git://git.gnome.org/libgsf
 gittag=LIBGSF_${pkgver//\./_}
+relmon_id=1980
 
 kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static

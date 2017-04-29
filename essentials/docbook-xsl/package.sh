@@ -8,6 +8,7 @@ pkgver=1.79.1
 #svnrev=10010
 urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
+relmon_id=13115
 
 kiin_make() {
     :

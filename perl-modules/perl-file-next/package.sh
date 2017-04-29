@@ -6,6 +6,7 @@ vcs=git
 gittag=${pkgver}
 urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.tar.gz"
 srctar=File-Next-${pkgver}.tar.gz
+relmon_id=2895
 
 kiin_make() {
     PERL_MM_USE_DEFAULT=1 PERL5LIB="" \

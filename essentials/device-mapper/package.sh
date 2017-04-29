@@ -6,6 +6,7 @@ pkgver=2.02.170
 vcs=git
 vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
+relmon_id=5354
 
 kiin_make() {
     unset LDFLAGS

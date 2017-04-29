@@ -7,6 +7,7 @@ gittag=${pkgver}
 extension=bz2
 folder="http://archive.apache.org/dist/apr/"
 check_server=1
+relmon_id=96
 
 . ${KIIN_REPO}/defaults.sh
 

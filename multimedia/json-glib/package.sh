@@ -5,6 +5,7 @@ vcs=git
 
 pkgver=1.2.8
 gittag=${pkgver}
+relmon_id=13144
 
 
 kiin_make() {

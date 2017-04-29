@@ -5,6 +5,8 @@ pkgver=0.54
 ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=poppler-${pkgver}
+# extra zeroes in versions
+#relmon_id=3686
 
 kiin_make() {
     ./autogen.sh --prefix=/usr \

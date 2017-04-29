@@ -5,6 +5,7 @@ pkgver=1.8.2
 ARCH_VERSION=${pkgver}
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
+relmon_id=2035
 
 kiin_make() {
     autoreconf -fi

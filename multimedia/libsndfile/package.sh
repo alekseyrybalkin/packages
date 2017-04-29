@@ -6,6 +6,7 @@ pkgver=1.0.28
 #gittag=${pkgver}
 urls="http://www.mega-nerd.com/libsndfile/files/libsndfile-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
+relmon_id=13277
 
 kiin_make() {
     ./configure --prefix=/usr --disable-sqlite

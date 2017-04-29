@@ -4,6 +4,7 @@ pkgname=fluxbox
 pkgver=1.3.7
 vcs=git
 gittag=Release-${pkgver//\./_}
+relmon_id=824
 
 kiin_make() {
     ./autogen.sh

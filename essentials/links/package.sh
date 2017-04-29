@@ -6,6 +6,7 @@ pkgver=2.14
 extension=bz2
 folder="http://${pkgname}.twibright.com/download/"
 check_server=1
+relmon_id=1822
 
 . ${KIIN_REPO}/defaults.sh
 

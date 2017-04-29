@@ -10,6 +10,7 @@ hgtag=SUDO_${pkgver//\./_}
 extension=gz
 folder="http://www.sudo.ws/${pkgname}/dist/"
 check_server=1
+relmon_id=4906
 
 . ${KIIN_REPO}/defaults.sh
 

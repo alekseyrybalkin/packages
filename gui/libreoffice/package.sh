@@ -6,6 +6,8 @@ majorver=5.3.2
 pkgver=${majorver}.2
 vcs=git
 gittag=libreoffice-${pkgver}
+# beta versions
+#relmon_id=6506
 
 kiin_make() {
     python ../libreoffice_prepare_deps.py ${KIIN_HOME}/tarballs/libreoffice

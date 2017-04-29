@@ -3,9 +3,11 @@
 pkgname=libvorbis
 pkgver=1.3.5
 vcs=git
+# FIXME
 gittag=e9a1fd561632f7c9b7d2f58c95d374f8c9ab24f4
 urls="http://downloads.xiph.org/releases/vorbis/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
+relmon_id=1758
 
 kiin_make() {
     ./autogen.sh

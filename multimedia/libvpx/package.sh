@@ -4,6 +4,7 @@ pkgname=libvpx
 pkgver=1.6.1
 vcs=git
 gittag=v${pkgver}
+relmon_id=11083
 
 kiin_make() {
     sed -i 's/cp -p/cp/' build/make/Makefile

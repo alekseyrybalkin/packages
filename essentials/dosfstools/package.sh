@@ -4,6 +4,7 @@ pkgname=dosfstools
 pkgver=4.1
 vcs=git
 gittag=v${pkgver}
+relmon_id=455
 
 kiin_make() {
     autoreconf -fi

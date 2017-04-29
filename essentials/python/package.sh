@@ -5,6 +5,7 @@ _pybasever=3.6
 pkgver=${_pybasever}.1
 vcs=git
 gittag=v${pkgver}
+relmon_id=13254
 
 kiin_make() {
     MAKEFLAGS=

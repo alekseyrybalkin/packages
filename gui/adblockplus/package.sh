@@ -5,6 +5,7 @@ ARCH_NAME=firefox-adblock-plus
 pkgver=2.8.2
 vcs=mercurial
 hgtag=${pkgver}
+relmon_id=2017
 
 kiin_make() {
     hg clone ${KIIN_HOME}/sources/buildtools buildtools

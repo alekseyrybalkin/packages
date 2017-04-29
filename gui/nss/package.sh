@@ -5,6 +5,7 @@ pkgver=3.30.2
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
+relmon_id=2503
 
 kiin_make() {
     MAKEFLAGS=

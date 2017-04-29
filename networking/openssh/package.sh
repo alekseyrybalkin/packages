@@ -9,6 +9,7 @@ gittag=d38f05dbdd291212bc95ea80648b72b7177e9f4e
 extension=gz
 folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 check_server=1
+relmon_id=2565
 
 . ${KIIN_REPO}/defaults.sh
 

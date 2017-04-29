@@ -6,6 +6,7 @@ pkgver=1.9.5
 extension=bz2
 folder="http://www.apache.org/dist/${pkgname}/"
 check_server=1
+relmon_id=4905
 
 . ${KIIN_REPO}/defaults.sh
 
