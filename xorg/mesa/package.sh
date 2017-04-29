@@ -2,7 +2,7 @@
 
 pkgname=mesa
 majorver=17.0
-pkgver=${majorver}.4
+pkgver=${majorver}.5
 vcs=git
 gittag=mesa-${pkgver}
 # rc versions
