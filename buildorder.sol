@@ -425,6 +425,8 @@ python-tensorflow
 dosfstools
 ninja
 dbus
+nodejs
+pciutils
 libreoffice
 chromium
 initramfs

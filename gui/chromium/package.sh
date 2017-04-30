@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=57.0.2987.133
+pkgver=58.0.3029.81
 #vcs=git
 #gittag=${pkgver}
 urls="https://commondatastorage.googleapis.com/chromium-browser-official/chromium-${pkgver}.tar.xz"
@@ -9,23 +9,26 @@ srctar=chromium-${pkgver}.tar.xz
 relmon_id=13344
 
 kiin_make() {
-    sed "s/^config(\"compiler\") {/&\ncflags_cc = [ \"-fno-delete-null-pointer-checks\" ]/" \
+    sed 's/^config("compiler") {/&\ncflags_cc = [ "-fno-delete-null-pointer-checks" ]/' \
         -i build/config/linux/BUILD.gn
+
+    patch -Np1 -i ../chromium-gn-bootstrap-r2.patch
 
     find . -name '*.py' -exec sed -i -r 's|/usr/bin/python$|&2|g' {} +
     mkdir -p ${srcdir}/python2-path
     ln -sf /usr/bin/python2 ${srcdir}/python2-path/python
 
-    for LIB in harfbuzz-ng libxslt yasm; do
+    for LIB in harfbuzz-ng libevent libjpeg libjpeg_turbo libpng libxslt yasm; do
         find -type f -path "*third_party/$LIB/*" \
             \! -path "*third_party/$LIB/chromium/*" \
             \! -path "*third_party/$LIB/google/*" \
+            \! -path "*base/third_party/libevent/*"  \
             \! -regex '.*\.\(gn\|gni\|isolate\|py\)' \
             -delete
     done
 
     python2 build/linux/unbundle/replace_gn_files.py \
-        --system-libraries harfbuzz-ng libxslt yasm
+        --system-libraries harfbuzz-ng libevent libjpeg libpng libxslt yasm
 
     python2 third_party/libaddressinput/chromium/tools/update-strings.py
 
@@ -63,6 +66,8 @@ kiin_make() {
     python2 tools/gn/bootstrap/bootstrap.py --gn-gen-args "${GN_CONFIG[*]}"
     out/Release/gn gen out/Release --args="${GN_CONFIG[*]}" \
         --script-executable=/usr/bin/python2
+    mkdir -p third_party/node/linux/node-linux-x64/bin
+    ln -s /usr/bin/node third_party/node/linux/node-linux-x64/bin/
     ninja -C out/Release chrome chrome_sandbox chromedriver
 }
 

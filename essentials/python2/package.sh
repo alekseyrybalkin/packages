@@ -2,7 +2,7 @@
 
 # needed for: scons, subversion?, mercurial, mesa (mako), itstool,
 #     firefox, gobject-introspection, adblockplus, qemu, asciidoc,
-#     bzr
+#     bzr, nodejs, chromium
 
 pkgname=python2
 _pybasever=2.7
