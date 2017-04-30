@@ -9,7 +9,10 @@ relmon_id=1667
 
 kiin_make() {
     autoreconf -fi
-    ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/mpc
+    ./configure --prefix=/usr \
+        --disable-static \
+        --build=x86_64-unknown-linux-gnu \
+        --docdir=/usr/share/doc/mpc
     make
     make html
 }

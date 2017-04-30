@@ -22,6 +22,7 @@ kiin_make() {
         --enable-gold \
         --enable-ld=default \
         --enable-plugins \
+        --build=x86_64-unknown-linux-gnu \
         --with-system-zlib
     make tooldir=${pkgdir}/usr
 }

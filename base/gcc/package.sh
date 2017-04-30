@@ -21,11 +21,11 @@ kiin_make() {
         --libdir=/usr/lib \
         --enable-languages=c,c++,fortran \
         --disable-multilib \
-        --build=x86_64-pc-linux-gnu \
+        --build=x86_64-unknown-linux-gnu \
         --with-system-zlib
     make
     cd ../libstdc++-v3
-    bash scripts/run_doxygen --mode=html --host_alias=x86_64-pc-linux-gnu . . NO
+    bash scripts/run_doxygen --mode=html --host_alias=x86_64-unknown-linux-gnu . . NO
 }
 
 kiin_install() {

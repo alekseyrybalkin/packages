@@ -16,6 +16,7 @@ kiin_make() {
     ./configure --prefix=/usr \
         --enable-thread-safe \
         --disable-static \
+        --build=x86_64-unknown-linux-gnu \
         --docdir=/usr/share/doc/mpfr
     make
     make html
