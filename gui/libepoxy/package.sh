@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libepoxy
-pkgver=1.4.1
+pkgver=1.4.2
 ARCH_VERSION=${pkgver}
 vcs=git
 gittag=${pkgver}

@@ -10,7 +10,7 @@ git_repo=git://git.gnome.org/gtk+
 vcs_pkgname=gtk+
 # FIXME
 #gittag=${pkgver}
-gittag=fba4e8fb47d18290ea4a30dea1cd196dbd5b0a30
+gittag=6a9d6d59868cd9b322aca394ba770d32301dc73a
 # beta versions
 #relmon_id=10018
 

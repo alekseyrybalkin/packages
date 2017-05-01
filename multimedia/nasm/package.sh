@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nasm
-pkgver=2.12.02
+pkgver=2.13
 vcs=git
 gittag=nasm-${pkgver}
 urls="http://www.nasm.us/pub/nasm/releasebuilds/${pkgver}/nasm-${pkgver}.tar.xz"
