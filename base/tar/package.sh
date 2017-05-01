@@ -15,7 +15,10 @@ kiin_make() {
     git cherry-pick 9a33077a7b7ad7d32815a21dee54eba63b38a81c
     git cherry-pick ac065c57fdc1788a2769fb119ed0c8146e1b9dd6
     ./bootstrap --skip-po
-    ./configure --prefix=/usr --enable-gcc-warnings=no --libexecdir=/usr/bin
+    ./configure --prefix=/usr \
+        --enable-gcc-warnings=no \
+        --build=x86_64-unknown-linux-gnu \
+        --libexecdir=/usr/bin
     make
 }
 

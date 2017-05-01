@@ -12,6 +12,7 @@ kiin_make() {
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib/findutils \
+        --build=x86_64-unknown-linux-gnu \
         --localstatedir=/var/lib/locate
     make
 }

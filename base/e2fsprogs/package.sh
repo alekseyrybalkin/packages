@@ -21,6 +21,7 @@ kiin_make() {
         --disable-uuidd \
         --sbindir=/usr/bin \
         --libdir=/usr/lib \
+        --build=x86_64-unknown-linux-gnu \
         --disable-fsck
     make
 }

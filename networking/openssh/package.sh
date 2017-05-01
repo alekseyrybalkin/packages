@@ -22,6 +22,7 @@ kiin_make() {
         --sysconfdir=/etc/ssh \
         --datadir=/usr/share/sshd \
         --with-md5-passwords \
+        --build=x86_64-unknown-linux-gnu \
         --with-privsep-path=/var/lib/sshd
     make
 }

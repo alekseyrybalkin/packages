@@ -15,6 +15,7 @@ kiin_make() {
     ./configure --prefix=/usr \
         --enable-pinentry-gtk2=no \
         --enable-pinentry-gnome3=no \
+        --build=x86_64-unknown-linux-gnu \
         --enable-maintainer-mode
     make
 }

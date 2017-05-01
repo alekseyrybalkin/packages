@@ -22,6 +22,7 @@ kiin_make() {
         --with-gdbm=/usr \
         --with-openssl=/usr \
         --without-pgsql \
+        --build=x86_64-unknown-linux-gnu \
         --with-crypto
     make
     cd ../

@@ -9,7 +9,9 @@ srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=13277
 
 kiin_make() {
-    ./configure --prefix=/usr --disable-sqlite
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu \
+        --disable-sqlite
     make
 }
 

@@ -12,7 +12,9 @@ relmon_id=1559
 
 kiin_make() {
     ./autogen.sh
-    ./configure --prefix=/usr --enable-maintainer-mode
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu \
+        --enable-maintainer-mode
     make
 }
 

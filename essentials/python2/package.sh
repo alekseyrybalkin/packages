@@ -63,6 +63,7 @@ kiin_make() {
         --with-system-expat \
         --with-system-ffi \
         --enable-unicode=ucs4 \
+        --build=x86_64-unknown-linux-gnu \
         --without-ensurepip
     make
 }

@@ -13,6 +13,7 @@ kiin_make() {
         --libexecdir=/usr/lib \
         --sbindir=/usr/bin \
         --enable-maintainer-mode \
+        --build=x86_64-unknown-linux-gnu \
         --disable-doc
     make
 }

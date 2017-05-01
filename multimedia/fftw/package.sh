@@ -14,7 +14,8 @@ kiin_make() {
     CFLAGS+=" -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math"
     ./configure F77=gfortran --prefix=/usr \
         --enable-shared --enable-threads \
-        --enable-openmp --enable-sse2 --enable-avx
+        --enable-openmp --enable-sse2 --enable-avx \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

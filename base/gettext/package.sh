@@ -16,6 +16,7 @@ kiin_make() {
         --with-included-glib \
         --with-included-libcroco \
         --disable-static \
+        --build=x86_64-unknown-linux-gnu \
         --without-git
     make
 }

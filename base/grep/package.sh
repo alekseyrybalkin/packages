@@ -9,7 +9,8 @@ relmon_id=1251
 kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

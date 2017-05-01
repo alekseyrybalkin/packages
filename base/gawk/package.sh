@@ -8,7 +8,9 @@ relmon_id=868
 
 kiin_make() {
     MAKEFLAGS=
-    ./configure --prefix=/usr --libexecdir=/usr/lib
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu \
+        --libexecdir=/usr/lib
     make
 }
 

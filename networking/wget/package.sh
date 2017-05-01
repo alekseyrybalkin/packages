@@ -13,6 +13,7 @@ kiin_make() {
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
+        --build=x86_64-unknown-linux-gnu \
         --with-ssl=openssl
     make
 }

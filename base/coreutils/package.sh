@@ -12,6 +12,7 @@ kiin_make() {
     ./configure \
         --prefix=/usr \
         --libexecdir=/usr/lib \
+        --build=x86_64-unknown-linux-gnu \
         --enable-no-install-program=kill,uptime
     make
 }

@@ -13,7 +13,11 @@ relmon_id=1623
 
 kiin_make() {
     ./autogen.sh
-    ./configure --disable-doc --enable-maintainer-mode --prefix=/usr --libdir=${LIBDIR}
+    ./configure --disable-doc \
+        --enable-maintainer-mode \
+        --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu \
+        --libdir=${LIBDIR}
     make
 }
 

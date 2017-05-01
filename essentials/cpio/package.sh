@@ -18,6 +18,7 @@ kiin_make() {
     ./configure --prefix=/usr \
         --libexecdir=/tmp \
         --enable-mt \
+        --build=x86_64-unknown-linux-gnu \
         --with-rmt=/usr/bin/rmt
     make
     makeinfo --html -o doc/html doc/cpio.texi

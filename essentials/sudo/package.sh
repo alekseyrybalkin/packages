@@ -26,7 +26,8 @@ kiin_make() {
         --with-env-editor \
         --without-pam \
         --disable-static \
-        --without-sendmail
+        --without-sendmail \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

@@ -16,7 +16,8 @@ kiin_make() {
         --disable-logger \
         --disable-syslogd \
         --disable-whois \
-        --disable-servers
+        --disable-servers \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

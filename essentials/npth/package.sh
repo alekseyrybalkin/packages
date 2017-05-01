@@ -12,7 +12,8 @@ relmon_id=2505
 
 kiin_make() {
     ./autogen.sh
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

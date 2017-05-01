@@ -12,7 +12,8 @@ kiin_make() {
     git clone -s ${KIIN_HOME}/sources/gnulib
     sed -i -e '/\/missing/d' bootstrap
     ./bootstrap --skip-po
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr \
+        --build=x86_64-unknown-linux-gnu
     make
 }
 

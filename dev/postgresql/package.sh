@@ -22,6 +22,7 @@ kiin_make() {
         --sysconfdir=/etc \
         --enable-thread-safety \
         --with-system-tzdata=/usr/share/zoneinfo \
+        --build=x86_64-unknown-linux-gnu \
         --docdir=/usr/share/doc/postgresql
     make
 }
