@@ -4,9 +4,9 @@ pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.11.rc8
+pkgver=4.11
 # FIXME
-gittag=v4.11-rc8
+gittag=v4.11
 #gittag=v${pkgver}
 
 kiin_make() {
