@@ -3,8 +3,7 @@
 pkgname=gcc
 vcs=git
 
-pkgver=6.3.0
-ARCH_VERSION=6.3.1
+pkgver=7.1.0
 gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
