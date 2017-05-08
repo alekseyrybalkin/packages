@@ -28,7 +28,7 @@ kiin_install() {
     unset ZONEINFO
 
     mkdir ${pkgdir}/etc
-    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Asia/Yekaterinburg \
+    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Europe/Moscow \
         ${pkgdir}/etc/localtime
     cd ${location}
     rm -rf ${_srcdir}
