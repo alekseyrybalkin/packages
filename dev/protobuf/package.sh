@@ -2,7 +2,7 @@
 
 pkgname=protobuf
 # also see python-modules/python-protobuf
-pkgver=3.2.1
+pkgver=3.3.0
 _gtestver=1.8.0
 vcs=git
 gittag=v${pkgver}

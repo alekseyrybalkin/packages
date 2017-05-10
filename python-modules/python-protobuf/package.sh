@@ -3,7 +3,7 @@
 pkgname=python-protobuf
 ARCH_NAME=protobuf
 # also see dev/protobuf
-pkgver=3.2.1
+pkgver=3.3.0
 _gtestver=1.8.0
 vcs=git
 vcs_pkgname=protobuf

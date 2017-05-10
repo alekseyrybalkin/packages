@@ -5,9 +5,9 @@ pkgver=3.3.6
 #vcs=git
 #vcs_pkgname=fftw3
 #gittag=${pkgname}-${pkgver}
-urls="http://www.fftw.org/${pkgname}-${pkgver}-pl1.tar.gz"
-srctar=${pkgname}-${pkgver}-pl1.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}-pl1
+urls="http://www.fftw.org/${pkgname}-${pkgver}-pl2.tar.gz"
+srctar=${pkgname}-${pkgver}-pl2.tar.gz
+srcdir=${location}/${pkgname}-${pkgver}-pl2
 relmon_id=803
 
 kiin_make() {

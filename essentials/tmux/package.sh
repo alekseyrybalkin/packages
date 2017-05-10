@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tmux
-pkgver=2.4
+pkgver=2.5
 vcs=git
 gittag=${pkgver}
 relmon_id=4980

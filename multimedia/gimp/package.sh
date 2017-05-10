@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gimp
-pkgver=2.8.20
+pkgver=2.8.22
 vcs=git
 git_repo=git://git.gnome.org/gimp
 gittag=GIMP_${pkgver//\./_}

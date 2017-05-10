@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=2.12.2
+pkgver=2.13.0
 vcs=git
 gittag=v${pkgver}
 # rc versions
