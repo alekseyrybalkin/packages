@@ -3,7 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.13
+pkgver=${majorver}.14
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
@@ -17,10 +17,6 @@ kiin_make() {
     # git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
     # https://bugzilla.gnome.org/show_bug.cgi?id=758065
     git apply ../filechooser.diff
-
-    # https://bugzilla.mozilla.org/show_bug.cgi?id=1361979
-    # https://bugzilla.gnome.org/show_bug.cgi?id=781814
-    git revert --no-edit 7d9450fb60b03dcead85a462f30f24e60119c520
 
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \

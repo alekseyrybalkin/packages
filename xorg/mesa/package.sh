@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=17.0
-pkgver=${majorver}.5
+majorver=17.1
+pkgver=${majorver}.0
 vcs=git
 gittag=mesa-${pkgver}
 # rc versions
@@ -10,7 +10,6 @@ gittag=mesa-${pkgver}
 
 kiin_make() {
     patch -Np1 -i ../MesaLib-add_xdemos.patch
-    patch -Np1 -i ../remove-libpthread-stubs.patch
     autoreconf -fi
     ./configure --prefix=$XORG_PREFIX \
         --sysconfdir=/etc \
