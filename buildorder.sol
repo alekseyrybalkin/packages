@@ -417,12 +417,6 @@ bitcoin
 macchanger
 socat
 bareboard
-bazel
-protobuf
-python-protobuf
-python-wheel
-python-pip
-python-tensorflow
 dosfstools
 ninja
 dbus
