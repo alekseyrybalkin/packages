@@ -422,6 +422,7 @@ ninja
 dbus
 nodejs
 pciutils
+telegram-cli
 libreoffice
 chromium
 initramfs

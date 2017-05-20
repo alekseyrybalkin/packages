@@ -1,0 +1,13 @@
+diff --git a/main.c b/main.c
+index 4776f07..c0a48d4 100644
+--- a/main.c
++++ b/main.c
+@@ -74,7 +74,7 @@
+ #define PROGNAME "telegram-cli"
+ #define VERSION "0.07"
+ 
+-#define CONFIG_DIRECTORY "." PROG_NAME
++#define CONFIG_DIRECTORY ".config/" PROG_NAME
+ #define CONFIG_FILE "config"
+ #define AUTH_KEY_FILE "auth"
+ #define STATE_FILE "state"
