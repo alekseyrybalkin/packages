@@ -423,6 +423,7 @@ dbus
 nodejs
 pciutils
 telegram-cli
+xclip
 libreoffice
 chromium
 initramfs
