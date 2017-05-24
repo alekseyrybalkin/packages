@@ -7,6 +7,7 @@ gittag=Release-${pkgver//\./_}
 relmon_id=824
 
 kiin_make() {
+    git apply ../configpath.diff
     ./autogen.sh
     ./configure --prefix=/usr --disable-imlib2
     make
