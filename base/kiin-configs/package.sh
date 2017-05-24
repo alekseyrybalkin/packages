@@ -18,5 +18,10 @@ kiin_install() {
     cp -av ./* ${pkgdir}
     chmod 440 ${pkgdir}/etc/sudoers
     chmod o-x ${pkgdir}/etc/rc.d/init.d/*
+
+    chown root:${PACMAN} ${pkgdir}/usr/bin/*
+    chmod 750 ${pkgdir}/usr/bin/*
+
+    chown root:root ${pkgdir}/usr/bin/*wifi
     chmod 700 ${pkgdir}/usr/bin/*wifi
 }
