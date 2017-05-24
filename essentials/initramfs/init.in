@@ -4,10 +4,10 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 export PATH
 init=/sbin/init
 
-mount -n -t devtmpfs                    devtmpfs /dev
-mount -n -t proc -o nosuid,noexec,nodev,hidepid=2,gid=1000  proc /proc
-mount -n -t sysfs                       sysfs    /sys
-mount -n -t tmpfs                       tmpfs    /run
+mount -n -t devtmpfs -o noexec                              devtmpfs  /dev
+mount -n -t proc -o nosuid,noexec,nodev,hidepid=2,gid=1000  proc      /proc
+mount -n -t sysfs -o noexec                                 sysfs     /sys
+mount -n -t tmpfs -o noexec                                 tmpfs     /run
 
 udevd --daemon --resolve-names=never
 udevadm trigger
