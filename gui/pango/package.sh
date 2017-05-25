@@ -2,7 +2,8 @@
 
 pkgname=pango
 majorver=1.40
-pkgver=${majorver}.5
+pkgver=${majorver}.6
+ARCH_VERSION=1.40.6+9+g92cc73c8
 vcs=git
 gittag=${pkgver}
 extension=xz

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ragel
-pkgver=7.0.0.9
+pkgver=7.0.0.10
 vcs=git
 gittag=ragel-${pkgver}
 relmon_id=12105

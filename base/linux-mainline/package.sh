@@ -4,8 +4,8 @@ pkgname=linux-mainline
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.12.rc1
-gittag=v4.12-rc1
+pkgver=4.12.rc2
+gittag=v4.12-rc2
 
 kiin_make() {
     git remote add custom ${SOURCES_HOME}/linux-${pkgver}

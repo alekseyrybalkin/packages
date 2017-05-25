@@ -1,10 +1,13 @@
 #!/bin/sh
 
 pkgname=telegram-cli
-pkgver=20160323
+SKIP_ARCH_CHECK=1
+pkgver=1.3.1
 vcs=git
 vcs_pkgname=tg
+#FIXME
 gittag=6547c0b21b977b327b3c5e8142963f4bc246187a
+relmon_id=5610
 
 kiin_make() {
     git apply ../configdir.patch

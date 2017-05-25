@@ -1,12 +1,14 @@
 #!/bin/sh
 
 pkgname=ffmpeg
-pkgver=3.3
+pkgver=3.3.1
 vcs=git
 gittag=n${pkgver}
 relmon_id=5405
 
 kiin_make() {
+    export TMPDIR=${location}/tmp
+    mkdir ${TMPDIR}
     sed -i 's/-lflite"/-lflite -lasound"/' configure
     ./configure --prefix=/usr \
         --enable-gpl \

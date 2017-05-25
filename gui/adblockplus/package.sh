@@ -2,7 +2,7 @@
 
 pkgname=adblockplus
 ARCH_NAME=firefox-adblock-plus
-pkgver=2.8.2
+pkgver=2.9
 vcs=mercurial
 hgtag=${pkgver}
 relmon_id=2017

@@ -2,7 +2,7 @@
 
 pkgname=strace
 vcs=git
-pkgver=4.16
+pkgver=4.17
 gittag=v${pkgver}
 relmon_id=4897
 
