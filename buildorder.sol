@@ -391,6 +391,7 @@ python-babel
 python-snowballstemmer
 python-docutils
 python-pygments
+python-sphinxcontrib-websupport
 python-sphinx
 python-sphinx_rtd_theme
 python-cython
@@ -424,6 +425,5 @@ nodejs
 pciutils
 telegram-cli
 xclip
-libreoffice
 chromium
 initramfs

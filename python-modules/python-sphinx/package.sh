@@ -9,6 +9,7 @@ gittag=${pkgver}
 #relmon_id=4031
 
 kiin_make() {
+    patch -p1 <../typing-module-py35+.patch
     make PYTHON=python3 build
 }
 

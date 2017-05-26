@@ -8,7 +8,7 @@ pkgver=next.20170428
 gittag=next-20170428
 
 kiin_make() {
-    git remote add custom ${SOURCES_HOME}/linux-${pkgver}
+    git remote add custom /home/bullshit/linux-${pkgver}
     git fetch custom
     git merge custom/eudyptula-suffix
     patch -Np1 -i ../net-next-rhashtable-Do-not-lower-max_elems-when-max_size-is-zero.patch
@@ -29,6 +29,6 @@ kiin_install() {
     modules_dir=`ls ${pkgdir}/usr/lib/modules`
     for link in build source; do
         rm ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
-        ln -sv ${SOURCES_HOME}/linux-${pkgver} ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
+        ln -sv /home/bullshit/linux-${pkgver} ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
     done
 }

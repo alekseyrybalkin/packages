@@ -4,7 +4,8 @@ pkgname=atk
 pkgver=2.24.0
 vcs=git
 gittag=ATK_${pkgver//\./_}
-relmon_id=130
+# rc versions
+#relmon_id=130
 
 kiin_make() {
     NOCONFIGURE=1 ./autogen.sh

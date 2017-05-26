@@ -27,7 +27,4 @@ kiin_after_upgrade() {
     kiin_after_install
 }
 
-known="usr/share/applications/mimeinfo.cache \
-    usr/share/mime/application/vnd.ms-word.xml \
-    usr/share/mime/application/vnd.oasis.opendocument.text-master-template.xml \
-    usr/share/mime/application/vnd.sun.xml.base.xml"
+known="usr/share/applications/mimeinfo.cache"

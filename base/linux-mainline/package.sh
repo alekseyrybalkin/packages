@@ -8,7 +8,7 @@ pkgver=4.12.rc2
 gittag=v4.12-rc2
 
 kiin_make() {
-    git remote add custom ${SOURCES_HOME}/linux-${pkgver}
+    git remote add custom /home/bullshit/linux-${pkgver}
     git fetch custom
     git merge custom/eudyptula-suffix
     make mrproper
@@ -28,6 +28,6 @@ kiin_install() {
     modules_dir=`ls ${pkgdir}/usr/lib/modules`
     for link in build source; do
         rm ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
-        ln -sv ${SOURCES_HOME}/linux-${pkgver} ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
+        ln -sv /home/bullshit/linux-${pkgver} ${pkgdir}/usr/lib/modules/${modules_dir}/${link}
     done
 }

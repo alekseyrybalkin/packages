@@ -12,6 +12,9 @@ relmon_id=381
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    # apparently, curl cannot autodetect PATH_SEPARATOR when there is only one
+    # item in $PATH (see zz40-xc-ovr.m4)
+    PATH=${PATH}:/bin
     ./buildconf
     ./configure --prefix=/usr \
         --disable-static \

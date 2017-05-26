@@ -2,7 +2,7 @@
 
 pkgname=kiin
 SKIP_ARCH_CHECK=1
-pkgver=18
+pkgver=20
 vcs=git
 gittag=v${pkgver}
 
