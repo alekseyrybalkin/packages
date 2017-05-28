@@ -16,3 +16,12 @@ kiin_make() {
 kiin_install() {
     make DESTDIR=${pkgdir} install
 }
+
+kiin_after_install() {
+    getent passwd memcached >/dev/null || \
+        useradd --system --shell /bin/false memcached
+}
+
+kiin_after_upgrade() {
+    kiin_after_install
+}
