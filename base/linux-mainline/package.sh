@@ -4,8 +4,8 @@ pkgname=linux-mainline
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.12.rc2
-gittag=v4.12-rc2
+pkgver=4.12.rc3
+gittag=v4.12-rc3
 
 kiin_make() {
     git remote add custom /home/bullshit/linux-${pkgver}
