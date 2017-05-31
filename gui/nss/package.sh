@@ -9,6 +9,7 @@ relmon_id=2503
 
 kiin_make() {
     MAKEFLAGS=
+    export XCFLAGS="${CFLAGS} -Wno-error=int-in-bool-context"
     cd ../
     patch -Np1 -i nss-standalone.patch
     cd nss
