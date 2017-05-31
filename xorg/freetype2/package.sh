@@ -1,15 +1,16 @@
 #!/bin/sh
 
 pkgname=freetype2
-pkgver=2.7.1
+pkgver=2.8
 vcs=git
 gittag=VER-${pkgver//\./-}
 relmon_id=854
 
 kiin_make() {
-    ./autogen.sh
+    patch -Np1 -i ../0002-Enable-subpixel-rendering.patch
+    patch -Np1 -i ../0003-Enable-infinality-subpixel-hinting.patch
     sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg
-    sed -r "s:.*(#.*SUBPIXEL_(RENDERING|HINTING 2)) .*:\1:g" -i include/freetype/config/ftoption.h
+    ./autogen.sh
     ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
