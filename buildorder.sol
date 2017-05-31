@@ -422,7 +422,6 @@ dosfstools
 ninja
 dbus
 nodejs
-pciutils
 telegram-cli
 xclip
 chromium
