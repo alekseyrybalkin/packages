@@ -1,0 +1,28 @@
+diff --git a/interface.c b/interface.c
+index f78619a..d830f48 100644
+--- a/interface.c
++++ b/interface.c
+@@ -3016,6 +3016,7 @@ void print_typing (struct in_ev *ev, enum tgl_typing_status status) {
+ 
+ void type_notification_upd (struct tgl_state *TLSR, struct tgl_user *U, enum tgl_typing_status status) {
+   assert (TLSR == TLS);
++  return;
+   if (log_level < 2 || (disable_output && !notify_ev)) { return; }
+   if (enable_json) { return; }
+   struct in_ev *ev = notify_ev;
+@@ -3032,6 +3033,7 @@ void type_notification_upd (struct tgl_state *TLSR, struct tgl_user *U, enum tgl
+ 
+ void type_in_chat_notification_upd (struct tgl_state *TLSR, struct tgl_user *U, struct tgl_chat *C, enum tgl_typing_status status) {
+   assert (TLSR == TLS);
++  return;
+   if (log_level < 2 || (disable_output && !notify_ev)) { return; }
+   if (enable_json) { return; }
+   struct in_ev *ev = notify_ev;
+@@ -3364,6 +3366,7 @@ void callback_extf (struct tgl_state *TLS, void *extra, int success, const char
+ }
+ 
+ void user_status_upd (struct tgl_state *TLS, struct tgl_user *U) {
++  return;
+   if (disable_output && !notify_ev) { return; }
+   if (!binlog_read) { return; }
+   if (log_level < 3) { return; }

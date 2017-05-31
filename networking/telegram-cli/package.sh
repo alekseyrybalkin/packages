@@ -11,6 +11,7 @@ relmon_id=5610
 
 kiin_make() {
     git apply ../configdir.patch
+    git apply ../silence_some_notifications.patch
     git clone ${SOURCES_HOME}/tgl
     cd tgl
     git clone ${SOURCES_HOME}/tl-parser
