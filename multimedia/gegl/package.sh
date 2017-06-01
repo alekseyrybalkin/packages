@@ -3,7 +3,7 @@
 pkgname=gegl
 vcs=git
 
-pkgver=0.3.16
+pkgver=0.3.18
 gittag=GEGL_${pkgver//\./_}
 
 

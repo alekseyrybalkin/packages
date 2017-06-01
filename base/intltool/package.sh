@@ -9,6 +9,9 @@ srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1385
 
 kiin_make() {
+    patch -Np1 -i ../intltool-0.51.0-perl-5.22.patch
+    patch -Np1 -i ../intltool-merge-Create-cache-file-atomically.patch
+    patch -Np1 -i ../intltool_distcheck-fix.patch
     ./autogen.sh --prefix=/usr
     make
 }

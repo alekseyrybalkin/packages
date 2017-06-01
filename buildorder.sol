@@ -379,6 +379,9 @@ python-cffi
 python-pycparser
 python-bcrypt
 python-untangle
+python-urllib3
+python-certifi
+python-idna
 python-requests
 strace
 qemu
