@@ -427,5 +427,6 @@ dbus
 nodejs
 telegram-cli
 xclip
+ccache
 chromium
 initramfs
