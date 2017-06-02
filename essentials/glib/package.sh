@@ -10,7 +10,7 @@ gittag=${pkgver}
 extension=xz
 major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
-# beta versions
+# development versions
 #relmon_id=10024
 
 . ${KIIN_REPO}/defaults.sh

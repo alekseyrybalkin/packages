@@ -5,8 +5,7 @@ pkgver=1.6.2
 vcs=git
 vcs_pkgname=sphinx
 gittag=${pkgver}
-# beta versions
-#relmon_id=4031
+relmon_id=4031
 
 kiin_make() {
     make PYTHON=python3 build

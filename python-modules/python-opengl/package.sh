@@ -6,8 +6,7 @@ pkgver=3.1.0
 vcs=bzr
 vcs_pkgname=pyopengl
 bzrtag=release-${pkgver}
-# alpha versions
-#relmon_id=3754
+relmon_id=3754
 
 kiin_make() {
     python setup.py build

@@ -8,8 +8,7 @@ vcs_pkgname=otp
 #FIXME
 gittag=OTP-20.0-rc2
 #gittag=OTP-${pkgver}
-# minor versions
-#relmon_id=707
+relmon_id=707
 
 kiin_make() {
     ./otp_build autoconf

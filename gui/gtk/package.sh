@@ -7,7 +7,7 @@ pkgver=${majorver}.15
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
-# beta versions
+# development versions
 #relmon_id=10018
 
 kiin_make() {

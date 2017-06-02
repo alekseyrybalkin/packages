@@ -4,7 +4,7 @@ pkgname=cairo
 vcs=git
 pkgver=1.14.8
 gittag=${pkgver}
-# beta version
+# development version
 #relmon_id=247
 
 kiin_make() {

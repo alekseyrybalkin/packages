@@ -4,8 +4,7 @@ pkgname=libpng
 pkgver=1.6.29
 vcs=git
 gittag=v${pkgver}
-# beta versions
-#relmon_id=1705
+relmon_id=1705
 
 kiin_make() {
     autoreconf -fi

@@ -6,6 +6,7 @@ SKIP_ARCH_CHECK=1
 pkgver=2.40.17
 vcs=git
 gittag=${pkgver}
+# 2.41+ cannot be built without rust, cargo and network
 #relmon_id=5420
 
 kiin_make() {

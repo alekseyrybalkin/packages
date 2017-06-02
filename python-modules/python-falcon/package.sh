@@ -6,8 +6,7 @@ pkgver=1.2.0
 vcs=git
 vcs_pkgname=falcon
 gittag=${pkgver}
-# beta versions
-#relmon_id=3860
+relmon_id=3860
 
 kiin_make() {
     python setup.py build

@@ -9,8 +9,7 @@ vcs_clone="git svn clone -Ttrunk -ttags http://svn.code.sf.net/p/docutils/code $
 gittag=origin/tags/docutils-${pkgver}
 urls="http://downloads.sourceforge.net/docutils/docutils-${pkgver}.tar.gz"
 srctar=docutils-${pkgver}.tar.gz
-# rc versions
-#relmon_id=3849
+relmon_id=3849
 
 kiin_make() {
     python2 setup.py build

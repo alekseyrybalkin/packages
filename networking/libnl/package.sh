@@ -6,8 +6,8 @@ vcs=git
 gittag=libnl${pkgver//\./_}
 urls="https://github.com/thom311/libnl/releases/download/libnl${pkgver//\./_}/libnl-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-# rc versions
-#relmon_id=1684
+relmon_id=1684
+relmon_sed='s/_/\./g'
 
 kiin_make() {
     ./autogen.sh

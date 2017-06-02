@@ -4,8 +4,7 @@ pkgname=git
 pkgver=2.13.0
 vcs=git
 gittag=v${pkgver}
-# rc versions
-#relmon_id=5350
+relmon_id=5350
 
 kiin_make() {
     make configure

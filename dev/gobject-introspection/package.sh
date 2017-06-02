@@ -5,7 +5,7 @@ pkgver=1.52.1
 vcs=git
 git_repo=git://git.gnome.org/gobject-introspection
 gittag=${pkgver}
-# beta versions
+# development versions
 #relmon_id=1223
 
 kiin_make() {
