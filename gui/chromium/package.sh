@@ -55,7 +55,7 @@ kiin_make() {
     python2 tools/gn/bootstrap/bootstrap.py --gn-gen-args "${GN_CONFIG[*]}"
     out/Release/gn gen out/Release --args="${GN_CONFIG[*]}" \
         --script-executable=/usr/bin/python2
-    ninja -C out/Release chrome chrome_sandbox chromedriver
+    ninja -j 4 -C out/Release chrome chrome_sandbox chromedriver
 }
 
 kiin_install() {

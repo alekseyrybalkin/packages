@@ -30,6 +30,8 @@ kiin_make() {
     mkdir path
     ln -s /usr/bin/python2 "$srcdir/path/python"
 
+    CFLAGS="-O2 -pipe"
+    CXXFLAGS=${CFLAGS}
     # gcc6
     CXXFLAGS+=" -fno-delete-null-pointer-checks -fno-schedule-insns2"
 

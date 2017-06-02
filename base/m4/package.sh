@@ -7,6 +7,7 @@ gittag=v${pkgver}
 relmon_id=1871
 
 kiin_make() {
+    export CFLAGS="${CFALGS} -Wimplicit-fallthrough=0"
     git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
