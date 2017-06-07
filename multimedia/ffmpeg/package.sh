@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ffmpeg
-pkgver=3.3.1
+pkgver=3.3.2
 vcs=git
 gittag=n${pkgver}
 relmon_id=5405
