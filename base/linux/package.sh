@@ -4,7 +4,7 @@ pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux-stable
-pkgver=4.11.3
+pkgver=4.11.4
 gittag=v${pkgver}
 
 kiin_make() {
