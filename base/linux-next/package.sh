@@ -4,14 +4,13 @@ pkgname=linux-next
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=next.20170428
-gittag=next-20170428
+pkgver=next.20170609
+gittag=next-20170609
 
 kiin_make() {
     git remote add custom /home/bullshit/linux-${pkgver}
     git fetch custom
     git merge custom/eudyptula-suffix
-    patch -Np1 -i ../net-next-rhashtable-Do-not-lower-max_elems-when-max_size-is-zero.patch
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make
