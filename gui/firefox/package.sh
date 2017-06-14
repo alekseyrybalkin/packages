@@ -3,7 +3,7 @@
 pkgname=firefox
 # 53.0+ cannot be built without rust
 SKIP_ARCH_CHECK=1
-_pkgbase=52.1.0
+_pkgbase=52.2.0
 pkgver=${_pkgbase}esr
 vcs=mercurial
 vcs_pkgname=mozilla-unified
