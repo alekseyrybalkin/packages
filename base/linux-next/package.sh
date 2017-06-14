@@ -4,13 +4,10 @@ pkgname=linux-next
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=next.20170609
-gittag=next-20170609
+pkgver=next.20170614
+gittag=next-20170614
 
 kiin_make() {
-    git remote add custom /home/bullshit/linux-${pkgver}
-    git fetch custom
-    git merge custom/eudyptula-suffix
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make

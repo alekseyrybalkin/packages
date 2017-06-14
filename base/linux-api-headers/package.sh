@@ -3,7 +3,7 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux-stable
-pkgver=4.11.4
+pkgver=4.11.5
 gittag=v${pkgver}
 
 kiin_make() {

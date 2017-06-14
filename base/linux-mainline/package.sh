@@ -8,9 +8,6 @@ pkgver=4.12.rc5
 gittag=v4.12-rc5
 
 kiin_make() {
-    git remote add custom /home/bullshit/linux-${pkgver}
-    git fetch custom
-    git merge custom/eudyptula-suffix
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make
