@@ -428,6 +428,17 @@ nodejs
 telegram-cli
 xclip
 ccache
+leveldb
+libmicrohttpd
+jsoncpp
+cryptopp
+opencl-headers
+ruby
+ocl-icd
+beignet
+argtable
+libjson-rpc-cpp
+ethereum
 libreoffice
 chromium
 initramfs
