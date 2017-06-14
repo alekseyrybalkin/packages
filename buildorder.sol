@@ -428,5 +428,6 @@ nodejs
 telegram-cli
 xclip
 ccache
+libreoffice
 chromium
 initramfs
