@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openvpn
-pkgver=2.4.2
+pkgver=2.4.3
 vcs=git
 gittag=v${pkgver}
 urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
@@ -9,7 +9,6 @@ srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=2567
 
 kiin_make() {
-    patch -Np1 -i ../openssl-1.1.0.patch
     autoreconf -fi
     ./configure \
         --prefix=/usr \
