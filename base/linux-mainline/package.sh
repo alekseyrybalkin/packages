@@ -4,8 +4,8 @@ pkgname=linux-mainline
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.12.rc5
-gittag=v4.12-rc5
+pkgver=4.12.rc6
+gittag=v4.12-rc6
 
 kiin_make() {
     make mrproper
