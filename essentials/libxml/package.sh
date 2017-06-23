@@ -1,7 +1,8 @@
 #!/bin/sh
 
-pkgname=libxml2
+pkgname=libxml
 vcs=git
+vcs_pkgname=libxml2
 
 pkgver=2.9.4
 ARCH_VERSION=2.9.4+16+g07418011

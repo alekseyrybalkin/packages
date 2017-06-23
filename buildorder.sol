@@ -32,7 +32,7 @@ mpfr
 mpc
 gcc
 doxygen
-bzip2
+bzip
 pcre
 libffi
 ncurses
@@ -111,7 +111,7 @@ python2-cython
 bzr
 libgpg-error
 libgcrypt
-libxml2
+libxml
 libxslt
 docbook-xsl
 docbook-xml
@@ -182,7 +182,7 @@ libpng
 colm
 ragel
 harfbuzz
-freetype2
+freetype
 fontconfig
 xtrans
 libx11
@@ -308,7 +308,7 @@ rubberband
 mpv
 tidy-html5
 nmap
-imlib2
+imlib
 feh
 libassuan
 pinentry

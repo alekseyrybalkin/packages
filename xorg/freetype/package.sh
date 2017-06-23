@@ -1,8 +1,9 @@
 #!/bin/sh
 
-pkgname=freetype2
+pkgname=freetype
 pkgver=2.8
 vcs=git
+vcs_pkgname=freetype2
 gittag=VER-${pkgver//\./-}
 relmon_id=854
 

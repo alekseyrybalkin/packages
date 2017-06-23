@@ -1,10 +1,11 @@
 #!/bin/sh
 
 #vcs=none
-pkgname=bzip2
+pkgname=bzip
 pkgver=1.0.6
 urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+srctar=${pkgname}2-${pkgver}.tar.gz
+srcdir=${location}/${pkgname}2-${pkgver}
 relmon_id=237
 
 kiin_make() {
