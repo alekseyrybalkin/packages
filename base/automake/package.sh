@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=automake
-pkgver=1.15
+pkgver=1.15.1
 vcs=git
 gittag=v${pkgver}
 extension=xz
@@ -12,8 +12,7 @@ relmon_id=144
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    sed -i 's:/\\\${:/\\\$\\{:' bin/automake.in
-    ./bootstrap.sh
+    ./bootstrap
     ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}
     make
 }

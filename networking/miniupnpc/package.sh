@@ -2,6 +2,7 @@
 
 pkgname=miniupnpc
 pkgver=2.0
+ARCH_VERSION=2.0.20170509
 vcs=git
 vcs_pkgname=miniupnp
 gittag=miniupnpc_${pkgver//\./_}

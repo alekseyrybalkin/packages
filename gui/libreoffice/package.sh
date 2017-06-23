@@ -2,16 +2,23 @@
 
 pkgname=libreoffice
 ARCH_NAME=libreoffice-fresh
-majorver=5.3.3
+majorver=5.3.4
 pkgver=${majorver}.2
 vcs=git
 gittag=libreoffice-${pkgver}
 # beta versions
 #relmon_id=6506
 
-kiin_make() {
+kiin_prepare() {
+    git clone -s -n ${SOURCES_HOME}/libreoffice/ libreoffice-${pkgver}
+    cd libreoffice-${pkgver}
+    git checkout ${gittag} download.lst
     python ../libreoffice_prepare_deps.py ${KIIN_HOME}/tarballs/libreoffice
+    cd ../
+    rm -rf libreoffice-${pkgver}
+}
 
+kiin_make() {
     mkdir -p external/tarballs/tmp
     cp ${KIIN_HOME}/tarballs/libreoffice/* external/tarballs/tmp/
     sed -i -e 's/\$(WGET)/true/g' Makefile.fetch

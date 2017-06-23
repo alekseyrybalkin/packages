@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-setuptools-scm
-pkgver=1.15.5
+pkgver=1.15.6
 vcs=git
 vcs_pkgname=setuptools_scm
 gittag=v${pkgver}

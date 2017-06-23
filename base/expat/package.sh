@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=expat
-pkgver=2.2.0
+pkgver=2.2.1
 vcs=git
 gittag=R_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/expat/expat-${pkgver}.tar.bz2"

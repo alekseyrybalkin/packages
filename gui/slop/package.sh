@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=slop
-pkgver=6.3.40
+pkgver=6.3.46
 vcs=git
 gittag=v${pkgver}
 

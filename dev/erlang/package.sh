@@ -1,13 +1,10 @@
 #!/bin/sh
 
 pkgname=erlang
-pkgver=20.0.rc2
-ARCH_VERSION=20.0rc
+pkgver=20.0
 vcs=git
 vcs_pkgname=otp
-#FIXME
-gittag=OTP-20.0-rc2
-#gittag=OTP-${pkgver}
+gittag=OTP-${pkgver}
 relmon_id=707
 
 kiin_make() {
