@@ -19,7 +19,6 @@ kiin_make() {
     export PYTHON=python2
 
     ./configure --prefix=/usr \
-        --without-npm \
         --shared-zlib \
         --shared-libuv \
         --with-intl=small-icu

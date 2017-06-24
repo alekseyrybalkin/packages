@@ -2,13 +2,43 @@
 
 pkgname=chromium
 pkgver=59.0.3071.109
-#vcs=git
-#gittag=${pkgver}
-urls="https://commondatastorage.googleapis.com/chromium-browser-official/chromium-${pkgver}.tar.xz"
-srctar=chromium-${pkgver}.tar.xz
+vcs=git
+gittag=${pkgver}
 relmon_id=13344
 
+# updating node_modules:
+# cd third_party/node
+# ./update_npm_deps
+
+_check_and_clone_deps() {
+    echo "vars = {}" > deps.py
+    echo "" >> deps.py
+    echo "def Var(key):" >> deps.py
+    echo "    return vars[key]" >> deps.py
+    echo "" >> deps.py
+    cat DEPS >> deps.py
+
+    cp ${srcdir}/../prepare_deps.py .
+    python prepare_deps.py ${SOURCES_HOME}
+
+    bash filldeps.sh
+    rm filldeps.sh prepare_deps.py deps.py
+}
+
 kiin_make() {
+    cp -r ${KIIN_HOME}/tarballs/chromium_node_modules third_party/node/node_modules
+
+    LASTCHANGE=`git show ${gittag} | head -n 1 | sed 's/commit //g'`
+    echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE
+    echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE.blink
+    rm -rf .git
+
+    _check_and_clone_deps
+
+    cd buildtools
+    _check_and_clone_deps
+    cd ../
+
     patch -Np1 -i ../gcc7.patch
     sed -i -e 's/4, 6/4, 15/g' ui/gfx/linux/client_native_pixmap_dmabuf.cc
 
