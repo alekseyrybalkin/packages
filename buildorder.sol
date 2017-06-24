@@ -428,4 +428,5 @@ xclip
 ccache
 libreoffice
 chromium
+chromium-themes
 initramfs
