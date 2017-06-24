@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# needed for: scons, subversion?, mercurial, mesa (mako), itstool,
-#     firefox, gobject-introspection, adblockplus, qemu, asciidoc,
-#     bzr, nodejs, chromium
+# needed for: scons, subversion?, mercurial, mesa (mako), itstool, firefox,
+# gobject-introspection, qemu, asciidoc, bzr, nodejs, chromium
 
 pkgname=python2
 _pybasever=2.7

@@ -333,9 +333,7 @@ evince
 ntpsec
 fluxbox
 tor
-python2-markupsafe
-python2-jinja
-adblockplus
+ublock
 lightlang
 ldns
 lzo
