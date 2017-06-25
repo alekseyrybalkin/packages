@@ -16,6 +16,7 @@ class Dep:
         self.commit = commit
         self.repo_name = repo_name
 
+
 parsed_deps = []
 
 raw_deps = deps.deps
@@ -58,4 +59,5 @@ with open('filldeps.sh', 'w') as fd:
     for d in parsed_deps:
         fd.write('git clone {}/chromium-{} {}\n'.format(sources_home, d.repo_name, d.path))
         fd.write('git --git-dir={}/.git --work-tree={} checkout {}\n'.format(d.path, d.path, d.commit))
-        fd.write('rm -rf {}/.git\n'.format(d.path))
+        if d.repo_name != 'skia':
+            fd.write('rm -rf {}/.git\n'.format(d.path))

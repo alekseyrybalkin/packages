@@ -35,6 +35,9 @@ kiin_make() {
 
     _check_and_clone_deps
 
+    python2 build/util/lastchange.py -m SKIA_COMMIT_HASH -s third_party/skia --header skia/ext/skia_commit_hash.h
+    rm -rf third_party/skia/.git
+
     cd buildtools
     _check_and_clone_deps
     cd ../
