@@ -426,6 +426,10 @@ nodejs
 telegram-cli
 xclip
 ccache
+coffee-script
+vimium
+libxkbcommon
+xdotool
 libreoffice
 chromium
 chromium-themes
