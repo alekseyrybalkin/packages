@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=freetype
+ARCH_NAME=freetype2
 pkgver=2.8
 vcs=git
 vcs_pkgname=freetype2

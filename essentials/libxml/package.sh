@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=libxml
+ARCH_NAME=libxml2
 vcs=git
 vcs_pkgname=libxml2
 
