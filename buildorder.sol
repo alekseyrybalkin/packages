@@ -432,5 +432,4 @@ libxkbcommon
 xdotool
 libreoffice
 chromium
-chromium-themes
 initramfs
