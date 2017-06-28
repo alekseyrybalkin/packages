@@ -9,7 +9,6 @@ srctar=cups-${pkgver}-source.tar.bz2
 relmon_id=380
 
 kiin_make() {
-    sed -i 's#@CUPS_HTMLVIEW@#firefox#' desktop/cups.desktop.in
     sed -i 's:555:755:g;s:444:644:g' Makedefs.in
     sed -i '/MAN.*.EXT/s:.gz::g' \
         configure config-scripts/cups-manpages.m4

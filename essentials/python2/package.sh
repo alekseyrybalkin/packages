@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# needed for: scons, subversion?, mercurial, mesa (mako), itstool, firefox,
+# needed for: scons, subversion?, mercurial, mesa (mako), itstool,
 # gobject-introspection, qemu, asciidoc, bzr, nodejs, chromium
 
 pkgname=python2
