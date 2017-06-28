@@ -1,20 +1,23 @@
 #!/bin/sh
 
-# used by icu, blender, protobuf, python-protobuf
+# used by icu, blender
 
 pkgname=llvm
 pkgver=4.0.0
 vcs=git
+# FIXME
 gittag=4423e351176a92975739dd4ea43c2ff5877236ae
 relmon_id=1830
 
 kiin_make() {
     git clone -s -n ${SOURCES_HOME}/clang tools/clang
     cd tools/clang
+    # FIXME
     git checkout 559aa046fe3260d8640791f2249d7b0d458b5700
     cd ../../
     git clone -s -n ${SOURCES_HOME}/compiler-rt projects/compiler-rt
     cd projects/compiler-rt
+    # FIXME
     git checkout 1fdc27db84c9d0d9ae4ae60185629e8c43b4a11c
     cd ../../
     mkdir -v build

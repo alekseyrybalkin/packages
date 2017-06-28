@@ -4,8 +4,9 @@ pkgname=linux-next
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=next.20170614
-gittag=next-20170614
+_ver=20170614
+pkgver=next.${_ver}
+gittag=next-${_ver}
 
 kiin_make() {
     make mrproper

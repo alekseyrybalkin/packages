@@ -3,7 +3,7 @@
 pkgname=readline
 pkgver=7.0.003
 vcs=git
-#gittag=readline-${pkgver}
+# FIXME
 gittag=6c32f81cd66bbe86218469063690c84205661a5e
 relmon_id=4173
 

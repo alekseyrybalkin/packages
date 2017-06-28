@@ -4,8 +4,7 @@ pkgname=python-six
 pkgver=1.10.0
 vcs=git
 vcs_pkgname=six
-# FIXME
-gittag=c3ec058bf8c4d6329224eac53366c8e9ce511417
+gittag=${pkgver}
 relmon_id=4027
 
 kiin_make() {

@@ -1,9 +1,11 @@
 #!/bin/sh
 
 pkgname=perl-xml-parser
-pkgver=2.44.1
+_ver=2.44
+_minor=1
+pkgver=${_ver}.${_minor}
 vcs=git
-gittag=v2.44_01
+gittag=v${_ver}_0${_minor}
 urls="http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-${pkgver}.tar.gz"
 srctar=XML-Parser-${pkgver}.tar.gz
 relmon_id=3531

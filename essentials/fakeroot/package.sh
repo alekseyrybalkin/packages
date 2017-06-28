@@ -2,9 +2,9 @@
 
 pkgname=fakeroot
 pkgver=1.21
+_debver=3.1
 vcs=git
-# FIXME
-gittag=dc15d86e54aab301820d30e8cbfb7626ab14bb8d
+gittag=debian/${pkgver}-${_debver}
 extension=bz2
 folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
 check_server=1

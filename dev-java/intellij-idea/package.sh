@@ -6,6 +6,7 @@ SKIP_ARCH_CHECK=1
 vcs=git
 
 pkgver=163
+# FIXME
 gittag=cdc54d1b2816fd38a8a16fe0be5432e6c1d47c7b
 kotlinver=1.0.5-release-IJ2016.3-1
 

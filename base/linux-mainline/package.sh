@@ -4,8 +4,10 @@ pkgname=linux-mainline
 SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
-pkgver=4.12.rc7
-gittag=v4.12-rc7
+_ver=4.12
+_rc=rc7
+pkgver=${_ver}.${_rc}
+gittag=v${_ver}-${_rc}
 
 kiin_make() {
     make mrproper

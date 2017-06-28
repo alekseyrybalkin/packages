@@ -4,6 +4,7 @@ pkgname=slang
 majorver=2.3
 pkgver=${majorver}.1a
 vcs=git
+# FIXME
 gittag=339b3c13282c6b336eb57178aeff9c9ba00a2887
 extension=bz2
 folder="http://www.jedsoft.org/releases/slang/"
