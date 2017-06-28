@@ -3,22 +3,22 @@
 # used by icu, blender
 
 pkgname=llvm
-pkgver=4.0.0
+pkgver=4.0.1
 vcs=git
 # FIXME
-gittag=4423e351176a92975739dd4ea43c2ff5877236ae
+gittag=c8fccc53ed66d505898f8850bcc690c977a7c9a7
 relmon_id=1830
 
 kiin_make() {
     git clone -s -n ${SOURCES_HOME}/clang tools/clang
     cd tools/clang
     # FIXME
-    git checkout 559aa046fe3260d8640791f2249d7b0d458b5700
+    git checkout 3c8961bedc65c9a15cbe67a2ef385a0938f7cfef
     cd ../../
     git clone -s -n ${SOURCES_HOME}/compiler-rt projects/compiler-rt
     cd projects/compiler-rt
     # FIXME
-    git checkout 1fdc27db84c9d0d9ae4ae60185629e8c43b4a11c
+    git checkout 76ab2e5c9b2a2e3d638e217cc21622f9be54f633
     cd ../../
     mkdir -v build
     cd build
