@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=cups
-pkgver=2.2.3
+pkgver=2.2.4
 vcs=git
 gittag=v${pkgver}
 urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"

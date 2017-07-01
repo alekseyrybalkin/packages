@@ -2,7 +2,7 @@
 
 pkgname=mesa
 majorver=17.1
-pkgver=${majorver}.3
+pkgver=${majorver}.4
 vcs=git
 gittag=mesa-${pkgver}
 relmon_id=1970
