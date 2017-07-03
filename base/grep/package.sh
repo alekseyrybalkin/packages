@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=grep
-pkgver=3.0
+pkgver=3.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=1251
