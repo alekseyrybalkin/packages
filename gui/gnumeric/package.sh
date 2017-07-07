@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnumeric
-pkgver=1.12.34
+pkgver=1.12.35
 vcs=git
 git_repo=git://git.gnome.org/gnumeric
 gittag=GNUMERIC_${pkgver//\./_}
