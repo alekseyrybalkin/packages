@@ -428,7 +428,6 @@ coffee-script
 vimium
 libxkbcommon
 xdotool
-python-gr
 libreoffice
 chromium
 initramfs
