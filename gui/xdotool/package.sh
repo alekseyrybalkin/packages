@@ -5,6 +5,7 @@ pkgver=3.20160805.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=8648
+relmon_sed='s/v//g'
 
 kiin_make() {
     make WITHOUT_RPATH_FIX=1
