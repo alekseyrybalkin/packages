@@ -6,7 +6,7 @@ vcs=git
 pkgver=7.1.1
 ARCH_VERSION=7.1.1
 #FIXME
-gittag=8289da53794db234f58cbb09db756fb243f963d7
+gittag=83163f74d15a55f6142bebfa74df8db3ce705160
 #gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
