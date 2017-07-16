@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pcre
-pkgver=8.40
+pkgver=8.41
 vcs=git-svn
 vcs_pkgname=pcre-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags svn://vcs.exim.org/pcre/code ${vcs_pkgname}"

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-mako
-pkgver=1.0.6
+pkgver=1.0.7
 vcs=git
 vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pycparser
-pkgver=2.17
+pkgver=2.18
 vcs=git
 vcs_pkgname=pycparser
 gittag=release_v${pkgver}

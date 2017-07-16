@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpipeline
-pkgver=1.4.1
+pkgver=1.4.2
 vcs=git
 gittag=${pkgver}
 urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.gz"

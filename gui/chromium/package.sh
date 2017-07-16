@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=59.0.3071.109
+pkgver=59.0.3071.135
 vcs=git
 gittag=${pkgver}
 relmon_id=13344
@@ -9,6 +9,9 @@ relmon_id=13344
 # updating node_modules:
 # cd third_party/node
 # ./update_npm_deps
+
+# fetching webrtc branch_heads:
+# git fetch origin '+refs/branch-heads/*:refs/remotes/branch-heads/*'
 
 _check_and_clone_deps() {
     echo "vars = {}" > deps.py
@@ -27,6 +30,7 @@ _check_and_clone_deps() {
 
 kiin_make() {
     cp -r ${KIIN_HOME}/tarballs/chromium_node_modules third_party/node/node_modules
+    rm -rf third_party/node/node_modules/.git
 
     LASTCHANGE=`git show ${gittag} | head -n 1 | sed 's/commit //g'`
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE
@@ -71,6 +75,7 @@ kiin_make() {
         'proprietary_codecs=true'
         'link_pulseaudio=false'
         'linux_use_bundled_binutils=false'
+        'use_gtk3=true'
         'use_gconf=false'
         'use_gnome_keyring=false'
         'use_gold=false'

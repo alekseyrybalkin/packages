@@ -3,6 +3,7 @@
 pkgname=libvpx
 pkgver=1.6.1
 vcs=git
+vcs_pkgname=chromium-libvpx
 gittag=v${pkgver}
 relmon_id=11083
 

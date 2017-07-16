@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libva
-pkgver=1.8.2
+pkgver=1.8.3
 vcs=git
 gittag=${pkgver}
 extension=bz2

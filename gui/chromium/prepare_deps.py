@@ -37,8 +37,6 @@ for k, v in raw_deps.items():
         repo_name = 'selenium-py'
     if repo_name == 'lib':
         repo_name = 'bidichecker-lib'
-    if repo_name == 'webrtc' and commit == '80b8183191cb5703a22c589e8f6b893fcc41d4ea':
-        commit = '1abcfb59a01e17050dc41b5635e52ee591962018'
 
     if repo_name in repos:
         print('repo name {} is duplicated'.format(repo_name))
