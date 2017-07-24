@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.13.0-rc1 Kernel Configuration
+# Linux/x86 4.13.0-rc2 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -2467,7 +2467,7 @@ CONFIG_DRM_MIPI_DSI=y
 CONFIG_DRM_KMS_HELPER=y
 CONFIG_DRM_KMS_FB_HELPER=y
 CONFIG_DRM_FBDEV_EMULATION=y
-CONFIG_DRM_FBDEV_OVERALLOC=200
+CONFIG_DRM_FBDEV_OVERALLOC=100
 # CONFIG_DRM_LOAD_EDID_FIRMWARE is not set
 
 #
@@ -3424,7 +3424,6 @@ CONFIG_NVMEM=y
 # FSI support
 #
 # CONFIG_FSI is not set
-# CONFIG_MULTIPLEXER is not set
 
 #
 # Firmware Drivers
