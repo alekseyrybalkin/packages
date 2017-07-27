@@ -2,10 +2,12 @@
 
 pkgname=device-mapper
 ARCH_NAME=lvm2
-pkgver=2.02.172
+pkgver=2.02.173
 vcs=git
 vcs_pkgname=lvm2
-gittag=v${pkgver//\./_}
+# FIXME
+gittag=88f15659374042f7657d73393f73e267d752b4e1
+#gittag=v${pkgver//\./_}
 relmon_id=5354
 
 kiin_make() {
