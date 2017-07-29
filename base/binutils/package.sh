@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.28
+pkgver=2.29
 ARCH_VERSION=${pkgver}.0
 vcs=git
 vcs_pkgname=binutils-gdb

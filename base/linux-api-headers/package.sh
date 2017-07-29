@@ -2,9 +2,13 @@
 
 pkgname=linux-api-headers
 vcs=git
-vcs_pkgname=linux-stable
-pkgver=4.12.4
-gittag=v${pkgver}
+vcs_pkgname=linux
+_ver=4.13
+_rc=rc2
+pkgver=${_ver}.${_rc}
+gittag=v${_ver}-${_rc}
+#pkgver=4.12.4
+#gittag=v${pkgver}
 
 kiin_make() {
     make mrproper
