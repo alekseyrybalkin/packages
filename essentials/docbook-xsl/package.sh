@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=docbook-xsl
-pkgver=1.79.1
-# build from svn requires at least perl-xml-xpath
-#vcs=git-svn
-#vcs_pkgname=docbook-git-svn
-#svnrev=10010
-urls="http://downloads.sourceforge.net/docbook/docbook-xsl-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
+pkgver=1.79.2
+# build from git requires at least perl-xml-xpath
+#vcs=git
+#gittag=release/${pkgver}
+urls="https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F${pkgver}/docbook-xsl-nons-${pkgver}.tar.gz"
+srctar=${pkgname}-nons-${pkgver}.tar.gz
+srcdir=${location}/${pkgname}-nons-${pkgver}
 relmon_id=13115
 
 kiin_make() {
