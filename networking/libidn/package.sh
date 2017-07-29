@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libidn
-pkgver=2.0.2
+pkgver=2.0.3
 vcs=git
 vcs_pkgname=libidn2
 gittag=libidn2-${pkgver}
@@ -12,6 +12,7 @@ kiin_make() {
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
+        --disable-doc \
         --disable-static
     make
 }
