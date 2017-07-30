@@ -5,9 +5,9 @@ SKIP_ARCH_CHECK=1
 vcs=git
 vcs_pkgname=linux
 _ver=4.13
-_rc=rc2
-pkgver=${_ver}.${_rc}
-gittag=v${_ver}-${_rc}
+_rc=-rc2
+pkgver=${_ver}${_rc//\-/.}
+gittag=v${_ver}${_rc}
 
 kiin_make() {
     make mrproper

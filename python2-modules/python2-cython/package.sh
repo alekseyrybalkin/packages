@@ -2,7 +2,7 @@
 
 pkgname=python2-cython
 ARCH_NAME=cython
-pkgver=0.25.2
+pkgver=0.26
 vcs=git
 vcs_pkgname=cython
 gittag=${pkgver}

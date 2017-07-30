@@ -8,6 +8,8 @@ gittag=${pkgver}
 relmon_id=6835
 
 kiin_make() {
+    # disable auto-pickling in cython
+    git cherry-pick 4c25c7de7bca39b753e177837fa1bdff0fb7ecf1
     # apparently, gevent cannot autodetect PATH_SEPARATOR when there is only one
     # item in $PATH (see zz40-xc-ovr.m4)
     PATH=${PATH}:/bin

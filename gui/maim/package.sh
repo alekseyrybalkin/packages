@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=maim
-pkgver=5.4.63
+pkgver=5.4.64
 vcs=git
 gittag=v${pkgver}
 

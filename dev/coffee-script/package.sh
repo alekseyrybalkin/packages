@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=coffee-script
-pkgver=1.12.6
+pkgver=1.12.7
 vcs=git
 vcs_pkgname=coffeescript
 gittag=${pkgver}

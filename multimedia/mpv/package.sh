@@ -2,7 +2,7 @@
 
 pkgname=mpv
 vcs=git
-pkgver=0.25.0
+pkgver=0.26.0
 gittag=v${pkgver}
 relmon_id=5348
 relmon_sed='s/v//g'

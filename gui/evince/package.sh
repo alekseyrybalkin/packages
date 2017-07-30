@@ -1,12 +1,12 @@
 #!/bin/sh
 
 pkgname=evince
-pkgver=3.24.0
-ARCH_VERSION=3.24.0+12+g717df38f
+pkgver=3.24.1
 vcs=git
 git_repo=git://git.gnome.org/evince
 gittag=${pkgver}
-relmon_id=8178
+# beta versions
+#relmon_id=8178
 
 kiin_make() {
     export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"

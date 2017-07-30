@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nspr
-pkgver=4.15
+pkgver=4.16
 vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
 relmon_id=7953

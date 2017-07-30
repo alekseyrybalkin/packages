@@ -2,8 +2,8 @@
 
 pkgname=libreoffice
 ARCH_NAME=libreoffice-fresh
-majorver=5.3.4
-pkgver=${majorver}.2
+majorver=5.4.0
+pkgver=${majorver}.3
 vcs=git
 gittag=libreoffice-${pkgver}
 # beta versions

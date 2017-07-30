@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import os.path
 import sys
 
@@ -55,7 +56,8 @@ if fail:
 with open('filldeps.sh', 'w') as fd:
     fd.write('set -e\n')
     for d in parsed_deps:
-        fd.write('git clone {}/chromium-{} {}\n'.format(sources_home, d.repo_name, d.path))
-        fd.write('git --git-dir={}/.git --work-tree={} checkout {}\n'.format(d.path, d.path, d.commit))
-        if d.repo_name != 'skia':
-            fd.write('rm -rf {}/.git\n'.format(d.path))
+        if not os.path.isdir(d.path) or not os.listdir(d.path):
+            fd.write('git clone {}/chromium-{} {}\n'.format(sources_home, d.repo_name, d.path))
+            fd.write('git --git-dir={}/.git --work-tree={} checkout {}\n'.format(d.path, d.path, d.commit))
+            if d.repo_name != 'skia':
+                fd.write('rm -rf {}/.git\n'.format(d.path))

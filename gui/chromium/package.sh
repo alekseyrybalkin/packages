@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=59.0.3071.135
+pkgver=60.0.3112.87
 vcs=git
 gittag=${pkgver}
 relmon_id=13344
@@ -19,7 +19,7 @@ _check_and_clone_deps() {
     echo "def Var(key):" >> deps.py
     echo "    return vars[key]" >> deps.py
     echo "" >> deps.py
-    cat DEPS >> deps.py
+    cat ${1} >> deps.py
 
     cp ${srcdir}/../prepare_deps.py .
     python prepare_deps.py ${SOURCES_HOME}
@@ -37,17 +37,19 @@ kiin_make() {
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE.blink
     rm -rf .git
 
-    _check_and_clone_deps
+    _check_and_clone_deps DEPS
+    _check_and_clone_deps third_party/angle/DEPS
 
     python2 build/util/lastchange.py -m SKIA_COMMIT_HASH -s third_party/skia --header skia/ext/skia_commit_hash.h
     rm -rf third_party/skia/.git
 
     cd buildtools
-    _check_and_clone_deps
+    _check_and_clone_deps DEPS
     cd ../
 
     patch -Np1 -i ../gcc7.patch
     sed -i -e 's/4, 6/4, 15/g' ui/gfx/linux/client_native_pixmap_dmabuf.cc
+    patch -Np1 -i ../chromium-gn-bootstrap-r8.patch
 
     sed 's/^config("compiler") {/&\ncflags_cc = [ "-fno-delete-null-pointer-checks" ]/' \
         -i build/config/linux/BUILD.gn
