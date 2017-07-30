@@ -337,9 +337,6 @@ lzo
 openvpn
 postgresql
 nginx
-glm
-slop
-maim
 memcached
 libgsf
 goffice
@@ -427,6 +424,7 @@ coffee-script
 vimium
 libxkbcommon
 xdotool
+python-mss
 libreoffice
 chromium
 initramfs
