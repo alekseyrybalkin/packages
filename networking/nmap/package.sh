@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nmap
-pkgver=7.50
+pkgver=7.60
 vcs=git-svn
 vcs_pkgname=nmap-git-svn
 vcs_clone="git svn clone -Tnmap -tnmap-releases https://svn.nmap.org/ ${vcs_pkgname}"

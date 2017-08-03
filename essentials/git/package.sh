@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=git
-pkgver=2.13.3
+pkgver=2.13.4
 vcs=git
 gittag=v${pkgver}
 relmon_id=5350
