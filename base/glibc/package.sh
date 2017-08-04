@@ -2,10 +2,10 @@
 
 KIIN_NO_STRIPPING=1
 pkgname=glibc
-pkgver=2.25
+pkgver=2.26
 vcs=git
 # FIXME
-gittag=0edeadc0d396aa713b808ae50a0058aca5d3837e
+gittag=a4e5aa1a443cfad09bc98f9bb527995371a53a88
 relmon_id=5401
 
 kiin_make() {
