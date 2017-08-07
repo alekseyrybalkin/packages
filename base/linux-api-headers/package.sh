@@ -4,7 +4,7 @@ pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
 _ver=4.13
-_rc=-rc3
+_rc=-rc4
 pkgver=${_ver}${_rc//\-/.}
 gittag=v${_ver}${_rc}
 
