@@ -22,6 +22,7 @@ kiin_make() {
         --enable-pcre32 \
         --enable-pcregrep-libz \
         --enable-pcregrep-libbz2 \
+        --enable-jit \
         --disable-static
     make
 }

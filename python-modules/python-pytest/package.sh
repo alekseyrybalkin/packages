@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pytest
-pkgver=3.1.3
+pkgver=3.2.0
 vcs=git
 vcs_pkgname=pytest
 gittag=${pkgver}

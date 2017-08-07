@@ -2,7 +2,7 @@
 
 pkgname=python-docutils
 ARCH_NAME=docutils
-pkgver=0.13.1
+pkgver=0.14
 vcs=git-svn
 vcs_pkgname=docutils-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags http://svn.code.sf.net/p/docutils/code ${vcs_pkgname}"

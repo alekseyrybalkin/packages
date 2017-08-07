@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tcl
-pkgver=8.6.6
+pkgver=8.6.7
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941
