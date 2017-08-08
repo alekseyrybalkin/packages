@@ -3,7 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.17
+pkgver=${majorver}.18
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
