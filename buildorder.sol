@@ -92,7 +92,6 @@ eudev
 man-db
 vim
 linux
-linux-mainline
 fakeroot
 tcl
 tk
