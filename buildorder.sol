@@ -394,7 +394,6 @@ python-scipy
 python-opengl
 glfw
 python-pillow
-blender
 python-chardet
 python-webencodings
 python-html5lib
