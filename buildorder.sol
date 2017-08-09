@@ -375,7 +375,6 @@ python-certifi
 python-idna
 python-requests
 strace
-qemu
 fossil
 python-jinja
 python-imagesize
