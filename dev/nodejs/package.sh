@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nodejs
-pkgver=8.2.1
+pkgver=8.3.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=8251
