@@ -2,7 +2,7 @@
 
 #vcs=git
 pkgname=subversion
-pkgver=1.9.6
+pkgver=1.9.7
 extension=bz2
 folder="http://www.apache.org/dist/${pkgname}/"
 check_server=1
