@@ -31,7 +31,6 @@ gmp
 mpfr
 mpc
 gcc
-doxygen
 bzip
 pcre
 libffi
@@ -94,7 +93,6 @@ vim
 linux
 fakeroot
 tcl
-tk
 sqlite
 openssl
 cacerts
@@ -141,12 +139,6 @@ alsa-lib
 libsndfile
 libsamplerate
 alsa-utils
-libogg
-libvorbis
-lame
-llvm
-icu
-boost
 xorg-util-macros
 bigreqsproto
 compositeproto
@@ -179,6 +171,7 @@ libxcb
 libpng
 colm
 ragel
+icu
 harfbuzz
 freetype
 fontconfig
@@ -256,7 +249,6 @@ ttf-noto
 ttf-ubuntu
 ttf-fantasque
 zip
-gtk-doc
 atk
 cairo
 nasm
@@ -282,7 +274,6 @@ linux-firmware
 libnl
 iw
 wpa_supplicant
-rsync
 fcron
 logrotate
 acpi
@@ -293,6 +284,9 @@ giflib
 lcms
 miniupnpc
 transmission
+libogg
+libvorbis
+lame
 libtheora
 openjpeg
 ffmpeg
@@ -330,7 +324,6 @@ evince
 ntpsec
 fluxbox
 tor
-ublock
 lightlang
 ldns
 lzo
@@ -402,15 +395,13 @@ python-bleach
 python-greenlet
 python-gevent
 python-pycodestyle
-stockfish
-python-chess
 erlang
 rabbitmq
 db
+boost
 bitcoin
 macchanger
 socat
-bareboard
 dosfstools
 ninja
 dbus
@@ -418,11 +409,11 @@ nodejs
 telegram-cli
 xclip
 ccache
-coffee-script
-vimium
 libxkbcommon
 xdotool
 python-mss
-libreoffice
+coffee-script
+vimium
+ublock
 chromium
 initramfs

@@ -8,6 +8,9 @@ gittag=v${pkgver}
 relmon_id=4004
 
 kiin_make() {
+    # allow idna 2.6
+    sed -i -e 's/idna>=2.5,<2.6/idna>=2.5,<2.7/g' setup.py
+
     python setup.py build
     cd docs
     make html
