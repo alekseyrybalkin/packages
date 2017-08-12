@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=harfbuzz
-pkgver=1.4.7
+pkgver=1.4.8
 vcs=git
 gittag=${pkgver}
 extension=bz2

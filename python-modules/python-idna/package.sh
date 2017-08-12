@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-idna
-pkgver=2.5
+pkgver=2.6
 vcs=git
 vcs_pkgname=idna
 gittag=v${pkgver}
