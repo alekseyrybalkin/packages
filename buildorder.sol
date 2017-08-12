@@ -38,6 +38,8 @@ ncurses
 attr
 acl
 libcap
+popt
+rsync
 sed
 shadow
 psmisc
@@ -268,7 +270,6 @@ libvpx
 gsettings-desktop-schemas
 gtk2
 cpio
-popt
 cryptsetup
 linux-firmware
 libnl
