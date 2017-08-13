@@ -17,8 +17,8 @@ relmon_id=10894
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-    ./autogen.sh
-    ./configure --prefix=/usr
+    ./autogen.sh --disable-gtk2-engine
+    ./configure --disable-gtk2-engine --prefix=/usr
     make
 }
 

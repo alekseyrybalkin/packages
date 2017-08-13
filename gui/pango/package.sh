@@ -13,6 +13,13 @@ relmon_id=11783
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    # disable gtk-doc
+    sed -i -e 's/gtkdocize/true/g' autogen.sh
+    sed -i -e '/docs/d' configure.ac
+    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
+    sed -i -e 's/examples docs/examples/g' Makefile.am
+    rm -rf docs
+
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --libdir=$LIBDIR

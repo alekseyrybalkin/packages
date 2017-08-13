@@ -8,6 +8,13 @@ gittag=ATK_${pkgver//\./_}
 #relmon_id=130
 
 kiin_make() {
+    # disable gtk-doc
+    sed -i -e '/gtkdocize/d' autogen.sh
+    sed -i -e '/docs/d' configure.ac
+    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
+    sed -i -e 's/tests docs po/tests po/g' Makefile.am
+    rm -rf docs
+
     NOCONFIGURE=1 ./autogen.sh
     ./configure --prefix=/usr --libdir=$LIBDIR
     make

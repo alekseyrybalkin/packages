@@ -268,7 +268,6 @@ nss
 yasm
 libvpx
 gsettings-desktop-schemas
-gtk2
 cpio
 cryptsetup
 linux-firmware
@@ -335,10 +334,6 @@ memcached
 libgsf
 goffice
 gnumeric
-babl
-json-glib
-gegl
-gimp
 cups
 openjdk
 cacerts-java

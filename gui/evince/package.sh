@@ -9,6 +9,13 @@ gittag=${pkgver}
 #relmon_id=8178
 
 kiin_make() {
+    # disable gtk-doc
+    sed -i -e '/help\//d' configure.ac
+    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
+    sed -i -e '/help$/d' Makefile.am
+    sed -i -e 's/po \\$/po/g' Makefile.am
+    rm -rf help
+
     export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"
     ./autogen.sh --prefix=/usr \
         --libexecdir=/usr/lib/evince \
@@ -19,6 +26,7 @@ kiin_make() {
         --disable-libgnome-desktop \
         --disable-browser-plugin \
         --disable-help \
+        --disable-gtk-doc \
         --disable-static
     make
 }

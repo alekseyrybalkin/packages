@@ -9,6 +9,14 @@ gittag=LIBGSF_${pkgver//\./_}
 relmon_id=1980
 
 kiin_make() {
+    # disable gtk-doc
+    sed -i -e '/gtkdocize/d' autogen.sh
+    sed -i -e '/gtk_doc/d' configure.ac
+    sed -i -e '/GTK_DOC/d' configure.ac
+    sed -i -e '/doc\//d' configure.ac
+    sed -i -e 's/doc tools/tools/g' Makefile.am
+    rm -rf doc
+
     ./autogen.sh --prefix=/usr --disable-static
     make
 }

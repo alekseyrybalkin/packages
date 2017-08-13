@@ -11,8 +11,17 @@ gittag=${pkgver}
 #relmon_id=10018
 
 kiin_make() {
+    # disable gtk-doc
+    sed -i -e 's/gtkdocize/true/g' autogen.sh
+    sed -i -e '/docs/d' configure.ac
+    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
+    sed -i -e 's/docs m4macros/m4macros/g' Makefile.am
+    rm -rf docs
+
+    # disable accessibility
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
     sed -i -e 's/ atk-bridge-2.0//g' configure.ac
+
     # revert "file chooser: Allow activating without double-click"
     # git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
     # https://bugzilla.gnome.org/show_bug.cgi?id=758065
