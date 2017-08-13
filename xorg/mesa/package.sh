@@ -17,7 +17,7 @@ kiin_make() {
         --with-dri-drivers='i965' \
         --enable-egl \
         --enable-gbm \
-        --with-egl-platforms=x11,drm \
+        --with-platforms=x11,drm \
         --enable-shared-glapi \
         --enable-glx-tls \
         --enable-dri \
