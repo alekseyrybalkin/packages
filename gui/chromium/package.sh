@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=60.0.3112.102
+pkgver=60.0.3112.104
 vcs=git
 gittag=${pkgver}
 relmon_id=13344

@@ -3,10 +3,9 @@
 pkgname=gcc
 vcs=git
 
-pkgver=7.1.1
-ARCH_VERSION=7.1.1
+pkgver=7.2.0
 #FIXME
-gittag=d1670beb469f77cb9deddeecc12053e7006eb998
+gittag=1bd23ca8c30f4827c4bea23deedf7ca33a86ffb5
 #gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"

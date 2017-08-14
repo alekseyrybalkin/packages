@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rhash
-pkgver=1.3.4
+pkgver=1.3.5
 vcs=git
 gittag=v${pkgver}
 relmon_id=13843

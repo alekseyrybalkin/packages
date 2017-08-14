@@ -7,7 +7,7 @@ vcs=git
 
 pkgver=163
 # FIXME
-gittag=cdc54d1b2816fd38a8a16fe0be5432e6c1d47c7b
+gittag=idea/${pkgver}.15529.5
 kotlinver=1.0.5-release-IJ2016.3-1
 
 extra_urls="https://plugins.jetbrains.com/files/6954/30100/kotlin-plugin-${kotlinver}.zip https://plugins.jetbrains.com/files/631/30455/python-community-163.125.zip"
