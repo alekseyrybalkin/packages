@@ -4,9 +4,7 @@ pkgname=gcc
 vcs=git
 
 pkgver=7.2.0
-#FIXME
-gittag=1bd23ca8c30f4827c4bea23deedf7ca33a86ffb5
-#gittag=gcc-${pkgver//\./_}-release
+gittag=gcc-${pkgver//\./_}-release
 
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
