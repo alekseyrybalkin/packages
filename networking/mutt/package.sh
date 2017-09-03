@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.8.3
-ARCH_VERSION=${pkgver}
+pkgver=1.9
+ARCH_VERSION=${pkgver}.0
 vcs=mercurial
 hgtag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
