@@ -25,7 +25,7 @@ kiin_make() {
     # revert "file chooser: Allow activating without double-click"
     # git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
     # https://bugzilla.gnome.org/show_bug.cgi?id=758065
-    git apply ../filechooser.diff
+    patch -Np1 -i ../filechooser.diff
 
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \

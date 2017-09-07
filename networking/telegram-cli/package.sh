@@ -10,12 +10,12 @@ gittag=6547c0b21b977b327b3c5e8142963f4bc246187a
 relmon_id=5610
 
 kiin_make() {
-    git apply ../configdir.patch
-    git apply ../silence_some_notifications.patch
+    patch -Np1 -i ../configdir.patch
+    patch -Np1 -i ../silence_some_notifications.patch
     git clone ${SOURCES_HOME}/tgl
     cd tgl
     git clone ${SOURCES_HOME}/tl-parser
-    git apply ../../openssl-1.1.patch
+    patch -Np1 -i ../../openssl-1.1.patch
     cd ../
     ./configure --disable-libconfig --disable-liblua --disable-json
     make

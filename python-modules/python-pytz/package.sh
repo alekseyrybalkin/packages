@@ -10,7 +10,7 @@ srctar=pytz-${pkgver}.tar.gz
 relmon_id=6537
 
 kiin_make() {
-    git apply ../2016.6.1.patch
+    patch -Np1 -i ../2016.6.1.patch
     MAKEFLAGS=
     sed -i -e 's/python2.4/python2.7/g' Makefile
     sed -i -e 's/python2.5/python2.7/g' Makefile

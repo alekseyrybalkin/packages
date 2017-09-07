@@ -8,7 +8,7 @@ gittag=${pkgver}
 relmon_id=827
 
 kiin_make() {
-    git apply ../fc-blanks.diff
+    patch -Np1 -i ../fc-blanks.diff
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
