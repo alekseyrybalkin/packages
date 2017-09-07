@@ -8,6 +8,7 @@ hgtag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
 
 kiin_make() {
+    rm -rf .hg
     autoreconf -fi
     ./configure --prefix=/usr --sysconfdir=/etc \
         --with-docdir=/usr/share/doc/mutt \
