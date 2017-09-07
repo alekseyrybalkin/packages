@@ -390,8 +390,6 @@ dosfstools
 telegram-cli
 xclip
 ccache
-libxkbcommon
-xdotool
 ldns
 strace
 coffee-script

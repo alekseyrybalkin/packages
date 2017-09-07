@@ -12,6 +12,13 @@ kiin_make() {
         # disable autostart for some services
         find etc/rc.d -type l -name "*postgresql*" | xargs rm
     fi
+
+    # compile c tools
+    cd tools
+    gcc -Wall -Wextra -Werror -Wpedantic -std=c11 -lX11 -o mousemove mousemove.c
+    mv mousemove ../usr/bin/
+    cd ../
+    rm -rf tools
 }
 
 kiin_install() {
