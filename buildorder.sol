@@ -307,7 +307,6 @@ libksba
 npth
 gnupg
 mutt
-procmail
 fetchmail
 gsettings-desktop-schemas
 shared-mime-info
@@ -386,12 +385,9 @@ boost
 bitcoin
 macchanger
 socat
-dosfstools
 telegram-cli
 xclip
 ccache
-ldns
-strace
 coffee-script
 vimium
 ublock

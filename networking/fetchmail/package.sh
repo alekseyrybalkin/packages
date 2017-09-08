@@ -11,7 +11,7 @@ relmon_id=801
 kiin_make() {
     patch -Np1 -i ../disable-sslv3.patch
     ./autogen.sh
-    ./configure --prefix=/usr --with-ssl --enable-fallback=procmail
+    ./configure --prefix=/usr --with-ssl
     make
 }
 
