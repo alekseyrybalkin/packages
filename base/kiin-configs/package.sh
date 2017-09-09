@@ -14,11 +14,7 @@ kiin_make() {
     fi
 
     # compile c tools
-    cd tools
-    gcc -Wall -Wextra -Werror -Wpedantic -std=c11 -lX11 -o mousemove mousemove.c
-    mv mousemove ../usr/bin/
-    cd ../
-    rm -rf tools
+    gcc -Wall -Wextra -Werror -Wpedantic -std=c11 -lX11 -o usr/bin/mousemove ../mousemove.c
 }
 
 kiin_install() {
