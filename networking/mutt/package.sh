@@ -21,6 +21,7 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
+    chmod 0755 ${pkgdir}/usr/bin/mutt_dotlock
 }
 
 kiin_after_install() {
