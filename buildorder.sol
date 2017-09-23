@@ -388,7 +388,7 @@ socat
 telegram-cli
 xclip
 ccache
-coffee-script
+coffeescript
 vimium
 ublock
 ninja

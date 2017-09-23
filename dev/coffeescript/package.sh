@@ -1,9 +1,8 @@
 #!/bin/sh
 
-pkgname=coffee-script
+pkgname=coffeescript
 pkgver=1.12.7
 vcs=git
-vcs_pkgname=coffeescript
 gittag=${pkgver}
 relmon_id=8045
 
