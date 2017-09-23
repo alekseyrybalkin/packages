@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.29
-ARCH_VERSION=${pkgver}.0
+pkgver=2.29.1
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}

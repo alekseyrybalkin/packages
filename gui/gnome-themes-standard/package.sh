@@ -4,6 +4,7 @@ pkgname=gnome-themes-standard
 
 majorver=3.22
 pkgver=${majorver}.3
+ARCH_VERSION=3.22.3+13+ga993fdc0
 gittag=${pkgver}
 
 vcs=git

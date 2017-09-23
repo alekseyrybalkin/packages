@@ -2,6 +2,7 @@
 
 pkgname=libtool
 pkgver=2.4.6
+ARCH_VERSION=2.4.6+40+g6ca5e224
 vcs=git
 gittag=v${pkgver}
 relmon_id=1741

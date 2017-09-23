@@ -5,8 +5,8 @@ pkgname=linux-firmware
 SKIP_ARCH_CHECK=1
 vcs=git
 # FIXME
-gittag=7d2c913dcd1be083350d97a8cb1eba24cfacbc8a
-pkgver=20170622
+gittag=a61ac5cf8374edbfe692d12f805a1b194f7fead2
+pkgver=20170906
 
 kiin_make() {
     :

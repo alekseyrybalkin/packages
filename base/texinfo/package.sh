@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=texinfo
-pkgver=6.4
+pkgver=6.5
 vcs=git-svn
 vcs_pkgname=texinfo-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags svn://svn.savannah.gnu.org/texinfo/ ${vcs_pkgname}"

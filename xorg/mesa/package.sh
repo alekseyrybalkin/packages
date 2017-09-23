@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=17.1
-pkgver=${majorver}.6
+majorver=17.2
+pkgver=${majorver}.1
 vcs=git
 gittag=mesa-${pkgver}
 # rc versions

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-babel
-pkgver=2.4.0
+pkgver=2.5.1
 vcs=git
 vcs_pkgname=babel
 gittag=v${pkgver}

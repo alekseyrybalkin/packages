@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=expat
-pkgver=2.2.3
+pkgver=2.2.4
 vcs=git
 gittag=R_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/expat/expat-${pkgver}.tar.bz2"
@@ -10,9 +10,8 @@ relmon_id=770
 
 kiin_make() {
     cd expat
-    sed -i -e 's/$(MAKE) -C doc xmlwf.1/touch doc\/xmlwf.1/g' Makefile.in
     ./buildconf.sh
-    ./configure --prefix=/usr --disable-static
+    ./configure --prefix=/usr --disable-static --without-xmlwf
     make
 }
 

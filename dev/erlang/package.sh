@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=erlang
-pkgver=20.0.2
+pkgver=20.0.5
 vcs=git
 vcs_pkgname=otp
 gittag=OTP-${pkgver}

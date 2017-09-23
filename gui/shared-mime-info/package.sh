@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=shared-mime-info
-pkgver=1.8
+pkgver=1.9
 vcs=git
 gittag=Release-${pkgver//\./-}
 urls="http://freedesktop.org/~hadess/shared-mime-info-${pkgver}.tar.xz"

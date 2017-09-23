@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=coreutils
-pkgver=8.27
+pkgver=8.28
 vcs=git
 gittag=v${pkgver}
 relmon_id=343

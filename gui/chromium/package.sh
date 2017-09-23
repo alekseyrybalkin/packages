@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=60.0.3112.104
+pkgver=61.0.3163.103
 vcs=git
 gittag=${pkgver}
 relmon_id=13344
@@ -47,12 +47,9 @@ kiin_make() {
     _check_and_clone_deps DEPS
     cd ../
 
-    patch -Np1 -i ../gcc7.patch
-    sed -i -e 's/4, 6/4, 15/g' ui/gfx/linux/client_native_pixmap_dmabuf.cc
-    patch -Np1 -i ../chromium-gn-bootstrap-r8.patch
-
-    sed 's/^config("compiler") {/&\ncflags_cc = [ "-fno-delete-null-pointer-checks" ]/' \
-        -i build/config/linux/BUILD.gn
+    patch -Np1 -i ../chromium-gcc-r1.patch
+    patch -Np1 -i ../chromium-atk-r1.patch
+    patch -Np1 -i ../chromium-gn-bootstrap-r14.patch
 
     find . -name '*.py' -exec sed -i -r 's|/usr/bin/python$|&2|g' {} +
     mkdir -p ${srcdir}/python2-path
@@ -76,12 +73,12 @@ kiin_make() {
         'ffmpeg_branding="Chrome"'
         'proprietary_codecs=true'
         'link_pulseaudio=false'
-        'linux_use_bundled_binutils=false'
         'use_gtk3=true'
         'use_gconf=false'
         'use_gnome_keyring=false'
         'use_gold=false'
         'use_sysroot=false'
+        'linux_use_bundled_binutils=false'
         'enable_hangout_services_extension=true'
         'enable_widevine=false'
         'enable_nacl=false'

@@ -1,8 +1,8 @@
 diff --git a/fc-blanks/fc-blanks.py b/fc-blanks/fc-blanks.py
-index cc23cde..0ba3dc4 100755
+index 410178a..1ae31ac 100755
 --- a/fc-blanks/fc-blanks.py
 +++ b/fc-blanks/fc-blanks.py
-@@ -2,39 +2,11 @@
+@@ -2,43 +2,12 @@
  
  from __future__ import absolute_import
  from __future__ import print_function
@@ -12,7 +12,7 @@ index cc23cde..0ba3dc4 100755
 -except ImportError:
 -    from urllib.request import urlopen
 -    from urllib.error import URLError
--
+ 
  import sys
  import os
 -from lxml import html
@@ -23,10 +23,14 @@ index cc23cde..0ba3dc4 100755
 -    fp = urlopen('http://unicode.org/cldr/utility/list-unicodeset.jsp?a=[%3AGC%3DZs%3A][%3ADI%3A]&abb=on&ucd=on&esc=on&g')
 -    data = fp.read()
 -    fp.close()
+-    # check before writing if data isn't corrupted.
+-    dom = html.fromstring(data)
+-    x = dom.xpath('/html/body/form/p/text()')
+-    p = x[1]
 -    fp = open(datafile, 'wb');
 -    fp.write(data);
 -    fp.close();
--except URLError:
+-except (URLError, IndexError):
 -    # fall back reading the static data in repo
 -    try:
 -        fp = open(datafile)
@@ -43,7 +47,7 @@ index cc23cde..0ba3dc4 100755
  if p[0] == '[' and p[-1] == ']':
      p = p.replace('[', '').replace(']', '')
  else:
-@@ -123,7 +95,7 @@ ncode = 0
+@@ -127,7 +96,7 @@ ncode = 0
  for i in l:
      ncode += (i[1] - i[0] + 1)
  

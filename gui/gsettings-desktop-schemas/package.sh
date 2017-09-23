@@ -2,7 +2,8 @@
 
 pkgname=gsettings-desktop-schemas
 majorver=3.24
-pkgver=${majorver}.0
+pkgver=${majorver}.1
+ARCH_VERSION=3.24.1+3+ge869987
 vcs=git
 gittag=${pkgver}
 extension=xz

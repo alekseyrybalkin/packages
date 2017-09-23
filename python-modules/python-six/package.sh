@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-six
-pkgver=1.10.0
+pkgver=1.11.0
 vcs=git
 vcs_pkgname=six
 gittag=${pkgver}

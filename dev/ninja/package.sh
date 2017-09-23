@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=ninja
-pkgver=1.7.2
+pkgver=1.8.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=2089

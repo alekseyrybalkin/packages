@@ -2,10 +2,8 @@
 
 pkgname=cairo
 vcs=git
-pkgver=1.14.10
-# FIXME
-gittag=05b63e807bb5f86f600283df1c3ca554778d90fa
-#gittag=${pkgver}
+pkgver=1.15.8
+gittag=${pkgver}
 # development version
 #relmon_id=247
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpng
-pkgver=1.6.31
+pkgver=1.6.32
 vcs=git
 gittag=v${pkgver}
 relmon_id=1705

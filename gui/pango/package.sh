@@ -2,7 +2,7 @@
 
 pkgname=pango
 majorver=1.40
-pkgver=${majorver}.9
+pkgver=${majorver}.12
 vcs=git
 gittag=${pkgver}
 extension=xz

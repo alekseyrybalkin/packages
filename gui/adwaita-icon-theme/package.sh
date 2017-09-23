@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=adwaita-icon-theme
-majorver=3.24
+majorver=3.26
 pkgver=${majorver}.0
 vcs=git
 gittag=${pkgver}
