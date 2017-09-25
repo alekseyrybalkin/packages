@@ -83,11 +83,6 @@ kiin_install() {
     chown fcron:fcron ${pkgdir}/var/spool/fcron
     chmod 770 ${pkgdir}/var/spool/fcron
 
-    # for backups
-    mkdir -pv ${pkgdir}/var/backups
-    chown ${PACMAN}:${PACMAN} ${pkgdir}/var/backups
-    chmod 700 ${pkgdir}/var/backups
-
     # for rabbitmq
     install -dm 755 ${pkgdir}/var/log/rabbitmq
     install -dm 755 ${pkgdir}/var/lib/rabbitmq
