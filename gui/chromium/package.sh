@@ -35,6 +35,9 @@ kiin_make() {
     LASTCHANGE=`git show ${gittag} | head -n 1 | sed 's/commit //g'`
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE.blink
+
+    # fix compilation error with gcc
+    git cherry-pick 63c4dc41d2b90dc3386e331b62ee893a32bb0b11
     rm -rf .git
 
     _check_and_clone_deps DEPS
@@ -47,6 +50,7 @@ kiin_make() {
     _check_and_clone_deps DEPS
     cd ../
 
+    patch -Np1 -i ../chromium-blink-gcc7.patch
     patch -Np1 -i ../chromium-gcc-r1.patch
     patch -Np1 -i ../chromium-atk-r1.patch
     patch -Np1 -i ../chromium-gn-bootstrap-r14.patch
