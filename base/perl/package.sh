@@ -18,6 +18,7 @@ kiin_make() {
         -Dman3dir=/usr/share/man/man3 \
         -Dpager="/usr/bin/less -isR" \
         -Duseshrplib \
+        -Dusethreads \
         -Di_db=undef
     make
 }
