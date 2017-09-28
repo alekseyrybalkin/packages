@@ -388,10 +388,11 @@ socat
 telegram-cli
 xclip
 ccache
+ninja
+webkitgtk
 coffeescript
 vimium
 ublock
-ninja
 dbus
 nodejs
 chromium
