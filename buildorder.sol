@@ -387,6 +387,7 @@ macchanger
 socat
 telegram-cli
 xclip
+hhpc
 ccache
 coffeescript
 vimium
