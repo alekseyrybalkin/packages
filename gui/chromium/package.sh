@@ -55,6 +55,9 @@ kiin_make() {
     patch -Np1 -i ../chromium-atk-r1.patch
     patch -Np1 -i ../chromium-gn-bootstrap-r14.patch
 
+    # Fix build with glibc 2.26
+    patch -Np1 -i ../breakpad-use-ucontext_t.patch
+
     find . -name '*.py' -exec sed -i -r 's|/usr/bin/python$|&2|g' {} +
     mkdir -p ${srcdir}/python2-path
     ln -sf /usr/bin/python2 ${srcdir}/python2-path/python

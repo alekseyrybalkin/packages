@@ -2,13 +2,16 @@
 
 KIIN_NO_STRIPPING=1
 pkgname=glibc
-pkgver=2.25
+pkgver=2.26
 vcs=git
 # FIXME
-gittag=b64e0298661a084d8aab6756b08dbced515449d8
+gittag=fdf58ebc60ce0eb459fd616241b52872b3571ac1
 relmon_id=5401
 
 kiin_make() {
+    patch -p1 -i ../0001-Don-t-use-IFUNC-resolver-for-longjmp-or-system-in-li.patch
+    patch -p1 -i ../0002-x86-Add-x86_64-to-x86-64-HWCAP-BZ-22093.patch
+
     mkdir -v glibc-build
     cd glibc-build
     echo "sbindir=/usr/bin" >> configparms
@@ -19,6 +22,9 @@ kiin_make() {
         --disable-profile \
         --enable-kernel=4.4 \
         --enable-obsolete-rpc \
+        --enable-obsolete-nsl \
+        --enable-stack-protector=strong \
+        --enable-stackguard-randomization \
         --libexecdir=/usr/lib/glibc \
         --disable-build-nscd \
         --disable-nscd \
