@@ -57,6 +57,8 @@ kiin_make() {
 
     # Fix build with glibc 2.26
     patch -Np1 -i ../breakpad-use-ucontext_t.patch
+    sed -i -e 's/xlocale/locale/' buildtools/third_party/libc++/trunk/include/__locale \
+        third_party/icu/source/i18n/digitlst.cpp
 
     find . -name '*.py' -exec sed -i -r 's|/usr/bin/python$|&2|g' {} +
     mkdir -p ${srcdir}/python2-path
