@@ -101,11 +101,12 @@ kiin_make() {
     python2 tools/gn/bootstrap/bootstrap.py --gn-gen-args "${GN_CONFIG[*]}"
     out/Release/gn gen out/Release --args="${GN_CONFIG[*]}" \
         --script-executable=/usr/bin/python2
-    ninja -j 4 -C out/Release chrome chromedriver
+    ninja -j 4 -C out/Release chrome chrome_sandbox chromedriver
 }
 
 kiin_install() {
     install -vDm755  out/Release/chrome ${pkgdir}/usr/lib/chromium/chromium
+    install -vDm4755 out/Release/chrome_sandbox ${pkgdir}/usr/lib/chromium/chrome-sandbox
     install -vDm755  out/Release/chromedriver ${pkgdir}/usr/lib/chromium/chromedriver
     mkdir -p ${pkgdir}/usr/bin
     ln -svf /usr/lib/chromium/chromium ${pkgdir}/usr/bin
