@@ -2,12 +2,12 @@
 
 pkgname=rabbitmq
 KIIN_NON_FREE=1
-pkgver=3.6.12
+pkgver=3.5.5
 #vcs=git
 #vcs_pkgname=rabbitmq-server-release
 #gittag=rabbitmq_v${pkgver//\./_}
-urls="https://www.rabbitmq.com/releases/${pkgname}-server/v${pkgver}/${pkgname}-server-generic-unix-${pkgver}.tar.xz"
-srctar=${pkgname}-server-generic-unix-${pkgver}.tar.xz
+urls="https://www.rabbitmq.com/releases/${pkgname}-server/v${pkgver}/${pkgname}-server-generic-unix-${pkgver}.tar.gz"
+srctar=${pkgname}-server-generic-unix-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}_server-${pkgver}
 relmon_id=5585
 
