@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-server
-pkgver=1.19.3
+pkgver=1.19.4
 vcs=git
 gittag=xorg-server-${pkgver}
 relmon_id=5250
