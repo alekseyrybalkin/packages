@@ -378,8 +378,6 @@ python-greenlet
 python-gevent
 python-pycodestyle
 python-mss
-erlang
-rabbitmq
 db
 boost
 bitcoin
