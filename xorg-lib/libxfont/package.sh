@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxfont
-pkgver=2.0.1
+pkgver=2.0.2
 vcs=git
 gittag=libXfont2-${pkgver}
 relmon_id=1776
