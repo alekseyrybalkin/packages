@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tor
-pkgver=0.3.1.7
+pkgver=0.3.1.8
 vcs=git
 gittag=tor-${pkgver}
 urls="http://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"
