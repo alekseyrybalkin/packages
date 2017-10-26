@@ -387,6 +387,7 @@ telegram-cli
 xclip
 hhpc
 ccache
+qemu
 coffeescript
 vimium
 ublock
