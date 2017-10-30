@@ -1,11 +1,9 @@
 #!/bin/sh
 
 pkgname=wget
-pkgver=1.19.1
+pkgver=1.19.2
 vcs=git
-# FIXME
-gittag=f31b93424befc27f3f056ac4347546a2b17eceb9
-#gittag=v${pkgver}
+gittag=v${pkgver}
 relmon_id=5124
 
 kiin_make() {
