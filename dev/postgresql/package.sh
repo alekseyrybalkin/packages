@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=postgresql
-pkgver=9.6.5
+pkgver=10.0
 vcs=git
-gittag=REL${pkgver//\./_}
+gittag=REL_${pkgver//\./_}
 extension=bz2
 folder="http://ftp.postgresql.org/pub/source/"
 check_server=1
