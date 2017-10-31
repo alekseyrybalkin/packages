@@ -250,7 +250,6 @@ gobject-introspection
 rxvt-unicode
 ttf-noto
 ttf-ubuntu
-ttf-fantasque
 zip
 cpio
 cryptsetup
