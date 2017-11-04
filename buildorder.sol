@@ -394,5 +394,5 @@ ublock
 ninja
 dbus
 nodejs
-chromium
 initramfs
+chromium
