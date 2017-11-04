@@ -2,7 +2,7 @@
 
 #vcs=cvs
 pkgname=lame
-pkgver=3.99.5
+pkgver=3.100
 urls="http://downloads.sourceforge.net/lame/lame-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 

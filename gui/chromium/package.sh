@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chromium
-pkgver=61.0.3163.117
+pkgver=62.0.3202.88
 vcs=git
 gittag=${pkgver}
 relmon_id=13344
@@ -50,10 +50,8 @@ kiin_make() {
     _check_and_clone_deps DEPS
     cd ../
 
-    patch -Np1 -i ../chromium-blink-gcc7.patch
-    patch -Np1 -i ../chromium-gcc-r1.patch
-    patch -Np1 -i ../chromium-atk-r1.patch
-    patch -Np1 -i ../chromium-gn-bootstrap-r14.patch
+    patch -Np1 -d third_party/crc32c/src <../crc32c-string-view-check.patch
+    patch -Np1 -i ../chromium-gn-bootstrap-r17.patch
 
     # Fix build with glibc 2.26
     patch -Np1 -i ../breakpad-use-ucontext_t.patch
@@ -75,6 +73,7 @@ kiin_make() {
         'is_clang=false'
         'clang_use_chrome_plugins=false'
         'is_debug=false'
+        'exclude_unwind_tables=true'
         'fatal_linker_warnings=false'
         'treat_warnings_as_errors=false'
         'fieldtrial_testing_like_official_build=true'

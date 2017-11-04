@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=fftw
-pkgver=3.3.6
+pkgver=3.3.7
 #vcs=git
 #vcs_pkgname=fftw3
 #gittag=${pkgname}-${pkgver}
-urls="http://www.fftw.org/${pkgname}-${pkgver}-pl2.tar.gz"
-srctar=${pkgname}-${pkgver}-pl2.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}-pl2
+urls="http://www.fftw.org/${pkgname}-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
+srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=803
 
 kiin_make() {

@@ -82,6 +82,9 @@ kiin_install() {
     mkdir -pv ${pkgdir}/var/spool/fcron
     chown fcron:fcron ${pkgdir}/var/spool/fcron
     chmod 770 ${pkgdir}/var/spool/fcron
+
+    # for chrony
+    mkdir -pv ${pkgdir}/var/lib/chrony
 }
 
 kiin_after_install() {

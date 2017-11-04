@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pillow
-pkgver=4.2.1
+pkgver=4.3.0
 vcs=git
 vcs_pkgname=pillow
 gittag=${pkgver}

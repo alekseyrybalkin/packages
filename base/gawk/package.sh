@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gawk
-pkgver=4.1.4
+pkgver=4.2.0
 vcs=git
 gittag=gawk-${pkgver}
 relmon_id=868
@@ -19,4 +19,5 @@ kiin_install() {
     make DESTDIR=${pkgdir} install
     mkdir -p -v ${pkgdir}/usr/share/doc/gawk
     cp -v doc/{awkforai.txt,*.{eps,pdf,jpg}} ${pkgdir}/usr/share/doc/gawk
+    rm -rf ${pkgdir}/usr/etc
 }

@@ -2,10 +2,11 @@
 
 pkgname=python
 _pybasever=3.6
-pkgver=${_pybasever}.2
+pkgver=${_pybasever}.3
 vcs=git
 gittag=v${pkgver}
-relmon_id=13254
+# alpha versions
+#relmon_id=13254
 
 kiin_make() {
     rm -rf .github .git .gitignore .bzrignore .hgeol .hgignore .hgtags .hgtouch
@@ -20,6 +21,7 @@ kiin_make() {
         --without-ensurepip
     make
     cd Doc
+    sed -i -e 's/blurb/true/g' Makefile
     make html
 }
 

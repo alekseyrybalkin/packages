@@ -2,8 +2,7 @@
 
 pkgname=libxml
 ARCH_NAME=libxml2
-pkgver=2.9.5
-ARCH_VERSION=2.9.5+6+g07e227ed
+pkgver=2.9.7
 vcs=git
 vcs_pkgname=libxml2
 gittag=v${pkgver}

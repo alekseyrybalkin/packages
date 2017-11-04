@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=e2fsprogs
-pkgver=1.43.6
+pkgver=1.43.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=646

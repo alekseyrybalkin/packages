@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libpciaccess
-pkgver=0.13.5
+pkgver=0.14
 vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=1703

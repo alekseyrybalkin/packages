@@ -1,7 +1,10 @@
 #!/bin/sh
 
 pkgname=bash
-pkgver=4.4.012
+_major=4.4
+_minor=12
+pkgver=${_major}.${_minor}
+ARCH_VERSION=${_major}.0${_minor}
 vcs=git
 # FIXME
 gittag=bc007799f0e1362100375bb95d952d28de4c62fb

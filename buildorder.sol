@@ -320,7 +320,7 @@ gnome-icon-theme
 adwaita-icon-theme
 gnome-themes-standard
 evince
-ntpsec
+chrony
 fluxbox
 tor
 lightlang

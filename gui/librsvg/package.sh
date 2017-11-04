@@ -3,7 +3,7 @@
 pkgname=librsvg
 # 2.41+ cannot be built without rust, cargo and network
 SKIP_ARCH_CHECK=1
-pkgver=2.40.18
+pkgver=2.40.19
 vcs=git
 gittag=${pkgver}
 # 2.41+ cannot be built without rust, cargo and network

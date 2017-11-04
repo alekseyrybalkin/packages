@@ -5,12 +5,11 @@ pkgname=glibc
 pkgver=2.26
 vcs=git
 # FIXME
-gittag=fdf58ebc60ce0eb459fd616241b52872b3571ac1
+gittag=caa6857ec1087c705b11d8000716fbc67152e428
 relmon_id=5401
 
 kiin_make() {
     patch -p1 -i ../0001-Don-t-use-IFUNC-resolver-for-longjmp-or-system-in-li.patch
-    patch -p1 -i ../0002-x86-Add-x86_64-to-x86-64-HWCAP-BZ-22093.patch
 
     mkdir -v glibc-build
     cd glibc-build

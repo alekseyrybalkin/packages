@@ -1,23 +1,25 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.59
-ARCH_VERSION=${pkgver}.0
+pkgver=0.60.1
 vcs=git
 gittag=poppler-${pkgver}
 # extra zeroes in versions
 #relmon_id=3686
 
 kiin_make() {
-    ./autogen.sh --prefix=/usr \
-        --sysconfdir=/etc \
-        --enable-zlib \
-        --disable-static \
-        --enable-xpdf-headers \
-        --disable-poppler-qt4
+    mkdir build
+    cd build
+
+    cmake -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DTESTDATADIR=$PWD/testfiles \
+        -DENABLE_XPDF_HEADERS=ON \
+        ..
     make
 }
 
 kiin_install() {
+    cd build
     make DESTDIR=${pkgdir} install
 }

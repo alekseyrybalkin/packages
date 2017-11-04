@@ -2,7 +2,7 @@
 
 pkgname=python-bleach
 SKIP_ARCH_CHECK=1
-pkgver=2.0
+pkgver=2.1.1
 vcs=git
 vcs_pkgname=bleach
 gittag=v${pkgver}

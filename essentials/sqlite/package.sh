@@ -3,7 +3,7 @@
 pkgname=sqlite
 vcs=fossil
 
-pkgver=3.20.1
+pkgver=3.21.0
 fossiltag=version-${pkgver}
 relmon_id=4877
 

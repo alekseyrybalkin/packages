@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=icu
-pkgver=59.1
+pkgver=60.1
 vcs=git-svn
 vcs_pkgname=icu-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags http://source.icu-project.org/repos/icu ${vcs_pkgname}"

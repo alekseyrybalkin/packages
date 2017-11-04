@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=itstool
-pkgver=2.0.2
-ARCH_VERSION=2.0.2+5+g676f3f7
+pkgver=2.0.4
+ARCH_VERSION=2.0.4+1+g9b84c00
 vcs=git
 gittag=${pkgver}
 urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"

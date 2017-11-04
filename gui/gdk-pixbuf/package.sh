@@ -3,8 +3,7 @@
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
 majorver=2.36
-pkgver=${majorver}.10
-ARCH_VERSION=2.36.10+3+g6f8c1b388
+pkgver=${majorver}.11
 vcs=git
 gittag=${pkgver}
 extension=xz

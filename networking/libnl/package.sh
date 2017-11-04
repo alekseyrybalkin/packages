@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libnl
-pkgver=3.3.0
+pkgver=3.4.0
 vcs=git
 gittag=libnl${pkgver//\./_}
 urls="https://github.com/thom311/libnl/releases/download/libnl${pkgver//\./_}/libnl-${pkgver}.tar.gz"

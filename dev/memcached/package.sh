@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=memcached
-pkgver=1.5.1
+pkgver=1.5.2
 vcs=git
 gittag=${pkgver}
 relmon_id=1965
