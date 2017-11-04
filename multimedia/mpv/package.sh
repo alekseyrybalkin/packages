@@ -15,6 +15,9 @@ kiin_make() {
     cp -r waf-clone/{waf-light,waflib} ./
     rm -rf waf-clone
     mv ./waf{-light,}
+
+    patch -Np1 -i ../vaapi-Use-libva2-message-callbacks.patch
+
     ./waf configure --prefix=/usr \
         --confdir=/etc/mpv \
         --disable-pulse \
