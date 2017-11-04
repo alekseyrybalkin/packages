@@ -9,7 +9,7 @@ gittag=1df0aa160b1ce6d1e1f01085253b665fe6d0d1ef
 relmon_id=8421
 
 kiin_make() {
-    ./autogen.sh --prefix=/usr
+    ./autogen.sh --prefix=/usr --with-autoconf-archive
     make
 }
 

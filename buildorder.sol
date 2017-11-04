@@ -60,6 +60,7 @@ perl-xml-parser
 help2man
 autoconf
 automake
+autoconf-archive
 coreutils
 diffutils
 gawk
