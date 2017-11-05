@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fossil
-pkgver=2.3
+pkgver=2.4
 vcs=fossil
 fossiltag=version-${pkgver}
 urls="https://www.fossil-scm.org/download/fossil-src-${pkgver}.tar.gz"
