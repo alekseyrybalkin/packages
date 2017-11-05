@@ -36,8 +36,6 @@ kiin_make() {
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE
     echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE.blink
 
-    # fix compilation error with gcc
-    git cherry-pick 63c4dc41d2b90dc3386e331b62ee893a32bb0b11
     rm -rf .git
 
     _check_and_clone_deps DEPS
