@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=bitcoin
-pkgver=0.15.0.1
+pkgver=0.15.1
 vcs=git
 vcs_clone="git clone https://github.com/bitcoin/bitcoin.git"
 gittag=v${pkgver}

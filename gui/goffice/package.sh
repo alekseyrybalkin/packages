@@ -2,6 +2,7 @@
 
 pkgname=goffice
 pkgver=0.10.35
+ARCH_VERSION=0.10.35+8+gbb14b288
 vcs=git
 git_repo=git://git.gnome.org/goffice
 gittag=GOFFICE_${pkgver//\./_}

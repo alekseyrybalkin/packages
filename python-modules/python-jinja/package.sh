@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-jinja
-pkgver=2.9.6
+pkgver=2.10
 vcs=git
 vcs_pkgname=jinja2
 gittag=${pkgver}
