@@ -388,6 +388,8 @@ xclip
 hhpc
 ccache
 qemu
+vulkan-headers
+vulkan-icd-loader
 coffeescript
 vimium
 ublock
