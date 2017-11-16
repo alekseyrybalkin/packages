@@ -18,7 +18,6 @@ kiin_make() {
         --enable-egl \
         --enable-gbm \
         --with-platforms=x11,drm \
-        --with-vulkan-drivers=intel \
         --enable-shared-glapi \
         --enable-glx-tls \
         --enable-dri \
