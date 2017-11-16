@@ -390,6 +390,7 @@ ccache
 qemu
 vulkan-headers
 vulkan-icd-loader
+ldns
 coffeescript
 vimium
 ublock
