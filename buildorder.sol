@@ -388,8 +388,6 @@ xclip
 hhpc
 ccache
 qemu
-vulkan-headers
-vulkan-icd-loader
 ldns
 coffeescript
 vimium
