@@ -14,7 +14,8 @@ kiin_make() {
         --enable-multibyte \
         --with-x=no \
         --disable-gui \
-        --with-compiledby=kiin
+        --with-compiledby=kiin \
+        --enable-python3interp=dynamic
     make
 }
 

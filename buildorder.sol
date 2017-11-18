@@ -92,7 +92,6 @@ pkg-config
 e2fsprogs
 eudev
 man-db
-vim
 linux
 fakeroot
 tcl
@@ -104,6 +103,7 @@ libidn
 wget
 curl
 python
+vim
 python2
 python2-virtualenv
 python2-cython
