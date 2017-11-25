@@ -15,10 +15,10 @@ kiin_make() {
 }
 
 kiin_install() {
-    cp -av ./* ${pkgdir}
+    cp -av ./{boot,etc,usr} ${pkgdir}
 
-    if [ -d /home/${PACMAN}/projects/journal ]; then
-        cp /home/${PACMAN}/projects/journal/networth ${pkgdir}/usr/bin/
+    if [ -f ./bonus.install.bash ]; then
+        PACMAN=${PACMAN} pkgdir=${pkgdir} bash bonus.install.bash
     fi
 
     chmod 440 ${pkgdir}/etc/sudoers
@@ -29,5 +29,4 @@ kiin_install() {
 
     chown root:root ${pkgdir}/usr/bin/*wifi
     chmod 700 ${pkgdir}/usr/bin/*wifi
-
 }
