@@ -12,13 +12,15 @@ kiin_make() {
         # disable autostart for some services
         find etc/rc.d -type l -name "*postgresql*" | xargs rm
     fi
-
-    # compile c tools
-    gcc -Wall -Wextra -Werror -Wpedantic -std=c11 -lX11 -o usr/bin/mousemove ../mousemove.c
 }
 
 kiin_install() {
     cp -av ./* ${pkgdir}
+
+    if [ -d /home/${PACMAN}/projects/journal ]; then
+        cp /home/${PACMAN}/projects/journal/networth ${pkgdir}/usr/bin/
+    fi
+
     chmod 440 ${pkgdir}/etc/sudoers
     chmod o-x ${pkgdir}/etc/rc.d/init.d/*
 
@@ -27,4 +29,5 @@ kiin_install() {
 
     chown root:root ${pkgdir}/usr/bin/*wifi
     chmod 700 ${pkgdir}/usr/bin/*wifi
+
 }
