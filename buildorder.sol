@@ -312,7 +312,6 @@ gsettings-desktop-schemas
 shared-mime-info
 poppler
 libcroco
-librsvg
 djvulibre
 perl-xml-simple
 icon-naming-utils
@@ -330,9 +329,6 @@ openvpn
 postgresql
 nginx
 memcached
-libgsf
-goffice
-gnumeric
 cups
 openjdk
 cacerts-java
