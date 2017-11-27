@@ -17,7 +17,7 @@ kiin_make() {
     sed -i -e '/gtr_get_favicon/d' gtk/details.c
     sed -i -e '/gtr_get_favicon/d' gtk/filter.c
     rm m4/glib-gettext.m4
-    ./autogen.sh --prefix=/usr
+    ./autogen.sh --prefix=/usr --enable-cli
     make
 }
 
