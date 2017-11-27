@@ -375,6 +375,17 @@ python-greenlet
 python-gevent
 python-pycodestyle
 python-mss
+python-decorator
+python-traitlets
+python-ptyprocess
+python-pexpect
+python-pickleshare
+python-wcwidth
+python-prompt_toolkit
+python-simplegeneric
+python-parso
+python-jedi
+python-ipython
 db
 boost
 bitcoin
