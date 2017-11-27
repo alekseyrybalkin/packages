@@ -364,6 +364,7 @@ python-sphinx_rtd_theme
 python-cython
 lapack
 python-numpy
+python-scipy
 python-opengl
 glfw
 python-pillow
