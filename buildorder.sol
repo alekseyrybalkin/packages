@@ -386,6 +386,8 @@ python-simplegeneric
 python-parso
 python-jedi
 python-ipython
+python-dateutil
+python-pandas
 db
 boost
 bitcoin
