@@ -391,6 +391,9 @@ python-dateutil
 python-pandas
 python-cycler
 python-matplotlib
+python-seaborn
+python-patsy
+python-statsmodels
 db
 boost
 bitcoin
