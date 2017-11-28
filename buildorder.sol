@@ -95,6 +95,7 @@ man-db
 linux
 fakeroot
 tcl
+tk
 sqlite
 openssl
 cacerts
