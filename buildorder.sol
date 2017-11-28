@@ -388,6 +388,8 @@ python-jedi
 python-ipython
 python-dateutil
 python-pandas
+python-cycler
+python-matplotlib
 db
 boost
 bitcoin
