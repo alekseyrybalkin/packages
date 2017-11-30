@@ -388,6 +388,9 @@ python-parso
 python-jedi
 python-ipython
 python-dateutil
+python-xlrd
+python-xlwt
+python-openpyxl
 python-pandas
 python-cycler
 python-matplotlib
