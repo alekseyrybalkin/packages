@@ -390,6 +390,9 @@ python-ipython
 python-dateutil
 python-xlrd
 python-xlwt
+python-jdcal
+python-lxml
+python-et-xmlfile
 python-openpyxl
 python-bottleneck
 python-numexpr
