@@ -391,6 +391,8 @@ python-dateutil
 python-xlrd
 python-xlwt
 python-openpyxl
+python-bottleneck
+python-numexpr
 python-pandas
 python-cycler
 python-matplotlib
