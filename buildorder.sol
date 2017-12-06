@@ -92,6 +92,7 @@ pkg-config
 e2fsprogs
 eudev
 man-db
+elfutils
 linux
 fakeroot
 tcl

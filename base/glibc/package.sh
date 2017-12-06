@@ -5,12 +5,10 @@ pkgname=glibc
 pkgver=2.26
 vcs=git
 # FIXME
-gittag=a81c1156c1a9a6161d49b295a09a4e4cff7a88d0
+gittag=df8c219cb987cfe85c550efa693a1383a11e38aa
 relmon_id=5401
 
 kiin_make() {
-    patch -p1 -i ../0001-Don-t-use-IFUNC-resolver-for-longjmp-or-system-in-li.patch
-
     mkdir -v glibc-build
     cd glibc-build
     echo "sbindir=/usr/bin" >> configparms
