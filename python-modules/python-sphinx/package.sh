@@ -8,7 +8,7 @@ gittag=${pkgver}
 relmon_id=4031
 
 kiin_make() {
-    make PYTHON=python3 build
+    make build
 }
 
 kiin_install() {
