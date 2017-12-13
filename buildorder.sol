@@ -388,6 +388,7 @@ python-seaborn
 python-patsy
 python-statsmodels
 python-scikit-learn
+python-pytroll
 db
 boost
 bitcoin
