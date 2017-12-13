@@ -1,9 +1,8 @@
 #!/bin/sh
 
-pkgname=python-pytroll
+pkgname=python-z
 SKIP_ARCH_CHECK=1
 vcs=git
-vcs_pkgname=pytroll
 pkgver=1
 
 kiin_make() {
