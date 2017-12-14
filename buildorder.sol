@@ -320,7 +320,6 @@ openjdk
 cacerts-java
 apache-ant
 maven
-intellij-idea
 python-six
 python-pyparsing
 python-packaging
