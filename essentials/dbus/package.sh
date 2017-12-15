@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dbus
-pkgver=1.12.0
+pkgver=1.12.2
 vcs=git
 gittag=dbus-${pkgver}
 urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"

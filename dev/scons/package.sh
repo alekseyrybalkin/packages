@@ -1,11 +1,10 @@
 #!/bin/sh
 
 pkgname=scons
-pkgver=3.0.0
-vcs=mercurial
-hgtag=${pkgver}
-urls="http://downloads.sourceforge.net/scons/scons-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=3.0.1
+vcs=git
+# FIXME
+gittag=1a765337ba4170e5cd9d1dfa61374b89679d78fd
 relmon_id=4770
 
 kiin_make() {

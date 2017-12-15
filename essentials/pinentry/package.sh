@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pinentry
-pkgver=1.0.0
+pkgver=1.1.0
 vcs=git
 gittag=pinentry-${pkgver}
 extension=bz2

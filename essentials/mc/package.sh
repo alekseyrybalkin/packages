@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mc
-pkgver=4.8.19
+pkgver=4.8.20
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -24,5 +24,4 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    cp -v doc/keybind-migration.txt ${pkgdir}/usr/share/mc
 }

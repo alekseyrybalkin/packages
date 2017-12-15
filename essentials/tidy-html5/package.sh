@@ -2,7 +2,7 @@
 
 pkgname=tidy-html5
 ARCH_NAME=tidy
-pkgver=5.4.0
+pkgver=5.6.0
 vcs=git
 gittag=${pkgver}
 relmon_id=13267

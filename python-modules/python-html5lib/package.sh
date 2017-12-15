@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-html5lib
-pkgver=0.999999999
+pkgver=1.0.1
 vcs=git
 vcs_pkgname=html5lib-python
 gittag=${pkgver}

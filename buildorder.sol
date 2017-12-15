@@ -239,6 +239,7 @@ ttf-noto
 ttf-ubuntu
 zip
 cpio
+json-c
 cryptsetup
 linux-firmware
 libnl
@@ -303,6 +304,7 @@ perl-xml-simple
 icon-naming-utils
 gnome-icon-theme-symbolic
 gnome-icon-theme
+librsvg
 adwaita-icon-theme
 gnome-themes-standard
 evince

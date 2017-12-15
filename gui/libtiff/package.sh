@@ -2,7 +2,7 @@
 
 #vcs=cvs
 pkgname=libtiff
-pkgver=4.0.8
+pkgver=4.0.9
 urls="http://download.osgeo.org/${pkgname}/tiff-${pkgver}.tar.gz"
 srctar=tiff-${pkgver}.tar.gz
 srcdir=${location}/tiff-${pkgver}

@@ -2,7 +2,7 @@
 
 pkgname=adwaita-icon-theme
 majorver=3.26
-pkgver=${majorver}.0
+pkgver=${majorver}.1
 vcs=git
 gittag=${pkgver}
 extension=xz

@@ -3,7 +3,7 @@
 pkgname=qemu
 vcs=git
 
-pkgver=2.10.1
+pkgver=2.11.0
 gittag=v${pkgver}
 
 extension=bz2
@@ -14,6 +14,8 @@ relmon_id=13607
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    git clone ${SOURCES_HOME}/keycodemapdb ui/keycodemapdb
+
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --libexecdir=/usr/lib/qemu \
@@ -24,7 +26,10 @@ kiin_make() {
         --disable-docs \
         --with-gtkabi=3.0 \
         --disable-werror \
+        --disable-capstone \
+        --disable-fdt \
         --python=/usr/bin/python2
+        #--disable-git-update \
 }
 
 kiin_install() {

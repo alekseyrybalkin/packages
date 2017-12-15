@@ -2,7 +2,7 @@
 
 pkgname=ublock
 SKIP_ARCH_CHECK=1
-pkgver=1.14.18
+pkgver=1.14.22
 vcs=git
 gittag=${pkgver}
 

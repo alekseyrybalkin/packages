@@ -1,19 +1,22 @@
 #!/bin/sh
 
 pkgname=openjpeg
-pkgver=1.5.2
+pkgver=2.3.0
 vcs=git
-gittag=version.${pkgver}
-urls="http://downloads.sourceforge.net/openjpeg.mirror/openjpeg-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+gittag=v${pkgver}
 relmon_id=8468
 
 kiin_make() {
-    autoreconf -f -i
-    ./configure --prefix=/usr --disable-static
+    mkdir build
+    cd build
+    cmake .. \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DBUILD_DOC=off
     make
 }
 
 kiin_install() {
+    cd build
     make DESTDIR=${pkgdir} install
 }

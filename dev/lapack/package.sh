@@ -4,7 +4,7 @@ pkgname=lapack
 vcs=git
 vcs_clone="git clone https://github.com/Reference-LAPACK/lapack.git"
 
-pkgver=3.7.1
+pkgver=3.8.0
 gittag=v${pkgver}
 
 relmon_id=1534
