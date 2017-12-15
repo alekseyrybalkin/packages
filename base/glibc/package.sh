@@ -5,7 +5,7 @@ pkgname=glibc
 pkgver=2.26
 vcs=git
 # FIXME
-gittag=df8c219cb987cfe85c550efa693a1383a11e38aa
+gittag=5a2779f9bc829bdd804e68d54c14ec61d07d0295
 relmon_id=5401
 
 kiin_make() {

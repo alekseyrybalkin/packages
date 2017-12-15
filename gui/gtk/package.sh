@@ -4,6 +4,7 @@ pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
 pkgver=${majorver}.26
+ARCH_VERSION=3.22.26+47+g3a1a7135a2
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python-simplegeneric
+SKIP_ARCH_CHECK=1
 pkgver=0.8.1
 relmon_id=4025
 

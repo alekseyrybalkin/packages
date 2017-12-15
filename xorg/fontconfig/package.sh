@@ -2,6 +2,7 @@
 
 pkgname=fontconfig
 pkgver=2.12.6
+ARCH_VERSION=2.12.6+5+g665584a
 vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
