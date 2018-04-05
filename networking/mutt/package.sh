@@ -1,14 +1,14 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.9.1
+pkgver=1.9.4
 ARCH_VERSION=${pkgver}
-vcs=mercurial
-hgtag=mutt-${pkgver//\./-}-rel
+vcs=git
+gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
 
 kiin_make() {
-    rm -rf .hg
+    rm -rf .git
     autoreconf -fi
     ./configure --prefix=/usr --sysconfdir=/etc \
         --with-docdir=/usr/share/doc/mutt \
