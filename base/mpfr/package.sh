@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mpfr
-pkgver=3.1.6
+pkgver=4.0.1
 vcs=git-svn
 vcs_pkgname=mpfr-git-svn
 vcs_clone="git svn clone -Ttrunk -ttags svn://scm.gforge.inria.fr/svnroot/mpfr ${vcs_pkgname}"
@@ -11,6 +11,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=2019
 
 kiin_make() {
+    mkdir m4
     ./autogen.sh
     ./configure --prefix=/usr \
         --enable-thread-safe \

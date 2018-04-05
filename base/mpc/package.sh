@@ -2,7 +2,7 @@
 
 pkgname=mpc
 ARCH_NAME=libmpc
-pkgver=1.0.3
+pkgver=1.1.0
 vcs=git
 gittag=${pkgver}
 relmon_id=1667

@@ -6,7 +6,7 @@ pkgver=${_majorver}.2
 vcs=mercurial
 vcs_pkgname=gmp-${_majorver}
 # FIXME
-hgtag=0f37e9787d28
+hgtag=aad821ef06cb
 relmon_id=1186
 
 kiin_make() {

@@ -1,11 +1,11 @@
 #!/bin/sh
 
 pkgname=binutils
-pkgver=2.29.1
+pkgver=2.30
 vcs=git
 vcs_pkgname=binutils-gdb
 #FIXME
-gittag=binutils-${pkgver//\./_}.1
+gittag=binutils-${pkgver//\./_}
 extension=gz
 folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
