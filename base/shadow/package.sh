@@ -7,8 +7,7 @@ gittag=${pkgver}
 relmon_id=4802
 
 kiin_make() {
-    sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
-        -e 's@/var/spool/mail@/var/mail@' etc/login.defs
+    sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs
     sed -i -e 's/po man/po/g' Makefile.am
     autoreconf -fi
     sed -i 's/groups$(EXEEXT) //' src/Makefile.in

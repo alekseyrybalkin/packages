@@ -26,7 +26,7 @@ kiin_install() {
 
 kiin_after_install() {
     getent group mail >/dev/null || groupadd -g 34 mail
-    chgrp -v mail /var/mail
+    chgrp -v mail /var/spool/mail
 }
 
 kiin_after_upgrade() {

@@ -72,7 +72,7 @@ kiin_install() {
     chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
     # for mail packages
-    install -dv -m 1775 ${pkgdir}/var/mail
+    install -dv -m 1775 ${pkgdir}/var/spool/mail
 
     # for kiin
     mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
