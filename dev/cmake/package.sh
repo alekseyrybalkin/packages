@@ -1,8 +1,8 @@
 #!/bin/sh
 
 pkgname=cmake
-majorver=3.10
-pkgver=${majorver}.1
+majorver=3.11
+pkgver=${majorver}.0
 vcs=git
 gittag=v${pkgver}
 extension=gz

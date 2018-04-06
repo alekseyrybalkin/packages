@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=wget
-pkgver=1.19.2
+pkgver=1.19.4
 vcs=git
 gittag=v${pkgver}
 relmon_id=5124

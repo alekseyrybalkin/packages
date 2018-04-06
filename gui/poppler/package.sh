@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=poppler
-pkgver=0.62.0
+pkgver=0.63.0
 vcs=git
 gittag=poppler-${pkgver}
 # extra zeroes in versions

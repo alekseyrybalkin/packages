@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libevdev
-pkgver=1.5.7
+pkgver=1.5.9
 vcs=git
 git_repo=git://anongit.freedesktop.org/libevdev
 gittag=libevdev-${pkgver}

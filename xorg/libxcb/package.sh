@@ -1,15 +1,14 @@
 #!/bin/sh
 
 pkgname=libxcb
-pkgver=1.12
+pkgver=1.13
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/libxcb
-gittag=${pkgver}
+gittag=${pkgname}-${pkgver}
 relmon_id=1767
 
 kiin_make() {
     sed -e "s/pthread-stubs//" -i configure.ac
-    patch -Np1 -i ../python-3-fixes.patch
     ./autogen.sh $XORG_CONFIG \
         --enable-xinput --enable-xkb \
         --docdir='${datadir}'/doc/${pkgname} \

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=atk
-pkgver=2.26.1
+pkgver=2.28.1
 vcs=git
 gittag=ATK_${pkgver//\./_}
 # development versions

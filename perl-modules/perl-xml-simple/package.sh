@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl-xml-simple
-pkgver=2.24
+pkgver=2.25
 # building from git requires perl-dist-zilla which requires perl-app-cmd and maybe more
 #vcs=git
 #gittag=v${pkgver}

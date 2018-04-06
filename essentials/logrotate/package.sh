@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=logrotate
-pkgver=3.13.0
+pkgver=3.14.0
 vcs=git
 gittag=${pkgver}
 urls="http://fedorahosted.org/releases/l/o/logrotate/logrotate-${pkgver}.tar.gz"

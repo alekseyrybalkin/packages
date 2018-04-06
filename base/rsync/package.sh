@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=rsync
-pkgver=3.1.2
+pkgver=3.1.3
 vcs=git
 gittag=v${pkgver}
 extension=gz

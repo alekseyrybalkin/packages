@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=python-sphinx
-pkgver=1.6.5
+pkgver=1.7.2
 vcs=git
 vcs_pkgname=sphinx
-gittag=${pkgver}
+gittag=v${pkgver}
 relmon_id=4031
 
 kiin_make() {

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=json-c
-pkgver=0.13
+pkgver=0.13.1
 vcs=git
-gittag=json-c-${pkgver}-20171207
+gittag=json-c-${pkgver}-20180305
 relmon_id=1477
 
 kiin_make() {

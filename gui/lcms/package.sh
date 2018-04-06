@@ -2,7 +2,7 @@
 
 pkgname=lcms
 ARCH_NAME=lcms2
-pkgver=2.8
+pkgver=2.9
 vcs=git
 gittag=lcms${pkgver}
 urls="http://downloads.sourceforge.net/lcms/lcms2-${pkgver}.tar.gz"

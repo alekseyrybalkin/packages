@@ -2,7 +2,7 @@
 
 _pkgname=xinit
 pkgname=xorg-${_pkgname}
-pkgver=1.3.4
+pkgver=1.4.0
 vcs=git
 gittag=${_pkgname}-${pkgver}
 

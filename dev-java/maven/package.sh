@@ -3,7 +3,7 @@
 KIIN_NON_FREE=1 # because binary
 #vcs=git
 pkgname=maven
-pkgver=3.5.2
+pkgver=3.5.3
 urls="http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/${pkgver}/binaries/apache-maven-${pkgver}-bin.tar.gz"
 srctar=apache-maven-${pkgver}-bin.tar.gz
 srcdir=${location}/apache-maven-${pkgver}

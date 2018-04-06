@@ -2,7 +2,7 @@
 
 _pkgname=mkfontscale
 pkgname=xorg-${_pkgname}
-pkgver=1.1.2
+pkgver=1.1.3
 vcs=git
 gittag=${_pkgname}-${pkgver}
 

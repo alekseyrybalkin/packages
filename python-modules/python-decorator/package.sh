@@ -1,11 +1,10 @@
 #!/bin/sh
 
 pkgname=python-decorator
-pkgver=4.1.2
+pkgver=4.2.1
 vcs=git
 vcs_pkgname=decorator
-# FIXME
-gittag=00584a5550de21c1af952c141a6bc272d6020035
+gittag=${pkgver}
 
 kiin_make() {
     python setup.py build

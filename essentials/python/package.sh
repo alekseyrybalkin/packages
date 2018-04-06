@@ -2,7 +2,7 @@
 
 pkgname=python
 _pybasever=3.6
-pkgver=${_pybasever}.3
+pkgver=${_pybasever}.5
 vcs=git
 gittag=v${pkgver}
 # alpha versions

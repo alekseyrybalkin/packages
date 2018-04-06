@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=alsa-lib
-pkgver=1.1.5
+pkgver=1.1.6
 vcs=git
 gittag=v${pkgver}
 relmon_id=38

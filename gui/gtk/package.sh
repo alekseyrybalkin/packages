@@ -3,8 +3,7 @@
 pkgname=gtk
 ARCH_NAME=gtk3
 majorver=3.22
-pkgver=${majorver}.26
-ARCH_VERSION=3.22.26+47+g3a1a7135a2
+pkgver=${majorver}.29
 vcs=git
 vcs_pkgname=gtk+
 gittag=${pkgver}
@@ -22,11 +21,6 @@ kiin_make() {
     # disable accessibility
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
     sed -i -e 's/ atk-bridge-2.0//g' configure.ac
-
-    # revert "file chooser: Allow activating without double-click"
-    # git revert fb0a13b7f070a14312dafa1e4df6ba03cf33be01
-    # https://bugzilla.gnome.org/show_bug.cgi?id=758065
-    patch -Np1 -i ../filechooser.diff
 
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \

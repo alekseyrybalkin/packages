@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gzip
-pkgver=1.8
+pkgver=1.9
 vcs=git
 gittag=v${pkgver}
 relmon_id=1290

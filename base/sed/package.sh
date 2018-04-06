@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=sed
-pkgver=4.4
+pkgver=4.5
 vcs=git
 gittag=v${pkgver}
 urls="http://ftp.gnu.org/gnu/sed/sed-${pkgver}.tar.bz2"

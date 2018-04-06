@@ -2,7 +2,7 @@
 
 _pkgname=xrdb
 pkgname=xorg-${_pkgname}
-pkgver=1.1.0
+pkgver=1.1.1
 vcs=git
 gittag=${_pkgname}-${pkgver}
 

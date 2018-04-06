@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssh
-_ver=7.6
+_ver=7.7
 _patch=1
 pkgver=${_ver}p${_patch}
 vcs=git
@@ -14,7 +14,7 @@ relmon_id=2565
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    patch -Np1 -i ../openssl-1.1.0.patch
+    patch -p1 -i ../openssl-1.1.0.patch || true
     sed -i -e '/1\.1\.0/d' configure.ac
     autoreconf -fi
     ./configure --prefix=/usr \

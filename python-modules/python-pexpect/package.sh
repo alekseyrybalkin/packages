@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pexpect
-pkgver=4.3.1
+pkgver=4.4
 vcs=git
 vcs_pkgname=pexpect
 gittag=${pkgver}

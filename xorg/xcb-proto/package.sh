@@ -1,14 +1,13 @@
 #!/bin/sh
 
 pkgname=xcb-proto
-pkgver=1.12
+pkgver=1.13
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/proto
-gittag=${pkgver}
+gittag=${pkgname}-${pkgver}
 relmon_id=13646
 
 kiin_make() {
-    patch -Np1 -i ../python-3-fixes.patch
     ./autogen.sh $XORG_CONFIG
     make
 }

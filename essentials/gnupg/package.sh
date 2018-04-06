@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gnupg
-pkgver=2.2.3
+pkgver=2.2.5
 vcs=git
 gittag=gnupg-${pkgver}
 relmon_id=1215

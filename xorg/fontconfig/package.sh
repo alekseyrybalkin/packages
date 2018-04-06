@@ -1,15 +1,13 @@
 #!/bin/sh
 
 pkgname=fontconfig
-pkgver=2.12.6
-ARCH_VERSION=2.12.6+5+g665584a
+pkgver=2.13.0
 vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
 relmon_id=827
 
 kiin_make() {
-    patch -Np1 -i ../fc-blanks.diff
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \

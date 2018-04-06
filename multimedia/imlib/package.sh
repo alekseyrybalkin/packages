@@ -2,7 +2,7 @@
 
 pkgname=imlib
 ARCH_NAME=imlib2
-pkgver=1.4.10
+pkgver=1.5.1
 vcs=git
 vcs_pkgname=imlib2
 gittag=v${pkgver}

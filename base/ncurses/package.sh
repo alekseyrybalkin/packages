@@ -3,7 +3,7 @@
 pkgname=ncurses
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
-pkgver=6.0
+pkgver=6.1
 vcs=git
 gittag=v${pkgver}
 urls="ftp://ftp.gnu.org/gnu/ncurses/ncurses-${pkgver}.tar.gz"

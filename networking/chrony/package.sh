@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=chrony
-pkgver=3.2
+pkgver=3.3
 vcs=git
 gittag=${pkgver}
 relmon_id=8810

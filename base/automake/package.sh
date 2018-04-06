@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=automake
-pkgver=1.15.1
+pkgver=1.16.1
 vcs=git
 gittag=v${pkgver}
 extension=xz

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-greenlet
-pkgver=0.4.12
+pkgver=0.4.13
 vcs=git
 vcs_pkgname=greenlet
 gittag=${pkgver}

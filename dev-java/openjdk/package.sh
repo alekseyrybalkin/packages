@@ -5,8 +5,8 @@ ARCH_NAME=java8-openjdk
 # pkgver too complex to parse, we check hg tags instead
 SKIP_ARCH_CHECK=1
 _java_ver=8
-_jdk_update=152
-_jdk_build=16
+_jdk_update=162
+_jdk_build=12
 _repo_ver=jdk${_java_ver}u${_jdk_update}-b${_jdk_build}
 pkgver=${_java_ver}.u${_jdk_update}
 vcs=mercurial
@@ -23,11 +23,6 @@ kiin_make() {
         hg update -r ${hgtag}
         cd ../
     done
-    # Apply infinality patches
-    cd jdk
-    patch -p1 < ../../004_add-fontconfig.patch
-    patch -p1 < ../../005_enable-infinality.patch
-    cd ../
 
     export PATH=${PATH}:/usr/lib/openjdk/bin
     sh ./configure \

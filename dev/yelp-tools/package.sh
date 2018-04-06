@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=yelp-tools
-pkgver=3.18.0
-ARCH_VERSION=3.18.0+1+g193c2bd
+pkgver=3.28.0
 vcs=git
 git_repo=git://git.gnome.org/yelp-tools
 gittag=${pkgver}

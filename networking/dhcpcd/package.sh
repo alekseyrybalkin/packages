@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=6.11.5
+pkgver=7.0.2
 vcs=git
 gittag=dhcpcd-${pkgver}
 extension=xz
@@ -24,8 +24,6 @@ kiin_install() {
     mv ${pkgdir}/lib/dhcpcd/* ${pkgdir}/usr/lib/dhcpcd
     rm -rf ${pkgdir}/lib
 
-    sed -i "s;/var/lib;/run;g" dhcpcd-hooks/50-dhcpcd-compat
-    install -v -m 644 dhcpcd-hooks/50-dhcpcd-compat ${pkgdir}/usr/lib/dhcpcd/dhcpcd-hooks/
     rm -r ${pkgdir}/run
 
     mv -v ${pkgdir}/etc/dhcpcd.conf{,.packaged}

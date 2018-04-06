@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xorg-util-macros
-pkgver=1.19.1
+pkgver=1.19.2
 vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/util/macros
 gittag=util-macros-${pkgver}

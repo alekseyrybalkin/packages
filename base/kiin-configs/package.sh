@@ -8,7 +8,7 @@ pkgver=1
 kiin_make() {
     rm -rf .git
     find . -type f | xargs sed -i -e "s/%KIIN_HOSTNAME%/`hostname`/g"
-    if [ "`hostname`" == "sol" ]; then
+    if [ "`hostname`" == "zeus" ]; then
         # disable autostart for some services
         find etc/rc.d -type l -name "*postgresql*" | xargs rm
     fi

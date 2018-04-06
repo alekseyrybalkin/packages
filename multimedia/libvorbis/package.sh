@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libvorbis
-pkgver=1.3.5
+pkgver=1.3.6
 vcs=git
 gittag=v${pkgver}
 urls="http://downloads.xiph.org/releases/vorbis/${pkgname}-${pkgver}.tar.xz"

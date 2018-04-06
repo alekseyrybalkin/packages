@@ -2,7 +2,7 @@
 
 pkgname=freetype
 ARCH_NAME=freetype2
-pkgver=2.8.1
+pkgver=2.9
 vcs=git
 vcs_pkgname=freetype2
 gittag=VER-${pkgver//\./-}

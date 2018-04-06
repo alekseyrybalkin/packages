@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=autoconf-archive
-pkgver=2017.09.28
+pkgver=2018.03.13
 vcs=git
 gittag=v${pkgver}
 relmon_id=142

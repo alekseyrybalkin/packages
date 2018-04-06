@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-matplotlib
-pkgver=2.1.1
+pkgver=2.2.2
 vcs=git
 vcs_pkgname=matplotlib
 gittag=v${pkgver}

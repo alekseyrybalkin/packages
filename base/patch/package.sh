@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=patch
-pkgver=2.7.5
+pkgver=2.7.6
 vcs=git
 gittag=v${pkgver}
 relmon_id=2597

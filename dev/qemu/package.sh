@@ -3,7 +3,7 @@
 pkgname=qemu
 vcs=git
 
-pkgver=2.11.0
+pkgver=2.11.1
 gittag=v${pkgver}
 
 extension=bz2
@@ -15,6 +15,8 @@ relmon_id=13607
 
 kiin_make() {
     git clone ${SOURCES_HOME}/keycodemapdb ui/keycodemapdb
+
+    sed -i 's/ memfd_create/ qemu_memfd_create/' util/memfd.c
 
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
