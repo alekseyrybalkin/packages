@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (c) 2013-2017 Aleksey Rybalkin
+# Copyright (c) 2013-2018 Aleksey Rybalkin
 # SPDX-License-Identifier: GPL-3.0+
 
 if [ -z "${srctar}" ]; then
