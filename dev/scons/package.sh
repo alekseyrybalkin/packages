@@ -7,11 +7,11 @@ vcs=git
 gittag=1a765337ba4170e5cd9d1dfa61374b89679d78fd
 relmon_id=4770
 
-kiin_make() {
+undead_make() {
     :
 }
 
-kiin_install() {
+undead_install() {
     python2 bootstrap.py
     tar xvf build/dist/scons-${pkgver}.tar.gz
     cd scons-${pkgver}

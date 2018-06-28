@@ -7,13 +7,13 @@ vcs_pkgname=greenlet
 gittag=${pkgver}
 relmon_id=6870
 
-kiin_make() {
+undead_make() {
     python setup.py build
     cd doc
     make html
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
     mkdir -pv ${pkgdir}/usr/share/doc
     cp -r doc/_build/html ${pkgdir}/usr/share/doc/python-greenlet

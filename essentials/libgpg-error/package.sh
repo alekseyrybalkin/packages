@@ -9,9 +9,9 @@ folder="ftp://ftp.gnupg.org/gcrypt/${pkgname}/"
 check_server=1
 relmon_id=1628
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --enable-maintainer-mode \
         --prefix=/usr \
@@ -21,6 +21,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1684
 relmon_sed='s/_/\./g'
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -18,6 +18,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

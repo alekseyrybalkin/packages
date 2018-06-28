@@ -8,11 +8,11 @@ urls="https://www.kernel.org/pub/linux/docs/${pkgname}/${pkgname}-${pkgver}.tar.
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1883
 
-kiin_make() {
+undead_make() {
     :
 }
 
-kiin_install() {
+undead_install() {
     make prefix=${pkgdir}/usr install
     # these are included in shadow
     rm -f ${pkgdir}/usr/share/man/man5/passwd.5

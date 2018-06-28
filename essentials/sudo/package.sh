@@ -12,9 +12,9 @@ folder="http://www.sudo.ws/${pkgname}/dist/"
 check_server=1
 relmon_id=4906
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     sed -i -e 's/-lshadow//g' configure
     sed -i -e 's/-lshadow//g' configure.ac
@@ -31,7 +31,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     # do not replace /etc/sudoers, since it is in git repo now
     mv -v ${pkgdir}/etc/sudoers{,.packaged}

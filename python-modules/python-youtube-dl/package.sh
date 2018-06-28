@@ -10,11 +10,11 @@ urls="http://youtube-dl.org/downloads/${pkgver}/youtube-dl-${pkgver}.tar.gz"
 srctar=youtube-dl-${pkgver}.tar.gz
 relmon_id=5292
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir} --optimize=1
     rm -rf ${pkgdir}/usr/etc
 }

@@ -8,7 +8,7 @@ urls="http://www.nasm.us/pub/nasm/releasebuilds/${pkgver}/nasm-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=2048
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --prefix=/usr
     make dist
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make INSTALLROOT=${pkgdir} install
 }

@@ -6,13 +6,13 @@ vcs=git
 pkgver=4.14.32
 gittag=v${pkgver}
 
-kiin_make() {
+undead_make() {
     make mrproper
     cp -v ../config-x86_64-`hostname` .config
     make
 }
 
-kiin_install() {
+undead_install() {
     mkdir -pv ${pkgdir}/boot
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-kiin
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-undead
 }

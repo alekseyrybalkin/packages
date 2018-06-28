@@ -8,7 +8,7 @@ urls="http://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkg
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1385
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../intltool-0.51.0-perl-5.22.patch
     patch -Np1 -i ../intltool-merge-Create-cache-file-atomically.patch
     patch -Np1 -i ../intltool_distcheck-fix.patch
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     install -v -m644 -D doc/I18N-HOWTO \
         ${pkgdir}/usr/share/doc/${pkgname}/I18N-HOWTO

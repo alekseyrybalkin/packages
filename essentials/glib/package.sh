@@ -12,11 +12,11 @@ check_server=1
 # development versions
 #relmon_id=10024
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --with-pcre=system \
@@ -25,6 +25,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

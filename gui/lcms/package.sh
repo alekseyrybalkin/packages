@@ -10,11 +10,11 @@ srctar=lcms2-${pkgver}.tar.gz
 # rc versions
 #relmon_id=9815
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

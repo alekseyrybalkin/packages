@@ -10,9 +10,9 @@ major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
 check_server=1
 relmon_id=11783
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     # disable gtk-doc
     sed -i -e 's/gtkdocize/true/g' autogen.sh
     sed -i -e '/docs/d' configure.ac
@@ -26,6 +26,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -9,7 +9,7 @@ srctar=${pkgname}2-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}2-${pkgver}
 relmon_id=237
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../bzip2-install_docs.patch
     sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
     sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
@@ -18,7 +18,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     mkdir ${pkgdir}/usr
     make PREFIX=${pkgdir}/usr install
     rm -v ${pkgdir}/usr/bin/{bunzip2,bzcat,bzip2}

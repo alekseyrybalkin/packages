@@ -10,7 +10,7 @@ urls="http://downloads.sourceforge.net/freeglut/freeglut-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=846
 
-kiin_make() {
+undead_make() {
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX=/usr \
@@ -20,7 +20,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     cd build
     make DESTDIR=${pkgdir} install
 }

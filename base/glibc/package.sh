@@ -1,6 +1,6 @@
 #!/bin/sh
 
-KIIN_NO_STRIPPING=1
+UNDEAD_NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.27
 vcs=git
@@ -8,7 +8,7 @@ vcs=git
 gittag=39071a55392d2d2e0b75fb19f2b48d661c4cc682
 relmon_id=5401
 
-kiin_make() {
+undead_make() {
     mkdir -v glibc-build
     cd glibc-build
     echo "sbindir=/usr/bin" >> configparms
@@ -31,20 +31,20 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     cd glibc-build
     make install_root=${pkgdir} install
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/lib64
 }
 
-kiin_after_install() {
+undead_after_install() {
     localedef -i en_US -f UTF-8 en_US.UTF-8
     localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }
 
 known="usr/lib/locale/locale-archive"

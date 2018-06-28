@@ -6,13 +6,13 @@ vcs=git
 gittag=${pkgver}
 relmon_id=8810
 
-kiin_make() {
+undead_make() {
     sed -i -e '/doc install$/d' Makefile.in
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/usr/sbin/chronyd ${pkgdir}/usr/bin
     rmdir ${pkgdir}/usr/sbin

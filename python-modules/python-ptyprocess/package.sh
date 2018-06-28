@@ -7,10 +7,10 @@ vcs_pkgname=ptyprocess
 gittag=${pkgver}
 relmon_id=6447
 
-kiin_make() {
+undead_make() {
     cp ../setup.py .
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir} --prefix=/usr --optimize=0
 }

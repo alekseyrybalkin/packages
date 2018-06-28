@@ -9,7 +9,7 @@ gittag=v${pkgver}
 
 relmon_id=1534
 
-kiin_make() {
+undead_make() {
     sed -e 's|/CMAKE/|/cmake/|' -i CBLAS/CMakeLists.txt
     install -d lapack-build
     cd lapack-build
@@ -27,7 +27,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     cd lapack-build
     make DESTDIR=${pkgdir} install
 }

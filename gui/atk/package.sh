@@ -7,7 +7,7 @@ gittag=ATK_${pkgver//\./_}
 # development versions
 #relmon_id=130
 
-kiin_make() {
+undead_make() {
     # disable gtk-doc
     sed -i -e '/gtkdocize/d' autogen.sh
     sed -i -e '/docs/d' configure.ac
@@ -20,6 +20,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

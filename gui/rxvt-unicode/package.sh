@@ -7,7 +7,7 @@ urls="http://dist.schmorp.de/${pkgname}/Attic/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=4750
 
-kiin_make() {
+undead_make() {
     ./configure --prefix=/usr \
         --with-terminfo=/usr/share/terminfo \
         --enable-256-color \
@@ -38,7 +38,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     export TERMINFO=${pkgdir}/usr/share/terminfo
     install -d $TERMINFO
     make DESTDIR=${pkgdir} install

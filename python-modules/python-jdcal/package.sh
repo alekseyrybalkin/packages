@@ -10,10 +10,10 @@ gittag=10e977b911a41c1c436f82d41fab43523f63ad50
 relmon_id=7978
 relmon_sed='s/v//g'
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

@@ -8,7 +8,7 @@ gittag=mesa-${pkgver}
 # rc versions
 #relmon_id=1970
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../MesaLib-add_xdemos.patch
     autoreconf -fi
     ./configure --prefix=$XORG_PREFIX \
@@ -31,7 +31,7 @@ kiin_make() {
     make -C xdemos DEMOS_PREFIX=/usr
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     make -C xdemos DEMOS_PREFIX=/usr DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa

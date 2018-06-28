@@ -8,7 +8,7 @@ urls="http://downloads.xiph.org/releases/vorbis/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1758
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --disable-static \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
     install -v -m644 doc/Vorbis* ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}

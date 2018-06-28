@@ -8,7 +8,7 @@ urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=2567
 
-kiin_make() {
+undead_make() {
     autoreconf -fi
     ./configure \
         --prefix=/usr \
@@ -20,6 +20,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

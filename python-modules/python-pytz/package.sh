@@ -9,7 +9,7 @@ urls="https://pypi.python.org/packages/ad/30/5ab2298c902ac92fdf649cc07d1b7d491a2
 srctar=pytz-${pkgver}.tar.gz
 relmon_id=6537
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../2016.6.1.patch
     MAKEFLAGS=
     sed -i -e 's/python2.4/python2.7/g' Makefile
@@ -25,7 +25,7 @@ kiin_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     cd src
     python setup.py install --root=${pkgdir}
 }

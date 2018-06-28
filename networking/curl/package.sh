@@ -9,9 +9,9 @@ folder="http://${pkgname}.haxx.se/download/"
 check_server=1
 relmon_id=381
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     # apparently, curl cannot autodetect PATH_SEPARATOR when there is only one
     # item in $PATH (see zz40-xc-ovr.m4)
     PATH=${PATH}:/bin
@@ -23,7 +23,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     find docs \( -name "Makefile*" -o -name "*.1" -o -name "*.3" \) -exec rm {} \;
     install -v -d -m755 ${pkgdir}/usr/share/doc/curl

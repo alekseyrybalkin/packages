@@ -8,14 +8,14 @@ urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=857
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     sed -i -e 's/\ doc//g' Makefile.am
     ./bootstrap
     ./configure --prefix=/usr
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

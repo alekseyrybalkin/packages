@@ -7,10 +7,10 @@ srctar=pyparsing-${pkgver}.tar.gz
 srcdir=${location}/pyparsing-${pkgver}
 relmon_id=3756
 
-kiin_make() {
+undead_make() {
   python setup.py build
 }
 
-kiin_install() {
+undead_install() {
   python setup.py install --root=${pkgdir}
 }

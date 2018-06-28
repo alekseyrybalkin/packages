@@ -8,14 +8,14 @@ urls="http://downloads.sourceforge.net/expat/expat-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=770
 
-kiin_make() {
+undead_make() {
     cd expat
     ./buildconf.sh
     ./configure --prefix=/usr --disable-static --without-xmlwf
     make
 }
 
-kiin_install() {
+undead_install() {
     cd expat
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/expat

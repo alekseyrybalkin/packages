@@ -7,7 +7,7 @@ git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
 relmon_id=827
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
@@ -21,16 +21,16 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
 }
 
-kiin_after_install() {
+undead_after_install() {
     fc-cache -rs > /dev/null
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }

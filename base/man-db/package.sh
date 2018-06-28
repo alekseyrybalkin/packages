@@ -8,7 +8,7 @@ urls="http://download.savannah.gnu.org/releases/${pkgname}/${pkgname}-${pkgver}.
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1882
 
-kiin_make() {
+undead_make() {
     autoreconf -fi
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -22,6 +22,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,10 +8,10 @@ vcs_pkgname=packaging
 gittag=${pkgver}
 relmon_id=11718
 
-kiin_make() {
+undead_make() {
   python2 setup.py build
 }
 
-kiin_install() {
+undead_install() {
   python2 setup.py install --root=${pkgdir}
 }

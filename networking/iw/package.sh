@@ -8,10 +8,10 @@ urls="https://www.kernel.org/pub/software/network/${pkgname}/${pkgname}-${pkgver
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1410
 
-kiin_make() {
+undead_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} SBINDIR=/usr/bin install
 }

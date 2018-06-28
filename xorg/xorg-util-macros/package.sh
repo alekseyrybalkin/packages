@@ -6,11 +6,11 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/util/macros
 gittag=util-macros-${pkgver}
 
-kiin_make() {
+undead_make() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

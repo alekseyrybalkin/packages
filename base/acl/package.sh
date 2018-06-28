@@ -12,14 +12,14 @@ relmon_sed='s/\.src//g'
 
 srctar=${pkgname}-${pkgver}.src.tar.${extension}
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-.*\.src\.tar\.${extension}$"
 ver_seds() {
     sed -r "s/^${pkgname}-//g" | sed -r "s/\.src\.tar\.${extension}$//g"
 }
 
-kiin_make() {
+undead_make() {
     sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
         libacl/__acl_to_any_text.c
     libtoolize -i
@@ -33,7 +33,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DIST_ROOT=${pkgdir} install install-dev install-lib
     chmod -v 755 ${pkgdir}/usr/lib/libacl.so
 }

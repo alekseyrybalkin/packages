@@ -10,11 +10,11 @@ svnrev=174
 urls="http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 
-kiin_make() {
+undead_make() {
     make -C src
 }
 
-kiin_install() {
+undead_install() {
     make ROOT=${pkgdir} -C src install
     rm -rf ${pkgdir}/bin ${pkgdir}/usr/bin
     mv ${pkgdir}/sbin ${pkgdir}/usr/bin

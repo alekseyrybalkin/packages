@@ -15,7 +15,7 @@ _url_src="http://hg.openjdk.java.net/jdk8u/jdk8u"
 urls="${_url_src}/archive/${_repo_ver}.tar.bz2"
 srctar=${_repo_ver}.tar.bz2
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     for subproject in corba hotspot jdk jaxws jaxp langtools nashorn; do
         hg clone ${SOURCES_HOME}/openjdk-${subproject} ${subproject}
@@ -28,7 +28,7 @@ kiin_make() {
     sh ./configure \
         --with-update-version=${_jdk_update} \
         --with-build-number=b${_jdk_build} \
-        --with-milestone=kiin \
+        --with-milestone=undead \
         --enable-unlimited-crypto \
         --with-zlib=system \
         --with-extra-cflags="-std=c++98 -Wno-error -fno-delete-null-pointer-checks -fno-lifetime-dse" \
@@ -39,7 +39,7 @@ kiin_make() {
     find build/*/images/j2sdk-image -iname \*.debuginfo -delete
 }
 
-kiin_install() {
+undead_install() {
     mkdir -p ${pkgdir}/usr/lib/openjdk
     cp -rv build/linux-x86_64-normal-server-release/images/j2sdk-image/* ${pkgdir}/usr/lib/openjdk/
     rm -vf ${pkgdir}/usr/lib/openjdk/jre/lib/security/cacerts

@@ -9,16 +9,16 @@ folder="http://mercurial.selenic.com/release/"
 check_server=1
 relmon_id=1969
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     sed -i -e 's#env python#env python2#' mercurial/lsprof.py
     sed -i -e 's/python/python2/g' doc/{docchecker,check-seclevel.py,runrst,Makefile,gendoc.py}
     cd doc
     make
 }
 
-kiin_install() {
+undead_install() {
     python2 setup.py install --root=${pkgdir}/ --optimize=1
     install -d ${pkgdir}/usr/share/man/{man1,man5}
     install -m644 doc/hg.1 ${pkgdir}/usr/share/man/man1

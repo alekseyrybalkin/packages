@@ -7,13 +7,13 @@ git_repo=git://anongit.freedesktop.org/xcb/util-keysyms
 gittag=${pkgver}
 relmon_id=5168
 
-kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/xcb-util-common-m4 m4
+undead_make() {
+    git clone -s ${UNDEAD_HOME}/sources/xcb-util-common-m4 m4
     git submodule update --init
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

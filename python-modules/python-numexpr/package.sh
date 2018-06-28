@@ -8,10 +8,10 @@ gittag=v${pkgver}
 relmon_id=3943
 relmon_sed='s/v//g'
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --prefix=/usr --root=${pkgdir} --optimize=1
 }

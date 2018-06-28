@@ -7,11 +7,11 @@ urls="ftp://anduin.linuxfromscratch.org/BLFS/svn/p/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=3689
 
-kiin_make() {
+undead_make() {
     ./configure --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

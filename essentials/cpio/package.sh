@@ -8,9 +8,9 @@ urls="http://ftp.gnu.org/pub/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=353
 
-kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
-    git clone -s ${KIIN_HOME}/sources/paxutils
+undead_make() {
+    git clone -s ${UNDEAD_HOME}/sources/gnulib
+    git clone -s ${UNDEAD_HOME}/sources/paxutils
     sed -i -e 's/lib\ pax/lib/g' bootstrap.conf
     ./bootstrap --skip-po
     m4 -DMODE=C sysdep.m4 > lib/sysdep.c
@@ -26,7 +26,7 @@ kiin_make() {
     makeinfo --plaintext -o doc/cpio.txt doc/cpio.texi
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/cpio-${pkgver}/html
     install -v -m644 doc/html/* \

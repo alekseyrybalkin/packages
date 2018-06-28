@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=8179
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --without-udev \
         --bindir=/usr/bin \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/{sbin,usr/sbin}/* ${pkgdir}/usr/bin
     rmdir ${pkgdir}/{sbin,usr/sbin}

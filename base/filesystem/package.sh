@@ -5,11 +5,11 @@ pkgname=filesystem
 SKIP_ARCH_CHECK=1
 pkgver=1
 
-kiin_make() {
+undead_make() {
     :
 }
 
-kiin_install() {
+undead_install() {
     mkdir -v ${pkgdir}/{dev,proc,sys,run}
     mknod -m 600 ${pkgdir}/dev/console c 5 1
     mknod -m 666 ${pkgdir}/dev/null c 1 3
@@ -74,9 +74,9 @@ kiin_install() {
     # for mail packages
     install -dv -m 1775 ${pkgdir}/var/spool/mail
 
-    # for kiin
-    mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
-    chown ${PACMAN}:${PACMAN} ${pkgdir}/var/lib/kiin/{tarballs,sources,external-repos,server-listings}
+    # for undead
+    mkdir -pv ${pkgdir}/var/lib/undead/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
+    chown ${PACMAN}:${PACMAN} ${pkgdir}/var/lib/undead/{tarballs,sources,external-repos,server-listings}
 
     # for fcron
     mkdir -pv ${pkgdir}/var/spool/fcron
@@ -87,10 +87,10 @@ kiin_install() {
     mkdir -pv ${pkgdir}/var/lib/chrony
 }
 
-kiin_after_install() {
+undead_after_install() {
     :
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }

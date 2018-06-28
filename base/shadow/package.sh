@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=4802
 
-kiin_make() {
+undead_make() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs
     sed -i -e 's/po man/po/g' Makefile.am
     autoreconf -fi
@@ -19,7 +19,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
     mv ${pkgdir}/usr/sbin/* ${pkgdir}/usr/bin
@@ -28,7 +28,7 @@ kiin_install() {
     rm -rvf ${pkgdir}/sbin
 }
 
-kiin_after_install() {
+undead_after_install() {
     pwconv
     grpconv
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=pkg-config-${pkgver}
 relmon_id=3649
 
-kiin_make() {
+undead_make() {
     rm -rf glib
     mkdir glib
     ./autogen.sh --prefix=/usr \
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

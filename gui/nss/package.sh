@@ -7,7 +7,7 @@ hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
 relmon_id=2503
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     export XCFLAGS="${CFLAGS} -Wno-error=int-in-bool-context"
     cd ../
@@ -21,7 +21,7 @@ kiin_make() {
         NSS_USE_SYSTEM_SQLITE=1
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     cd ../dist
     mkdir -p ${pkgdir}/usr/lib/pkgconfig

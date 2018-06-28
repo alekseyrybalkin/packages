@@ -8,7 +8,7 @@ urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.t
 srctar=File-Next-${pkgver}.tar.gz
 relmon_id=2895
 
-kiin_make() {
+undead_make() {
     PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
         PERL_AUTOINSTALL=--skipdeps \
         PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR=${pkgdir}" \
@@ -18,7 +18,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

@@ -8,7 +8,7 @@ gittag=${pkgver}
 # beta versions
 #relmon_id=8178
 
-kiin_make() {
+undead_make() {
     # disable gtk-doc
     sed -i -e '/help\//d' configure.ac
     sed -i -e '/GTK_DOC_CHECK/d' configure.ac
@@ -31,17 +31,17 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/usr/share/help
 }
 
-kiin_after_install() {
+undead_after_install() {
     glib-compile-schemas /usr/share/glib-2.0/schemas
     update-desktop-database -q
     gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }

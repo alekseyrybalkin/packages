@@ -8,14 +8,14 @@ pkgver=4.5
 #svnrev=6340
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 
-kiin_make() {
+undead_make() {
     cd ${srcdir}
-    unzip ${KIIN_HOME}/tarballs/${pkgname}-${pkgver}.zip
+    unzip ${UNDEAD_HOME}/tarballs/${pkgname}-${pkgver}.zip
     #cd docbook/xml
     #make
 }
 
-kiin_install() {
+undead_install() {
     #cd docbook/xml
     cd ${srcdir}
     install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
@@ -25,7 +25,7 @@ kiin_install() {
         ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
 }
 
-kiin_after_install() {
+undead_after_install() {
     if [ ! -e /etc/xml/docbook ]; then
         xmlcatalog --noout --create /etc/xml/docbook
     fi
@@ -118,8 +118,8 @@ kiin_after_install() {
     done
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }
 
 known="etc/xml/docbook \

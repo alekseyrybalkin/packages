@@ -12,16 +12,16 @@ major_folder="http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/"
 check_server=1
 relmon_id=10894
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --disable-gtk2-engine
     ./configure --disable-gtk2-engine --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

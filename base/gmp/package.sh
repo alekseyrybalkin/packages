@@ -9,7 +9,7 @@ vcs_pkgname=gmp-${_majorver}
 hgtag=aad821ef06cb
 relmon_id=1186
 
-kiin_make() {
+undead_make() {
     ./.bootstrap
     ./configure --prefix=/usr \
         --enable-cxx \
@@ -20,7 +20,7 @@ kiin_make() {
     make html
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install-html
 }

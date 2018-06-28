@@ -9,7 +9,7 @@ vcs_pkgname=tg
 gittag=6547c0b21b977b327b3c5e8142963f4bc246187a
 relmon_id=5610
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../configdir.patch
     patch -Np1 -i ../silence_some_notifications.patch
     git clone ${SOURCES_HOME}/tgl
@@ -21,7 +21,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     install -Dm644 tg-server.pub ${pkgdir}/etc/telegram-cli/server.pub
     install -Dm755 bin/telegram-cli ${pkgdir}/usr/bin/telegram-cli
 }

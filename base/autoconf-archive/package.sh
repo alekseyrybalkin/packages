@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=142
 
-kiin_make() {
+undead_make() {
     mkdir build-aux
     ln -sv /usr/bin/git-version-gen build-aux/git-version-gen
     touch README AUTHORS ChangeLog
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

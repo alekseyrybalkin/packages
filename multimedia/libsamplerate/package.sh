@@ -7,12 +7,12 @@ vcs=git
 gittag=f6730d03c3e7660bb6ecad8816f1b09c5825142a
 relmon_id=1716
 
-kiin_make() {
+undead_make() {
     sed -i -e 's/\-\-enable\-gcc-werror //g' autogen.sh
     ./autogen.sh --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

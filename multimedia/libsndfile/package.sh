@@ -8,13 +8,13 @@ urls="http://www.mega-nerd.com/libsndfile/files/libsndfile-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=13277
 
-kiin_make() {
+undead_make() {
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
         --disable-sqlite
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

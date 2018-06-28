@@ -11,11 +11,11 @@ urls="http://downloads.sourceforge.net/docutils/docutils-${pkgver}.tar.gz"
 srctar=docutils-${pkgver}.tar.gz
 relmon_id=3849
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
     find ${pkgdir}/usr/lib/python3*/site-packages -type f | xargs chmod 644
 }

@@ -7,14 +7,14 @@ vcs=git
 gittag=2343e816784c79d68bcd328bf84c23c46428a6ae
 relmon_id=882
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     autoreconf -fi
     ./configure --prefix=/usr --disable-static --enable-libgdbm-compat
     make
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make prefix=${pkgdir}/usr install
 }

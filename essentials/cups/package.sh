@@ -9,7 +9,7 @@ urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
 srctar=cups-${pkgver}-source.tar.bz2
 relmon_id=380
 
-kiin_make() {
+undead_make() {
     sed -i 's:444:644:' Makedefs.in
     sed -i '/MAN.*.EXT/s:.gz::g' configure config-scripts/cups-manpages.m4
     sed -i 's@else /\* HAVE_AVAHI \*/@elif defined(HAVE_AVAHI)@' test/ippserver.c
@@ -26,7 +26,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make BUILDROOT=${pkgdir} install-headers install-libs
     mkdir ${pkgdir}/usr/bin
     echo '#!/bin/bash' > ${pkgdir}/usr/bin/cups-config

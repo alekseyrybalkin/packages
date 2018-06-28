@@ -9,7 +9,7 @@ gittag=${pkgver}
 # 2.41+ cannot be built without rust, cargo and network
 #relmon_id=5420
 
-kiin_make() {
+undead_make() {
     # disable gtk-doc
     sed -i -e '/gtkdocize/d' autogen.sh
     sed -i -e '/doc\//d' configure.ac
@@ -23,14 +23,14 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }
 
-kiin_after_install() {
+undead_after_install() {
     gdk-pixbuf-query-loaders --update-cache
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+undead_after_upgrade() {
+    undead_after_install
 }

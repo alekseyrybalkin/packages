@@ -8,13 +8,13 @@ urls="ftp://ftp.astron.com/pub/file/file-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=807
 
-kiin_make() {
+undead_make() {
     sed -i -e 's/5.27/5.28/g' configure.ac
     autoreconf -fi
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

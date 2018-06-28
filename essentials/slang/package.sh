@@ -11,9 +11,9 @@ folder="http://www.jedsoft.org/releases/slang/"
 check_server=1
 relmon_id=4829
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install-all
 }

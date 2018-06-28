@@ -7,10 +7,10 @@ vcs_pkgname=sphinx_rtd_theme
 gittag=${pkgver}
 relmon_id=6915
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
 }

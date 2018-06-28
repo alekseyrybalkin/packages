@@ -8,13 +8,13 @@ urls="http://www.tortall.net/projects/yasm/releases/yasm-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=5286
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     ./autogen.sh --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

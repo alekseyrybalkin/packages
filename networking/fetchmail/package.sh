@@ -8,13 +8,13 @@ urls="http://downloads.sourceforge.net/fetchmail/fetchmail-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=801
 
-kiin_make() {
+undead_make() {
     patch -Np1 -i ../disable-sslv3.patch
     ./autogen.sh
     ./configure --prefix=/usr --with-ssl
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

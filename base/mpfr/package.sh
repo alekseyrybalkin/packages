@@ -10,7 +10,7 @@ urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=2019
 
-kiin_make() {
+undead_make() {
     mkdir m4
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -22,7 +22,7 @@ kiin_make() {
     make html
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install-html
 }

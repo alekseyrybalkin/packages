@@ -10,9 +10,9 @@ folder="https://download.transmissionbt.com/files/"
 check_server=1
 relmon_id=5002
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     sed -i -e '/gtr_get_favicon/d' gtk/details.c
     sed -i -e '/gtr_get_favicon/d' gtk/filter.c
     rm m4/glib-gettext.m4
@@ -20,6 +20,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -7,10 +7,10 @@ vcs_pkgname=html5lib-python
 gittag=${pkgver}
 relmon_id=8053
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
 }

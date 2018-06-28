@@ -9,13 +9,13 @@ folder="http://www.freedesktop.org/software/vaapi/releases/libva/"
 check_server=1
 relmon_id=1752
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

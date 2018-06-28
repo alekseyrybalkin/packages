@@ -5,10 +5,10 @@ pkgver=1.6.0
 vcs=git
 gittag=${pkgver}
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
 }

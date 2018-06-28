@@ -9,9 +9,9 @@ folder="http://archive.apache.org/dist/${pkgname}/"
 check_server=1
 relmon_id=95
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     sed -i -e 's/python/python2/g' build/gen-build.py
     ./buildconf
     sed -i -e 's/$RM "$cfgfile"/$RM -f "$cfgfile"/g' configure
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

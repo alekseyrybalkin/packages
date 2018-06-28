@@ -9,10 +9,10 @@ urls="http://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${pkgver}.t
 srctar=MarkupSafe-${pkgver}.tar.gz
 relmon_id=3918
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
 }

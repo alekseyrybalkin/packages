@@ -6,7 +6,7 @@ vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941
 
-kiin_make() {
+undead_make() {
     cd unix
     ./configure --prefix=/usr \
         --mandir=/usr/share/man \
@@ -15,7 +15,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     cd unix
     make INSTALL_ROOT=${pkgdir} install install-private-headers
     ln -sf tclsh${pkgver%.*} ${pkgdir}/usr/bin/tclsh

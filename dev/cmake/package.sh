@@ -10,9 +10,9 @@ folder="http://www.cmake.org/files/v${majorver}/"
 check_server=1
 relmon_id=306
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     ./bootstrap --prefix=/usr \
         --system-libs \
         --mandir=/share/man \
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     # remove files with spaces
     rm -rf ${pkgdir}/usr/share/cmake-${majorver}/Help/generator

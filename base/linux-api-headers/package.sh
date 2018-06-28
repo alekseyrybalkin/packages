@@ -6,12 +6,12 @@ vcs_pkgname=linux
 pkgver=4.14.32
 gittag=v${pkgver}
 
-kiin_make() {
+undead_make() {
     make mrproper
     make headers_check
 }
 
-kiin_install() {
+undead_install() {
     make INSTALL_HDR_PATH=dest headers_install
     find dest/include \( -name .install -o -name ..install.cmd \) -delete
     mkdir -pv ${pkgdir}/usr/include

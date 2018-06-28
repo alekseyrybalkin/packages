@@ -6,11 +6,11 @@ vcs=git
 gittag=libXrender-${pkgver}
 relmon_id=1789
 
-kiin_make() {
+undead_make() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

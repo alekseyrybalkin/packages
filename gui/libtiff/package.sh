@@ -8,11 +8,11 @@ srctar=tiff-${pkgver}.tar.gz
 srcdir=${location}/tiff-${pkgver}
 relmon_id=1738
 
-kiin_make() {
+undead_make() {
     ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

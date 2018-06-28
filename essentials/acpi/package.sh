@@ -7,12 +7,12 @@ git_repo=git://git.code.sf.net/p/acpiclient/code
 gittag=${pkgver}
 relmon_id=17
 
-kiin_make() {
+undead_make() {
     autoreconf -fi
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

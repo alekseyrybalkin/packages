@@ -8,7 +8,7 @@ urls="http://prdownloads.sourceforge.net/flex/flex-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=819
 
-kiin_make() {
+undead_make() {
     MAKEFLAGS=
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
     ln -sv flex ${pkgdir}/usr/bin/lex

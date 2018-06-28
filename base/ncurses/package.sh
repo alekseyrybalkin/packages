@@ -11,7 +11,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 # dates in versions
 #relmon_id=2057
 
-kiin_make() {
+undead_make() {
     sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
 
     ./configure --prefix=/usr \
@@ -24,7 +24,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     if [ -d ${pkgdir}/usr/share/pkgconfig ]; then
         mkdir -p ${pkgdir}/usr/lib/pkgconfig

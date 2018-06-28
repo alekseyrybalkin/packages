@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=5348
 relmon_sed='s/v//g'
 
-kiin_make() {
+undead_make() {
     git clone -n -s ${SOURCES_HOME}/waf waf-clone
     cd waf-clone
     git checkout waf-1.9.15
@@ -25,6 +25,6 @@ kiin_make() {
     ./waf build
 }
 
-kiin_install() {
+undead_install() {
     ./waf install --destdir=${pkgdir}
 }

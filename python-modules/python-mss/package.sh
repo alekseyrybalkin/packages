@@ -6,10 +6,10 @@ pkgver=3.2.0
 vcs=git
 gittag=v${pkgver}
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
 }

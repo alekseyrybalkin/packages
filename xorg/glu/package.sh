@@ -6,13 +6,13 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/mesa/glu
 gittag=glu-${pkgver}
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=$XORG_PREFIX \
         --disable-static \
         --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,12 +8,12 @@ _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
 relmon_id=5021
 
-kiin_make() {
+undead_make() {
     mkdir ${_srcdir}
-    tar xf ${KIIN_HOME}/tarballs/${_srctar} -C ${_srcdir}
+    tar xf ${UNDEAD_HOME}/tarballs/${_srctar} -C ${_srcdir}
 }
 
-kiin_install() {
+undead_install() {
     cd ${_srcdir}
     ZONEINFO=${pkgdir}/usr/share/zoneinfo
     mkdir -pv $ZONEINFO/{posix,right}

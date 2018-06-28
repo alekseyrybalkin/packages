@@ -8,9 +8,9 @@ urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=4939
 
-kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
-    git clone -s ${KIIN_HOME}/sources/paxutils
+undead_make() {
+    git clone -s ${UNDEAD_HOME}/sources/gnulib
+    git clone -s ${UNDEAD_HOME}/sources/paxutils
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --enable-gcc-warnings=no \
@@ -19,7 +19,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} -C doc install-html docdir=/usr/share/doc/tar
 }

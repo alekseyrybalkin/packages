@@ -9,14 +9,14 @@ folder="http://downloads.xiph.org/releases/ogg/"
 check_server=1
 relmon_id=1694
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

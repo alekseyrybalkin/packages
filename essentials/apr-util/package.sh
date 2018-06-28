@@ -9,9 +9,9 @@ folder="http://archive.apache.org/dist/apr/"
 check_server=1
 relmon_id=96
 
-. ${KIIN_REPO}/defaults.sh
+. ${UNDEAD_REPO}/defaults.sh
 
-kiin_make() {
+undead_make() {
     cd ../
     git clone -s ${SOURCES_HOME}/apr apr
     sed -i -e 's/python/python2/g' apr/build/gen-build.py
@@ -29,6 +29,6 @@ kiin_make() {
     rm -rf apr
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

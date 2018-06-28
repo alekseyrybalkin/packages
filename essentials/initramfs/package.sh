@@ -5,11 +5,11 @@ pkgname=initramfs
 SKIP_ARCH_CHECK=1
 pkgver=1
 
-kiin_make() {
+undead_make() {
     true
 }
 
-kiin_install() {
+undead_install() {
     cd ../
     ./mkinitramfs
     mkdir -p ${pkgdir}/boot

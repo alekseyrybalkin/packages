@@ -6,11 +6,11 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/libevdev
 gittag=libevdev-${pkgver}
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

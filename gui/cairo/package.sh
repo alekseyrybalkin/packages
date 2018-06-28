@@ -7,7 +7,7 @@ gittag=${pkgver}
 # development version
 #relmon_id=247
 
-kiin_make() {
+undead_make() {
     export ac_cv_lib_lzo2_lzo2a_decompress="no"
     NOCONFIGURE=1 ./autogen.sh
     CFLAGS="${CFLAGS} -ffat-lto-objects" ./configure --prefix=/usr \
@@ -19,6 +19,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

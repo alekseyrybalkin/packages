@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 # development versions
 #relmon_id=13599
 
-kiin_make() {
+undead_make() {
     export BUILD_ZLIB=False
     export BUILD_BZIP2=0
     sh Configure -des -Dprefix=/usr \
@@ -23,6 +23,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

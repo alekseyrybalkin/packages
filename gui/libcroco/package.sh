@@ -9,7 +9,7 @@ urls="http://ftp.gnome.org/pub/gnome/sources/libcroco/0.6/libcroco-${pkgver}.tar
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=11787
 
-kiin_make() {
+undead_make() {
     # disable gtk-doc
     sed -i -e '/gtkdocize/d' autogen.sh
     sed -i -e '/docs/d' configure.ac
@@ -21,6 +21,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,12 +8,12 @@ urls="http://prdownloads.sourceforge.net/swig/swig-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=4919
 
-kiin_make() {
+undead_make() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

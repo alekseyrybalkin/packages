@@ -8,12 +8,12 @@ urls="http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-${pkgver}.ta
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1316
 
-kiin_make() {
+undead_make() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }
 

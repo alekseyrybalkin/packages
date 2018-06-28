@@ -6,10 +6,10 @@ vcs=mercurial
 vcs_pkgname=et_xmlfile
 hgtag=${pkgver}
 
-kiin_make() {
+undead_make() {
     python setup.py build
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

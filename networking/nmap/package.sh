@@ -8,11 +8,11 @@ vcs_clone="git svn clone -Tnmap -tnmap-releases https://svn.nmap.org/ ${vcs_pkgn
 gittag=origin/tags/nmap-${pkgver}
 relmon_id=2096
 
-kiin_make() {
+undead_make() {
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+undead_install() {
     make DESTDIR=${pkgdir} install
 }

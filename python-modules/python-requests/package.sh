@@ -7,7 +7,7 @@ vcs_pkgname=requests
 gittag=v${pkgver}
 relmon_id=4004
 
-kiin_make() {
+undead_make() {
     # allow idna 2.6
     sed -i -e 's/idna>=2.5,<2.6/idna>=2.5,<2.7/g' setup.py
 
@@ -16,7 +16,7 @@ kiin_make() {
     make html
 }
 
-kiin_install() {
+undead_install() {
     python setup.py install --root=${pkgdir}
     mkdir -pv ${pkgdir}/usr/share/doc
     cp -r docs/_build/html ${pkgdir}/usr/share/doc/python-requests
