@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1492
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
     sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
@@ -16,6 +16,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

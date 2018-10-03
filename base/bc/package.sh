@@ -8,9 +8,9 @@ folder="ftp://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 relmon_id=170
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     cat > bc/fix-libmath_h << "EOF"
 #! /bin/bash
 sed -e '1   s/^/{"/' \
@@ -29,6 +29,6 @@ EOF
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -9,9 +9,9 @@ folder="http://ftp.midnight-commander.org/"
 check_server=1
 relmon_id=1954
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib \
@@ -22,6 +22,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

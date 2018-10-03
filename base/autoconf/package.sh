@@ -9,18 +9,18 @@ folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 relmon_id=141
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
-undead_make() {
+kiin_make() {
     git cherry-pick a357718b081f1678748ead5d7cb67c766c930441
     autoreconf -fi
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     cp build-aux/git-version-gen ${pkgdir}/usr/bin/
 }

@@ -8,7 +8,7 @@ vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
 relmon_id=5354
 
-undead_make() {
+kiin_make() {
     unset LDFLAGS
     ./configure --prefix=/ --sbindir=/usr/bin --sysconfdir=/etc \
         --localstatedir=/var --datarootdir=/usr/share \
@@ -18,6 +18,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install_device-mapper
 }

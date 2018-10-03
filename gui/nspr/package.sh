@@ -6,7 +6,7 @@ vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
 relmon_id=7953
 
-undead_make() {
+kiin_make() {
     sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
     sed -i 's#$(LIBRARY) ##' config/rules.mk
     ./configure --prefix=/usr \
@@ -17,6 +17,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

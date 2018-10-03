@@ -10,11 +10,11 @@ urls="https://pypi.python.org/packages/source/M/Mako/Mako-${pkgver}.tar.gz"
 srctar=Mako-${pkgver}.tar.gz
 relmon_id=3915
 
-undead_make() {
+kiin_make() {
     python2 setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python2 setup.py install --root=${pkgdir}
     mv ${pkgdir}/usr/bin/mako-render{,2}
 }

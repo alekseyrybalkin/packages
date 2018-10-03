@@ -7,10 +7,10 @@ vcs_pkgname=jedi
 gittag=v${pkgver}
 relmon_id=3893
 
-undead_make() {
+kiin_make() {
     :
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

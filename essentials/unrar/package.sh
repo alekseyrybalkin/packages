@@ -8,12 +8,12 @@ srctar=${pkgname}src-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}
 relmon_id=13306
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
     make -f makefile CXXFLAGS="-fPIC ${CXXFLAGS}" STRIP="true"
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     install -Dm755 unrar ${pkgdir}/usr/bin/unrar
 }

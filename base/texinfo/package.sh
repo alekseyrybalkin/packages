@@ -10,13 +10,13 @@ urls="http://ftp.gnu.org/gnu/texinfo/texinfo-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=4958
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }
 

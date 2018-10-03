@@ -9,11 +9,11 @@ gittag=v${pkgver}
 urls="http://downloads.sourceforge.net/enlightenment/imlib2-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

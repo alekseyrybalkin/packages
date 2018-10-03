@@ -8,7 +8,7 @@ urls="https://www.kernel.org/pub/linux/utils/${pkgname}/v1.6/${pkgname}-${pkgver
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=13709
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --disable-static \
@@ -16,7 +16,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/usr/{sbin,bin}
 }

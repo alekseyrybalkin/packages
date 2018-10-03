@@ -10,14 +10,14 @@ urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.t
 srctar=setuptools-${pkgver}.tar.gz
 relmon_id=4021
 
-undead_make() {
+kiin_make() {
     sed -i -e 's/launcher manifest/launcher_manifest/g' setuptools/command/easy_install.py
     mv setuptools/command/launcher{\ ,_}manifest.xml
     python2 bootstrap.py
     python2 setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python2 setup.py install --prefix=/usr \
         --root=${pkgdir} --optimize=1 --skip-build
     # remove files with spaces in filenames

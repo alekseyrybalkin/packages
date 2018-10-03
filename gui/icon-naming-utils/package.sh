@@ -7,12 +7,12 @@ urls="http://tango.freedesktop.org/releases/icon-naming-utils-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1359
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib/icon-naming-utils
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

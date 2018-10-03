@@ -8,10 +8,10 @@ vcs_pkgname=ipython
 gittag=${pkgver}
 relmon_id=1399
 
-undead_make() {
+kiin_make() {
     sed -i 's|backports.shutil_get_terminal_size|shutil|' IPython/utils/terminal.py
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --prefix=/usr --root=${pkgdir} --optimize=0
 }

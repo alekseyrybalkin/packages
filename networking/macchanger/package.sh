@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1873
 
-undead_make() {
+kiin_make() {
     patch -Np1 -i ../0001-don-t-use-hwrng.patch
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -15,6 +15,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,13 +8,13 @@ urls="http://fedorahosted.org/releases/l/o/logrotate/logrotate-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=10567
 
-undead_make() {
+kiin_make() {
     export CFLAGS="${CFLAGS} -Wno-misleading-indentation"
     ./autogen.sh
     ./configure --prefix=/usr --sbindir=/usr/bin
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

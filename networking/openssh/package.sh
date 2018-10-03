@@ -11,9 +11,9 @@ folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 check_server=1
 relmon_id=2565
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     patch -p1 -i ../openssl-1.1.0.patch || true
     sed -i -e '/1\.1\.0/d' configure.ac
     autoreconf -fi
@@ -28,7 +28,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
     install -v -m644 INSTALL LICENCE OVERVIEW README* \
@@ -39,7 +39,7 @@ undead_install() {
     mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
 }
 
-undead_after_install() {
+kiin_after_install() {
     getent group sshd >/dev/null || groupadd -g 50 sshd
     getent passwd sshd >/dev/null || \
         useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd \
@@ -47,8 +47,8 @@ undead_after_install() {
     [ -f /etc/ssh/ssh_host_rsa_key ] || ssh-keygen -A
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }
 
 known="etc/ssh/ssh_host_dsa_key \

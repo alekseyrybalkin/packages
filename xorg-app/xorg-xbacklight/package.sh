@@ -7,11 +7,11 @@ vcs=git
 gittag=${_pkgname}-${pkgver}
 relmon_id=5161
 
-undead_make() {
+kiin_make() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

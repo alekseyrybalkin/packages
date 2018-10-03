@@ -9,13 +9,13 @@ urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=13109
 
-undead_make() {
+kiin_make() {
     sed -i 's/| python/&2/' configure.ac
     autoreconf -fi
     ./configure --prefix=/usr PYTHON=/usr/bin/python2
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

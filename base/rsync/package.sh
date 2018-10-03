@@ -9,13 +9,13 @@ folder="http://www.samba.org/ftp/rsync/src/"
 check_server=1
 relmon_id=4217
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr --without-included-zlib
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

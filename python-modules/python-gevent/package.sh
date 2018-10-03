@@ -7,7 +7,7 @@ vcs_pkgname=gevent
 gittag=${pkgver}
 relmon_id=6835
 
-undead_make() {
+kiin_make() {
     # disable auto-pickling in cython
     git cherry-pick 4c25c7de7bca39b753e177837fa1bdff0fb7ecf1
     # apparently, gevent cannot autodetect PATH_SEPARATOR when there is only one
@@ -20,6 +20,6 @@ undead_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir}
 }

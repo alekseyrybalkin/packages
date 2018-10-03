@@ -7,13 +7,13 @@ git_repo=git://anongit.freedesktop.org/xcb/util-renderutil
 gittag=${pkgver}
 relmon_id=5169
 
-undead_make() {
-    git clone -s ${UNDEAD_HOME}/sources/xcb-util-common-m4 m4
+kiin_make() {
+    git clone -s ${KIIN_HOME}/sources/xcb-util-common-m4 m4
     git submodule update --init
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

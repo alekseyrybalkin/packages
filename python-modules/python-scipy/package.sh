@@ -9,11 +9,11 @@ gittag=v${pkgver}
 #relmon_id=4768
 #relmon_sed='s/v//g'
 
-undead_make() {
+kiin_make() {
     python setup.py config_fc --fcompiler=gnu95 build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py config_fc --fcompiler=gnu95 install \
         --prefix=/usr --root=${pkgdir} --optimize=1
 }

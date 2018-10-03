@@ -8,11 +8,11 @@ vcs_pkgname=cython
 gittag=${pkgver}
 relmon_id=12679
 
-undead_make() {
+kiin_make() {
     python2 setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python2 setup.py install --root=${pkgdir}
     mv ${pkgdir}/usr/bin/cygdb ${pkgdir}/usr/bin/cygdb2
     mv ${pkgdir}/usr/bin/cython ${pkgdir}/usr/bin/cython2

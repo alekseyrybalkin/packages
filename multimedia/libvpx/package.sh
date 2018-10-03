@@ -7,7 +7,7 @@ vcs_pkgname=chromium-libvpx
 gittag=v${pkgver}
 relmon_id=11083
 
-undead_make() {
+kiin_make() {
     sed -i 's/cp -p/cp/' build/make/Makefile
     chmod -v 644 vpx/*.h
     mkdir libvpx-build
@@ -19,7 +19,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     cd libvpx-build
     make DESTDIR=${pkgdir} install
 }

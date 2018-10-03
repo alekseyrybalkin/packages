@@ -8,7 +8,7 @@ urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1877
 
-undead_make() {
+kiin_make() {
     sed -i -e 's/po //g' Makefile.am
     sed -i -e 's/doc //g' Makefile.am
     sed -i -e 's/-Werror//g' configure.ac
@@ -19,6 +19,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

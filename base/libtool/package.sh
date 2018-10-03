@@ -7,15 +7,15 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1741
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

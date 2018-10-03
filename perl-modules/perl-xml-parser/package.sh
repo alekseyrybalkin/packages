@@ -10,12 +10,12 @@ urls="http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-${pkgver}.tar
 srctar=XML-Parser-${pkgver}.tar.gz
 relmon_id=3531
 
-undead_make() {
+kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

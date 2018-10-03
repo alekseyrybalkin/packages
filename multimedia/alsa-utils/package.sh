@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=37
 
-undead_make() {
+kiin_make() {
     autoreconf -fi
     ./configure --disable-alsaconf --disable-xmlto --disable-bat \
         --without-systemdsystemunitdir --sbindir=/usr/bin \
@@ -14,7 +14,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var

@@ -7,10 +7,10 @@ vcs_pkgname=cycler
 gittag=v${pkgver}
 relmon_id=11552
 
-undead_make() {
+kiin_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

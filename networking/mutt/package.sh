@@ -7,7 +7,7 @@ vcs=git
 gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
 
-undead_make() {
+kiin_make() {
     rm -rf .git
     autoreconf -fi
     ./configure --prefix=/usr --sysconfdir=/etc \
@@ -19,16 +19,16 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     chmod 0755 ${pkgdir}/usr/bin/mutt_dotlock
 }
 
-undead_after_install() {
+kiin_after_install() {
     getent group mail >/dev/null || groupadd -g 34 mail
     chgrp -v mail /var/spool/mail
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }

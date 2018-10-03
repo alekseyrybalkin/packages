@@ -9,9 +9,9 @@ folder="http://roy.marples.name/downloads/${pkgname}/"
 check_server=1
 relmon_id=11429
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./configure --libexecdir=/usr/lib/dhcpcd \
         --dbdir=/run \
         --sbindir=/usr/bin \
@@ -19,7 +19,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/lib/dhcpcd/* ${pkgdir}/usr/lib/dhcpcd
     rm -rf ${pkgdir}/lib

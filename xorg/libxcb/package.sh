@@ -7,7 +7,7 @@ git_repo=git://anongit.freedesktop.org/xcb/libxcb
 gittag=${pkgname}-${pkgver}
 relmon_id=1767
 
-undead_make() {
+kiin_make() {
     sed -e "s/pthread-stubs//" -i configure.ac
     ./autogen.sh $XORG_CONFIG \
         --enable-xinput --enable-xkb \
@@ -16,6 +16,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

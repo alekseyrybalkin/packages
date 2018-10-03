@@ -5,11 +5,11 @@ pkgver=2.3.3
 vcs=git
 gittag=${pkgname}-${pkgver}
 
-undead_make() {
+kiin_make() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,10 +8,10 @@ urls="http://feh.finalrewind.org/feh-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=790
 
-undead_make() {
+kiin_make() {
     make PREFIX=/usr
 }
 
-undead_install() {
+kiin_install() {
     make PREFIX=/usr DESTDIR=${pkgdir} install
 }

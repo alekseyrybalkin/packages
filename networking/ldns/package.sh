@@ -8,7 +8,7 @@ urls="http://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=14817
 
-undead_make() {
+kiin_make() {
     sed -i 's/defined(@$also)/@$also/' doc/doxyparse.pl
     git clone -s ${SOURCES_HOME}/dns-ldns contrib/DNS-LDNS
     libtoolize -c --install || libtoolize -c || error_cleanup "Libtoolize failed."
@@ -26,6 +26,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

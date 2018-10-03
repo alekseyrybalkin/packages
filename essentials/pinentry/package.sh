@@ -8,9 +8,9 @@ extension=bz2
 folder="ftp://ftp.gnupg.org/gcrypt/pinentry/"
 relmon_id=3643
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --enable-pinentry-gtk2=no \
@@ -20,6 +20,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

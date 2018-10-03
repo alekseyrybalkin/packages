@@ -6,14 +6,14 @@ vcs=git
 gittag=rel_${pkgver//\./_}
 relmon_id=892
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
     autoreconf -f -i
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0+
 
 filesystem
-undead-configs
+kiin-configs
 linux-api-headers
 man-pages
 glibc
@@ -115,7 +115,7 @@ mercurial
 fossil
 sudo
 openssh
-undead
+kiin
 slang
 mc
 dhcpcd

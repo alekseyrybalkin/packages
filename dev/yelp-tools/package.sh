@@ -7,11 +7,11 @@ git_repo=git://git.gnome.org/yelp-tools
 gittag=${pkgver}
 relmon_id=8420
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

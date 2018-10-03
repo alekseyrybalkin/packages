@@ -8,11 +8,11 @@ gittag=${pkgver}
 # rc versions
 #relmon_id=13164
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

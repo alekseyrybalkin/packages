@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=646
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
     sed -e '/int.*old_desc_blocks/s/int/blk64_t/' \
         -e '/if (old_desc_blocks/s/super->s_first_meta_bg/desc_blocks/' \
@@ -26,7 +26,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     cd build
     make DESTDIR=${pkgdir} install

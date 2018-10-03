@@ -7,10 +7,10 @@ vcs_pkgname=sphinx
 gittag=v${pkgver}
 relmon_id=4031
 
-undead_make() {
+kiin_make() {
     make build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.src.tar.gz
 relmon_id=784
 relmon_sed='s/\.src//g'
 
-undead_make() {
+kiin_make() {
     sed -i -e '/^documentation/d' Makefile.in
     sed -i -e 's/documentation//g' Makefile.in
     sed -i -e '/^updatedoc/d' Makefile.in
@@ -29,18 +29,18 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/var
 }
 
-undead_after_install() {
+kiin_after_install() {
     getent group fcron >/dev/null || groupadd -g 22 fcron
     getent passwd fcron >/dev/null || \
         useradd -c 'fcron user' -d /dev/null -g fcron \
         -s /bin/false -u 22 fcron
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }

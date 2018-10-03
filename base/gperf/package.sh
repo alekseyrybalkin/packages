@@ -6,8 +6,8 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1237
 
-undead_make() {
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+kiin_make() {
+    git clone -s ${KIIN_HOME}/sources/gnulib
     for file in build-aux/install-sh build-aux/mkinstalldirs \
                 build-aux/compile build-aux/ar-lib; do
         cp gnulib/${file} ${file}
@@ -18,6 +18,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

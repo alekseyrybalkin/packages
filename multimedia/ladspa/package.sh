@@ -7,7 +7,7 @@ urls="https://github.com/OpenMandrivaAssociation/ladspa/raw/master/${pkgname}_sd
 srctar=${pkgname}_sdk_${pkgver}.tgz
 srcdir=${location}/${pkgname}_sdk
 
-undead_make() {
+kiin_make() {
     cd src
     sed \
         -e 's/mkdirhier/mkdir -p/' \
@@ -16,7 +16,7 @@ undead_make() {
     make targets
 }
 
-undead_install() {
+kiin_install() {
     cd src
     make INSTALL_PLUGINS_DIR=${pkgdir}/usr/lib/ladspa/ \
         INSTALL_INCLUDE_DIR=${pkgdir}/usr/include/ \

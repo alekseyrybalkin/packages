@@ -6,12 +6,12 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=38
 
-undead_make() {
+kiin_make() {
     autoreconf -fi
     ./configure --libdir=$LIBDIR --disable-python
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

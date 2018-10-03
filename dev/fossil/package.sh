@@ -8,11 +8,11 @@ urls="https://www.fossil-scm.org/download/fossil-src-${pkgver}.tar.gz"
 srctar=fossil-src-${pkgver}.tar.gz
 relmon_id=13971
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

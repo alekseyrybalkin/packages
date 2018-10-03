@@ -7,7 +7,7 @@ pkgver=4.16.0
 gittag=v${pkgver}
 relmon_id=1392
 
-undead_make() {
+kiin_make() {
     sed -i /ARPD/d Makefile
     sed -i 's/arpd.8//' man/man8/Makefile
     ./configure --prefix=/usr
@@ -15,7 +15,7 @@ undead_make() {
     make DESTDIR=
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} \
         MANDIR=/usr/share/man \
         DOCDIR=/usr/share/doc/${pkgname} install

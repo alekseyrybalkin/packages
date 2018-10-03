@@ -7,7 +7,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=3708
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --exec-prefix=/ \
         --prefix=/usr \
@@ -21,6 +21,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

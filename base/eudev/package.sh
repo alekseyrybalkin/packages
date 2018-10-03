@@ -10,11 +10,11 @@ folder="http://dev.gentoo.org/~blueness/eudev/"
 check_server=1
 relmon_id=13466
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --bindir=/usr/bin \
@@ -35,18 +35,18 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     mkdir -pv ${pkgdir}/usr/lib/udev/devices/pts
     mkdir -pv ${pkgdir}/etc/udev/rules.d
     make DESTDIR=${pkgdir} install
 }
 
-undead_after_install() {
+kiin_after_install() {
     udevadm hwdb --update
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }
 
 known="etc/udev/hwdb.bin \

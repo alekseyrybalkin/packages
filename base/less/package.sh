@@ -8,11 +8,11 @@ srctar=${pkgname}-${pkgver}.tar.gz
 # beta versions
 #relmon_id=1550
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr --sysconfdir=/etc
     make
 }
 
-undead_install() {
+kiin_install() {
     make prefix=${pkgdir}/usr install
 }

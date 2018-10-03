@@ -11,9 +11,9 @@ folder="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"
 check_server=1
 relmon_id=2610
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --docdir=/usr/share/doc/pcre \
@@ -27,6 +27,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

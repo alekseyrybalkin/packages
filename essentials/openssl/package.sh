@@ -8,7 +8,7 @@ vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 relmon_id=2566
 
-undead_make() {
+kiin_make() {
     ./config --prefix=/usr \
         --libdir=lib \
         --openssldir=/etc/ssl \
@@ -16,7 +16,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     sed -i 's# libcrypto.a##;s# libssl.a##' Makefile
     make DESTDIR=${pkgdir} MANDIR=/usr/share/man MANSUFFIX=ssl install
 }

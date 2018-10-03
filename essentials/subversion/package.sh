@@ -8,9 +8,9 @@ folder="http://www.apache.org/dist/${pkgname}/"
 check_server=1
 relmon_id=4905
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     # move configuration to ~/.config
     sed -i -e 's/SVN_CONFIG__USR_DIRECTORY   "\.subversion"/SVN_CONFIG__USR_DIRECTORY   "\.config\/subversion"/g' \
         subversion/libsvn_subr/config_impl.h
@@ -24,7 +24,7 @@ undead_make() {
         swig_pydir_extra=/usr/lib/python2.7/site-packages/svn
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     export LD_LIBRARY_PATH=${pkgdir}/usr/lib:${LD_LIBRARY_PATH}
     make DESTDIR=${pkgdir} install

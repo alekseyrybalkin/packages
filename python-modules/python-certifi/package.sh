@@ -7,10 +7,10 @@ gittag=${pkgver}
 # tags != versions
 #relmon_id=7995
 
-undead_make() {
+kiin_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir}
 }

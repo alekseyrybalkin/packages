@@ -8,7 +8,7 @@ gittag=v${pkgver}
 # alpha versions
 #relmon_id=13254
 
-undead_make() {
+kiin_make() {
     rm -rf .github .git .gitignore .bzrignore .hgeol .hgignore .hgtags .hgtouch
     rm -r Modules/expat
     rm -r Modules/zlib
@@ -25,7 +25,7 @@ undead_make() {
     make html
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     ln -s python3               ${pkgdir}/usr/bin/python
     ln -s python3-config        ${pkgdir}/usr/bin/python-config

@@ -8,10 +8,10 @@ srctar=pyparsing-${pkgver}.tar.gz
 srcdir=${location}/pyparsing-${pkgver}
 relmon_id=3756
 
-undead_make() {
+kiin_make() {
   python2 setup.py build
 }
 
-undead_install() {
+kiin_install() {
   python2 setup.py install --root=${pkgdir}
 }

@@ -7,12 +7,12 @@ vcs=git
 gittag=b128bdcf7b15865aaae49635a1dcbcaca07fc6ef
 relmon_id=13307
 
-undead_make() {
+kiin_make() {
     autoreconf -fi
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

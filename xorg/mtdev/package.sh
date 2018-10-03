@@ -7,12 +7,12 @@ git_repo=http://bitmath.org/git/mtdev.git
 gittag=v${pkgver}
 relmon_id=8868
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-static
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -7,11 +7,11 @@ vcs=git
 git_repo=git://anongit.freedesktop.org/xorg/font/alias
 gittag=${_pkgname}-${pkgver}
 
-undead_make() {
+kiin_make() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

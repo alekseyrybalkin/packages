@@ -6,7 +6,7 @@ vcs=git
 gittag=n${pkgver}
 relmon_id=5405
 
-undead_make() {
+kiin_make() {
     export TMPDIR=${location}/tmp
     mkdir ${TMPDIR}
     sed -i 's/-lflite"/-lflite -lasound"/' configure
@@ -26,6 +26,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -14,14 +14,14 @@ relmon_sed='s/\.orig//g'
 
 srctar=${pkgname}_${pkgver}.orig.tar.${extension}
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}_.*\.orig\.tar\.${extension}$"
 ver_seds() {
     sed -r "s/^${pkgname}_//g" | sed -r "s/\.orig\.tar\.${extension}$//g"
 }
 
-undead_make() {
+kiin_make() {
     sed -i -e '/man_MANS/d' doc/Makefile.am
     sed -i -e 's/de es fr nl pt sv//g' doc/Makefile.am
     patch -p1 -i ../silence-dlerror.patch
@@ -31,7 +31,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     install -dm755 ${pkgdir}/etc/ld.so.conf.d/
     echo '/usr/lib/libfakeroot' > ${pkgdir}/etc/ld.so.conf.d/fakeroot.conf

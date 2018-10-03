@@ -9,7 +9,7 @@ urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=5413
 
-undead_make() {
+kiin_make() {
     ./auto/configure --prefix=/etc/nginx \
         --conf-path=/etc/nginx/nginx.conf \
         --sbin-path=/usr/bin/nginx \
@@ -48,19 +48,19 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/{var,run}
     mv -v ${pkgdir}/etc/nginx/nginx.conf{,.packaged}
 }
 
-undead_after_install() {
+kiin_after_install() {
     getent group nginx >/dev/null || groupadd -g 333 nginx
     getent passwd nginx >/dev/null || \
         useradd -c 'nginx' -d /var/lib/nginx -g nginx \
         -s /bin/false -u 333 nginx
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }

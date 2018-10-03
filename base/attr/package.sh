@@ -12,14 +12,14 @@ relmon_sed='s/\.src//g'
 
 srctar=${pkgname}-${pkgver}.src.tar.${extension}
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-.*\.src\.tar\.${extension}$"
 ver_seds() {
     sed -r "s/^${pkgname}-//g" | sed -r "s/\.src\.tar\.${extension}$//g"
 }
 
-undead_make() {
+kiin_make() {
     sed -i -e "/SUBDIRS/s|man2||" man/Makefile
     libtoolize -i
     autoreconf -f -i
@@ -29,7 +29,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DIST_ROOT=${pkgdir} install install-dev install-lib
     chmod -v 755 ${pkgdir}/usr/lib/libattr.so
 }

@@ -8,12 +8,12 @@ srctar=unzip60.tar.gz
 srcdir=${location}/unzip60
 relmon_id=8684
 
-undead_make() {
+kiin_make() {
     sed -i "/MANDIR =/s#)/#)/share/#" unix/Makefile
     sed -i -e 's/CFLAGS="-O -Wall/& -DNO_LCHMOD/' unix/Makefile
     make -f unix/Makefile linux_noasm
 }
 
-undead_install() {
+kiin_install() {
     make prefix=${pkgdir}/usr install
 }

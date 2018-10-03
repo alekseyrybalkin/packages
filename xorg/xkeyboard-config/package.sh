@@ -7,11 +7,11 @@ git_repo=git://anongit.freedesktop.org/xkeyboard-config
 gittag=${pkgname}-${pkgver}
 relmon_id=5191
 
-undead_make() {
+kiin_make() {
     ./autogen.sh $XORG_CONFIG --with-xkb-rules-symlink=xorg
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

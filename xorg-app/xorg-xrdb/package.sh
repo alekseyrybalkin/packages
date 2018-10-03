@@ -6,13 +6,13 @@ pkgver=1.1.1
 vcs=git
 gittag=${_pkgname}-${pkgver}
 
-undead_make() {
+kiin_make() {
     export PATH=/usr/bin:${PATH}
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-undead_install() {
+kiin_install() {
     export PATH=/usr/bin:${PATH}
     make DESTDIR=${pkgdir} install
 }

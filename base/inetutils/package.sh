@@ -6,8 +6,8 @@ vcs=git
 gittag=inetutils-${pkgver//\./_}
 relmon_id=13805
 
-undead_make() {
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+kiin_make() {
+    git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/bin \
@@ -21,6 +21,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,12 +6,12 @@ vcs=git
 gittag=${pkgver}
 relmon_id=14150
 
-undead_make() {
+kiin_make() {
     ./bootstrap
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

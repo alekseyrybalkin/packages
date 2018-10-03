@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=13262
 
-undead_make() {
+kiin_make() {
     sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' asciidocapi.py
     sed -i -e 's/python/python2/g' Makefile.in
     autoconf
@@ -14,6 +14,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

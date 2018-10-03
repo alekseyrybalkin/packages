@@ -7,11 +7,11 @@ git_repo=git://git.gnome.org/gnome-common
 gittag=${pkgver}
 relmon_id=8421
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr --with-autoconf-archive
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

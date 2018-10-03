@@ -6,9 +6,9 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=812
 
-undead_make() {
+kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+    git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib/findutils \
@@ -17,7 +17,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var

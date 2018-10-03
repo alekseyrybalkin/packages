@@ -1,20 +1,20 @@
 #!/bin/sh
 
-pkgname=undead-configs
+pkgname=kiin-configs
 SKIP_ARCH_CHECK=1
 vcs=git
 pkgver=1
 
-undead_make() {
+kiin_make() {
     rm -rf .git
-    find . -type f | xargs sed -i -e "s/%UNDEAD_HOSTNAME%/`hostname`/g"
+    find . -type f | xargs sed -i -e "s/%KIIN_HOSTNAME%/`hostname`/g"
     if [ -f /etc/laptop ]; then
         # disable autostart for some services
         find etc/rc.d -type l -name "*postgresql*" | xargs rm
     fi
 }
 
-undead_install() {
+kiin_install() {
     cp -av ./{boot,etc,usr} ${pkgdir}
 
     if [ -f ./bonus.install.bash ]; then

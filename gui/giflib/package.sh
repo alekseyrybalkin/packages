@@ -8,11 +8,11 @@ urls="http://downloads.sourceforge.net/giflib/giflib-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1158
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,11 +8,11 @@ srctar=zip30.tar.gz
 srcdir=${location}/zip30
 relmon_id=10080
 
-undead_make() {
+kiin_make() {
     make -f unix/Makefile generic_gcc
 }
 
-undead_install() {
+kiin_install() {
     make prefix=${pkgdir}/usr \
         MANDIR=${pkgdir}/usr/share/man/man1 \
         -f unix/Makefile install

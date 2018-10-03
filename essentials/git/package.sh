@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=5350
 
-undead_make() {
+kiin_make() {
     make configure
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib \
@@ -17,7 +17,7 @@ undead_make() {
     make man
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install install-html install-man
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

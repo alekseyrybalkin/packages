@@ -7,8 +7,8 @@ vcs_pkgname=libidn2
 gittag=libidn2-${pkgver}
 relmon_id=5597
 
-undead_make() {
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+kiin_make() {
+    git clone -s ${KIIN_HOME}/sources/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
@@ -17,6 +17,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

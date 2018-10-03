@@ -8,11 +8,11 @@ urls="http://crux.nu/files/libepoxy-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=6090
 
-undead_make() {
+kiin_make() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

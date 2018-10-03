@@ -10,7 +10,7 @@ urls="https://archive.apache.org/dist/serf/serf-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1720
 
-undead_make() {
+kiin_make() {
     sed -i "/Append/s:RPATH=libdir,::" SConstruct
     sed -i "/Default/s:lib_static,::" SConstruct
     sed -i "/Alias/s:install_static,::" SConstruct
@@ -21,7 +21,7 @@ undead_make() {
     scons PREFIX=/usr
 }
 
-undead_install() {
+kiin_install() {
     mkdir -p ${pkgdir}/usr
     scons PREFIX=${pkgdir}/usr install
     chmod 644 ${pkgdir}/usr/include/serf-1/*

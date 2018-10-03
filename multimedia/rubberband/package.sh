@@ -6,12 +6,12 @@ vcs=mercurial
 hgtag=v${pkgver}
 relmon_id=4222
 
-undead_make() {
+kiin_make() {
     sed -i -e 's/.rubberband.wisdom/.config\/.rubberband.wisdom/g' src/dsp/FFT.cpp
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

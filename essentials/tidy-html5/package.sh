@@ -7,7 +7,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=13267
 
-undead_make() {
+kiin_make() {
     cd build/cmake
     cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release \
@@ -16,7 +16,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     cd build/cmake
     make DESTDIR=${pkgdir} install
     install -v -m755 tab2space ${pkgdir}/usr/bin

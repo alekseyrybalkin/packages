@@ -10,12 +10,12 @@ srctar=XML-Simple-${pkgver}.tar.gz
 srcdir=${location}/XML-Simple-${pkgver}
 relmon_id=3537
 
-undead_make() {
+kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

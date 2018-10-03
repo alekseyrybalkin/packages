@@ -9,7 +9,7 @@ urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=898
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr \
         --docdir=/usr/share/doc/gettext \
         --with-included-libxml \
@@ -21,6 +21,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,7 +8,7 @@ fossiltag=version-${pkgver}
 relmon_id=4877
 
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
     ./configure
     make amalgamation-tarball
@@ -28,7 +28,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     cd sqlite-autoconf-*
     make DESTDIR=${pkgdir} install

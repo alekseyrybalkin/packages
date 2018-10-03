@@ -8,12 +8,12 @@ urls="http://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.ta
 srctar=bzr-${pkgver}.tar.gz
 relmon_id=238
 
-undead_make() {
+kiin_make() {
     sed 's|man/man1|share/man/man1|' -i setup.py
     sed 's|/usr/bin/env python|/usr/bin/env python2|' -i bzrlib/{plugins/bash_completion/bashcomp.py,tests/ssl_certs/create_ssls.py,patiencediff.py,_patiencediff_py.py}
     python2 setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python2 setup.py install --prefix=/usr --root=${pkgdir} --optimize=1
 }

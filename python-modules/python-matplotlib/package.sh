@@ -7,13 +7,13 @@ vcs_pkgname=matplotlib
 gittag=v${pkgver}
 relmon_id=3919
 
-undead_make() {
+kiin_make() {
     rm -rf .git
     sed -i '/Subprocess32/d' setup.py
     export XDG_RUNTIME_DIR=/tmp
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install -O1 --skip-build --root ${pkgdir} --prefix=/usr
 }

@@ -9,10 +9,10 @@ gittag=4476b3c28add85c5a8169fbb81ded8c3b845e588
 #gittag=${pkgver}
 relmon_id=8742
 
-undead_make() {
+kiin_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir} --prefix=/usr --optimize=1
 }

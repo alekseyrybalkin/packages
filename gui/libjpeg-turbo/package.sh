@@ -8,7 +8,7 @@ urls="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-${pkgver}.tar
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1648
 
-undead_make() {
+kiin_make() {
     autoreconf -fi
     ./configure --prefix=/usr \
         --mandir=/usr/share/man \
@@ -18,7 +18,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} \
         docdir=/usr/share/doc/${pkgname} \
         exampledir=/usr/share/doc/${pkgname} \

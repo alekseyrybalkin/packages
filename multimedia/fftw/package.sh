@@ -10,7 +10,7 @@ srctar=${pkgname}-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=803
 
-undead_make() {
+kiin_make() {
     CFLAGS+=" -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math"
     ./configure F77=gfortran --prefix=/usr \
         --enable-shared --enable-threads \
@@ -19,6 +19,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=257
 
-undead_make() {
+kiin_make() {
     export CFLAGS="${CFALGS} -Wimplicit-fallthrough=0"
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -14,7 +14,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     CHOST=x86_64-unknown-linux-gnu
     install -Dm 755 ccache ${pkgdir}/usr/bin/ccache
 

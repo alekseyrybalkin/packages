@@ -8,12 +8,12 @@ urls="https://github.com/libass/libass/releases/download/${pkgver}/libass-${pkgv
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1560
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr --enable-harfbuzz --enable-fontconfig --disable-static
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

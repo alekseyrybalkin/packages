@@ -8,12 +8,12 @@ gittag=${pkgver}
 # development versions
 #relmon_id=1223
 
-undead_make() {
+kiin_make() {
     sed -i '1s|#!/usr/bin/env python$|&2|' giscanner/*.py
     PYTHON=/usr/bin/python2 ./autogen.sh --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

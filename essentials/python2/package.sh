@@ -16,7 +16,7 @@ relmon_id=13255
 
 srctar=Python-${pkgver}.tar.${extension}
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 urls="${folder}${pkgver}/${srctar}"
 ver_grep="^2\.[0-9]+\.[0-9]+/$"
@@ -24,7 +24,7 @@ ver_seds() {
     sed -r "s/\///g"
 }
 
-undead_make() {
+kiin_make() {
     rm -rf .git .gitignore .bzrignore .hgeol .hgignore .hgtags
 
     # do not use berkeley db
@@ -67,7 +67,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} altinstall
 
     ln -sf python${_pybasever}        ${pkgdir}/usr/bin/python2

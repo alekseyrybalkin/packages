@@ -8,13 +8,13 @@ urls="http://ftp.gnu.org/gnu/groff/groff-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1253
 
-undead_make() {
+kiin_make() {
     MAKEFLAGS=
     PAGE=A4 ./configure --prefix=/usr --without-x --with-doc=no
     make
 }
 
-undead_install() {
+kiin_install() {
     MAKEFLAGS=
     make prefix=${pkgdir}/usr install
     rm -rf ${pkgdir}/usr/share/doc/groff-${pkgver}/pdf

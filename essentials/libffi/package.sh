@@ -9,11 +9,11 @@ folder="ftp://sourceware.org/pub/${pkgname}/"
 check_server=1
 relmon_id=1611
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[^-rc]*\.tar\.${extension}$"
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     # Make package install headers into /usr/include instead of /usr/lib/libffi-${pkgver}/include
     sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in
@@ -24,7 +24,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib/
     rmdir ${pkgdir}/usr/lib64

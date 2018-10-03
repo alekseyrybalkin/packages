@@ -11,13 +11,13 @@ urls="http://downloads.sourceforge.net/docutils/docutils-${pkgver}.tar.gz"
 srctar=docutils-${pkgver}.tar.gz
 relmon_id=3849
 
-undead_make() {
+kiin_make() {
     python2 setup.py build
     find . -type f -exec \
         sed -i '1s,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' {} \;
 }
 
-undead_install() {
+kiin_install() {
     python2 setup.py install --root=${pkgdir}
     find ${pkgdir}/usr/lib/python2.7/site-packages -type f | xargs chmod 644
     for _f in ${pkgdir}/usr/bin/*.py; do

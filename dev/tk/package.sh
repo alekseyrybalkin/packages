@@ -6,7 +6,7 @@ vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=11426
 
-undead_make() {
+kiin_make() {
     cd unix
     ./configure --prefix=/usr \
         --mandir=/usr/share/man \
@@ -15,7 +15,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     cd unix
     make INSTALL_ROOT=${pkgdir} install install-private-headers
     ln -sf wish${pkgver%.*} "${pkgdir}/usr/bin/wish"

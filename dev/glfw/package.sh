@@ -7,7 +7,7 @@ gittag=${pkgver}
 relmon_id=1180
 relmon_sed='s/\.bin\.WIN64//g'
 
-undead_make() {
+kiin_make() {
     mkdir build
     cd build
     cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
@@ -15,7 +15,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     cd build
     make DESTDIR=${pkgdir} install
 }

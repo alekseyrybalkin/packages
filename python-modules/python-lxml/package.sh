@@ -7,10 +7,10 @@ vcs_pkgname=lxml
 gittag=lxml-${pkgver}
 relmon_id=3914
 
-undead_make() {
+kiin_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

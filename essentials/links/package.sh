@@ -8,16 +8,16 @@ folder="http://${pkgname}.twibright.com/download/"
 check_server=1
 relmon_id=1822
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
 ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr --mandir=/usr/share/man
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     install -v -d -m755 ${pkgdir}/usr/share/doc/links-${pkgver}
     install -v -m644 doc/links_cal/* KEYS BRAILLE_HOWTO \

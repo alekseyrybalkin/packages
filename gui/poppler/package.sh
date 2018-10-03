@@ -7,7 +7,7 @@ gittag=poppler-${pkgver}
 # extra zeroes in versions
 #relmon_id=3686
 
-undead_make() {
+kiin_make() {
     mkdir build
     cd build
 
@@ -19,7 +19,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     cd build
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/usr/lib{64,}

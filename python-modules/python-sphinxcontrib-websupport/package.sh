@@ -6,10 +6,10 @@ vcs=git
 vcs_pkgname=sphinxcontrib-websupport
 gittag=${pkgver}
 
-undead_make() {
+kiin_make() {
     python setup.py build
 }
 
-undead_install() {
+kiin_install() {
     python setup.py install --root=${pkgdir}
 }

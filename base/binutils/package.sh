@@ -11,9 +11,9 @@ folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 relmon_id=7981
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     rm -rf gdb libdecnumber readline sim zlib
     mkdir -v binutils-build
     cd binutils-build
@@ -27,7 +27,7 @@ undead_make() {
     make tooldir=${pkgdir}/usr
 }
 
-undead_install() {
+kiin_install() {
     cd binutils-build
     make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
 }

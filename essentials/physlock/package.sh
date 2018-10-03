@@ -6,10 +6,10 @@ pkgver=0.5
 vcs=git
 gittag=v${pkgver}
 
-undead_make() {
+kiin_make() {
     make PREFIX=/usr
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} PREFIX=/usr install
 }

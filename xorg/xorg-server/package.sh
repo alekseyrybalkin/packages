@@ -6,7 +6,7 @@ vcs=git
 gittag=xorg-server-${pkgver}
 relmon_id=5250
 
-undead_make() {
+kiin_make() {
     NOCONFIGURE=1 ./autogen.sh
     ./configure $XORG_CONFIG \
         --with-xkb-output=/var/lib/xkb \
@@ -24,7 +24,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     mkdir -pv ${pkgdir}/etc/X11/xorg.conf.d
     # remove /var, filesystem package creates everything in there

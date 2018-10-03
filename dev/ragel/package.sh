@@ -7,13 +7,13 @@ gittag=ragel-${pkgver}
 relmon_id=12105
 relmon_sed='s/ragel-//g;s/\.tar\.gz//g'
 
-undead_make() {
+kiin_make() {
     export CXXFLAGS="${CXXFLAGS} -Wno-narrowing"
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -8,11 +8,11 @@ urls="http://code.soundsoftware.ac.uk/attachments/download/${_dir}/${pkgname}-${
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=5066
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -9,14 +9,14 @@ folder="http://ftp.gnu.org/gnu/${pkgname}/"
 check_server=1
 relmon_id=144
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./bootstrap
     ./configure --prefix=/usr --docdir=/usr/share/doc/${pkgname}
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

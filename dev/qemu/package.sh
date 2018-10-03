@@ -11,9 +11,9 @@ folder="http://wiki.qemu.org/download/"
 check_server=1
 relmon_id=13607
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     git clone ${SOURCES_HOME}/keycodemapdb ui/keycodemapdb
 
     sed -i 's/ memfd_create/ qemu_memfd_create/' util/memfd.c
@@ -34,7 +34,7 @@ undead_make() {
         #--disable-git-update \
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     ln -sv qemu-system-x86_64 ${pkgdir}/usr/bin/qemu
     install -D -m644 ../65-kvm.rules \
@@ -42,10 +42,10 @@ undead_install() {
     rm -rf ${pkgdir}/var
 }
 
-undead_after_install() {
+kiin_after_install() {
     getent group kvm >/dev/null || groupadd -g 78 kvm
 }
 
-undead_after_upgrade() {
-    undead_after_install
+kiin_after_upgrade() {
+    kiin_after_install
 }

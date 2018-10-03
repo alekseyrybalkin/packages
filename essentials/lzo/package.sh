@@ -8,9 +8,9 @@ folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
 check_server=1
 relmon_id=1868
 
-. ${UNDEAD_REPO}/defaults.sh
+. ${KIIN_REPO}/defaults.sh
 
-undead_make() {
+kiin_make() {
     ./configure --prefix=/usr \
         --enable-shared \
         --build=x86_64-unknown-linux-gnu \
@@ -18,6 +18,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

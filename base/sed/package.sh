@@ -8,8 +8,8 @@ urls="http://ftp.gnu.org/gnu/sed/sed-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=4789
 
-undead_make() {
-    git clone -s ${UNDEAD_HOME}/sources/gnulib
+kiin_make() {
+    git clone -s ${KIIN_HOME}/sources/gnulib
     sed -i -e '/\/missing/d' bootstrap
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
@@ -17,6 +17,6 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,13 +6,13 @@ vcs=git
 gittag=libXt-${pkgver}
 relmon_id=1793
 
-undead_make() {
+kiin_make() {
     ./autogen.sh $XORG_CONFIG \
         --with-appdefaultdir=/etc/X11/app-defaults \
         --libdir=$LIBDIR
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
 }

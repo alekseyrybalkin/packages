@@ -8,12 +8,12 @@ srctar=Error-${pkgver}.tar.gz
 srcdir=${location}/Error-${pkgver}
 relmon_id=7092
 
-undead_make() {
+kiin_make() {
     perl Makefile.PL INSTALLDIRS=vendor
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

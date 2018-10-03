@@ -7,7 +7,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1667
 
-undead_make() {
+kiin_make() {
     autoreconf -fi
     ./configure --prefix=/usr \
         --disable-static \
@@ -17,7 +17,7 @@ undead_make() {
     make html
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install html
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1394
 
-undead_make() {
+kiin_make() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -16,7 +16,7 @@ undead_make() {
     make
 }
 
-undead_install() {
+kiin_install() {
     make DESTDIR=${pkgdir} install
     ln -sfv xtables-multi ${pkgdir}/usr/bin/iptables-xml
 }
