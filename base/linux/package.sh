@@ -8,7 +8,7 @@ gittag=v${pkgver}
 
 kiin_make() {
     make mrproper
-    cp -v ../config-x86_64-`hostname` .config
+    cp -v ../config-x86_64 .config
     make
 }
 
