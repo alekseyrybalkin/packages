@@ -3,6 +3,7 @@
 pkgname=expat
 pkgver=2.2.5
 vcs=git
+vcs_pkgname=libexpat
 gittag=R_${pkgver//\./_}
 urls="http://downloads.sourceforge.net/expat/expat-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2

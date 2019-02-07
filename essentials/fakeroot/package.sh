@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=fakeroot
-pkgver=1.22
+pkgver=1.23
 vcs=git
 # FIXME
-gittag=d399b7ee2c71f1c697607d7d4596a4c506ab1a6c
+gittag=dc2e20a65d1fb3a4c49bb6121a0e5caf3f1b321a
 #gittag=${pkgver}
 extension=bz2
 folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"

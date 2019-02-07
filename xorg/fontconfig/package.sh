@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fontconfig
-pkgver=2.13.0
+pkgver=2.13.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}

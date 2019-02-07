@@ -5,6 +5,7 @@ ARCH_NAME=pyopengl
 pkgver=3.1.0
 vcs=bzr
 vcs_pkgname=pyopengl
+vcs_clone='bzr branch lp:pyopengl'
 bzrtag=release-${pkgver}
 relmon_id=3754
 

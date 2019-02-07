@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=python-pyparsing
 pkgver=2.2.0
 urls="http://downloads.sourceforge.net/pyparsing/pyparsing-${pkgver}.tar.gz"

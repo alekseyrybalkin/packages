@@ -1,12 +1,11 @@
 #!/bin/sh
 
 pkgname=sqlite
-vcs=fossil
-
 pkgver=3.23.0
+vcs=fossil
+vcs_clone='fossil clone https://www.sqlite.org/cgi/src sqlite.fossil'
 fossiltag=version-${pkgver}
 relmon_id=4877
-
 
 kiin_make() {
     MAKEFLAGS=

@@ -3,9 +3,8 @@
 pkgname=intltool
 pkgver=0.51.0
 vcs=bzr
+vcs_clone='bzr branch lp:intltool'
 bzrtag=release-${pkgver//\./_}
-urls="http://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1385
 
 kiin_make() {

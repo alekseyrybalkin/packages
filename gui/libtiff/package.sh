@@ -1,11 +1,9 @@
 #!/bin/sh
 
-#vcs=cvs
 pkgname=libtiff
-pkgver=4.0.9
-urls="http://download.osgeo.org/${pkgname}/tiff-${pkgver}.tar.gz"
-srctar=tiff-${pkgver}.tar.gz
-srcdir=${location}/tiff-${pkgver}
+pkgver=4.0.10
+vcs=git
+gittag=v${pkgver}
 relmon_id=1738
 
 kiin_make() {

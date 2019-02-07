@@ -2,10 +2,8 @@
 
 pkgname=nmap
 pkgver=7.70
-vcs=git-svn
-vcs_pkgname=nmap-git-svn
-vcs_clone="git svn clone -Tnmap -tnmap-releases https://svn.nmap.org/ ${vcs_pkgname}"
-gittag=origin/tags/nmap-${pkgver}
+vcs=git
+gittag=nmap-${pkgver}
 relmon_id=2096
 
 kiin_make() {

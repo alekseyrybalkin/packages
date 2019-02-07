@@ -3,6 +3,7 @@
 pkgname=hicolor-icon-theme
 pkgver=0.17
 vcs=git
+vcs_pkgname=default-icon-theme
 gittag=${pkgver}
 urls="http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz

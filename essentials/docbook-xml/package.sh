@@ -2,10 +2,8 @@
 
 pkgname=docbook-xml
 pkgver=4.5
-# git-svn build requires at least https://github.com/ndw/xjparse/
-#vcs=git-svn
-#vcs_pkgname=docbook-git-svn
-#svnrev=6340
+# git build requires at least https://github.com/ndw/xjparse/
+#vcs=git
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 
 kiin_make() {

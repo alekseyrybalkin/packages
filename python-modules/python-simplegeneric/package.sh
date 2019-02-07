@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=python-simplegeneric
 SKIP_ARCH_CHECK=1
 pkgver=0.8.1

@@ -3,6 +3,7 @@
 pkgname=xtrans
 pkgver=1.3.5
 vcs=git
+vcs_pkgname=libxtrans
 gittag=${pkgname}-${pkgver}
 relmon_id=13651
 
