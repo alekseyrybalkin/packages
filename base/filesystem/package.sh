@@ -10,9 +10,12 @@ kiin_make() {
 }
 
 kiin_install() {
+    # for virtual filesystems
     mkdir -v ${pkgdir}/{dev,proc,sys,run}
     mknod -m 600 ${pkgdir}/dev/console c 5 1
     mknod -m 666 ${pkgdir}/dev/null c 1 3
+
+    # dirs
     mkdir -pv ${pkgdir}/{boot,etc/sysconfig,home,mnt}
     mkdir -pv ${pkgdir}/var
     install -dv -m 0750 ${pkgdir}/root
@@ -34,12 +37,14 @@ kiin_install() {
     ln -sv /run ${pkgdir}/var/run
     ln -sv /run/lock ${pkgdir}/var/lock
     mkdir -pv ${pkgdir}/var/{opt,cache,lib/{misc,locate},local}
+
+    # files
     ln -sv /proc/self/mounts ${pkgdir}/etc/mtab
 
-    touch ${pkgdir}/var/log/{btmp,lastlog,wtmp}
+    touch ${pkgdir}/var/log/{btmp,lastlog,faillog,wtmp}
     chgrp -v utmp ${pkgdir}/var/log/lastlog
     chmod -v 664  ${pkgdir}/var/log/lastlog
-    chmod -v 600  ${pkgdir}/var/log/btmp
+    chmod -v 600  ${pkgdir}/var/log/{btmp,faillog}
 
     # for glibc
     install -dv -m 0755 ${pkgdir}/usr/lib/locale
