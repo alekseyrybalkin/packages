@@ -9,6 +9,19 @@ kiin_make() {
     :
 }
 
+kiin_before_install() {
+    groupadd --gid 1000 rybalkin
+    groupadd --gid 1001 chrussia
+    groupadd --gid 1002 chtor
+    groupadd --gid 1003 chgermany
+
+    useradd --uid 1000 -g ${PACMAN} -G kvm,audio,video -s /bin/bash ${PACMAN}
+    useradd --uid 1001 -g chrussia -G audio,video -s /bin/bash chrussia
+    useradd --uid 1002 -g chtor -G video -s /bin/bash chtor
+    useradd --uid 1003 -g chgermany -G audio,video -s /bin/bash chgermany
+    useradd --uid 1004 -m -g ${PACMAN} -s /bin/bash ${HOUSECARL}
+}
+
 kiin_install() {
     # for virtual filesystems
     mkdir -v ${pkgdir}/{dev,proc,sys,run}
@@ -80,8 +93,8 @@ kiin_install() {
     install -dv -m 1775 ${pkgdir}/var/spool/mail
 
     # for kiin
-    mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled,tarballs,sources,external-repos,server-listings}
-    chown ${PACMAN}:${PACMAN} ${pkgdir}/var/lib/kiin/{tarballs,sources,external-repos,server-listings}
+    mkdir -pv ${pkgdir}/home/${PACMAN}/.data/kiin/{installed,uninstalled,tarballs,server-listings}
+    chown ${PACMAN}:${PACMAN} ${pkgdir}/home/${PACMAN}/.data/kiin/{tarballs,server-listings}
 
     # for fcron
     mkdir -pv ${pkgdir}/var/spool/fcron
