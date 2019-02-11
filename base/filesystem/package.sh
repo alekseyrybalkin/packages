@@ -93,8 +93,7 @@ kiin_install() {
     install -dv -m 1775 ${pkgdir}/var/spool/mail
 
     # for kiin
-    mkdir -pv ${pkgdir}/home/${PACMAN}/.data/kiin/{installed,uninstalled,tarballs,server-listings}
-    chown ${PACMAN}:${PACMAN} ${pkgdir}/home/${PACMAN}/.data/kiin/{tarballs,server-listings}
+    mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled}
 
     # for fcron
     #mkdir -pv ${pkgdir}/var/spool/fcron
