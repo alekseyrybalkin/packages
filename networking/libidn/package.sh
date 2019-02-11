@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libidn
-pkgver=2.0.4
+pkgver=2.1.1
 vcs=git
 vcs_pkgname=libidn2
 gittag=libidn2-${pkgver}

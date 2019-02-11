@@ -84,10 +84,10 @@ kiin_install() {
     install -dv -m 0700 ${pkgdir}/var/lib/tor
 
     # for nginx
-    install -dv -m 0755 ${pkgdir}/var/log/nginx
-    chown nginx:nginx ${pkgdir}/var/log/nginx
-    install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
-    chown -R nginx:nginx ${pkgdir}/var/lib/nginx
+    #install -dv -m 0755 ${pkgdir}/var/log/nginx
+    #chown nginx:nginx ${pkgdir}/var/log/nginx
+    #install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
+    #chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
     # for mail packages
     install -dv -m 1775 ${pkgdir}/var/spool/mail
@@ -97,9 +97,9 @@ kiin_install() {
     chown ${PACMAN}:${PACMAN} ${pkgdir}/home/${PACMAN}/.data/kiin/{tarballs,server-listings}
 
     # for fcron
-    mkdir -pv ${pkgdir}/var/spool/fcron
-    chown fcron:fcron ${pkgdir}/var/spool/fcron
-    chmod 770 ${pkgdir}/var/spool/fcron
+    #mkdir -pv ${pkgdir}/var/spool/fcron
+    #chown fcron:fcron ${pkgdir}/var/spool/fcron
+    #chmod 770 ${pkgdir}/var/spool/fcron
 
     # for chrony
     mkdir -pv ${pkgdir}/var/lib/chrony

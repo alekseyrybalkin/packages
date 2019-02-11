@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=readline
-pkgver=7.0.003
+pkgver=8.0.000
 vcs=git
 # FIXME
-gittag=6c32f81cd66bbe86218469063690c84205661a5e
+gittag=8e6ccd0373d77b86ed37a9a7d232ccfea3d6670c
 relmon_id=4173
 
 kiin_make() {
