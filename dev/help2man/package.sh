@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=help2man
-pkgver=1.47.5
+pkgver=1.47.10
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1309

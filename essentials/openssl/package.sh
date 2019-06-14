@@ -3,7 +3,7 @@
 pkgname=openssl
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
-pkgver=1.1.0h
+pkgver=1.1.1c
 vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 relmon_id=2566

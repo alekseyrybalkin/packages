@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=wget
-pkgver=1.19.4
+pkgver=1.20.3
 vcs=git
 gittag=v${pkgver}
 relmon_id=5124
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --sysconfdir=/etc \

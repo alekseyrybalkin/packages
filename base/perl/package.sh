@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=perl
-pkgver=5.26.1
+pkgver=5.30.0
 vcs=git
 gittag=v${pkgver}
 urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"

@@ -14,6 +14,7 @@ relmon_id=141
 ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
+    # doc: fix texinfo macro usage
     git cherry-pick a357718b081f1678748ead5d7cb67c766c930441
     autoreconf -fi
     ./configure --prefix=/usr

@@ -19,6 +19,7 @@ mpc
 shadow
 gcc
 bzip
+glib
 pkg-config
 ncurses
 attr
@@ -38,15 +39,20 @@ expat
 inetutils
 perl
 perl-xml-parser
+which
 intltool
 autoconf
 automake
+autoconf-archive
 xz
 kmod
 gettext
 elfutils
+pcre
 libffi
 openssl
+tcl
+sqlite
 python
 ninja
 meson
@@ -75,3 +81,42 @@ e2fsprogs
 linux
 
 # kiin
+fakeroot
+cacerts
+wget
+curl
+sudo
+
+# build tools
+rsync
+help2man
+kiin
+
+# vcs
+libgpg-error
+libgcrypt
+libxml
+libxslt
+docbook-xsl
+unzip
+docbook-xml
+swig
+apr
+apr-util
+scons
+serf
+subversion
+python2
+python2-docutils
+mercurial
+python2-cython
+bzr
+perl-error
+asciidoc
+xmlto
+git
+fossil
+
+# productivity
+libevent
+tmux

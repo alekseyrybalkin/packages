@@ -1,12 +1,14 @@
 #!/bin/sh
 
 pkgname=autoconf-archive
-pkgver=2018.03.13
+pkgver=2019.01.06
 vcs=git
 gittag=v${pkgver}
 relmon_id=142
 
 kiin_make() {
+    # respect --docdir properly
+    git revert --no-edit ad15d52fd1e552bc3d7fcfb3d7bc6a2681f364d8
     mkdir build-aux
     ln -sv /usr/bin/git-version-gen build-aux/git-version-gen
     touch README AUTHORS ChangeLog

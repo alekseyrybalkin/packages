@@ -4,7 +4,7 @@
 pkgname=bzip
 ARCH_NAME=bzip2
 pkgver=1.0.6
-urls="http://www.bzip.org/${pkgver}/bzip2-${pkgver}.tar.gz"
+urls="https://www.sourceware.org/pub/bzip2/bzip2-${pkgver}.tar.gz"
 srctar=${pkgname}2-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}2-${pkgver}
 relmon_id=237

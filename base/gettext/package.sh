@@ -4,7 +4,7 @@
 #git_repo=git://git.savannah.gnu.org/gettext.git
 #git_problem="requires to download archive.dir.tar.xz from internets"
 pkgname=gettext
-pkgver=0.19.8.1
+pkgver=0.20.1
 urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=898

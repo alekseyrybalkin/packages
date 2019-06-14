@@ -5,7 +5,7 @@
 
 pkgname=python2
 _pybasever=2.7
-pkgver=${_pybasever}.14
+pkgver=${_pybasever}.16
 vcs=git
 vcs_pkgname=python
 gittag=v${pkgver}

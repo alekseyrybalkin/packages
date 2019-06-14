@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=sqlite
-pkgver=3.23.0
+pkgver=3.28.0
 vcs=fossil
 vcs_clone='fossil clone https://www.sqlite.org/cgi/src sqlite.fossil'
 fossiltag=version-${pkgver}
@@ -14,7 +14,6 @@ kiin_make() {
     tar xvf sqlite-autoconf-*.tar.gz
     rm sqlite-autoconf-*.tar.gz
     cd sqlite-autoconf-*
-    patch -p1 -i ../../sqlite-history-file-location.diff
     export CFLAGS="$CFLAGS -DSQLITE_ENABLE_FTS3=1 \
         -DSQLITE_ENABLE_COLUMN_METADATA=1 \
         -DSQLITE_ENABLE_UNLOCK_NOTIFY=1 \

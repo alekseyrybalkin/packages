@@ -1,13 +1,13 @@
 #!/bin/sh
 
 pkgname=coreutils
-pkgver=8.29
+pkgver=8.31
 vcs=git
 gittag=v${pkgver}
 relmon_id=343
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
     ./configure \
         --prefix=/usr \

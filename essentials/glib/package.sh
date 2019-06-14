@@ -2,8 +2,8 @@
 
 pkgname=glib
 ARCH_NAME=glib2
-majorver=2.56
-pkgver=${majorver}.0
+majorver=2.60
+pkgver=${majorver}.4
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -17,14 +17,19 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-    ./autogen.sh --prefix=/usr \
-        --sysconfdir=/etc \
-        --with-pcre=system \
-        --disable-libelf \
-        --libdir=/usr/lib
-    make
+    mkdir build
+    cd build
+
+    meson --prefix=/usr \
+        -Dman=true \
+        -Dselinux=disabled \
+        ..
+    ninja
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    cd build
+    DESTDIR=${pkgdir} meson install
+    python -m compileall -d /usr/share/glib-2.0/codegen ${pkgdir}/usr/share/glib-2.0/codegen
+    python -O -m compileall -d /usr/share/glib-2.0/codegen ${pkgdir}/usr/share/glib-2.0/codegen
 }

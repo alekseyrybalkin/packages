@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libcap
-pkgver=2.25
+pkgver=2.27
 vcs=git
 gittag=libcap-${pkgver}
 extension=xz
@@ -13,7 +13,6 @@ relmon_id=1569
 
 kiin_make() {
     sed -i '/install.*STALIBNAME/ s/^/#/' libcap/Makefile
-    patch -Np1 -i ../gperf-3.1.patch
     make
 }
 

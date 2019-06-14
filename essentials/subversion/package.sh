@@ -2,7 +2,7 @@
 
 #vcs=git
 pkgname=subversion
-pkgver=1.9.7
+pkgver=1.12.0
 extension=bz2
 folder="http://www.apache.org/dist/${pkgname}/"
 check_server=1
@@ -11,13 +11,17 @@ relmon_id=4905
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
+    patch -Np1 -i ../apr-1.7.0-fix.diff
+
     # move configuration to ~/.config
     sed -i -e 's/SVN_CONFIG__USR_DIRECTORY   "\.subversion"/SVN_CONFIG__USR_DIRECTORY   "\.config\/subversion"/g' \
         subversion/libsvn_subr/config_impl.h
     MAKEFLAGS=
+    autoreconf -f -i
     ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
         --with-zlib=/usr --with-serf=/usr --with-neon=/usr \
-        --with-sqlite=/usr --disable-static
+        --with-sqlite=/usr --disable-static --with-lz4=internal \
+        --with-utf8proc=internal
     make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all
     make swig-pl
     make swig-py swig_pydir=/usr/lib/python2.7/site-packages/libsvn \

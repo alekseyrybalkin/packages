@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=shadow
-pkgver=4.5
+pkgver=4.6
 vcs=git
 gittag=${pkgver}
 relmon_id=4802

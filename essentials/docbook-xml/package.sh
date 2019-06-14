@@ -8,7 +8,7 @@ urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 
 kiin_make() {
     cd ${srcdir}
-    unzip ${KIIN_HOME}/tarballs/${pkgname}-${pkgver}.zip
+    unzip ${SOURCES_HOME}/tarballs/${pkgname}-${pkgver}.zip
     #cd docbook/xml
     #make
 }

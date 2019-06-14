@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=1237
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     for file in build-aux/install-sh build-aux/mkinstalldirs \
                 build-aux/compile build-aux/ar-lib; do
         cp gnulib/${file} ${file}

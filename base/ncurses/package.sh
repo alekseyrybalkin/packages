@@ -3,7 +3,7 @@
 pkgname=ncurses
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
-pkgver=6.1.20190202
+pkgver=6.1.20190609
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=2057
@@ -17,6 +17,7 @@ kiin_make() {
         --without-debug \
         --without-normal \
         --enable-pc-files \
+        --with-pkg-config-libdir=/usr/lib/pkgconfig \
         --enable-widec
     make
 }

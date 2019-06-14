@@ -1,13 +1,16 @@
 #!/bin/sh
 
 pkgname=inetutils
-pkgver=1.9.4
+pkgver=1.9.4+
 vcs=git
-gittag=inetutils-${pkgver//\./_}
+#FIXME
+# Gnulib requires autoconf 2.63, forced by libtool. (see 80e18f8aea59fd15a91b72bfdf974929e0895eb8)
+gittag=a4a331b7eea141b13c04f79feff3fe7d8f4e0507
+#gittag=inetutils-${pkgver//\./_}
 relmon_id=13805
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/bin \

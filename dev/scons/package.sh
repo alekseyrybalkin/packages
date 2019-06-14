@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=scons
-pkgver=3.0.1
+pkgver=3.0.5
 vcs=git
-# FIXME
-gittag=1a765337ba4170e5cd9d1dfa61374b89679d78fd
+gittag=${pkgver}
 relmon_id=4770
 
 kiin_make() {

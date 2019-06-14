@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=acl
-pkgver=2.2.52
+pkgver=2.2.53
 vcs=git
 gittag=v${pkgver}
 extension=gz
@@ -20,13 +20,14 @@ ver_seds() {
 }
 
 kiin_make() {
+    sed -i -e 's/po//g' Makefile.am
     sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
         libacl/__acl_to_any_text.c
     libtoolize -i
     autoreconf -f -i
-    echo "#include <libintl.h>" >> include/config.h.in
-    echo "#define _(x) gettext(x)" >> include/config.h.in
     INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr \
+        --libdir=/usr/lib \
+        --sysconfdir=/etc \
         --bindir=/usr/bin \
         --disable-static \
         --libexecdir=/usr/lib
@@ -34,6 +35,5 @@ kiin_make() {
 }
 
 kiin_install() {
-    make DIST_ROOT=${pkgdir} install install-dev install-lib
-    chmod -v 755 ${pkgdir}/usr/lib/libacl.so
+    make DESTDIR=${pkgdir} install
 }

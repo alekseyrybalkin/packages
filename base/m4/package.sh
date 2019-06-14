@@ -7,9 +7,14 @@ gittag=v${pkgver}
 relmon_id=1871
 
 kiin_make() {
-    export CFLAGS="${CFALGS} -Wimplicit-fallthrough=0"
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    export CFLAGS="${CFALGS} -Wno-attributes -Wno-abi -Wimplicit-fallthrough=0"
+
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
+
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu
     make

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libevent
-pkgver=2.1.8
+pkgver=2.1.10
 vcs=git
 gittag=release-${pkgver}-stable
 urls="http://downloads.sourceforge.net/levent/libevent-${pkgver}-stable.tar.gz"

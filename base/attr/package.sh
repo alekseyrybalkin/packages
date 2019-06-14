@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=attr
-pkgver=2.4.47
+pkgver=2.4.48
 vcs=git
 gittag=v${pkgver}
 extension=gz
@@ -20,16 +20,17 @@ ver_seds() {
 }
 
 kiin_make() {
-    sed -i -e "/SUBDIRS/s|man2||" man/Makefile
+    sed -i -e 's/po//g' Makefile.am
     libtoolize -i
     autoreconf -f -i
-    echo "#include <libintl.h>" >> include/config.h.in
-    echo "#define _(x) gettext(x)" >> include/config.h.in
-    INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr --disable-static
+    INSTALL_USER=root INSTALL_GROUP=root ./configure --prefix=/usr \
+        --libdir=/usr/lib \
+        --libexecdir=/usr/lib \
+        --sysconfdir=/etc \
+        --disable-static
     make
 }
 
 kiin_install() {
-    make DIST_ROOT=${pkgdir} install install-dev install-lib
-    chmod -v 755 ${pkgdir}/usr/lib/libattr.so
+    make DESTDIR=${pkgdir} install
 }

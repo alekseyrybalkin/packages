@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=libxslt
-pkgver=1.1.32
-ARCH_VERSION=1.1.32+3+g32c88216
+pkgver=1.1.33
 vcs=git
 gittag=v${pkgver}
 extension=gz

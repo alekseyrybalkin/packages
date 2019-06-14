@@ -1,10 +1,9 @@
 #!/bin/sh
 
 pkgname=gdbm
-pkgver=1.13
+pkgver=1.18.1
 vcs=git
-# FIXME
-gittag=2343e816784c79d68bcd328bf84c23c46428a6ae
+gittag=v${pkgver}
 relmon_id=882
 
 kiin_make() {

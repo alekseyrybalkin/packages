@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=sed
-pkgver=4.5
+pkgver=4.7
 vcs=git
 gittag=v${pkgver}
 urls="http://ftp.gnu.org/gnu/sed/sed-${pkgver}.tar.bz2"
@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=4789
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     sed -i -e '/\/missing/d' bootstrap
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
