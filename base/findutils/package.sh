@@ -8,7 +8,7 @@ relmon_id=812
 
 kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib/findutils \

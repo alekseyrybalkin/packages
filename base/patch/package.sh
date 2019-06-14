@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=2597
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
+    git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
     ./configure --prefix=/usr
     make

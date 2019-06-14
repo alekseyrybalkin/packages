@@ -9,8 +9,8 @@ srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=4939
 
 kiin_make() {
-    git clone -s ${KIIN_HOME}/sources/gnulib
-    git clone -s ${KIIN_HOME}/sources/paxutils
+    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s ${SOURCES_HOME}/dev/paxutils
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --enable-gcc-warnings=no \

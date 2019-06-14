@@ -1,18 +1,16 @@
 #!/bin/sh
 
 pkgname=util-linux
-pkgver=2.32
+pkgver=2.33.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=8179
 
 kiin_make() {
     ./autogen.sh
-    ./configure --without-udev \
-        --bindir=/usr/bin \
+    ./configure --bindir=/usr/bin \
         --libdir=/usr/lib \
-        --without-python \
-        ADJTIME_PATH=/var/lib/hwclock/adjtime
+        --with-python=3
     make
 }
 
