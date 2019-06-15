@@ -10,6 +10,11 @@ kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1
     git clone -s ${SOURCES_HOME}/dev/gnulib
     ./bootstrap --skip-po
+
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c
+    sed -i '/unistd/a #include <sys/sysmacros.h>' gl/lib/mountlist.c
+    echo "#define _IO_IN_BACKUP 0x100" >> gl/lib/stdio-impl.h
+
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib/findutils \
         --build=x86_64-unknown-linux-gnu \

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-setuptools
-pkgver=39.0.1
+pkgver=41.0.1
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
@@ -20,5 +20,5 @@ kiin_install() {
     python setup.py install --prefix=/usr \
         --root=${pkgdir} --optimize=1 --skip-build
     # remove files with spaces in filenames
-    rm ${pkgdir}/usr/lib/python3.6/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/lib/python3.7/site-packages/setuptools/script*
 }

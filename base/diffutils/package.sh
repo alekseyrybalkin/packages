@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=diffutils
-pkgver=3.6
+pkgver=3.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=436

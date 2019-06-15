@@ -2,7 +2,7 @@
 
 pkgname=procps
 ARCH_NAME=procps-ng
-pkgver=3.3.13
+pkgver=3.3.15
 vcs=git
 gittag=v${pkgver}
 relmon_id=3708

@@ -2,7 +2,6 @@
 
 pkgname=grub
 pkgver=2.02
-ARCH_VERSION=2.02.rc2
 vcs=git
 gittag=${pkgver}
 relmon_id=1258

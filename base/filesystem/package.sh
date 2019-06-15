@@ -54,6 +54,13 @@ kiin_install() {
     install -dv -m 0755 ${pkgdir}/usr/lib/locale
     install -dv -m 0755 ${pkgdir}/var/lib/nss_db
 
+    # for systemd
+    install -dv -m 0755 ${pkgdir}/var/lib/systemd
+    install -dv -m 0755 ${pkgdir}/var/log/journal
+
+    # for dbus
+    install -dv -m 0755 ${pkgdir}/var/lib/dbus
+
     # for sudo
     install -dv -m 0755 ${pkgdir}/var/db
     install -dv -m 0700 ${pkgdir}/var/db/sudo

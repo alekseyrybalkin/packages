@@ -23,6 +23,5 @@ kiin_install() {
     make DESTDIR=${pkgdir} install
     ln -sv vim ${pkgdir}/usr/bin/vi
     mkdir -pv ${pkgdir}/usr/share/doc
-    ln -sv ../vim/vim80/doc ${pkgdir}/usr/share/doc/vim
     mkdir -pv ${pkgdir}/etc
 }

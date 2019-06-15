@@ -3,7 +3,7 @@
 pkgname=sudo
 # pkgver too complex to parse, we check hg tags instead
 SKIP_ARCH_CHECK=1
-pkgver=1.8.22
+pkgver=1.8.27
 vcs=mercurial
 hg_repo=http://www.sudo.ws/repos/sudo
 hgtag=SUDO_${pkgver//\./_}
@@ -37,4 +37,5 @@ kiin_install() {
     mv -v ${pkgdir}/etc/sudoers{,.packaged}
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
+    rm -rvf ${pkgdir}/run
 }

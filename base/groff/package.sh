@@ -1,15 +1,18 @@
 #!/bin/sh
 
 pkgname=groff
-pkgver=1.22.3
+pkgver=1.22.4
 vcs=git
-gittag=${pkgver}.real
+gittag=${pkgver}
 urls="http://ftp.gnu.org/gnu/groff/groff-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1253
 
 kiin_make() {
     MAKEFLAGS=
+    sed -i -e '/doc\.am/d' Makefile.am
+    git clone -s ${SOURCES_HOME}/dev/gnulib
+    ./bootstrap --skip-po
     PAGE=A4 ./configure --prefix=/usr --without-x --with-doc=no
     make
 }

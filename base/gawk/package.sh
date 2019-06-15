@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gawk
-pkgver=4.2.0
+pkgver=5.0.0
 vcs=git
 gittag=gawk-${pkgver}
 relmon_id=868

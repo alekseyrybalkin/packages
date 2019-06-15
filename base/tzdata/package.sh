@@ -2,7 +2,7 @@
 
 #vcs=none
 pkgname=tzdata
-pkgver=2018i
+pkgver=2019a
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
@@ -10,7 +10,7 @@ relmon_id=5021
 
 kiin_make() {
     mkdir ${_srcdir}
-    tar xf ${KIIN_HOME}/tarballs/${_srctar} -C ${_srcdir}
+    tar xf ${SOURCES_HOME}/tarballs/${_srctar} -C ${_srcdir}
 }
 
 kiin_install() {
@@ -27,9 +27,6 @@ kiin_install() {
     zic -d $ZONEINFO -p America/New_York
     unset ZONEINFO
 
-    mkdir ${pkgdir}/etc
-    cp -v --remove-destination ${pkgdir}/usr/share/zoneinfo/Asia/Yekaterinburg \
-        ${pkgdir}/etc/localtime
     cd ${location}
     rm -rf ${_srcdir}
 }

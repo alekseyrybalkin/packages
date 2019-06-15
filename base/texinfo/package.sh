@@ -1,9 +1,9 @@
 #!/bin/sh
 
 pkgname=texinfo
-pkgver=6.5
+pkgver=6.6
 vcs=git
-gittag=texinfo_${pkgver//\./_}
+gittag=texinfo-${pkgver}
 relmon_id=4958
 
 kiin_make() {

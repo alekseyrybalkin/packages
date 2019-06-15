@@ -7,6 +7,7 @@ addons
 linux-api-headers
 man-pages
 glibc
+tzdata
 zlib
 file
 readline
@@ -19,6 +20,7 @@ mpc
 shadow
 gcc
 bzip
+pcre
 glib
 pkg-config
 ncurses
@@ -48,12 +50,12 @@ xz
 kmod
 gettext
 elfutils
-pcre
 libffi
 openssl
 tcl
 sqlite
 python
+python-setuptools
 ninja
 meson
 coreutils
@@ -73,6 +75,8 @@ man-db
 tar
 texinfo
 vim
+libgpg-error
+libgcrypt
 systemd
 dbus
 procps
@@ -86,15 +90,18 @@ cacerts
 wget
 curl
 sudo
+kiin
 
 # build tools
 rsync
 help2man
-kiin
 
 # vcs
-libgpg-error
-libgcrypt
+python2
+python2-docutils
+mercurial
+python2-cython
+bzr
 libxml
 libxslt
 docbook-xsl
@@ -106,11 +113,6 @@ apr-util
 scons
 serf
 subversion
-python2
-python2-docutils
-mercurial
-python2-cython
-bzr
 perl-error
 asciidoc
 xmlto

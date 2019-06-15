@@ -1,16 +1,12 @@
 #!/bin/sh
 
 pkgname=e2fsprogs
-pkgver=1.44.1
+pkgver=1.45.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=646
 
 kiin_make() {
-    MAKEFLAGS=
-    sed -e '/int.*old_desc_blocks/s/int/blk64_t/' \
-        -e '/if (old_desc_blocks/s/super->s_first_meta_bg/desc_blocks/' \
-        -i lib/ext2fs/closefs.c
     mkdir -v build
     cd build
     ../configure --prefix=/usr \
@@ -27,7 +23,6 @@ kiin_make() {
 }
 
 kiin_install() {
-    MAKEFLAGS=
     cd build
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install-libs

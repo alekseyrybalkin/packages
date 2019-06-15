@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=tar
-pkgver=1.30
+pkgver=1.32
 vcs=git
 gittag=release_${pkgver//\./_}
 urls="http://ftp.gnu.org/gnu/tar/tar-${pkgver}.tar.xz"
