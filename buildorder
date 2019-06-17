@@ -77,10 +77,11 @@ texinfo
 vim
 libgpg-error
 libgcrypt
+util-linux
+curl
 systemd
 dbus
 procps
-util-linux
 e2fsprogs
 linux
 
@@ -88,7 +89,6 @@ linux
 fakeroot
 cacerts
 wget
-curl
 sudo
 kiin
 
