@@ -5,13 +5,11 @@ pkgver=1
 vcs=git
 
 kiin_make() {
-    :
+    ./bootstrap
 }
 
 kiin_install() {
     cp -av etc usr ${pkgdir}/
-
-    echo "$(hostname)" > ${pkgdir}/etc/hostname
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
