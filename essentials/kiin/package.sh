@@ -2,9 +2,8 @@
 
 pkgname=kiin
 SKIP_ARCH_CHECK=1
-pkgver=46
+pkgver=46+
 vcs=git
-gittag=v${pkgver}
 
 kiin_make() {
     true
