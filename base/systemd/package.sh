@@ -36,6 +36,9 @@ kiin_install() {
     LANG=en_US.UTF-8 DESTDIR=${pkgdir} ninja install
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/usr/lib/rpm
+
+    mv ${pkgdir}/etc/systemd/journald.conf{,.packaged}
+    mv ${pkgdir}/etc/systemd/logind.conf{,.packaged}
 }
 
 kiin_after_install() {

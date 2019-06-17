@@ -89,6 +89,11 @@ kiin_install() {
     #chown nginx:nginx ${pkgdir}/var/log/nginx
     #install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
     #chown -R nginx:nginx ${pkgdir}/var/lib/nginx
+
+    cp ../nsswitch.conf ${pkgdir}/etc/nsswitch.conf
+    cp ../ld.so.conf ${pkgdir}/etc/ld.so.conf
+
+    touch ${pkgdir}/etc/environment
 }
 
 kiin_after_install() {
