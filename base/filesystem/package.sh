@@ -92,6 +92,7 @@ kiin_install() {
 
     cp ../nsswitch.conf ${pkgdir}/etc/nsswitch.conf
     cp ../ld.so.conf ${pkgdir}/etc/ld.so.conf
+    cp ../shells ${pkgdir}/etc/shells
 
     touch ${pkgdir}/etc/environment
 }
