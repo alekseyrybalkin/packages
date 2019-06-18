@@ -13,5 +13,5 @@ kiin_install() {
     cd ../
     ./mkinitramfs
     mkdir -p ${pkgdir}/boot
-    mv -v initrd.img ${pkgdir}/boot
+    mv -v initrd-kiin ${pkgdir}/boot
 }

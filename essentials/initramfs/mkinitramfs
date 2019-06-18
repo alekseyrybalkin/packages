@@ -20,7 +20,7 @@ copy() {
     fi
 }
 
-INITRAMFS_FILE=initrd.img
+INITRAMFS_FILE=initrd-kiin
 
 printf "Creating $INITRAMFS_FILE... "
 
