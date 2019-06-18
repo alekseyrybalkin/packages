@@ -82,8 +82,16 @@ vim
 libgpg-error
 libgcrypt
 util-linux
+
+# initramfs
 libaio
 device-mapper
+cpio
+json-c
+cryptsetup
+initramfs
+
+# init & kernel
 grub
 glib
 pkg-config
@@ -133,12 +141,6 @@ links
 physlock
 perl-file-next
 perl-ack
-
-# initramfs
-cpio
-json-c
-cryptsetup
-initramfs
 
 # network
 dhcpcd
