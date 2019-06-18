@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mc
-pkgver=4.8.20
+pkgver=4.8.22
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -24,4 +24,5 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
+    rm ${pkgdir}/usr/share/mc/skins/xoria256.ini
 }

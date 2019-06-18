@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=dhcpcd
-pkgver=7.0.2
+pkgver=7.2.2
 vcs=git
 gittag=dhcpcd-${pkgver}
 extension=xz

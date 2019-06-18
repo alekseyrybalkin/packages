@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=iptables
-pkgver=1.6.2
+pkgver=1.8.3
 vcs=git
 gittag=v${pkgver}
 relmon_id=1394
@@ -18,5 +18,4 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    ln -sfv xtables-multi ${pkgdir}/usr/bin/iptables-xml
 }

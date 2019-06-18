@@ -39,6 +39,8 @@ kiin_install() {
 
     mv ${pkgdir}/etc/systemd/journald.conf{,.packaged}
     mv ${pkgdir}/etc/systemd/logind.conf{,.packaged}
+
+    ln -sv /usr/lib/systemd/systemd-udevd ${pkgdir}/usr/bin/udevd
 }
 
 kiin_after_install() {

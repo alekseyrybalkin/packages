@@ -2,7 +2,7 @@
 
 pkgname=perl-ack
 ARCH_NAME=ack
-pkgver=2.23_02
+pkgver=2.28
 vcs=git
 gittag=${pkgver}
 relmon_id=15

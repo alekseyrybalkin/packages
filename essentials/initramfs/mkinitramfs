@@ -6,7 +6,7 @@ copy() {
     local file
 
     if [ "$2" == "lib" ]; then
-        file=$(PATH=/lib:/usr/lib type -p $1)
+        file=$(PATH=/lib:/usr/lib:/usr/lib/systemd type -p $1)
     else
         file=$(type -p $1)
     fi
@@ -24,13 +24,8 @@ INITRAMFS_FILE=initrd.img
 
 printf "Creating $INITRAMFS_FILE... "
 
-binfiles="sh cat cp dd killall ls mkdir mknod mount "
-binfiles="$binfiles umount sed sleep ln rm uname"
 
-sbinfiles="udevd udevadm modprobe blkid switch_root"
-usrsbinfiles="cryptsetup"
-
-unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
+libs=$(mktemp /tmp/libs.XXXXXXXXXX)
 
 DATADIR=.
 INITIN=init.in
@@ -53,6 +48,8 @@ mknod -m 640 $WDIR/dev/console c 5 1
 mknod -m 664 $WDIR/dev/null    c 1 3
 cp -a /dev/mapper/control $WDIR/dev/mapper
 
+cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
+
 for file in $(find /etc/udev/rules.d/ -type f) ; do
     cp $file $WDIR/etc/udev/rules.d
 done
@@ -64,26 +61,14 @@ cp -a /lib/firmware $WDIR/lib
 install -m0755 $DATADIR/$INITIN $WDIR/init
 
 # Install basic binaries
+binfiles="sh cat cp dd killall ls mkdir mknod mount umount sed sleep ln rm uname readlink basename udevd udevadm modprobe blkid switch_root cryptsetup"
 for f in $binfiles ; do
-    ldd /bin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
+    ldd /usr/bin/$f | sed "s/\t//" | cut -d " " -f1 >> $libs
     copy $f bin
 done
 
-for f in $sbinfiles ; do
-    ldd /sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-    copy $f sbin
-done
-
-for f in $usrsbinfiles ; do
-    ldd /usr/sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-    copy $f sbin
-done
-
-# Add udevd libraries if not in /sbin
-ldd /usr/bin/udevd | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-
 # Install libraries
-sort $unsorted | uniq | grep -v fakeroot | while read library ; do
+sort $libs | uniq | grep -v fakeroot | while read library ; do
     if [ "$library" == "linux-vdso.so.1" ] ||
         [ "$library" == "linux-gate.so.1" ]; then
         continue
@@ -92,9 +77,10 @@ sort $unsorted | uniq | grep -v fakeroot | while read library ; do
 done
 
 cp -a /usr/lib/udev $WDIR/lib
+cp -a /usr/lib/systemd $WDIR/lib
 
 ( cd $WDIR ; find . | cpio -o -H newc --quiet | gzip -9 ) > $INITRAMFS_FILE
 
 # Remove the temporary directory and file
-rm -rf $WDIR $unsorted
+rm -rf $WDIR $libs
 printf "done.\n"

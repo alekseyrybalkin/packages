@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openssh
-_ver=7.7
+_ver=8.0
 _patch=1
 pkgver=${_ver}p${_patch}
 vcs=git
@@ -14,8 +14,6 @@ relmon_id=2565
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    patch -p1 -i ../openssl-1.1.0.patch || true
-    sed -i -e '/1\.1\.0/d' configure.ac
     autoreconf -fi
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -35,7 +33,8 @@ kiin_install() {
         ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
-    # do not replace sshd_config, since it is in git repo now
+    # do not replace ssh{,d}_config, since it is in git repo now
+    mv -v ${pkgdir}/etc/ssh/ssh_config{,.packaged}
     mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
 }
 

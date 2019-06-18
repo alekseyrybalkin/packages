@@ -2,7 +2,7 @@
 
 pkgname=device-mapper
 ARCH_NAME=lvm2
-pkgver=2.02.177
+pkgver=2.03.04
 vcs=git
 vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
@@ -19,5 +19,6 @@ kiin_make() {
 }
 
 kiin_install() {
+    MAKEFLAGS=
     make DESTDIR=${pkgdir} install_device-mapper
 }
