@@ -11,4 +11,5 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} PREFIX=/usr install
+    install -Dm644 physlock.pam ${pkgdir}/etc/pam.d/physlock
 }
