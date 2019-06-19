@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=physlock
-pkgver=0.5
+pkgver=13
 vcs=git
 gittag=v${pkgver}
 

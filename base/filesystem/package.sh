@@ -94,8 +94,6 @@ kiin_install() {
     cp ../ld.so.conf ${pkgdir}/etc/ld.so.conf
     cp ../shells ${pkgdir}/etc/shells
     cp ../os-release ${pkgdir}/etc/os-release
-
-    touch ${pkgdir}/etc/environment
 }
 
 kiin_after_install() {

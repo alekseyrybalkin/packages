@@ -7,13 +7,15 @@ gittag=v${pkgver}
 relmon_id=12244
 
 kiin_make() {
+    patch -Np1 -i ../remove_browser_dep.patch
+
     ./autogen.sh
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --libdir=/usr/lib \
-        --enable-securedir=/lib/security \
-        --docdir=/usr/share/doc/pam \
-        --disable-regenerate-docu
+        --sbindir=/usr/bin \
+        --disable-db \
+        --docdir=/usr/share/doc/pam
     make
 }
 

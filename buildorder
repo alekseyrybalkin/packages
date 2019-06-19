@@ -96,6 +96,7 @@ grub
 glib
 pkg-config
 curl
+pam
 systemd
 dbus
 e2fsprogs
@@ -137,7 +138,6 @@ tmux
 slang
 mc
 links
-#pam
 physlock
 perl-file-next
 perl-ack
