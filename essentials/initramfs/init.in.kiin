@@ -1,0 +1,22 @@
+#!/bin/sh
+
+export PATH=/usr/bin
+
+mount -n -t devtmpfs -o mode=0755,nosuid,noexec             devtmpfs  /dev
+mount -n -t proc -o nosuid,noexec,nodev,hidepid=2,gid=1000  proc      /proc
+mount -n -t sysfs -o nosuid,noexec,nodev                    sysfs     /sys
+mount -n -t tmpfs -o nosuid,noexec,nodev                    tmpfs     /run
+
+udevd --daemon --resolve-names=never
+udevadm trigger
+udevadm settle
+
+cryptsetup luksOpen /dev/sda1 root
+
+mkdir /.root
+mount -t ext4 /dev/mapper/root /.root
+
+killall -w udevd
+
+mount --bind /.root/.kiin /.root/.kiin
+exec switch_root /.root/.kiin /sbin/init "$@"

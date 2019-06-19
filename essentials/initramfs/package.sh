@@ -11,7 +11,9 @@ kiin_make() {
 
 kiin_install() {
     cd ../
-    ./mkinitramfs
+    ./mkinitramfs kiin
+    ./mkinitramfs arch
     mkdir -p ${pkgdir}/boot
     mv -v initrd-kiin ${pkgdir}/boot
+    mv -v initrd-arch ${pkgdir}/boot
 }

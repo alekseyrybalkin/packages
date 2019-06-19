@@ -20,7 +20,7 @@ copy() {
     fi
 }
 
-INITRAMFS_FILE=initrd-kiin
+INITRAMFS_FILE=initrd-${1}
 
 printf "Creating $INITRAMFS_FILE... "
 
@@ -28,7 +28,7 @@ printf "Creating $INITRAMFS_FILE... "
 libs=$(mktemp /tmp/libs.XXXXXXXXXX)
 
 DATADIR=.
-INITIN=init.in
+INITIN=init.in.${1}
 
 # Create a temporrary working directory
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
