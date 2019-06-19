@@ -15,7 +15,6 @@ kiin_make() {
         --sbindir=/usr/bin \
         --enable-password-save \
         --mandir=/usr/share/man \
-        --disable-plugin-auth-pam \
         --enable-iproute2
     make
 }

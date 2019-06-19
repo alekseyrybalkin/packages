@@ -38,4 +38,6 @@ kiin_install() {
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/run
+
+    install -Dm644 ../sudo.pam ${pkgdir}/etc/pam.d/sudo
 }

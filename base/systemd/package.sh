@@ -8,11 +8,11 @@ relmon_id=5440
 
 kiin_make() {
     sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
+
     mkdir -p build
     cd build
 
-    PKG_CONFIG_PATH="/usr/lib/pkgconfig" \
-    LANG=en_US.UTF-8 \
+    CFLAGS+=" -Wno-format-overflow" \
     meson --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
@@ -26,14 +26,15 @@ kiin_make() {
         -Drootlibdir=/usr/lib \
         -Dsplit-usr=false \
         -Dsysusers=false \
+        -Drpmmacrosdir=no \
         -Db_lto=false \
         ..
-    LANG=en_US.UTF-8 ninja
+    ninja
 }
 
 kiin_install() {
     cd build
-    LANG=en_US.UTF-8 DESTDIR=${pkgdir} ninja install
+    DESTDIR=${pkgdir} ninja install
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/usr/lib/rpm
 
@@ -41,6 +42,26 @@ kiin_install() {
     mv ${pkgdir}/etc/systemd/logind.conf{,.packaged}
 
     ln -sv /usr/lib/systemd/systemd-udevd ${pkgdir}/usr/bin/udevd
+
+    cat > ${pkgdir}/etc/pam.d/systemd-user << "EOF"
+account  required    pam_access.so
+account  include     system-account
+
+session  required    pam_env.so
+session  required    pam_limits.so
+session  required    pam_unix.so
+session  required    pam_loginuid.so
+session  optional    pam_keyinit.so force revoke
+session  optional    pam_systemd.so
+
+auth     required    pam_deny.so
+password required    pam_deny.so
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/system-session << "EOF"
+session  required    pam_loginuid.so
+session  optional    pam_systemd.so
+EOF
 }
 
 kiin_after_install() {

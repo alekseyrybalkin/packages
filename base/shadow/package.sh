@@ -22,10 +22,18 @@ kiin_make() {
 kiin_install() {
     make DESTDIR=${pkgdir} install
     sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
-    mv ${pkgdir}/usr/sbin/* ${pkgdir}/usr/bin
-    rm -rf ${pkgdir}/usr/sbin
-    # remove nologin, which is provided by util-linux since 2.24
-    rm -rvf ${pkgdir}/sbin
+    mv ${pkgdir}{,/usr}/sbin/* ${pkgdir}/usr/bin
+    rm -rf ${pkgdir}{,/usr}/sbin
+
+    # Remove evil/broken tools
+    rm ${pkgdir}/usr/bin/logoutd
+
+    # Remove utilities provided by util-linux
+    rm ${pkgdir}/usr/bin/{login,su,chsh,chfn,sg,nologin,vipw,vigr}
+    rm -f ${pkgdir}/etc/pam.d/{chfn,chsh,login,runuser,runuser-l,su,su-l}
+
+    # but we keep newgrp, as sg is really an alias to it
+    mv ${pkgdir}/usr/bin/{newgrp,sg}
 }
 
 kiin_after_install() {

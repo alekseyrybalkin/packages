@@ -21,4 +21,7 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
+
+    # set unix_chkpwd uid
+    chmod +s ${pkgdir}/usr/bin/unix_chkpwd
 }

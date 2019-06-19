@@ -13,8 +13,7 @@ kiin_make() {
     ./configure --prefix=/ --sbindir=/usr/bin --sysconfdir=/etc \
         --localstatedir=/var --datarootdir=/usr/share \
         --includedir=/usr/include --with-usrlibdir=/usr/lib \
-        --libdir=/usr/lib --enable-pkgconfig --enable-readline \
-        --disable-notify-dbus --disable-dbus-service
+        --libdir=/usr/lib --enable-pkgconfig --enable-readline
     make
 }
 

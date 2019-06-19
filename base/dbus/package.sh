@@ -10,16 +10,26 @@ srctar=dbus-${pkgver}.tar.gz
 #relmon_id=5356
 
 kiin_make() {
-    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-        --libexecdir=/usr/lib/dbus-1.0 --with-dbus-user=81 \
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --libexecdir=/usr/lib/dbus-1.0 \
+        runstatedir=/run \
+        --with-console-auth-dir=/run/console/ \
         --with-system-pid-file=/run/dbus/pid \
         --with-system-socket=/run/dbus/system_bus_socket \
-        --with-console-auth-dir=/run/console/ \
-        --enable-inotify --disable-dnotify \
-        --disable-verbose-mode --disable-static \
-        --disable-tests --disable-asserts \
-        --without-x --disable-Werror \
-        --disable-doxygen-docs --disable-xml-docs \
+        --enable-inotify \
+        --enable-systemd \
+        --enable-user-session \
+        --disable-static \
+        --disable-verbose-mode \
+        --disable-asserts \
+        --disable-tests \
+        --disable-checks \
+        --without-x \
+        --disable-Werror \
+        --disable-doxygen-docs \
+        --disable-xml-docs \
         --libdir=$LIBDIR
     make
 }
@@ -27,7 +37,6 @@ kiin_make() {
 kiin_install() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/var
-    sed -i -e 's|<user>81</user>|<user>dbus</user>|' ${pkgdir}/etc/dbus-1/system.conf
 }
 
 kiin_after_install() {

@@ -10,6 +10,12 @@ kiin_make() {
     ./autogen.sh
     ./configure --bindir=/usr/bin \
         --libdir=/usr/lib \
+        --enable-raw \
+        --enable-vipw \
+        --enable-newgrp \
+        --enable-chfn-chsh \
+        --enable-write \
+        --enable-mesg \
         --with-python=3
     make
 }
@@ -18,4 +24,16 @@ kiin_install() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/{sbin,usr/sbin}/* ${pkgdir}/usr/bin
     rmdir ${pkgdir}/{sbin,usr/sbin}
+
+    # setuid chfn and chsh
+    chmod 4755 ${pkgdir}/usr/bin/{newgrp,ch{sh,fn}}
+
+    # install PAM files for login-utils
+    install -Dm644 ../pam-common ${pkgdir}/etc/pam.d/chfn
+    install -m644 ../pam-common ${pkgdir}/etc/pam.d/chsh
+    install -m644 ../pam-login ${pkgdir}/etc/pam.d/login
+    install -m644 ../pam-runuser ${pkgdir}/etc/pam.d/runuser
+    install -m644 ../pam-runuser ${pkgdir}/etc/pam.d/runuser-l
+    install -m644 ../pam-su ${pkgdir}/etc/pam.d/su
+    install -m644 ../pam-su ${pkgdir}/etc/pam.d/su-l
 }

@@ -9,7 +9,7 @@ relmon_id=37
 kiin_make() {
     autoreconf -fi
     ./configure --disable-alsaconf --disable-xmlto --disable-bat \
-        --without-systemdsystemunitdir --sbindir=/usr/bin \
+        --sbindir=/usr/bin \
         --with-udev-rules-dir=/usr/lib/udev/rules.d
     make
 }

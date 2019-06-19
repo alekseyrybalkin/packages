@@ -22,7 +22,6 @@ kiin_make() {
         --disable-introspection \
         --disable-nautilus \
         --without-keyring \
-        --disable-dbus \
         --disable-libgnome-desktop \
         --disable-browser-plugin \
         --disable-help \

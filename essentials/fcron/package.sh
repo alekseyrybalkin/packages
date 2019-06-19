@@ -23,7 +23,6 @@ kiin_make() {
         --localstatedir=/var \
         --without-sendmail \
         --with-boot-install=no \
-        --with-systemdsystemunitdir=no \
         --with-db2man=no \
         --with-editor=/usr/bin/vim
     make

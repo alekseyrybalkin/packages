@@ -20,8 +20,6 @@ kiin_make() {
     CC=gcc ./configure --with-rcdir=/tmp/cupsinit \
         --with-docdir=/usr/share/cups/doc \
         --with-system-groups=lpadmin \
-        --disable-systemd \
-        --disable-pam \
         --libdir=${LIBDIR}
     make
 }
