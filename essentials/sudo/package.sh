@@ -24,7 +24,7 @@ kiin_make() {
         --docdir=/usr/share/doc/${pkgname} \
         --with-all-insults \
         --with-env-editor \
-        --without-pam \
+        --with-pam \
         --disable-static \
         --without-sendmail \
         --build=x86_64-unknown-linux-gnu

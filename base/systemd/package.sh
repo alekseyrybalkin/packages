@@ -59,8 +59,15 @@ password required    pam_deny.so
 EOF
 
     cat > ${pkgdir}/etc/pam.d/system-session << "EOF"
+session  required    pam_unix.so
 session  required    pam_loginuid.so
 session  optional    pam_systemd.so
+EOF
+
+    mkdir -pv ${pkgdir}/etc/systemd/system/getty@tty1.service.d
+    cat > ${pkgdir}/etc/systemd/system/getty@tty1.service.d/noclear.conf << EOF
+[Service]
+TTYVTDisallocate=no
 EOF
 }
 

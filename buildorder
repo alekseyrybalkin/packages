@@ -27,6 +27,7 @@ libcap
 popt
 rsync
 sed
+pam
 shadow
 psmisc
 procps
@@ -96,7 +97,6 @@ grub
 glib
 pkg-config
 curl
-pam
 systemd
 dbus
 e2fsprogs
