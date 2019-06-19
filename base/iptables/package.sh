@@ -18,4 +18,8 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
+    install -Dm644 ../iptables.service ${pkgdir}/usr/lib/systemd/system/iptables.service
+    install -Dm755 ../iptables-flush ${pkgdir}/usr/bin/iptables-flush
 }
+
+known="etc/systemd/system/multi-user.target.wants/iptables.service"

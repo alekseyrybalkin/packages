@@ -1,0 +1,9 @@
+#/bin/sh
+
+/usr/bin/iptables --policy INPUT   ACCEPT
+/usr/bin/iptables --policy OUTPUT  ACCEPT
+/usr/bin/iptables --policy FORWARD ACCEPT
+/usr/bin/iptables           --flush
+/usr/bin/iptables -t mangle --flush
+/usr/bin/iptables           --delete-chain
+/usr/bin/iptables -t mangle --delete-chain
