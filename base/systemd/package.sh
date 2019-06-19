@@ -43,6 +43,9 @@ kiin_install() {
 
     ln -sv /usr/lib/systemd/systemd-udevd ${pkgdir}/usr/bin/udevd
 
+    mkdir -pv ${pkgdir}/etc/systemd/system/getty.target.wants/
+    ln -sv ../../../../lib/systemd/system/getty@.service ${pkgdir}/etc/systemd/system/getty.target.wants/getty@tty1.service
+
     cat > ${pkgdir}/etc/pam.d/systemd-user << "EOF"
 account  required    pam_access.so
 account  include     system-account
@@ -76,4 +79,5 @@ kiin_after_install() {
 }
 
 known="/etc/machine-id \
-    etc/udev/hwdb.bin"
+    etc/udev/hwdb.bin \
+    etc/.updated"

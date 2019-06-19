@@ -47,6 +47,5 @@ known="etc/group \
     etc/gshadow \
     etc/passwd \
     etc/shadow \
-    etc/.pwd.lock \
     etc/passwd- \
     etc/group-"

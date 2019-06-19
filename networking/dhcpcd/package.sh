@@ -28,5 +28,3 @@ kiin_install() {
 
     mv -v ${pkgdir}/etc/dhcpcd.conf{,.packaged}
 }
-
-known="etc/dhcpcd.duid"

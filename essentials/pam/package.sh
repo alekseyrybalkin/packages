@@ -31,8 +31,20 @@ account   required    pam_unix.so
 EOF
 
     cat > ${pkgdir}/etc/pam.d/system-auth << "EOF"
-auth      optional    pam_cap.so
-auth      required    pam_unix.so
+auth      required  pam_unix.so     try_first_pass nullok
+auth      optional  pam_permit.so
+auth      required  pam_env.so
+
+account   required  pam_unix.so
+account   optional  pam_permit.so
+account   required  pam_time.so
+
+password  required  pam_unix.so     try_first_pass nullok sha512 shadow
+password  optional  pam_permit.so
+
+session   required  pam_limits.so
+session   required  pam_unix.so
+session   optional  pam_permit.so
 EOF
 
     cat > ${pkgdir}/etc/pam.d/system-password << "EOF"
@@ -42,13 +54,77 @@ password  required    pam_unix.so       sha512 shadow try_first_pass
 EOF
 
     cat > ${pkgdir}/etc/pam.d/other << "EOF"
-auth        required        pam_warn.so
-auth        required        pam_deny.so
-account     required        pam_warn.so
-account     required        pam_deny.so
-password    required        pam_warn.so
-password    required        pam_deny.so
-session     required        pam_warn.so
-session     required        pam_deny.so
+auth      required   pam_deny.so
+auth      required   pam_warn.so
+account   required   pam_deny.so
+account   required   pam_warn.so
+password  required   pam_deny.so
+password  required   pam_warn.so
+session   required   pam_deny.so
+session   required   pam_warn.so
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/sshd << "EOF"
+#auth     required  pam_securetty.so     #disable remote root
+auth      include   system-remote-login
+account   include   system-remote-login
+password  include   system-remote-login
+session   include   system-remote-login
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/shadow << "EOF"
+auth            sufficient      pam_rootok.so
+auth            required        pam_unix.so
+account         required        pam_unix.so
+session         required        pam_unix.so
+password        required        pam_permit.so
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/system-login << "EOF"
+auth       required   pam_tally2.so        onerr=succeed file=/var/log/tallylog
+auth       required   pam_shells.so
+auth       requisite  pam_nologin.so
+auth       include    system-auth
+
+account    required   pam_tally2.so
+account    required   pam_access.so
+account    required   pam_nologin.so
+account    include    system-auth
+
+password   include    system-auth
+
+session    optional   pam_loginuid.so
+session    optional   pam_keyinit.so       force revoke
+session    include    system-auth
+session    optional   pam_motd.so          motd=/etc/motd
+session    optional   pam_mail.so          dir=/var/spool/mail standard quiet
+-session   optional   pam_systemd.so
+session    required   pam_env.so
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/system-remote-login << "EOF"
+auth      include   system-login
+account   include   system-login
+password  include   system-login
+session   include   system-login
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/system-local-login << "EOF"
+auth      include   system-login
+account   include   system-login
+password  include   system-login
+session   include   system-login
+EOF
+
+    cat > ${pkgdir}/etc/pam.d/system-services << "EOF"
+auth      sufficient  pam_permit.so
+
+account   include     system-auth
+
+session   optional    pam_loginuid.so
+session   required    pam_limits.so
+session   required    pam_unix.so
+session   optional    pam_permit.so
+session   required    pam_env.so
 EOF
 }
