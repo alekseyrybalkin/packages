@@ -3,7 +3,7 @@
 pkgname=nmap
 pkgver=7.70
 vcs=git
-gittag=nmap-${pkgver}
+gittag=${pkgver}
 relmon_id=2096
 
 kiin_make() {

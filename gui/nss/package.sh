@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nss
-pkgver=3.36
+pkgver=3.43
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
@@ -9,7 +9,6 @@ relmon_id=2503
 
 kiin_make() {
     MAKEFLAGS=
-    export XCFLAGS="${CFLAGS} -Wno-error=int-in-bool-context"
     cd ../
     patch -Np1 -i nss-standalone.patch
     cd nss

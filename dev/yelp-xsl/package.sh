@@ -1,9 +1,8 @@
 #!/bin/sh
 
 pkgname=yelp-xsl
-pkgver=3.28.0
+pkgver=3.32.1
 vcs=git
-git_repo=git://git.gnome.org/yelp-xsl
 gittag=${pkgver}
 # rc versions
 #relmon_id=13164

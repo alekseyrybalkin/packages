@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=nasm
-pkgver=2.13.03
+pkgver=2.14.02
 vcs=git
 gittag=nasm-${pkgver}
 urls="http://www.nasm.us/pub/nasm/releasebuilds/${pkgver}/nasm-${pkgver}.tar.xz"
@@ -17,5 +17,5 @@ kiin_make() {
 }
 
 kiin_install() {
-    make INSTALLROOT=${pkgdir} install
+    make DESTDIR=${pkgdir} install
 }

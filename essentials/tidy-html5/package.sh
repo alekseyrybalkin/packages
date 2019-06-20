@@ -2,9 +2,11 @@
 
 pkgname=tidy-html5
 ARCH_NAME=tidy
-pkgver=5.6.0
+pkgver=5.7.27
 vcs=git
-gittag=${pkgver}
+#FIXME
+#gittag=${pkgver}
+gittag=8ef80736a1dd9fae8b2a43684028f0da19cf16a1
 relmon_id=13267
 
 kiin_make() {

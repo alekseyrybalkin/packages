@@ -1,13 +1,12 @@
 #!/bin/sh
 
 pkgname=ccache
-pkgver=3.4.2
+pkgver=3.7.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=257
 
 kiin_make() {
-    export CFLAGS="${CFALGS} -Wimplicit-fallthrough=0"
     ./autogen.sh
     ./configure --prefix=/usr \
         --sysconfdir=/etc

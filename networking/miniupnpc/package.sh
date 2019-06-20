@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=miniupnpc
-pkgver=2.0
-ARCH_VERSION=2.0.20170509
+pkgver=2.1
 vcs=git
 vcs_pkgname=miniupnp
 gittag=miniupnpc_${pkgver//\./_}
@@ -16,6 +15,5 @@ kiin_make() {
 
 kiin_install() {
     cd miniupnpc
-    make PREFIX=${pkgdir} install
-    install -Dm644 man3/miniupnpc.3 ${pkgdir}/usr/share/man/man3/miniupnpc.3
+    make DESTDIR=${pkgdir} install
 }

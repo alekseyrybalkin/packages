@@ -9,16 +9,13 @@ gittag=7510d5dd87fc988fe1b14718bb546daae5baebe6
 kiin_make() {
     sed -i -e 's/\.sl/\.config\/sl/g' apps/sl/src/settings.h
     autoconf
-    ./configure --with-gui-flag=no --with-python-xlib-flag=no --with-audio-player=aplay
+    ./configure --with-gui-flag=no \
+        --with-python-xlib-flag=no \
+        --with-audio-player=true
     make
 }
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
+    rm -rf ${pkgdir}/usr/share/sl
 }
-
-known="usr/share/sl/dicts/Mueller-24.en-ru \
-    usr/share/sl/dicts/Mova-Magus.en-ru \
-    usr/share/sl/dicts/Babylon_Dictionary.ru-en \
-    usr/share/sl/dicts/SDict_Dictionary.ru-en \
-    usr/share/sl/dicts/Sokrat-Mova.ru-en"

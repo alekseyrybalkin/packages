@@ -130,6 +130,7 @@ perl-error
 asciidoc
 xmlto
 git
+git-crypt
 fossil
 
 # productivity
@@ -149,3 +150,38 @@ libnl
 iw
 wpa_supplicant
 macchanger
+tor
+nmap
+miniupnpc
+
+# essential libs
+icu
+libuv
+rhash
+nspr
+nss
+perl-xml-simple
+
+# essential tools
+acpi
+socat
+zip
+unrar
+lightlang
+
+# build tools
+ccache
+colm
+ragel
+itstool
+yelp-xsl
+yelp-tools
+gnome-common
+gobject-introspection
+cmake
+nasm
+yasm
+tidy-html5
+
+# extra libs
+lapack

@@ -3,7 +3,6 @@
 pkgname=gnome-common
 pkgver=3.18.0
 vcs=git
-git_repo=git://git.gnome.org/gnome-common
 gittag=${pkgver}
 relmon_id=8421
 
