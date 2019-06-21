@@ -29,6 +29,7 @@ kiin_make() {
 
 kiin_install() {
     DESTDIR=${pkgdir} ninja -C build install
+    sed -i -e 's/atk-bridge-2.0 //g' ${pkgdir}/usr/lib/pkgconfig/gtk+{,-x11,-broadway}-3.0.pc
 }
 
 kiin_after_install() {
