@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=xtrans
-pkgver=1.3.5
+pkgname=libxtrans
+ARCH_NAME=xtrans
+pkgver=1.4.0
 vcs=git
-vcs_pkgname=libxtrans
-gittag=${pkgname}-${pkgver}
+gittag=xtrans-${pkgver}
 relmon_id=13651
 
 kiin_make() {

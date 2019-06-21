@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=18.0
+majorver=19.1
 pkgver=${majorver}.0
 vcs=git
 gittag=mesa-${pkgver}
@@ -9,31 +9,32 @@ gittag=mesa-${pkgver}
 #relmon_id=1970
 
 kiin_make() {
-    patch -Np1 -i ../MesaLib-add_xdemos.patch
-    autoreconf -fi
-    ./configure --prefix=$XORG_PREFIX \
-        --sysconfdir=/etc \
-        --with-gallium-drivers='' \
-        --with-dri-drivers='i965' \
-        --enable-egl \
-        --enable-gbm \
-        --with-platforms=x11,drm \
-        --enable-shared-glapi \
-        --enable-glx-tls \
-        --enable-dri \
-        --enable-dri3 \
-        --enable-glx \
-        --enable-osmesa \
-        --enable-gles1 \
-        --enable-gles2 \
-        --enable-texture-float
-    make
-    make -C xdemos DEMOS_PREFIX=/usr
+    mkdir build
+    meson --prefix=$XORG_PREFIX \
+        -D b_lto=false \
+        -D b_ndebug=true \
+        -D platforms=x11,drm \
+        -D dri-drivers='i965,swrast' \
+        -D gallium-drivers='' \
+        -D vulkan-drivers='' \
+        -D swr-arches=avx,avx2 \
+        -D dri3=true \
+        -D egl=true \
+        -D gbm=true \
+        -D gles1=false \
+        -D gles2=true \
+        -D glx=dri \
+        -D llvm=false \
+        -D osmesa=classic \
+        -D shared-glapi=true \
+        -D valgrind=false \
+        -D libunwind=false \
+        . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
-    make -C xdemos DEMOS_PREFIX=/usr DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
     mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa
     cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/mesa
 }

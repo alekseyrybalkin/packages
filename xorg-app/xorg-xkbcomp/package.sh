@@ -2,7 +2,7 @@
 
 _pkgname=xkbcomp
 pkgname=xorg-${_pkgname}
-pkgver=1.4.1
+pkgver=1.4.2
 vcs=git
 gittag=${_pkgname}-${pkgver}
 

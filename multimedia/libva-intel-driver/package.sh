@@ -1,9 +1,9 @@
 #!/bin/sh
 
-pkgname=intel-vaapi-driver
-ARCH_NAME=libva-intel-driver
-pkgver=2.1.0
+pkgname=libva-intel-driver
+pkgver=2.3.0
 vcs=git
+vcs_pkgname=intel-vaapi-driver
 gittag=${pkgver}
 
 kiin_make() {

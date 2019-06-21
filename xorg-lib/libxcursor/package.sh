@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxcursor
-pkgver=1.1.15
+pkgver=1.2.0
 vcs=git
 gittag=libXcursor-${pkgver}
 relmon_id=1770

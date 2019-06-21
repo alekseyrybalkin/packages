@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxrandr
-pkgver=1.5.1
+pkgver=1.5.2
 vcs=git
 gittag=libXrandr-${pkgver}
 relmon_id=1788

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libfontenc
-pkgver=1.1.3
+pkgver=1.1.4
 vcs=git
 gittag=libfontenc-${pkgver}
 relmon_id=1613

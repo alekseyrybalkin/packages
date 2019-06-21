@@ -1,10 +1,10 @@
 #!/bin/sh
 
 pkgname=libxcb
-pkgver=1.13
+pkgver=1.13.1
 vcs=git
 git_repo=git://anongit.freedesktop.org/xcb/libxcb
-gittag=${pkgname}-${pkgver}
+gittag=${pkgver}
 relmon_id=1767
 
 kiin_make() {

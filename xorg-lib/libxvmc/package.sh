@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxvmc
-pkgver=1.0.10
+pkgver=1.0.11
 vcs=git
 gittag=libXvMC-${pkgver}
 relmon_id=1796

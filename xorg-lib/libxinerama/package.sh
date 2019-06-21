@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxinerama
-pkgver=1.1.3
+pkgver=1.1.4
 vcs=git
 gittag=libXinerama-${pkgver}
 relmon_id=1779

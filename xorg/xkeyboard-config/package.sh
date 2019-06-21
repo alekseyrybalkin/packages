@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=xkeyboard-config
-pkgver=2.23.1
+pkgver=2.27
 vcs=git
 git_repo=git://anongit.freedesktop.org/xkeyboard-config
 gittag=${pkgname}-${pkgver}

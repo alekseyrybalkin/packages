@@ -2,21 +2,19 @@
 
 pkgname=mpv
 vcs=git
-pkgver=0.27.2
+pkgver=0.29.1
 gittag=v${pkgver}
 relmon_id=5348
 relmon_sed='s/v//g'
 
 kiin_make() {
-    git clone -n -s ${SOURCES_HOME}/waf waf-clone
+    git clone -n -s ${SOURCES_HOME}/dev/waf waf-clone
     cd waf-clone
-    git checkout waf-1.9.15
+    git checkout waf-2.0.17
     cd ..
     cp -r waf-clone/{waf-light,waflib} ./
     rm -rf waf-clone
     mv ./waf{-light,}
-
-    patch -Np1 -i ../vaapi-Use-libva2-message-callbacks.patch
 
     ./waf configure --prefix=/usr \
         --confdir=/etc/mpv \

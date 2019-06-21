@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pixman
-pkgver=0.34.0
+pkgver=0.38.4
 vcs=git
 gittag=pixman-${pkgver}
 relmon_id=3648

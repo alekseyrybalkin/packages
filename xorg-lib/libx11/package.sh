@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libx11
-pkgver=1.6.5
+pkgver=1.6.7
 vcs=git
 gittag=libX11-${pkgver}
 relmon_id=1764

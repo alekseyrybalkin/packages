@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxcomposite
-pkgver=0.4.4
+pkgver=0.4.5
 vcs=git
 gittag=libXcomposite-${pkgver}
 relmon_id=1769

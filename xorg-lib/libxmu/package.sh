@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxmu
-pkgver=1.1.2
+pkgver=1.1.3
 vcs=git
 gittag=libXmu-${pkgver}
 relmon_id=1785

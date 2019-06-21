@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxss
-pkgver=1.2.2
+pkgver=1.2.3
 vcs=git
 gittag=libXScrnSaver-${pkgver}
 relmon_id=1791

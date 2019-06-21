@@ -2,7 +2,7 @@
 
 _pkgname=xmodmap
 pkgname=xorg-${_pkgname}
-pkgver=1.0.9
+pkgver=1.0.10
 vcs=git
 gittag=${_pkgname}-${pkgver}
 

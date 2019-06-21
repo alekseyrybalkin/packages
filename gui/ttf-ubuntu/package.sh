@@ -4,8 +4,8 @@
 pkgname=ttf-ubuntu
 ARCH_NAME=ttf-ubuntu-font-family
 pkgver=0.83
-urls="http://font.ubuntu.com/download/ubuntu-font-family-${pkgver}.zip"
-srczip=ubuntu-font-family-${pkgver}.zip
+urls="https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-${pkgver}.zip"
+srczip=fad7939b-ubuntu-font-family-${pkgver}.zip
 srcdir=${location}/ubuntu-font-family-${pkgver}
 
 kiin_make() {

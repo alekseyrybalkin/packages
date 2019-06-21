@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxext
-pkgver=1.3.3
+pkgver=1.3.4
 vcs=git
 gittag=libXext-${pkgver}
 relmon_id=1774

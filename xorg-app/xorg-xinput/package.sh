@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pkgname=libxkbfile
-pkgver=1.1.0
+_pkgname=xinput
+pkgname=xorg-${_pkgname}
+pkgver=1.6.2
 vcs=git
-gittag=${pkgname}-${pkgver}
-relmon_id=1781
+gittag=${_pkgname}-${pkgver}
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG
