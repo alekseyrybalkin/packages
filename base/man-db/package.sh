@@ -21,6 +21,7 @@ kiin_make() {
         --with-browser=/usr/bin/lynx \
         --with-vgrind=/usr/bin/vgrind \
         --with-grap=/usr/bin/grap \
+        --enable-cache-owner=root \
         --with-systemdsystemunitdir=/usr/lib/systemd/system
     make
 }
