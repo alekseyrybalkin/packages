@@ -1,15 +1,12 @@
 #!/bin/sh
 
 pkgname=libvpx
-pkgver=1.6.1
+pkgver=1.8.0
 vcs=git
-vcs_pkgname=chromium-libvpx
 gittag=v${pkgver}
 relmon_id=11083
 
 kiin_make() {
-    sed -i 's/cp -p/cp/' build/make/Makefile
-    chmod -v 644 vpx/*.h
     mkdir libvpx-build
     cd libvpx-build
     ../configure --prefix=/usr \

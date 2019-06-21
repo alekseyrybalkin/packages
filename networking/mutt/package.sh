@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=mutt
-pkgver=1.9.4
+pkgver=1.12.1
 ARCH_VERSION=${pkgver}
 vcs=git
 gittag=mutt-${pkgver//\./-}-rel
@@ -21,14 +21,4 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    chmod 0755 ${pkgdir}/usr/bin/mutt_dotlock
-}
-
-kiin_after_install() {
-    getent group mail >/dev/null || groupadd -g 34 mail
-    chgrp -v mail /var/spool/mail
-}
-
-kiin_after_upgrade() {
-    kiin_after_install
 }

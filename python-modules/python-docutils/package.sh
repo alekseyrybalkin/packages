@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=python-docutils
+vcs_pkgname=docutils
 ARCH_NAME=docutils
 pkgver=0.14
 vcs=git

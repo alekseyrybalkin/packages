@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=alsa-utils
-pkgver=1.1.6
+pkgver=1.1.9
 vcs=git
 gittag=v${pkgver}
 relmon_id=37

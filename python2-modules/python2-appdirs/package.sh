@@ -9,9 +9,9 @@ gittag=${pkgver}
 relmon_id=6278
 
 kiin_make() {
-  python2 setup.py build
+    python2 setup.py build
 }
 
 kiin_install() {
-  python2 setup.py install --root=${pkgdir}
+    python2 setup.py install --root=${pkgdir}
 }

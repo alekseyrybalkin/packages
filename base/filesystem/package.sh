@@ -84,11 +84,15 @@ kiin_install() {
     # for chrony
     mkdir -pv ${pkgdir}/var/lib/chrony
 
+    # for mutt
+    install -dv -m 0755 ${pkgdir}/var/spool/mail
+    chgrp -v mail ${pkgdir}/var/spool/mail
+
     # for nginx
-    #install -dv -m 0755 ${pkgdir}/var/log/nginx
-    #chown nginx:nginx ${pkgdir}/var/log/nginx
-    #install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
-    #chown -R nginx:nginx ${pkgdir}/var/lib/nginx
+    install -dv -m 0755 ${pkgdir}/var/log/nginx
+    chown nginx:nginx ${pkgdir}/var/log/nginx
+    install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
+    chown -R nginx:nginx ${pkgdir}/var/lib/nginx
 
     cp ../nsswitch.conf ${pkgdir}/etc/nsswitch.conf
     cp ../ld.so.conf ${pkgdir}/etc/ld.so.conf

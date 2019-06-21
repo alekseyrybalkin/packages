@@ -2,16 +2,16 @@
 
 pkgname=python2-virtualenv
 ARCH_NAME=python-virtualenv
-pkgver=15.1.0
+pkgver=16.6.0
 vcs=git
 vcs_pkgname=virtualenv
 gittag=${pkgver}
 relmon_id=6904
 
 kiin_make() {
-  python2 setup.py build
+    python2 setup.py build
 }
 
 kiin_install() {
-  python2 setup.py install --prefix=/usr --root="${pkgdir}"
+    python2 setup.py install --prefix=/usr --root="${pkgdir}"
 }

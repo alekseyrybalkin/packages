@@ -70,29 +70,44 @@ make
 patch
 tar
 texinfo
+man-db
 unzip
 openssl
 tcl
 sqlite
+
+# python and python2 base
 python
+python-six
+python-pyparsing
+python-packaging
+python-appdirs
 python-setuptools
+python-cython
+python-docutils
+python-mako
+python2
+python2-six
+python2-pyparsing
+python2-packaging
+python2-appdirs
+python2-setuptools
+python2-cython
+python2-docutils
+python2-virtualenv
+
+# init and kernel
 ninja
 meson
-man-db
-vim
 libgpg-error
 libgcrypt
 util-linux
-
-# initramfs
 libaio
 device-mapper
 cpio
 json-c
 cryptsetup
 initramfs
-
-# init & kernel
 grub
 glib
 pkg-config
@@ -103,6 +118,7 @@ e2fsprogs
 linux
 
 # kiin
+vim
 fakeroot
 cacerts
 wget
@@ -111,10 +127,7 @@ openssh
 kiin
 
 # vcs
-python2
-python2-docutils
 mercurial
-python2-cython
 bzr
 libxml
 libxslt
@@ -143,6 +156,33 @@ physlock
 perl-file-next
 perl-ack
 
+# build tools
+ccache
+colm
+ragel
+itstool
+yelp-xsl
+yelp-tools
+gnome-common
+gobject-introspection
+libuv
+rhash
+cmake
+nasm
+yasm
+tidy-html5
+
+# essential libs
+icu
+nspr
+nss
+perl-xml-simple
+lapack
+libassuan
+pinentry
+libksba
+npth
+
 # network
 dhcpcd
 linux-firmware
@@ -153,14 +193,8 @@ macchanger
 tor
 nmap
 miniupnpc
-
-# essential libs
-icu
-libuv
-rhash
-nspr
-nss
-perl-xml-simple
+nginx
+chrony
 
 # essential tools
 acpi
@@ -168,20 +202,21 @@ socat
 zip
 unrar
 lightlang
+gnupg
+mutt
 
-# build tools
-ccache
-colm
-ragel
-itstool
-yelp-xsl
-yelp-tools
-gnome-common
-gobject-introspection
-cmake
-nasm
-yasm
-tidy-html5
-
-# extra libs
-lapack
+# audio (no gui)
+alsa-lib
+libsndfile
+libsamplerate
+vamp-plugin-sdk
+alsa-utils
+libogg
+libvorbis
+lame
+libtheora
+libvpx
+fribidi
+fftw
+ladspa
+rubberband

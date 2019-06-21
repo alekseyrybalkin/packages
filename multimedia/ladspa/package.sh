@@ -2,17 +2,17 @@
 
 #vcs=none
 pkgname=ladspa
-pkgver=1.13
+pkgver=1.15
 urls="https://github.com/OpenMandrivaAssociation/ladspa/raw/master/${pkgname}_sdk_${pkgver}.tgz"
 srctar=${pkgname}_sdk_${pkgver}.tgz
-srcdir=${location}/${pkgname}_sdk
+srcdir=${location}/${pkgname}_sdk_${pkgver}
 
 kiin_make() {
     cd src
     sed \
         -e 's/mkdirhier/mkdir -p/' \
         -e "s#-O3#${CFLAGS} ${LDFLAGS/,--as-needed/}#" \
-        -i makefile
+        -i Makefile
     make targets
 }
 

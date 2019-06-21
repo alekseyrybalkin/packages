@@ -1,21 +1,19 @@
 #!/bin/sh
 
 pkgname=fribidi
-pkgver=0.19.7
+pkgver=1.0.5
 vcs=git
-gittag=${pkgver}
+gittag=v${pkgver}
 urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=857
 
 kiin_make() {
-    MAKEFLAGS=
     sed -i -e 's/\ doc//g' Makefile.am
-    ./bootstrap
+    ./autogen.sh
     ./configure --prefix=/usr
 }
 
 kiin_install() {
-    MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

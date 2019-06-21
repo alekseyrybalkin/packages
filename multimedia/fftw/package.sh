@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=fftw
-pkgver=3.3.7
+pkgver=3.3.8
 #vcs=git
 #vcs_pkgname=fftw3
 #gittag=${pkgname}-${pkgver}
