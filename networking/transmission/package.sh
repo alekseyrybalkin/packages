@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=transmission
-pkgver=2.93
+pkgver=2.94
 vcs=git
 vcs_clone="git clone https://github.com/transmission/transmission.git"
 gittag=${pkgver}

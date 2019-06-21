@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=pango
-majorver=1.42
+majorver=1.43
 pkgver=${majorver}.0
 vcs=git
 gittag=${pkgver}
@@ -13,19 +13,11 @@ relmon_id=11783
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    # disable gtk-doc
-    sed -i -e 's/gtkdocize/true/g' autogen.sh
-    sed -i -e '/docs/d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e 's/examples docs/examples/g' Makefile.am
-    rm -rf docs
-
-    ./autogen.sh --prefix=/usr \
-        --sysconfdir=/etc \
-        --libdir=$LIBDIR
-    make
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }

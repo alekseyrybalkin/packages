@@ -306,6 +306,7 @@ libjpeg-turbo
 freeglut
 libtiff
 lcms
+shared-mime-info
 gdk-pixbuf
 pango
 gtk
@@ -316,7 +317,6 @@ transmission
 imlib
 feh
 gsettings-desktop-schemas
-shared-mime-info
 poppler
 libcroco
 djvulibre

@@ -1,25 +1,18 @@
 #!/bin/sh
 
 pkgname=atk
-pkgver=2.28.1
+pkgver=2.32.0
 vcs=git
 gittag=ATK_${pkgver//\./_}
 # development versions
 #relmon_id=130
 
 kiin_make() {
-    # disable gtk-doc
-    sed -i -e '/gtkdocize/d' autogen.sh
-    sed -i -e '/docs/d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e 's/tests docs po/tests po/g' Makefile.am
-    rm -rf docs
-
-    NOCONFIGURE=1 ./autogen.sh
-    ./configure --prefix=/usr --libdir=$LIBDIR
-    make
+    mkdir build
+    meson --prefix=/usr . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }

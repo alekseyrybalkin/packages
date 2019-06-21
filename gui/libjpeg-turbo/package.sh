@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libjpeg-turbo
-pkgver=1.5.3
+pkgver=2.0.2
 vcs=git
 gittag=${pkgver}
 urls="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-${pkgver}.tar.gz"
@@ -9,18 +9,19 @@ srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1648
 
 kiin_make() {
-    autoreconf -fi
-    ./configure --prefix=/usr \
-        --mandir=/usr/share/man \
-        --with-jpeg8 \
-        --disable-static \
-        --libdir=$LIBDIR
+    mkdir build
+    cd build
+
+    cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=RELEASE  \
+        -DENABLE_STATIC=FALSE       \
+        -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/libjpeg-turbo \
+        -DCMAKE_INSTALL_DEFAULT_LIBDIR=lib \
+        ..
     make
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} \
-        docdir=/usr/share/doc/${pkgname} \
-        exampledir=/usr/share/doc/${pkgname} \
-        install
+    cd build
+    make DESTDIR=${pkgdir} install
 }

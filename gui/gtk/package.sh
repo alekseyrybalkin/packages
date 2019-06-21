@@ -2,37 +2,33 @@
 
 pkgname=gtk
 ARCH_NAME=gtk3
-majorver=3.22
-pkgver=${majorver}.29
+majorver=3.24
+pkgver=${majorver}.9
 vcs=git
-vcs_pkgname=gtk+
 gittag=${pkgver}
 # development versions
 #relmon_id=10018
 
 kiin_make() {
-    # disable gtk-doc
-    sed -i -e 's/gtkdocize/true/g' autogen.sh
-    sed -i -e '/docs/d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e 's/docs m4macros/m4macros/g' Makefile.am
-    rm -rf docs
-
     # disable accessibility
     sed -i -e '/bridge/d' gtk/a11y/gtkaccessibility.c
-    sed -i -e 's/ atk-bridge-2.0//g' configure.ac
+    sed -i -e 's/atkbridge_dep,//g' gtk/meson.build
+    sed -i -e '/atkbridge_dep/d' meson.build
 
-    ./autogen.sh --prefix=/usr \
-        --sysconfdir=/etc \
-        --disable-wayland-backend \
-        --disable-cups \
-        --disable-schemas-compile \
-        --enable-x11-backend
-    make
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D colord=no \
+        -D gtk_doc=false \
+        -D man=true \
+        -D broadway_backend=true \
+        -D wayland_backend=false \
+        . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }
 
 kiin_after_install() {

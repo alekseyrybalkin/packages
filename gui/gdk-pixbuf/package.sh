@@ -2,8 +2,8 @@
 
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
-majorver=2.36
-pkgver=${majorver}.11
+majorver=2.38
+pkgver=${majorver}.1
 vcs=git
 gittag=${pkgver}
 extension=xz
@@ -14,19 +14,13 @@ relmon_id=9533
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    # disable gtk-doc
-    sed -i -e 's/gtkdocize/true/g' autogen.sh
-    sed -i -e '/docs/d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e 's/po docs/po/g' Makefile.am
-    rm -rf docs
-
-    ./autogen.sh --prefix=/usr --with-x11 --libdir=$LIBDIR
-    make
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }
 
 kiin_after_install() {
