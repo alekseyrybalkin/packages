@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=gsettings-desktop-schemas
-majorver=3.28
+majorver=3.32
 pkgver=${majorver}.0
 vcs=git
 gittag=${pkgver}
@@ -16,13 +16,13 @@ check_server=1
 majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
-    ./autogen.sh
-    ./configure --prefix=/usr
-    make
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
 }
 
 kiin_install() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }
 
 kiin_after_install() {
