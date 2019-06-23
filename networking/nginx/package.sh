@@ -15,8 +15,8 @@ kiin_make() {
         --sbin-path=/usr/bin/nginx \
         --pid-path=/run/nginx.pid \
         --lock-path=/run/lock/nginx.lock \
-        --user=nginx \
-        --group=nginx \
+        --user=http \
+        --group=http \
         --http-log-path=/var/log/nginx/access.log \
         --error-log-path=/var/log/nginx/error.log \
         --http-client-body-temp-path=/var/lib/nginx/client-body \
@@ -52,13 +52,15 @@ kiin_install() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/{var,run}
     mv -v ${pkgdir}/etc/nginx/nginx.conf{,.packaged}
+    install -Dm644 ../nginx.service ${pkgdir}/usr/lib/systemd/system/nginx.service
 }
 
 kiin_after_install() {
-    getent group nginx >/dev/null || groupadd -g 333 nginx
-    getent passwd nginx >/dev/null || \
-        useradd -c 'nginx' -d /var/lib/nginx -g nginx \
-        -s /bin/false -u 333 nginx
+    getent group http >/dev/null || groupadd -g 33 http
+    getent passwd http >/dev/null || \
+        useradd -c 'nginx' -d /var/lib/nginx -g http \
+        -s /bin/false -u 33 http
+    chown -R http: /var/log/nginx /var/lib/nginx
 }
 
 kiin_after_upgrade() {
