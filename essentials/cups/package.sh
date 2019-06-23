@@ -2,7 +2,7 @@
 
 pkgname=cups
 #FIXME
-pkgver=2.3b4
+pkgver=2.2.11
 vcs=git
 gittag=v${pkgver}
 urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
@@ -11,13 +11,14 @@ relmon_id=380
 
 kiin_make() {
     sed -i 's:444:644:' Makedefs.in
-    sed -i '/MAN.*.EXT/s:.gz::g' configure config-scripts/cups-manpages.m4
-    sed -i 's@else /\* HAVE_AVAHI \*/@elif defined(HAVE_AVAHI)@' test/ippserver.c
-    patch -Np1 -i ../cups-no-export-ssllibs.patch
+    sed -i '/MAN.EXT/s:.gz::' configure config-scripts/cups-manpages.m4
+
+    export CFLAGS="${CFLAGS} -Wno-format-truncation -Wno-maybe-uninitialized"
+    export CXXFLAGS=${CFLAGS}
 
     aclocal -I config-scripts
     autoconf -I config-scripts
-    CC=gcc ./configure --with-rcdir=/tmp/cupsinit \
+    CC=gcc CXX=g++ ./configure --with-rcdir=/tmp/cupsinit \
         --with-docdir=/usr/share/cups/doc \
         --with-system-groups=lpadmin \
         --libdir=${LIBDIR}
