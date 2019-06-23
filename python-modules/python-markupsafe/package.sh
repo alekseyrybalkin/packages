@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-markupsafe
-pkgver=1.0
+pkgver=1.1.1
 vcs=git
 vcs_pkgname=markupsafe
 gittag=${pkgver}

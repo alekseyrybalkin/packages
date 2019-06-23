@@ -336,6 +336,13 @@ python-idna
 python-chardet
 python-requests
 python-lxml
+python-gunicorn
+python-werkzeug
+python-markupsafe
+python-jinja
+python-click
+python-itsdangerous
+python-flask
 
 # mpv
 lua52
