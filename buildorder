@@ -293,7 +293,6 @@ libva-intel-driver
 # audio (gui)
 libass
 ffmpeg
-lua52
 
 # gui apps
 xclip
@@ -326,7 +325,6 @@ evince
 gtk2
 autoconf2.13
 firefox
-palemoon
 imlib
 feh
 
@@ -340,4 +338,5 @@ python-requests
 python-lxml
 
 # mpv
+lua52
 mpv
