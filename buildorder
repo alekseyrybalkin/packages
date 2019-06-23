@@ -292,7 +292,7 @@ libva-intel-driver
 # audio (gui)
 libass
 ffmpeg
-mpv
+lua52
 
 # gui apps
 xclip
@@ -337,3 +337,6 @@ python-idna
 python-chardet
 python-requests
 python-lxml
+
+# mpv
+mpv
