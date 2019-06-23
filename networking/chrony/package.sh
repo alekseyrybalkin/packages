@@ -7,6 +7,7 @@ gittag=${pkgver}
 relmon_id=8810
 
 kiin_make() {
+    sed 's|/usr/sbin|/usr/bin|g' -i examples/*.service
     sed -i -e '/doc install$/d' Makefile.in
     ./configure --prefix=/usr \
         --with-user=chrony
