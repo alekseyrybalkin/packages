@@ -325,6 +325,7 @@ evince
 gtk2
 autoconf2.13
 firefox
+firefox-ublock-origin
 imlib
 feh
 
