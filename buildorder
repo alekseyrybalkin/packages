@@ -343,6 +343,8 @@ python-jinja
 python-click
 python-itsdangerous
 python-flask
+python-greenlet
+python-gevent
 
 # mpv
 lua52
