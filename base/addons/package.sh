@@ -13,6 +13,7 @@ kiin_install() {
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
+    chmod 755 ${pkgdir}/usr/bin/ff_init
 
     chown root:root ${pkgdir}/usr/lib/addons/*wifi.bash
     chmod 600 ${pkgdir}/usr/lib/addons/*wifi.bash
