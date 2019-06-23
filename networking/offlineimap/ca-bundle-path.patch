@@ -1,0 +1,21 @@
+diff --git a/offlineimap/utils/distro.py b/offlineimap/utils/distro.py
+index 87bb2b1..27dae88 100644
+--- a/offlineimap/utils/distro.py
++++ b/offlineimap/utils/distro.py
+@@ -29,6 +29,7 @@ __DEF_OS_LOCATIONS = {
+     'linux-suse': '/etc/ssl/ca-bundle.pem',
+     'linux-opensuse': '/etc/ssl/ca-bundle.pem',
+     'linux-arch': '/etc/ssl/certs/ca-certificates.crt',
++    'linux-kiin': '/etc/ssl/ca-bundle.crt',
+ }
+ 
+ 
+@@ -51,6 +52,8 @@ def get_os_name():
+             OS = OS + "-%s" % DISTRO.split()[0].lower()
+         if os.path.exists('/etc/arch-release'):
+             OS = "linux-arch"
++        if os.path.exists('/etc/kiin.conf.bash'):
++            OS = "linux-kiin"
+ 
+     return OS
+ 

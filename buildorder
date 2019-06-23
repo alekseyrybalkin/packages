@@ -205,6 +205,7 @@ unrar
 lightlang
 gnupg
 mutt
+offlineimap
 
 # audio (no gui)
 alsa-lib
