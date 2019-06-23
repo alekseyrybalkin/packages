@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-certifi
-pkgver=2018.01.18
+pkgver=2019.06.16
 vcs=git
 gittag=${pkgver}
 # tags != versions

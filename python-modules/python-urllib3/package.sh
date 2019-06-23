@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-urllib3
-pkgver=1.22
+pkgver=1.25.3
 vcs=git
 vcs_pkgname=urllib3
 gittag=${pkgver}

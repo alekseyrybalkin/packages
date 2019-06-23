@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=evince
-pkgver=3.28.0
+pkgver=3.32.0
 vcs=git
 git_repo=git://git.gnome.org/evince
 gittag=${pkgver}
@@ -14,6 +14,8 @@ kiin_make() {
     sed -i -e '/GTK_DOC_CHECK/d' configure.ac
     sed -i -e '/help$/d' Makefile.am
     sed -i -e 's/po \\$/po/g' Makefile.am
+    sed -i -e '/po \\/d' Makefile.am
+    sed -i -e '/gtkdocize /d' autogen.sh
     rm -rf help
 
     export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"
@@ -26,7 +28,10 @@ kiin_make() {
         --disable-browser-plugin \
         --disable-help \
         --disable-gtk-doc \
+        --without-gspell \
+        --disable-thumbnailer \
         --disable-static
+    sed -i -e 's/ po //g' Makefile
     make
 }
 

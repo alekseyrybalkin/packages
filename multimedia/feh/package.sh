@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=feh
-pkgver=2.25.1
+pkgver=3.1.3
 vcs=git
 gittag=${pkgver}
 urls="http://feh.finalrewind.org/feh-${pkgver}.tar.bz2"

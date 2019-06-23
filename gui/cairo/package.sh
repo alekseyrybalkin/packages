@@ -2,7 +2,7 @@
 
 pkgname=cairo
 vcs=git
-pkgver=1.17.2
+pkgver=1.16.0
 gittag=${pkgver}
 # development version
 #relmon_id=247

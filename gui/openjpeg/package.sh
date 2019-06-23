@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=openjpeg
-pkgver=2.3.0
+pkgver=2.3.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=8468
