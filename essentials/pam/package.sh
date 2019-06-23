@@ -64,14 +64,6 @@ session   required   pam_deny.so
 session   required   pam_warn.so
 EOF
 
-    cat > ${pkgdir}/etc/pam.d/sshd << "EOF"
-#auth     required  pam_securetty.so     #disable remote root
-auth      include   system-remote-login
-account   include   system-remote-login
-password  include   system-remote-login
-session   include   system-remote-login
-EOF
-
     cat > ${pkgdir}/etc/pam.d/shadow << "EOF"
 auth            sufficient      pam_rootok.so
 auth            required        pam_unix.so

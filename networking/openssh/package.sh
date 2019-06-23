@@ -36,6 +36,7 @@ kiin_install() {
     # do not replace ssh{,d}_config, since it is in git repo now
     mv -v ${pkgdir}/etc/ssh/ssh_config{,.packaged}
     mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
+    install -Dm644 sshd.pam ${pkgdir}/etc/pam.d/sshd
 }
 
 kiin_after_install() {
