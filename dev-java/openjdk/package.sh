@@ -5,7 +5,7 @@ SKIP_ARCH_CHECK=1
 pkgver=12
 _build=33
 vcs=mercurial
-hgtag=jdk-${pkgver}-${_build}
+hgtag=jdk-${pkgver}+${_build}
 
 kiin_make() {
     PATH=/usr/bin
