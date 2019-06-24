@@ -355,5 +355,3 @@ mpv
 
 # dev
 openjdk
-elasticsearch2
-mongodb-bin
