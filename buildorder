@@ -327,6 +327,7 @@ gtk2
 autoconf2.13
 firefox
 firefox-ublock-origin
+noscript
 imlib
 feh
 
