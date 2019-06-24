@@ -183,6 +183,7 @@ pinentry
 libksba
 npth
 libpng
+cups
 
 # network
 dhcpcd
@@ -350,3 +351,6 @@ python-gevent
 # mpv
 lua52
 mpv
+
+# dev
+openjdk
