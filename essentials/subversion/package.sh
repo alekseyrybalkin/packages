@@ -13,9 +13,6 @@ relmon_id=4905
 kiin_make() {
     patch -Np1 -i ../apr-1.7.0-fix.diff
 
-    # move configuration to ~/.config
-    sed -i -e 's/SVN_CONFIG__USR_DIRECTORY   "\.subversion"/SVN_CONFIG__USR_DIRECTORY   "\.config\/subversion"/g' \
-        subversion/libsvn_subr/config_impl.h
     MAKEFLAGS=
     autoreconf -f -i
     ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
