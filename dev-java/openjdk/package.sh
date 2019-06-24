@@ -33,4 +33,6 @@ kiin_install() {
     mkdir -p ${pkgdir}/usr/lib/openjdk
     cp -rv build/*/images/jdk/* ${pkgdir}/usr/lib/openjdk/
     rm -vf ${pkgdir}/usr/lib/openjdk/lib/security/cacerts
+    mkdir -pv ${pkgdir}/usr/lib/jvm/
+    ln -sv /usr/lib/openjdk ${pkgdir}/usr/lib/jvm/default-runtime
 }
