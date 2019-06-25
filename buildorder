@@ -185,6 +185,7 @@ libksba
 npth
 libpng
 cups
+libssh2
 
 # network
 dhcpcd
