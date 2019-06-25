@@ -171,6 +171,7 @@ cmake
 nasm
 yasm
 tidy-html5
+llvm
 
 # essential libs
 icu
