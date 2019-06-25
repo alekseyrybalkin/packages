@@ -1,11 +1,12 @@
 #!/bin/sh
 
 pkgname=firefox-ublock-origin
+SKIP_ARCH_CHECK=1
 pkgver=1.16.4.11
 vcs=git
 vcs_pkgname=ublock
 gittag=firefox-legacy-${pkgver}
-relmon_id=16686
+#relmon_id=16686
 
 kiin_make() {
     git clone ${SOURCES_HOME}/chromium/uassets ../uAssets

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=expat
-pkgver=2.2.6
+pkgver=2.2.7
 vcs=git
 vcs_pkgname=libexpat
 gittag=R_${pkgver//\./_}

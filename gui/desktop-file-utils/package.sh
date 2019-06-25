@@ -2,6 +2,7 @@
 
 pkgname=desktop-file-utils
 pkgver=0.23
+ARCH_VERSION=0.23+4+g92af410
 vcs=git
 gittag=${pkgver}
 relmon_id=421

@@ -2,9 +2,9 @@
 
 pkgname=perl-ack
 ARCH_NAME=ack
-pkgver=2.28
+pkgver=3.0.0
 vcs=git
-gittag=${pkgver}
+gittag=v${pkgver}
 relmon_id=15
 
 kiin_make() {

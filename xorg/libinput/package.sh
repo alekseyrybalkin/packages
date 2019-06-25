@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libinput
-pkgver=1.13.2
+pkgver=1.13.3
 vcs=git
 gittag=${pkgver}
 relmon_id=5781

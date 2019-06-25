@@ -2,9 +2,11 @@
 
 pkgname=colm
 SKIP_ARCH_CHECK=1
-pkgver=0.13.0.6
+pkgver=0.13.0.7
 vcs=git
-gittag=colm-${pkgver}
+#FIXME
+gittag=46488f5222650183e236ad27e6bb9bf3a428bfb6
+#gittag=colm-${pkgver}
 relmon_id=12622
 
 kiin_make() {

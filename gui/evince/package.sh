@@ -2,6 +2,7 @@
 
 pkgname=evince
 pkgver=3.32.0
+ARCH_VERSION=3.32.0+26+gd3aecce7
 vcs=git
 git_repo=git://git.gnome.org/evince
 gittag=${pkgver}

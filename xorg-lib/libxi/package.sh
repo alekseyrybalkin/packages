@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxi
-pkgver=1.7.9
+pkgver=1.7.10
 vcs=git
 gittag=libXi-${pkgver}
 relmon_id=1778

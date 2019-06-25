@@ -3,7 +3,7 @@
 pkgname=ncurses
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1
-pkgver=6.1.20190609
+pkgver=6.1.20190623
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=2057

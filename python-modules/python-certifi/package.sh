@@ -2,6 +2,7 @@
 
 pkgname=python-certifi
 pkgver=2019.06.16
+ARCH_VERSION=2019.6.16
 vcs=git
 gittag=${pkgver}
 # tags != versions

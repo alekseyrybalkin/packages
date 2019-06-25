@@ -2,6 +2,8 @@
 
 pkgname=docbook-xml
 pkgver=4.5
+# Arch has some unusual magic in PKGBUILD
+SKIP_ARCH_CHECK=1
 # git build requires at least https://github.com/ndw/xjparse/
 #vcs=git
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"

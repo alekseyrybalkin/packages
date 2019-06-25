@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=noscript
+SKIP_ARCH_CHECK=1
 pkgver=5.1.9
 urls="https://secure.informaction.com/download/releases/noscript-${pkgver}.xpi"
 

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkgname=configs
+SKIP_ARCH_CHECK=1
 pkgver=1
 vcs=git
 

@@ -1,10 +1,11 @@
 #!/bin/sh
 
 pkgname=shadow
-pkgver=4.6
+pkgver=4.7
 vcs=git
 gittag=${pkgver}
-relmon_id=4802
+# 20001016 ???
+#relmon_id=4802
 
 kiin_make() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs

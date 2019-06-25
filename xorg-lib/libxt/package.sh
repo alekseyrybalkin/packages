@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libxt
-pkgver=1.1.5
+pkgver=1.2.0
 vcs=git
 gittag=libXt-${pkgver}
 relmon_id=1793
