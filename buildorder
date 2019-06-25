@@ -171,7 +171,6 @@ cmake
 nasm
 yasm
 tidy-html5
-llvm
 
 # essential libs
 icu
@@ -185,7 +184,6 @@ libksba
 npth
 libpng
 cups
-libssh2
 
 # network
 dhcpcd
