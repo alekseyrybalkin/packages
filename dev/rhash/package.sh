@@ -14,6 +14,7 @@ kiin_make() {
 }
 
 kiin_install() {
+    MAKEFLAGS=
     make DESTDIR=${pkgdir} install
     make -C librhash DESTDIR=${pkgdir} install-lib-headers install-lib-shared install-lib-static install-so-link
 }

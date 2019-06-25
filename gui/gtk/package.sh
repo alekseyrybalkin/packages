@@ -23,6 +23,7 @@ kiin_make() {
         -D man=true \
         -D broadway_backend=true \
         -D wayland_backend=false \
+        -D print_backends='file' \
         . build
     ninja -C build
 }

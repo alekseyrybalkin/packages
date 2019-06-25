@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=noscript
-#FIXME update to 5.1.9 when site is available
-pkgver=5.1.8.3
+pkgver=5.1.9
 urls="https://secure.informaction.com/download/releases/noscript-${pkgver}.xpi"
 
 kiin_make() {
