@@ -171,6 +171,10 @@ cmake
 nasm
 yasm
 tidy-html5
+llvm
+lld
+nodejs
+gn
 
 # essential libs
 icu
@@ -183,6 +187,9 @@ pinentry
 libksba
 npth
 libpng
+libjpeg-turbo
+giflib
+cups
 
 # network
 dhcpcd
@@ -293,8 +300,12 @@ libva-intel-driver
 # audio (gui)
 libass
 ffmpeg
+pipewire
 
 # gui apps
+freeglut
+libtiff
+lcms
 xclip
 rxvt-unicode
 ttf-dejavu
@@ -302,17 +313,14 @@ ttf-ubuntu
 fluxbox
 atk
 cairo
-libjpeg-turbo
-freeglut
-libtiff
-lcms
 shared-mime-info
 gdk-pixbuf
 pango
+at-spi2-core
+at-spi2-atk
 gtk
 hicolor-icon-theme
 desktop-file-utils
-giflib
 gsettings-desktop-schemas
 libcroco
 librsvg
@@ -351,3 +359,7 @@ python-gevent
 # mpv
 lua52
 mpv
+
+# chromium
+openjdk
+chromium
