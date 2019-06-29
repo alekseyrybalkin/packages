@@ -18,14 +18,11 @@ kiin_install() {
     install -Dm 755 ccache ${pkgdir}/usr/bin/ccache
 
     install -d ${pkgdir}/usr/lib/ccache/bin
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/cc
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/gcc
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/g++
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/cpp
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/c++
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-cc
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-gcc
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-g++
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-cpp
-    ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-c++
+    for prog in gcc g++ c++ cc cpp; do
+        ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${prog}
+        ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-${prog}
+    done
+    for prog in clang clang++; do
+        ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${prog}
+    done
 }
