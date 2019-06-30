@@ -12,8 +12,10 @@ kiin_make() {
 kiin_install() {
     cd ../
     ./mkinitramfs kiin
-    ./mkinitramfs arch
     mkdir -p ${pkgdir}/boot
     mv -v initrd-kiin ${pkgdir}/boot
-    mv -v initrd-arch ${pkgdir}/boot
 }
+
+known="boot/initramfs-linux-fallback.img \
+    boot/initramfs-linux.img \
+    boot/vmlinuz-linux"

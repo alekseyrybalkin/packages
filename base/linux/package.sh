@@ -15,5 +15,4 @@ kiin_make() {
 kiin_install() {
     mkdir -pv ${pkgdir}/boot
     cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-kiin
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-arch
 }
