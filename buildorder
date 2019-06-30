@@ -354,6 +354,7 @@ python-flask
 python-greenlet
 python-gevent
 python-pycodestyle
+python-mss
 
 # sphinx
 python-imagesize

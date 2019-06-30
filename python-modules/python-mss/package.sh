@@ -2,7 +2,7 @@
 
 pkgname=python-mss
 SKIP_ARCH_CHECK=1
-pkgver=3.2.0
+pkgver=4.0.3
 vcs=git
 gittag=v${pkgver}
 
