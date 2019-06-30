@@ -4,7 +4,7 @@ pkgname=chromium
 pkgver=75.0.3770.100
 vcs=git
 gittag=${pkgver}
-urls="somethere/node_modules-${pkgver}.tar.gz"
+extra_urls="somethere/node_modules-${pkgver}.tar.gz"
 relmon_id=13344
 
 # updating node_modules:
