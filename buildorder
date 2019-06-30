@@ -192,6 +192,7 @@ libpng
 libjpeg-turbo
 giflib
 cups
+sdl2
 
 # network
 dhcpcd
@@ -305,11 +306,7 @@ libass
 ffmpeg
 pipewire
 
-# sdl2
-sdl2
-sdl2_ttf
-
-# gui apps
+# gui apps/libs
 freeglut
 libtiff
 lcms
@@ -317,6 +314,7 @@ xclip
 rxvt-unicode
 ttf-dejavu
 ttf-ubuntu
+sdl2_ttf
 fluxbox
 atk
 cairo
