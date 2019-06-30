@@ -14,7 +14,7 @@ relmon_id=13607
 . ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
-    git clone ${SOURCES_HOME}/keycodemapdb ui/keycodemapdb
+    git clone `find_vcs_repo keycodemapdb` ui/keycodemapdb
 
     sed -i 's/ memfd_create/ qemu_memfd_create/' util/memfd.c
 

@@ -8,7 +8,7 @@ gittag=libidn2-${pkgver}
 relmon_id=5597
 
 kiin_make() {
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \

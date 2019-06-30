@@ -12,9 +12,9 @@ relmon_id=5610
 kiin_make() {
     patch -Np1 -i ../configdir.patch
     patch -Np1 -i ../silence_some_notifications.patch
-    git clone ${SOURCES_HOME}/tgl
+    git clone `find_vcs_repo tgl`
     cd tgl
-    git clone ${SOURCES_HOME}/tl-parser
+    git clone `find_vcs_repo tl-parser`
     patch -Np1 -i ../../openssl-1.1.patch
     cd ../
     ./configure --disable-libconfig --disable-liblua --disable-json

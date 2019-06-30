@@ -11,7 +11,7 @@ relmon_id=1253
 kiin_make() {
     MAKEFLAGS=
     sed -i -e '/doc\.am/d' Makefile.am
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     PAGE=A4 ./configure --prefix=/usr --without-x --with-doc=no
     make

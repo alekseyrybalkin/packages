@@ -8,7 +8,7 @@ relmon_id=16686
 
 kiin_make() {
     cd ../
-    git clone ${SOURCES_HOME}/chromium/uassets uAssets
+    git clone `find_vcs_repo uassets` uAssets
     cd ${pkgname}-${pkgver}
     tools/make-chromium.sh .
 }

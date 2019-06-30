@@ -9,7 +9,7 @@ relmon_id=1871
 kiin_make() {
     export CFLAGS="${CFALGS} -Wno-attributes -Wno-abi -Wimplicit-fallthrough=0"
 
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
 
     sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c

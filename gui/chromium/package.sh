@@ -23,7 +23,7 @@ _check_and_clone_deps() {
     cat ${1} >> deps.py
 
     cp ${srcdir}/../prepare_deps.py .
-    python prepare_deps.py ${SOURCES_HOME}/chromium
+    python prepare_deps.py $(dirname `find_vcs_repo chromium`)
 
     bash filldeps.sh
     rm filldeps.sh prepare_deps.py deps.py
@@ -33,7 +33,7 @@ kiin_make() {
     cp ../gclient_args.gni build/config/
 
     cd third_party/node/
-    tar xf ${SOURCES_HOME}/tarballs/node_modules-${pkgver}.tar.gz
+    tar xf ${TARBALLS_HOME}/node_modules-${pkgver}.tar.gz
     cd ../../
 
     # Allow building against system libraries in official builds

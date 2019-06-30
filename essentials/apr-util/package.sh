@@ -13,7 +13,7 @@ relmon_id=96
 
 kiin_make() {
     cd ../
-    git clone -s ${SOURCES_HOME}/essentials/apr apr
+    git clone -s `find_vcs_repo apr` apr
     sed -i -e 's/python/python2/g' apr/build/gen-build.py
     cd ${srcdir}
     ./buildconf

@@ -10,7 +10,7 @@ gittag=a4a331b7eea141b13c04f79feff3fe7d8f4e0507
 relmon_id=13805
 
 kiin_make() {
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --libexecdir=/usr/bin \

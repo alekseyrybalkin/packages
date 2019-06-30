@@ -8,7 +8,7 @@ gittag=${pkgver}
 
 kiin_make() {
     # TODO: remove in the future
-    git clone --branch 0.2.0 ${SOURCES_HOME}/ipython_genutils
+    git clone --branch 0.2.0 `find_vcs_repo ipython_genutils`
 }
 
 kiin_install() {

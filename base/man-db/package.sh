@@ -9,7 +9,7 @@ srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1882
 
 kiin_make() {
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \

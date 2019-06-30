@@ -10,7 +10,7 @@ kiin_make() {
 }
 
 kiin_install() {
-    hg clone ${SOURCES_HOME}/gui/nss
+    hg clone `find_vcs_repo nss`
     cp nss/lib/ckfw/builtins/certdata.txt .
     rm -rf nss
     pkgdir=${pkgdir} bash ../make-ca.sh

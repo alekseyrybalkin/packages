@@ -8,7 +8,7 @@ relmon_id=5348
 relmon_sed='s/v//g'
 
 kiin_make() {
-    git clone -n -s ${SOURCES_HOME}/dev/waf waf-clone
+    git clone -n -s `find_vcs_repo waf` waf-clone
     cd waf-clone
     git checkout waf-2.0.17
     cd ..

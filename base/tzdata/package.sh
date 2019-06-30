@@ -10,7 +10,7 @@ relmon_id=5021
 
 kiin_make() {
     mkdir ${_srcdir}
-    tar xf ${SOURCES_HOME}/tarballs/${_srctar} -C ${_srcdir}
+    tar xf ${TARBALLS_HOME}/${_srctar} -C ${_srcdir}
 }
 
 kiin_install() {

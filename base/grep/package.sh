@@ -9,7 +9,7 @@ relmon_id=1251
 kiin_make() {
     # build: avoid build failure with --enable-gcc-warnings
     git cherry-pick 6861bd8698b3177816fcc4d1a892df6e0701f1f6
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu

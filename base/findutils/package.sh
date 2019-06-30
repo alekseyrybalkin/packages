@@ -8,7 +8,7 @@ relmon_id=812
 
 kiin_make() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
 
     sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c

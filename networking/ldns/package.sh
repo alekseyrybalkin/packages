@@ -10,7 +10,7 @@ relmon_id=14817
 
 kiin_make() {
     sed -i 's/defined(@$also)/@$also/' doc/doxyparse.pl
-    git clone -s ${SOURCES_HOME}/dns-ldns contrib/DNS-LDNS
+    git clone -s `find_vcs_repo dns-ldns` contrib/DNS-LDNS
     libtoolize -c --install || libtoolize -c || error_cleanup "Libtoolize failed."
     autoreconf
     cd examples && autoreconf && cd ..

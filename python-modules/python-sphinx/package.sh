@@ -12,7 +12,7 @@ kiin_make() {
     make build
 
     for c in ${contrib}; do
-        git clone ${SOURCES_HOME}/python/sphinxcontrib-${c}
+        git clone `find_vcs_repo sphinxcontrib-${c}`
         cd sphinxcontrib-${c}
         python setup.py build
     done

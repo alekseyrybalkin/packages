@@ -11,7 +11,7 @@ wget_set_filename=cldr-core-${_cldr_core_ver}.zip
 relmon_id=11984
 
 kiin_make() {
-    cp ${SOURCES_HOME}/tarballs/cldr-core-${_cldr_core_ver}.zip ./cldr/
+    cp ${TARBALLS_HOME}/cldr-core-${_cldr_core_ver}.zip ./cldr/
     python setup.py import_cldr
     python setup.py build
 }

@@ -9,7 +9,7 @@ srcdir=${location}/noto-fonts
 
 kiin_make() {
     cd ${srcdir}
-    unzip ${KIIN_HOME}/tarballs/Noto-hinted.zip
+    unzip ${TARBALLS_HOME}/Noto-hinted.zip
 }
 
 kiin_install() {

@@ -7,9 +7,9 @@ gittag=v${pkgver}
 relmon_id=193
 
 kiin_make() {
-    git clone -s ${SOURCES_HOME}/dev/gnulib
+    git clone -s `find_vcs_repo gnulib`
     cd submodules
-    git clone -s ${SOURCES_HOME}/base/autoconf
+    git clone -s `find_vcs_repo autoconf`
     cd ../
     git submodule update --init
     sed -i -e 's/gnulib-po//g' Makefile.am
