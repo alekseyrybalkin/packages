@@ -362,4 +362,7 @@ mpv
 
 # chromium
 openjdk
+coffeescript1
+vimium
+ublock
 chromium

@@ -33,12 +33,8 @@ kiin_make() {
     cp ../gclient_args.gni build/config/
 
     cd third_party/node/
-    tar xvf ${SOURCES_HOME}/tarballs/node_modules-${pkgver}.tar.gz
+    tar xf ${SOURCES_HOME}/tarballs/node_modules-${pkgver}.tar.gz
     cd ../../
-
-    LASTCHANGE=`git show ${gittag} | head -n 1 | sed 's/commit //g'`
-    echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE
-    echo "LASTCHANGE=${LASTCHANGE}" > build/util/LASTCHANGE.blink
 
     # Allow building against system libraries in official builds
     sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
@@ -55,9 +51,6 @@ kiin_make() {
     # Disallow partial swaps for linux based on gl_version_string
     git cherry-pick e55ec7368dbbe1970cc229350299963eb7b74ec4
 
-    git log -1 --format='%ct' --grep=^Change-Id: HEAD > build/util/LASTCHANGE.committime
-    rm -rf .git
-
     _check_and_clone_deps DEPS
 
     cd third_party/angle
@@ -67,6 +60,13 @@ kiin_make() {
     cd buildtools
     _check_and_clone_deps DEPS
     cd ../
+
+    python2 build/util/lastchange.py -o build/util/LASTCHANGE
+    cp build/util/LASTCHANGE{,.blink}
+    python2 build/util/lastchange.py -m GPU_LISTS_VERSION --revision-id-only --header gpu/config/gpu_lists_version.h
+    python2 build/util/lastchange.py -m SKIA_COMMIT_HASH -s third_party/skia --header skia/ext/skia_commit_hash.h
+    git log -1 --format='%ct' --grep=^Change-Id: HEAD > build/util/LASTCHANGE.committime
+    rm -rf .git
 
     patch -Np1 -i ../chromium-fix-window-flash-for-some-WMs.patch
     patch -Np0 -i ../chromium-skia-harmony.patch
@@ -84,7 +84,7 @@ kiin_make() {
     export AR=ar
     export NM=nm
 
-    export PATH=${srcdir}/python2-path:${PATH}:/usr/lib/openjdk/bin
+    export PATH=${PATH}:/usr/lib/openjdk/bin
     export TMPDIR=${srcdir}/temp
     mkdir -p ${TMPDIR}
 
@@ -93,11 +93,11 @@ kiin_make() {
         'host_toolchain="//build/toolchain/linux/unbundle:default"'
         'clang_use_chrome_plugins=false'
         'clang_use_default_sample_profile=false'
-        'is_official_build=true' # implies is_cfi=true on x86_64
+        'is_official_build=true'
         'treat_warnings_as_errors=false'
         'fieldtrial_testing_like_official_build=true'
         'ffmpeg_branding="Chrome"'
-        'proprietary_codecs=false'
+        'proprietary_codecs=true'
         'rtc_use_pipewire=true'
         'rtc_link_pipewire=true'
         'link_pulseaudio=false'
@@ -109,13 +109,9 @@ kiin_make() {
         'enable_widevine=false'
         'enable_nacl=false'
         'enable_swiftshader=false'
-        "google_api_key=\"${_google_api_key}\""
-        "google_default_client_id=\"${_google_default_client_id}\""
-        "google_default_client_secret=\"${_google_default_client_secret}\""
         'use_kerberos=false'
         'use_libpci=false'
         'use_pulseaudio=false'
-        'fieldtrial_testing_like_official_build=true'
         'symbol_level=0'
     )
 
@@ -145,8 +141,5 @@ kiin_install() {
     install -vDm644 out/Release/gen/content/content_resources.pak ${pkgdir}/usr/lib/chromium/
     install -vm644 out/Release/{*.pak,*.bin} ${pkgdir}/usr/lib/chromium/
 
-    cp -av out/Release/locales ${pkgdir}/usr/lib/chromium/
-    chown -Rv root:root ${pkgdir}/usr/lib/chromium/locales
-
-    cp out/Release/icudtl.dat "$pkgdir/usr/lib/chromium/"
+    cp -rv out/Release/locales ${pkgdir}/usr/lib/chromium/
 }
