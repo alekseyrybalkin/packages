@@ -1,16 +1,28 @@
 #!/bin/sh
 
 pkgname=python-sphinx
-pkgver=1.7.2
+pkgver=2.1.2
 vcs=git
 vcs_pkgname=sphinx
 gittag=v${pkgver}
 relmon_id=4031
+contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp"
 
 kiin_make() {
     make build
+
+    for c in ${contrib}; do
+        git clone ${SOURCES_HOME}/python/sphinxcontrib-${c}
+        cd sphinxcontrib-${c}
+        python setup.py build
+    done
 }
 
 kiin_install() {
     python setup.py install --root=${pkgdir} --optimize=1
+
+    for c in ${contrib}; do
+        cd sphinxcontrib-${c}
+        python setup.py install --root=${pkgdir}
+    done
 }

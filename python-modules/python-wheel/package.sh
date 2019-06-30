@@ -1,11 +1,12 @@
 #!/bin/sh
 
-pkgname=python-pygments
-pkgver=2.4.2
-vcs=mercurial
-vcs_pkgname=pygments
+pkgname=python-wheel
+pkgver=0.33.4
+vcs=git
+vcs_pkgname=wheel
 hgtag=${pkgver}
-relmon_id=3986
+# alpha versions
+#relmon_id=11428
 
 kiin_make() {
     python setup.py build

@@ -1,5 +1,5 @@
 diff --git a/gen_tzinfo.py b/gen_tzinfo.py
-index a1ae7e5..17ec391 100644
+index d06fa0e..a88211a 100644
 --- a/gen_tzinfo.py
 +++ b/gen_tzinfo.py
 @@ -52,6 +52,8 @@ def links():
@@ -11,7 +11,7 @@ index a1ae7e5..17ec391 100644
          for line in open(filename):
              if line.strip().startswith('#') or not line.strip():
                  continue
-@@ -120,19 +122,19 @@ def add_allzones(filename):
+@@ -123,20 +125,20 @@ def add_allzones(filename):
              cz.append(zone)
      cz.sort()
  
@@ -23,8 +23,10 @@ index a1ae7e5..17ec391 100644
          tz for tz in all_timezones if resource_exists(tz))
 -        '''
 -    print >> outf, 'all_timezones_set = LazySet(all_timezones)'
+-    print >> outf, '_all_timezones_lower_to_standard = dict((tz.lower(), tz) for tz in all_timezones)'
 +        ''', file=outf)
 +    print('all_timezones_set = LazySet(all_timezones)', file=outf)
++    print('_all_timezones_lower_to_standard = dict((tz.lower(), tz) for tz in all_timezones)', file=outf)
  
 -    print >> outf, 'common_timezones = \\'
 +    print('common_timezones = \\', file=outf)

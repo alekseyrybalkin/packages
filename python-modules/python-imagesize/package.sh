@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-imagesize
-pkgver=0.7.1
+pkgver=1.1.0
 vcs=git
 vcs_pkgname=imagesize_py
 gittag=${pkgver}

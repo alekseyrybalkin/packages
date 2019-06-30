@@ -84,6 +84,7 @@ python-packaging
 python-appdirs
 python-setuptools
 python-setuptools-scm
+python-wheel
 python-cython
 python-docutils
 python-mako
@@ -352,6 +353,17 @@ python-itsdangerous
 python-flask
 python-greenlet
 python-gevent
+python-pycodestyle
+
+# sphinx
+python-imagesize
+python-pytz
+python-babel
+python-alabaster
+python-snowballstemmer
+python-pygments
+python-sphinx
+python-sphinx_rtd_theme
 
 # mpv
 lua52

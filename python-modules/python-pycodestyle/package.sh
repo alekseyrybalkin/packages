@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pycodestyle
-pkgver=2.3.1
+pkgver=2.5.0
 vcs=git
 vcs_pkgname=pycodestyle
 gittag=${pkgver}

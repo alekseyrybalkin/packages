@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-sphinx_rtd_theme
-pkgver=0.2.4
+pkgver=0.4.3
 vcs=git
 vcs_pkgname=sphinx_rtd_theme
 gittag=${pkgver}
