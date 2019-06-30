@@ -305,6 +305,10 @@ libass
 ffmpeg
 pipewire
 
+# sdl2
+sdl2
+sdl2_ttf
+
 # gui apps
 freeglut
 libtiff
@@ -355,6 +359,11 @@ python-greenlet
 python-gevent
 python-pycodestyle
 python-mss
+python-mwparserfromhell
+python-opengl
+python-pysdl2
+python-pillow
+python-numpy
 
 # sphinx
 python-imagesize

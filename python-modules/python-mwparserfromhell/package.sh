@@ -1,11 +1,10 @@
 #!/bin/sh
 
-pkgname=python-pillow
-pkgver=6.0.0
+pkgname=python-mwparserfromhell
+pkgver=0.5.4
 vcs=git
-vcs_pkgname=pillow
-gittag=${pkgver}
-relmon_id=7974
+vcs_pkgname=mwparserfromhell
+gittag=v${pkgver}
 
 kiin_make() {
     python setup.py build
