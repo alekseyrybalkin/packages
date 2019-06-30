@@ -24,5 +24,4 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    rm ${pkgdir}/usr/share/mc/skins/xoria256.ini
 }
