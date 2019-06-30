@@ -83,6 +83,7 @@ python-pyparsing
 python-packaging
 python-appdirs
 python-setuptools
+python-setuptools-scm
 python-cython
 python-docutils
 python-mako
@@ -213,6 +214,7 @@ lightlang
 gnupg
 mutt
 offlineimap
+borg
 
 # audio (no gui)
 alsa-lib
