@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-dateutil
-pkgver=2.6.1
+pkgver=2.8.0
 vcs=git
 vcs_pkgname=dateutil
 gittag=${pkgver}

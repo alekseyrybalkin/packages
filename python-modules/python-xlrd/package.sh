@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-xlrd
-pkgver=1.1.0
+pkgver=1.2.0
 vcs=git
 vcs_pkgname=xlrd
 gittag=${pkgver}

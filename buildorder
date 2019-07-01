@@ -391,6 +391,17 @@ python-parso
 python-jedi
 python-ipython
 
+# pandas
+python-dateutil
+python-xlrd
+python-xlwt
+python-jdcal
+python-et-xmlfile
+python-openpyxl
+python-bottleneck
+python-numexpr
+python-pandas
+
 # mpv
 lua52
 mpv
