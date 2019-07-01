@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-patsy
-pkgver=0.5.0
+pkgver=0.5.1
 vcs=git
 vcs_pkgname=patsy
 gittag=v${pkgver}

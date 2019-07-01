@@ -402,6 +402,14 @@ python-bottleneck
 python-numexpr
 python-pandas
 
+# matplotlib, statsmodels
+python-cycler
+python-kiwisolver
+python-matplotlib
+python-seaborn
+python-patsy
+python-statsmodels
+
 # mpv
 lua52
 mpv

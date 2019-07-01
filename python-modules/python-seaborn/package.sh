@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-seaborn
-pkgver=0.8.1
+pkgver=0.9.0
 vcs=git
 vcs_pkgname=seaborn
 gittag=v${pkgver}
