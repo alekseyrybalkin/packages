@@ -1,14 +1,15 @@
 #!/bin/sh
 
 pkgname=python-jedi
-pkgver=0.11.1
+pkgver=0.14.0
 vcs=git
 vcs_pkgname=jedi
 gittag=v${pkgver}
 relmon_id=3893
 
 kiin_make() {
-    :
+    git clone `find_vcs_repo typeshed` jedi/third_party/typeshed
+    git submodule update --init
 }
 
 kiin_install() {

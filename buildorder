@@ -377,6 +377,20 @@ python-pygments
 python-sphinx
 python-sphinx_rtd_theme
 
+# ipython
+python-decorator
+python-traitlets
+python-ptyprocess
+python-pexpect
+python-pickleshare
+python-wcwidth
+python-prompt_toolkit
+python-simplegeneric
+python-backcall
+python-parso
+python-jedi
+python-ipython
+
 # mpv
 lua52
 mpv

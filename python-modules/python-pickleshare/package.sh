@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-pickleshare
-pkgver=0.7.4
+pkgver=0.7.5
 vcs=git
 vcs_pkgname=pickleshare
 gittag=${pkgver}

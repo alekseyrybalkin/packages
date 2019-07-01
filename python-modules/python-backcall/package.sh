@@ -1,10 +1,11 @@
 #!/bin/sh
 
-pkgname=python-decorator
-pkgver=4.4.0
+pkgname=python-backcall
+pkgver=0.1
 vcs=git
-vcs_pkgname=decorator
-gittag=remotes/origin/origin/${pkgver}
+vcs_pkgname=backcall
+gittag=${pkgver}
+relmon_id=19636
 
 kiin_make() {
     python setup.py build

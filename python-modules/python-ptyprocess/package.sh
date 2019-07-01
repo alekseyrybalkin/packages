@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=python-ptyprocess
-pkgver=0.5.2
+pkgver=0.6.0
 vcs=git
 vcs_pkgname=ptyprocess
 gittag=${pkgver}
