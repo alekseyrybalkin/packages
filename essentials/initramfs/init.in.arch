@@ -18,4 +18,8 @@ mount -t ext4 /dev/mapper/root /.root
 
 killall -w udevd
 
-exec switch_root /.root /sbin/init "$@"
+mount --bind /.root/.arch /.root/.arch
+mount --bind /.root/home /.root/.arch/home
+mount --bind /.root/boot /.root/.arch/boot
+mount --bind /.root /.root/.arch/.kiin
+exec switch_root /.root/.arch /sbin/init "$@"
