@@ -58,6 +58,7 @@ intltool
 gperf
 groff
 xz
+lzo
 less
 gzip
 elfutils
@@ -74,6 +75,7 @@ man-db
 unzip
 openssl
 tcl
+tk
 sqlite
 
 # python and python2 base
@@ -206,6 +208,7 @@ nmap
 miniupnpc
 nginx
 chrony
+openvpn
 
 # essential tools
 acpi
@@ -362,6 +365,7 @@ python-opengl
 python-pysdl2
 python-pillow
 python-numpy
+python-scipy
 
 # sphinx
 python-imagesize
