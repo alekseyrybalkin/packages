@@ -100,7 +100,7 @@ python2-cython
 python2-docutils
 python2-virtualenv
 
-# boot
+# base boot
 ninja
 meson
 libgpg-error
@@ -121,7 +121,7 @@ dbus
 e2fsprogs
 linux
 
-# kiin
+# base kiin
 vim
 fakeroot
 cacerts
@@ -130,7 +130,7 @@ sudo
 openssh
 kiin
 
-# vcs
+# tools vcs
 mercurial
 bzr
 libxml
@@ -150,7 +150,7 @@ git
 git-crypt
 fossil
 
-# tools base
+# tools productivity
 libevent
 tmux
 slang
