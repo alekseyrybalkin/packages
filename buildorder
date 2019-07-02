@@ -78,7 +78,7 @@ tcl
 tk
 sqlite
 
-# python and python2 base
+# python base
 python
 python-six
 python-pyparsing
@@ -100,7 +100,7 @@ python2-cython
 python2-docutils
 python2-virtualenv
 
-# init and kernel
+# boot
 ninja
 meson
 libgpg-error
@@ -150,7 +150,7 @@ git
 git-crypt
 fossil
 
-# productivity
+# tools base
 libevent
 tmux
 slang
@@ -160,7 +160,7 @@ physlock
 perl-file-next
 perl-ack
 
-# build tools
+# make
 ccache
 colm
 ragel
@@ -180,7 +180,7 @@ lld
 nodejs
 gn
 
-# essential libs
+# libs
 icu
 nspr
 nss
@@ -210,7 +210,7 @@ nginx
 chrony
 openvpn
 
-# essential tools
+# tools
 acpi
 socat
 zip
@@ -221,7 +221,7 @@ mutt
 offlineimap
 borg
 
-# audio (no gui)
+# audio base
 alsa-lib
 libsndfile
 libsamplerate
@@ -303,16 +303,18 @@ xf86-input-libinput
 xcursor-neutral
 libva
 libva-intel-driver
-
-# audio (gui)
-libass
-ffmpeg
-pipewire
-
-# gui apps/libs
 freeglut
 libtiff
 lcms
+
+# audio
+libass
+ffmpeg
+pipewire
+lua52
+mpv
+
+# gui
 xclip
 rxvt-unicode
 ttf-dejavu
@@ -341,7 +343,7 @@ evince
 imlib
 feh
 
-# python modules and apps
+# python
 python-youtube-dl
 python-urllib3
 python-certifi
@@ -409,10 +411,6 @@ python-matplotlib
 python-seaborn
 python-patsy
 python-statsmodels
-
-# mpv
-lua52
-mpv
 
 # chromium
 openjdk
