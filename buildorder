@@ -78,7 +78,7 @@ tcl
 tk
 sqlite
 
-# python base
+# python
 python
 python-six
 python-pyparsing
@@ -100,7 +100,7 @@ python2-cython
 python2-docutils
 python2-virtualenv
 
-# base boot
+# base: boot
 ninja
 meson
 libgpg-error
@@ -121,7 +121,7 @@ dbus
 e2fsprogs
 linux
 
-# base kiin
+# base: kiin
 vim
 fakeroot
 cacerts
@@ -130,7 +130,7 @@ sudo
 openssh
 kiin
 
-# tools vcs
+# tools: vcs
 mercurial
 bzr
 libxml
@@ -150,7 +150,7 @@ git
 git-crypt
 fossil
 
-# tools productivity
+# tools: productivity
 libevent
 tmux
 slang
@@ -179,6 +179,7 @@ llvm
 lld
 nodejs
 gn
+lua52
 
 # libs
 icu
@@ -187,7 +188,6 @@ nss
 perl-xml-simple
 lapack
 libassuan
-pinentry
 libksba
 npth
 libpng
@@ -210,18 +210,19 @@ nginx
 chrony
 openvpn
 
-# tools
+# tools: more productivity
 acpi
 socat
 zip
 unrar
 lightlang
+pinentry
 gnupg
 mutt
 offlineimap
 borg
 
-# audio base
+# audio
 alsa-lib
 libsndfile
 libsamplerate
@@ -307,12 +308,14 @@ freeglut
 libtiff
 lcms
 
-# audio
+# audio: xorg support
 libass
 ffmpeg
 pipewire
-lua52
 mpv
+
+# make: xorg support
+openjdk
 
 # gui
 xclip
@@ -343,7 +346,7 @@ evince
 imlib
 feh
 
-# python
+# python: misc
 python-youtube-dl
 python-urllib3
 python-certifi
@@ -369,7 +372,7 @@ python-pillow
 python-numpy
 python-scipy
 
-# sphinx
+# python: sphinx
 python-imagesize
 python-pytz
 python-babel
@@ -379,7 +382,7 @@ python-pygments
 python-sphinx
 python-sphinx_rtd_theme
 
-# ipython
+# python: ipython
 python-decorator
 python-traitlets
 python-ptyprocess
@@ -393,7 +396,7 @@ python-parso
 python-jedi
 python-ipython
 
-# pandas
+# python: data science
 python-dateutil
 python-xlrd
 python-xlwt
@@ -403,8 +406,6 @@ python-openpyxl
 python-bottleneck
 python-numexpr
 python-pandas
-
-# matplotlib, statsmodels
 python-cycler
 python-kiwisolver
 python-matplotlib
@@ -412,8 +413,7 @@ python-seaborn
 python-patsy
 python-statsmodels
 
-# chromium
-openjdk
+# gui: chromium
 coffeescript1
 vimium
 ublock
