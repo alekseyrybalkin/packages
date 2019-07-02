@@ -39,5 +39,10 @@ kiin_install() {
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/run
 
-    install -Dm644 ../sudo.pam ${pkgdir}/etc/pam.d/sudo
+    mkdir -p ${pkgdir}/etc/pam.d
+    cat > ${pkgdir}/etc/pam.d/sudo << "EOF"
+auth            include         system-auth
+account         include         system-auth
+session         include         system-auth
+EOF
 }

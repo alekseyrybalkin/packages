@@ -26,9 +26,6 @@ kiin_install() {
     chmod +s ${pkgdir}/usr/bin/unix_chkpwd
 
     install -vdm755 ${pkgdir}/etc/pam.d
-    cat > ${pkgdir}/etc/pam.d/system-account << "EOF"
-account   required    pam_unix.so
-EOF
 
     cat > ${pkgdir}/etc/pam.d/system-auth << "EOF"
 auth      required  pam_unix.so     try_first_pass nullok
@@ -47,12 +44,6 @@ session   required  pam_unix.so
 session   optional  pam_permit.so
 EOF
 
-    cat > ${pkgdir}/etc/pam.d/system-password << "EOF"
-# use sha512 hash for encryption, use shadow, and try to use any previously
-# defined authentication token (chosen password) set by any prior module
-password  required    pam_unix.so       sha512 shadow try_first_pass
-EOF
-
     cat > ${pkgdir}/etc/pam.d/other << "EOF"
 auth      required   pam_deny.so
 auth      required   pam_warn.so
@@ -62,14 +53,6 @@ password  required   pam_deny.so
 password  required   pam_warn.so
 session   required   pam_deny.so
 session   required   pam_warn.so
-EOF
-
-    cat > ${pkgdir}/etc/pam.d/shadow << "EOF"
-auth            sufficient      pam_rootok.so
-auth            required        pam_unix.so
-account         required        pam_unix.so
-session         required        pam_unix.so
-password        required        pam_permit.so
 EOF
 
     cat > ${pkgdir}/etc/pam.d/system-login << "EOF"
@@ -88,8 +71,6 @@ password   include    system-auth
 session    optional   pam_loginuid.so
 session    optional   pam_keyinit.so       force revoke
 session    include    system-auth
-session    optional   pam_motd.so          motd=/etc/motd
-session    optional   pam_mail.so          dir=/var/spool/mail standard quiet
 -session   optional   pam_systemd.so
 session    required   pam_env.so
 EOF

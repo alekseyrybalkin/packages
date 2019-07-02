@@ -48,24 +48,9 @@ kiin_install() {
     ln -sv ../../../../lib/systemd/system/getty@.service ${pkgdir}/etc/systemd/system/getty.target.wants/getty@tty1.service
 
     cat > ${pkgdir}/etc/pam.d/systemd-user << "EOF"
-account  required    pam_access.so
-account  include     system-account
-
-session  required    pam_env.so
-session  required    pam_limits.so
-session  required    pam_unix.so
-session  required    pam_loginuid.so
-session  optional    pam_keyinit.so force revoke
-session  optional    pam_systemd.so
-
-auth     required    pam_deny.so
-password required    pam_deny.so
-EOF
-
-    cat > ${pkgdir}/etc/pam.d/system-session << "EOF"
-session  required    pam_unix.so
-session  required    pam_loginuid.so
-session  optional    pam_systemd.so
+account  include system-login
+session  required pam_loginuid.so
+session  include system-login
 EOF
 }
 

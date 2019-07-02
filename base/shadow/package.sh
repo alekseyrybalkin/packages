@@ -35,6 +35,14 @@ kiin_install() {
 
     # but we keep newgrp, as sg is really an alias to it
     mv ${pkgdir}/usr/bin/{newgrp,sg}
+
+    cat > ${pkgdir}/etc/pam.d/shadow << "EOF"
+auth            sufficient      pam_rootok.so
+auth            required        pam_unix.so
+account         required        pam_unix.so
+session         required        pam_unix.so
+password        required        pam_permit.so
+EOF
 }
 
 kiin_after_install() {

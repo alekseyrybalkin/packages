@@ -36,7 +36,15 @@ kiin_install() {
     # do not replace ssh{,d}_config, since it is in git repo now
     mv -v ${pkgdir}/etc/ssh/ssh_config{,.packaged}
     mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
-    install -Dm644 ../sshd.pam ${pkgdir}/etc/pam.d/sshd
+
+    mkdir -p ${pkgdir}/etc/pam.d
+    cat > ${pkgdir}/etc/pam.d/sshd << "EOF"
+#auth     required  pam_securetty.so     #disable remote root
+auth      include   system-remote-login
+account   include   system-remote-login
+password  include   system-remote-login
+session   include   system-remote-login
+EOF
 }
 
 kiin_after_install() {
