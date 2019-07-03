@@ -3,7 +3,7 @@
 pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
-pkgver=5.1.15
+pkgver=5.1.16
 gittag=v${pkgver}
 
 kiin_make() {
