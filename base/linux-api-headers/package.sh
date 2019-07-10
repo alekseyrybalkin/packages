@@ -3,7 +3,7 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
-pkgver=5.1.16
+pkgver=5.1.17
 gittag=v${pkgver}
 
 kiin_make() {
