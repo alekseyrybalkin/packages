@@ -2,7 +2,7 @@
 
 _pkgname=xauth
 pkgname=xorg-${_pkgname}
-pkgver=1.0.10
+pkgver=1.1
 vcs=git
 gittag=${_pkgname}-${pkgver}
 
