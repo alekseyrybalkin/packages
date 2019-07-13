@@ -209,6 +209,7 @@ miniupnpc
 nginx
 chrony
 openvpn
+tinyproxy
 
 # tools: more productivity
 acpi

@@ -16,7 +16,6 @@ kiin_make() {
 
 kiin_install() {
     make DESTDIR=${pkgdir} install
-    mv ${pkgdir}/etc/tor/torrc{.sample,}
     install -Dm0644 ../tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
 }
 

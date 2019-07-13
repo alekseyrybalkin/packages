@@ -5,7 +5,7 @@ export PATH=/usr/bin
 mount -n -t devtmpfs -o mode=0755,nosuid,noexec             devtmpfs  /dev
 mount -n -t proc -o nosuid,noexec,nodev,hidepid=2,gid=1000  proc      /proc
 mount -n -t sysfs -o nosuid,noexec,nodev                    sysfs     /sys
-mount -n -t tmpfs -o nosuid,noexec,nodev                    tmpfs     /run
+mount -n -t tmpfs -o nosuid,noexec,nodev,mode=755           tmpfs     /run
 
 udevd --daemon --resolve-names=never
 udevadm trigger
