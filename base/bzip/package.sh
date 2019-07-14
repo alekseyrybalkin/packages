@@ -1,16 +1,14 @@
 #!/bin/sh
 
-#vcs=none
 pkgname=bzip
 ARCH_NAME=bzip2
-pkgver=1.0.6
-urls="https://www.sourceware.org/pub/bzip2/bzip2-${pkgver}.tar.gz"
-srctar=${pkgname}2-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}2-${pkgver}
+pkgver=1.0.8
+vcs=git
+vcs_pkgname=bzip2
+gittag=bzip2-${pkgver}
 relmon_id=237
 
 kiin_make() {
-    patch -Np1 -i ../bzip2-install_docs.patch
     sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
     sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
     make -f Makefile-libbz2_so
