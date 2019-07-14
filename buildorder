@@ -354,6 +354,7 @@ python-idna
 python-chardet
 python-requests
 python-lxml
+python-defusedxml
 python-gunicorn
 python-werkzeug
 python-markupsafe
