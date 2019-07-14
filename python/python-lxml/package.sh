@@ -13,11 +13,11 @@ kiin_make() {
     python setup.py build
 
     cd doc
-    python mkhtml.py html-build .. ${pkgver}
+    python mkhtml.py html .. ${pkgver}
 }
 
 kiin_install() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
     mkdir -p ${pkgdir}/usr/share/doc
-    cp -r doc/html-build ${pkgdir}/usr/share/doc/python-lxml
+    cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml
 }
