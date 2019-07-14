@@ -14,6 +14,7 @@ kiin_make() {
     make -f Makefile-libbz2_so
     make clean
     make
+    ./xmlproc.sh -html manual.xml
 }
 
 kiin_install() {
@@ -25,4 +26,5 @@ kiin_install() {
     ln -sv bzip2 ${pkgdir}/usr/bin/bzcat
     cp -av libbz2.so* ${pkgdir}/usr/lib
     ln -sv libbz2.so.1.0 ${pkgdir}/usr/lib/libbz2.so
+    install -Dm644 manual.html ${pkgdir}/usr/share/doc/bzip/manual.html
 }
