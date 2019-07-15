@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pkgname=libice
-pkgver=1.0.9
+pkgver=1.0.10
 vcs=git
 gittag=libICE-${pkgver}
 relmon_id=1638
