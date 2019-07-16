@@ -382,6 +382,7 @@ python-snowballstemmer
 python-pygments
 python-sphinx
 python-sphinx_rtd_theme
+python-sphinx-pallets-themes
 
 # python: ipython
 python-decorator

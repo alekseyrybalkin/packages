@@ -6,7 +6,7 @@ vcs=git
 vcs_pkgname=sphinx
 gittag=v${pkgver}
 relmon_id=4031
-contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp"
+contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp log-cabinet"
 
 kiin_make() {
     make build
