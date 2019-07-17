@@ -2,7 +2,7 @@
 
 _pkgname=xinput
 pkgname=xorg-${_pkgname}
-pkgver=1.6.2
+pkgver=1.6.3
 vcs=git
 gittag=${_pkgname}-${pkgver}
 
