@@ -179,6 +179,7 @@ llvm
 lld
 nodejs
 gn
+lua52
 
 # libs
 icu
