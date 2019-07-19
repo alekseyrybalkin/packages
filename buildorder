@@ -179,8 +179,6 @@ llvm
 lld
 nodejs
 gn
-uthash
-libconfig
 
 # libs
 icu
@@ -196,8 +194,6 @@ libjpeg-turbo
 giflib
 cups
 sdl2
-libev
-yajl
 
 # network
 dhcpcd
@@ -283,10 +279,6 @@ libxshmfence
 xcb-util
 xcb-util-keysyms
 xcb-util-renderutil
-xcb-util-image
-xcb-util-cursor
-xcb-util-wm
-xcb-util-xrm
 libdrm
 mesa
 glu
@@ -315,7 +307,6 @@ libva-intel-driver
 freeglut
 libtiff
 lcms
-libxkbcommon
 
 # audio: xorg support
 libass
@@ -354,10 +345,6 @@ djvulibre
 evince
 imlib
 feh
-startup-notification
-libxdg-basedir
-compton
-i3
 
 # python: misc
 python-youtube-dl
