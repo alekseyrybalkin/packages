@@ -159,6 +159,7 @@ links
 physlock
 perl-file-next
 perl-ack
+gtk-doc
 
 # make
 ccache

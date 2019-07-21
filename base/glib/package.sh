@@ -21,8 +21,9 @@ kiin_make() {
     cd build
 
     meson --prefix=/usr \
-        -Dman=true \
-        -Dselinux=disabled \
+        -D man=true \
+        -D selinux=disabled \
+        -D gtk_doc=true \
         ..
     ninja
 }
