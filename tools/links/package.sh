@@ -3,7 +3,7 @@
 #vcs=none
 pkgname=links
 pkgver=2.19
-urls="http://${pkgname}.twibright.com/download/${pkgname}-${pkgver}.bz2"
+urls="http://${pkgname}.twibright.com/download/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1822
 
