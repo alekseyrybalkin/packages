@@ -4,8 +4,6 @@ pkgname=perl-file-next
 pkgver=1.16
 vcs=git
 gittag=${pkgver}
-urls="http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/File-Next-${pkgver}.tar.gz"
-srctar=File-Next-${pkgver}.tar.gz
 relmon_id=2895
 
 kiin_make() {

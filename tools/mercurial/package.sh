@@ -4,12 +4,7 @@ pkgname=mercurial
 pkgver=5.0.1
 vcs=mercurial
 hgtag=${pkgver}
-extension=gz
-folder="http://mercurial.selenic.com/release/"
-check_server=1
 relmon_id=1969
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     sed -i -e 's#env python#env python2#' mercurial/lsprof.py

@@ -4,8 +4,6 @@ pkgname=dbus
 pkgver=1.12.16
 vcs=git
 gittag=dbus-${pkgver}
-urls="http://dbus.freedesktop.org/releases/dbus/dbus-${pkgver}.tar.gz"
-srctar=dbus-${pkgver}.tar.gz
 # development versions
 #relmon_id=5356
 

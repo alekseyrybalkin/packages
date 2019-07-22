@@ -4,11 +4,7 @@ pkgname=libassuan
 pkgver=2.5.3
 vcs=git
 gittag=libassuan-${pkgver}
-extension=bz2
-folder="ftp://ftp.gnupg.org/gcrypt/libassuan/"
 relmon_id=1559
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./autogen.sh

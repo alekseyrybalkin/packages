@@ -5,8 +5,6 @@ pkgver=2.10.1
 vcs=git
 vcs_pkgname=jinja
 gittag=${pkgver}
-urls="http://pypi.python.org/packages/source/J/Jinja2/Jinja2-${pkgver}.tar.gz"
-srctar=Jinja2-${pkgver}.tar.gz
 relmon_id=3894
 
 kiin_make() {

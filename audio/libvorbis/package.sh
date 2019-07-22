@@ -4,8 +4,6 @@ pkgname=libvorbis
 pkgver=1.3.6
 vcs=git
 gittag=v${pkgver}
-urls="http://downloads.xiph.org/releases/vorbis/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1758
 
 kiin_make() {

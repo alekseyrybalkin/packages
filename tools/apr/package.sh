@@ -4,12 +4,7 @@ pkgname=apr
 pkgver=1.7.0
 vcs=git
 gittag=${pkgver}
-extension=bz2
-folder="http://archive.apache.org/dist/${pkgname}/"
-check_server=1
 relmon_id=95
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     sed -i -e 's/python/python2/g' build/gen-build.py

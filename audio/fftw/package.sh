@@ -7,7 +7,6 @@ pkgver=3.3.8
 #gittag=${pkgname}-${pkgver}
 urls="http://www.fftw.org/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
-srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=803
 
 kiin_make() {

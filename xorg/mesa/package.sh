@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=mesa
-majorver=19.1
-pkgver=${majorver}.2
+pkgver=19.1.2
 vcs=git
 gittag=mesa-${pkgver}
 # rc versions

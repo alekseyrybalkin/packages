@@ -4,8 +4,6 @@ pkgname=libjpeg-turbo
 pkgver=2.0.2
 vcs=git
 gittag=${pkgver}
-urls="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1648
 
 kiin_make() {

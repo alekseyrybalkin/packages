@@ -1,12 +1,9 @@
 #!/bin/sh
 
 pkgname=cups
-#FIXME
 pkgver=2.2.11
 vcs=git
 gittag=v${pkgver}
-urls="http://www.cups.org/software/${pkgver}/cups-${pkgver}-source.tar.bz2"
-srctar=cups-${pkgver}-source.tar.bz2
 relmon_id=380
 
 kiin_make() {

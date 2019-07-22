@@ -1,17 +1,9 @@
 #!/bin/sh
 
 pkgname=at-spi2-atk
-majorver=2.32
-pkgver=${majorver}.0
+pkgver=2.32.0
 vcs=git
 gittag=AT_SPI2_ATK_${pkgver//\./_}
-extension=xz
-major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
-check_server=1
-
-. ${KIIN_REPO}/defaults.sh
-
-majorver_grep="^[0-9]+\.[0-9]*[02468]{1}/?$"
 
 kiin_make() {
     mkdir build

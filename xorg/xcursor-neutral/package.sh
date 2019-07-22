@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=none
 pkgname=xcursor-neutral
 pkgver=1.13a
 urls="https://distribute.kde.org/khotnewstuff/mousethemes/downloads/28310-neutral-${pkgver}.tar.gz"

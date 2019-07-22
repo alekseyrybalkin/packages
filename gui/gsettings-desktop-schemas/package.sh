@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pkgname=gsettings-desktop-schemas
-majorver=3.33
-pkgver=${majorver}.0
+pkgver=3.33.0
 vcs=git
 gittag=${pkgver}
 # rc versions

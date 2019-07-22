@@ -4,8 +4,6 @@ pkgname=groff
 pkgver=1.22.4
 vcs=git
 gittag=${pkgver}
-urls="http://ftp.gnu.org/gnu/groff/groff-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1253
 
 kiin_make() {

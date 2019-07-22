@@ -1,6 +1,8 @@
 #!/bin/sh
 
+#vcs=ignore
 pkgname=mongodb-bin
+SKIP_ARCH_CHECK=1
 _basever=4.0
 pkgver=${_basever}.10
 urls="https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/${_basever}/multiverse/binary-amd64/mongodb-org-shell_${pkgver}_amd64.deb \

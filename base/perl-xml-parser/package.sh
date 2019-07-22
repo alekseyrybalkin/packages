@@ -6,8 +6,6 @@ _minor=1
 pkgver=${_ver}.${_minor}
 vcs=git
 gittag=v${_ver}_0${_minor}
-urls="http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-${pkgver}.tar.gz"
-srctar=XML-Parser-${pkgver}.tar.gz
 relmon_id=3531
 
 kiin_make() {

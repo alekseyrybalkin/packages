@@ -2,16 +2,10 @@
 
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
-majorver=2.38
-pkgver=${majorver}.1
+pkgver=2.38.1
 vcs=git
 gittag=${pkgver}
-extension=xz
-major_folder="http://ftp.gnome.org/pub/gnome/sources/${pkgname}/"
-check_server=1
 relmon_id=9533
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     mkdir build

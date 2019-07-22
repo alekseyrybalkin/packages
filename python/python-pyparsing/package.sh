@@ -5,8 +5,6 @@ pkgver=2.4.0
 vcs=git
 vcs_pkgname=pyparsing
 gittag=pyparsing_${pkgver}
-urls="http://downloads.sourceforge.net/pyparsing/pyparsing-${pkgver}.tar.gz"
-srctar=pyparsing-${pkgver}.tar.gz
 relmon_id=3756
 
 kiin_make() {

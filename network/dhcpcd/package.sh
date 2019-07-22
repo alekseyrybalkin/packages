@@ -4,12 +4,7 @@ pkgname=dhcpcd
 pkgver=7.2.2
 vcs=git
 gittag=dhcpcd-${pkgver}
-extension=xz
-folder="http://roy.marples.name/downloads/${pkgname}/"
-check_server=1
 relmon_id=11429
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./configure --libexecdir=/usr/lib/dhcpcd \

@@ -3,7 +3,6 @@
 pkgname=tcl
 pkgver=8.6.9
 vcs=fossil
-vcs_clone='fossil clone https://core.tcl.tk/tcl/ tcl.fossil'
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941
 

@@ -3,14 +3,9 @@
 #vcs=none
 pkgname=links
 pkgver=2.19
-extension=bz2
-folder="http://${pkgname}.twibright.com/download/"
-check_server=1
+urls="http://${pkgname}.twibright.com/download/${pkgname}-${pkgver}.bz2"
+srctar=${pkgname}-${pkgver}.bz2
 relmon_id=1822
-
-. ${KIIN_REPO}/defaults.sh
-
-ver_grep="^${pkgname}-[^-pre]*\.tar\.${extension}$"
 
 kiin_make() {
     ./configure --prefix=/usr --mandir=/usr/share/man

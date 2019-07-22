@@ -9,20 +9,7 @@ pkgver=${_pybasever}.16
 vcs=git
 vcs_pkgname=python
 gittag=v${pkgver}
-extension=xz
-folder="https://www.python.org/ftp/${pkgname}/"
-check_server=1
 relmon_id=13255
-
-srctar=Python-${pkgver}.tar.${extension}
-
-. ${KIIN_REPO}/defaults.sh
-
-urls="${folder}${pkgver}/${srctar}"
-ver_grep="^2\.[0-9]+\.[0-9]+/$"
-ver_seds() {
-    sed -r "s/\///g"
-}
 
 kiin_make() {
     rm -rf .git .gitignore .bzrignore .hgeol .hgignore .hgtags

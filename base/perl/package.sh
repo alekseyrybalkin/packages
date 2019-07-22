@@ -4,8 +4,6 @@ pkgname=perl
 pkgver=5.30.0
 vcs=git
 gittag=v${pkgver}
-urls="http://www.cpan.org/src/5.0/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
 # development versions
 #relmon_id=13599
 

@@ -3,10 +3,7 @@
 pkgname=bzr
 pkgver=2.7.0
 vcs=bzr
-vcs_clone='bzr branch lp:bzr'
 bzrtag=bzr-${pkgver}
-urls="http://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.tar.gz"
-srctar=bzr-${pkgver}.tar.gz
 relmon_id=238
 
 kiin_make() {

@@ -6,8 +6,6 @@ pkgver=41.0.1
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
-urls="http://pypi.python.org/packages/source/s/setuptools/setuptools-${pkgver}.tar.gz"
-srctar=setuptools-${pkgver}.tar.gz
 relmon_id=4021
 
 kiin_make() {

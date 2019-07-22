@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#vcs=ignore
 pkgname=elasticsearch2
 _pkgname=elasticsearch
 SKIP_ARCH_CHECK=1

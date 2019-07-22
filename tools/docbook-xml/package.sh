@@ -7,17 +7,14 @@ SKIP_ARCH_CHECK=1
 # git build requires at least https://github.com/ndw/xjparse/
 #vcs=git
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
+srczip=${pkgname}-${pkgver}.zip
+#FIXME: no update check for this package!
 
 kiin_make() {
-    cd ${srcdir}
-    unzip ${TARBALLS_HOME}/${pkgname}-${pkgver}.zip
-    #cd docbook/xml
-    #make
+    :
 }
 
 kiin_install() {
-    #cd docbook/xml
-    cd ${srcdir}
     install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
     install -v -d -m755 ${pkgdir}/etc/xml
     chown -R root:root .

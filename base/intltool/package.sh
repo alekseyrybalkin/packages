@@ -3,7 +3,6 @@
 pkgname=intltool
 pkgver=0.51.0
 vcs=bzr
-vcs_clone='bzr branch lp:intltool'
 bzrtag=release-${pkgver//\./_}
 relmon_id=1385
 

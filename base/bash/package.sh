@@ -6,7 +6,7 @@ _minor=007
 pkgver=${_major}.${_minor}
 ARCH_VERSION=${_major}.${_minor}
 vcs=git
-# FIXME
+#FIXME no tag
 gittag=3ba697465bc74fab513a26dea700cc82e9f4724e
 relmon_id=166
 

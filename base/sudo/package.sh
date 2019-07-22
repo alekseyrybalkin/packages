@@ -7,12 +7,7 @@ pkgver=1.8.27
 vcs=mercurial
 hg_repo=http://www.sudo.ws/repos/sudo
 hgtag=SUDO_${pkgver//\./_}
-extension=gz
-folder="http://www.sudo.ws/${pkgname}/dist/"
-check_server=1
 relmon_id=4906
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./autogen.sh

@@ -5,8 +5,6 @@ pkgver=2019.1
 vcs=git
 vcs_pkgname=pytz
 gittag=release_${pkgver}
-urls="https://pypi.python.org/packages/ad/30/5ab2298c902ac92fdf649cc07d1b7d491a241c5cac8be84dd84464db7d8b/pytz-${pkgver}.tar.gz"
-srctar=pytz-${pkgver}.tar.gz
 relmon_id=6537
 
 kiin_make() {

@@ -4,10 +4,7 @@ pkgname=mpfr
 pkgver=4.0.2
 vcs=git-svn
 vcs_pkgname=mpfr-git-svn
-vcs_clone="git svn clone -Ttrunk -ttags https://scm.gforge.inria.fr/anonscm/svn/mpfr ${vcs_pkgname}"
 gittag=origin/tags/${pkgver}
-urls="http://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=2019
 
 kiin_make() {

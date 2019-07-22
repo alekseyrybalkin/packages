@@ -4,8 +4,6 @@ pkgname=tor
 pkgver=0.4.0.5
 vcs=git
 gittag=tor-${pkgver}
-urls="http://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=4991
 
 kiin_make() {

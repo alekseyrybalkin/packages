@@ -4,8 +4,6 @@ pkgname=iw
 pkgver=5.0.1
 vcs=git
 gittag=v${pkgver}
-urls="https://www.kernel.org/pub/software/network/${pkgname}/${pkgname}-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1410
 
 kiin_make() {

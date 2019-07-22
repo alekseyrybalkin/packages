@@ -4,8 +4,6 @@ pkgname=openvpn
 pkgver=2.4.7
 vcs=git
 gittag=v${pkgver}
-urls="http://swupdate.openvpn.net/community/releases/openvpn-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=2567
 
 kiin_make() {

@@ -2,8 +2,7 @@
 
 pkgname=gtk
 ARCH_NAME=gtk3
-majorver=3.24
-pkgver=${majorver}.10
+pkgver=3.24.10
 vcs=git
 gittag=${pkgver}
 # development versions

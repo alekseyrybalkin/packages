@@ -4,14 +4,7 @@ pkgname=autoconf
 pkgver=2.69
 vcs=git
 gittag=v${pkgver}
-extension=xz
-folder="http://ftp.gnu.org/gnu/${pkgname}/"
-check_server=1
 relmon_id=141
-
-. ${KIIN_REPO}/defaults.sh
-
-ver_grep="^${pkgname}-[0-9\.]*\.tar\.${extension}$"
 
 kiin_make() {
     # doc: fix texinfo macro usage

@@ -3,7 +3,6 @@
 pkgname=sqlite
 pkgver=3.29.0
 vcs=fossil
-vcs_clone='fossil clone https://www.sqlite.org/cgi/src sqlite.fossil'
 fossiltag=version-${pkgver}
 relmon_id=4877
 

@@ -4,8 +4,6 @@ pkgname=giflib
 pkgver=5.2.1
 vcs=git
 gittag=${pkgver}
-urls="http://downloads.sourceforge.net/giflib/giflib-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1158
 
 kiin_make() {

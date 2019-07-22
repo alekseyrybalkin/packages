@@ -6,12 +6,7 @@ _patch=1
 pkgver=${_ver}p${_patch}
 vcs=git
 gittag=V_${_ver//\./_}_P${_patch}
-extension=gz
-folder="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
-check_server=1
 relmon_id=2565
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     autoreconf -fi

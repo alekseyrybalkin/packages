@@ -1,12 +1,11 @@
 #!/bin/sh
 
 pkgname=librsvg
-# 2.41+ cannot be built without rust, cargo and network
+#FIXME 2.41+ cannot be built without rust, cargo and network
 SKIP_ARCH_CHECK=1
 pkgver=2.40.20
 vcs=git
 gittag=${pkgver}
-# 2.41+ cannot be built without rust, cargo and network
 #relmon_id=5420
 
 kiin_make() {

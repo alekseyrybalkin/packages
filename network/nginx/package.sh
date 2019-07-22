@@ -5,8 +5,6 @@ ARCH_NAME=nginx-mainline
 pkgver=1.17.1
 vcs=mercurial
 hgtag=release-${pkgver}
-urls="http://nginx.org/download/nginx-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=5413
 
 kiin_make() {

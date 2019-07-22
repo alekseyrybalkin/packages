@@ -4,8 +4,6 @@ pkgname=make
 pkgver=4.2.1
 vcs=git
 gittag=${pkgver}
-urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=1877
 
 kiin_make() {

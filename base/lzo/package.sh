@@ -3,12 +3,9 @@
 #vcs=none
 pkgname=lzo
 pkgver=2.10
-extension=gz
-folder="http://www.oberhumer.com/opensource/${pkgname}/download/"
-check_server=1
+urls="http://www.oberhumer.com/opensource/${pkgname}/download/${pkgname}-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
 relmon_id=1868
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./configure --prefix=/usr \

@@ -1,16 +1,10 @@
 #!/bin/sh
 
 pkgname=cmake
-majorver=3.14
-pkgver=${majorver}.5
+pkgver=3.14.5
 vcs=git
 gittag=v${pkgver}
-extension=gz
-folder="http://www.cmake.org/files/v${majorver}/"
-check_server=1
 relmon_id=306
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     ./bootstrap --prefix=/usr \
@@ -25,5 +19,5 @@ kiin_make() {
 kiin_install() {
     make DESTDIR=${pkgdir} install
     # remove files with spaces
-    rm -rf ${pkgdir}/usr/share/cmake-${majorver}/Help/generator
+    rm -rf ${pkgdir}/usr/share/cmake-*/Help/generator
 }

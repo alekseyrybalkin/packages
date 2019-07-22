@@ -1,10 +1,8 @@
 #!/bin/sh
 
+#vcs=git
 pkgname=lua52
 pkgver=5.2.4
-#vcs=git
-#gittag=4324904b60db5243ede68d0922c1bf3c0dd05986
-vcs_pkgname=lua
 urls="https://www.lua.org/ftp/lua-${pkgver}.tar.gz"
 srctar=lua-${pkgver}.tar.gz
 srcdir=${location}/lua-${pkgver}

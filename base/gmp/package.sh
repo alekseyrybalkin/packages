@@ -1,11 +1,11 @@
 #!/bin/sh
 
 pkgname=gmp
-_majorver=6.1
-pkgver=${_majorver}.2
+_release=6.1
+pkgver=${_release}.2
 vcs=mercurial
-vcs_pkgname=gmp-${_majorver}
-# FIXME
+vcs_pkgname=gmp-${_release}
+#FIXME no tag
 hgtag=aad821ef06cb
 relmon_id=1186
 

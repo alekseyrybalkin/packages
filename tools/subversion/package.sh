@@ -3,12 +3,9 @@
 #vcs=git
 pkgname=subversion
 pkgver=1.12.0
-extension=bz2
-folder="http://www.apache.org/dist/${pkgname}/"
-check_server=1
+urls="http://www.apache.org/dist/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
+srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=4905
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     patch -Np1 -i ../apr-1.7.0-fix.diff

@@ -4,8 +4,6 @@ pkgname=shared-mime-info
 pkgver=1.12
 vcs=git
 gittag=Release-${pkgver//\./-}
-urls="http://freedesktop.org/~hadess/shared-mime-info-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=5524
 
 kiin_make() {

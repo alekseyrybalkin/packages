@@ -4,8 +4,6 @@ pkgname=fribidi
 pkgver=1.0.5
 vcs=git
 gittag=v${pkgver}
-urls="http://fribidi.org/download/fribidi-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=857
 
 kiin_make() {

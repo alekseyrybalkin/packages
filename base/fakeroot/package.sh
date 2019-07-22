@@ -3,23 +3,11 @@
 pkgname=fakeroot
 pkgver=1.23
 vcs=git
-# FIXME
+#FIXME no tag
 gittag=dc2e20a65d1fb3a4c49bb6121a0e5caf3f1b321a
 #gittag=${pkgver}
-extension=bz2
-folder="http://ftp.ru.debian.org/debian/pool/main/f/${pkgname}/"
-check_server=1
 relmon_id=12048
 relmon_sed='s/\.orig//g'
-
-srctar=${pkgname}_${pkgver}.orig.tar.${extension}
-
-. ${KIIN_REPO}/defaults.sh
-
-ver_grep="^${pkgname}_.*\.orig\.tar\.${extension}$"
-ver_seds() {
-    sed -r "s/^${pkgname}_//g" | sed -r "s/\.orig\.tar\.${extension}$//g"
-}
 
 kiin_make() {
     sed -i -e '/man_MANS/d' doc/Makefile.am

@@ -4,12 +4,7 @@ pkgname=curl
 pkgver=7.65.1
 vcs=git
 gittag=curl-${pkgver//\./_}
-extension=bz2
-folder="http://${pkgname}.haxx.se/download/"
-check_server=1
 relmon_id=381
-
-. ${KIIN_REPO}/defaults.sh
 
 kiin_make() {
     # apparently, curl cannot autodetect PATH_SEPARATOR when there is only one

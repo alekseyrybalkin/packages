@@ -4,8 +4,6 @@ pkgname=itstool
 pkgver=2.0.6
 vcs=git
 gittag=${pkgver}
-urls="http://files.itstool.org/itstool/itstool-${pkgver}.tar.bz2"
-srctar=${pkgname}-${pkgver}.tar.bz2
 relmon_id=13109
 
 kiin_make() {
