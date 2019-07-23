@@ -33,8 +33,6 @@ psmisc
 procps
 m4
 iana-etc
-gettext
-bison
 grep
 readline
 bash
@@ -58,6 +56,9 @@ intltool
 gperf
 groff
 xz
+libxml
+gettext
+bison
 less
 gzip
 elfutils
@@ -132,7 +133,6 @@ kiin
 # tools: vcs
 mercurial
 bzr
-libxml
 libxslt
 docbook-xsl
 docbook-xml

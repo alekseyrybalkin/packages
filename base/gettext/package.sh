@@ -1,20 +1,46 @@
 #!/bin/sh
 
-#vcs=git
-#git_repo=git://git.savannah.gnu.org/gettext.git
-#git_problem="requires to download archive.dir.tar.xz from internets"
 pkgname=gettext
 pkgver=0.20.1
-urls="http://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.xz"
-srctar=${pkgname}-${pkgver}.tar.xz
+vcs=git
+gittag=v${pkgver}
 relmon_id=898
 
 kiin_make() {
+    # don't build problematic examples
+    for lang in java pascal csharp; do
+        sed -i -e "/hello-${lang}/d" gettext-tools/examples/po/Makefile.am \
+            Makefile.am \
+            gettext-tools/examples/Makefile.am \
+            gettext-tools/examples/check-examples
+
+        rm -rf gettext-tools/examples/hello-${lang}*
+    done
+
+    # disable man pages
+    sed -i -e '/man/d' autogen.sh
+    for subdir in runtime tools; do
+        sed -i -e '/man/d' gettext-${subdir}/configure.ac
+        sed -i -e '/MAKEFILE_DISTRIB/d' gettext-${subdir}/configure.ac
+        sed -i -e 's/man //g' gettext-${subdir}/Makefile.am
+        rm -rf gettext-${subdir}/man
+    done
+
+    # pre-clone gnulib
+    git clone -s `find_vcs_repo gnulib`
+    git submodule update --init
+
+    git clone -s `find_vcs_repo gnulib` libtextstyle/gnulib
+    sed -i -e 's/ && git pull//g' libtextstyle/autogen.sh
+
+    export GNULIB_TOOL=${srcdir}/gnulib/gnulib-tool
+
+    # copy archive.dir.tar.xz from system
+    cp /usr/share/gettext/archive.dir.tar.xz gettext-tools/misc/
+
+    ./autogen.sh
     ./configure --prefix=/usr \
         --docdir=/usr/share/doc/gettext \
-        --with-included-libxml \
-        --with-included-glib \
-        --with-included-libcroco \
         --disable-static \
         --build=x86_64-unknown-linux-gnu \
         --without-git
