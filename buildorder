@@ -58,7 +58,6 @@ intltool
 gperf
 groff
 xz
-lzo
 less
 gzip
 elfutils

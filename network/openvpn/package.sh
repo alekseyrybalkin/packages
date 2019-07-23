@@ -13,6 +13,7 @@ kiin_make() {
         --sbindir=/usr/bin \
         --enable-password-save \
         --mandir=/usr/share/man \
+        --disable-lzo \
         --enable-iproute2
     make
 }
