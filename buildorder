@@ -305,6 +305,7 @@ libva-intel-driver
 freeglut
 libtiff
 lcms
+libxkbcommon
 
 # audio: xorg support
 libass
@@ -317,7 +318,7 @@ openjdk
 
 # gui
 xclip
-rxvt-unicode
+kitty
 ttf-dejavu
 ttf-ubuntu
 sdl2_ttf
