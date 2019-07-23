@@ -1,0 +1,26 @@
+diff -r 50b58b3dce4f Makefile.in
+--- a/Makefile.in	Mon Feb 04 20:30:36 2019 +0000
++++ b/Makefile.in	Tue Jul 23 22:48:25 2019 +0300
+@@ -82,7 +82,10 @@
+ 	src/system/Allocators.h \
+ 	src/system/Thread.h \
+ 	src/system/VectorOps.h \
+-	src/system/sysutils.h
++	src/system/sysutils.h \
++	src/kissfft/_kiss_fft_guts.h \
++	src/kissfft/kiss_fft.h \
++	src/kissfft/kiss_fftr.h
+ 
+ LIBRARY_SOURCES := \
+ 	src/rubberband-c.cpp \
+@@ -103,7 +106,9 @@
+ 	src/system/sysutils.cpp \
+ 	src/system/Thread.cpp \
+ 	src/StretcherChannelData.cpp \
+-	src/StretcherImpl.cpp
++	src/StretcherImpl.cpp \
++	src/kissfft/kiss_fft.c \
++	src/kissfft/kiss_fftr.c
+ 
+ JNI_SOURCE := \
+ 	src/jni/RubberBandStretcherJNI.cpp
