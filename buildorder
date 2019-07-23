@@ -393,7 +393,6 @@ python-pexpect
 python-pickleshare
 python-wcwidth
 python-prompt_toolkit
-python-simplegeneric
 python-backcall
 python-parso
 python-jedi
