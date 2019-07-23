@@ -180,6 +180,7 @@ llvm
 lld
 nodejs
 gn
+indent
 
 # libs
 icu
@@ -315,6 +316,8 @@ mpv
 
 # make: xorg support
 openjdk
+ocaml
+ocamlbuild
 
 # gui
 xclip
