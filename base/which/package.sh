@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#vcs=none
+#vcs=none-by-design
 pkgname=which
 SKIP_ARCH_CHECK=1
 pkgver=1
