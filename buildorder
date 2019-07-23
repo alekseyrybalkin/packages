@@ -227,7 +227,6 @@ borg
 alsa-lib
 libsndfile
 libsamplerate
-vamp-plugin-sdk
 alsa-utils
 libogg
 libvorbis
@@ -236,7 +235,6 @@ libtheora
 libvpx
 fribidi
 fftw
-ladspa
 rubberband
 
 # xorg
