@@ -8,6 +8,7 @@ SKIP_ARCH_CHECK=1
 #vcs=git
 urls="http://www.docbook.org/xml/${pkgver}/${pkgname}-${pkgver}.zip"
 srczip=${pkgname}-${pkgver}.zip
+srcdir=${location}
 #FIXME: no update check for this package!
 
 kiin_make() {
