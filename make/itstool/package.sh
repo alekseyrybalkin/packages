@@ -8,7 +8,7 @@ relmon_id=13109
 
 kiin_make() {
     autoreconf -fi
-    ./configure --prefix=/usr PYTHON=/usr/bin/python2
+    ./configure --prefix=/usr
     make
 }
 

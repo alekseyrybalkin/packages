@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# needed for: scons, subversion, mercurial, itstool,
-# asciidoc, bzr, nodejs, chromium
-
 pkgname=python2
 _pybasever=2.7
 pkgver=${_pybasever}.16

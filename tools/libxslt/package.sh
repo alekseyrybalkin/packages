@@ -9,7 +9,7 @@ relmon_id=13301
 kiin_make() {
     ./autogen.sh --prefix=/usr \
         --disable-static \
-        --with-python="no"
+        --with-python=/usr/bin/python
     make
 }
 

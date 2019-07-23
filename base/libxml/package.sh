@@ -12,7 +12,7 @@ kiin_make() {
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --with-history \
-        --with-python="no"
+        --with-python=/usr/bin/python
     make
 }
 
