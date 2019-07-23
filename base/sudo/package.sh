@@ -5,7 +5,6 @@ pkgname=sudo
 SKIP_ARCH_CHECK=1
 pkgver=1.8.27
 vcs=mercurial
-hg_repo=http://www.sudo.ws/repos/sudo
 hgtag=SUDO_${pkgver//\./_}
 relmon_id=4906
 

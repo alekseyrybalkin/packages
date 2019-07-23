@@ -4,7 +4,6 @@ pkgname=fontconfig
 pkgver=2.13.1
 ARCH_VERSION=2.13.1+12+g5f5ec56
 vcs=git
-git_repo=git://anongit.freedesktop.org/fontconfig
 gittag=${pkgver}
 # rc versions
 #relmon_id=827

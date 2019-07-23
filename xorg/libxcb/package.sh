@@ -3,7 +3,6 @@
 pkgname=libxcb
 pkgver=1.13.1
 vcs=git
-git_repo=git://anongit.freedesktop.org/xcb/libxcb
 gittag=${pkgver}
 relmon_id=1767
 

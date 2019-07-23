@@ -3,8 +3,8 @@
 pkgname=xorg-util-macros
 pkgver=1.19.2
 vcs=git
-git_repo=git://anongit.freedesktop.org/xorg/util/macros
 gittag=util-macros-${pkgver}
+relmon_id=15037
 
 kiin_make() {
     ./autogen.sh $XORG_CONFIG

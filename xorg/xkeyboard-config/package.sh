@@ -3,7 +3,6 @@
 pkgname=xkeyboard-config
 pkgver=2.27
 vcs=git
-git_repo=git://anongit.freedesktop.org/xkeyboard-config
 gittag=${pkgname}-${pkgver}
 relmon_id=5191
 

@@ -3,7 +3,6 @@
 pkgname=xcb-util-renderutil
 pkgver=0.3.9
 vcs=git
-git_repo=git://anongit.freedesktop.org/xcb/util-renderutil
 gittag=${pkgver}
 relmon_id=5169
 

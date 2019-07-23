@@ -3,7 +3,6 @@
 pkgname=xcb-util
 pkgver=0.4.0
 vcs=git
-git_repo=git://anongit.freedesktop.org/xcb/util
 gittag=${pkgver}
 relmon_id=5165
 

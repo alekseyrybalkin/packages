@@ -3,7 +3,6 @@
 pkgname=glu
 pkgver=9.0.0
 vcs=git
-git_repo=git://anongit.freedesktop.org/mesa/glu
 gittag=glu-${pkgver}
 
 kiin_make() {

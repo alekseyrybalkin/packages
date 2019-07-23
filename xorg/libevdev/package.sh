@@ -3,7 +3,6 @@
 pkgname=libevdev
 pkgver=1.7.0
 vcs=git
-git_repo=git://anongit.freedesktop.org/libevdev
 gittag=libevdev-${pkgver}
 
 kiin_make() {

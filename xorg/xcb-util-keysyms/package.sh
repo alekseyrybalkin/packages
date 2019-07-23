@@ -3,7 +3,6 @@
 pkgname=xcb-util-keysyms
 pkgver=0.4.0
 vcs=git
-git_repo=git://anongit.freedesktop.org/xcb/util-keysyms
 gittag=${pkgver}
 relmon_id=5168
 
