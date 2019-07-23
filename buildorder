@@ -155,7 +155,8 @@ libevent
 tmux
 slang
 mc
-links
+gc
+w3m
 physlock
 perl-file-next
 perl-ack
