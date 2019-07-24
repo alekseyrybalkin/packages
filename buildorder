@@ -185,7 +185,6 @@ gn
 icu
 nspr
 nss
-perl-xml-simple
 lapack
 libassuan
 libksba
