@@ -18,6 +18,6 @@ kiin_install() {
     make DESTDIR=${pkgdir} install
 
     mkdir -p ${pkgdir}/usr/bin
-    cp contrib/minizip/minizip ${pkgdir}/usr/bin/minizip
-    cp contrib/minizip/miniunz ${pkgdir}/usr/bin/miniunzip
+    cp contrib/minizip/minizip ${pkgdir}/usr/bin/zip
+    cp contrib/minizip/miniunz ${pkgdir}/usr/bin/unzip
 }
