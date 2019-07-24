@@ -1,13 +1,13 @@
 #!/bin/sh
 
-#vcs=cvs
 pkgname=popt
-pkgver=1.16
-urls="ftp://anduin.linuxfromscratch.org/BLFS/svn/p/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
+pkgver=1.17+
+vcs=bzr
+bzrrev=793
 relmon_id=3689
 
 kiin_make() {
+    ./autogen.sh
     ./configure --prefix=/usr --disable-static
     make
 }
