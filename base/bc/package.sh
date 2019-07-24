@@ -1,28 +1,12 @@
 #!/bin/sh
 
-#vcs=none
 pkgname=bc
-pkgver=1.07.1
-urls="ftp://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-srctar=${pkgname}-${pkgver}.tar.gz
-relmon_id=170
+pkgver=2.1.1
+vcs=git
+gittag=${pkgver}
 
 kiin_make() {
-    cat > bc/fix-libmath_h << "EOF"
-#! /bin/bash
-sed -e '1   s/^/{"/' \
-    -e     's/$/",/' \
-    -e '2,$ s/^/"/'  \
-    -e   '$ d'       \
-    -i libmath.h
-
-sed -e '$ s/$/0}/' \
-    -i libmath.h
-EOF
-    ./configure --prefix=/usr \
-        --mandir=/usr/share/man \
-        --infodir=/usr/share/info \
-        --with-readline
+    PREFIX=/usr CC=gcc CFLAGS="-std=c99" ./configure.sh -G -O3
     make
 }
 
