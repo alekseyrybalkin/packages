@@ -72,7 +72,6 @@ patch
 tar
 texinfo
 man-db
-unzip
 openssl
 tcl
 tk
@@ -214,7 +213,6 @@ tinyproxy
 # tools: more productivity
 acpi
 socat
-zip
 lightlang
 pinentry
 gnupg
