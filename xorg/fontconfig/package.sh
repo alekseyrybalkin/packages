@@ -36,7 +36,9 @@ kiin_after_upgrade() {
     kiin_after_install
 }
 
-known="/usr/share/fonts/TTF/.uuid \
-    /usr/share/fonts/X11/encodings/.uuid \
-    /usr/share/fonts/X11/.uuid \
-    /usr/share/fonts/.uuid"
+known="usr/share/fonts/TTF/.uuid \
+    usr/share/fonts/X11/encodings/.uuid \
+    usr/share/fonts/X11/.uuid \
+    usr/share/fonts/.uuid \
+    usr/share/fonts/TTF/fonts.scale \
+    usr/share/fonts/TTF/fonts.dir"

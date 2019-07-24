@@ -315,8 +315,7 @@ openjdk
 # gui
 xclip
 kitty
-ttf-dejavu
-ttf-ubuntu
+ttf-fonts
 sdl2_ttf
 fluxbox
 atk
