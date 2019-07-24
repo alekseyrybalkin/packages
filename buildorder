@@ -32,7 +32,6 @@ shadow
 psmisc
 procps
 m4
-iana-etc
 grep
 readline
 bash
