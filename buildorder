@@ -142,7 +142,6 @@ apr-util
 scons
 serf
 subversion
-perl-error
 asciidoc
 xmlto
 git
