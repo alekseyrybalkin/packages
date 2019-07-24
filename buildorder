@@ -296,7 +296,6 @@ mtdev
 libevdev
 libinput
 xf86-input-libinput
-xcursor-neutral
 libva
 libva-intel-driver
 freeglut
