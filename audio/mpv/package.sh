@@ -8,6 +8,9 @@ relmon_id=5348
 relmon_sed='s/v//g'
 
 kiin_make() {
+    # enable lua 5.3
+    patch -Np1 -i ../lua53.patch
+
     git clone -n -s `find_vcs_repo waf` waf-clone
     cd waf-clone
     git checkout waf-2.0.17
