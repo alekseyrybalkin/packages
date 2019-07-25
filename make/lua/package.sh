@@ -5,6 +5,7 @@ _release=5.3
 pkgver=${_release}.5
 vcs=git
 gittag=v${pkgver}
+relmon_id=1847
 
 kiin_make() {
     sed -i -e 's/local\///g' luaconf.h
