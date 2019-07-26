@@ -6,7 +6,7 @@ vcs=git
 gittag=libgpg-error-${pkgver}
 relmon_id=1628
 
-kiin_make() {
+build() {
     ./autogen.sh
     sed -i 's/namespace/pkg_&/' src/Makefile.{am,in} src/mkstrtable.awk
     ./configure --enable-maintainer-mode \
@@ -17,6 +17,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

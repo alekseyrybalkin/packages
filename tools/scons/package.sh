@@ -6,11 +6,11 @@ vcs=git
 gittag=${pkgver}
 relmon_id=4770
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     python2 bootstrap.py
     tar xvf build/dist/scons-${pkgver}.tar.gz
     cd scons-${pkgver}

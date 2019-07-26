@@ -6,12 +6,12 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=8868
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

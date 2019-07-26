@@ -7,10 +7,10 @@ vcs=git
 vcs_pkgname=pallets-sphinx-themes
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --prefix=/usr --root=${pkgdir}
 }

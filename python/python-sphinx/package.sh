@@ -8,7 +8,7 @@ gittag=v${pkgver}
 relmon_id=4031
 contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp log-cabinet"
 
-kiin_make() {
+build() {
     make build
 
     for c in ${contrib}; do
@@ -18,7 +18,7 @@ kiin_make() {
     done
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 
     for c in ${contrib}; do

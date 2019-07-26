@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=96
 
-kiin_make() {
+build() {
     cd ../
     git clone -s `find_vcs_repo apr` apr
     sed -i -e 's/python/python2/g' apr/build/gen-build.py
@@ -24,6 +24,6 @@ kiin_make() {
     rm -rf apr
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

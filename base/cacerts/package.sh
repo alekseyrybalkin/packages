@@ -6,11 +6,11 @@ pkgver=20190604
 vcs=mercurial
 vcs_pkgname=nss
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     mkdir build
     cd build
     cp ../lib/ckfw/builtins/certdata.txt .

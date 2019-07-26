@@ -6,11 +6,11 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=4217
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr --without-included-zlib
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

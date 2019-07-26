@@ -8,7 +8,7 @@ gittag=a4a331b7eea141b13c04f79feff3fe7d8f4e0507
 #gittag=inetutils-${pkgver//\./_}
 relmon_id=13805
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
@@ -23,6 +23,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

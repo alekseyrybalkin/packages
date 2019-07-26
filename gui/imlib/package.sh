@@ -7,11 +7,11 @@ vcs=git
 vcs_pkgname=imlib2
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=5781
 
-kiin_make() {
+build() {
     mkdir build
     meson --prefix=$XORG_PREFIX \
         -D libexecdir=/usr/lib \
@@ -19,6 +19,6 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }

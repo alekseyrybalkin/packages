@@ -6,7 +6,7 @@ vcs=git
 gittag=libdrm-${pkgver}
 relmon_id=1596
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=$XORG_PREFIX \
         --enable-udev \
         --disable-cairo-tests \
@@ -14,6 +14,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

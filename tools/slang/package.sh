@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=4829
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
@@ -15,7 +15,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install-all
 }

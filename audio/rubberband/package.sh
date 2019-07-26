@@ -6,7 +6,7 @@ vcs=mercurial
 hgtag=v${pkgver}
 relmon_id=4222
 
-kiin_make() {
+build() {
     patch -Np1 -i ../kissfft.patch
 
     sed -i -e '/cp.*JNI_TARGET/d' Makefile.in
@@ -30,6 +30,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

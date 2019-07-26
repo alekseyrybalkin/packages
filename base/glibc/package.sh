@@ -1,13 +1,13 @@
 #!/bin/sh
 
-KIIN_NO_STRIPPING=1
+NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.29
 vcs=git
 gittag=remotes/origin/origin/release/${pkgver}/master
 relmon_id=5401
 
-kiin_make() {
+build() {
     mkdir -v glibc-build
     cd glibc-build
     echo "sbindir=/usr/bin" >> configparms
@@ -30,20 +30,20 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd glibc-build
     make install_root=${pkgdir} install
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/lib64
 }
 
-kiin_after_install() {
+after_install() {
     localedef -i en_US -f UTF-8 en_US.UTF-8
     localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="usr/lib/locale/locale-archive"

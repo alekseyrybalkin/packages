@@ -6,12 +6,12 @@ vcs=git
 gittag=libXft-${pkgver}
 relmon_id=1777
 
-kiin_make() {
+build() {
     sed -i -e 's/<freetype/<freetype2/g' src/xftglyphs.c
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

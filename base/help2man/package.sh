@@ -7,7 +7,7 @@ urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1309
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr \
         --mandir=/usr/share/man \
         --infodir=/usr/share/info \
@@ -15,6 +15,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=xkbcommon-${pkgver}
 relmon_id=1780
 
-kiin_make() {
+build() {
     mkdir build
     meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc \
         -D enable-wayland=false \
@@ -15,6 +15,6 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }

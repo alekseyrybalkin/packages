@@ -7,7 +7,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1847
 
-kiin_make() {
+build() {
     sed -i -e 's/local\///g' luaconf.h
     rm makefile
     cp ../Makefile.src ./Makefile
@@ -25,7 +25,7 @@ kiin_make() {
     make MYCFLAGS="${CFLAGS} -fPIC" linux
 }
 
-kiin_install() {
+package() {
     make \
         TO_LIB="liblua.a liblua.so liblua.so.${_release} liblua.so.${pkgver}" \
         INSTALL_DATA='cp -d' \

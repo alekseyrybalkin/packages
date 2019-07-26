@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=137
 relmon_sed='s/\.src//g'
 
-kiin_make() {
+build() {
     sed -i -e 's/po//g' Makefile.am
     libtoolize -i
     autoreconf -f -i
@@ -19,6 +19,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

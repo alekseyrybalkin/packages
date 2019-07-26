@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=12244
 
-kiin_make() {
+build() {
     patch -Np1 -i ../remove_browser_dep.patch
 
     ./autogen.sh
@@ -19,7 +19,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 
     # set unix_chkpwd uid

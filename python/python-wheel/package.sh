@@ -8,10 +8,10 @@ hgtag=${pkgver}
 # alpha versions
 #relmon_id=11428
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

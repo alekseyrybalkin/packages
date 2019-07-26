@@ -5,13 +5,13 @@ pkgver=64.2
 vcs=git
 gittag=release-${pkgver//\./-}
 
-kiin_make() {
+build() {
     cd icu4c/source
     ./configure --prefix=/usr --sbindir=/usr/bin
     make
 }
 
-kiin_install() {
+package() {
     cd icu4c/source
     make DESTDIR=${pkgdir} install
 }

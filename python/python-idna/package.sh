@@ -7,10 +7,10 @@ vcs_pkgname=idna
 gittag=v${pkgver}
 relmon_id=5487
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

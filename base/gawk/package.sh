@@ -6,7 +6,7 @@ vcs=git
 gittag=gawk-${pkgver}
 relmon_id=868
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
     mkdir -p -v ${pkgdir}/usr/share/doc/gawk

@@ -6,13 +6,13 @@ vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=4784
 
-kiin_make() {
+build() {
     touch NEWS README AUTHORS ChangeLog
     autoreconf -vi
     ./configure --disable-static --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

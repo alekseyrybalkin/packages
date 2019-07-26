@@ -7,14 +7,14 @@ vcs_pkgname=setuptools
 gittag=v${pkgver}
 relmon_id=4021
 
-kiin_make() {
+build() {
     sed -i -e 's/launcher manifest/launcher_manifest/g' setuptools/command/easy_install.py
     mv setuptools/command/launcher{\ ,_}manifest.xml
     python bootstrap.py
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --prefix=/usr \
         --root=${pkgdir} --optimize=1 --skip-build
     # remove files with spaces in filenames

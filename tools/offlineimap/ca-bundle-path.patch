@@ -6,7 +6,7 @@ index 87bb2b1..27dae88 100644
      'linux-suse': '/etc/ssl/ca-bundle.pem',
      'linux-opensuse': '/etc/ssl/ca-bundle.pem',
      'linux-arch': '/etc/ssl/certs/ca-certificates.crt',
-+    'linux-kiin': '/etc/ssl/ca-bundle.crt',
++    'linux-jinni': '/etc/ssl/ca-bundle.crt',
  }
  
  
@@ -14,8 +14,8 @@ index 87bb2b1..27dae88 100644
              OS = OS + "-%s" % DISTRO.split()[0].lower()
          if os.path.exists('/etc/arch-release'):
              OS = "linux-arch"
-+        if os.path.exists('/etc/kiin.conf.bash'):
-+            OS = "linux-kiin"
++        if os.path.exists('/etc/ji.conf'):
++            OS = "linux-jinni"
  
      return OS
  

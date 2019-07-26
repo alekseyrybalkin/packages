@@ -7,10 +7,10 @@ vcs_pkgname=seaborn
 gittag=v${pkgver}
 relmon_id=7691
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

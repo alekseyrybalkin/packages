@@ -9,12 +9,12 @@ gittag=48cb9c83bfc00b1c5cb44308b9ed2f31fb629b42
 relmon_id=12105
 relmon_sed='s/ragel-//g;s/\.tar\.gz//g'
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,12 +6,12 @@ vcs=bzr
 bzrrev=793
 relmon_id=3689
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

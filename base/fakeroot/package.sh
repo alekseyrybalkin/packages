@@ -9,7 +9,7 @@ gittag=dc2e20a65d1fb3a4c49bb6121a0e5caf3f1b321a
 relmon_id=12048
 relmon_sed='s/\.orig//g'
 
-kiin_make() {
+build() {
     sed -i -e '/man_MANS/d' doc/Makefile.am
     sed -i -e 's/de es fr nl pt sv//g' doc/Makefile.am
     patch -p1 -i ../silence-dlerror.patch
@@ -19,7 +19,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -dm755 ${pkgdir}/etc/ld.so.conf.d/
     echo '/usr/lib/libfakeroot' > ${pkgdir}/etc/ld.so.conf.d/fakeroot.conf

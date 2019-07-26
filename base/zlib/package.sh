@@ -6,11 +6,11 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=5303
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

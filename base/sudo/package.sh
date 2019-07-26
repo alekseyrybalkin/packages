@@ -8,7 +8,7 @@ vcs=mercurial
 hgtag=SUDO_${pkgver//\./_}
 relmon_id=4906
 
-kiin_make() {
+build() {
     ./autogen.sh
     sed -i -e 's/-lshadow//g' configure
     sed -i -e 's/-lshadow//g' configure.ac
@@ -25,7 +25,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     # do not replace /etc/sudoers, since it is in git repo now
     mv -v ${pkgdir}/etc/sudoers{,.packaged}

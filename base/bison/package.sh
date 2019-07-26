@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=193
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo gnulib`
     cd submodules
     git clone -s `find_vcs_repo autoconf`
@@ -19,6 +19,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,11 +6,11 @@ vcs=git
 gittag=libXScrnSaver-${pkgver}
 relmon_id=1791
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

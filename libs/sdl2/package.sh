@@ -6,7 +6,7 @@ vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=4779
 
-kiin_make() {
+build() {
     ./autogen.sh
     mkdir sdl-build
     cd sdl-build
@@ -26,7 +26,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd sdl-build
     make DESTDIR=${pkgdir} install
     sed -i "s/libSDL2\.a/libSDL2main.a/g" ${pkgdir}/usr/lib/cmake/SDL2/SDL2Targets-noconfig.cmake

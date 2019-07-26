@@ -6,13 +6,13 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1705
 
-kiin_make() {
+build() {
     autoreconf -fi
     ./configure --prefix=/usr --disable-static
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     mkdir -p ${pkgdir}/usr/share/doc/${pkgname}
     cp README libpng-manual.txt ${pkgdir}/usr/share/doc/${pkgname}

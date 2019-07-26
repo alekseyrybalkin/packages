@@ -7,7 +7,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1741
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
@@ -15,7 +15,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

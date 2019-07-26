@@ -5,11 +5,11 @@ pkgver=2.1.1
 vcs=git
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     PREFIX=/usr CC=gcc CFLAGS="-std=c99" ./configure.sh -G -O3
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

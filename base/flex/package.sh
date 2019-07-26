@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=819
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
     ln -sv flex ${pkgdir}/usr/bin/lex

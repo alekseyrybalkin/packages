@@ -6,7 +6,7 @@ vcs=git
 gittag=curl-${pkgver//\./_}
 relmon_id=381
 
-kiin_make() {
+build() {
     # apparently, curl cannot autodetect PATH_SEPARATOR when there is only one
     # item in $PATH (see zz40-xc-ovr.m4)
     PATH=${PATH}:/bin
@@ -18,7 +18,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     find docs \( -name "Makefile*" -o -name "*.1" -o -name "*.3" \) -exec rm {} \;
     install -v -d -m755 ${pkgdir}/usr/share/doc/curl

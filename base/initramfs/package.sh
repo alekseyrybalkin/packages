@@ -5,15 +5,15 @@ pkgname=initramfs
 SKIP_ARCH_CHECK=1
 pkgver=1
 
-kiin_make() {
+build() {
     true
 }
 
-kiin_install() {
+package() {
     cd ../
-    ./mkinitramfs kiin
+    ./mkinitramfs jinni
     ./mkinitramfs arch
     mkdir -p ${pkgdir}/boot
-    mv -v initrd-kiin ${pkgdir}/boot
+    mv -v initrd-jinni ${pkgdir}/boot
     mv -v initrd-arch ${pkgdir}/boot
 }

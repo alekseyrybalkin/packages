@@ -6,12 +6,12 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1560
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --enable-harfbuzz --enable-fontconfig --disable-static
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

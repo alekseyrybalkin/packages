@@ -6,13 +6,13 @@ vcs=git
 gittag=hostap_${pkgver//\./_}
 relmon_id=5146
 
-kiin_make() {
+build() {
     cp ../config ${pkgname}/.config
     cd ${pkgname}
     make BINDIR=/usr/bin LIBDIR=/lib
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/man/man5
     mkdir -p ${pkgdir}/usr/share/man/man8

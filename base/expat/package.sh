@@ -7,14 +7,14 @@ vcs_pkgname=libexpat
 gittag=R_${pkgver//\./_}
 relmon_id=770
 
-kiin_make() {
+build() {
     cd expat
     ./buildconf.sh
     ./configure --prefix=/usr --disable-static --without-xmlwf
     make
 }
 
-kiin_install() {
+package() {
     cd expat
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/expat

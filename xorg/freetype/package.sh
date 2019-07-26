@@ -8,12 +8,12 @@ vcs_pkgname=freetype2
 gittag=VER-${pkgver//\./-}
 relmon_id=854
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

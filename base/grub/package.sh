@@ -9,7 +9,7 @@ gittag=${pkgver}
 relmon_id=1258
 relmon_sed='s/~/\./g'
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR="${pkgdir}/" install
     mkdir -pv ${pkgdir}/boot/grub/i386-pc
     cp -av ${pkgdir}/usr/lib/grub/i386-pc/*.{mod,lst} ${pkgdir}/boot/grub/i386-pc

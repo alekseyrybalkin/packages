@@ -7,12 +7,12 @@ vcs=git
 vcs_pkgname=miniupnp
 gittag=miniupnpc_${pkgver//\./_}
 
-kiin_make() {
+build() {
     cd miniupnpc
     make
 }
 
-kiin_install() {
+package() {
     cd miniupnpc
     make DESTDIR=${pkgdir} install
 }

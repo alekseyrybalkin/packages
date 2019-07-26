@@ -11,11 +11,11 @@ srczip=${pkgname}-${pkgver}.zip
 srcdir=${location}
 #FIXME: no update check for this package!
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     install -v -d -m755 ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
     install -v -d -m755 ${pkgdir}/etc/xml
     chown -R root:root .
@@ -23,7 +23,7 @@ kiin_install() {
         ${pkgdir}/usr/share/xml/docbook/xml-dtd-${pkgver}
 }
 
-kiin_after_install() {
+after_install() {
     if [ ! -e /etc/xml/docbook ]; then
         xmlcatalog --noout --create /etc/xml/docbook
     fi
@@ -116,8 +116,8 @@ kiin_after_install() {
     done
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="etc/xml/docbook \

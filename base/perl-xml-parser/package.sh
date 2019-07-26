@@ -8,12 +8,12 @@ vcs=git
 gittag=v${_ver}_0${_minor}
 relmon_id=3531
 
-kiin_make() {
+build() {
     perl Makefile.PL INSTALLDIRS=vendor
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

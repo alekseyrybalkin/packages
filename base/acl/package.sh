@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=16
 relmon_sed='s/\.src//g'
 
-kiin_make() {
+build() {
     sed -i -e 's/po//g' Makefile.am
     sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
         libacl/__acl_to_any_text.c
@@ -22,6 +22,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

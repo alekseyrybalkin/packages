@@ -7,12 +7,12 @@ vcs_pkgname=default-icon-theme
 gittag=${pkgver}
 relmon_id=1316
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }
 

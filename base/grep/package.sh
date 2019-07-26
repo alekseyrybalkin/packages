@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1251
 
-kiin_make() {
+build() {
     # build: avoid build failure with --enable-gcc-warnings
     git cherry-pick 6861bd8698b3177816fcc4d1a892df6e0701f1f6
     git clone -s `find_vcs_repo gnulib`
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

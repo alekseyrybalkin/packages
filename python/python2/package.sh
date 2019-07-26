@@ -8,7 +8,7 @@ vcs_pkgname=python
 gittag=v${pkgver}
 relmon_id=13255
 
-kiin_make() {
+build() {
     rm -rf .git .gitignore .bzrignore .hgeol .hgignore .hgtags
 
     # do not use berkeley db
@@ -51,7 +51,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} altinstall
 
     ln -sf python${_pybasever}        ${pkgdir}/usr/bin/python2

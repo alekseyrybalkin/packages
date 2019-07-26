@@ -8,7 +8,7 @@ vcs=git
 gittag=${pkgver}
 #relmon_id=5420
 
-kiin_make() {
+build() {
     # disable gtk-doc
     sed -i -e '/gtkdocize/d' autogen.sh
     sed -i -e '/doc\//d' configure.ac
@@ -22,14 +22,14 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }
 
-kiin_after_install() {
+after_install() {
     gdk-pixbuf-query-loaders --update-cache
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

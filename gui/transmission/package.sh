@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=5002
 
-kiin_make() {
+build() {
     sed -i -e '/gtr_get_favicon/d' gtk/details.c
     sed -i -e '/gtr_get_favicon/d' gtk/filter.c
     rm m4/glib-gettext.m4
@@ -14,6 +14,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

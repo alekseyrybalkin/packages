@@ -6,11 +6,11 @@ vcs=git
 vcs_pkgname=intel-vaapi-driver
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,16 +6,16 @@ vcs=git
 pkgver=5.2.2
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     make mrproper
     cp -v ../config-x86_64 .config
     make
     make htmldocs
 }
 
-kiin_install() {
+package() {
     mkdir -pv ${pkgdir}/boot
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-kiin
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-jinni
     cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-arch
     mkdir -pv ${pkgdir}/usr/share/doc
     cp -r Documentation/output ${pkgdir}/usr/share/doc/linux

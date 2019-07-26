@@ -7,7 +7,7 @@ vcs_pkgname=llvm
 gittag=llvmorg-${pkgver}
 relmon_id=1830
 
-kiin_make() {
+build() {
     cd lld
     mkdir -v build
     cd build
@@ -20,7 +20,7 @@ kiin_make() {
     ninja
 }
 
-kiin_install() {
+package() {
     cd lld
     cd build
     DESTDIR=${pkgdir} ninja install

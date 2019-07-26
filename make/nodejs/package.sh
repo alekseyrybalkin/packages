@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=8251
 
-kiin_make() {
+build() {
     find -type f -exec sed \
         -e 's_^#!/usr/bin/env python$_&2_' \
         -e 's_^\(#!/usr/bin/python2\).[45]$_\1_' \
@@ -25,6 +25,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

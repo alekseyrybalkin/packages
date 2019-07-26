@@ -7,7 +7,7 @@ vcs_pkgname=mpfr-git-svn
 gittag=origin/tags/${pkgver}
 relmon_id=2019
 
-kiin_make() {
+build() {
     mkdir m4
     ./autogen.sh
     ./configure --prefix=/usr \
@@ -19,7 +19,7 @@ kiin_make() {
     make html
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install-html
 }

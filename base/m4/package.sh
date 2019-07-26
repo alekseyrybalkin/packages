@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1871
 
-kiin_make() {
+build() {
     export CFLAGS="${CFALGS} -Wno-attributes -Wno-abi -Wimplicit-fallthrough=0"
 
     git clone -s `find_vcs_repo gnulib`
@@ -20,6 +20,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make prefix=${pkgdir}/usr install
 }

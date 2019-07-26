@@ -6,13 +6,13 @@ vcs=git
 gittag=release-${pkgver}-stable
 relmon_id=1606
 
-kiin_make() {
+build() {
     sed -i 's#python#python2#' event_rpcgen.py
     autoreconf -fi
     ./configure --prefix=/usr --sysconfdir=/etc
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,7 +6,7 @@ vcs=git-svn
 vcs_pkgname=lame-git-svn
 gittag=origin/tags/RELEASE__${pkgver//\./_}
 
-kiin_make() {
+build() {
     cd lame
     ./configure --prefix=/usr \
         --enable-mp3rtp \
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd lame
     make DESTDIR=${pkgdir} pkghtmldir=/usr/share/doc/lame-${pkgver} install
 }

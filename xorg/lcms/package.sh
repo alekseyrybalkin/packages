@@ -8,11 +8,11 @@ gittag=lcms${pkgver}
 # rc versions
 #relmon_id=9815
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

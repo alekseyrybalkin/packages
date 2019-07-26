@@ -7,10 +7,10 @@ vcs_pkgname=itsdangerous
 gittag=${pkgver}
 relmon_id=3892
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --prefix=/usr --root=${pkgdir}
 }

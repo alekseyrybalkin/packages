@@ -7,7 +7,7 @@ vcs=git
 gittag=remotes/origin/stable/v${pkgver}-stable
 relmon_id=5440
 
-kiin_make() {
+build() {
     sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
 
     mkdir -p build
@@ -33,7 +33,7 @@ kiin_make() {
     ninja
 }
 
-kiin_install() {
+package() {
     cd build
     DESTDIR=${pkgdir} ninja install
     rm -rvf ${pkgdir}/var
@@ -54,7 +54,7 @@ session  include system-login
 EOF
 }
 
-kiin_after_install() {
+after_install() {
     systemd-machine-id-setup
 }
 

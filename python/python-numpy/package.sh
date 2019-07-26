@@ -7,10 +7,10 @@ vcs_pkgname=numpy
 gittag=v${pkgver}
 relmon_id=2509
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --prefix=/usr --root=${pkgdir} --optimize=1
 }

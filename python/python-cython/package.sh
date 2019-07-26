@@ -8,10 +8,10 @@ vcs_pkgname=cython
 gittag=${pkgver}
 relmon_id=12679
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

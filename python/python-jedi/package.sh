@@ -7,11 +7,11 @@ vcs_pkgname=jedi
 gittag=v${pkgver}
 relmon_id=3893
 
-kiin_make() {
+build() {
     git clone `find_vcs_repo typeshed` jedi/third_party/typeshed
     git submodule update --init
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

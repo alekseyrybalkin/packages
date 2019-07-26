@@ -6,12 +6,12 @@ vcs_pkgname=linux
 pkgver=5.2.2
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     make mrproper
     make headers_check
 }
 
-kiin_install() {
+package() {
     make INSTALL_HDR_PATH=dest headers_install
     find dest/include \( -name .install -o -name ..install.cmd \) -delete
     mkdir -pv ${pkgdir}/usr/include

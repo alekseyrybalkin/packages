@@ -6,7 +6,7 @@ vcs=git
 gittag=xorg-server-${pkgver}
 relmon_id=5250
 
-kiin_make() {
+build() {
     # use openssl for sha1 implementation instead of nettle
     sed -i -e "s/'nettle'/'openssl'/g" meson.build
     sed -i -e "s/sha1_dep = nettle_dep/sha1_dep = cc.find_library('crypto', required : false)/g" meson.build
@@ -17,7 +17,7 @@ kiin_make() {
     mkdir build
     meson --prefix=$XORG_PREFIX \
         -D libexecdir=/usr/lib \
-        -D os_vendor="kiin GNU/Linux" \
+        -D os_vendor="Jinni GNU/Linux" \
         -D ipv6=true \
         -D xcsecurity=true \
         -D xorg=true \
@@ -35,7 +35,7 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
     ln -s /usr/bin/Xorg ${pkgdir}/usr/bin/X
 

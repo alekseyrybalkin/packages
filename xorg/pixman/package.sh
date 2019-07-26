@@ -6,11 +6,11 @@ vcs=git
 gittag=pixman-${pkgver}
 relmon_id=3648
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr --disable-static --disable-gtk --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

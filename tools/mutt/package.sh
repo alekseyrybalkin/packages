@@ -7,7 +7,7 @@ vcs=git
 gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
 
-kiin_make() {
+build() {
     rm -rf .git
     autoreconf -fi
     ./configure --prefix=/usr --sysconfdir=/etc \
@@ -19,6 +19,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

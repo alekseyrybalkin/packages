@@ -6,10 +6,10 @@ vcs=git
 vcs_pkgname=parso
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

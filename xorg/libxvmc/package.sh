@@ -6,11 +6,11 @@ vcs=git
 gittag=libXvMC-${pkgver}
 relmon_id=1796
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

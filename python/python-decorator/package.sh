@@ -6,10 +6,10 @@ vcs=git
 vcs_pkgname=decorator
 gittag=remotes/origin/origin/${pkgver}
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

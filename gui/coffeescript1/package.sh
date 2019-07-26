@@ -6,7 +6,7 @@ vcs=git
 vcs_pkgname=coffeescript
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     rm -rf .git .gitignore
     cd ../
     cp -r coffeescript{1,}-${pkgver}
@@ -14,7 +14,7 @@ kiin_make() {
     rm -rf coffeescript-${pkgver}
 }
 
-kiin_install() {
+package() {
     cd ..
     npm install -g --user root --prefix ${pkgdir}/usr coffeescript-${pkgver}.tgz
 

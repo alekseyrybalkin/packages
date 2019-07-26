@@ -7,11 +7,11 @@ gittag=${pkgver}
 # development versions
 #relmon_id=1223
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

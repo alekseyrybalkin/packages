@@ -7,10 +7,10 @@ vcs_pkgname=kiwi
 gittag=${pkgver}
 relmon_id=16910
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

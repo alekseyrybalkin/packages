@@ -7,7 +7,7 @@ gittag=libnl${pkgver//\./_}
 relmon_id=1684
 relmon_sed='s/_/\./g'
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

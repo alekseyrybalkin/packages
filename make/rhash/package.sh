@@ -7,13 +7,13 @@ gittag=v${pkgver}
 relmon_id=13843
 relmon_sed='s/v//g'
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr \
         --sysconfdir=/etc
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
     make -C librhash DESTDIR=${pkgdir} install-lib-headers install-lib-shared install-lib-static install-so-link

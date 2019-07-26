@@ -10,12 +10,12 @@ srctar=${pkgname}-nons-${pkgver}.tar.gz
 srcdir=${location}/${pkgname}-nons-${pkgver}
 relmon_id=13115
 
-kiin_make() {
+build() {
     :
     #cd xsl
 }
 
-kiin_install() {
+package() {
     #cd xsl
     install -v -m755 -d ${pkgdir}/usr/share/xml/docbook/xsl-stylesheets-${pkgver}
     cp -v -R VERSION common eclipse epub extensions fo highlighting html \
@@ -29,7 +29,7 @@ kiin_install() {
         ${pkgdir}/usr/share/doc/docbook-xsl-${pkgver}/README.txt
 }
 
-kiin_after_install() {
+after_install() {
     if [ ! -d /etc/xml ]; then
         install -v -m755 -d /etc/xml
     fi
@@ -54,6 +54,6 @@ kiin_after_install() {
         /etc/xml/catalog
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

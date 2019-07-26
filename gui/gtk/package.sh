@@ -8,7 +8,7 @@ gittag=${pkgver}
 # development versions
 #relmon_id=10018
 
-kiin_make() {
+build() {
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
@@ -22,17 +22,17 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }
 
-kiin_after_install() {
+after_install() {
     gtk-query-immodules-3.0 --update-cache
     glib-compile-schemas /usr/share/glib-2.0/schemas
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="usr/lib/gtk-3.0/3.0.0/immodules.cache"

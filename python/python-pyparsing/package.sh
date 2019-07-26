@@ -7,10 +7,10 @@ vcs_pkgname=pyparsing
 gittag=pyparsing_${pkgver}
 relmon_id=3756
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

@@ -6,12 +6,12 @@ vcs=git
 gittag=Release-${pkgver//\./_}
 relmon_id=824
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-imlib2
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,7 +6,7 @@ vcs=git
 gittag=gcc-${pkgver//\./_}-release
 relmon_id=6502
 
-kiin_make() {
+build() {
     # do not run fixincludes
     sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
     mkdir -v gcc-build
@@ -21,7 +21,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd gcc-build
     make DESTDIR=${pkgdir} install
     ln -sv ../bin/cpp ${pkgdir}/usr/lib

@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=95
 
-kiin_make() {
+build() {
     sed -i -e 's/python/python2/g' build/gen-build.py
     ./buildconf
     sed -i -e 's/$RM "$cfgfile"/$RM -f "$cfgfile"/g' configure
@@ -17,7 +17,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }

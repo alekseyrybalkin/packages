@@ -6,7 +6,7 @@ vcs=git
 gittag=json-c-${pkgver}-20180305
 relmon_id=1477
 
-kiin_make() {
+build() {
     autoreconf -fi
     sed -i s/-Werror// Makefile.in
     ./configure --prefix=/usr \
@@ -14,6 +14,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -6,11 +6,11 @@ vcs=git
 gittag=libXv-${pkgver}
 relmon_id=1795
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

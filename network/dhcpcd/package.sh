@@ -6,7 +6,7 @@ vcs=git
 gittag=dhcpcd-${pkgver}
 relmon_id=11429
 
-kiin_make() {
+build() {
     ./configure --libexecdir=/usr/lib/dhcpcd \
         --dbdir=/run \
         --sbindir=/usr/bin \
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/lib/dhcpcd/* ${pkgdir}/usr/lib/dhcpcd
     rm -rf ${pkgdir}/lib

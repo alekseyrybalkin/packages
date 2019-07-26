@@ -8,11 +8,11 @@ vcs_pkgname=youtube-dl
 gittag=${pkgver}
 relmon_id=5292
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
     rm -rf ${pkgdir}/usr/etc
 }

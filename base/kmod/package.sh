@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1517
 
-kiin_make() {
+build() {
     touch libkmod/docs/gtk-doc.make
     autoreconf -f -i
     ./configure --prefix=/usr \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} pkgconfigdir=/usr/lib/pkgconfig install
     for target in depmod insmod modinfo modprobe rmmod; do
         ln -sv kmod ${pkgdir}/usr/bin/${target}

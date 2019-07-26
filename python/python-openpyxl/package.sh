@@ -8,10 +8,10 @@ hgtag=${pkgver}
 # beta versions
 #relmon_id=8098
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

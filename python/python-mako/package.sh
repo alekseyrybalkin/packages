@@ -7,10 +7,10 @@ vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}
 relmon_id=3915
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

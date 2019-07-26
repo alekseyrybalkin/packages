@@ -5,11 +5,11 @@ pkgname=which
 SKIP_ARCH_CHECK=1
 pkgver=1
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/bin
     cp ../which.sh ${pkgdir}/usr/bin/which
     chmod 755 ${pkgdir}/usr/bin/which

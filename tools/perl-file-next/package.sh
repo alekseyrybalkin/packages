@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=2895
 
-kiin_make() {
+build() {
     PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
         PERL_AUTOINSTALL=--skipdeps \
         PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR=${pkgdir}" \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete

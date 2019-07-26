@@ -6,12 +6,12 @@ vcs=git
 gittag=${pkgver}
 relmon_id=17
 
-kiin_make() {
+build() {
     autoreconf -fi
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

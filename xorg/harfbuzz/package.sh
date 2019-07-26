@@ -6,11 +6,11 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1299
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

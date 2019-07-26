@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=4905
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     export PYTHON=/usr/bin/python2
     ./autogen.sh
@@ -25,7 +25,7 @@ kiin_make() {
     make swig-pl
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     export LD_LIBRARY_PATH=${pkgdir}/usr/lib:${LD_LIBRARY_PATH}
     make DESTDIR=${pkgdir} install

@@ -7,7 +7,7 @@ vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=5413
 
-kiin_make() {
+build() {
     ./auto/configure --prefix=/etc/nginx \
         --conf-path=/etc/nginx/nginx.conf \
         --sbin-path=/usr/bin/nginx \
@@ -46,14 +46,14 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/{var,run}
     mv -v ${pkgdir}/etc/nginx/nginx.conf{,.packaged}
     install -Dm644 ../nginx.service ${pkgdir}/usr/lib/systemd/system/nginx.service
 }
 
-kiin_after_install() {
+after_install() {
     getent group http >/dev/null || groupadd -g 33 http
     getent passwd http >/dev/null || \
         useradd -c 'nginx' -d /var/lib/nginx -g http \
@@ -61,6 +61,6 @@ kiin_after_install() {
     chown -R http: /var/log/nginx /var/lib/nginx
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

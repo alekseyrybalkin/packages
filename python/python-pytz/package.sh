@@ -7,7 +7,7 @@ vcs_pkgname=pytz
 gittag=release_${pkgver}
 relmon_id=6537
 
-kiin_make() {
+build() {
     patch -Np1 -i ../gen_tzdata_fix.patch
     MAKEFLAGS=
     sed -i -e 's/python2.4/python2.7/g' Makefile
@@ -25,7 +25,7 @@ kiin_make() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     cd src
     python setup.py install --root=${pkgdir}
     cp -r ../build/dist/build/lib/pytz/* ${pkgdir}/usr/lib/python3.7/site-packages/pytz

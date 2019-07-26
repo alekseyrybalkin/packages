@@ -7,11 +7,11 @@ gittag=v${pkgver}
 relmon_id=2089
 relmon_sed='s/v//g'
 
-kiin_make() {
+build() {
     python configure.py --bootstrap
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/bin
     install -vm755 ninja ${pkgdir}/usr/bin/
 }

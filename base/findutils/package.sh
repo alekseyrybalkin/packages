@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=812
 
-kiin_make() {
+build() {
     export DO_NOT_WANT_CHANGELOG_DRIVER=1
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var

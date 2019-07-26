@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=306
 
-kiin_make() {
+build() {
     ./bootstrap --prefix=/usr \
         --system-libs \
         --mandir=/share/man \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     # remove files with spaces
     rm -rf ${pkgdir}/usr/share/cmake-*/Help/generator

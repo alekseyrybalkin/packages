@@ -7,7 +7,7 @@ vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}
 relmon_id=7981
 
-kiin_make() {
+build() {
     rm -rf gdb libdecnumber readline sim zlib
     mkdir -v binutils-build
     cd binutils-build
@@ -21,7 +21,7 @@ kiin_make() {
     make tooldir=${pkgdir}/usr
 }
 
-kiin_install() {
+package() {
     cd binutils-build
     make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
 }

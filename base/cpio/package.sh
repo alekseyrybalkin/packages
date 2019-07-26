@@ -6,7 +6,7 @@ vcs=git
 gittag=release_${pkgver//\./_}
 relmon_id=353
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo gnulib`
     git clone -s `find_vcs_repo paxutils`
     sed -i -e 's/lib\ pax/lib/g' bootstrap.conf
@@ -24,7 +24,7 @@ kiin_make() {
     makeinfo --plaintext -o doc/cpio.txt doc/cpio.texi
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/cpio-${pkgver}/html
     install -v -m644 doc/html/* \

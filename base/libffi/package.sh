@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1611
 
-kiin_make() {
+build() {
     ./autogen.sh
     # Make package install headers into /usr/include instead of /usr/lib/libffi-${pkgver}/include
     sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in
@@ -17,7 +17,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib/
     rmdir ${pkgdir}/usr/lib64

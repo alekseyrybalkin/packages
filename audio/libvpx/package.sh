@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=11083
 
-kiin_make() {
+build() {
     mkdir libvpx-build
     cd libvpx-build
     ../configure --prefix=/usr \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd libvpx-build
     make DESTDIR=${pkgdir} install
 }

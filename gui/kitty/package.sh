@@ -6,10 +6,10 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=17405
 
-kiin_make() {
+build() {
     python setup.py linux-package --update-check-interval=0
 }
 
-kiin_install() {
+package() {
     cp -r linux-package ${pkgdir}/usr
 }

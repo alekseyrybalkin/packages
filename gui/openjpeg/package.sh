@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=8468
 
-kiin_make() {
+build() {
     mkdir build
     cd build
     cmake .. \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd build
     make DESTDIR=${pkgdir} install
 }

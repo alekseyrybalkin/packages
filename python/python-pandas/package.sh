@@ -7,11 +7,11 @@ vcs_pkgname=pandas
 gittag=v${pkgver}
 relmon_id=7578
 
-kiin_make() {
+build() {
     python setup.py build_ext --inplace
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
 }

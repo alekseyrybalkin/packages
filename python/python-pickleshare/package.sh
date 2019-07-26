@@ -7,10 +7,10 @@ vcs_pkgname=pickleshare
 gittag=${pkgver}
 relmon_id=12037
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --prefix=/usr --optimize=0
 }

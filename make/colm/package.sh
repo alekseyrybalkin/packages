@@ -9,12 +9,12 @@ gittag=46488f5222650183e236ad27e6bb9bf3a428bfb6
 #gittag=colm-${pkgver}
 relmon_id=12622
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

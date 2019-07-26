@@ -6,7 +6,7 @@ vcs=git
 gittag=libksba-${pkgver}
 relmon_id=1649
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
@@ -14,6 +14,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

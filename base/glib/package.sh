@@ -8,7 +8,7 @@ gittag=${pkgver}
 # development versions
 #relmon_id=10024
 
-kiin_make() {
+build() {
     mkdir build
     cd build
 
@@ -20,7 +20,7 @@ kiin_make() {
     ninja
 }
 
-kiin_install() {
+package() {
     cd build
     DESTDIR=${pkgdir} meson install
     python -m compileall -d /usr/share/glib-2.0/codegen ${pkgdir}/usr/share/glib-2.0/codegen

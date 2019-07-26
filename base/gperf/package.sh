@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1237
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo gnulib`
     for file in build-aux/install-sh build-aux/mkinstalldirs \
                 build-aux/compile build-aux/ar-lib; do
@@ -18,6 +18,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

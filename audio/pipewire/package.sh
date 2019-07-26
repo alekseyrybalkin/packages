@@ -5,7 +5,7 @@ pkgver=0.2.6
 vcs=git
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
@@ -15,6 +15,6 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }

@@ -6,13 +6,13 @@ vcs=git
 gittag=texinfo-${pkgver}
 relmon_id=4958
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }
 

@@ -6,13 +6,13 @@ vcs=git
 gittag=npth-${pkgver}
 relmon_id=2505
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --build=x86_64-unknown-linux-gnu
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

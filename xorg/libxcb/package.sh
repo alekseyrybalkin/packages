@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1767
 
-kiin_make() {
+build() {
     sed -e "s/pthread-stubs//" -i configure.ac
     ./autogen.sh $XORG_CONFIG \
         --enable-xinput --enable-xkb \
@@ -15,6 +15,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

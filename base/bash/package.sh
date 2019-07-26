@@ -10,7 +10,7 @@ vcs=git
 gittag=3ba697465bc74fab513a26dea700cc82e9f4724e
 relmon_id=166
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr \
         --htmldir=/usr/share/doc/bash \
         --without-bash-malloc \
@@ -18,7 +18,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     ln -sv bash ${pkgdir}/usr/bin/sh
 }

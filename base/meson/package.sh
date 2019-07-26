@@ -6,10 +6,10 @@ vcs=git
 gittag=${pkgver}
 relmon_id=6472
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1 --skip-build
 }

@@ -6,10 +6,10 @@ vcs=git
 vcs_pkgname=mwparserfromhell
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

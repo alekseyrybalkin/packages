@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=2534
 
-kiin_make() {
+build() {
     patch -Np1 -i ../ca-bundle-path.patch
 
     find . -type f -exec sed '1s,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' -i {} \;
@@ -15,7 +15,7 @@ kiin_make() {
     make man
 }
 
-kiin_install() {
+package() {
     python2 setup.py install --root=${pkgdir} --optimize=1
     install -Dm644 docs/offlineimap.1 ${pkgdir}/usr/share/man/man1/offlineimap.1
     install -Dm644 docs/offlineimapui.7 ${pkgdir}/usr/share/man/man7/offlineimapui.7

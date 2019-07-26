@@ -6,7 +6,7 @@ vcs=git
 gittag=libgcrypt-${pkgver}
 relmon_id=1623
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --disable-doc \
         --enable-maintainer-mode \
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

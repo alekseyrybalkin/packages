@@ -7,10 +7,10 @@ vcs_pkgname=backcall
 gittag=${pkgver}
 relmon_id=19636
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

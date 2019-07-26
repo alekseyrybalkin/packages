@@ -7,11 +7,11 @@ vcs=git
 gittag=libXfont2-${pkgver}
 relmon_id=1776
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG --disable-devel-docs
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

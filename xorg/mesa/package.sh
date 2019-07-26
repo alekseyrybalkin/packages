@@ -7,7 +7,7 @@ gittag=mesa-${pkgver}
 # rc versions
 #relmon_id=1970
 
-kiin_make() {
+build() {
     mkdir build
     meson --prefix=$XORG_PREFIX \
         -D b_lto=false \
@@ -32,7 +32,7 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
     mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa
     cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/mesa

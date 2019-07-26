@@ -7,7 +7,7 @@ gittag=${pkgver}
 # 20001016 ???
 #relmon_id=4802
 
-kiin_make() {
+build() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs
     sed -i -e 's/po man/po/g' Makefile.am
     autoreconf -fi
@@ -20,7 +20,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
     mv ${pkgdir}{,/usr}/sbin/* ${pkgdir}/usr/bin
@@ -45,7 +45,7 @@ password        required        pam_permit.so
 EOF
 }
 
-kiin_after_install() {
+after_install() {
     pwconv
     grpconv
 }

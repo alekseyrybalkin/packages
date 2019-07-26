@@ -7,10 +7,10 @@ vcs_pkgname=pillow
 gittag=${pkgver}
 relmon_id=7974
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

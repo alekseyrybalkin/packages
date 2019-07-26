@@ -7,7 +7,7 @@ gittag=v${pkgver}
 # development versions
 #relmon_id=13599
 
-kiin_make() {
+build() {
     export BUILD_ZLIB=False
     export BUILD_BZIP2=0
     sh Configure -des -Dprefix=/usr \
@@ -21,6 +21,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

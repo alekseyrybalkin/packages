@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=141
 
-kiin_make() {
+build() {
     # doc: fix texinfo macro usage
     git cherry-pick a357718b081f1678748ead5d7cb67c766c930441
     autoreconf -fi
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     cp build-aux/git-version-gen ${pkgdir}/usr/bin/
 }

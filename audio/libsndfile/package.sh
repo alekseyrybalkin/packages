@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=13277
 
-kiin_make() {
+build() {
     # disable tests build
     sed -i -e 's/examples tests/examples/g' Makefile.am
     sed -i -e 's/regtest tests/regtest/g' Makefile.am
@@ -22,6 +22,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

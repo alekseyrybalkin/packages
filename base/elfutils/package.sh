@@ -6,7 +6,7 @@ vcs=git
 gittag=elfutils-${pkgver}
 relmon_id=5679
 
-kiin_make() {
+build() {
     autoreconf -fi
     ./configure --prefix=/usr \
         --program-prefix="eu-" \
@@ -15,6 +15,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

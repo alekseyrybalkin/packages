@@ -8,7 +8,7 @@ vcs_pkgname=babel
 gittag=v${pkgver}
 relmon_id=11984
 
-kiin_make() {
+build() {
     rm -rf cldr
     git clone -s -n `find_vcs_repo cldr`
     cd cldr
@@ -18,6 +18,6 @@ kiin_make() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --optimize=1
 }

@@ -5,11 +5,11 @@ SKIP_ARCH_CHECK=1
 pkgver=1
 vcs=git
 
-kiin_make() {
+build() {
     ./bootstrap
 }
 
-kiin_install() {
+package() {
     cp -av etc usr ${pkgdir}/
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*

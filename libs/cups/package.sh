@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=380
 
-kiin_make() {
+build() {
     sed -i 's:444:644:' Makedefs.in
     sed -i '/MAN.EXT/s:.gz::' configure config-scripts/cups-manpages.m4
 
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make BUILDROOT=${pkgdir} install-headers install-libs
     mkdir ${pkgdir}/usr/bin
     echo '#!/bin/bash' > ${pkgdir}/usr/bin/cups-config

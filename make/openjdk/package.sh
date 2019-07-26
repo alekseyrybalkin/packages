@@ -7,7 +7,7 @@ _build=33
 vcs=mercurial
 hgtag=jdk-${pkgver}+${_build}
 
-kiin_make() {
+build() {
     PATH=/usr/bin
 
     unset MAKEFLAGS
@@ -29,7 +29,7 @@ kiin_make() {
     make images
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/lib/openjdk
     cp -rv build/*/images/jdk/* ${pkgdir}/usr/lib/openjdk/
     rm -vf ${pkgdir}/usr/lib/openjdk/lib/security/cacerts

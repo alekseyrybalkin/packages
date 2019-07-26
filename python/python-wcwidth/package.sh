@@ -6,10 +6,10 @@ vcs=git
 vcs_pkgname=wcwidth
 gittag=${pkgver}
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --prefix=/usr --optimize=1
 }

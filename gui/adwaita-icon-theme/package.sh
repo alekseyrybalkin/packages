@@ -7,22 +7,22 @@ gittag=${pkgver}
 # beta versions
 #relmon_id=13117
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }
 
-kiin_after_install() {
+after_install() {
     gtk-update-icon-cache -q -t -f /usr/share/icons/Adwaita
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="usr/share/icons/Adwaita/icon-theme.cache"

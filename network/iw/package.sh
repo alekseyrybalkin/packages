@@ -6,10 +6,10 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1410
 
-kiin_make() {
+build() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} SBINDIR=/usr/bin install
 }

@@ -29,7 +29,7 @@ _check_and_clone_deps() {
     rm filldeps.sh prepare_deps.py deps.py
 }
 
-kiin_make() {
+build() {
     cp ../gclient_args.gni build/config/
 
     cd third_party/node/
@@ -129,7 +129,7 @@ kiin_make() {
     ninja -C out/Release chrome chrome_sandbox chromedriver
 }
 
-kiin_install() {
+package() {
     install -vDm755  out/Release/chrome ${pkgdir}/usr/lib/chromium/chromium
     install -vDm4755 out/Release/chrome_sandbox ${pkgdir}/usr/lib/chromium/chrome-sandbox
     install -vDm755  out/Release/chromedriver ${pkgdir}/usr/lib/chromium/chromedriver

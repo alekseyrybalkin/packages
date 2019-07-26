@@ -6,14 +6,14 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=257
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sysconfdir=/etc
     make
 }
 
-kiin_install() {
+package() {
     CHOST=x86_64-unknown-linux-gnu
     install -Dm 755 ccache ${pkgdir}/usr/bin/ccache
 

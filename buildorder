@@ -120,14 +120,14 @@ dbus
 e2fsprogs
 linux
 
-# base: kiin
+# base: ji
 vim
 fakeroot
 cacerts
 wget
 sudo
 openssh
-kiin
+ji
 
 # tools: vcs
 mercurial

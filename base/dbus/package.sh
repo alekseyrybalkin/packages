@@ -7,7 +7,7 @@ gittag=dbus-${pkgver}
 # development versions
 #relmon_id=5356
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
@@ -32,17 +32,17 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/var
 }
 
-kiin_after_install() {
+after_install() {
     if [ ! -f /var/lib/dbus/machine-id ]; then
         ln -sfv /etc/machine-id /var/lib/dbus/machine-id
     fi
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

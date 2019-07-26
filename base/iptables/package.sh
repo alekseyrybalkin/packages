@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1394
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -Dm644 ../iptables.service ${pkgdir}/usr/lib/systemd/system/iptables.service
     install -Dm755 ../iptables-flush ${pkgdir}/usr/bin/iptables-flush

@@ -7,7 +7,7 @@ hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
 relmon_id=2503
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     cd ../
     patch -Np1 -i nss-standalone.patch
@@ -20,7 +20,7 @@ kiin_make() {
         NSS_USE_SYSTEM_SQLITE=1
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     cd ../dist
     mkdir -p ${pkgdir}/usr/lib/pkgconfig

@@ -7,10 +7,10 @@ vcs_pkgname=py-sdl2
 gittag=rel_${pkgver//\./_}
 relmon_id=12950
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

@@ -8,7 +8,7 @@ vcs_pkgname=bzip2
 gittag=bzip2-${pkgver}
 relmon_id=237
 
-kiin_make() {
+build() {
     sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
     sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
     make -f Makefile-libbz2_so
@@ -17,7 +17,7 @@ kiin_make() {
     ./xmlproc.sh -html manual.xml
 }
 
-kiin_install() {
+package() {
     mkdir ${pkgdir}/usr
     make PREFIX=${pkgdir}/usr install
     rm -v ${pkgdir}/usr/bin/{bunzip2,bzcat,bzip2}

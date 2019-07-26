@@ -8,10 +8,10 @@ vcs_pkgname=virtualenv
 gittag=${pkgver}
 relmon_id=6904
 
-kiin_make() {
+build() {
     python2 setup.py build
 }
 
-kiin_install() {
+package() {
     python2 setup.py install --prefix=/usr --root="${pkgdir}"
 }

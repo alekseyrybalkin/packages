@@ -7,10 +7,10 @@ vcs_pkgname=urllib3
 gittag=${pkgver}
 relmon_id=4078
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

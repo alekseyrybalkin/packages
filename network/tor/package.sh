@@ -6,18 +6,18 @@ vcs=git
 gittag=tor-${pkgver}
 relmon_id=4991
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr --sysconfdir=/etc
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -Dm0644 ../tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
 }
 
-kiin_after_install() {
+after_install() {
     getent group tor >/dev/null || groupadd -g 43 tor
     getent passwd tor >/dev/null || \
         useradd -c 'tor' -d /var/lib/tor -g tor \
@@ -26,6 +26,6 @@ kiin_after_install() {
     chmod 700 /var/lib/tor &> /dev/null
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

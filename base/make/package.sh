@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1877
 
-kiin_make() {
+build() {
     sed -i -e 's/po //g' Makefile.am
     sed -i -e 's/doc //g' Makefile.am
     sed -i -e 's/-Werror//g' configure.ac
@@ -17,6 +17,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

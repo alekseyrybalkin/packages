@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=1253
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     sed -i -e '/doc\.am/d' Makefile.am
     git clone -s `find_vcs_repo gnulib`
@@ -15,7 +15,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make prefix=${pkgdir}/usr install
     rm -rf ${pkgdir}/usr/share/doc/groff-${pkgver}/pdf

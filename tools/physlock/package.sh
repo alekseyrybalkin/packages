@@ -5,11 +5,11 @@ pkgver=13
 vcs=git
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     make PREFIX=/usr
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} PREFIX=/usr install
     mkdir -p ${pkgdir}/etc/pam.d
     cat > ${pkgdir}/etc/pam.d/physlock << "EOF"

@@ -8,7 +8,7 @@ vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=2057
 
-kiin_make() {
+build() {
     sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
 
     ./configure --prefix=/usr \
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     if [ -d ${pkgdir}/usr/share/pkgconfig ]; then
         mkdir -p ${pkgdir}/usr/lib/pkgconfig

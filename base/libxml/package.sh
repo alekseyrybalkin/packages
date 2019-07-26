@@ -8,7 +8,7 @@ vcs_pkgname=libxml2
 gittag=v${pkgver}
 relmon_id=1783
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --with-history \
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

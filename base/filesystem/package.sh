@@ -5,17 +5,17 @@ pkgname=filesystem
 SKIP_ARCH_CHECK=1
 pkgver=1
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_before_install() {
+before_install() {
     groupadd --gid 1000 ${PACMAN}
     useradd --uid 1000 -m -g ${PACMAN} -G kvm,audio,video -s /bin/bash ${PACMAN}
     useradd --uid 1100 -m -g ${PACMAN} -s /bin/bash ${HOUSECARL}
 }
 
-kiin_install() {
+package() {
     # dirs
     mkdir -v ${pkgdir}/{boot,dev,etc,home,mnt,proc,run,sys,usr,var}
     install -dv -m 0750 ${pkgdir}/root
@@ -78,8 +78,8 @@ kiin_install() {
     # for tor
     install -dv -m 0700 ${pkgdir}/var/lib/tor
 
-    # for kiin
-    mkdir -pv ${pkgdir}/var/lib/kiin/{installed,uninstalled}
+    # for ji
+    mkdir -pv ${pkgdir}/var/lib/jinni/{installed,uninstalled}
 
     # for chrony
     mkdir -pv ${pkgdir}/var/lib/chrony
@@ -98,10 +98,10 @@ kiin_install() {
     cp ../os-release ${pkgdir}/etc/os-release
 }
 
-kiin_after_install() {
+after_install() {
     :
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

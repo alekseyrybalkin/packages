@@ -7,11 +7,11 @@ fossiltag=version-${pkgver}
 # lists 2.9 before release
 #relmon_id=13971
 
-kiin_make() {
+build() {
     ./configure --prefix=/usr
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

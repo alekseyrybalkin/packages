@@ -5,13 +5,13 @@ pkgver=9.0.0
 vcs=git
 gittag=glu-${pkgver}
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=$XORG_PREFIX \
         --disable-static \
         --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

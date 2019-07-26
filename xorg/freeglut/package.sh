@@ -6,7 +6,7 @@ vcs=git
 gittag=FG_${pkgver//\./_}
 relmon_id=846
 
-kiin_make() {
+build() {
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX=/usr \
@@ -16,7 +16,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd build
     make DESTDIR=${pkgdir} install
 }

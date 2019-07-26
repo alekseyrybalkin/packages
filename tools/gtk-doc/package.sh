@@ -6,7 +6,7 @@ vcs=git
 gittag=GTK_DOC_${pkgver//\./_}
 relmon_id=13140
 
-kiin_make() {
+build() {
     # https://gitlab.gnome.org/GNOME/gtk-doc/issues/84
     sed -i -e 's/stat.S_IWRITE/0o644/g' gtkdoc/highlight.py
     mkdir build
@@ -14,6 +14,6 @@ kiin_make() {
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }

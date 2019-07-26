@@ -6,23 +6,23 @@ vcs=git
 gittag=Release-${pkgver//\./-}
 relmon_id=5524
 
-kiin_make() {
+build() {
     MAKEFLAGS=
     ./autogen.sh --prefix=/usr --disable-default-make-check
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }
 
-kiin_after_install() {
+after_install() {
     update-mime-database -n /usr/share/mime
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="usr/share/applications/mimeinfo.cache"

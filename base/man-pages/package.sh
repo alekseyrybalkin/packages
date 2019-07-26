@@ -6,11 +6,11 @@ vcs=git
 gittag=man-pages-${pkgver}
 relmon_id=1883
 
-kiin_make() {
+build() {
     :
 }
 
-kiin_install() {
+package() {
     make prefix=${pkgdir}/usr install
     # these are included in shadow
     rm -f ${pkgdir}/usr/share/man/man5/passwd.5

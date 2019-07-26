@@ -7,12 +7,12 @@ gittag=ATK_${pkgver//\./_}
 # development versions
 #relmon_id=130
 
-kiin_make() {
+build() {
     mkdir build
     meson --prefix=/usr . build
     ninja -C build
 }
 
-kiin_install() {
+package() {
     DESTDIR=${pkgdir} ninja -C build install
 }

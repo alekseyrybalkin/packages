@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=8810
 
-kiin_make() {
+build() {
     sed 's|/usr/sbin|/usr/bin|g' -i examples/*.service
     sed -i -e '/doc install$/d' Makefile.in
     ./configure --prefix=/usr \
@@ -14,7 +14,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -Dm 644 examples/{chronyd,chrony-wait}.service -t ${pkgdir}/usr/lib/systemd/system
     mv ${pkgdir}/usr/sbin/chronyd ${pkgdir}/usr/bin
@@ -22,7 +22,7 @@ kiin_install() {
     rm -rf ${pkgdir}/var
 }
 
-kiin_after_install() {
+after_install() {
     getent group chrony >/dev/null || groupadd -g 183 chrony
     getent passwd chrony >/dev/null || \
         useradd -c 'chrony' -d /var/lib/chrony -g chrony \
@@ -30,6 +30,6 @@ kiin_after_install() {
     chown -R chrony:chrony /var/lib/chrony &> /dev/null
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }

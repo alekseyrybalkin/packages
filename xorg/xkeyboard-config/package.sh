@@ -6,11 +6,11 @@ vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=5191
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG --with-xkb-rules-symlink=xorg
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

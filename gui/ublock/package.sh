@@ -6,14 +6,14 @@ vcs=git
 gittag=${pkgver}
 relmon_id=16686
 
-kiin_make() {
+build() {
     cd ../
     git clone `find_vcs_repo uassets` uAssets
     cd ${pkgname}-${pkgver}
     tools/make-chromium.sh .
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/lib/chromium/extensions/
     cp -r dist/build/*.chromium ${pkgdir}/usr/lib/chromium/extensions/ublock
     find ${pkgdir} -type d -exec chmod 0755 {} \;

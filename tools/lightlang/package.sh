@@ -6,7 +6,7 @@ vcs=git
 pkgver=20140410
 gittag=7510d5dd87fc988fe1b14718bb546daae5baebe6
 
-kiin_make() {
+build() {
     sed -i -e 's/\.sl/\.config\/sl/g' apps/sl/src/settings.h
     autoconf
     ./configure --with-gui-flag=no \
@@ -15,7 +15,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/usr/share/sl
 }

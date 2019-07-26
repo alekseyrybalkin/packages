@@ -5,7 +5,7 @@ pkgver=1.64.5
 vcs=git
 gittag=v${pkgver}
 
-kiin_make() {
+build() {
     # fix copying to clipboard with no JS
     git apply ../clipboard.diff
 
@@ -13,7 +13,7 @@ kiin_make() {
     cake build
 }
 
-kiin_install() {
+package() {
     mkdir -p ${pkgdir}/usr/lib/chromium/extensions/
     cp -r . ${pkgdir}/usr/lib/chromium/extensions/vimium
 }

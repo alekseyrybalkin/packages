@@ -6,7 +6,7 @@ vcs=git
 gittag=gnupg-${pkgver}
 relmon_id=1215
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --enable-symcryptrun \
@@ -18,6 +18,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

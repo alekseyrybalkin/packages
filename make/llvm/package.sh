@@ -6,7 +6,7 @@ vcs=git
 gittag=llvmorg-${pkgver}
 relmon_id=1830
 
-kiin_make() {
+build() {
     cd llvm
     mv ../clang tools/
     mv ../compiler-rt projects/
@@ -24,7 +24,7 @@ kiin_make() {
     ninja
 }
 
-kiin_install() {
+package() {
     cd llvm
     cd build
     DESTDIR=${pkgdir} ninja install

@@ -6,11 +6,11 @@ vcs=git
 gittag=util-macros-${pkgver}
 relmon_id=15037
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

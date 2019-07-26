@@ -8,7 +8,7 @@ gittag=${pkgver}
 # rc versions
 #relmon_id=827
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
@@ -22,18 +22,18 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
 }
 
-kiin_after_install() {
+after_install() {
     fc-cache -rs > /dev/null
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="usr/share/fonts/TTF/.uuid \

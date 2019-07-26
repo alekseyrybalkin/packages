@@ -7,10 +7,10 @@ vcs_pkgname=appdirs
 gittag=${pkgver}
 relmon_id=6278
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

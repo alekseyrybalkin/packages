@@ -7,11 +7,11 @@ vcs=git
 gittag=8a71c9c7bdccb9dd5772d98e83c8c35a7771bb00
 relmon_id=1557
 
-kiin_make() {
+build() {
     sed -i '/install.*libaio.a/s/^/#/' src/Makefile
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

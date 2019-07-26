@@ -6,13 +6,13 @@ vcs=git
 gittag=libXt-${pkgver}
 relmon_id=1793
 
-kiin_make() {
+build() {
     ./autogen.sh $XORG_CONFIG \
         --with-appdefaultdir=/etc/X11/app-defaults \
         --libdir=$LIBDIR
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

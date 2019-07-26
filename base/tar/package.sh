@@ -6,7 +6,7 @@ vcs=git
 gittag=release_${pkgver//\./_}
 relmon_id=4939
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo gnulib`
     git clone -s `find_vcs_repo paxutils`
     ./bootstrap --skip-po
@@ -17,7 +17,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} -C doc install-html docdir=/usr/share/doc/tar
 }

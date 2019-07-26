@@ -8,11 +8,11 @@ vcs=git
 gittag=docutils-${pkgver}
 relmon_id=3849
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
     find ${pkgdir}/usr/lib/python3*/site-packages -type f | xargs chmod 644
 }

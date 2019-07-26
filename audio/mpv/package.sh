@@ -7,7 +7,7 @@ gittag=v${pkgver}
 relmon_id=5348
 relmon_sed='s/v//g'
 
-kiin_make() {
+build() {
     # enable lua 5.3
     patch -Np1 -i ../lua53.patch
 
@@ -26,6 +26,6 @@ kiin_make() {
     ./waf build
 }
 
-kiin_install() {
+package() {
     ./waf install --destdir=${pkgdir}
 }

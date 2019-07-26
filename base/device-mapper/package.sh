@@ -8,7 +8,7 @@ vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
 relmon_id=5354
 
-kiin_make() {
+build() {
     unset LDFLAGS
     ./configure --prefix=/ --sbindir=/usr/bin --sysconfdir=/etc \
         --localstatedir=/var --datarootdir=/usr/share \
@@ -17,7 +17,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     MAKEFLAGS=
     make DESTDIR=${pkgdir} install_device-mapper
 }

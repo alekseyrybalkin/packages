@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=898
 
-kiin_make() {
+build() {
     # don't build problematic examples
     for lang in java pascal csharp; do
         sed -i -e "/hello-${lang}/d" gettext-tools/examples/po/Makefile.am \
@@ -47,6 +47,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

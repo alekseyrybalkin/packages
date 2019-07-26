@@ -8,7 +8,7 @@ vcs=git
 gittag=V_${_ver//\./_}_P${_patch}
 relmon_id=2565
 
-kiin_make() {
+build() {
     autoreconf -fi
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
@@ -21,7 +21,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
     install -v -m755 -d ${pkgdir}/usr/share/doc/${pkgname}-${pkgver}
     install -v -m644 INSTALL LICENCE OVERVIEW README* \
@@ -42,7 +42,7 @@ session   include   system-remote-login
 EOF
 }
 
-kiin_after_install() {
+after_install() {
     getent group sshd >/dev/null || groupadd -g 50 sshd
     getent passwd sshd >/dev/null || \
         useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd \
@@ -50,8 +50,8 @@ kiin_after_install() {
     [ -f /etc/ssh/ssh_host_rsa_key ] || ssh-keygen -A
 }
 
-kiin_after_upgrade() {
-    kiin_after_install
+after_upgrade() {
+    after_install
 }
 
 known="etc/ssh/ssh_host_dsa_key \

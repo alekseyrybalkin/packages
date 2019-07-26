@@ -6,13 +6,13 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=13301
 
-kiin_make() {
+build() {
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --with-python=/usr/bin/python
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

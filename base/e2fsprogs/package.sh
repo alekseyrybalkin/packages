@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=646
 
-kiin_make() {
+build() {
     mkdir -v build
     cd build
     ../configure --prefix=/usr \
@@ -22,7 +22,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd build
     make DESTDIR=${pkgdir} install
     make DESTDIR=${pkgdir} install-libs

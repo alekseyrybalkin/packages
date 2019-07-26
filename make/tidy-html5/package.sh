@@ -9,7 +9,7 @@ vcs=git
 gittag=8ef80736a1dd9fae8b2a43684028f0da19cf16a1
 relmon_id=13267
 
-kiin_make() {
+build() {
     cd build/cmake
     cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release \
@@ -18,7 +18,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd build/cmake
     make DESTDIR=${pkgdir} install
     install -v -m755 tab2space ${pkgdir}/usr/bin

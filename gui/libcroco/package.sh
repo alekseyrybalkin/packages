@@ -6,7 +6,7 @@ vcs=git
 gittag=${pkgver}
 relmon_id=11787
 
-kiin_make() {
+build() {
     # disable gtk-doc
     sed -i -e '/gtkdocize/d' autogen.sh
     sed -i -e '/docs/d' configure.ac
@@ -18,6 +18,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

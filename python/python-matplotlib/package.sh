@@ -7,12 +7,12 @@ vcs_pkgname=matplotlib
 gittag=v${pkgver}
 relmon_id=3919
 
-kiin_make() {
+build() {
     # disable installation of jquery-ui
     sed -i -e 's/not os.path.exists/os.path.exists/g' setup.py
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root ${pkgdir} --prefix=/usr --optimize=1 --skip-build
 }

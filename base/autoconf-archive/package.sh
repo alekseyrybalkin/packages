@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=142
 
-kiin_make() {
+build() {
     # respect --docdir properly
     git revert --no-edit ad15d52fd1e552bc3d7fcfb3d7bc6a2681f364d8
     mkdir build-aux
@@ -18,6 +18,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

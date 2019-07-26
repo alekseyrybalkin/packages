@@ -7,7 +7,7 @@ vcs_pkgname=lxml
 gittag=lxml-${pkgver}
 relmon_id=3914
 
-kiin_make() {
+build() {
     # python3
     sed -i -e 's/itervalues/values/g' doc/mkhtml.py
     python setup.py build
@@ -16,7 +16,7 @@ kiin_make() {
     python mkhtml.py html .. ${pkgver}
 }
 
-kiin_install() {
+package() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
     mkdir -p ${pkgdir}/usr/share/doc
     cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml

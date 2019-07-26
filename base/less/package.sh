@@ -6,7 +6,7 @@ vcs=git
 gittag=v${pkgver}
 relmon_id=1550
 
-kiin_make() {
+build() {
     # generate defines.h.in
     autoheader
 
@@ -25,7 +25,7 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     cd less-${pkgver}
     make prefix=${pkgdir}/usr install
 }

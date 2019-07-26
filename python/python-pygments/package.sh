@@ -7,10 +7,10 @@ vcs_pkgname=pygments
 hgtag=${pkgver}
 relmon_id=3986
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

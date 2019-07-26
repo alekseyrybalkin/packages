@@ -6,13 +6,13 @@ vcs=git
 gittag=${pkgver}
 relmon_id=5169
 
-kiin_make() {
+build() {
     git clone -s `find_vcs_repo xcb-util-m4` m4
     git submodule update --init
     ./autogen.sh $XORG_CONFIG
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

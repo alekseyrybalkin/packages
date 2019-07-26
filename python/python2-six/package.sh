@@ -8,10 +8,10 @@ vcs_pkgname=six
 gittag=${pkgver}
 relmon_id=4027
 
-kiin_make() {
+build() {
     python2 setup.py build
 }
 
-kiin_install() {
+package() {
     python2 setup.py install --prefix=/usr --root="${pkgdir}"
 }

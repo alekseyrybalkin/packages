@@ -6,7 +6,7 @@ vcs=git
 gittag=pinentry-${pkgver}
 relmon_id=3643
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --enable-pinentry-gtk2=no \
@@ -16,6 +16,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

@@ -7,10 +7,10 @@ vcs_pkgname=python-prompt-toolkit
 gittag=${pkgver}
 relmon_id=8742
 
-kiin_make() {
+build() {
     python setup.py build
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir} --prefix=/usr --optimize=1
 }

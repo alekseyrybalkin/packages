@@ -6,7 +6,7 @@ vcs=git
 gittag=nasm-${pkgver}
 relmon_id=2048
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr
     make dist
@@ -14,6 +14,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }

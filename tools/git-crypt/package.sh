@@ -6,10 +6,10 @@ vcs=git
 gittag=${pkgver}
 relmon_id=17093
 
-kiin_make() {
+build() {
     make ENABLE_MAN=yes PREFIX=/usr
 }
 
-kiin_install() {
+package() {
     make ENABLE_MAN=yes PREFIX=/usr DESTDIR=${pkgdir} install
 }

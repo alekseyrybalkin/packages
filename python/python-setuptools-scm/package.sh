@@ -7,11 +7,11 @@ vcs_pkgname=setuptools_scm
 gittag=v${pkgver}
 relmon_id=7874
 
-kiin_make() {
+build() {
     python setup.py build
     python setup.py egg_info
 }
 
-kiin_install() {
+package() {
     python setup.py install --root=${pkgdir}
 }

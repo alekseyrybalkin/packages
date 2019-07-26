@@ -7,7 +7,7 @@ vcs_pkgname=pcre-git-svn
 gittag=origin/tags/pcre-${pkgver}
 relmon_id=2610
 
-kiin_make() {
+build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --docdir=/usr/share/doc/pcre \
@@ -21,6 +21,6 @@ kiin_make() {
     make
 }
 
-kiin_install() {
+package() {
     make DESTDIR=${pkgdir} install
 }
