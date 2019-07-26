@@ -2,7 +2,7 @@
 
 pkgname=ji
 SKIP_ARCH_CHECK=1
-pkgver=46+
+pkgver=47+
 vcs=git
 
 build() {
