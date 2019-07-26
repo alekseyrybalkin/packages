@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-jedi
 pkgver=0.14.0
 vcs=git

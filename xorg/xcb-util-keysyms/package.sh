@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xcb-util-keysyms
 pkgver=0.4.0
 vcs=git

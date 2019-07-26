@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-click
 pkgver=7.0
 vcs=git

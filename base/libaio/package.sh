@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libaio
 pkgver=0.3.112
 vcs=git

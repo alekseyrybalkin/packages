@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=binutils
 pkgver=2.32
 vcs=git

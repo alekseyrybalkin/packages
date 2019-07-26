@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pcre
 pkgver=8.43
 vcs=git-svn

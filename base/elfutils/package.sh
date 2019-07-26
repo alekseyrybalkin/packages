@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=elfutils
 pkgver=0.176
 vcs=git

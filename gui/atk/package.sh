@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=atk
 pkgver=2.32.0
 vcs=git

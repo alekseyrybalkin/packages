@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-kiwisolver
 pkgver=1.1.0
 vcs=git

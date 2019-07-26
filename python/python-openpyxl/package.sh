@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-openpyxl
 pkgver=2.6.2
 vcs=mercurial

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-setuptools
 pkgver=41.0.1
 vcs=git

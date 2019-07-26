@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-wcwidth
 pkgver=0.1.7
 vcs=git

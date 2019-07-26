@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xrdb
 pkgname=xorg-${_pkgname}
 pkgver=1.2.0

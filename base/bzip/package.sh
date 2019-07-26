@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=bzip
 ARCH_NAME=bzip2
 pkgver=1.0.8

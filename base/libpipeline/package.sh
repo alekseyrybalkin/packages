@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libpipeline
 pkgver=1.5.1
 vcs=git

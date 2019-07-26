@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-imagesize
 pkgver=1.1.0
 vcs=git

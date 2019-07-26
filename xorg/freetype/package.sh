@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=freetype
 ARCH_NAME=freetype2
 pkgver=2.10.0

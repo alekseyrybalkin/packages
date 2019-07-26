@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=transmission
 pkgver=2.94
 vcs=git

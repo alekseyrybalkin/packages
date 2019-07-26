@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxau
 pkgver=1.0.9
 vcs=git

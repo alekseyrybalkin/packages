@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=apr-util
 pkgver=1.6.1
 vcs=git

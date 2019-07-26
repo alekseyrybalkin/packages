@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tidy-html5
 ARCH_NAME=tidy
 pkgver=5.7.27

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-werkzeug
 pkgver=0.15.4
 vcs=git

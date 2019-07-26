@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libice
 pkgver=1.0.10
 vcs=git

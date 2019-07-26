@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=dhcpcd
 pkgver=7.2.2
 vcs=git

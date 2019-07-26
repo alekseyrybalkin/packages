@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=subversion
 pkgver=1.12.2
 vcs=git

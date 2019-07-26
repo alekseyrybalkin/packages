@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxshmfence
 pkgver=1.3
 vcs=git

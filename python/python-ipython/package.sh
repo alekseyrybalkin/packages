@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-ipython
 ARCH_NAME=ipython
 pkgver=7.5.0

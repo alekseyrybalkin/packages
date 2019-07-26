@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=djvulibre
 pkgver=3.5.27.1
 vcs=git

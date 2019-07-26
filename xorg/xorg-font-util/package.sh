@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=font-util
 pkgname=xorg-${_pkgname}
 pkgver=1.3.1

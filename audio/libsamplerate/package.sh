@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libsamplerate
 pkgver=0.1.9
 vcs=git

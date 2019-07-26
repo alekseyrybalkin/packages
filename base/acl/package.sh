@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=acl
 pkgver=2.2.53
 vcs=git

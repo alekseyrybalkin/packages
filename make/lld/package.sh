@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lld
 pkgver=8.0.0
 vcs=git

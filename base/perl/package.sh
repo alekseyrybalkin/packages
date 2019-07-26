@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=perl
 pkgver=5.30.0
 vcs=git

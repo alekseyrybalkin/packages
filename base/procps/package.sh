@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=procps
 ARCH_NAME=procps-ng
 pkgver=3.3.15

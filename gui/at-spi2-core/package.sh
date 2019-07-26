@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=at-spi2-core
 pkgver=2.32.1
 vcs=git

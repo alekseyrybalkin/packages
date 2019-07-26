@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=fontconfig
 pkgver=2.13.1
 ARCH_VERSION=2.13.1+12+g5f5ec56

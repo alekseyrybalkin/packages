@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-gevent
 pkgver=1.4.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-cycler
 pkgver=0.10.0
 vcs=git

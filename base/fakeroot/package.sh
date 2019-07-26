@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=fakeroot
 pkgver=1.23
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=sed
 pkgver=4.7
 vcs=git

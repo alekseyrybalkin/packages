@@ -1,5 +1,3 @@
-#!/bin/sh
-
 NO_STRIPPING=1
 pkgname=glibc
 pkgver=2.29

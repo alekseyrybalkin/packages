@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nmap
 pkgver=7.70
 vcs=git

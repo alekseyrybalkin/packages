@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gnome-common
 pkgver=3.18.0
 vcs=git

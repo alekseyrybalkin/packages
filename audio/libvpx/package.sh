@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libvpx
 pkgver=1.8.0
 vcs=git

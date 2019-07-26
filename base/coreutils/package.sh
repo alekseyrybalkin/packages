@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=coreutils
 pkgver=8.31
 vcs=git

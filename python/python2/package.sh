@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2
 _pybasever=2.7
 pkgver=${_pybasever}.16

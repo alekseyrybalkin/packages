@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=bc
 pkgver=2.1.1
 vcs=git

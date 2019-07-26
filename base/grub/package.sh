@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=grub
 # magic in PKGBUILD
 SKIP_ARCH_CHECK=1

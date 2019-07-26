@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=npth
 pkgver=1.6
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python
 _pybasever=3.7
 pkgver=${_pybasever}.4

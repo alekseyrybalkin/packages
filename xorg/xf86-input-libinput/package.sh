@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xf86-input-libinput
 pkgver=0.28.2
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=curl
 pkgver=7.65.1
 vcs=git

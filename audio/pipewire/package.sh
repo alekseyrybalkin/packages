@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pipewire
 pkgver=0.2.6
 vcs=git

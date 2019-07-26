@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xinit
 pkgname=xorg-${_pkgname}
 pkgver=1.4.1

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=kbd
 pkgver=2.0.4
 vcs=git

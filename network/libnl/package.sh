@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libnl
 pkgver=3.4.0
 vcs=git

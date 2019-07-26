@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lua
 _release=5.3
 pkgver=${_release}.5

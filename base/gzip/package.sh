@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gzip
 pkgver=1.10
 vcs=git

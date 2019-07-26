@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=openssl
 # pkgver too complex to parse, we check git tags instead
 SKIP_ARCH_CHECK=1

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-defusedxml
 pkgver=0.6.0
 vcs=git

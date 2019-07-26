@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gnupg
 pkgver=2.2.17
 vcs=git

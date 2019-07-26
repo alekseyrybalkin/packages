@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-setuptools
 ARCH_NAME=python-setuptools
 pkgver=41.0.1

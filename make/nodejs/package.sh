@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nodejs
 pkgver=12.5.0
 vcs=git

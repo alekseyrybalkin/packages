@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-babel
 pkgver=2.7.0
 _cldr_core_ver=35.1

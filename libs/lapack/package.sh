@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lapack
 pkgver=3.8.0
 vcs=git

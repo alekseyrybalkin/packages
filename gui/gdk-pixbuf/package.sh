@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
 pkgver=2.38.1

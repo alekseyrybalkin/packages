@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=itstool
 pkgver=2.0.6
 vcs=git

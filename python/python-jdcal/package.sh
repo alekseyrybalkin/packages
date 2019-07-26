@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-jdcal
 pkgver=1.4.1
 vcs=git

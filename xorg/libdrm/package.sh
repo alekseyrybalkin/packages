@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libdrm
 pkgver=2.4.98
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=meson
 pkgver=0.51.0
 vcs=git

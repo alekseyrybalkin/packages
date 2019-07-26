@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=readline
 pkgver=8.0.000
 vcs=git

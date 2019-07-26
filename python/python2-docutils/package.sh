@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-docutils
 vcs_pkgname=docutils
 ARCH_NAME=docutils

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=glu
 pkgver=9.0.0
 vcs=git

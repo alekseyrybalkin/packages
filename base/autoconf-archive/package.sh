@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=autoconf-archive
 pkgver=2019.01.06
 vcs=git

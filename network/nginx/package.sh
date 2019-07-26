@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nginx
 ARCH_NAME=nginx-mainline
 pkgver=1.17.1

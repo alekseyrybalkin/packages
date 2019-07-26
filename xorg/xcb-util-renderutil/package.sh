@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xcb-util-renderutil
 pkgver=0.3.9
 vcs=git

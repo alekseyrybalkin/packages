@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libx11
 pkgver=1.6.8
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=bash
 _major=5.0
 _minor=007

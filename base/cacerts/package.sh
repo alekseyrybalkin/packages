@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cacerts
 SKIP_ARCH_CHECK=1
 pkgver=20190604

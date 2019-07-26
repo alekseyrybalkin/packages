@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=adwaita-icon-theme
 pkgver=3.32.0
 vcs=git

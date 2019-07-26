@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libepoxy
 pkgver=1.5.3
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gn
 pkgver=0.1568+
 vcs=git

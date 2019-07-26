@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxv
 pkgver=1.0.11
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=bison
 pkgver=3.4.1
 vcs=git

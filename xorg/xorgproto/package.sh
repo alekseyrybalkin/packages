@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xorgproto
 pkgver=2019.1
 vcs=git

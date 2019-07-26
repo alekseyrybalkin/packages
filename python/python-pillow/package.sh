@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pillow
 pkgver=6.0.0
 vcs=git

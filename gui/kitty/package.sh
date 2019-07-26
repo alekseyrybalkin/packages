@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=kitty
 pkgver=0.14.2
 vcs=git

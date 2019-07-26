@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tmux
 pkgver=3.0
 vcs=git

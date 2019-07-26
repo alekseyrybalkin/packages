@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=poppler
 pkgver=0.77.0
 vcs=git

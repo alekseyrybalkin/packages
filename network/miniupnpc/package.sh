@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=miniupnpc
 pkgver=2.1
 ARCH_VERSION=2.1.20190408

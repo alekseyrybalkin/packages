@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xkeyboard-config
 pkgver=2.27
 vcs=git

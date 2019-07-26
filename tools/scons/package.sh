@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=scons
 pkgver=3.0.5
 vcs=git

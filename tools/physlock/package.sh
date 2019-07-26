@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=physlock
 pkgver=13
 vcs=git

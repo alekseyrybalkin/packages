@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=yelp-tools
 pkgver=3.32.2
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mpfr
 pkgver=4.0.2
 vcs=git-svn

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=wget
 pkgver=1.20.3
 vcs=git

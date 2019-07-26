@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-seaborn
 pkgver=0.9.0
 vcs=git

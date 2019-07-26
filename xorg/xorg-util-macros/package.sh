@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xorg-util-macros
 pkgver=1.19.2
 vcs=git

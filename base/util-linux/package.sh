@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=util-linux
 pkgver=2.34
 vcs=git

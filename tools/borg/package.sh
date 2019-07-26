@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=borg
 pkgver=1.1.10
 vcs=git

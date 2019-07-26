@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gobject-introspection
 pkgver=1.60.2
 vcs=git

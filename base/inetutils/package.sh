@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=inetutils
 pkgver=1.9.4+
 vcs=git

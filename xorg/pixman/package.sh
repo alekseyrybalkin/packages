@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pixman
 pkgver=0.38.4
 vcs=git

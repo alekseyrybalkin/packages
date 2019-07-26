@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mutt
 pkgver=1.12.1
 ARCH_VERSION=${pkgver}

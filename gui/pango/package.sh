@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pango
 pkgver=1.43.0
 vcs=git

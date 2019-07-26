@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-jinja
 pkgver=2.10.1
 vcs=git

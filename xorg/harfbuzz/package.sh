@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=harfbuzz
 pkgver=2.5.2
 vcs=git

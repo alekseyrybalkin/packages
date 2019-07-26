@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-sphinx
 pkgver=2.1.2
 vcs=git

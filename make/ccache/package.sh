@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ccache
 pkgver=3.7.1
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gperf
 pkgver=3.1
 vcs=git

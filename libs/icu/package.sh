@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=icu
 pkgver=64.2
 vcs=git

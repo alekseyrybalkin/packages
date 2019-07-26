@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-lxml
 pkgver=4.3.4
 vcs=git

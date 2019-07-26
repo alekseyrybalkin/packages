@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xorg-server
 pkgver=1.20.5
 vcs=git

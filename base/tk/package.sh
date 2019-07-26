@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tk
 pkgver=8.6.9
 vcs=fossil

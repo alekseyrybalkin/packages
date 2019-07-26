@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxinerama
 pkgver=1.1.4
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-mss
 SKIP_ARCH_CHECK=1
 pkgver=4.0.3

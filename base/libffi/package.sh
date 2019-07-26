@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libffi
 pkgver=3.2.1
 vcs=git

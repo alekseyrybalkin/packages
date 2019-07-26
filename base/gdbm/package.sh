@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gdbm
 pkgver=1.18.1
 vcs=git

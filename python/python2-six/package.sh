@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-six
 ARCH_NAME=python-six
 pkgver=1.12.0

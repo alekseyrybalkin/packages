@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=dbus
 pkgver=1.12.16
 vcs=git

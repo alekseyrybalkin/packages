@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xauth
 pkgname=xorg-${_pkgname}
 pkgver=1.1

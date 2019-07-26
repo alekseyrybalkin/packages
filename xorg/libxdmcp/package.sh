@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxdmcp
 pkgver=1.1.3
 vcs=git

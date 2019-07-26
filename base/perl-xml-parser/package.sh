@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=perl-xml-parser
 _ver=2.44
 _minor=1

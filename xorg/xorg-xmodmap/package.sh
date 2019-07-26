@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xmodmap
 pkgname=xorg-${_pkgname}
 pkgver=1.0.10

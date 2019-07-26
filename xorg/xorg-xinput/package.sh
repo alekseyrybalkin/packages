@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xinput
 pkgname=xorg-${_pkgname}
 pkgver=1.6.3

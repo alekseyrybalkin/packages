@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=json-c
 pkgver=0.13.1
 vcs=git

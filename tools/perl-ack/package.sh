@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=perl-ack
 ARCH_NAME=ack
 pkgver=3.0.0

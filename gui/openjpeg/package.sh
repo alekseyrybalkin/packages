@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=openjpeg
 pkgver=2.3.1
 vcs=git

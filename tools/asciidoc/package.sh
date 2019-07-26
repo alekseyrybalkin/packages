@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=asciidoc
 pkgver=8.6.10
 vcs=git

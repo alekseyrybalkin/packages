@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxcb
 pkgver=1.13.1
 vcs=git

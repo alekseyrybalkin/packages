@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=coffeescript1
 pkgver=1.12.8
 vcs=git

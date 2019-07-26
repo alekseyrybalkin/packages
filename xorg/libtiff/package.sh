@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libtiff
 pkgver=4.0.10
 vcs=git

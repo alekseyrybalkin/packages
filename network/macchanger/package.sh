@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=macchanger
 pkgver=1.7.0
 vcs=git

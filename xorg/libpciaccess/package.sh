@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libpciaccess
 pkgver=0.16
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libsndfile
 pkgver=1.0.28
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ttf-fonts
 SKIP_ARCH_CHECK=1
 pkgver=1

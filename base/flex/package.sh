@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=flex
 pkgver=2.6.4
 vcs=git

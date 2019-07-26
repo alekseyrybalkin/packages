@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux

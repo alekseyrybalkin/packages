@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-urllib3
 pkgver=1.25.3
 vcs=git

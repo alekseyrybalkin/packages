@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=systemd
 pkgver=242
 ARCH_VERSION=242.29

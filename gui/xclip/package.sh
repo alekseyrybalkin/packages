@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xclip
 pkgver=0.13
 vcs=git

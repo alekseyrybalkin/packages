@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=freeglut
 pkgver=3.0.0
 vcs=git

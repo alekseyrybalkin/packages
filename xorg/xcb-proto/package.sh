@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xcb-proto
 pkgver=1.13
 vcs=git

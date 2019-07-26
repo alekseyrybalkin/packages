@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxft
 pkgver=2.3.3
 vcs=git

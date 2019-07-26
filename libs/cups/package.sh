@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cups
 pkgver=2.2.11
 vcs=git

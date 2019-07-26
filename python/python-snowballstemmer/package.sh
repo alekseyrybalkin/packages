@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-snowballstemmer
 pkgver=1.2.1
 vcs=git

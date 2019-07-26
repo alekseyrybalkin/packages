@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-backcall
 pkgver=0.1
 vcs=git

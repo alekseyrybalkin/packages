@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mesa
 pkgver=19.1.2
 vcs=git

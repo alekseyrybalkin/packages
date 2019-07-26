@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libuv
 pkgver=1.29.1
 vcs=git

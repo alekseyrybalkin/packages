@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gettext
 pkgver=0.20.1
 vcs=git

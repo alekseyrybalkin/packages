@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-xlrd
 pkgver=1.2.0
 vcs=git

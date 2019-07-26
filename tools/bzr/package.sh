@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=bzr
 pkgver=2.7.0
 vcs=bzr

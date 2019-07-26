@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=slang
 pkgver=2.3.2
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=fluxbox
 pkgver=1.3.7
 vcs=git

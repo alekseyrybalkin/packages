@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=intltool
 pkgver=0.51.0
 vcs=bzr

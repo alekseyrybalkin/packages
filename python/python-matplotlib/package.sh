@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-matplotlib
 pkgver=3.1.1
 vcs=git

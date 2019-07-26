@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=imlib
 ARCH_NAME=imlib2
 pkgver=1.5.1

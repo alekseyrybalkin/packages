@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=shadow
 pkgver=4.7
 vcs=git

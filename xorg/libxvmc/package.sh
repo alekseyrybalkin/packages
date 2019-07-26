@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxvmc
 pkgver=1.0.11
 vcs=git

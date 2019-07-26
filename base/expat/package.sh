@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=expat
 pkgver=2.2.7
 vcs=git

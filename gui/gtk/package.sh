@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gtk
 ARCH_NAME=gtk3
 pkgver=3.24.10

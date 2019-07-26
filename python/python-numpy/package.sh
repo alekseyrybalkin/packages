@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-numpy
 pkgver=1.16.4
 vcs=git

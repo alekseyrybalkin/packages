@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=encodings
 pkgname=xorg-fonts-${_pkgname}
 pkgver=1.0.5

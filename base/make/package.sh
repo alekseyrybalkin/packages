@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=make
 pkgver=4.2.1
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=man-db
 pkgver=2.8.5
 vcs=git

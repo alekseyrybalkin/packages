@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxrender
 pkgver=0.9.10
 vcs=git

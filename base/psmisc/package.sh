@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=psmisc
 pkgver=23.2
 vcs=git

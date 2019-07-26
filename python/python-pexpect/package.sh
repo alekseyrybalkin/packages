@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pexpect
 pkgver=4.7.0
 vcs=git

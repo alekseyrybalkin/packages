@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=grep
 pkgver=3.3
 vcs=git

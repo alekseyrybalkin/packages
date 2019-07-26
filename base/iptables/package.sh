@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=iptables
 pkgver=1.8.3
 vcs=git

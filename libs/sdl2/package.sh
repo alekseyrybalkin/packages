@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=sdl2
 pkgver=2.0.9
 vcs=mercurial

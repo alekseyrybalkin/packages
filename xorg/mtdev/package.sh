@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mtdev
 pkgver=1.1.5
 vcs=git

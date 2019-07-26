@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=vim
 pkgver=8.1.1592
 vcs=git

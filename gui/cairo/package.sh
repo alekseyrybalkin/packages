@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cairo
 vcs=git
 pkgver=1.16.0

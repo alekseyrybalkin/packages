@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=socat
 pkgver=1.7.3.3
 vcs=git

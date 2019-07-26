@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxtst
 pkgver=1.2.3
 vcs=git

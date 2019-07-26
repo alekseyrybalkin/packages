@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-setuptools-scm
 pkgver=3.3.3
 vcs=git

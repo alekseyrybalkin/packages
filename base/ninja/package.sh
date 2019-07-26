@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ninja
 pkgver=1.9.0
 vcs=git

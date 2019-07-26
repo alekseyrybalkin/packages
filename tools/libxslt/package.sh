@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxslt
 pkgver=1.1.33
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxxf86vm
 pkgver=1.1.4
 vcs=git

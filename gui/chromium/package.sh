@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=chromium
 pkgver=75.0.3770.100
 vcs=git

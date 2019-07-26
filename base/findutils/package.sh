@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=findutils
 pkgver=4.6.0
 vcs=git

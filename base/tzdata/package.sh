@@ -1,5 +1,3 @@
-#!/bin/sh
-
 #vcs=none
 pkgname=tzdata
 pkgver=2019a

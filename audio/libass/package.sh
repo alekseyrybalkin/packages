@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libass
 pkgver=0.14.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nasm
 pkgver=2.14.02
 vcs=git

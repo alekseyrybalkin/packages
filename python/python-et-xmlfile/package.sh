@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-et-xmlfile
 pkgver=1.0.1
 vcs=mercurial

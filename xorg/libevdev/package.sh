@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libevdev
 pkgver=1.7.0
 vcs=git

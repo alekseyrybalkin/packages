@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=swig
 pkgver=4.0.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-requests
 pkgver=2.22.0
 vcs=git

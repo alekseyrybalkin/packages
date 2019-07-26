@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-wheel
 pkgver=0.33.4
 vcs=git

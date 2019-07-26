@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=popt
 pkgver=1.17+
 vcs=bzr

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=docbook-xml
 pkgver=4.5
 # Arch has some unusual magic in PKGBUILD

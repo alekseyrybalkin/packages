@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-numexpr
 pkgver=2.6.9
 vcs=git

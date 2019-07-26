@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ffmpeg
 pkgver=4.1.4
 vcs=git

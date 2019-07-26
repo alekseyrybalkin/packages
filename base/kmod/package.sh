@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=kmod
 pkgver=26
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mercurial
 pkgver=5.0.1
 vcs=mercurial

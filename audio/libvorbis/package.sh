@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libvorbis
 pkgver=1.3.6
 vcs=git

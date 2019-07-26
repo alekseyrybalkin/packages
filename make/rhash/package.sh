@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=rhash
 pkgver=1.3.8
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=shared-mime-info
 pkgver=1.12
 vcs=git

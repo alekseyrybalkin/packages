@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libksba
 pkgver=1.3.5
 vcs=git

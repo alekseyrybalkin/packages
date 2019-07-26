@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=file
 pkgver=5.37
 vcs=git

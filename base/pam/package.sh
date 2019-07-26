@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pam
 pkgver=1.3.1
 vcs=git

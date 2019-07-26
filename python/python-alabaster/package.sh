@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-alabaster
 ARCH_NAME=python-sphinx-alabaster-theme
 pkgver=0.7.12

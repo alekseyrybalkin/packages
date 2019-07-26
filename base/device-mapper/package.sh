@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=device-mapper
 ARCH_NAME=lvm2
 pkgver=2.03.05

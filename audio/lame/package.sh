@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lame
 pkgver=3.100
 vcs=git-svn

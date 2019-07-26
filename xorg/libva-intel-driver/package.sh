@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libva-intel-driver
 pkgver=2.3.0
 vcs=git

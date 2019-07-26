@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ragel
 pkgver=7.0.0.12
 vcs=git

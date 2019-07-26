@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cmake
 pkgver=3.14.5
 vcs=git

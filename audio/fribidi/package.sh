@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=fribidi
 pkgver=1.0.5
 vcs=git

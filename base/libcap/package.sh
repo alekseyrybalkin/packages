@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libcap
 pkgver=2.27
 vcs=git

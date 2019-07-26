@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pandas
 pkgver=0.24.2
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libassuan
 pkgver=2.5.3
 vcs=git

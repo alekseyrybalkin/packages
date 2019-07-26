@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-traitlets
 pkgver=4.3.2
 vcs=git

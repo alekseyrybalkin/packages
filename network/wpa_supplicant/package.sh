@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=wpa_supplicant
 pkgver=2.8
 vcs=git

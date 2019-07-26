@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nss
 pkgver=3.44.1
 vcs=mercurial

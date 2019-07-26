@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-packaging
 ARCH_NAME=python-packaging
 pkgver=19.0

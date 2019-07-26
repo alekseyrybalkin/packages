@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libgpg-error
 pkgver=1.36
 vcs=git

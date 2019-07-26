@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-cython
 ARCH_NAME=cython
 pkgver=0.29.10

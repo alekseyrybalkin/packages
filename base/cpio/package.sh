@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cpio
 pkgver=2.12
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libjpeg-turbo
 pkgver=2.0.2
 vcs=git

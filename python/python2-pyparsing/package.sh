@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-pyparsing
 ARCH_NAME=python-pyparsing
 pkgver=2.4.0

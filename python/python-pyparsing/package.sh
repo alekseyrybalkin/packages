@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pyparsing
 pkgver=2.4.0
 vcs=git

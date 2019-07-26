@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xrandr
 pkgname=xorg-${_pkgname}
 pkgver=1.5.0

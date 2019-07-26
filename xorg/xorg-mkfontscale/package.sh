@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=mkfontscale
 pkgname=xorg-${_pkgname}
 pkgver=1.2.1

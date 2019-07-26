@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gmp
 _release=6.1
 pkgver=${_release}.2

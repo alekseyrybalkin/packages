@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=pkg-config
 pkgver=0.29.2
 vcs=git

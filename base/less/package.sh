@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=less
 pkgver=551
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pickleshare
 pkgver=0.7.5
 vcs=git

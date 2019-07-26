@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pycodestyle
 pkgver=2.5.0
 vcs=git

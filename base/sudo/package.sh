@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=sudo
 # pkgver too complex to parse, we check hg tags instead
 SKIP_ARCH_CHECK=1

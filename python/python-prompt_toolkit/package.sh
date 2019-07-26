@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-prompt_toolkit
 pkgver=2.0.9
 vcs=git

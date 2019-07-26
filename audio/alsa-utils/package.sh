@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=alsa-utils
 pkgver=1.1.9
 vcs=git

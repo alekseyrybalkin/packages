@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libogg
 pkgver=1.3.3
 vcs=git

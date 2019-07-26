@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libcroco
 pkgver=0.6.13
 vcs=git

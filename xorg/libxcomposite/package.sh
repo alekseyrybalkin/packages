@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxcomposite
 pkgver=0.4.5
 vcs=git

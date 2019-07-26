@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=fossil
 pkgver=2.8
 vcs=fossil

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=glib
 ARCH_NAME=glib2
 pkgver=2.60.5

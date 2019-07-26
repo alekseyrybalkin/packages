@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gsettings-desktop-schemas
 pkgver=3.33.0
 vcs=git

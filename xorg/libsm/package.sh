@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libsm
 pkgver=1.2.3
 vcs=git

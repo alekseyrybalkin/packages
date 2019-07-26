@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-idna
 pkgver=2.8
 vcs=git

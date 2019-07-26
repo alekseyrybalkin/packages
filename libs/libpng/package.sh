@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libpng
 pkgver=1.6.37
 vcs=git

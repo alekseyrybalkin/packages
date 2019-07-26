@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=vimium
 pkgver=1.64.5
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-chardet
 pkgver=3.0.4
 vcs=git

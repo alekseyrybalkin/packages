@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libevent
 pkgver=2.1.10
 vcs=git

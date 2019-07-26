@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=giflib
 pkgver=5.2.1
 vcs=git

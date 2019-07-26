@@ -1,5 +1,3 @@
-#!/bin/sh
-
 #vcs=none-by-design
 pkgname=which
 SKIP_ARCH_CHECK=1

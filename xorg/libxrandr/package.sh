@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxrandr
 pkgver=1.5.2
 vcs=git

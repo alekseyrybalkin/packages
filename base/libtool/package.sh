@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libtool
 pkgver=2.4.6
 ARCH_VERSION=2.4.6+42+gb88cebd5-3

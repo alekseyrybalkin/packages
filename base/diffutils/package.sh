@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=diffutils
 pkgver=3.7
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ublock
 pkgver=1.20.0
 vcs=git

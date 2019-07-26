@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxpm
 pkgver=3.5.12
 vcs=git

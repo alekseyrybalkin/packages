@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=hicolor-icon-theme
 pkgver=0.17
 vcs=git

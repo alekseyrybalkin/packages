@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-decorator
 pkgver=4.4.0
 vcs=git

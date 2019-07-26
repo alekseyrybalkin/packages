@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=sqlite
 pkgver=3.29.0
 vcs=fossil

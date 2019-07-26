@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=offlineimap
 pkgver=7.2.4
 vcs=git

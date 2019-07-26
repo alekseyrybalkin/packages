@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mc
 pkgver=4.8.23
 vcs=git

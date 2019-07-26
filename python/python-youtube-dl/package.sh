@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-youtube-dl
 ARCH_NAME=youtube-dl
 pkgver=2019.06.21

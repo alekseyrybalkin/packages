@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-xlwt
 pkgver=1.3.0
 vcs=git

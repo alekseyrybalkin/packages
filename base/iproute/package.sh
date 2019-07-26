@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=iproute
 ARCH_NAME=iproute2
 vcs=git

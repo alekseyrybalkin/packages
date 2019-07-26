@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxfixes
 pkgver=5.0.3
 vcs=git

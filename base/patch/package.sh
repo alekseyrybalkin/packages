@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=patch
 pkgver=2.7.6
 vcs=git

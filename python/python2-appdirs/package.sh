@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-appdirs
 ARCH_NAME=python-appdirs
 pkgver=1.4.3

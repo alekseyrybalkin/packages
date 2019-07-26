@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=zlib
 pkgver=1.2.11
 vcs=git

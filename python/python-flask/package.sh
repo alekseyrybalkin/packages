@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-flask
 pkgver=1.0.3
 vcs=git

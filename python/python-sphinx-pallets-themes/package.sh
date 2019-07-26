@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-sphinx-pallets-themes
 SKIP_ARCH_CHECK=1
 pkgver=1.1.3

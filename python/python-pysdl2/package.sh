@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pysdl2
 pkgver=0.9.6
 vcs=git

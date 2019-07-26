@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-parso
 pkgver=0.5.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-greenlet
 pkgver=0.4.15
 vcs=git

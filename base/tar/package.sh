@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tar
 pkgver=1.32
 vcs=git

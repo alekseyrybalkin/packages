@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=openvpn
 pkgver=2.4.7
 vcs=git

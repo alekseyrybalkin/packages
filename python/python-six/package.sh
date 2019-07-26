@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-six
 pkgver=1.12.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=autoconf
 pkgver=2.69
 vcs=git

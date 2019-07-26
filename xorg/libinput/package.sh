@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libinput
 pkgver=1.13.3
 vcs=git

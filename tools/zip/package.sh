@@ -1,5 +1,3 @@
-#!/bin/sh
-
 #vcs=none
 pkgname=zip
 pkgver=3.0

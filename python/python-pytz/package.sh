@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pytz
 pkgver=2019.1
 vcs=git

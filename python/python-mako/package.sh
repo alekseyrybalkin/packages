@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-mako
 pkgver=1.0.12
 vcs=git

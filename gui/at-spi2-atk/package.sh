@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=at-spi2-atk
 pkgver=2.32.0
 vcs=git

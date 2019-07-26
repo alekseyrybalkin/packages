@@ -1,5 +1,3 @@
-#!/bin/sh
-
 #vcs=none
 pkgname=unzip
 pkgver=6.0

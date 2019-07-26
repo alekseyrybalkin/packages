@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tinyproxy
 pkgver=1.10.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libtheora
 #FIXME build errors for 1.1.1 (don't forget tag)
 pkgver=1.1.1+

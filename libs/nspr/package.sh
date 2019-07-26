@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=nspr
 pkgver=4.21
 vcs=mercurial

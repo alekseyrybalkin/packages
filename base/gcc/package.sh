@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gcc
 pkgver=9.1.0
 vcs=git

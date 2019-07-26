@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python2-virtualenv
 ARCH_NAME=python-virtualenv
 pkgver=16.6.1

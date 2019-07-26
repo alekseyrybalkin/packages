@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-gunicorn
 ARCH_NAME=gunicorn
 pkgver=19.9.0

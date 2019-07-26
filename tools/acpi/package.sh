@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=acpi
 pkgver=1.7
 vcs=git

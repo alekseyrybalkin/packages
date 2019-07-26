@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=feh
 pkgver=3.1.3
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-packaging
 pkgver=19.0
 vcs=git

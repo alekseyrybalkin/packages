@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=cryptsetup
 pkgver=2.1.0
 vcs=git

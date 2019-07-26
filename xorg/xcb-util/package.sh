@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xcb-util
 pkgver=0.4.0
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=evince
 pkgver=3.32.0
 ARCH_VERSION=3.32.0+26+gd3aecce7

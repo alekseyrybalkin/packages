@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-mwparserfromhell
 pkgver=0.5.4
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=automake
 pkgver=1.16.1
 vcs=git

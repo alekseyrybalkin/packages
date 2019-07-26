@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxkbcommon
 pkgver=0.8.4
 vcs=git

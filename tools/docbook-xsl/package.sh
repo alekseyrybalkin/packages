@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=docbook-xsl
 pkgver=1.79.2
 # build from git requires at least perl-xml-xpath

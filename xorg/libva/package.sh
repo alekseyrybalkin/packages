@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libva
 pkgver=2.4.1
 vcs=git

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=man-pages
 pkgver=5.01
 vcs=git

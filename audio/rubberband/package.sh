@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=rubberband
 pkgver=1.8.2
 vcs=mercurial

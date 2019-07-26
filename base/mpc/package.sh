@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mpc
 ARCH_NAME=libmpc
 pkgver=1.1.0

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxi
 pkgver=1.7.10
 vcs=git

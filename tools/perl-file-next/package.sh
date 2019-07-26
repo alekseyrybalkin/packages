@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=perl-file-next
 pkgver=1.16
 vcs=git

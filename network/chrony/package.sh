@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=chrony
 pkgver=3.5
 vcs=git

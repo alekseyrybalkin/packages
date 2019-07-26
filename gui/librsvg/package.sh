@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=librsvg
 #FIXME 2.41+ cannot be built without rust, cargo and network
 SKIP_ARCH_CHECK=1

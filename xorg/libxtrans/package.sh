@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxtrans
 ARCH_NAME=xtrans
 pkgver=1.4.0

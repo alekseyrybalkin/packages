@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxml
 ARCH_NAME=libxml2
 pkgver=2.9.9

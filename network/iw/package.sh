@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=iw
 pkgver=5.0.1
 vcs=git

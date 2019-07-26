@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tor
 pkgver=0.4.0.5
 vcs=git

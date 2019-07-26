@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=sdl2_ttf
 pkgver=2.0.15
 vcs=mercurial

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lcms
 ARCH_NAME=lcms2
 pkgver=2.9

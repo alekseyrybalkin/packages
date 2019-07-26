@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=yelp-xsl
 pkgver=3.32.1
 vcs=git

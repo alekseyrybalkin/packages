@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=mpv
 vcs=git
 pkgver=0.29.1

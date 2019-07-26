@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=e2fsprogs
 pkgver=1.45.2
 vcs=git

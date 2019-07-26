@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=texinfo
 pkgver=6.6
 vcs=git

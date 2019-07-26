@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-markupsafe
 pkgver=1.1.1
 vcs=git

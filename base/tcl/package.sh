@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=tcl
 pkgver=8.6.9
 vcs=fossil

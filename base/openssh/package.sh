@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=openssh
 _ver=8.0
 _patch=1

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=lightlang
 SKIP_ARCH_CHECK=1
 vcs=git

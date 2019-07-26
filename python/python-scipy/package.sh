@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-scipy
 pkgver=1.3.0
 vcs=git

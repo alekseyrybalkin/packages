@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-sphinx_rtd_theme
 pkgver=0.4.3
 vcs=git

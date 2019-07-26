@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-dateutil
 pkgver=2.8.0
 vcs=git

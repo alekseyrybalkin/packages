@@ -1,5 +1,3 @@
-#!/bin/sh
-
 _pkgname=xset
 pkgname=xorg-${_pkgname}
 pkgver=1.2.4

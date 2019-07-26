@@ -1,5 +1,3 @@
-#!/bin/sh
-
 #vcs=none
 pkgname=help2man
 pkgver=1.47.10

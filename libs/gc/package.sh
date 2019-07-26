@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gc
 pkgver=8.0.4
 vcs=git

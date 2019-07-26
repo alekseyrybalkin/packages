@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xmlto
 pkgver=0.0.28
 vcs=git

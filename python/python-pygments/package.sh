@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-pygments
 pkgver=2.4.2
 vcs=mercurial

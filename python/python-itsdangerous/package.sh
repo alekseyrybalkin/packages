@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-itsdangerous
 pkgver=1.1.0
 vcs=git

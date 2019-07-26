@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=groff
 pkgver=1.22.4
 vcs=git

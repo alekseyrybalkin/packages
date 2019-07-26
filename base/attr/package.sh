@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=attr
 pkgver=2.4.48
 vcs=git

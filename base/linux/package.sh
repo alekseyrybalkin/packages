@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git

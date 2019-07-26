@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=gtk-doc
 pkgver=1.30
 vcs=git

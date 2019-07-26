@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=serf
 pkgver=1.3.9
 vcs=git

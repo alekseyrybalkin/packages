@@ -1,5 +1,3 @@
-#!/bin/sh
-
 NON_FREE=1
 pkgname=linux-firmware
 pkgver=20190618

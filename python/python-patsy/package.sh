@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-patsy
 pkgver=0.5.1
 vcs=git

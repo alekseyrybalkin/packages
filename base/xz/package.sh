@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=xz
 pkgver=5.2.4
 vcs=git

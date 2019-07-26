@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=ji
 SKIP_ARCH_CHECK=1
 pkgver=47+

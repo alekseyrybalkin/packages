@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=python-bottleneck
 pkgver=1.2.1
 vcs=git

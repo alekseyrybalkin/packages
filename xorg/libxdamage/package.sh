@@ -1,5 +1,3 @@
-#!/bin/sh
-
 pkgname=libxdamage
 pkgver=1.1.5
 vcs=git
