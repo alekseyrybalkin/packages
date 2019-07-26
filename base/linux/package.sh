@@ -3,7 +3,7 @@
 pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
-pkgver=5.2.2
+pkgver=5.2.3
 gittag=v${pkgver}
 
 build() {
