@@ -1,19 +1,11 @@
 pkgname=librsvg
-#FIXME 2.41+ cannot be built without rust, cargo and network
-SKIP_ARCH_CHECK=1
-pkgver=2.40.20
+pkgver=2.44.14
 vcs=git
 gittag=${pkgver}
-#relmon_id=5420
+relmon_id=5420
 
 build() {
-    # disable gtk-doc
-    sed -i -e '/gtkdocize/d' autogen.sh
-    sed -i -e '/doc\//d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e 's/doc build/build/g' Makefile.am
-    rm -rf doc
-
+    tar xf ${TARBALLS_HOME}/librsvg-crates-${pkgver}.tar.gz -C ~
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --disable-introspection
