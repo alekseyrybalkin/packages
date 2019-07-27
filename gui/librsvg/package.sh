@@ -2,6 +2,7 @@ pkgname=librsvg
 pkgver=2.44.14
 vcs=git
 gittag=${pkgver}
+extra_urls="somethere/librsvg-crates-${pkgver}.tar.gz"
 relmon_id=5420
 
 build() {
