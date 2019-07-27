@@ -34,10 +34,14 @@ build() {
     git submodule update --init
 
     SUDO_USER=${USER} python ./x.py build -j$(nproc)
+
+    # run install here to avoid re-compilation
+    mkdir dest
+    DESTDIR=${srcdir}/dest SUDO_USER=${USER} python ./x.py install
 }
 
 package() {
-    DESTDIR=${pkgdir} SUDO_USER=${USER} python ./x.py install
+    cp -r dest/* ${pkgdir}/
 
     cd ${pkgdir}/usr/lib
     rm rustlib/{components,manifest-rustc,rust-installer-version}
