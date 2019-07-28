@@ -2,11 +2,13 @@ pkgname=rust
 pkgver=1.36.0
 vcs=git
 gittag=${pkgver}
-extra_urls="somethere/cargo-crates-${pkgver}.tar.gz"
+extra_urls="somethere/rust-crates-${pkgver}.tar.gz"
 relmon_id=7635
 
 build() {
-    tar xf ${TARBALLS_HOME}/cargo-crates-${pkgver}.tar.gz -C ~
+    rm -rf ~/.cargo
+    tar xf ${TARBALLS_HOME}/${pkgname}-crates-${pkgver}.tar.gz -C ~
+    cp -r `find_vcs_repo crates.io-index`/.git ~/.cargo/registry/index/github.com-1ecc6299db9ec823/
 
     cp ../config.toml .
 
