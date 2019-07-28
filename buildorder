@@ -179,8 +179,6 @@ lld
 nodejs
 gn
 lua
-libssh2
-rust
 
 # libs
 icu
