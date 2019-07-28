@@ -1,7 +1,7 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
-pkgver=5.2.3
+pkgver=5.2.4
 gittag=v${pkgver}
 
 build() {
