@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=numexpr
 gittag=v${pkgver}
 relmon_id=3943
-relmon_sed='s/v//g'
 
 build() {
     python setup.py build

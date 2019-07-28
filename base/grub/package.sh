@@ -5,7 +5,7 @@ pkgver=2.02
 vcs=git
 gittag=${pkgver}
 relmon_id=1258
-relmon_sed='s/~/\./g'
+relmon_rules="repl_tilde_dot"
 
 build() {
     ./autogen.sh

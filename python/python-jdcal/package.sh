@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=jdcal
 gittag=v${pkgver}
 relmon_id=7978
-relmon_sed='s/v//g'
 
 build() {
     python setup.py build

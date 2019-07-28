@@ -5,7 +5,6 @@ vcs=git
 gittag=dc2e20a65d1fb3a4c49bb6121a0e5caf3f1b321a
 #gittag=${pkgver}
 relmon_id=12048
-relmon_sed='s/\.orig//g'
 
 build() {
     sed -i -e '/man_MANS/d' doc/Makefile.am

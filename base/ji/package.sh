@@ -10,6 +10,6 @@ build() {
 package() {
     mkdir -p ${pkgdir}/{etc,usr/bin,usr/lib/ji}
     cp exe ${pkgdir}/usr/bin/ji
-    cp util.py ${pkgdir}/usr/lib/ji/
+    cp util.py relmon_server.py ${pkgdir}/usr/lib/ji/
     cp conf.bash ${pkgdir}/etc/ji.conf
 }

@@ -3,7 +3,6 @@ pkgver=2.2.53
 vcs=git
 gittag=v${pkgver}
 relmon_id=16
-relmon_sed='s/\.src//g'
 
 build() {
     sed -i -e 's/po//g' Makefile.am

@@ -3,7 +3,6 @@ vcs=git
 pkgver=0.29.1
 gittag=v${pkgver}
 relmon_id=5348
-relmon_sed='s/v//g'
 
 build() {
     # enable lua 5.3

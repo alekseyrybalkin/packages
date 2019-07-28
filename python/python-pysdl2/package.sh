@@ -1,4 +1,5 @@
 pkgname=python-pysdl2
+SKIP_ARCH_CHECK=1
 pkgver=0.9.6
 vcs=git
 vcs_pkgname=py-sdl2

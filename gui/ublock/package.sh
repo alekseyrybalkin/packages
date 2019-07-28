@@ -1,4 +1,5 @@
 pkgname=ublock
+ARCH_NAME=firefox-ublock-origin
 pkgver=1.20.0
 vcs=git
 gittag=${pkgver}
