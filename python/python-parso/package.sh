@@ -3,6 +3,7 @@ pkgver=0.5.0
 vcs=git
 vcs_pkgname=parso
 gittag=v${pkgver}
+relmon_id=16689
 
 build() {
     :

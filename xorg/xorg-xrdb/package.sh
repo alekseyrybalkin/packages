@@ -3,6 +3,7 @@ pkgname=xorg-${_pkgname}
 pkgver=1.2.0
 vcs=git
 gittag=${_pkgname}-${pkgver}
+relmon_id=14956
 
 build() {
     export PATH=/usr/bin:${PATH}

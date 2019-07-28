@@ -3,6 +3,7 @@ pkgver=4.3.2
 vcs=git
 vcs_pkgname=traitlets
 gittag=${pkgver}
+relmon_id=12211
 
 build() {
     # TODO: remove in the future

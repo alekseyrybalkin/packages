@@ -3,6 +3,7 @@ pkgname=xorg-${_pkgname}
 pkgver=1.4.1
 vcs=git
 gittag=${_pkgname}-${pkgver}
+relmon_id=5258
 
 build() {
     ./autogen.sh $XORG_CONFIG \

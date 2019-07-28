@@ -3,6 +3,7 @@ pkgver=1.2.0
 vcs=git
 vcs_pkgname=xlrd
 gittag=${pkgver}
+relmon_id=19683
 
 build() {
     python setup.py build
