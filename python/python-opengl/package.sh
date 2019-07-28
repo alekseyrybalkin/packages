@@ -5,6 +5,7 @@ vcs=bzr
 vcs_pkgname=pyopengl
 bzrtag=release-${pkgver}
 relmon_id=3754
+relmon_rules="skip_a,skip_b"
 
 build() {
     python setup.py build

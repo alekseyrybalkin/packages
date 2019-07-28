@@ -3,6 +3,7 @@ pkgver=8.6.9
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941
+relmon_rules="skip_a"
 
 build() {
     cd unix

@@ -4,6 +4,7 @@ pkgver=1.1.1+
 vcs=git
 gittag=fbb275803696085225c310773474ef4dcf8a4528
 relmon_id=11793
+relmon_rules="skip_alpha"
 
 build() {
     # http://forums.gentoo.org/viewtopic-t-984400.html?sid=d3c947c3a5ee63de38511920a756f2ef

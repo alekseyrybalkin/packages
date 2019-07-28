@@ -3,6 +3,7 @@ pkgver=2.2.11
 vcs=git
 gittag=v${pkgver}
 relmon_id=380
+relmon_rules="skip_b,skip_rc"
 
 build() {
     sed -i 's:444:644:' Makedefs.in

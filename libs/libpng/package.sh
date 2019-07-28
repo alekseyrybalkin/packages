@@ -3,6 +3,7 @@ pkgver=1.6.37
 vcs=git
 gittag=v${pkgver}
 relmon_id=1705
+relmon_rules="skip_beta"
 
 build() {
     autoreconf -fi

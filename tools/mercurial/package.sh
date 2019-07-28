@@ -3,6 +3,7 @@ pkgver=5.0.1
 vcs=mercurial
 hgtag=${pkgver}
 relmon_id=1969
+relmon_rules="skip_rc"
 
 build() {
     sed -i -e 's#env python#env python2#' mercurial/lsprof.py
