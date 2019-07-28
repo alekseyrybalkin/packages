@@ -2,8 +2,8 @@ pkgname=perl
 pkgver=5.30.0
 vcs=git
 gittag=v${pkgver}
-# development versions
-#relmon_id=13599
+relmon_id=13599
+relmon_rules="skip_odd_second"
 
 build() {
     export BUILD_ZLIB=False

@@ -2,8 +2,7 @@ pkgname=mesa
 pkgver=19.1.2
 vcs=git
 gittag=mesa-${pkgver}
-# rc versions
-#relmon_id=1970
+relmon_id=1970
 
 build() {
     mkdir build

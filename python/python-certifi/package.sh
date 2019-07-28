@@ -1,10 +1,9 @@
 pkgname=python-certifi
-pkgver=2019.06.16
-ARCH_VERSION=2019.6.16
+_pkgver=2019.06.16
+pkgver=${_pkgver//\.0/\.}
 vcs=git
-gittag=${pkgver}
-# tags != versions
-#relmon_id=7995
+gittag=${_pkgver}
+relmon_id=7995
 
 build() {
     python setup.py build

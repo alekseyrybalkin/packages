@@ -2,8 +2,8 @@ pkgname=shadow
 pkgver=4.7
 vcs=git
 gittag=${pkgver}
-# 20001016 ???
-#relmon_id=4802
+relmon_id=4802
+relmon_rules="skip_big_first"
 
 build() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs

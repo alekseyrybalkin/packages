@@ -3,8 +3,8 @@ ARCH_NAME=gtk3
 pkgver=3.24.10
 vcs=git
 gittag=${pkgver}
-# development versions
-#relmon_id=10018
+relmon_id=10018
+relmon_rules="skip_big_second"
 
 build() {
     meson --prefix=/usr \

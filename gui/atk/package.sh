@@ -2,8 +2,8 @@ pkgname=atk
 pkgver=2.32.0
 vcs=git
 gittag=ATK_${pkgver//\./_}
-# development versions
-#relmon_id=130
+relmon_id=130
+relmon_rules="skip_odd_second"
 
 build() {
     mkdir build

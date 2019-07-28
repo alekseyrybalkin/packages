@@ -2,8 +2,8 @@ pkgname=gsettings-desktop-schemas
 pkgver=3.33.0
 vcs=git
 gittag=${pkgver}
-# rc versions
-#relmon_id=13139
+relmon_id=13139
+relmon_rules="skip_big_third"
 
 build() {
     mkdir build

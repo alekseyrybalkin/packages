@@ -3,8 +3,8 @@ _pybasever=3.7
 pkgver=${_pybasever}.4
 vcs=git
 gittag=v${pkgver}
-# alpha versions
-#relmon_id=13254
+relmon_id=13254
+relmon_rules="skip_one_good"
 
 build() {
     rm -rf .github .git .gitignore .bzrignore .hgeol .hgignore .hgtags .hgtouch

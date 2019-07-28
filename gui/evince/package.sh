@@ -3,8 +3,8 @@ pkgver=3.32.0
 ARCH_VERSION=3.32.0+26+gd3aecce7
 vcs=git
 gittag=${pkgver}
-# beta versions
-#relmon_id=8178
+relmon_id=8178
+relmon_rules="skip_odd_second"
 
 build() {
     # disable gtk-doc

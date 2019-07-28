@@ -3,8 +3,8 @@ pkgver=2.13.1
 ARCH_VERSION=2.13.1+12+g5f5ec56
 vcs=git
 gittag=${pkgver}
-# rc versions
-#relmon_id=827
+relmon_id=827
+relmon_rules="skip_big_third"
 
 build() {
     ./autogen.sh --prefix=/usr \

@@ -2,8 +2,8 @@ pkgname=borg
 pkgver=1.1.10
 vcs=git
 gittag=${pkgver}
-# alpha versions
-#relmon_id=10446
+relmon_id=10446
+relmon_rules="skip_a,skip_b,skip_rc"
 
 build() {
     python setup.py build

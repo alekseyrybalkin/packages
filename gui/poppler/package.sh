@@ -2,8 +2,7 @@ pkgname=poppler
 pkgver=0.77.0
 vcs=git
 gittag=poppler-${pkgver}
-# extra zeroes in versions
-#relmon_id=3686
+relmon_id=3686
 
 build() {
     mkdir build

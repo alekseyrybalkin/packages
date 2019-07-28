@@ -3,8 +3,8 @@ ARCH_NAME=glib2
 pkgver=2.60.5
 vcs=git
 gittag=${pkgver}
-# development versions
-#relmon_id=10024
+relmon_id=10024
+relmon_rules="skip_odd_second"
 
 build() {
     mkdir build

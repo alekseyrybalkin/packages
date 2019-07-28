@@ -2,8 +2,8 @@ pkgname=dbus
 pkgver=1.12.16
 vcs=git
 gittag=dbus-${pkgver}
-# development versions
-#relmon_id=5356
+relmon_id=5356
+relmon_rules="skip_odd_second"
 
 build() {
     ./autogen.sh --prefix=/usr \
