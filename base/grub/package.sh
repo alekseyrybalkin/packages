@@ -1,14 +1,15 @@
 pkgname=grub
 # magic in PKGBUILD
 SKIP_ARCH_CHECK=1
-pkgver=2.02
+pkgver=2.04
 vcs=git
-gittag=${pkgver}
+gittag=grub-${pkgver}
 relmon_id=1258
 relmon_rules="repl_tilde_dot"
 
 build() {
-    ./autogen.sh
+    git clone -s `find_vcs_repo gnulib`
+    ./bootstrap
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \
         --sysconfdir=/etc \

@@ -1,5 +1,6 @@
 pkgname=gtk-doc
 pkgver=1.30
+ARCH_VERSION=1.30+1+g44c5972
 vcs=git
 gittag=GTK_DOC_${pkgver//\./_}
 relmon_id=13140

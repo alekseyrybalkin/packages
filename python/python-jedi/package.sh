@@ -1,5 +1,5 @@
 pkgname=python-jedi
-pkgver=0.14.0
+pkgver=0.14.1
 vcs=git
 vcs_pkgname=jedi
 gittag=v${pkgver}

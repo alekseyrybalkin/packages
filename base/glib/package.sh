@@ -1,6 +1,6 @@
 pkgname=glib
 ARCH_NAME=glib2
-pkgver=2.60.5
+pkgver=2.60.6
 vcs=git
 gittag=${pkgver}
 relmon_id=10024

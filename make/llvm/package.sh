@@ -1,5 +1,5 @@
 pkgname=llvm
-pkgver=8.0.0
+pkgver=8.0.1
 vcs=git
 gittag=llvmorg-${pkgver}
 relmon_id=1830

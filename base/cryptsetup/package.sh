@@ -2,6 +2,7 @@ pkgname=cryptsetup
 pkgver=2.1.0
 vcs=git
 gittag=v${pkgver}
+# includes rc versions without rc in them
 relmon_id=13709
 
 build() {

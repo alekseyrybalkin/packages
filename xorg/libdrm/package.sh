@@ -1,5 +1,5 @@
 pkgname=libdrm
-pkgver=2.4.98
+pkgver=2.4.99
 vcs=git
 gittag=libdrm-${pkgver}
 relmon_id=1596

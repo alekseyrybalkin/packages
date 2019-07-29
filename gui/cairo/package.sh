@@ -2,6 +2,7 @@ pkgname=cairo
 vcs=git
 pkgver=1.16.0
 gittag=${pkgver}
+# includes rcairo versions from https://cairographics.org/releases/
 relmon_id=247
 relmon_rules="skip_odd_second"
 

@@ -1,5 +1,5 @@
 pkgname=pango
-pkgver=1.43.0
+pkgver=1.44
 vcs=git
 gittag=${pkgver}
 relmon_id=11783

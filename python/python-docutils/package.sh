@@ -1,7 +1,7 @@
 pkgname=python-docutils
 vcs_pkgname=docutils
 ARCH_NAME=docutils
-pkgver=0.14
+pkgver=0.15
 vcs=git
 gittag=docutils-${pkgver}
 relmon_id=3849

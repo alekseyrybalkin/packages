@@ -1,5 +1,5 @@
 pkgname=glu
-pkgver=9.0.0
+pkgver=9.0.1
 vcs=git
 gittag=glu-${pkgver}
 

@@ -1,5 +1,5 @@
 pkgname=mesa
-pkgver=19.1.2
+pkgver=19.1.3
 vcs=git
 gittag=mesa-${pkgver}
 relmon_id=1970

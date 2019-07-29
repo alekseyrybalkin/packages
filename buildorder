@@ -110,7 +110,6 @@ device-mapper
 cpio
 json-c
 cryptsetup
-initramfs
 grub
 glib
 pkg-config
@@ -119,6 +118,7 @@ systemd
 dbus
 e2fsprogs
 linux
+initramfs
 
 # base: ji
 vim
@@ -375,7 +375,10 @@ python-alabaster
 python-snowballstemmer
 python-pygments
 python-sphinx
+python-sphinx-issues
 python-sphinx_rtd_theme
+python-zipp
+python-importlib-metadata
 python-sphinx-pallets-themes
 
 # python: ipython

@@ -1,12 +1,11 @@
-pkgname=python-parso
-pkgver=0.5.1
+pkgname=python-zipp
+pkgver=0.5.2
 vcs=git
-vcs_pkgname=parso
+vcs_pkgname=zipp
 gittag=v${pkgver}
-relmon_id=16689
 
 build() {
-    :
+    python setup.py build
 }
 
 package() {

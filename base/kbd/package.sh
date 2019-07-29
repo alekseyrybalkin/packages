@@ -1,7 +1,7 @@
 pkgname=kbd
-pkgver=2.0.4
+pkgver=2.1.0
 vcs=git
-gittag=${pkgver}
+gittag=v${pkgver}
 relmon_id=1492
 
 build() {

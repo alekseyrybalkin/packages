@@ -1,6 +1,6 @@
 pkgname=python2-pyparsing
 ARCH_NAME=python-pyparsing
-pkgver=2.4.0
+pkgver=2.4.1.1
 vcs=git
 vcs_pkgname=pyparsing
 gittag=pyparsing_${pkgver}

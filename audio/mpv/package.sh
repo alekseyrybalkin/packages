@@ -1,6 +1,7 @@
 pkgname=mpv
 vcs=git
 pkgver=0.29.1
+_wafver=2.0.18
 gittag=v${pkgver}
 relmon_id=5348
 
@@ -10,7 +11,7 @@ build() {
 
     git clone -n -s `find_vcs_repo waf` waf-clone
     cd waf-clone
-    git checkout waf-2.0.17
+    git checkout waf-${_wafver}
     cd ..
     cp -r waf-clone/{waf-light,waflib} ./
     rm -rf waf-clone

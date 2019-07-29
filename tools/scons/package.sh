@@ -1,5 +1,5 @@
 pkgname=scons
-pkgver=3.0.5
+pkgver=3.1.0
 vcs=git
 gittag=${pkgver}
 relmon_id=4770

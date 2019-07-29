@@ -1,5 +1,5 @@
 pkgname=python-lxml
-pkgver=4.3.4
+pkgver=4.4.0
 vcs=git
 vcs_pkgname=lxml
 gittag=lxml-${pkgver}

@@ -1,5 +1,5 @@
 pkgname=lld
-pkgver=8.0.0
+pkgver=8.0.1
 vcs=git
 vcs_pkgname=llvm
 gittag=llvmorg-${pkgver}

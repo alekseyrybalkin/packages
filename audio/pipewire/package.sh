@@ -1,5 +1,6 @@
 pkgname=pipewire
 pkgver=0.2.6
+ARCH_VERSION=0.2.6+1+g37613b67
 vcs=git
 gittag=${pkgver}
 

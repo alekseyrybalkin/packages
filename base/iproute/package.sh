@@ -1,7 +1,7 @@
 pkgname=iproute
 ARCH_NAME=iproute2
 vcs=git
-pkgver=5.1.0
+pkgver=5.2.0
 gittag=v${pkgver}
 relmon_id=1392
 

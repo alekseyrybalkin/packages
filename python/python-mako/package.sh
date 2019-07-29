@@ -1,5 +1,5 @@
 pkgname=python-mako
-pkgver=1.0.12
+pkgver=1.0.14
 vcs=git
 vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}

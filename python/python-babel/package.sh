@@ -7,12 +7,15 @@ gittag=v${pkgver}
 relmon_id=11984
 
 build() {
+    patch -Np1 -i ../import_cldr_conversion.patch
+
     rm -rf cldr
     git clone -s -n `find_vcs_repo cldr`
     cd cldr
     git checkout release-${_cldr_core_ver//\./-}
     cd ../
 
+    python scripts/import_cldr.py ${srcdir}/cldr/common
     python setup.py build
 }
 

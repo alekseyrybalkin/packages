@@ -1,5 +1,5 @@
 pkgname=libvpx
-pkgver=1.8.0
+pkgver=1.8.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=11083

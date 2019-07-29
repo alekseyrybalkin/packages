@@ -1,0 +1,12 @@
+diff --git a/scripts/import_cldr.py b/scripts/import_cldr.py
+index 4188055..9cbe554 100755
+--- a/scripts/import_cldr.py
++++ b/scripts/import_cldr.py
+@@ -75,6 +75,7 @@ def error(message, *args):
+ 
+ 
+ def need_conversion(dst_filename, data_dict, source_filename):
++    return True
+     with open(source_filename, 'rb') as f:
+         blob = f.read(4096)
+         version = int(re.search(b'version number="\\$Revision: (\\d+)',

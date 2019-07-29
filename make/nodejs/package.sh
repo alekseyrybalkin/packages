@@ -1,5 +1,5 @@
 pkgname=nodejs
-pkgver=12.5.0
+pkgver=12.7.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=8251

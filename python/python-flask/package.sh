@@ -1,5 +1,5 @@
 pkgname=python-flask
-pkgver=1.0.3
+pkgver=1.1.1
 vcs=git
 vcs_pkgname=flask
 gittag=${pkgver}

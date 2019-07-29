@@ -1,8 +1,8 @@
 pkgname=gn
-pkgver=0.1568+
+pkgver=0.1576.81ee1967
 vcs=git
 #FIXME no tag
-gittag=c599fdbbcdb7eb6c7e345e36e1ae5de16a91509f
+gittag=81ee1967d3fcbc829bac1c005c3da59739c88df9
 
 build() {
     ./build/gen.py

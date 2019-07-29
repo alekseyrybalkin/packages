@@ -1,5 +1,5 @@
 pkgname=sdl2
-pkgver=2.0.9
+pkgver=2.0.10
 vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=4779
