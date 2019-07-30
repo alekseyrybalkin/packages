@@ -1,6 +1,7 @@
 pkgname=tmux
 pkgver=3.0
 vcs=git
+#FIXME tag 3.0 used actually for RC releases (and it changes)
 gittag=${pkgver}
 relmon_id=4980
 

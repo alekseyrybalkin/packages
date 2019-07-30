@@ -1,10 +1,10 @@
-pkgname=python2-packaging
-ARCH_NAME=python-packaging
-pkgver=19.1
+pkgname=python2-attrs
+ARCH_NAME=python-attrs
+pkgver=19.1.0
 vcs=git
-vcs_pkgname=packaging
+vcs_pkgname=attrs
 gittag=${pkgver}
-relmon_id=11718
+relmon_id=15099
 
 build() {
     python2 setup.py build

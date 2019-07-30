@@ -3,6 +3,7 @@ pkgver=2.1.0
 vcs=git
 gittag=v${pkgver}
 # includes rc versions without rc in them
+relmon_unreliable=1
 relmon_id=13709
 
 build() {

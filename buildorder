@@ -81,6 +81,7 @@ sqlite
 python
 python-six
 python-pyparsing
+python-attrs
 python-packaging
 python-appdirs
 python-setuptools
@@ -92,6 +93,7 @@ python-mako
 python2
 python2-six
 python2-pyparsing
+python2-attrs
 python2-packaging
 python2-appdirs
 python2-setuptools

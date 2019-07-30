@@ -1,9 +1,9 @@
-pkgname=python-packaging
-pkgver=19.1
+pkgname=python-attrs
+pkgver=19.1.0
 vcs=git
-vcs_pkgname=packaging
+vcs_pkgname=attrs
 gittag=${pkgver}
-relmon_id=11718
+relmon_id=15099
 
 build() {
     python setup.py build

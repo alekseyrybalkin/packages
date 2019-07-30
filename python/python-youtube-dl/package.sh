@@ -1,6 +1,6 @@
 pkgname=python-youtube-dl
 ARCH_NAME=youtube-dl
-pkgver=2019.07.27
+pkgver=2019.07.30
 vcs=git
 vcs_pkgname=youtube-dl
 gittag=${pkgver}
