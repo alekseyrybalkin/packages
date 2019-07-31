@@ -416,3 +416,7 @@ coffeescript1
 vimium
 ublock
 chromium
+
+# dev
+mongodb-bin
+elasticsearch2
