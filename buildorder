@@ -330,7 +330,8 @@ hicolor-icon-theme
 desktop-file-utils
 gsettings-desktop-schemas
 libcroco
-arc-icon-theme
+librsvg
+adwaita-icon-theme
 transmission
 openjpeg
 poppler

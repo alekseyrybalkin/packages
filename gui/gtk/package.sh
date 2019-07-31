@@ -7,7 +7,6 @@ relmon_id=10018
 relmon_rules="skip_big_second"
 
 build() {
-    sed -i -e '/needs to be enabled/d' modules/printbackends/meson.build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
@@ -16,7 +15,7 @@ build() {
         -D man=true \
         -D broadway_backend=true \
         -D wayland_backend=false \
-        -D print_backends='' \
+        -D print_backends='file' \
         . build
     ninja -C build
 }

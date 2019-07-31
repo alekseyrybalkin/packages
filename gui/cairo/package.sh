@@ -13,7 +13,6 @@ build() {
         --enable-gl \
         --enable-egl \
         --enable-tee \
-        --enable-svg=no \
         --libdir=$LIBDIR
     make
 }
