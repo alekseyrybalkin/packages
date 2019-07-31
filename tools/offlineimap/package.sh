@@ -5,8 +5,6 @@ gittag=v${pkgver}
 relmon_id=2534
 
 build() {
-    patch -Np1 -i ../ca-bundle-path.patch
-
     find . -type f -exec sed '1s,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' -i {} \;
     python2 setup.py build
     cd docs
