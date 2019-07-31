@@ -33,4 +33,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/lib/gtk-3.0/3.0.0/immodules.cache"
+generated_files="usr/lib/gtk-3.0/3.0.0/immodules.cache"

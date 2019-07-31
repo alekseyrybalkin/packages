@@ -20,4 +20,4 @@ package() {
     install -Dm755 ../iptables-flush ${pkgdir}/usr/bin/iptables-flush
 }
 
-known="etc/systemd/system/multi-user.target.wants/iptables.service"
+generated_files="etc/systemd/system/multi-user.target.wants/iptables.service"

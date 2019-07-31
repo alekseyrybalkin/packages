@@ -23,4 +23,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/share/icons/Adwaita/icon-theme.cache"
+generated_files="usr/share/icons/Adwaita/icon-theme.cache"

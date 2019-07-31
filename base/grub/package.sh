@@ -28,7 +28,7 @@ package() {
     cp -av ${pkgdir}/usr/lib/grub/i386-pc/boot.img ${pkgdir}/boot/grub/i386-pc
 }
 
-known="boot/grub/i386-pc/core.img \
+generated_files="boot/grub/i386-pc/core.img \
     boot/grub/i386-pc/load.cfg \
     boot/grub/i386-pc/modinfo.sh \
     boot/grub/grubenv \

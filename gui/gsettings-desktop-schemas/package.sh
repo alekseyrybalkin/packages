@@ -23,4 +23,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/share/glib-2.0/schemas/gschemas.compiled"
+generated_files="usr/share/glib-2.0/schemas/gschemas.compiled"

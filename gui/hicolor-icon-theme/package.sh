@@ -14,4 +14,4 @@ package() {
     make DESTDIR=${pkgdir} install
 }
 
-known="usr/share/icons/hicolor/icon-theme.cache"
+generated_files="usr/share/icons/hicolor/icon-theme.cache"

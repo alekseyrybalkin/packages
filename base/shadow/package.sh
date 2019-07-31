@@ -48,7 +48,7 @@ after_install() {
     grpconv
 }
 
-known="etc/group \
+generated_files="etc/group \
     etc/gshadow- \
     etc/shadow- \
     etc/gshadow \

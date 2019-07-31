@@ -57,6 +57,6 @@ after_install() {
     systemd-machine-id-setup
 }
 
-known="/etc/machine-id \
+generated_files="/etc/machine-id \
     etc/udev/hwdb.bin \
     etc/.updated"

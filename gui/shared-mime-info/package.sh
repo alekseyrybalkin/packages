@@ -23,4 +23,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/share/applications/mimeinfo.cache"
+generated_files="usr/share/applications/mimeinfo.cache"

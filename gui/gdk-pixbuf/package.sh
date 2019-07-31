@@ -23,4 +23,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+generated_files="usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"

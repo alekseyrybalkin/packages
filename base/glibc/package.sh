@@ -44,4 +44,4 @@ after_upgrade() {
     after_install
 }
 
-known="usr/lib/locale/locale-archive"
+generated_files="usr/lib/locale/locale-archive"

@@ -118,5 +118,5 @@ after_upgrade() {
     after_install
 }
 
-known="etc/xml/docbook \
+generated_files="etc/xml/docbook \
     etc/xml/catalog"

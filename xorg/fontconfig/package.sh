@@ -34,7 +34,7 @@ after_upgrade() {
     after_install
 }
 
-known="usr/share/fonts/TTF/.uuid \
+generated_files="usr/share/fonts/TTF/.uuid \
     usr/share/fonts/X11/encodings/.uuid \
     usr/share/fonts/X11/.uuid \
     usr/share/fonts/.uuid \

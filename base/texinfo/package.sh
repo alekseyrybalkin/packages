@@ -14,4 +14,4 @@ package() {
     make DESTDIR=${pkgdir} install
 }
 
-known="usr/share/info/dir"
+generated_files="usr/share/info/dir"
