@@ -4,6 +4,7 @@ ARCH_VERSION=242.84
 vcs=git
 gittag=remotes/origin/stable/v${pkgver}-stable
 relmon_id=5440
+relmon_rules="skip_rc"
 
 build() {
     sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in

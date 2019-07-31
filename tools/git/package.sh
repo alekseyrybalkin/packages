@@ -3,6 +3,7 @@ pkgver=2.22.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=5350
+relmon_rules="skip_rc"
 
 build() {
     make configure

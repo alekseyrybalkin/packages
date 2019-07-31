@@ -1,9 +1,11 @@
 pkgname=chromium
+SKIP_ARCH_CHECK=1
 pkgver=75.0.3770.100
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
-relmon_id=13344
+# we update chromium separately from everything else
+#relmon_id=13344
 
 # updating node_modules:
 # cd third_party/node
