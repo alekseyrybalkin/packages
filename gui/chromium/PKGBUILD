@@ -1,6 +1,6 @@
 pkgname=chromium
 SKIP_ARCH_CHECK=1
-pkgver=75.0.3770.100
+pkgver=76.0.3809.87
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -46,11 +46,6 @@ build() {
         third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
         third_party/libxml/chromium/libxml_utils.cc
 
-    # libstdc++: do not assume unique_ptr has ostream operator
-    git cherry-pick aeed4d1f15ce84a17ea0bc219e258dc4982b2368
-    # Disallow partial swaps for linux based on gl_version_string
-    git cherry-pick e55ec7368dbbe1970cc229350299963eb7b74ec4
-
     _check_and_clone_deps DEPS
 
     cd third_party/angle
@@ -68,9 +63,7 @@ build() {
     git log -1 --format='%ct' --grep=^Change-Id: HEAD > build/util/LASTCHANGE.committime
     rm -rf .git
 
-    patch -Np1 -i ../chromium-fix-window-flash-for-some-WMs.patch
     patch -Np0 -i ../chromium-skia-harmony.patch
-    patch -Np1 -i ../chromium-non-const-deltas.patch
 
     # Force script incompatible with Python 3 to use /usr/bin/python2
     sed -i '1s|python$|&2|' third_party/dom_distiller_js/protoc_plugins/*.py
@@ -119,11 +112,6 @@ build() {
     CFLAGS+='   -Wno-builtin-macro-redefined'
     CXXFLAGS+=' -Wno-builtin-macro-redefined'
     CPPFLAGS+=' -D__DATE__=  -D__TIME__=  -D__TIMESTAMP__='
-
-    # Mimic exclude_unwind_tables=true
-    CFLAGS+='   -fno-unwind-tables -fno-asynchronous-unwind-tables'
-    CXXFLAGS+=' -fno-unwind-tables -fno-asynchronous-unwind-tables'
-    CPPFLAGS+=' -DNO_UNWIND_TABLES'
 
     gn gen out/Release --args="${GN_CONFIG[*]}" --script-executable=/usr/bin/python2
     ninja -C out/Release chrome chrome_sandbox chromedriver
