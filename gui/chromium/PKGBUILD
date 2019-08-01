@@ -46,6 +46,9 @@ build() {
         third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
         third_party/libxml/chromium/libxml_utils.cc
 
+    # Revert "Fix rendering performance regressions" which breaks https://chromium-review.googlesource.com/c/chromium/src/+/1597388
+    git revert --no-edit 76ddcd29071bd4079c8776e0576268da5493f3ff
+
     _check_and_clone_deps DEPS
 
     cd third_party/angle
