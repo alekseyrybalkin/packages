@@ -52,5 +52,5 @@ after_install() {
 }
 
 after_upgrade(){
-    kiin_after_install
+    after_install
 }

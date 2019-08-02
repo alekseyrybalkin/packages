@@ -2,7 +2,7 @@
 pkgname=mongodb-bin
 SKIP_ARCH_CHECK=1
 _basever=4.0
-pkgver=${_basever}.10
+pkgver=${_basever}.11
 urls="https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/${_basever}/multiverse/binary-amd64/mongodb-org-shell_${pkgver}_amd64.deb \
     https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/${_basever}/multiverse/binary-amd64/mongodb-org-server_${pkgver}_amd64.deb \
     https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/${_basever}/multiverse/binary-amd64/mongodb-org-mongos_${pkgver}_amd64.deb \
@@ -42,5 +42,5 @@ after_install() {
 }
 
 after_upgrade(){
-    kiin_after_install
+    after_install
 }
