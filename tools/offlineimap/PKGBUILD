@@ -5,6 +5,9 @@ gittag=v${pkgver}
 relmon_id=2534
 
 build() {
+    sed -i -e 's/linux-arch/linux-jinni/g' offlineimap/utils/distro.py
+    sed -i -e 's/arch-release/jinni-release/g' offlineimap/utils/distro.py
+
     find . -type f -exec sed '1s,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' -i {} \;
     python2 setup.py build
     cd docs
