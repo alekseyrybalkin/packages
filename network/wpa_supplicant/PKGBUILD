@@ -1,5 +1,5 @@
 pkgname=wpa_supplicant
-pkgver=2.8
+pkgver=2.9
 vcs=git
 gittag=hostap_${pkgver//\./_}
 relmon_id=5146

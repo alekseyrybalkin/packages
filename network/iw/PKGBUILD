@@ -1,5 +1,5 @@
 pkgname=iw
-pkgver=5.0.1
+pkgver=5.3
 vcs=git
 gittag=v${pkgver}
 relmon_id=1410

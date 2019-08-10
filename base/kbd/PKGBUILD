@@ -1,5 +1,5 @@
 pkgname=kbd
-pkgver=2.1.0
+pkgver=2.2.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=1492
