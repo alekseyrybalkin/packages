@@ -1,0 +1,18 @@
+pkgname=opengl-docs
+SKIP_ARCH_CHECK=1
+pkgver=4
+vcs=git
+vcs_pkgname=opengl-refpages
+
+build() {
+    cd gl${pkgver}
+    cp bottom.php index.html
+    sed -i -e 's/php/html/g' index.html
+    cd html
+    python makeindex.py . .. indexaccord.html indexflat.html
+}
+
+package() {
+    mkdir -p ${pkgdir}/usr/share/doc/opengl
+    cp -r gl${pkgver}/{index.html,html} ${pkgdir}/usr/share/doc/opengl/
+}

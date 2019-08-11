@@ -411,12 +411,13 @@ python-seaborn
 python-patsy
 python-statsmodels
 
+# dev
+opengl-docs
+mongodb-bin
+elasticsearch2
+
 # gui: chromium
 coffeescript1
 vimium
 ublock
 chromium
-
-# dev
-mongodb-bin
-elasticsearch2
