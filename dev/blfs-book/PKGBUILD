@@ -1,0 +1,17 @@
+pkgname=blfs-book
+SKIP_ARCH_CHECK=1
+pkgver=1
+vcs=git-svn
+vcs_pkgname=${pkgname}-git-svn
+
+build() {
+    sed -i -e 's/font-size: 1em;/font-size: 1.2em;/g' stylesheets/lfs-xsl/lfs.css
+    make -j1 BASEDIR=${srcdir}/build-out RENDERTMP=${srcdir}/build-tmp REV=systemd
+}
+
+package() {
+    mkdir -p ${pkgdir}/usr/share/doc/${pkgname}
+    cp -r build-out/* ${pkgdir}/usr/share/doc/${pkgname}/
+    find ${pkgdir}/usr -type f -exec chmod 644 {} \;
+    find ${pkgdir}/usr -type d -exec chmod 755 {} \;
+}

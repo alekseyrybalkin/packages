@@ -414,6 +414,8 @@ python-statsmodels
 # dev
 opengl-docs
 cpp-docs
+lfs-book
+blfs-book
 mongodb-bin
 elasticsearch2
 
