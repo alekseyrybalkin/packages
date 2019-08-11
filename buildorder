@@ -413,6 +413,7 @@ python-statsmodels
 
 # dev
 opengl-docs
+cpp-docs
 mongodb-bin
 elasticsearch2
 

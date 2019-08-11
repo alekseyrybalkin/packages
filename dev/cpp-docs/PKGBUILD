@@ -1,0 +1,15 @@
+pkgname=cpp-docs
+SKIP_ARCH_CHECK=1
+pkgver=20190602
+urls="https://github.com/PeterFeicht/cppreference-doc/releases/download/v${pkgver}/html-book-${pkgver}.tar.xz"
+srctar=html-book-${pkgver}.tar.xz
+srcdir=reference
+
+build() {
+    :
+}
+
+package() {
+    mkdir -p ${pkgdir}/usr/share/doc/cpp-docs
+    cp -r common en ${pkgdir}/usr/share/doc/cpp-docs/
+}
