@@ -1,0 +1,20 @@
+pkgname=python-modernize
+SKIP_ARCH_CHECK=1
+pkgver=0.7
+vcs=git
+gittag=${pkgver}
+
+build() {
+    python setup.py build
+
+    # rename sphinx function from deprecated name to new one
+    sed -i -e 's/add_description_unit/add_object_type/g' docs/sphinxext/extra_types.py
+    cd docs
+    make html
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+    mkdir -pv ${pkgdir}/usr/share/doc
+    cp -r docs/_build/html ${pkgdir}/usr/share/doc/${pkgname}
+}

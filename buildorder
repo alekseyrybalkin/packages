@@ -359,6 +359,7 @@ python-flask
 python-greenlet
 python-gevent
 python-pycodestyle
+python-modernize
 python-mss
 python-mwparserfromhell
 python-opengl
