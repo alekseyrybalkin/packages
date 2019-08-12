@@ -3,6 +3,7 @@ SKIP_ARCH_CHECK=1
 pkgver=0.7
 vcs=git
 gittag=${pkgver}
+relmon_id=3925
 
 build() {
     python setup.py build

@@ -1,0 +1,20 @@
+pkgname=python-moderngl
+SKIP_ARCH_CHECK=1
+pkgver=5.5.2
+vcs=git
+vcs_pkgname=moderngl
+gittag=${pkgver}
+
+build() {
+    python setup.py build
+
+    # napoleon is part of sphinx now
+    sed -i -e 's/sphinxcontrib.napoleon/sphinx.ext.napoleon/g' docs/conf.py
+    python setup.py build_sphinx
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+    mkdir -pv ${pkgdir}/usr/share/doc
+    cp -r build/sphinx/html ${pkgdir}/usr/share/doc/${pkgname}
+}

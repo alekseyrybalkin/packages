@@ -1,3 +1,4 @@
+#vcs=git
 pkgname=cpp-docs
 SKIP_ARCH_CHECK=1
 pkgver=20190602

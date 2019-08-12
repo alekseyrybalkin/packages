@@ -363,6 +363,7 @@ python-modernize
 python-mss
 python-mwparserfromhell
 python-opengl
+python-moderngl
 python-pysdl2
 python-pillow
 python-numpy
