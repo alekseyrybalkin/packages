@@ -8,8 +8,12 @@ relmon_id=12950
 
 build() {
     python setup.py build
+    cd doc
+    make html
 }
 
 package() {
     python setup.py install --root=${pkgdir}
+    mkdir -pv ${pkgdir}/usr/share/doc
+    cp -r doc/_build/html ${pkgdir}/usr/share/doc/${pkgname}
 }
