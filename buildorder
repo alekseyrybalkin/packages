@@ -363,7 +363,11 @@ python-modernize
 python-mss
 python-mwparserfromhell
 python-opengl
+python-pywavefront
 python-moderngl
+python-multipledispatch
+python-pyrr
+python-moderngl-window
 python-pysdl2
 python-pillow
 python-numpy

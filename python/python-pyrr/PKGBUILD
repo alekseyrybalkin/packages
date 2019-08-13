@@ -1,0 +1,14 @@
+pkgname=python-pyrr
+SKIP_ARCH_CHECK=1
+pkgver=0.10.3
+vcs=git
+vcs_pkgname=pyrr
+gittag=${pkgver}
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+}

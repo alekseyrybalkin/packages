@@ -1,0 +1,14 @@
+pkgname=python-multipledispatch
+SKIP_ARCH_CHECK=1
+pkgver=0.6.0
+vcs=git
+vcs_pkgname=multipledispatch
+gittag=${pkgver}
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+}
