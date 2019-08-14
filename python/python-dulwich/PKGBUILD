@@ -1,0 +1,14 @@
+pkgname=python-dulwich
+pkgver=0.19.12
+vcs=git
+vcs_pkgname=dulwich
+gittag=dulwich-${pkgver}
+relmon_id=6077
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+}

@@ -90,6 +90,7 @@ python-wheel
 python-cython
 python-docutils
 python-mako
+python-configobj
 python2
 python2-six
 python2-pyparsing
@@ -131,7 +132,7 @@ ji
 
 # tools: vcs
 mercurial
-bzr
+breezy
 libxslt
 docbook-xsl
 docbook-xml
@@ -363,6 +364,7 @@ python-mwparserfromhell
 python-pillow
 python-numpy
 python-scipy
+python-dulwich
 
 # python: sphinx
 python-imagesize

@@ -1,0 +1,14 @@
+pkgname=python-configobj
+pkgver=5.0.6
+vcs=git
+vcs_pkgname=configobj
+gittag=v${pkgver}
+relmon_id=3809
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir}
+}
