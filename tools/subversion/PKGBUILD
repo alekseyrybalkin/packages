@@ -5,8 +5,9 @@ gittag=${pkgver}
 relmon_id=4905
 
 build() {
+    patch -Np1 -i ../python3.patch
+
     MAKEFLAGS=
-    export PYTHON=/usr/bin/python2
     ./autogen.sh
     ./configure --prefix=/usr \
         --with-apr=/usr \
