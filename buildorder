@@ -98,7 +98,6 @@ python2-attrs
 python2-packaging
 python2-appdirs
 python2-setuptools
-python2-cython
 python2-virtualenv
 
 # base: boot
