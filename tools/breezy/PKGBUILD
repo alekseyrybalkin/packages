@@ -1,5 +1,5 @@
 pkgname=breezy
-SKIP_ACRH_CHECK=1
+SKIP_ARCH_CHECK=1
 pkgver=3.0.1
 vcs=git
 gittag=brz-${pkgver}

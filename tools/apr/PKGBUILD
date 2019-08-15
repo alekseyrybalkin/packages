@@ -1,11 +1,12 @@
 pkgname=apr
-pkgver=1.7.0
+pkgver=1.7.0+
 vcs=git
-gittag=${pkgver}
+#FIXME apr 2.0 is not released yet
+gittag=b4ee162cc661aef09f16a0dc7583259c5db63c59
+#gittag=${pkgver}
 relmon_id=95
 
 build() {
-    sed -i -e 's/python/python2/g' build/gen-build.py
     ./buildconf
     sed -i -e 's/$RM "$cfgfile"/$RM -f "$cfgfile"/g' configure
     ./configure --prefix=/usr \

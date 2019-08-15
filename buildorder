@@ -91,14 +91,6 @@ python-cython
 python-docutils
 python-mako
 python-configobj
-python2
-python2-six
-python2-pyparsing
-python2-attrs
-python2-packaging
-python2-appdirs
-python2-setuptools
-python2-virtualenv
 
 # base: boot
 ninja
@@ -137,9 +129,7 @@ docbook-xsl
 docbook-xml
 swig
 apr
-apr-util
 scons
-serf
 subversion
 asciidoc
 xmlto
