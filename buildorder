@@ -166,7 +166,6 @@ yasm
 tidy-html5
 llvm
 lld
-nodejs
 gn
 lua
 
@@ -410,4 +409,5 @@ elasticsearch2
 coffeescript1
 vimium
 ublock
+nodejs
 chromium
