@@ -14,5 +14,6 @@ build() {
 }
 
 package() {
+    MAKEFLAGS=
     make DESTDIR=${pkgdir} install
 }
