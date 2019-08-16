@@ -1,0 +1,23 @@
+pkgname=offlineimap-py2
+pkgver=7.2.4
+vcs=git
+vcs_pkgname=offlineimap
+gittag=v${pkgver}
+relmon_id=2534
+
+build() {
+    sed -i -e 's/linux-arch/linux-jinni/g' offlineimap/utils/distro.py
+    sed -i -e 's/arch-release/jinni-release/g' offlineimap/utils/distro.py
+
+    find . -type f -exec sed '1s,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' -i {} \;
+    patch -Np1 -i ../python3.patch
+
+    python2 setup.py build
+    cd docs
+    make man
+}
+
+package() {
+    python2 setup.py install --root=${pkgdir} --optimize=1
+    mv ${pkgdir}/usr/bin/offlineimap{,-py2}
+}
