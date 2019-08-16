@@ -262,6 +262,7 @@ libxshmfence
 xcb-util
 xcb-util-keysyms
 xcb-util-renderutil
+xcb-util-image
 libdrm
 mesa
 glu
@@ -404,6 +405,7 @@ lfs-book
 blfs-book
 mongodb-bin
 elasticsearch2
+zoom
 
 # gui: chromium
 coffeescript1
