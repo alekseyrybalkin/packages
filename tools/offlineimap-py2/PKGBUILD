@@ -1,4 +1,5 @@
 pkgname=offlineimap-py2
+SKIP_ARCH_CHECK=1
 pkgver=7.2.4
 vcs=git
 vcs_pkgname=offlineimap
