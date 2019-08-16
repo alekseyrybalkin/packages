@@ -7,8 +7,13 @@ relmon_id=4027
 
 build() {
     python setup.py build
+    cd documentation
+    make html
 }
 
 package() {
     python setup.py install --root=${pkgdir}
+    mkdir -pv ${pkgdir}/usr/share/doc
+    cp -r documentation/_build/html ${pkgdir}/usr/share/doc/${pkgname}
+
 }
