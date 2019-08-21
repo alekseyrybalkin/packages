@@ -1,5 +1,5 @@
 pkgname=python-numexpr
-pkgver=2.6.9
+pkgver=2.7.0
 vcs=git
 vcs_pkgname=numexpr
 gittag=v${pkgver}

@@ -3,6 +3,7 @@ pkgver=19.1.4
 vcs=git
 gittag=mesa-${pkgver}
 relmon_id=1970
+relmon_rules="skip_one_good"
 
 build() {
     mkdir build

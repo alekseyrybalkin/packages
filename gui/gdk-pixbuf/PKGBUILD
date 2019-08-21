@@ -1,6 +1,6 @@
 pkgname=gdk-pixbuf
 ARCH_NAME=gdk-pixbuf2
-pkgver=2.38.1
+pkgver=2.39.2
 vcs=git
 gittag=${pkgver}
 relmon_id=9533

@@ -1,8 +1,10 @@
 pkgname=python-openpyxl
-pkgver=2.6.2
+pkgver=2.6.3
 vcs=mercurial
 vcs_pkgname=openpyxl
-hgtag=${pkgver}
+#FIXME no tag
+hgtag=541b5c125bf1
+#hgtag=${pkgver}
 relmon_id=8098
 relmon_rules="skip_a,skip_b"
 

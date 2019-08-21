@@ -1,7 +1,7 @@
 NON_FREE=1
 pkgname=linux-firmware
-pkgver=20190717
-ARCH_VERSION=20190717.bf13a71
+pkgver=20190815
+ARCH_VERSION=${pkgver}.07b925b
 vcs=git
 gittag=${pkgver}
 
