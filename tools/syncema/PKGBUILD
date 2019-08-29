@@ -1,0 +1,13 @@
+pkgname=syncema
+SKIP_ARCH_CHECK=1
+pkgver=1
+vcs=git
+
+build() {
+    :
+}
+
+package() {
+    mkdir -p ${pkgdir}/usr/bin
+    install -m755 syncema.py ${pkgdir}/usr/bin/syncema
+}
