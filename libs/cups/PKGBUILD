@@ -1,5 +1,5 @@
 pkgname=cups
-pkgver=2.2.12
+pkgver=2.3.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=380

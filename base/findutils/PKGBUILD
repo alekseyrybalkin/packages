@@ -1,5 +1,5 @@
 pkgname=findutils
-pkgver=4.6.0
+pkgver=4.7.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=812

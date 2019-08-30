@@ -1,5 +1,5 @@
 pkgname=perl-file-next
-pkgver=1.16
+pkgver=1.18
 vcs=git
 gittag=${pkgver}
 relmon_id=2895

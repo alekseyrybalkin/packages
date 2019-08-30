@@ -1,11 +1,11 @@
 pkgname=bash
 _major=5.0
-_minor=009
+_minor=011
 pkgver=${_major}.${_minor}
 ARCH_VERSION=${_major}.${_minor}
 vcs=git
 #FIXME no tag
-gittag=9f597fd10993313262cab400bf3c46ffb3f6fd1e
+gittag=d894cfd104086ddf68c286e67a5fb2e02eb43b7b
 relmon_id=166
 
 build() {

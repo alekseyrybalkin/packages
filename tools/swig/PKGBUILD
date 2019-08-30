@@ -1,5 +1,5 @@
 pkgname=swig
-pkgver=4.0.0
+pkgver=4.0.1
 vcs=git
 gittag=rel-${pkgver}
 relmon_id=4919
