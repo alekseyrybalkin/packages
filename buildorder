@@ -363,11 +363,7 @@ python-alabaster
 python-snowballstemmer
 python-pygments
 python-sphinx
-python-sphinx-issues
 python-sphinx_rtd_theme
-python-zipp
-python-importlib-metadata
-python-sphinx-pallets-themes
 
 # python: ipython
 python-decorator

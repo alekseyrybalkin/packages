@@ -8,6 +8,7 @@ build() {
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure \
+        --enable-gcc-warnings=no \
         --prefix=/usr \
         --libexecdir=/usr/lib \
         --build=x86_64-unknown-linux-gnu \
