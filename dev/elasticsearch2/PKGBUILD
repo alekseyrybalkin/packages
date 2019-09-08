@@ -51,6 +51,6 @@ after_install() {
     systemd-tmpfiles --create elasticsearch.conf
 }
 
-after_upgrade(){
+after_upgrade() {
     after_install
 }

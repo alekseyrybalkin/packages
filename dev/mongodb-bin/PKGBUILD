@@ -41,6 +41,6 @@ after_install() {
     systemd-tmpfiles --create mongodb.conf
 }
 
-after_upgrade(){
+after_upgrade() {
     after_install
 }
