@@ -4,7 +4,10 @@ pkgver=47+
 vcs=git
 
 build() {
-    true
+    if [ "`hostname`" == "rybalkin.org" ]; then
+        sed -i -e 's/rybalkin/aleksey/g' conf.bash
+        sed -i -e 's/projects/sandbox/g' conf.bash
+    fi
 }
 
 package() {
