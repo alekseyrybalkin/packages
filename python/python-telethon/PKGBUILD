@@ -1,0 +1,15 @@
+pkgname=python-telethon
+SKIP_ARCH_CHECK=1
+pkgver=1.10.0
+vcs=git
+vcs_pkgname=telethon
+gittag=v${pkgver}
+relmon_id=18912
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --optimize=1
+}

@@ -197,6 +197,13 @@ chrony
 openvpn
 tinyproxy
 
+# python: telenoti deps
+python-pysocks
+python-pyasn1
+python-rsa
+python-pyaes
+python-telethon
+
 # tools: more productivity
 acpi
 socat
@@ -207,6 +214,7 @@ gnupg
 mutt
 syncema
 borg
+telenoti
 
 # audio
 alsa-lib

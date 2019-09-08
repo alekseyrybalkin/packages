@@ -1,0 +1,13 @@
+pkgname=python-rsa
+pkgver=4.0
+vcs=git
+gittag=version-${pkgver}
+relmon_id=8808
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --optimize=1
+}

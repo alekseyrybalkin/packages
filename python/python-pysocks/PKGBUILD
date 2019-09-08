@@ -1,0 +1,14 @@
+pkgname=python-pysocks
+pkgver=1.7.0
+vcs=git
+vcs_pkgname=pysocks
+gittag=${pkgver}
+relmon_id=10673
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --optimize=1
+}

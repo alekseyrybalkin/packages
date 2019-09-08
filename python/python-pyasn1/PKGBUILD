@@ -1,0 +1,14 @@
+pkgname=python-pyasn1
+pkgver=0.4.7
+vcs=git
+vcs_pkgname=pyasn1
+gittag=v${pkgver}
+relmon_id=6996
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --optimize=1
+}
