@@ -7,6 +7,10 @@ relmon_id=4031
 contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp log-cabinet"
 
 build() {
+    # disable snowballstemmer
+    sed -i -e '/snowballstemmer/d' setup.py
+    sed -i -e "/: 'sphinx.search/d" sphinx/search/__init__.py
+
     make build
 
     for c in ${contrib}; do

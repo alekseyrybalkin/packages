@@ -1,5 +1,6 @@
 pkgname=gsettings-desktop-schemas
-pkgver=3.33.1
+#FIXME use stable versions after 3.34 is released, add skip_odd_second to relmon_rules below
+pkgver=3.33.92
 vcs=git
 gittag=${pkgver}
 relmon_id=13139

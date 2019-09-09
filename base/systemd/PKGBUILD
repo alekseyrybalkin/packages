@@ -1,6 +1,6 @@
 pkgname=systemd
-pkgver=242
-ARCH_VERSION=242.84
+pkgver=243
+ARCH_VERSION=243.0
 vcs=git
 gittag=remotes/origin/stable/v${pkgver}-stable
 relmon_id=5440
@@ -28,6 +28,7 @@ build() {
         -Dsysusers=false \
         -Drpmmacrosdir=no \
         -Db_lto=false \
+        -Dman=true \
         ..
     ninja
 }
@@ -59,4 +60,5 @@ after_install() {
 
 generated_files="etc/machine-id \
     etc/udev/hwdb.bin \
-    etc/.updated"
+    etc/.updated \
+    etc/issue"

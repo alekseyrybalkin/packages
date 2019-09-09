@@ -368,7 +368,6 @@ python-imagesize
 python-pytz
 python-babel
 python-alabaster
-python-snowballstemmer
 python-pygments
 python-sphinx
 python-sphinx_rtd_theme

@@ -1,5 +1,5 @@
 pkgname=cryptsetup
-pkgver=2.2.0
+pkgver=2.2.1
 vcs=git
 gittag=v${pkgver}
 # includes rc versions without rc in them

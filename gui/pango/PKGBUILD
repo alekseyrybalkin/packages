@@ -1,7 +1,8 @@
 pkgname=pango
-pkgver=1.44.5
+pkgver=1.44.6
 vcs=git
-gittag=${pkgver}
+# FIXME tag with -2
+gittag=${pkgver}-2
 relmon_id=11783
 
 build() {

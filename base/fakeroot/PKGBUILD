@@ -1,8 +1,8 @@
 pkgname=fakeroot
-pkgver=1.23
+pkgver=1.24
 vcs=git
 #FIXME no tag
-gittag=dc2e20a65d1fb3a4c49bb6121a0e5caf3f1b321a
+gittag=65bfa45a78034bdd9cc19291ad7f7cb9a43878d6
 #gittag=${pkgver}
 relmon_id=12048
 

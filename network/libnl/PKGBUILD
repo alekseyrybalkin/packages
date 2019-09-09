@@ -1,5 +1,5 @@
 pkgname=libnl
-pkgver=3.4.0
+pkgver=3.5.0
 vcs=git
 gittag=libnl${pkgver//\./_}
 relmon_id=1684
