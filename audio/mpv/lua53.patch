@@ -14,7 +14,7 @@ index 98dcfee5b2..74ee8363c6 100644
      }
  
 diff --git a/player/lua/osc.lua b/player/lua/osc.lua
-index de492152b1..85ed5e9101 100644
+index de492152b1..871bd520c0 100644
 --- a/player/lua/osc.lua
 +++ b/player/lua/osc.lua
 @@ -134,7 +134,9 @@ end
@@ -36,6 +36,15 @@ index de492152b1..85ed5e9101 100644
 +            math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
  
          if element.eventresponder and (state.active_element == n) then
+ 
+@@ -658,7 +660,7 @@ function render_elements(master_ass)
+                         end
+                     end
+                     elem_ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
+-                        ar[1], ar[2], ar[3], ar[4]))
++                        math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
+ 
+                     elem_ass:append(tooltiplabel)
  
 @@ -2118,8 +2120,8 @@ function render()
      end
