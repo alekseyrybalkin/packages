@@ -13,4 +13,5 @@ build() {
 
 package() {
     cp -dpr --no-preserve=ownership opt usr ${pkgdir}
+    rm -rf ${pkgdir}/usr/share/{pixmaps,mime,applications}
 }
