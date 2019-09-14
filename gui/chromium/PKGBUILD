@@ -1,6 +1,6 @@
 pkgname=chromium
 SKIP_ARCH_CHECK=1
-pkgver=76.0.3809.87
+pkgver=77.0.3865.75
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -49,11 +49,27 @@ build() {
     # Revert "Fix rendering performance regressions" which breaks https://chromium-review.googlesource.com/c/chromium/src/+/1597388
     git revert --no-edit 76ddcd29071bd4079c8776e0576268da5493f3ff
 
+    # https://crbug.com/980025
+    # WTF: Make LinkedHashSet understand values for which memset initialization would be bad.
+    git cherry-pick 74138b9febd37eac0fc26b8efb110014a83a52c6
+
+    # https://crbug.com/992832
+    # Fix build failure due to missing include for std::numeric_limits usage.
+    git cherry-pick 5baf7df7f4c5971dab552897eeef94b194650ce5
+
+    # https://crbug.com/819294
+    # IWYU: include <memory> in one_euro_filter.h as it uses std::unique_ptr
+    git cherry-pick 8c747a9c14ed4905f60f6680e2e09e33ea34163e
+
     _check_and_clone_deps DEPS
 
     cd third_party/angle
     _check_and_clone_deps DEPS
     cd ../../
+
+    cd third_party/openscreen/src
+    _check_and_clone_deps DEPS
+    cd ../../../
 
     cd buildtools
     _check_and_clone_deps DEPS

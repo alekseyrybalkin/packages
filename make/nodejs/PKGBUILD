@@ -1,8 +1,10 @@
 pkgname=nodejs
-pkgver=12.9.1
+SKIP_ARCH_CHECK=1
+pkgver=12.10.0
 vcs=git
 gittag=v${pkgver}
-relmon_id=8251
+# we update nodejs separately from everything else
+#relmon_id=8251
 
 build() {
     find -type f -exec sed \
