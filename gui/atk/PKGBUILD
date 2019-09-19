@@ -1,5 +1,5 @@
 pkgname=atk
-pkgver=2.32.0
+pkgver=2.34.1
 vcs=git
 gittag=ATK_${pkgver//\./_}
 relmon_id=130

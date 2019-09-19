@@ -1,6 +1,6 @@
 pkgname=evince
 pkgver=3.32.0
-ARCH_VERSION=3.32.0+26+gd3aecce7
+ARCH_VERSION=3.32.0+28+gaeeb3d2d
 vcs=git
 gittag=${pkgver}
 relmon_id=8178

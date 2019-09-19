@@ -1,5 +1,5 @@
 pkgname=at-spi2-atk
-pkgver=2.32.0
+pkgver=2.34.0
 vcs=git
 gittag=AT_SPI2_ATK_${pkgver//\./_}
 relmon_id=7840

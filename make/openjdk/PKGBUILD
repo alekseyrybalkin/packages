@@ -1,6 +1,6 @@
 pkgname=openjdk
 SKIP_ARCH_CHECK=1
-pkgver=12
+pkgver=13
 _build=33
 vcs=mercurial
 hgtag=jdk-${pkgver}+${_build}

@@ -1,15 +1,16 @@
 pkgname=gobject-introspection
-pkgver=1.60.2
+pkgver=1.62.0
 vcs=git
 gittag=${pkgver}
 relmon_id=1223
 relmon_rules="skip_odd_second"
 
 build() {
-    ./autogen.sh --prefix=/usr
-    make
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
 }
 
 package() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }

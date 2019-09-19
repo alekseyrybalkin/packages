@@ -1,10 +1,9 @@
 pkgname=gsettings-desktop-schemas
-#FIXME use stable versions after 3.34 is released, add skip_odd_second to relmon_rules below
-pkgver=3.33.92
+pkgver=3.34.0
 vcs=git
 gittag=${pkgver}
 relmon_id=13139
-relmon_rules="skip_big_third"
+relmon_rules="skip_big_third skip_odd_second"
 
 build() {
     mkdir build
