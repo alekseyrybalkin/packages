@@ -1,0 +1,16 @@
+pkgname=python-isort
+pkgver=4.3.21.2
+vcs=git
+vcs_pkgname=isort
+#FIXME dash in tag for this release
+gittag=4.3.21-2
+#gittag=${pkgver}
+relmon_id=11430
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --optimize=1
+}

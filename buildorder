@@ -356,6 +356,7 @@ python-greenlet
 python-gevent
 python-pycodestyle
 python-modernize
+python-isort
 python-mss
 python-mwparserfromhell
 python-pillow
