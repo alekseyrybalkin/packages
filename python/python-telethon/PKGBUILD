@@ -8,8 +8,16 @@ relmon_id=18912
 
 build() {
     python setup.py build
+    if type sphinx-build >/dev/null 2>&1; then
+        cd readthedocs
+        make html
+    fi
 }
 
 package() {
     python setup.py install --root=${pkgdir} --optimize=1
+    if type sphinx-build >/dev/null 2>&1; then
+        mkdir -pv ${pkgdir}/usr/share/doc
+        cp -r readthedocs/_build/html ${pkgdir}/usr/share/doc/${pkgname}
+    fi
 }
