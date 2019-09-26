@@ -1,0 +1,21 @@
+pkgname=containerd
+pkgver=1.2.9
+vcs=git
+gittag=v${pkgver}
+_commit=d50db0a42053864a270f648048f9a8b4f24eced3
+relmon_id=16460
+
+build() {
+    cd ${location}
+    mkdir -p src/github.com/containerd
+    cp -r ${srcdir} src/github.com/containerd/containerd
+    cd src/github.com/containerd/containerd
+
+    export GOPATH=${location}
+    make VERSION=v${pkgver}.m REVISION=${_commit}.m
+}
+
+package() {
+    cd ${location}/src/github.com/containerd/containerd
+    make install DESTDIR=${pkgdir}/usr
+}

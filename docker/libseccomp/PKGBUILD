@@ -1,0 +1,15 @@
+pkgname=libseccomp
+pkgver=2.4.1
+vcs=git
+gittag=v${pkgver}
+relmon_id=13823
+
+build() {
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
