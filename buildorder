@@ -411,15 +411,6 @@ mongodb-bin
 elasticsearch2
 zoom
 
-# dev: docker
-bridge-utils
-libseccomp
-lzo
-btrfs-progs
-go
-runc
-containerd
-
 # gui: chromium
 coffeescript1
 vimium
