@@ -1,0 +1,14 @@
+pkgname=python-dockerpty
+pkgver=0.4.1
+vcs=git
+vcs_pkgname=dockerpty
+gittag=v${pkgver}
+relmon_id=7286
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

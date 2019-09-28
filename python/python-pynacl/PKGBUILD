@@ -1,0 +1,14 @@
+pkgname=python-pynacl
+pkgver=1.3.0
+vcs=git
+vcs_pkgname=pynacl
+gittag=${pkgver}
+relmon_id=12703
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

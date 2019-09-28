@@ -1,0 +1,14 @@
+pkgname=python-docopt
+pkgver=0.6.2
+vcs=git
+vcs_pkgname=docopt
+gittag=${pkgver}
+relmon_id=19769
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

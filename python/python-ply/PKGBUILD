@@ -1,0 +1,14 @@
+pkgname=python-ply
+pkgver=3.11
+vcs=git
+vcs_pkgname=ply
+gittag=${pkgver}
+relmon_id=20112
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

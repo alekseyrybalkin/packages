@@ -1,0 +1,14 @@
+pkgname=python-cached-property
+pkgver=1.5.1
+vcs=git
+vcs_pkgname=cached-property
+gittag=${pkgver}
+relmon_id=6048
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

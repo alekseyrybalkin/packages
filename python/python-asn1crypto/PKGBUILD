@@ -1,0 +1,14 @@
+pkgname=python-asn1crypto
+pkgver=0.24.0
+vcs=git
+vcs_pkgname=asn1crypto
+gittag=${pkgver}
+relmon_id=13875
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

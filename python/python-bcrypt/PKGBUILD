@@ -1,0 +1,14 @@
+pkgname=python-bcrypt
+pkgver=3.1.7
+vcs=git
+vcs_pkgname=bcrypt
+gittag=${pkgver}
+relmon_id=9047
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

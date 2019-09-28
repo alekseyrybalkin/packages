@@ -1,0 +1,15 @@
+pkgname=libyaml
+pkgver=0.2.2
+vcs=git
+gittag=${pkgver}
+relmon_id=1800
+
+build() {
+    ./bootstrap
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

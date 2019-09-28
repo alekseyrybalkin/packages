@@ -1,0 +1,15 @@
+pkgname=docker-compose
+pkgver=1.24.1
+vcs=git
+vcs_pkgname=compose
+gittag=${pkgver}
+relmon_id=6185
+relmon_rules="skip_rc"
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

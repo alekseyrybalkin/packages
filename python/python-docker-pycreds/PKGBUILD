@@ -1,0 +1,14 @@
+pkgname=python-docker-pycreds
+pkgver=0.4.0
+vcs=git
+vcs_pkgname=dockerpy-creds
+gittag=${pkgver}
+relmon_id=12091
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

@@ -1,0 +1,14 @@
+pkgname=python-docker
+pkgver=4.0.2
+vcs=git
+vcs_pkgname=docker-py
+gittag=${pkgver}
+relmon_id=3847
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

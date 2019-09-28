@@ -411,6 +411,29 @@ blfs-book
 mongodb-bin
 elasticsearch2
 zoom
+libyaml
+libsodium
+
+# python: docker-compose
+python-cached-property
+python-websocket-client
+python-texttable
+python-docopt
+python-pip
+python-yaml
+python-pyrsistent
+python-jsonschema
+python-ply
+python-pycparser
+python-cffi
+python-bcrypt
+python-asn1crypto
+python-cryptography
+python-pynacl
+python-paramiko
+python-docker-pycreds
+python-docker
+python-dockerpty
 
 # dev: docker
 bridge-utils
@@ -421,6 +444,7 @@ go
 runc
 containerd
 docker
+docker-compose
 
 # gui: chromium
 coffeescript1

@@ -1,0 +1,14 @@
+pkgname=python-jsonschema
+pkgver=3.0.2
+vcs=git
+vcs_pkgname=jsonschema
+gittag=v${pkgver}
+relmon_id=3898
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

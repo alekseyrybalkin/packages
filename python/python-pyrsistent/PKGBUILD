@@ -1,0 +1,14 @@
+pkgname=python-pyrsistent
+pkgver=0.15.4
+vcs=git
+vcs_pkgname=pyrsistent
+gittag=v${pkgver}
+relmon_id=19676
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

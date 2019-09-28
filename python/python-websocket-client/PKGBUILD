@@ -1,0 +1,14 @@
+pkgname=python-websocket-client
+pkgver=0.56.0
+vcs=git
+vcs_pkgname=websocket-client
+gittag=v${pkgver}
+relmon_id=7288
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

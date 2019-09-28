@@ -1,0 +1,14 @@
+pkgname=python-cryptography
+pkgver=2.7
+vcs=git
+vcs_pkgname=cryptography
+gittag=${pkgver}
+relmon_id=5533
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

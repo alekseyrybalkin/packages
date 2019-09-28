@@ -1,0 +1,14 @@
+pkgname=python-texttable
+pkgver=1.6.2
+vcs=git
+vcs_pkgname=texttable
+gittag=v${pkgver}
+relmon_id=11635
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

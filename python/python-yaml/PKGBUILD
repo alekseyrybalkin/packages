@@ -1,0 +1,14 @@
+pkgname=python-yaml
+pkgver=5.1.2
+vcs=git
+vcs_pkgname=pyyaml
+gittag=${pkgver}
+relmon_id=4123
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

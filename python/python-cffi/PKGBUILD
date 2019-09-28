@@ -1,0 +1,14 @@
+pkgname=python-cffi
+pkgver=1.12.3
+vcs=mercurial
+vcs_pkgname=cffi
+hgtag=v${pkgver}
+relmon_id=5536
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

@@ -1,0 +1,14 @@
+pkgname=python-pip
+pkgver=19.2.3
+vcs=git
+vcs_pkgname=pip
+gittag=${pkgver}
+relmon_id=6529
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}
