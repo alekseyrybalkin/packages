@@ -2,11 +2,11 @@ pkgname=runc
 _pkgver=1.0.0
 _rc=8
 pkgver=${_pkgver}.rc${_rc}
+ARCH_VERSION=${_pkgver}rc${_rc}
 vcs=git
-#FIXME 1.0.0-rc8 fails to build
-giitag=84373aaa560b3f14cfda210b2f34ca14fd4b1fce
-#gittag=v${_pkgver}-rc${_rc}
+gittag=v${_pkgver}-rc${_rc}
 relmon_id=7462
+relmon_rules="skip_rc"
 
 build() {
     cd ${location}
@@ -14,8 +14,13 @@ build() {
     cp -r ${srcdir} src/github.com/opencontainers/runc
     cd src/github.com/opencontainers/runc
 
+    export EXTRA_FLAGS="-gcflags all=-trimpath=${PWD} -asmflags all=-trimpath=${PWD}"
     export GOPATH=${location}
-    make
+    export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
+    export EXTRA_LDFLAGS="-extldflags ${LDFLAGS}"
+    export BUILDTAGS="seccomp"
+
+    make runc
 }
 
 package() {

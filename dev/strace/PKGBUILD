@@ -1,0 +1,15 @@
+pkgname=strace
+pkgver=5.3
+vcs=git
+gittag=v${pkgver}
+relmon_id=4897
+
+build() {
+    ./bootstrap
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

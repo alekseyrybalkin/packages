@@ -1,3 +1,4 @@
+NO_STRIPPING=1
 pkgname=go
 pkgver=1.13.1
 vcs=git
@@ -5,22 +6,29 @@ gittag=go${pkgver}
 relmon_id=1227
 
 build() {
-    # build go 1.4 for bootstrapping
-    git clone -s `find_vcs_repo go` go1.4
-    cd go1.4
-    git checkout go1.4.3
-    cd src/
-    export CGO_ENABLED=0
-    bash make.bash
-    cd ../../
+    # go-pie
+    patch -p1 -i ../default-buildmode-pie.patch
 
-    patch -Np1 -i ../buildmode-pie.diff
-    export GOROOT_BOOTSTRAP=${srcdir}/go1.4
+    export GOARCH=amd64
+    export GOROOT_FINAL=/usr/lib/go
+    export GOROOT_BOOTSTRAP=/usr/lib/go
+    export GOPATH=${srcdir}
+
+    export GOROOT=${srcdir}
+    export GOBIN="${GOROOT}/bin"
+
     cd src
-    bash make.bash
+    ./make.bash --no-clean -v
+
+    PATH="${GOBIN}:${PATH}" go install -v -buildmode=shared std
+    PATH="${GOBIN}:${PATH}" go install -v -race std
 }
 
 package() {
+    export GOARCH=amd64
+    export GOROOT_FINAL=/usr/lib/go
+    export GOROOT_BOOTSTRAP=/usr/lib/go
+
     install -d ${pkgdir}/usr/bin ${pkgdir}/usr/lib/go ${pkgdir}/usr/share/doc/go
     cp -a bin pkg src lib misc api test ${pkgdir}/usr/lib/go
     cp -r doc/* ${pkgdir}/usr/share/doc/go
@@ -32,6 +40,8 @@ package() {
     install -Dm644 VERSION ${pkgdir}/usr/lib/go/VERSION
 
     rm -rf ${pkgdir}/usr/lib/go/pkg/bootstrap ${pkgdir}/usr/lib/go/pkg/tool/*/api
-
     rm -rf ${pkgdir}/usr/lib/go/pkg/obj/go-build/*
+
+    # go-pie
+    cp -a ${pkgdir}/usr/lib/go/pkg/linux_amd64/ ${pkgdir}/usr/lib/go/pkg/linux_amd64_shared
 }

@@ -1,0 +1,82 @@
+NO_STRIPPING=1
+pkgname=docker
+pkgver=19.03.2
+vcs=git
+vcs_pkgname=docker-ce
+gittag=v${pkgver}
+relmon_id=11719
+relmon_rules="skip_b"
+_DOCKER_COMMIT=6a30dfca03664a0b6bf0646a7d389ee7d0318e6e
+# see components/engine/hack/dockerfile/install/
+_TINI_COMMIT=fec3683b971d9c3ef73f284f176672c44b448662
+_LIBNETWORK_COMMIT=fc5a7d91d54cc98f64fc28f9e288b46a0bee756c
+
+build() {
+    export GOPATH=${location}
+    export PATH=${GOPATH}/bin:${PATH}
+
+    # cli
+    mkdir -p ${location}/src/github.com/docker
+    cp -r components/cli ${location}/src/github.com/docker/
+    cd ${location}/src/github.com/docker/cli/
+    DISABLE_WARN_OUTSIDE_CONTAINER=1 make VERSION=$pkgver-ce dynbinary
+    cd ${srcdir}
+
+    # daemon
+    cp -r components/engine ${location}/src/github.com/docker/docker
+    cd ${location}/src/github.com/docker/docker/
+    DOCKER_GITCOMMIT=${_DOCKER_COMMIT} \
+        DOCKER_BUILDTAGS='seccomp journald' \
+        VERSION=${pkgver}-ce \
+        hack/make.sh dynbinary
+    cd ${srcdir}
+
+    # proxy
+    cd ${location}/src/github.com/docker/
+    git clone `find_vcs_repo libnetwork`
+    cd libnetwork
+    git checkout ${_LIBNETWORK_COMMIT}
+    go build -ldflags="-linkmode=external" github.com/docker/libnetwork/cmd/proxy
+    cd ${srcdir}
+
+    # init
+    mkdir -p ${location}/src/github.com/krallin
+    cd ${location}/src/github.com/krallin/
+    git clone `find_vcs_repo tini`
+    cd tini
+    git checkout ${_TINI_COMMIT}
+    cmake .
+    make tini-static
+    cd ${srcdir}
+}
+
+package() {
+    install -Dm755 ${location}/src/github.com/docker/cli/build/docker ${pkgdir}/usr/bin/docker
+    install -Dm755 ${location}/src/github.com/docker/libnetwork/proxy ${pkgdir}/usr/bin/docker-proxy
+    install -Dm755 ${location}/src/github.com/krallin/tini/tini-static ${pkgdir}/usr/bin/docker-init
+
+    cd ${location}/src/github.com/docker/docker
+    install -Dm755 {bundles/latest/dynbinary-daemon,${pkgdir}/usr/bin}/dockerd
+
+    install -Dm644 contrib/init/systemd/docker.service \
+        ${pkgdir}/usr/lib/systemd/system/docker.service
+    install -Dm644 contrib/init/systemd/docker.socket \
+        ${pkgdir}/usr/lib/systemd/system/docker.socket
+    install -Dm644 contrib/udev/80-docker.rules \
+        ${pkgdir}/usr/lib/udev/rules.d/80-docker.rules
+
+    install -Dm644 contrib/syntax/vim/syntax/dockerfile.vim \
+        ${pkgdir}/usr/share/vim/vimfiles/syntax/dockerfile.vim
+    install -Dm644 contrib/syntax/vim/ftdetect/dockerfile.vim \
+        ${pkgdir}/usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+}
+
+after_install() {
+    getent group docker >/dev/null || groupadd --system docker
+}
+
+after_upgrade() {
+    after_install
+}
+
+generated_files="etc/docker/key.json"

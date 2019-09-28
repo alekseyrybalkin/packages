@@ -404,6 +404,7 @@ python-patsy
 python-statsmodels
 
 # dev
+strace
 cpp-docs
 lfs-book
 blfs-book
@@ -419,6 +420,7 @@ btrfs-progs
 go
 runc
 containerd
+docker
 
 # gui: chromium
 coffeescript1

@@ -4,6 +4,7 @@ vcs=git
 gittag=v${pkgver}
 _commit=d50db0a42053864a270f648048f9a8b4f24eced3
 relmon_id=16460
+relmon_rules="skip_rc,skip_b"
 
 build() {
     cd ${location}
@@ -16,6 +17,8 @@ build() {
 }
 
 package() {
+    export GOPATH=${location}
     cd ${location}/src/github.com/containerd/containerd
     make install DESTDIR=${pkgdir}/usr
+    rm -rf ${pkgdir}/opt
 }
