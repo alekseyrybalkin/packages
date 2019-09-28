@@ -1,0 +1,18 @@
+pkgname=bridge-utils
+pkgver=1.6
+vcs=git
+gittag=v${pkgver}
+relmon_id=217
+
+build() {
+    aclocal
+    autoconf
+    ./configure --prefix=/usr \
+        --sbindir=/usr/bin \
+        --sysconfdir=/etc
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
