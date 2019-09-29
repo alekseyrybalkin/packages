@@ -1,0 +1,13 @@
+pkgname=redis
+pkgver=5.0.6
+vcs=git
+gittag=${pkgver}
+relmon_id=4181
+
+build() {
+    make MALLOC=libc
+}
+
+package() {
+    make PREFIX=${pkgdir}/usr install
+}

@@ -413,6 +413,7 @@ elasticsearch2
 zoom
 libyaml
 libsodium
+redis
 
 # python: docker-compose
 python-cached-property
