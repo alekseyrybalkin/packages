@@ -4,7 +4,9 @@ _rc=8
 pkgver=${_pkgver}.rc${_rc}
 ARCH_VERSION=${_pkgver}rc${_rc}
 vcs=git
-gittag=v${_pkgver}-rc${_rc}
+#FIXME commit with CVE fix
+gittag=3e425f80a8c931f88e6d94a8c831b9d5aa481657
+#gittag=v${_pkgver}-rc${_rc}
 relmon_id=7462
 relmon_rules="skip_rc"
 
