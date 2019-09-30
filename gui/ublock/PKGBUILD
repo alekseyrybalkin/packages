@@ -1,6 +1,6 @@
 pkgname=ublock
 ARCH_NAME=firefox-ublock-origin
-pkgver=1.22.2
+pkgver=1.22.4
 vcs=git
 gittag=${pkgver}
 relmon_id=16686

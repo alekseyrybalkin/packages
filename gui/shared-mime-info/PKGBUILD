@@ -1,5 +1,5 @@
 pkgname=shared-mime-info
-pkgver=1.13.1
+pkgver=1.14
 vcs=git
 gittag=Release-${pkgver//\./-}
 relmon_id=5524

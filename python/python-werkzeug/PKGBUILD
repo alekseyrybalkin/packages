@@ -1,5 +1,5 @@
 pkgname=python-werkzeug
-pkgver=0.15.6
+pkgver=0.16.0
 vcs=git
 vcs_pkgname=werkzeug
 gittag=${pkgver}

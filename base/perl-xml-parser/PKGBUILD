@@ -1,9 +1,7 @@
 pkgname=perl-xml-parser
-_ver=2.44
-_minor=1
-pkgver=${_ver}.${_minor}
+pkgver=2.46
 vcs=git
-gittag=v${_ver}_0${_minor}
+gittag=${pkgver}
 relmon_id=3531
 
 build() {

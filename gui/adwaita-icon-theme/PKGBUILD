@@ -1,8 +1,7 @@
 pkgname=adwaita-icon-theme
 pkgver=3.34.0
 vcs=git
-# FIXME: wrong tag
-gittag=2.34.0
+gittag=${pkgver}
 relmon_id=13117
 relmon_rules="skip_odd_second skip_big_third"
 

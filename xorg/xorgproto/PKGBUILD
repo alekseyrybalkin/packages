@@ -12,4 +12,6 @@ build() {
 
 package() {
     DESTDIR=${pkgdir} ninja -C build install
+    # now in libxvmc
+    rm -f ${pkgdir}/usr/include/X11/extensions/vldXvMC.h
 }
