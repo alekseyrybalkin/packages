@@ -1,0 +1,24 @@
+pkgname=libldap
+ARCH_NAME=openldap
+pkgver=2.4.48
+vcs=git
+vcs_pkgname=openldap
+gittag=OPENLDAP_REL_ENG_${pkgver//\./_}
+relmon_id=2551
+
+build() {
+    autoconf
+    ./configure --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-dynamic \
+        --disable-debug \
+        --with-cyrus-sasl \
+        --disable-slapd
+    make depend
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

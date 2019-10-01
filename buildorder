@@ -414,6 +414,8 @@ zoom
 libyaml
 libsodium
 redis
+libsasl
+libldap
 
 # python: docker-compose
 python-cached-property
