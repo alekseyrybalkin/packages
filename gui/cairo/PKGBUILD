@@ -10,7 +10,9 @@ gittag=52a7c79fd4ff96bb5fac175f0199819b0f8c18fc
 #relmon_rules="skip_odd_second"
 
 build() {
+    sed -i -e 's/lzo2a.h/withoutlzo.h/g' configure.ac
     NOCONFIGURE=1 ./autogen.sh
+    #sed -i -e '/lzo/d' Makefile.in
     ./configure --prefix=/usr \
         --disable-static \
         --enable-gl \

@@ -18,7 +18,8 @@ build() {
         --disable-static \
         --with-lz4=internal \
         --with-utf8proc=internal \
-        --enable-experimental-libtool
+        --enable-experimental-libtool \
+        --with-sasl=no
     make local-all
     mkdir -p subversion/bindings/swig/proxy
     make swig-pl

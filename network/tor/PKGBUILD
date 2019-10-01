@@ -6,7 +6,9 @@ relmon_id=4991
 
 build() {
     ./autogen.sh
-    ./configure --prefix=/usr --sysconfdir=/etc
+    ./configure --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-seccomp
     make
 }
 

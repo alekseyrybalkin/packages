@@ -6,7 +6,8 @@ relmon_id=807
 
 build() {
     autoreconf -fi
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr \
+        --disable-libseccomp
     make
 }
 
