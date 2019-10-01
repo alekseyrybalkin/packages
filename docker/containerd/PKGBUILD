@@ -7,6 +7,8 @@ relmon_id=16460
 relmon_rules="skip_rc,skip_b"
 
 build() {
+    sed -i -e 's/opt\/containerd/tmp\/containerd/g' services/opt/path_unix.go
+
     cd ${location}
     mkdir -p src/github.com/containerd
     cp -r ${srcdir} src/github.com/containerd/containerd
