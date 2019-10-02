@@ -416,6 +416,7 @@ libsodium
 redis
 libsasl
 libldap
+postgresql
 
 # python: docker-compose
 python-cached-property
