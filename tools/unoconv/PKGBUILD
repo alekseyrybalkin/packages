@@ -1,0 +1,13 @@
+pkgname=unoconv
+pkgver=0.9
+vcs=git
+gittag=${pkgver}
+relmon_id=5051
+
+build() {
+    :
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

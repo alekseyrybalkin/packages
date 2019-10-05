@@ -215,6 +215,7 @@ mutt
 syncema
 borg
 telenoti
+unoconv
 
 # audio
 alsa-lib
@@ -335,6 +336,7 @@ djvulibre
 evince
 imlib
 feh
+libreoffice
 
 # python: misc
 python-youtube-dl
