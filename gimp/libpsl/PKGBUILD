@@ -1,0 +1,25 @@
+pkgname=libpsl
+pkgver=0.21.0
+vcs=git
+gittag=libpsl-${pkgver}
+relmon_id=7305
+
+build() {
+    git clone `find_vcs_repo publicsuffix-list` list
+
+    git cherry-pick 87d1add318b5e5d09977f7f374e923577b6ff3be
+    git cherry-pick 9347024221f4a9d63f9dcafcda13362a7c8d92fe
+
+    ./autogen.sh
+    ./configure \
+        --prefix=/usr \
+        --disable-static \
+        --disable-dependency-tracking \
+        --enable-gtk-doc \
+        --enable-{builtin,runtime}=libicu
+    LC_CTYPE=en_US.UTF-8 make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

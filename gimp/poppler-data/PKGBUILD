@@ -1,0 +1,13 @@
+pkgname=poppler-data
+pkgver=0.4.9
+vcs=git
+gittag=POPPLER_DATA_${pkgver//\./_}
+relmon_id=3687
+
+build() {
+    :
+}
+
+package() {
+    make prefix=/usr DESTDIR=${pkgdir} install
+}

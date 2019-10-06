@@ -1,0 +1,19 @@
+pkgname=glib-networking
+pkgver=2.62.1
+vcs=git
+gittag=${pkgver}
+relmon_id=21353
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D openssl=enabled \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

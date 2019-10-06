@@ -1,0 +1,19 @@
+pkgname=gegl
+pkgver=0.4.16+
+vcs=git
+#FIXME using git master
+gittag=326e22861c8dbcb9ce464945dcdd6d0d141ec589
+
+build() {
+    mkdir build-gegl
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D workshop=true \
+        . build-gegl
+    ninja -C build-gegl
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build-gegl install
+}

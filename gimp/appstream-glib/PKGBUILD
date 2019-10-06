@@ -1,0 +1,20 @@
+pkgname=appstream-glib
+pkgver=0.7.16
+vcs=git
+gittag=appstream_glib_${pkgver//\./_}
+relmon_id=14018
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D rpm=false \
+        -D stemmer=false \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

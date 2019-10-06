@@ -1,0 +1,26 @@
+pkgname=gimp
+pkgver=2.99+
+vcs=git
+#FIXME using git master
+gittag=a3d74fa09f1e251c437544fb91a78f5c0c098ff8
+relmon_id=1161
+
+build() {
+    ./autogen.sh \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --libexecdir=/usr/bin \
+        --enable-mp \
+        --enable-python \
+        --enable-gimp-console \
+        --with-libcurl \
+        --with-python=no \
+        --with-lua=no \
+        --with-javascript=no
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+    ln -sv gimp-2.99 ${pkgdir}/usr/bin/gimp
+}

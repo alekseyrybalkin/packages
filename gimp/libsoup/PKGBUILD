@@ -1,0 +1,15 @@
+pkgname=libsoup
+pkgver=2.68.1
+vcs=git
+gittag=${pkgver}
+relmon_id=11483
+
+build() {
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

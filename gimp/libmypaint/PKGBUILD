@@ -1,0 +1,19 @@
+pkgname=libmypaint
+pkgver=1.4.0
+vcs=git
+gittag=v${pkgver}
+relmon_id=12974
+relmon_rules='skip_alpha'
+
+build() {
+    sed -i -e 's/python2/python/g' autogen.sh generate.py
+
+    ./autogen.sh
+    ./configure \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

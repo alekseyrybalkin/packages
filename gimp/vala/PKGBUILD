@@ -1,0 +1,16 @@
+pkgname=vala
+pkgver=0.46.2
+vcs=git
+gittag=${pkgver}
+relmon_id=5065
+
+build() {
+    NOCONFIGURE=1 ./autogen.sh
+    ./configure --prefix=/usr \
+        --enable-valadoc=no
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

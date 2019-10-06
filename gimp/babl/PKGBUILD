@@ -1,0 +1,22 @@
+pkgname=babl
+pkgver=0.1.72+
+vcs=git
+#FIXME using git master
+gittag=cff46ae0f5512a60c3abb88faa8ac401ba642817
+relmon_id=7843
+
+build() {
+    mkdir build-babl
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D buildtype=release \
+        -D b_lto=true \
+        -D with-docs=false \
+        . build-babl
+    ninja -C build-babl
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build-babl install
+}

@@ -1,0 +1,16 @@
+pkgname=libgexiv2
+pkgver=0.12.0
+vcs=git
+vcs_pkgname=gexiv2
+gittag=gexiv2-${pkgver}
+relmon_id=1626
+
+build() {
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

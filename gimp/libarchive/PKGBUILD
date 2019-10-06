@@ -1,0 +1,19 @@
+pkgname=libarchive
+pkgver=3.4.0
+vcs=git
+gittag=v${pkgver}
+relmon_id=1558
+
+build() {
+    autoreconf -fi
+    ./configure \
+        --prefix=/usr \
+        --without-xml2 \
+        --without-nettle \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

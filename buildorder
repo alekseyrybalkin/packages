@@ -452,6 +452,23 @@ containerd
 docker
 docker-compose
 
+# gui: gimp
+libarchive
+babl
+json-glib
+gegl
+poppler-data
+glib-networking
+libpsl
+libsoup
+appstream-glib
+exiv2
+vala
+libgexiv2
+libmypaint
+mypaint-brushes
+gimp
+
 # gui: chromium
 coffeescript1
 vimium

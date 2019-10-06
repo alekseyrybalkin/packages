@@ -1,0 +1,19 @@
+pkgname=exiv2
+pkgver=0.27.2
+vcs=git
+gittag=v${pkgver}
+relmon_id=769
+
+build() {
+    cmake . \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DEXIV2_ENABLE_VIDEO=ON \
+        -DEXIV2_BUILD_SAMPLES=OFF \
+        -DEXIV2_ENABLE_NLS=ON
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

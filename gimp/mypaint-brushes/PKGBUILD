@@ -1,0 +1,17 @@
+pkgname=mypaint-brushes
+ARCH_NAME=mypaint-brushes1
+pkgver=1.3.0
+vcs=git
+gittag=v${pkgver}
+# we use 1.x (needed for gimp), but 2.x is released
+#relmon_id=17096
+
+build() {
+    autoreconf -fiv
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
