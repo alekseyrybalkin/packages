@@ -1,0 +1,17 @@
+#vcs=none
+pkgname=potrace
+pkgver=1.16
+urls="http://potrace.sourceforge.net/download/1.16/${pkgname}-${pkgver}.tar.gz"
+srctar=${pkgname}-${pkgver}.tar.gz
+
+build() {
+    ./configure \
+        --prefix=/usr \
+        --mandir=/usr/share/man \
+        --with-libpotrace
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

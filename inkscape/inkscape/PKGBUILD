@@ -1,0 +1,28 @@
+pkgname=inkscape
+pkgver=0.99+
+vcs=git
+#FIXME using git master
+gittag=d565813f7bc587f3e45575a242ad5fd4c1214be9
+relmon_id=1381
+relmon_rules='skip_alpha,skip_beta'
+
+build() {
+    mkdir build
+    cd build
+    export CXXFLAGS="${CXXFLAGS} -fpermissive"
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=RELEASE \
+        -DENABLE_POPPLER=OFF \
+        -DENABLE_POPPLER_CAIRO=OFF \
+        -DWITH_IMAGE_MAGICK=OFF \
+        -DWITH_GRAPHICS_MAGICK=OFF \
+        -DWITH_LIBCDR=OFF \
+        -DWITH_LIBVISIO=OFF
+    make
+}
+
+package() {
+    cd build
+    make DESTDIR=${pkgdir} install
+}

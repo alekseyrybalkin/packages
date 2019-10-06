@@ -1,0 +1,15 @@
+pkgname=mm-common
+pkgver=0.9.12
+vcs=git
+gittag=${pkgver}
+relmon_id=13152
+
+build() {
+    cp /usr/share/gcc-*/libstdc++.tag doctags/
+    ./autogen.sh --prefix=/usr --disable-network
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

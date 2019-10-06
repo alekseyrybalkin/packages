@@ -1,0 +1,20 @@
+pkgname=double-conversion
+pkgver=3.1.5
+vcs=git
+gittag=v${pkgver}
+relmon_id=7454
+
+build() {
+    mkdir -p build
+    cd build
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DBUILD_SHARED_LIBS=ON
+    make
+}
+
+package() {
+    cd build
+    make DESTDIR=${pkgdir} install
+}

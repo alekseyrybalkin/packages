@@ -1,0 +1,18 @@
+pkgname=gdl
+pkgver=3.34.0
+vcs=git
+gittag=GDL_${pkgver//\./_}
+relmon_id=1624
+
+build() {
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --disable-static \
+        --enable-gtk-doc
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

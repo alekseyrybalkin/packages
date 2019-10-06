@@ -17,6 +17,7 @@ gmp
 mpfr
 mpc
 gcc
+doxygen
 bzip
 pcre
 libffi
@@ -470,6 +471,20 @@ libmypaint
 mypaint-brushes
 gimp
 blender
+
+# gui: inkscape
+gsl
+double-conversion
+potrace
+gdl
+mm-common
+libsigc++
+glibmm
+atkmm
+cairomm
+pangomm
+gtkmm
+inkscape
 
 # gui: chromium
 coffeescript1
