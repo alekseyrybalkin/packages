@@ -4,6 +4,7 @@ _majorver=6.3.2
 pkgver=${_majorver}.2
 vcs=git
 gittag=libreoffice-${pkgver}
+tarball_dirs="libreoffice-tarballs"
 relmon_id=6506
 
 prepare() {
@@ -76,3 +77,16 @@ package() {
     ln -svf /usr/lib/libreoffice/program/unohelper.py \
         ${PYLIB_PATH}/site-packages/unohelper.py
 }
+
+after_install() {
+    update-desktop-database -q
+    update-mime-database /usr/share/mime
+}
+
+after_upgrade() {
+    kiin_after_install
+}
+
+generated_files="usr/share/mime/application/vnd.ms-word.xml \
+    usr/share/mime/application/vnd.oasis.opendocument.text-master-template.xml \
+    usr/share/mime/application/vnd.sun.xml.base.xml"
