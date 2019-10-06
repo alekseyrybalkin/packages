@@ -171,6 +171,7 @@ lua
 
 # libs
 icu
+boost
 nspr
 nss
 lapack
@@ -452,7 +453,7 @@ containerd
 docker
 docker-compose
 
-# gui: gimp
+# gui: gimp, blender
 libarchive
 babl
 json-glib
@@ -468,6 +469,7 @@ libgexiv2
 libmypaint
 mypaint-brushes
 gimp
+blender
 
 # gui: chromium
 coffeescript1

@@ -1,0 +1,52 @@
+pkgname=blender
+pkgver=2.80
+vcs=git
+gittag=v${pkgver}
+relmon_id=201
+
+build() {
+    PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
+    PYLIB=python${PYVERSION}m
+
+    mkdir build
+    cd build
+    cmake -GNinja -C ../build_files/cmake/config/blender_release.cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_INSTALL_PORTABLE=OFF \
+        -DWITH_PYTHON_INSTALL=OFF \
+        -DWITH_OPENCOLLADA=OFF \
+        -DWITH_GAMEENGINE=ON \
+        -DWITH_JACK=ON \
+        -DWITH_PLAYER=ON \
+        -DWITH_CODEC_FFMPEG=ON \
+        -DWITH_CODEC_SNDFILE=OFF \
+        -DWITH_CYCLES=OFF \
+        -DWITH_CYCLES_CUDA_BINARIES=OFF \
+        -DWITH_CYCLES_OSL=OFF \
+        -DWITH_FFTW3=OFF \
+        -DWITH_MOD_OCEANSIM=OFF \
+        -DPYTHON_VERSION=${PYVERSION} \
+        -DPYTHON_LIBPATH=/usr/lib \
+        -DPYTHON_LIBRARY=${PYLIB} \
+        -DPYTHON_INCLUDE_DIRS=/usr/include/${PYLIB} \
+        -DWITH_SYSTEM_GLEW=OFF
+    ninja
+}
+
+package() {
+    cd build
+    DESTDIR=${pkgdir} ninja install
+    install -Dm755 ../release/bin/blender-softwaregl ${pkgdir}/usr/bin/blender-softwaregl
+    python -m compileall ${pkgdir}/usr/share/blender
+    python -O -m compileall ${pkgdir}/usr/share/blender
+}
+
+after_install() {
+    update-desktop-database -q
+    update-mime-database /usr/share/mime
+}
+
+after_upgrade() {
+    kiin_after_install
+}
