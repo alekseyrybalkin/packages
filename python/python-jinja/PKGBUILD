@@ -7,13 +7,8 @@ relmon_id=3894
 
 build() {
     python setup.py build
-    # requires pallets themes
-    #cd docs
-    #make html
 }
 
 package() {
     python setup.py install --root=${pkgdir}
-    #mkdir -pv ${pkgdir}/usr/share/doc
-    #cp -r docs/_build/html ${pkgdir}/usr/share/doc/python-jinja
 }
