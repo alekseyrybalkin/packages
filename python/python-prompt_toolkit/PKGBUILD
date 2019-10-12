@@ -1,5 +1,5 @@
 pkgname=python-prompt_toolkit
-pkgver=2.0.9
+pkgver=2.0.10
 vcs=git
 vcs_pkgname=python-prompt-toolkit
 gittag=${pkgver}

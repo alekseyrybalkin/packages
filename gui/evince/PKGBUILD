@@ -1,6 +1,5 @@
 pkgname=evince
-pkgver=3.32.0
-ARCH_VERSION=3.32.0+28+gaeeb3d2d
+pkgver=3.34.1
 vcs=git
 gittag=${pkgver}
 relmon_id=8178
@@ -28,6 +27,7 @@ build() {
         --disable-gtk-doc \
         --without-gspell \
         --disable-thumbnailer \
+        --disable-comics \
         --disable-static
     sed -i -e 's/ po //g' Makefile
     make

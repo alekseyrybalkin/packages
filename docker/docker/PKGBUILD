@@ -1,15 +1,15 @@
 NO_STRIPPING=1
 pkgname=docker
-pkgver=19.03.2
+pkgver=19.03.3
 vcs=git
 vcs_pkgname=docker-ce
 gittag=v${pkgver}
 relmon_id=11719
 relmon_rules="skip_b"
-_DOCKER_COMMIT=6a30dfca03664a0b6bf0646a7d389ee7d0318e6e
+_DOCKER_COMMIT=a872fc2f86c042e6992e17db6cdd9826c9c4232b
 # see components/engine/hack/dockerfile/install/
 _TINI_COMMIT=fec3683b971d9c3ef73f284f176672c44b448662
-_LIBNETWORK_COMMIT=fc5a7d91d54cc98f64fc28f9e288b46a0bee756c
+_LIBNETWORK_COMMIT=45c710223c5fbf04dc3028b9a90b51892e36ca7f
 
 build() {
     export GOPATH=${location}
@@ -56,7 +56,7 @@ package() {
     install -Dm755 ${location}/src/github.com/krallin/tini/tini-static ${pkgdir}/usr/bin/docker-init
 
     cd ${location}/src/github.com/docker/docker
-    install -Dm755 {bundles/latest/dynbinary-daemon,${pkgdir}/usr/bin}/dockerd
+    install -Dm755 {bundles/dynbinary-daemon,${pkgdir}/usr/bin}/dockerd
 
     install -Dm644 contrib/init/systemd/docker.service \
         ${pkgdir}/usr/lib/systemd/system/docker.service

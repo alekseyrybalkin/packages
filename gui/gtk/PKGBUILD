@@ -1,6 +1,6 @@
 pkgname=gtk
 ARCH_NAME=gtk3
-pkgver=3.24.11
+pkgver=3.24.12
 vcs=git
 gittag=${pkgver}
 relmon_id=10018

@@ -1,12 +1,10 @@
 pkgname=runc
 _pkgver=1.0.0
-_rc=8
+_rc=9
 pkgver=${_pkgver}.rc${_rc}
 ARCH_VERSION=${_pkgver}rc${_rc}
 vcs=git
-#FIXME commit with CVE fix
-gittag=3e425f80a8c931f88e6d94a8c831b9d5aa481657
-#gittag=v${_pkgver}-rc${_rc}
+gittag=v${_pkgver}-rc${_rc}
 relmon_id=7462
 relmon_rules="skip_rc"
 

@@ -1,5 +1,5 @@
 pkgname=libsoup
-pkgver=2.68.1
+pkgver=2.68.2
 vcs=git
 gittag=${pkgver}
 relmon_id=11483

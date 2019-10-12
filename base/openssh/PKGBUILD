@@ -1,5 +1,5 @@
 pkgname=openssh
-_ver=8.0
+_ver=8.1
 _patch=1
 pkgver=${_ver}p${_patch}
 vcs=git

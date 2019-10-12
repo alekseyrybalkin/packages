@@ -1,5 +1,5 @@
 pkgname=python-pillow
-pkgver=6.1.0
+pkgver=6.2.0
 vcs=git
 vcs_pkgname=pillow
 gittag=${pkgver}

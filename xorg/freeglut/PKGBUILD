@@ -1,5 +1,5 @@
 pkgname=freeglut
-pkgver=3.2.0
+pkgver=3.2.1
 vcs=git
 gittag=FG_${pkgver//\./_}
 relmon_id=846
