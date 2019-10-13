@@ -20,6 +20,7 @@ build() {
     ./waf configure --prefix=/usr \
         --confdir=/etc/mpv \
         --disable-pulse \
+        --disable-libarchive \
         --enable-libmpv-shared
     ./waf build
 }

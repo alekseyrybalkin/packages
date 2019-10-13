@@ -60,6 +60,7 @@ build() {
         --with-system-boost \
         --with-system-librevenge \
         --with-system-libfreehand \
+        --with-system-epoxy \
         --disable-gstreamer-0.10 \
         --disable-gstreamer-1-0 \
         --disable-dbus \

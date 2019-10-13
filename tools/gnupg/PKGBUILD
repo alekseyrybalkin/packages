@@ -12,7 +12,8 @@ build() {
         --sbindir=/usr/bin \
         --enable-maintainer-mode \
         --build=x86_64-unknown-linux-gnu \
-        --disable-doc
+        --disable-doc \
+        --disable-ldap
     make
 }
 
