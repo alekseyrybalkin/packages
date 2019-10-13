@@ -57,6 +57,9 @@ build() {
         --with-system-poppler \
         --with-system-serf \
         --with-system-zlib \
+        --with-system-boost \
+        --with-system-librevenge \
+        --with-system-libfreehand \
         --disable-gstreamer-0.10 \
         --disable-gstreamer-1-0 \
         --disable-dbus \

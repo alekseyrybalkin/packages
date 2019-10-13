@@ -1,0 +1,17 @@
+pkgname=librevenge
+pkgver=0.0.4
+vcs=git
+gittag=librevenge-${pkgver}
+relmon_id=16780
+
+build() {
+    ./autogen.sh
+    ./configure --prefix=/usr \
+        --disable-werror \
+        --disable-tests
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

@@ -338,6 +338,10 @@ djvulibre
 evince
 imlib
 feh
+
+# gui: libreoffice
+librevenge
+libfreehand
 libreoffice
 
 # python: misc
