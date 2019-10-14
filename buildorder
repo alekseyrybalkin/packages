@@ -434,6 +434,9 @@ python-docopt
 python-pip
 python-yaml
 python-pyrsistent
+python-more-itertools
+python-zipp
+python-importlib-metadata
 python-jsonschema
 python-ply
 python-pycparser
