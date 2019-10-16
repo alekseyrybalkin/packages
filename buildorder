@@ -371,6 +371,7 @@ python-pillow
 python-numpy
 python-scipy
 python-dulwich
+python-onetimepass
 
 # python: sphinx
 python-imagesize

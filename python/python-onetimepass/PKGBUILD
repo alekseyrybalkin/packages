@@ -1,0 +1,13 @@
+pkgname=python-onetimepass
+pkgver=1.0.1
+vcs=git
+vcs_pkgname=onetimepass
+gittag=v${pkgver}
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}
