@@ -1,5 +1,5 @@
 pkgname=xorgproto
-pkgver=2019.1
+pkgver=2019.2
 vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=17190
@@ -12,8 +12,4 @@ build() {
 
 package() {
     DESTDIR=${pkgdir} ninja -C build install
-    # now in libxvmc
-    rm -f ${pkgdir}/usr/include/X11/extensions/vldXvMC.h
-    # now in libx11
-    rm -f ${pkgdir}/usr/include/X11/extensions/XKBgeom.h
 }
