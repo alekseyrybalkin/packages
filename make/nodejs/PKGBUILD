@@ -1,6 +1,6 @@
 pkgname=nodejs
 SKIP_ARCH_CHECK=1
-pkgver=12.10.0
+pkgver=13.0.1
 vcs=git
 gittag=v${pkgver}
 # we update nodejs separately from everything else
