@@ -381,6 +381,7 @@ python-alabaster
 python-pygments
 python-sphinx
 python-sphinx_rtd_theme
+python-docs-theme
 
 # python: ipython
 python-decorator

@@ -7,12 +7,16 @@ relmon_id=6870
 
 build() {
     python setup.py build
-    cd doc
-    make html
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        cd doc
+        make html
+    fi
 }
 
 package() {
     python setup.py install --root=${pkgdir}
-    mkdir -pv ${pkgdir}/usr/share/doc
-    cp -r doc/_build/html ${pkgdir}/usr/share/doc/python-greenlet
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        mkdir -pv ${pkgdir}/usr/share/doc
+        cp -r doc/_build/html ${pkgdir}/usr/share/doc/python-greenlet
+    fi
 }

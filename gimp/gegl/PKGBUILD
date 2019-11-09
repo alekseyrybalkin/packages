@@ -1,8 +1,7 @@
 pkgname=gegl
-pkgver=0.4.16+
+pkgver=0.4.18
 vcs=git
-#FIXME using git master
-gittag=326e22861c8dbcb9ce464945dcdd6d0d141ec589
+gittag=GEGL_${pkgver//\./_}
 
 build() {
     mkdir build-gegl

@@ -1,5 +1,5 @@
 pkgname=adwaita-icon-theme
-pkgver=3.34.0
+pkgver=3.34.3
 vcs=git
 gittag=${pkgver}
 relmon_id=13117

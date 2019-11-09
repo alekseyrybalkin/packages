@@ -1,5 +1,5 @@
 diff --git a/player/lua.c b/player/lua.c
-index 98dcfee5b2..74ee8363c6 100644
+index 757f449f7b..16139c8cc3 100644
 --- a/player/lua.c
 +++ b/player/lua.c
 @@ -373,8 +373,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
@@ -14,10 +14,10 @@ index 98dcfee5b2..74ee8363c6 100644
      }
  
 diff --git a/player/lua/osc.lua b/player/lua/osc.lua
-index de492152b1..871bd520c0 100644
+index 6297aeb3b8..d614117ef0 100644
 --- a/player/lua/osc.lua
 +++ b/player/lua/osc.lua
-@@ -134,7 +134,9 @@ end
+@@ -147,7 +147,9 @@ end
  
  function set_virt_mouse_area(x0, y0, x1, y1, name)
      local sx, sy = get_virt_scale_factor()
@@ -28,25 +28,16 @@ index de492152b1..871bd520c0 100644
  end
  
  function scale_value(x0, x1, y0, y1, val)
-@@ -521,7 +523,7 @@ function render_elements(master_ass)
-         end
+@@ -276,7 +278,7 @@ function ass_append_alpha(ass, alpha, modifier)
+     end
  
-         style_ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
--            ar[1], ar[2], ar[3], ar[4]))
-+            math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
+     ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
+-               ar[1], ar[2], ar[3], ar[4]))
++               math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
+ end
  
-         if element.eventresponder and (state.active_element == n) then
- 
-@@ -658,7 +660,7 @@ function render_elements(master_ass)
-                         end
-                     end
-                     elem_ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
--                        ar[1], ar[2], ar[3], ar[4]))
-+                        math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
- 
-                     elem_ass:append(tooltiplabel)
- 
-@@ -2118,8 +2120,8 @@ function render()
+ function ass_draw_rr_h_cw(ass, x0, y0, x1, y1, r1, hexagon, r2)
+@@ -2270,8 +2272,8 @@ function render()
      end
  
      -- submit
@@ -58,10 +49,10 @@ index de492152b1..871bd520c0 100644
  
  
 diff --git a/waftools/checks/custom.py b/waftools/checks/custom.py
-index 821bf9c46f..49bbb526cf 100644
+index ed5865a25c..95c052cd4e 100644
 --- a/waftools/checks/custom.py
 +++ b/waftools/checks/custom.py
-@@ -66,6 +66,8 @@ def check_lua(ctx, dependency_identifier):
+@@ -67,6 +67,8 @@ def check_lua(ctx, dependency_identifier):
          ( '52deb',  'lua5.2 >= 5.2.0'), # debian
          ( '52fbsd', 'lua-5.2 >= 5.2.0'), # FreeBSD
          ( 'luajit', 'luajit >= 2.0.0' ),

@@ -1,5 +1,5 @@
 pkgname=python-pip
-pkgver=19.2.3
+pkgver=19.3.1
 vcs=git
 vcs_pkgname=pip
 gittag=${pkgver}

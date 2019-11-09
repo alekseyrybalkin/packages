@@ -1,7 +1,7 @@
 pkgname=linux
 SKIP_ARCH_CHECK=1
 vcs=git
-pkgver=5.3.7
+pkgver=5.3.9
 gittag=v${pkgver}
 relmon_id=6501
 
@@ -9,13 +9,17 @@ build() {
     make mrproper
     cp -v ../config-x86_64 .config
     make
-    make htmldocs
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        make htmldocs
+    fi
 }
 
 package() {
     mkdir -pv ${pkgdir}/boot
     cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-jinni
     cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-arch
-    mkdir -pv ${pkgdir}/usr/share/doc
-    cp -r Documentation/output ${pkgdir}/usr/share/doc/linux
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        mkdir -pv ${pkgdir}/usr/share/doc
+        cp -r Documentation/output ${pkgdir}/usr/share/doc/linux
+    fi
 }

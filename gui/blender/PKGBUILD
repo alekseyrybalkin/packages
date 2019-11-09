@@ -6,7 +6,12 @@ relmon_id=201
 
 build() {
     PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
-    PYLIB=python${PYVERSION}m
+
+    # python 3.8 compatibility fixes
+    git cherry-pick a7cf7b114f82625aa5d81e91e26e67cbe7a842bc
+    git cherry-pick 36b6fb5cd600a7067d24cfe836c0af4d94e083e4
+    git cherry-pick 9dd5e3b6e89ca0be4207e64439f292519eaf7e6e
+    git cherry-pick e413b39a936181cc954dfbf054b0a19794d8902c
 
     mkdir build
     cd build
@@ -28,8 +33,8 @@ build() {
         -DWITH_MOD_OCEANSIM=OFF \
         -DPYTHON_VERSION=${PYVERSION} \
         -DPYTHON_LIBPATH=/usr/lib \
-        -DPYTHON_LIBRARY=${PYLIB} \
-        -DPYTHON_INCLUDE_DIRS=/usr/include/${PYLIB} \
+        -DPYTHON_LIBRARY=python${PYVERSION} \
+        -DPYTHON_INCLUDE_DIRS=/usr/include/python${PYVERSION} \
         -DWITH_SYSTEM_GLEW=OFF
     ninja
 }

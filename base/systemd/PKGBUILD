@@ -1,6 +1,6 @@
 pkgname=systemd
 pkgver=243
-ARCH_VERSION=243.51
+ARCH_VERSION=243.78
 vcs=git
 gittag=remotes/origin/stable/v${pkgver}-stable
 relmon_id=5440

@@ -1,6 +1,6 @@
 pkgname=python-ipython
 ARCH_NAME=ipython
-pkgver=7.8.0
+pkgver=7.9.0
 vcs=git
 vcs_pkgname=ipython
 gittag=${pkgver}

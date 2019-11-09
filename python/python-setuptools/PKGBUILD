@@ -1,5 +1,5 @@
 pkgname=python-setuptools
-pkgver=41.4.0
+pkgver=41.6.0
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
@@ -13,8 +13,9 @@ build() {
 }
 
 package() {
+    PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
     python setup.py install --prefix=/usr \
         --root=${pkgdir} --optimize=1 --skip-build
     # remove files with spaces in filenames
-    rm ${pkgdir}/usr/lib/python3.7/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/lib/python${PYVERSION}/site-packages/setuptools/script*
 }

@@ -1,8 +1,10 @@
 pkgname=python-decorator
-pkgver=4.4.0
+pkgver=4.4.1
 vcs=git
 vcs_pkgname=decorator
-gittag=remotes/origin/origin/${pkgver}
+#FIXME no tag
+gittag=87f16a038352488cc9cf39ee94a1c744e42fb42e
+#gittag=remotes/origin/origin/${pkgver}
 relmon_id=3819
 
 build() {

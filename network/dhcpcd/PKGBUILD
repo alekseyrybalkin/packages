@@ -1,5 +1,5 @@
 pkgname=dhcpcd
-pkgver=8.0.6
+pkgver=8.1.1
 vcs=git
 gittag=dhcpcd-${pkgver}
 relmon_id=11429

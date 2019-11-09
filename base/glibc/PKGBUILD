@@ -24,6 +24,7 @@ build() {
         --disable-nscd \
         --enable-lock-elision=no \
         --build=x86_64-unknown-linux-gnu \
+        --disable-werror \
         --libdir=/usr/lib
     make
 }

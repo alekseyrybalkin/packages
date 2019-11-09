@@ -1,5 +1,5 @@
 pkgname=cpio
-pkgver=2.12
+pkgver=2.13
 vcs=git
 gittag=release_${pkgver//\./_}
 relmon_id=353
@@ -7,7 +7,6 @@ relmon_id=353
 build() {
     git clone -s `find_vcs_repo gnulib`
     git clone -s `find_vcs_repo paxutils`
-    sed -i -e 's/lib\ pax/lib/g' bootstrap.conf
     ./bootstrap --skip-po
     m4 -DMODE=C sysdep.m4 > lib/sysdep.c
     m4 -DMODE=H sysdep.m4 > lib/sysdep.h

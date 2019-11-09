@@ -1,5 +1,5 @@
 pkgname=python-cffi
-pkgver=1.12.3
+pkgver=1.13.2
 vcs=mercurial
 vcs_pkgname=cffi
 hgtag=v${pkgver}

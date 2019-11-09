@@ -1,5 +1,5 @@
 pkgname=libxslt
-pkgver=1.1.33
+pkgver=1.1.34
 vcs=git
 gittag=v${pkgver}
 relmon_id=13301

@@ -10,12 +10,16 @@ build() {
     sed -i -e 's/itervalues/values/g' doc/mkhtml.py
     python setup.py build
 
-    cd doc
-    python mkhtml.py html .. ${pkgver}
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        cd doc
+        python mkhtml.py html .. ${pkgver}
+    fi
 }
 
 package() {
     python setup.py install --skip-build --root=${pkgdir} --optimize=1
-    mkdir -p ${pkgdir}/usr/share/doc
-    cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        mkdir -p ${pkgdir}/usr/share/doc
+        cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml
+    fi
 }

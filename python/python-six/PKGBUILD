@@ -1,5 +1,5 @@
 pkgname=python-six
-pkgver=1.12.0
+pkgver=1.13.0
 vcs=git
 vcs_pkgname=six
 gittag=${pkgver}
@@ -7,13 +7,17 @@ relmon_id=4027
 
 build() {
     python setup.py build
-    cd documentation
-    make html
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        cd documentation
+        make html
+    fi
 }
 
 package() {
     python setup.py install --root=${pkgdir}
-    mkdir -pv ${pkgdir}/usr/share/doc
-    cp -r documentation/_build/html ${pkgdir}/usr/share/doc/${pkgname}
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        mkdir -pv ${pkgdir}/usr/share/doc
+        cp -r documentation/_build/html ${pkgdir}/usr/share/doc/${pkgname}
+    fi
 
 }

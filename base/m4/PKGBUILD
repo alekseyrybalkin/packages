@@ -5,6 +5,8 @@ gittag=v${pkgver}
 relmon_id=1871
 
 build() {
+    patch -Np1 -i ../texinfo-encoding.patch
+
     export CFLAGS="${CFALGS} -Wno-attributes -Wno-abi -Wimplicit-fallthrough=0"
 
     git clone -s `find_vcs_repo gnulib`

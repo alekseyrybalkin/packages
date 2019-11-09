@@ -1,11 +1,12 @@
 pkgname=libreoffice
 ARCH_NAME=libreoffice-fresh
-_majorver=6.3.2
+_majorver=6.3.3
 pkgver=${_majorver}.2
 vcs=git
 gittag=libreoffice-${pkgver}
 tarball_dirs="libreoffice-tarballs"
 relmon_id=6506
+relmon_rules="skip_alpha,skip_beta"
 
 prepare() {
     git clone -s -n `find_vcs_repo libreoffice` libreoffice-${pkgver}

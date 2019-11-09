@@ -1,5 +1,5 @@
 pkgname=openvpn
-pkgver=2.4.7
+pkgver=2.4.8
 vcs=git
 gittag=v${pkgver}
 relmon_id=2567

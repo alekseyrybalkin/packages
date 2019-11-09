@@ -1,5 +1,5 @@
 pkgname=subversion
-pkgver=1.12.2
+pkgver=1.13.0
 vcs=git
 gittag=${pkgver}
 relmon_id=4905

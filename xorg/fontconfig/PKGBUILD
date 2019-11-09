@@ -1,6 +1,6 @@
 pkgname=fontconfig
 pkgver=2.13.1
-ARCH_VERSION=2.13.91+23+g65087ac
+ARCH_VERSION=2.13.91+24+g75eadca
 vcs=git
 gittag=${pkgver}
 relmon_id=827
