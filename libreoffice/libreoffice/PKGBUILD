@@ -55,7 +55,6 @@ build() {
         --with-system-libpng \
         --with-system-libxml \
         --with-system-nss \
-        --with-system-poppler \
         --with-system-serf \
         --with-system-zlib \
         --with-system-boost \

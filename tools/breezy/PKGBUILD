@@ -5,6 +5,10 @@ vcs=git
 gittag=brz-${pkgver}
 
 build() {
+    # https://code.launchpad.net/~jelmer/brz/python3.8/+merge/374164
+    # Fix hash for StaticTuple when run with Python3.8
+    patch -Np0 -i ../breezy-py38.patch
+
     python setup.py build
 }
 
