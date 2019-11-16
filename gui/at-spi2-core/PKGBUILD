@@ -13,4 +13,6 @@ build() {
 
 package() {
     DESTDIR=${pkgdir} ninja -C build install
+    # disable autostart
+    rm -rf ${pkgdir}/etc/xdg/
 }
