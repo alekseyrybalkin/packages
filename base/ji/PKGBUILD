@@ -7,6 +7,7 @@ build() {
     if [ "`hostname`" == "rybalkin.org" ]; then
         sed -i -e 's/rybalkin/aleksey/g' conf.bash
         sed -i -e 's/projects/sandbox/g' conf.bash
+        sed -i -e 's/DISABLE_SPHINX=/DISABLE_SPHINX=1/g' conf.bash
     fi
 }
 
