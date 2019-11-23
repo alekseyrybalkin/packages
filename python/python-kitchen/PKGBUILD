@@ -1,0 +1,14 @@
+pkgname=python-kitchen
+pkgver=1.2.6
+vcs=git
+vcs_pkgname=kitchen
+gittag=${pkgver}
+relmon_id=3903
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

@@ -1,0 +1,14 @@
+pkgname=python-pyzmq
+pkgver=18.1.1
+vcs=git
+vcs_pkgname=pyzmq
+gittag=v${pkgver}
+relmon_id=4104
+
+build() {
+    python setup.py build_ext
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

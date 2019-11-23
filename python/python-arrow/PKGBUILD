@@ -1,0 +1,14 @@
+pkgname=python-arrow
+pkgver=0.15.4
+vcs=git
+vcs_pkgname=arrow
+gittag=${pkgver}
+relmon_id=5314
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

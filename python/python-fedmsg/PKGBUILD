@@ -1,0 +1,19 @@
+pkgname=python-fedmsg
+pkgver=1.1.1
+vcs=git
+vcs_pkgname=fedmsg
+gittag=${pkgver}
+relmon_id=788
+
+build() {
+    rm fedmsg/text
+    cp -r fedmsg/{meta,text}
+    rm fedmsg/tests/fedmsg.d
+    cp -r fedmsg.d fedmsg/tests/
+
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}
