@@ -1,8 +1,9 @@
 pkgname=vala
-pkgver=0.46.3
+pkgver=0.46.5
 vcs=git
 gittag=${pkgver}
 relmon_id=5065
+relmon_rules="skip_odd_second"
 
 build() {
     NOCONFIGURE=1 ./autogen.sh

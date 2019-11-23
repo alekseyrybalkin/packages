@@ -2,9 +2,7 @@ pkgname=python-pyaes
 pkgver=1.6.1
 vcs=git
 vcs_pkgname=pyaes
-#FIXME no tag
-gittag=23a1b4c0488bd38e03a48120dfda98913f4c87d2
-#gittag=${pkgver}
+gittag=v${pkgver}
 relmon_id=14010
 
 build() {

@@ -1,5 +1,5 @@
 pkgname=python-urllib3
-pkgver=1.25.6
+pkgver=1.25.7
 vcs=git
 vcs_pkgname=urllib3
 gittag=${pkgver}

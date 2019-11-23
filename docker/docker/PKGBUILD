@@ -1,12 +1,12 @@
 NO_STRIPPING=1
 pkgname=docker
-pkgver=19.03.4
+pkgver=19.03.5
 vcs=git
 vcs_pkgname=docker-ce
 gittag=v${pkgver}
 relmon_id=11719
 relmon_rules="skip_a,skip_b,skip_rc"
-_DOCKER_COMMIT=9013bf583a215dc1488d941f9b6f7f11e1ea899f
+_DOCKER_COMMIT=633a0ea838f10e000b7c6d6eed1623e6e988b5bb
 # see components/engine/hack/dockerfile/install/
 _TINI_COMMIT=fec3683b971d9c3ef73f284f176672c44b448662
 _LIBNETWORK_COMMIT=3eb39382bfa6a3c42f83674ab080ae13b0e34e5d

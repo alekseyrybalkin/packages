@@ -1,5 +1,5 @@
 pkgname=docker-compose
-pkgver=1.24.1
+pkgver=1.25.0
 vcs=git
 vcs_pkgname=compose
 gittag=${pkgver}

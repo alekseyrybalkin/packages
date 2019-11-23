@@ -1,5 +1,5 @@
 pkgname=python-jsonschema
-pkgver=3.1.1
+pkgver=3.2.0
 vcs=git
 vcs_pkgname=jsonschema
 gittag=v${pkgver}

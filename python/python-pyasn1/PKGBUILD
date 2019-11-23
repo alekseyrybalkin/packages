@@ -1,5 +1,5 @@
 pkgname=python-pyasn1
-pkgver=0.4.7
+pkgver=0.4.8
 vcs=git
 vcs_pkgname=pyasn1
 gittag=v${pkgver}
