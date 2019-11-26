@@ -1,17 +1,11 @@
 pkgname=blender
-pkgver=2.80
+pkgver=2.81
 vcs=git
 gittag=v${pkgver}
 relmon_id=201
 
 build() {
     PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
-
-    # python 3.8 compatibility fixes
-    git cherry-pick a7cf7b114f82625aa5d81e91e26e67cbe7a842bc
-    git cherry-pick 36b6fb5cd600a7067d24cfe836c0af4d94e083e4
-    git cherry-pick 9dd5e3b6e89ca0be4207e64439f292519eaf7e6e
-    git cherry-pick e413b39a936181cc954dfbf054b0a19794d8902c
 
     mkdir build
     cd build
@@ -21,16 +15,14 @@ build() {
         -DWITH_INSTALL_PORTABLE=OFF \
         -DWITH_PYTHON_INSTALL=OFF \
         -DWITH_OPENCOLLADA=OFF \
-        -DWITH_GAMEENGINE=ON \
-        -DWITH_JACK=ON \
-        -DWITH_PLAYER=ON \
-        -DWITH_CODEC_FFMPEG=ON \
         -DWITH_CODEC_SNDFILE=OFF \
         -DWITH_CYCLES=OFF \
         -DWITH_CYCLES_CUDA_BINARIES=OFF \
         -DWITH_CYCLES_OSL=OFF \
         -DWITH_FFTW3=OFF \
+        -DWITH_TBB=OFF \
         -DWITH_MOD_OCEANSIM=OFF \
+        -DWITH_INTERNATIONAL=OFF \
         -DPYTHON_VERSION=${PYVERSION} \
         -DPYTHON_LIBPATH=/usr/lib \
         -DPYTHON_LIBRARY=python${PYVERSION} \

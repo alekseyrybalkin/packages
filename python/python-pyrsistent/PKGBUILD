@@ -1,5 +1,5 @@
 pkgname=python-pyrsistent
-pkgver=0.15.5
+pkgver=0.15.6
 vcs=git
 vcs_pkgname=pyrsistent
 gittag=v${pkgver}
