@@ -4,6 +4,7 @@ vcs=git
 vcs_pkgname=intel-vaapi-driver
 gittag=${pkgver}
 relmon_id=1753
+relmon_rules="skip_pre"
 
 build() {
     ./autogen.sh $XORG_CONFIG
