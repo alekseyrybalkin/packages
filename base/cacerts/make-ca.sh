@@ -501,6 +501,8 @@ if test -d "${LOCALDIR}"; then
     cstrust=$(echo "${trustlist}" | \
               grep "Code Signing" 2>&1 >/dev/null && echo "C")
 
+    satrust="C"
+
     # Get reject information
     rejectlist=$("${OPENSSL}" x509 -in "${cert}" -text -trustout | \
                      grep -A1 "Rejected Uses")
@@ -523,6 +525,8 @@ if test -d "${LOCALDIR}"; then
     # openssl x509 to strip
     if test "${satrust}x" == "Cx"; then
       "${OPENSSL}" x509 -in "${cert}" -text -fingerprint \
+                      -setalias "${certname}"            \
+                      -addtrust serverAuth               \
            >> "${DESTDIR}${CABUNDLE}"
       echo "Added to GnuTLS certificate bundle."
     fi
@@ -530,13 +534,14 @@ if test -d "${LOCALDIR}"; then
     # Install into OpenSSL certificate store
     "${OPENSSL}" x509 -in "${cert}" -text -fingerprint \
                       -setalias "${certname}"          \
+                      -addtrust serverAuth             \
                       >> "${DESTDIR}${CERTDIR}/${keyhash}.pem"
     echo "Added to OpenSSL certificate directory."
 
     # Add to Shared NSS DB
     if test "${WITH_NSS}" == "1"; then
       "${OPENSSL}" x509 -in "${cert}" -text -fingerprint | \
-      "${CERTUTIL}" -d "sql:${DESTDIR}${NSSDB}" -A                   \
+      "${CERTUTIL}" -d "sql:${DESTDIR}${NSSDB}" -A         \
                     -t "${satrust},${smtrust},${cstrust}"  \
                     -n "${certname}"
       echo "Added to NSS shared DB with trust '${satrust},${smtrust},${cstrust}'."

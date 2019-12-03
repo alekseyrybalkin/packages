@@ -5,14 +5,14 @@ vcs=mercurial
 vcs_pkgname=nss
 
 build() {
-    :
+    mkdir build pkgdir
+    cd build
+    cp ../lib/ckfw/builtins/certdata.txt .
+    pkgdir=${srcdir}/pkgdir bash ../../make-ca.sh --localdir /etc/ssl/local
 }
 
 package() {
-    mkdir build
-    cd build
-    cp ../lib/ckfw/builtins/certdata.txt .
-    pkgdir=${pkgdir} bash ../../make-ca.sh
+    cp -r pkgdir/* ${pkgdir}/
     mkdir -pv ${pkgdir}/etc/ssl/certs/
     ln -sv /etc/ssl/ca-bundle.crt ${pkgdir}/etc/ssl/certs/ca-certificates.crt
 }
