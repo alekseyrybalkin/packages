@@ -12,7 +12,7 @@ package() {
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
-    chmod 755 ${pkgdir}/usr/bin/ff_init
+    chmod 755 ${pkgdir}/usr/bin/{ff_init,trust-local-certs}
 
     chown root:root ${pkgdir}/usr/lib/addons/gen-jinni-environment.bash
     chmod 600 ${pkgdir}/usr/lib/addons/gen-jinni-environment.bash
