@@ -1,5 +1,5 @@
 pkgname=elfutils
-pkgver=0.177
+pkgver=0.178
 vcs=git
 gittag=elfutils-${pkgver}
 relmon_id=5679
@@ -9,7 +9,8 @@ build() {
     ./configure --prefix=/usr \
         --program-prefix="eu-" \
         --enable-deterministic-archives \
-        --enable-maintainer-mode
+        --enable-maintainer-mode \
+        --disable-debuginfod
     make
 }
 

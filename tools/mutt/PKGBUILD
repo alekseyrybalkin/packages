@@ -1,6 +1,6 @@
 pkgname=mutt
-pkgver=1.12.2
-ARCH_VERSION=${pkgver}
+pkgver=1.13
+ARCH_VERSION=${pkgver}.0
 vcs=git
 gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035

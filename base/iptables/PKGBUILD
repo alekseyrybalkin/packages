@@ -1,5 +1,5 @@
 pkgname=iptables
-pkgver=1.8.3
+pkgver=1.8.4
 vcs=git
 gittag=v${pkgver}
 relmon_id=1394

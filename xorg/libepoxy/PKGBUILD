@@ -1,5 +1,5 @@
 pkgname=libepoxy
-pkgver=1.5.3
+pkgver=1.5.4
 vcs=git
 gittag=${pkgver}
 relmon_id=6090

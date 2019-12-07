@@ -1,8 +1,7 @@
 pkgname=asciidoc
-pkgver=8.6.10+
+pkgver=9.0.0rc1
 vcs=git
-#FIXME no py3 tags yet
-gittag=5b8771e2497ebfc70c93756d2afe9cd6f6c73641
+gittag=${pkgver}
 relmon_id=13262
 
 build() {

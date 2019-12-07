@@ -1,5 +1,5 @@
 pkgname=python-psutil
-pkgver=5.6.5
+pkgver=5.6.7
 vcs=git
 vcs_pkgname=psutil
 gittag=release-${pkgver}

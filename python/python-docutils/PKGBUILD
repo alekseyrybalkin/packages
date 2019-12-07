@@ -7,6 +7,7 @@ vcs=git
 gittag=0d9c1271e997dea8691edcba475f522e53083a00
 #gittag=docutils-${pkgver}
 relmon_id=3849
+relmon_rules="skip_b"
 
 build() {
     cd docutils

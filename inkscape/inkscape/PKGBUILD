@@ -1,10 +1,9 @@
 pkgname=inkscape
-pkgver=0.99+
+pkgver=1.0.beta2
 vcs=git
-#FIXME using git master
-gittag=d565813f7bc587f3e45575a242ad5fd4c1214be9
+gittag=INKSCAPE_${pkgver//\./_}
+gittag=${gittag^^}
 relmon_id=1381
-relmon_rules='skip_alpha,skip_beta'
 
 build() {
     mkdir build

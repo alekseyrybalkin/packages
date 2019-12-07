@@ -1,13 +1,13 @@
 pkgname=systemd
-pkgver=243
-ARCH_VERSION=243.162
+pkgver=244
+ARCH_VERSION=244
 vcs=git
 gittag=remotes/origin/stable/v${pkgver}-stable
 relmon_id=5440
 relmon_rules="skip_rc"
 
 build() {
-    sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
+    sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
 
     mkdir -p build
     cd build

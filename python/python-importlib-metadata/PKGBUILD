@@ -1,8 +1,8 @@
 pkgname=python-importlib-metadata
-pkgver=0.23
+pkgver=1.2.0
 vcs=git
 vcs_pkgname=importlib_metadata
-gittag=${pkgver}
+gittag=v${pkgver}
 
 build() {
     python setup.py build

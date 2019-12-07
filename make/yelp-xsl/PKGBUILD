@@ -1,5 +1,5 @@
 pkgname=yelp-xsl
-pkgver=3.34.0
+pkgver=3.34.2
 vcs=git
 gittag=${pkgver}
 relmon_id=13164

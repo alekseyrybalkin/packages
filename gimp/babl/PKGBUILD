@@ -2,7 +2,7 @@ pkgname=babl
 pkgver=0.1.72+
 vcs=git
 #FIXME using git master
-gittag=cff46ae0f5512a60c3abb88faa8ac401ba642817
+gittag=f9009f8d9b29cf7d96f251bcfbdb8402298a76b5
 relmon_id=7843
 
 build() {

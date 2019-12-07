@@ -1,5 +1,5 @@
 pkgname=shadow
-pkgver=4.7
+pkgver=4.8
 vcs=git
 gittag=${pkgver}
 relmon_id=4802
@@ -21,8 +21,8 @@ build() {
 package() {
     make DESTDIR=${pkgdir} install
     sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
-    mv ${pkgdir}{,/usr}/sbin/* ${pkgdir}/usr/bin
-    rm -rf ${pkgdir}{,/usr}/sbin
+    mv ${pkgdir}/sbin/* ${pkgdir}/usr/bin
+    rm -rf ${pkgdir}/sbin
 
     # Remove evil/broken tools
     rm ${pkgdir}/usr/bin/logoutd

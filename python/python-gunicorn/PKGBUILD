@@ -1,6 +1,6 @@
 pkgname=python-gunicorn
 ARCH_NAME=gunicorn
-pkgver=20.0.0
+pkgver=20.0.4
 vcs=git
 vcs_pkgname=gunicorn
 gittag=${pkgver}

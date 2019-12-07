@@ -1,7 +1,7 @@
 pkgname=mpv
 vcs=git
 pkgver=0.30.0
-_wafver=2.0.18
+_wafver=2.0.19
 gittag=v${pkgver}
 relmon_id=5348
 

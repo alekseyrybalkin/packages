@@ -1,8 +1,8 @@
 pkgname=python-pygments
-pkgver=2.4.2
-vcs=mercurial
+pkgver=2.5.2
+vcs=git
 vcs_pkgname=pygments
-hgtag=${pkgver}
+gittag=${pkgver}
 relmon_id=3986
 
 build() {
