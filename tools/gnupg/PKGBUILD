@@ -1,5 +1,5 @@
 pkgname=gnupg
-pkgver=2.2.18
+pkgver=2.2.19
 vcs=git
 gittag=gnupg-${pkgver}
 relmon_id=1215
