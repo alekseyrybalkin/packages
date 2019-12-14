@@ -171,6 +171,7 @@ gn
 lua
 
 # libs
+libgit2
 icu
 boost
 nspr
@@ -346,6 +347,7 @@ libfreehand
 libreoffice
 
 # python: misc
+python-pygit2
 python-youtube-dl
 python-urllib3
 python-certifi
