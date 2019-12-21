@@ -1,0 +1,15 @@
+pkgname=python-pybind11
+ARCH_NAME=pybind11
+pkgver=2.4.3
+vcs=git
+vcs_pkgname=pybind11
+gittag=v${pkgver}
+relmon_id=13384
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --root=${pkgdir} --install-headers='/usr/include/pybind11' --skip-build --optimize='1'
+}

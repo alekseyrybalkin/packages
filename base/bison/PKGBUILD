@@ -1,7 +1,9 @@
 pkgname=bison
-pkgver=3.4.2
+pkgver=3.5
 vcs=git
-gittag=v${pkgver}
+#FIXME no tag
+gittag=cb3bf6493d3bcff4e8ac19cc8dabc8f2e96700ce
+#gittag=v${pkgver}
 relmon_id=193
 
 build() {

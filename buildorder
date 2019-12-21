@@ -372,6 +372,7 @@ python-mss
 python-mwparserfromhell
 python-pillow
 python-numpy
+python-pybind11
 python-scipy
 python-dulwich
 python-onetimepass

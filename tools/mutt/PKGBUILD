@@ -1,5 +1,5 @@
 pkgname=mutt
-pkgver=1.13.1
+pkgver=1.13.2
 ARCH_VERSION=${pkgver}
 vcs=git
 gittag=mutt-${pkgver//\./-}-rel

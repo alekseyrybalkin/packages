@@ -1,5 +1,5 @@
 pkgname=boost
-pkgver=1.71.0
+pkgver=1.72.0
 vcs=git
 gittag=boost-${pkgver}
 relmon_id=6845

@@ -1,8 +1,7 @@
 pkgname=systemd
-pkgver=244
-ARCH_VERSION=244
+pkgver=244.1
 vcs=git
-gittag=remotes/origin/stable/v${pkgver}-stable
+gittag=v${pkgver}
 relmon_id=5440
 relmon_rules="skip_rc"
 

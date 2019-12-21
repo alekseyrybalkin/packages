@@ -4,6 +4,7 @@ vcs=git
 gittag=INKSCAPE_${pkgver//\./_}
 gittag=${gittag^^}
 relmon_id=1381
+relmon_rules='skip_alpha,skip_beta'
 
 build() {
     mkdir build

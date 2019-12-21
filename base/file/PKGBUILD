@@ -1,5 +1,5 @@
 pkgname=file
-pkgver=5.37
+pkgver=5.38
 vcs=git
 gittag=FILE${pkgver//\./_}
 relmon_id=807
@@ -7,7 +7,9 @@ relmon_id=807
 build() {
     autoreconf -fi
     ./configure --prefix=/usr \
-        --disable-libseccomp
+        --disable-libseccomp \
+        --disable-bzlib \
+        --disable-xzlib
     make
 }
 

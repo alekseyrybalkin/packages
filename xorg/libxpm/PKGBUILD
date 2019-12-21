@@ -1,5 +1,5 @@
 pkgname=libxpm
-pkgver=3.5.12
+pkgver=3.5.13
 vcs=git
 gittag=libXpm-${pkgver}
 relmon_id=1787
