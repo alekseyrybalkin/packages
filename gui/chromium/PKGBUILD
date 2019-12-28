@@ -1,6 +1,6 @@
 pkgname=chromium
 SKIP_ARCH_CHECK=1
-pkgver=78.0.3904.87
+pkgver=79.0.3945.88
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -49,20 +49,16 @@ build() {
     # Revert "Fix rendering performance regressions" which breaks https://chromium-review.googlesource.com/c/chromium/src/+/1597388
     git revert --no-edit 76ddcd29071bd4079c8776e0576268da5493f3ff
 
-    # Add missing include for unique_ptr
-    git cherry-pick bbfe2665923225b4a7c436ba2b6c7e5f695f2e52
+    # https://crbug.com/819294
+    # IWYU: launch_manager.h uses std::vector
+    git cherry-pick 97eb905ba262382bc3583078761c68f4452aea71
 
-    # https://crbug.com/957519#c23
-    # dns_util: Make DohUpgradeEntry non-const when used with std::vector<>
-    git cherry-pick f4c3c329588b78af63aad8b401da767242b86709
+    # https://crbug.com/819294
+    # IWYU: include algorithm to use std::lower_bound in ui/gfx/font.cc
+    git cherry-pick f7c177d35242311ea7a2cf49a0980c61664f27ba
 
-    # https://crbug.com/1005244
-    # Fix shutdown crash in ProfileManager.
-    git cherry-pick e73aed9a5ef15102f29ac31b70290faf5c90f9fe
-
-    # https://crbug.com/1005508
-    # Remove noisy error log for failing to find font fallback
-    git cherry-pick 2b580e805103141bb1d9da1e120db17911a14c49
+    # https://crbug.com/1014272
+    patch -Np1 -i ../icu65.patch
 
     _check_and_clone_deps DEPS
 
@@ -131,6 +127,7 @@ build() {
         'use_libpci=false'
         'use_pulseaudio=false'
         'symbol_level=0'
+        'icu_use_data_file=false'
     )
 
     # Facilitate deterministic builds (taken from build/config/compiler/BUILD.gn)

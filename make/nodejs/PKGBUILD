@@ -1,6 +1,6 @@
 pkgname=nodejs
 SKIP_ARCH_CHECK=1
-pkgver=13.0.1
+pkgver=13.5.0
 vcs=git
 gittag=v${pkgver}
 # we update nodejs separately from everything else
@@ -21,7 +21,7 @@ build() {
     ./configure --prefix=/usr \
         --shared-zlib \
         --shared-libuv \
-        --with-intl=small-icu
+        --with-intl=system-icu
     make
 }
 
