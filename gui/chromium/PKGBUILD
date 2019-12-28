@@ -95,7 +95,7 @@ build() {
     export CCACHE_SLOPPINESS=time_macros
     export CC=clang
     export CXX=clang++
-    export AR=ar
+    export AR=llvm-ar
     export NM=nm
 
     export PATH=${PATH}:/usr/lib/openjdk/bin
