@@ -3,7 +3,7 @@ vcs=git
 pkgver=1.17.2+
 ARCH_VERSION=1.17.2+17+g52a7c79fd
 #FIXME no 1.18 release yet
-gittag=52a7c79fd4ff96bb5fac175f0199819b0f8c18fc
+gittag=2982adec7698ef6cc55b6eb27f28200a95013cdc
 #gittag=${pkgver}
 # includes rcairo versions from https://cairographics.org/releases/
 #relmon_id=247
