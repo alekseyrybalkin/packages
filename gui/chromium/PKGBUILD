@@ -108,7 +108,6 @@ build() {
         'closure_compile=false'
         'enable_hangout_services_extension=false'
         'enable_mdns=false'
-        'enable_mse_mpeg2ts_stream_parser=true'
         'enable_nacl=false'
         'enable_nacl_nonsfi=false'
         'enable_one_click_signin=false'
