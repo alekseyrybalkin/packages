@@ -40,9 +40,9 @@ package() {
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/usr/lib/rpm
 
-    mv ${pkgdir}/etc/systemd/journald.conf{,.packaged}
-    mv ${pkgdir}/etc/systemd/logind.conf{,.packaged}
-    mv ${pkgdir}/etc/systemd/system.conf{,.packaged}
+    for conf in journald logind system user; do
+        mv ${pkgdir}/etc/systemd/${conf}.conf{,.packaged}
+    done
 
     ln -sv /usr/lib/systemd/systemd-udevd ${pkgdir}/usr/bin/udevd
 
