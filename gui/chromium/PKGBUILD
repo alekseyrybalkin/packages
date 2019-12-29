@@ -127,7 +127,6 @@ build() {
         'use_libpci=false'
         'use_pulseaudio=false'
         'symbol_level=0'
-        'icu_use_data_file=false'
     )
 
     # Facilitate deterministic builds (taken from build/config/compiler/BUILD.gn)
