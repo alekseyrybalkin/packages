@@ -1,6 +1,7 @@
 pkgname=chromium
 SKIP_ARCH_CHECK=1
 pkgver=79.0.3945.88
+ungoogled_rev=1
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -103,13 +104,33 @@ build() {
     mkdir -p ${TMPDIR}
 
     GN_CONFIG=(
+        'clang_use_chrome_plugins=false'
+        'closure_compile=false'
+        'enable_hangout_services_extension=false'
+        'enable_mdns=false'
+        'enable_mse_mpeg2ts_stream_parser=true'
+        'enable_nacl=false'
+        'enable_nacl_nonsfi=false'
+        'enable_one_click_signin=false'
+        'enable_reading_list=false'
+        'enable_remoting=false'
+        'enable_reporting=false'
+        'enable_service_discovery=false'
+        'enable_widevine=false'
+        'exclude_unwind_tables=true'
+        'fieldtrial_testing_like_official_build=true'
+        'google_api_key=""'
+        'google_default_client_id=""'
+        'google_default_client_secret=""'
+        'optimize_webui=false'
+        'safe_browsing_mode=0'
+        'treat_warnings_as_errors=false'
+        'use_official_google_api_keys=false'
+        'use_unofficial_version_number=false'
         'custom_toolchain="//build/toolchain/linux/unbundle:default"'
         'host_toolchain="//build/toolchain/linux/unbundle:default"'
-        'clang_use_chrome_plugins=false'
         'clang_use_default_sample_profile=false'
         'is_official_build=true'
-        'treat_warnings_as_errors=false'
-        'fieldtrial_testing_like_official_build=true'
         'ffmpeg_branding="Chrome"'
         'proprietary_codecs=true'
         'rtc_use_pipewire=true'
@@ -119,9 +140,6 @@ build() {
         'use_sysroot=false'
         'linux_use_bundled_binutils=false'
         'use_custom_libcxx=false'
-        'enable_hangout_services_extension=false'
-        'enable_widevine=false'
-        'enable_nacl=false'
         'enable_swiftshader=false'
         'use_kerberos=false'
         'use_libpci=false'
@@ -138,6 +156,20 @@ build() {
     CFLAGS+='   -Wno-unknown-warning-option'
     CXXFLAGS+=' -Wno-unknown-warning-option'
 
+    # ungoogle
+    cd ${location}
+    git clone -n -s `find_vcs_repo ungoogled-chromium`
+    cd ungoogled-chromium
+    git checkout ${pkgver}-${ungoogled_rev}
+    mkdir build
+    mv ../chromium-${pkgver} build/src
+    ./utils/prune_binaries.py build/src pruning.list || true
+    ./utils/patches.py apply build/src patches
+    ./utils/domain_substitution.py apply -r domain_regex.list -f domain_substitution.list -c build/domsubcache.tar.gz build/src
+    mv build/src ../chromium-${pkgver}
+    cd ../chromium-${pkgver}
+
+    # build
     gn gen out/Release --args="${GN_CONFIG[*]}" --script-executable=/usr/bin/python2
     ninja -C out/Release chrome chrome_sandbox chromedriver
 }
