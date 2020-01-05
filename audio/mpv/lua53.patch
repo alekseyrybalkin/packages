@@ -1,8 +1,8 @@
 diff --git a/player/lua.c b/player/lua.c
-index 757f449f7b..16139c8cc3 100644
+index aec9908b69..5a9beace20 100644
 --- a/player/lua.c
 +++ b/player/lua.c
-@@ -373,8 +373,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
+@@ -376,8 +376,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
          .filename = fname,
      };
  
@@ -14,10 +14,20 @@ index 757f449f7b..16139c8cc3 100644
      }
  
 diff --git a/player/lua/osc.lua b/player/lua/osc.lua
-index 6297aeb3b8..d614117ef0 100644
+index 66b3c58d59..bdfd5f44ad 100644
 --- a/player/lua/osc.lua
 +++ b/player/lua/osc.lua
-@@ -147,7 +147,9 @@ end
+@@ -130,6 +130,9 @@ local is_december = os.date("*t").month == 12
+ --
+ 
+ function set_osd(res_x, res_y, text)
++    res_x = math.floor(res_x)
++    res_y = math.floor(res_y)
++
+     if state.osd.res_x == res_x and
+        state.osd.res_y == res_y and
+        state.osd.data == text then
+@@ -167,7 +170,9 @@ end
  
  function set_virt_mouse_area(x0, y0, x1, y1, name)
      local sx, sy = get_virt_scale_factor()
@@ -28,7 +38,7 @@ index 6297aeb3b8..d614117ef0 100644
  end
  
  function scale_value(x0, x1, y0, y1, val)
-@@ -276,7 +278,7 @@ function ass_append_alpha(ass, alpha, modifier)
+@@ -296,7 +301,7 @@ function ass_append_alpha(ass, alpha, modifier)
      end
  
      ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
@@ -37,17 +47,19 @@ index 6297aeb3b8..d614117ef0 100644
  end
  
  function ass_draw_rr_h_cw(ass, x0, y0, x1, y1, r1, hexagon, r2)
-@@ -2270,8 +2272,8 @@ function render()
+diff --git a/player/lua/stats.lua b/player/lua/stats.lua
+index 0749dbaf40..ddfc13b6a9 100644
+--- a/player/lua/stats.lua
++++ b/player/lua/stats.lua
+@@ -292,7 +292,7 @@ local function append_perfdata(s, dedicated_page)
+     -- Pretty print measured time
+     local function pp(i)
+         -- rescale to microseconds for a saner display
+-        return format("%05d", i / 1000)
++        return format("%05d", math.floor(i / 1000))
      end
  
-     -- submit
--    mp.set_osd_ass(osc_param.playresy * osc_param.display_aspect,
--                   osc_param.playresy, ass.text)
-+    mp.set_osd_ass(math.floor(osc_param.playresy * osc_param.display_aspect),
-+                   math.floor(osc_param.playresy), ass.text)
- 
- 
- 
+     -- Format n/m with a font weight based on the ratio
 diff --git a/waftools/checks/custom.py b/waftools/checks/custom.py
 index ed5865a25c..95c052cd4e 100644
 --- a/waftools/checks/custom.py
