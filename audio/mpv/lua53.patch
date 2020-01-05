@@ -13,8 +13,21 @@ index aec9908b69..5a9beace20 100644
          goto error_out;
      }
  
+diff --git a/player/lua/defaults.lua b/player/lua/defaults.lua
+index f44d004a99..f827ea886b 100644
+--- a/player/lua/defaults.lua
++++ b/player/lua/defaults.lua
+@@ -646,7 +646,7 @@ function mp.get_osd_size()
+     end
+ 
+     local aspect = 1.0 * w / math.max(h, 1.0) / par
+-    return w, h, aspect
++    return math.floor(w), math.floor(h), aspect
+ end
+ 
+ 
 diff --git a/player/lua/osc.lua b/player/lua/osc.lua
-index 66b3c58d59..bdfd5f44ad 100644
+index 66b3c58d59..fec4212248 100644
 --- a/player/lua/osc.lua
 +++ b/player/lua/osc.lua
 @@ -130,6 +130,9 @@ local is_december = os.date("*t").month == 12
@@ -27,18 +40,20 @@ index 66b3c58d59..bdfd5f44ad 100644
      if state.osd.res_x == res_x and
         state.osd.res_y == res_y and
         state.osd.data == text then
-@@ -167,7 +170,9 @@ end
+@@ -167,7 +170,11 @@ end
  
  function set_virt_mouse_area(x0, y0, x1, y1, name)
      local sx, sy = get_virt_scale_factor()
 -    mp.set_mouse_area(x0 / sx, y0 / sy, x1 / sx, y1 / sy, name)
-+    if sx > 0 and sy > 0 then
++    if sx ~= 0 and sy ~= 0 then
 +        mp.set_mouse_area(x0 // sx, y0 // sy, x1 // sx, y1 // sy, name)
++    else
++        mp.set_mouse_area(x0, y0, x1, y1, name)
 +    end
  end
  
  function scale_value(x0, x1, y0, y1, val)
-@@ -296,7 +301,7 @@ function ass_append_alpha(ass, alpha, modifier)
+@@ -296,7 +303,7 @@ function ass_append_alpha(ass, alpha, modifier)
      end
  
      ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
