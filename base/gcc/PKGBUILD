@@ -1,7 +1,7 @@
 pkgname=gcc
 pkgver=9.2.0
 vcs=git
-gittag=gcc-${pkgver//\./_}-release
+gittag=releases/gcc-${pkgver}
 relmon_id=6502
 
 build() {

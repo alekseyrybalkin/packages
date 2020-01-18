@@ -1,5 +1,5 @@
 pkgname=python-arrow
-pkgver=0.15.4
+pkgver=0.15.5
 vcs=git
 vcs_pkgname=arrow
 gittag=${pkgver}

@@ -1,5 +1,5 @@
 pkgname=python-more-itertools
-pkgver=8.0.2
+pkgver=8.1.0
 vcs=git
 vcs_pkgname=more-itertools
 gittag=v${pkgver}

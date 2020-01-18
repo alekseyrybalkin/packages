@@ -1,5 +1,5 @@
 pkgname=sed
-pkgver=4.7
+pkgver=4.8
 vcs=git
 gittag=v${pkgver}
 relmon_id=4789

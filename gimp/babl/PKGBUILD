@@ -1,8 +1,7 @@
 pkgname=babl
-pkgver=0.1.72+
+pkgver=0.1.74
 vcs=git
-#FIXME using git master
-gittag=f9009f8d9b29cf7d96f251bcfbdb8402298a76b5
+gittag=BABL_${pkgver//\./_}
 relmon_id=7843
 
 build() {

@@ -1,5 +1,5 @@
 pkgname=ccache
-pkgver=3.7.6
+pkgver=3.7.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=257

@@ -1,6 +1,6 @@
 pkgname=python-babel
-pkgver=2.7.0
-_cldr_core_ver=35.1
+pkgver=2.8.0
+_cldr_core_ver=36
 vcs=git
 vcs_pkgname=babel
 gittag=v${pkgver}

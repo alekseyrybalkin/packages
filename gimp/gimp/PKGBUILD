@@ -2,7 +2,7 @@ pkgname=gimp
 pkgver=2.99+
 vcs=git
 #FIXME using git master
-gittag=1b03513fc617bc69876ea47655d4af561afaf2bb
+gittag=fcc1c3d380336659300432d7811d6176164085af
 relmon_id=1161
 
 build() {

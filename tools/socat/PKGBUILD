@@ -1,7 +1,9 @@
 pkgname=socat
-pkgver=1.7.3.3
+pkgver=1.7.3.4
 vcs=git
-gittag=tag-${pkgver}
+#FIXME no tag
+gittag=82cf4ae7e8a647a9cba20481bbd9717625bb9131
+#gittag=tag-${pkgver}
 relmon_id=4848
 
 build() {
