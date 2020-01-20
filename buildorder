@@ -427,8 +427,6 @@ strace
 cpp-docs
 lfs-book
 blfs-book
-mongodb-bin
-elasticsearch2
 zoom
 libyaml
 libsodium
