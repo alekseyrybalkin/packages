@@ -1,11 +1,14 @@
 pkgname=linux
 vcs=git
-pkgver=5.4.13
+pkgver=5.5
 ARCH_VERSION=${pkgver}.arch1
 gittag=v${pkgver}
 relmon_id=6501
 
 build() {
+    # cgroup: init_tasks shouldn't be linked to the root cgroup
+    git cherry-pick 0cd9d33ace336bc424fc30944aa3defd6786e4fe
+
     make mrproper
     cp -v ../config-x86_64 .config
     make

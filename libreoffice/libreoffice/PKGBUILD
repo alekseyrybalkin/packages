@@ -1,7 +1,7 @@
 pkgname=libreoffice
 ARCH_NAME=libreoffice-fresh
-_majorver=6.3.4
-pkgver=${_majorver}.2
+_majorver=6.4.0
+pkgver=${_majorver}.3
 vcs=git
 gittag=libreoffice-${pkgver}
 tarball_dirs="libreoffice-tarballs"
@@ -19,6 +19,9 @@ prepare() {
 
 build() {
     patch -Np1 -i ../make-pyuno-work-with-system-wide-module-install.diff
+
+    # fix build, tag libreoffice-6.4.0.3-buildfix1
+    git cherry-pick 8c328e6591d0f2b372e50cd2ffa0215a1cf0fa9b
 
     mkdir -p external/tarballs/tmp
     cp ${TARBALLS_HOME}/libreoffice-tarballs/* external/tarballs/tmp/
@@ -40,6 +43,7 @@ build() {
         --without-java \
         --without-junit \
         --without-system-dicts \
+        --without-system-qrcodegen \
         --disable-odk \
         --disable-firebird-sdbc \
         --disable-postgresql-sdbc \
@@ -61,7 +65,6 @@ build() {
         --with-system-librevenge \
         --with-system-libfreehand \
         --with-system-epoxy \
-        --disable-gstreamer-0.10 \
         --disable-gstreamer-1-0 \
         --disable-dbus \
         --disable-gtk \

@@ -2,6 +2,8 @@ pkgname=pipewire
 pkgver=0.2.7
 vcs=git
 gittag=${pkgver}
+relmon_id=57357
+relmon_rules='skip_big_third'
 
 build() {
     mkdir build

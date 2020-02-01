@@ -1,9 +1,10 @@
 pkgname=python-werkzeug
-pkgver=0.16.0
+pkgver=0.16.1
 vcs=git
 vcs_pkgname=werkzeug
 gittag=${pkgver}
 relmon_id=4092
+relmon_rules='skip_rc'
 
 build() {
     python setup.py build

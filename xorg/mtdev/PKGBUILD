@@ -1,5 +1,5 @@
 pkgname=mtdev
-pkgver=1.1.5
+pkgver=1.1.6
 vcs=git
 gittag=v${pkgver}
 relmon_id=8868

@@ -4,7 +4,7 @@ vcs=git
 vcs_pkgname=llvm
 gittag=llvmorg-${pkgver}
 relmon_id=1830
-relmon_rules="skip_init"
+relmon_rules="skip_init,skip_rc"
 
 build() {
     cd lld

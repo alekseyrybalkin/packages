@@ -1,5 +1,5 @@
 pkgname=python-pandas
-pkgver=0.25.3
+pkgver=1.0.0
 vcs=git
 vcs_pkgname=pandas
 gittag=v${pkgver}

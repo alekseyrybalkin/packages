@@ -1,6 +1,6 @@
 pkgname=nginx
 ARCH_NAME=nginx-mainline
-pkgver=1.17.7
+pkgver=1.17.8
 vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=5413

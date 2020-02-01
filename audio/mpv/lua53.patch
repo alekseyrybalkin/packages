@@ -1,8 +1,8 @@
 diff --git a/player/lua.c b/player/lua.c
-index aec9908b69..5a9beace20 100644
+index 6423861f16..adb380ef8b 100644
 --- a/player/lua.c
 +++ b/player/lua.c
-@@ -376,8 +376,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
+@@ -351,8 +351,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
          .filename = fname,
      };
  
@@ -14,20 +14,20 @@ index aec9908b69..5a9beace20 100644
      }
  
 diff --git a/player/lua/defaults.lua b/player/lua/defaults.lua
-index f44d004a99..f827ea886b 100644
+index 7681ca173e..fc2672a868 100644
 --- a/player/lua/defaults.lua
 +++ b/player/lua/defaults.lua
-@@ -646,7 +646,7 @@ function mp.get_osd_size()
-     end
+@@ -639,7 +639,7 @@ end
  
-     local aspect = 1.0 * w / math.max(h, 1.0) / par
--    return w, h, aspect
-+    return math.floor(w), math.floor(h), aspect
+ function mp.get_osd_size()
+     local prop = mp.get_property_native("osd-dimensions")
+-    return prop.w, prop.h, prop.aspect
++    return math.floor(prop.w), math.floor(prop.h), prop.aspect
  end
  
- 
+ function mp.get_osd_margins()
 diff --git a/player/lua/osc.lua b/player/lua/osc.lua
-index 66b3c58d59..fec4212248 100644
+index e6a1e249dd..472b352429 100644
 --- a/player/lua/osc.lua
 +++ b/player/lua/osc.lua
 @@ -130,6 +130,9 @@ local is_december = os.date("*t").month == 12

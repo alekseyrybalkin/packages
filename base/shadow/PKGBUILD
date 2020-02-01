@@ -1,5 +1,5 @@
 pkgname=shadow
-pkgver=4.8
+pkgver=4.8.1
 vcs=git
 gittag=${pkgver}
 relmon_id=4802
@@ -23,6 +23,8 @@ package() {
     sed -i 's/yes/no/' ${pkgdir}/etc/default/useradd
     mv ${pkgdir}/sbin/* ${pkgdir}/usr/bin
     rm -rf ${pkgdir}/sbin
+    mv ${pkgdir}/usr/sbin/* ${pkgdir}/usr/bin
+    rm -rf ${pkgdir}/usr/sbin
 
     # Remove evil/broken tools
     rm ${pkgdir}/usr/bin/logoutd

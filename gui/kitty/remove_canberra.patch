@@ -1,8 +1,8 @@
 diff --git a/kitty/data-types.h b/kitty/data-types.h
-index 1dc24980..ee73e1d8 100644
+index aabe751d..2347aada 100644
 --- a/kitty/data-types.h
 +++ b/kitty/data-types.h
-@@ -311,9 +311,6 @@ void fake_scroll(int, bool);
+@@ -316,9 +316,6 @@ void fake_scroll(int, bool);
  void set_special_key_combo(int glfw_key, int mods, bool is_native);
  void on_key_input(GLFWkeyevent *ev);
  void request_window_attention(id_type, bool);
@@ -85,10 +85,10 @@ index 1a788ed5..92698972 100644
  
  bool
 diff --git a/kitty/glfw.c b/kitty/glfw.c
-index b0e8fb70..31e4b665 100644
+index 79ac0460..73561dce 100644
 --- a/kitty/glfw.c
 +++ b/kitty/glfw.c
-@@ -861,13 +861,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
+@@ -873,13 +873,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
      monotonic_t now = monotonic();
      if (now - last_bell_at <= ms_to_monotonic_t(100ll)) return;
      last_bell_at = now;
