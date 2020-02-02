@@ -67,7 +67,6 @@ build() {
         --with-system-epoxy \
         --disable-gstreamer-1-0 \
         --disable-dbus \
-        --disable-gtk \
         --enable-gtk3 \
         --with-parallelism=$(getconf _NPROCESSORS_ONLN)
     make build-nocheck
