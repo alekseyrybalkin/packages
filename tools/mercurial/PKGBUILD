@@ -6,6 +6,9 @@ relmon_id=1969
 relmon_rules="skip_rc"
 
 build() {
+    # disable parallelism in workers to workaround pickle error on py3
+    # see https://bz.mercurial-scm.org/show_bug.cgi?id=6263
+    patch -Np1 -i ../remove-parallelism.patch
     export HGPYTHON3=1
     cd doc
     make

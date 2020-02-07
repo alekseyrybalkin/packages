@@ -1,0 +1,12 @@
+diff -r b4c82b704180 mercurial/worker.py
+--- a/mercurial/worker.py	Wed Dec 18 20:17:21 2019 +0100
++++ b/mercurial/worker.py	Fri Feb 07 21:00:54 2020 +0300
+@@ -62,7 +62,7 @@
+                 return n
+         except ValueError:
+             raise error.Abort(_(b'number of cpus must be an integer'))
+-    return min(max(countcpus(), 4), 32)
++    return min(max(countcpus(), 4), 1)
+ 
+ 
+ if pycompat.isposix or pycompat.iswindows:
