@@ -6,6 +6,9 @@ relmon_id=1969
 relmon_rules="skip_rc"
 
 build() {
+    # Fix pickle protocal to 3 (for python 3.8 which defaults to 4)
+    patch -Np1 -i ../pickle_protocol_fix.patch
+
     export HGPYTHON3=1
     cd doc
     make
