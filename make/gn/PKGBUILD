@@ -1,12 +1,12 @@
 pkgname=gn
-pkgver=0.1576.81ee1967
+pkgver=0.1634.ad9e442d
 vcs=git
 #FIXME no tag
-gittag=81ee1967d3fcbc829bac1c005c3da59739c88df9
+gittag=ad9e442d92dcd9ee73a557428cfc336b55cbd533
 
 build() {
     ./build/gen.py
-    ninja -C out gn
+    ninja -C out
 }
 
 package() {
