@@ -1,16 +1,14 @@
 pkgname=make
-pkgver=4.2.1
+pkgver=4.3
 vcs=git
 gittag=${pkgver}
 relmon_id=1877
 
 build() {
-    sed -i -e 's/po //g' Makefile.am
-    sed -i -e 's/doc //g' Makefile.am
+    git clone -s `find_vcs_repo gnulib`
+    sed -i -e 's/ po//g' Makefile.am
     sed -i -e 's/-Werror//g' configure.ac
-    autoreconf -fi
-    patch -Np1 -i ../make-4.2.1-glob-internals.patch
-    patch -Np1 -i ../make-4.2.1-glob-v2.patch
+    ./bootstrap --skip-po
     ./configure --prefix=/usr
     make
 }

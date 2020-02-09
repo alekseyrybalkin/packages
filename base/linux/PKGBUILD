@@ -1,6 +1,6 @@
 pkgname=linux
 vcs=git
-pkgver=5.5.1
+pkgver=5.5.2
 ARCH_VERSION=${pkgver}.arch1
 gittag=v${pkgver}
 relmon_id=6501

@@ -1,7 +1,10 @@
 pkgname=llvm
-pkgver=9.0.1
+#FIXME use final 10.0.0 release
+_ver=10.0.0
+_rc=-rc1
+pkgver=${_ver}${_rc//-/\.}
 vcs=git
-gittag=llvmorg-${pkgver}
+gittag=llvmorg-${_ver}${_rc}
 relmon_id=1830
 relmon_rules="skip_init,skip_rc"
 

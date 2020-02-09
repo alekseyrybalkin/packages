@@ -6,6 +6,8 @@ vcs=mercurial
 hgtag=jdk-${pkgver}+${_build}
 
 build() {
+    patch -Np1 -i ../make4.3.patch
+
     PATH=/usr/bin
 
     unset MAKEFLAGS

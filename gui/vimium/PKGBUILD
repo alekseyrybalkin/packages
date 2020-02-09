@@ -1,6 +1,6 @@
 pkgname=vimium
 SKIP_ARCH_CHECK=1
-pkgver=1.64.5
+pkgver=1.65
 vcs=git
 gittag=v${pkgver}
 

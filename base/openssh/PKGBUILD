@@ -7,6 +7,12 @@ gittag=V_${_ver//\./_}_P${_patch}
 relmon_id=2565
 
 build() {
+    # glibc 2.31
+    git cherry-pick b1c82f4b8adf3f42476d8a1f292df33fb7aa1a56
+    git cherry-pick 546274a6f89489d2e6be8a8b62f2bb63c87a61fd
+    git cherry-pick 5af6fd5461bb709304e6979c8b7856c7af921c9e
+    git cherry-pick b110cefdfbf5a20f49b774a55062d6ded2fb6e22
+
     autoreconf -fi
     ./configure --prefix=/usr \
         --sbindir=/usr/bin \

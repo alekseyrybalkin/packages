@@ -1,6 +1,6 @@
 NO_STRIPPING=1
 pkgname=glibc
-pkgver=2.30
+pkgver=2.31
 vcs=git
 gittag=remotes/origin/origin/release/${pkgver}/master
 relmon_id=5401

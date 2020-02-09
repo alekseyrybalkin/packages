@@ -5,10 +5,6 @@ vcs=git-svn
 vcs_pkgname=${pkgname}-git-svn
 
 build() {
-    #FIXME perl-clone fails to validate
-    git revert --no-edit e20865d71baef4e762b586da649682314a195bec
-    git revert --no-edit 68f228a690a93770a6b33a13f7d773a0950168e3
-
     sed -i -e 's/font-size: 1em;/font-size: 1.2em;/g' stylesheets/lfs-xsl/lfs.css
     make -j1 BASEDIR=${srcdir}/build-out RENDERTMP=${srcdir}/build-tmp REV=systemd
 }
