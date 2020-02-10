@@ -68,6 +68,9 @@ build() {
     # Rebuild Linux frame button cache when activation state changes
     git cherry-pick d10f885b9327399be9348b780967ebd6b7f2c4bc
 
+    # Fix GL on fluxbox
+    patch -Np1 -i ../gl_visual_info.patch
+
     # https://crbug.com/893950
     sed -i -e 's/\<xmlMalloc\>/malloc/' -e 's/\<xmlFree\>/free/' \
         third_party/blink/renderer/core/xml/*.cc \
