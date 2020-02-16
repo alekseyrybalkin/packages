@@ -1,0 +1,14 @@
+pkgname=python-toml
+pkgver=0.10.0
+vcs=git
+vcs_pkgname=toml
+gittag=${pkgver}
+relmon_id=6883
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}
