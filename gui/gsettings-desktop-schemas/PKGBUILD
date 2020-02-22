@@ -3,7 +3,7 @@ pkgver=3.34.0
 vcs=git
 gittag=${pkgver}
 relmon_id=13139
-relmon_rules="skip_big_third skip_odd_second"
+relmon_rules="skip_big_third,skip_odd_second"
 
 build() {
     mkdir build

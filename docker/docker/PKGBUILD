@@ -1,6 +1,6 @@
 NO_STRIPPING=1
 pkgname=docker
-pkgver=19.03.5
+pkgver=19.03.6
 vcs=git
 vcs_pkgname=docker-ce
 gittag=v${pkgver}

@@ -1,5 +1,6 @@
 pkgname=pango
 pkgver=1.44.7
+ARCH_VERSION=1.44.7+11+g73b46b04
 vcs=git
 gittag=${pkgver}
 relmon_id=11783

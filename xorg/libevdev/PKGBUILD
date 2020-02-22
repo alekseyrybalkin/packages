@@ -3,6 +3,7 @@ pkgver=1.8.0
 vcs=git
 gittag=libevdev-${pkgver}
 relmon_id=20540
+relmon_rules="skip_big_third"
 
 build() {
     ./autogen.sh --prefix=/usr --disable-static

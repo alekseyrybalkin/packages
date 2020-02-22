@@ -1,7 +1,7 @@
 pkgname=lld
 #FIXME use final 10.0.0 release
 _ver=10.0.0
-_rc=-rc1
+_rc=-rc2
 pkgver=${_ver}${_rc//-/\.}
 vcs=git
 vcs_pkgname=llvm

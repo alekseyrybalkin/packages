@@ -1,5 +1,5 @@
 pkgname=python-parso
-pkgver=0.6.0
+pkgver=0.6.1
 vcs=git
 vcs_pkgname=parso
 gittag=v${pkgver}

@@ -1,5 +1,6 @@
 pkgname=gcc
 pkgver=9.2.0
+ARCH_VERSION=9.2.1+20200130
 vcs=git
 gittag=releases/gcc-${pkgver}
 relmon_id=6502

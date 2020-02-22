@@ -1,8 +1,8 @@
 pkgname=readline
-pkgver=8.0.001
+pkgver=8.0.004
 vcs=git
 #FIXME no tag
-gittag=f585708e822e021e15e5bece1de482b63ba581df
+gittag=c5ad6be530f5c1daf64a2d20df4baba9f6b57aa4
 relmon_id=4173
 
 build() {

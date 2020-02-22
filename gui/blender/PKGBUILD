@@ -1,5 +1,5 @@
 pkgname=blender
-pkgver=2.81a
+pkgver=2.82
 vcs=git
 gittag=v${pkgver}
 relmon_id=201
@@ -21,6 +21,7 @@ build() {
         -DWITH_CYCLES_OSL=OFF \
         -DWITH_FFTW3=OFF \
         -DWITH_TBB=OFF \
+        -DWITH_MOD_FLUID=OFF \
         -DWITH_MOD_OCEANSIM=OFF \
         -DWITH_INTERNATIONAL=OFF \
         -DPYTHON_VERSION=${PYVERSION} \
@@ -45,5 +46,5 @@ after_install() {
 }
 
 after_upgrade() {
-    kiin_after_install
+    after_install
 }

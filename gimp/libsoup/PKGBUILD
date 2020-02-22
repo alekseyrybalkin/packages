@@ -3,6 +3,7 @@ pkgver=2.68.3
 vcs=git
 gittag=${pkgver}
 relmon_id=11483
+relmon_rules="skip_odd_second"
 
 build() {
     mkdir build

@@ -1,5 +1,5 @@
 pkgname=pcre
-pkgver=8.43
+pkgver=8.44
 vcs=git-svn
 vcs_pkgname=pcre-git-svn
 gittag=origin/tags/pcre-${pkgver}

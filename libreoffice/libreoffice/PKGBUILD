@@ -90,7 +90,7 @@ after_install() {
 }
 
 after_upgrade() {
-    kiin_after_install
+    after_install
 }
 
 generated_files="usr/share/mime/application/vnd.ms-word.xml \

@@ -1,9 +1,8 @@
 pkgname=cryptsetup
-pkgver=2.2.2
+pkgver=2.3.0
 vcs=git
 gittag=v${pkgver}
-# includes rc versions without rc in them
-#relmon_id=13709
+relmon_id=13709
 
 build() {
     ./autogen.sh
