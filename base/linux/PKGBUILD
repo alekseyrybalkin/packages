@@ -15,9 +15,10 @@ build() {
 }
 
 package() {
+    . /usr/lib/addons/helpers.bash
+
     mkdir -pv ${pkgdir}/boot
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-jinni
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-arch
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-`guess_distro`
     if [ -z "${DISABLE_SPHINX}" ]; then
         mkdir -pv ${pkgdir}/usr/share/doc
         cp -r Documentation/output ${pkgdir}/usr/share/doc/linux

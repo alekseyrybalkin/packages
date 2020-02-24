@@ -8,10 +8,10 @@ build() {
 }
 
 package() {
+    . /usr/lib/addons/helpers.bash
+
     cd ../
-    ./mkinitramfs jinni
-    ./mkinitramfs arch
+    ./mkinitramfs `guess_distro`
     mkdir -p ${pkgdir}/boot
-    mv -v initrd-jinni ${pkgdir}/boot
-    mv -v initrd-arch ${pkgdir}/boot
+    mv -v initrd-`guess_distro` ${pkgdir}/boot
 }
