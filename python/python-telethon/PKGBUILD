@@ -1,6 +1,6 @@
 pkgname=python-telethon
 SKIP_ARCH_CHECK=1
-pkgver=1.11.2
+pkgver=1.11.3
 vcs=git
 vcs_pkgname=telethon
 gittag=v${pkgver}
