@@ -1,6 +1,6 @@
 pkgname=vimium
 SKIP_ARCH_CHECK=1
-pkgver=1.65
+pkgver=1.66
 vcs=git
 gittag=v${pkgver}
 
@@ -9,7 +9,7 @@ build() {
     git apply ../clipboard.diff
 
     rm -rf .git
-    cake build
+    ./make.js build
 }
 
 package() {
