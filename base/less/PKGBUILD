@@ -1,5 +1,5 @@
 pkgname=less
-pkgver=553
+pkgver=557
 vcs=git
 gittag=v${pkgver}
 relmon_id=1550

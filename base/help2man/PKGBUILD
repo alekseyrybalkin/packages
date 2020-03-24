@@ -1,6 +1,6 @@
 #vcs=none
 pkgname=help2man
-pkgver=1.47.12
+pkgver=1.47.13
 urls="http://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz"
 srctar=${pkgname}-${pkgver}.tar.xz
 relmon_id=1309

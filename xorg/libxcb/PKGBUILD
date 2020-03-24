@@ -1,7 +1,7 @@
 pkgname=libxcb
-pkgver=1.13.1
+pkgver=1.14
 vcs=git
-gittag=${pkgver}
+gittag=libxcb-${pkgver}
 relmon_id=1767
 
 build() {

@@ -1,5 +1,5 @@
 pkgname=glibmm
-pkgver=2.62.0
+pkgver=2.64.2
 vcs=git
 gittag=${pkgver}
 relmon_id=7960

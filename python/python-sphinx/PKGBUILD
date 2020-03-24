@@ -1,9 +1,10 @@
 pkgname=python-sphinx
-pkgver=2.4.2
+pkgver=2.4.4
 vcs=git
 vcs_pkgname=sphinx
 gittag=v${pkgver}
 relmon_id=4031
+relmon_rules="skip_b"
 contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp log-cabinet"
 
 build() {

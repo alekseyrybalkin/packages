@@ -1,6 +1,6 @@
 NO_STRIPPING=1
 pkgname=go
-pkgver=1.13.8
+pkgver=1.14.1
 vcs=git
 gittag=go${pkgver}
 relmon_id=1227

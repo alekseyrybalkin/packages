@@ -1,5 +1,5 @@
 pkgname=man-db
-pkgver=2.9.0
+pkgver=2.9.1
 vcs=git
 gittag=${pkgver}
 relmon_id=1882

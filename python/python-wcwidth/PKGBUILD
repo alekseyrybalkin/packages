@@ -1,5 +1,5 @@
 pkgname=python-wcwidth
-pkgver=0.1.8
+pkgver=0.1.9
 vcs=git
 vcs_pkgname=wcwidth
 gittag=${pkgver}

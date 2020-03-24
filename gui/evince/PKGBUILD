@@ -1,5 +1,5 @@
 pkgname=evince
-pkgver=3.34.2
+pkgver=3.36.0
 vcs=git
 gittag=${pkgver}
 relmon_id=8178

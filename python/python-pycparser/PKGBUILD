@@ -1,5 +1,5 @@
 pkgname=python-pycparser
-pkgver=2.19
+pkgver=2.20
 vcs=git
 vcs_pkgname=pycparser
 gittag=release_v${pkgver}

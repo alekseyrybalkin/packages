@@ -1,12 +1,12 @@
 pkgname=xz
-pkgver=5.2.4
+pkgver=5.2.5
 vcs=git
 gittag=v${pkgver}
 relmon_id=5277
 relmon_rules="skip_alpha"
 
 build() {
-    ./autogen.sh
+    ./autogen.sh --no-po4a
     ./configure --prefix=/usr \
         --disable-static \
         --docdir=/usr/share/doc/xz

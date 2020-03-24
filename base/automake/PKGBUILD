@@ -1,5 +1,5 @@
 pkgname=automake
-pkgver=1.16.1
+pkgver=1.16.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=144

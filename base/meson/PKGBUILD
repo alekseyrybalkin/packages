@@ -1,5 +1,5 @@
 pkgname=meson
-pkgver=0.53.1
+pkgver=0.53.2
 vcs=git
 gittag=${pkgver}
 relmon_id=6472

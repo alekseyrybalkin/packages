@@ -1,5 +1,5 @@
 pkgname=bison
-pkgver=3.5.2
+pkgver=3.5.3
 vcs=git
 gittag=v${pkgver}
 relmon_id=193

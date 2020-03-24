@@ -1,5 +1,5 @@
 pkgname=bc
-pkgver=2.5.3
+pkgver=2.6.0
 vcs=git
 gittag=${pkgver}
 
