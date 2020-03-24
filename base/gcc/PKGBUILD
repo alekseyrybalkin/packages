@@ -1,15 +1,10 @@
 pkgname=gcc
-pkgver=9.2.0
-ARCH_VERSION=9.2.1+20200130
+pkgver=9.3.0
 vcs=git
 gittag=releases/gcc-${pkgver}
 relmon_id=6502
 
 build() {
-    # glibc 2.31
-    sed -i -e 's/CHECK_SIZE_AND_OFFSET(ipc_perm, mode);/\/\/CHECK_SIZE_AND_OFFSET(ipc_perm, mode);/g' \
-        libsanitizer/sanitizer_common/sanitizer_platform_limits_posix.cc
-
     # do not run fixincludes
     sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
     mkdir -v gcc-build
