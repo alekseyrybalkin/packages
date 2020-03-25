@@ -15,7 +15,7 @@ build() {
     mkdir -p output
 
     for deb in mongos server shell tools; do
-        cp ${SOURCES_HOME}/tarballs/mongodb-org-${deb}_${pkgver}_amd64.deb .
+        cp ${TARBALLS_HOME}/mongodb-org-${deb}_${pkgver}_amd64.deb .
         ar x mongodb-org-${deb}_${pkgver}_amd64.deb
         tar -xvf data.tar.xz -C output
     done
