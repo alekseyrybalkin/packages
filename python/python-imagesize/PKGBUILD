@@ -1,8 +1,8 @@
 pkgname=python-imagesize
-pkgver=1.1.0
+pkgver=1.2.0
 vcs=git
 vcs_pkgname=imagesize_py
-gittag=${pkgver}
+gittag=jinni-${pkgver}
 relmon_id=10626
 
 build() {
