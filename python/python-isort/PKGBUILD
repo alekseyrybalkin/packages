@@ -2,9 +2,8 @@ pkgname=python-isort
 pkgver=4.3.21.2
 vcs=git
 vcs_pkgname=isort
-#FIXME dash in tag for this release
-gittag=4.3.21-2
-#gittag=${pkgver}
+# cd9c2f6e70196bd429d0179635e0fac2d034ac5e
+gittag=jinni-${pkgver}
 relmon_id=11430
 
 build() {

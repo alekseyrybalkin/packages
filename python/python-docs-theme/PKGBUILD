@@ -1,10 +1,9 @@
 pkgname=python-docs-theme
 SKIP_ARCH_CHECK=1
-pkgver=2018.7
+pkgver=2020.1
 vcs=git
-#FIXME no tag
-gittag=44a8f306db9ec86d277a8a687538d5d51e415130
-#gittag=${pkgver}
+# e7367ebe35c3d6622d7e2bb01d7881e476eeadf0
+gittag=jinni-${pkgver}
 
 build() {
     python setup.py build

@@ -1,11 +1,8 @@
 pkgname=bash
-_major=5.0
-_minor=016
-pkgver=${_major}.${_minor}
-ARCH_VERSION=${_major}.${_minor}
+pkgver=5.0.016
 vcs=git
-#FIXME no tag
-gittag=6c6454cb18d7cd30b3b26d5ba6479431e599f3ed
+# 6c6454cb18d7cd30b3b26d5ba6479431e599f3ed
+gittag=jinni-bash-${pkgver}
 relmon_id=166
 
 build() {

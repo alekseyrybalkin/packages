@@ -1,8 +1,8 @@
 pkgname=readline
 pkgver=8.0.004
 vcs=git
-#FIXME no tag
-gittag=c5ad6be530f5c1daf64a2d20df4baba9f6b57aa4
+# c5ad6be530f5c1daf64a2d20df4baba9f6b57aa4
+gittag=jinni-readline-${pkgver}
 relmon_id=4173
 
 build() {

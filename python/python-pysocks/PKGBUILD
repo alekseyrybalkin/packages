@@ -2,9 +2,8 @@ pkgname=python-pysocks
 pkgver=1.7.1
 vcs=git
 vcs_pkgname=pysocks
-#FIXME no tag
-gittag=f660e75d4844e64e4b162b0c01f8df8d866ee000
-#gittag=${pkgver}
+# f660e75d4844e64e4b162b0c01f8df8d866ee000
+gittag=jinni-${pkgver}
 relmon_id=10673
 
 build() {

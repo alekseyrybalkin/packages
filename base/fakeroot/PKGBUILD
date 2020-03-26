@@ -1,9 +1,8 @@
 pkgname=fakeroot
 pkgver=1.24
 vcs=git
-#FIXME no tag
-gittag=65bfa45a78034bdd9cc19291ad7f7cb9a43878d6
-#gittag=${pkgver}
+# 65bfa45a78034bdd9cc19291ad7f7cb9a43878d6
+gittag=jinni-${pkgver}
 relmon_id=12048
 
 build() {
