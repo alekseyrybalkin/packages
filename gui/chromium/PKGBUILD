@@ -1,6 +1,6 @@
 pkgname=chromium
 SKIP_ARCH_CHECK=1
-pkgver=80.0.3987.122
+pkgver=80.0.3987.149
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -8,6 +8,7 @@ extra_urls="somethere/node_modules-${pkgver}.tar.gz"
 #relmon_id=13344
 
 # updating node_modules:
+# git apply ~/projects/journal/jinni/clean_json_attrs.diff
 # cd third_party/node
 # ./update_npm_deps
 
@@ -125,8 +126,8 @@ build() {
         'fieldtrial_testing_like_official_build=true'
         'ffmpeg_branding="Chrome"'
         'proprietary_codecs=true'
-        'rtc_use_pipewire=true'
-        'rtc_link_pipewire=true'
+        'rtc_use_pipewire=false'
+        'rtc_link_pipewire=false'
         'link_pulseaudio=false'
         'use_gnome_keyring=false'
         'use_sysroot=false'
