@@ -1,9 +1,8 @@
 pkgname=apr
-pkgver=1.7.0+
+pkgver=1.7.0.0.1
 vcs=git
-#FIXME apr 2.0 is not released yet
-gittag=b4ee162cc661aef09f16a0dc7583259c5db63c59
-#gittag=${pkgver}
+# ea4a9ea7c715e1f6ea233a4c4f60e2d5df8321f4
+gittag=jinni-${pkgver}
 relmon_id=95
 
 build() {

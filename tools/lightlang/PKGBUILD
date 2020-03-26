@@ -1,8 +1,9 @@
 pkgname=lightlang
 SKIP_ARCH_CHECK=1
 vcs=git
-pkgver=20140410
-gittag=7510d5dd87fc988fe1b14718bb546daae5baebe6
+pkgver=0.8.6.0.1
+# 7510d5dd87fc988fe1b14718bb546daae5baebe6
+gittag=jinni-${pkgver}
 
 build() {
     sed -i -e 's/\.sl/\.config\/sl/g' apps/sl/src/settings.h

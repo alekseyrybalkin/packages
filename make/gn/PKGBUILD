@@ -1,8 +1,8 @@
 pkgname=gn
 pkgver=0.1634.ad9e442d
 vcs=git
-#FIXME no tag
-gittag=ad9e442d92dcd9ee73a557428cfc336b55cbd533
+# ad9e442d92dcd9ee73a557428cfc336b55cbd533
+gittag=jinni-${pkgver}
 
 build() {
     ./build/gen.py

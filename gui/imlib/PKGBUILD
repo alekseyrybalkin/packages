@@ -3,9 +3,8 @@ ARCH_NAME=imlib2
 pkgver=1.6.1
 vcs=git
 vcs_pkgname=imlib2
-#FIXME not tag
-gittag=59027165b2ea658128d1f8e737587767e78d6b97
-#gittag=v${pkgver}
+# 59027165b2ea658128d1f8e737587767e78d6b97
+gittag=jinni-v${pkgver}
 
 build() {
     ./autogen.sh --prefix=/usr --disable-static

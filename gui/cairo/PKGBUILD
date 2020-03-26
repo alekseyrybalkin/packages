@@ -1,13 +1,10 @@
 pkgname=cairo
 vcs=git
-pkgver=1.17.2+
-ARCH_VERSION=1.17.2+17+g52a7c79fd
-#FIXME no 1.18 release yet
-gittag=2982adec7698ef6cc55b6eb27f28200a95013cdc
-#gittag=${pkgver}
-# includes rcairo versions from https://cairographics.org/releases/
-#relmon_id=247
-#relmon_rules="skip_odd_second"
+pkgver=1.17.2.0.1
+# aee96d175d8349945a6d1948a56abd4b4ec6ad84
+gittag=jinni-${pkgver}
+relmon_id=247
+relmon_rules="skip_odd_second"
 
 build() {
     sed -i -e 's/lzo2a.h/withoutlzo.h/g' configure.ac

@@ -1,8 +1,8 @@
 pkgname=inkscape
 pkgver=1.0.beta2
 vcs=git
-gittag=INKSCAPE_${pkgver//\./_}
-gittag=${gittag^^}
+_pkgver=${pkgver^^}
+gittag=INKSCAPE_${_pkgver//\./_}
 relmon_id=1381
 relmon_rules='skip_alpha,skip_beta'
 
