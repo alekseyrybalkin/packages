@@ -16,6 +16,13 @@ build() {
         ZLIB_LIBS=-lz \
         USE_64=1 \
         NSS_USE_SYSTEM_SQLITE=1
+
+    # cacerts
+    cd ${srcdir}
+    mkdir build pkgdir
+    cd build
+    cp ../lib/ckfw/builtins/certdata.txt .
+    pkgdir=${srcdir}/pkgdir bash ../../make-ca.sh --localdir /etc/ssl/local
 }
 
 package() {
@@ -32,4 +39,10 @@ package() {
     install -v -m644 Linux*/lib/pkgconfig/nss.pc ${pkgdir}/usr/lib/pkgconfig
     cd ../
     rm -rf dist
+
+    # cacerts
+    cd ${srcdir}
+    cp -r pkgdir/* ${pkgdir}/
+    mkdir -pv ${pkgdir}/etc/ssl/certs/
+    ln -sv /etc/ssl/ca-bundle.crt ${pkgdir}/etc/ssl/certs/ca-certificates.crt
 }
