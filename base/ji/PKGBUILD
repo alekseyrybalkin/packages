@@ -1,7 +1,8 @@
 pkgname=ji
 SKIP_ARCH_CHECK=1
-pkgver=48+
+pkgver=49
 vcs=git
+gittag=v${pkgver}
 
 build() {
     if [ "`hostname`" == "rybalkin.org" ]; then

@@ -1,7 +1,7 @@
 pkgname=popt
-pkgver=1.17+
+pkgver=1.17.0.1
 vcs=bzr
-bzrrev=793
+bzrtag=jinni-${pkgver}
 relmon_id=3689
 
 build() {
