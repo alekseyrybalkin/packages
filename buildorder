@@ -308,7 +308,6 @@ libxkbcommon
 # audio: xorg support
 libass
 ffmpeg
-pipewire
 mpv
 
 # make: xorg support
