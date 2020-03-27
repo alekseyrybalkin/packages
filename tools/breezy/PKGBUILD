@@ -1,8 +1,9 @@
 pkgname=breezy
-SKIP_ARCH_CHECK=1
-pkgver=3.0.2
+pkgver=3.0.2.5
 vcs=git
-gittag=brz-${pkgver}
+# d02249e1400dd18713982b25f1ebdaaf1ccf801c
+gittag=jinni-${pkgver}
+relmon_id=45817
 
 build() {
     python setup.py build
