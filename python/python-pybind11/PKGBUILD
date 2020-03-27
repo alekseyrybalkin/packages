@@ -1,5 +1,4 @@
 pkgname=python-pybind11
-ARCH_NAME=pybind11
 pkgver=2.4.3
 vcs=git
 vcs_pkgname=pybind11

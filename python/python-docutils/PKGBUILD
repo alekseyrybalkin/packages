@@ -1,6 +1,5 @@
 pkgname=python-docutils
 vcs_pkgname=docutils
-ARCH_NAME=docutils
 pkgver=0.16
 vcs=git
 gittag=docutils-${pkgver}

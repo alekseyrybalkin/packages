@@ -1,5 +1,4 @@
 pkgname=perl-ack
-ARCH_NAME=ack
 pkgver=3.3.1
 vcs=git
 gittag=v${pkgver}

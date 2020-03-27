@@ -1,5 +1,4 @@
 pkgname=tidy-html5
-ARCH_NAME=tidy
 pkgver=5.7.28
 vcs=git
 gittag=${pkgver}

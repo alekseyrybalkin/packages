@@ -1,5 +1,4 @@
 pkgname=procps
-ARCH_NAME=procps-ng
 pkgver=3.3.16
 vcs=git
 gittag=v${pkgver}

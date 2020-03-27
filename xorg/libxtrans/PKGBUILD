@@ -1,5 +1,4 @@
 pkgname=libxtrans
-ARCH_NAME=xtrans
 pkgver=1.4.0
 vcs=git
 gittag=xtrans-${pkgver}

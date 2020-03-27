@@ -1,5 +1,4 @@
 pkgname=gdk-pixbuf
-ARCH_NAME=gdk-pixbuf2
 pkgver=2.40.0
 vcs=git
 gittag=${pkgver}

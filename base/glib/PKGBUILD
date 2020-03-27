@@ -1,5 +1,4 @@
 pkgname=glib
-ARCH_NAME=glib2
 pkgver=2.64.1
 vcs=git
 gittag=${pkgver}

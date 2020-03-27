@@ -1,5 +1,4 @@
 pkgname=python-ipython
-ARCH_NAME=ipython
 pkgver=7.13.0
 vcs=git
 vcs_pkgname=ipython

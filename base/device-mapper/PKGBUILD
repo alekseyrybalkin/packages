@@ -1,5 +1,4 @@
 pkgname=device-mapper
-ARCH_NAME=lvm2
 pkgver=2.03.08
 vcs=git
 vcs_pkgname=lvm2

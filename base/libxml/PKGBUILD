@@ -1,5 +1,4 @@
 pkgname=libxml
-ARCH_NAME=libxml2
 pkgver=2.9.10
 vcs=git
 vcs_pkgname=libxml2

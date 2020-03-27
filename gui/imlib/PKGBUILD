@@ -1,5 +1,4 @@
 pkgname=imlib
-ARCH_NAME=imlib2
 pkgver=1.6.1
 vcs=git
 vcs_pkgname=imlib2
