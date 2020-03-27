@@ -1,6 +1,5 @@
 pkgname=blender
 pkgver=2.82a
-ARCH_VERSION=2.82.a
 vcs=git
 gittag=v${pkgver}
 relmon_id=201
