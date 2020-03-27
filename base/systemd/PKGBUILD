@@ -3,7 +3,7 @@ pkgver=245.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=5440
-relmon_rules="skip_rc"
+updater_rules="skip_rc"
 
 build() {
     sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in

@@ -3,7 +3,7 @@ pkgver=2.35.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=8179
-relmon_rules="skip_rc"
+updater_rules="skip_rc"
 
 build() {
     ./autogen.sh

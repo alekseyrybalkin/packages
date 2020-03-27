@@ -3,7 +3,7 @@ pkgver=1.72.0
 vcs=git
 gittag=boost-${pkgver}
 relmon_id=6845
-relmon_rules="skip_beta"
+updater_rules="skip_beta"
 
 build() {
     cd libs

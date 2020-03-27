@@ -5,7 +5,7 @@ pkgver=2.04
 vcs=git
 gittag=grub-${pkgver}
 relmon_id=1258
-relmon_rules="repl_tilde_dot"
+updater_rules="repl_tilde_dot"
 
 build() {
     git clone -s `find_vcs_repo gnulib`

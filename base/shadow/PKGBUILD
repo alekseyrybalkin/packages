@@ -3,7 +3,7 @@ pkgver=4.8.1
 vcs=git
 gittag=${pkgver}
 relmon_id=4802
-relmon_rules="skip_big_first"
+updater_rules="skip_big_first"
 
 build() {
     sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' etc/login.defs

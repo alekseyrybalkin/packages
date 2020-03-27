@@ -3,7 +3,7 @@ pkgver=0.48.2
 vcs=git
 gittag=${pkgver}
 relmon_id=5065
-relmon_rules="skip_odd_second"
+updater_rules="skip_odd_second"
 
 build() {
     NOCONFIGURE=1 ./autogen.sh

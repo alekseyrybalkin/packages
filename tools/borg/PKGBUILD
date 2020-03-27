@@ -3,7 +3,7 @@ pkgver=1.1.11
 vcs=git
 gittag=${pkgver}
 relmon_id=10446
-relmon_rules="skip_a,skip_b,skip_rc"
+updater_rules="skip_a,skip_b,skip_rc"
 
 build() {
     python setup.py build

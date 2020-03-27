@@ -4,7 +4,7 @@ pkgver=${_release}.10
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=11426
-relmon_rules="skip_a"
+updater_rules="skip_a"
 
 build() {
     cd unix

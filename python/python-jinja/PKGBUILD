@@ -4,7 +4,7 @@ vcs=git
 vcs_pkgname=jinja
 gittag=${pkgver}
 relmon_id=3894
-relmon_rules="skip_a"
+updater_rules="skip_a"
 
 build() {
     patch -Np1 -i ../sphinx-remove-pallets.diff

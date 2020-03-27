@@ -3,7 +3,7 @@ pkgver=1.5.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=12974
-relmon_rules="skip_alpha,skip_beta"
+updater_rules="skip_alpha,skip_beta"
 
 build() {
     sed -i -e 's/python2/python/g' autogen.sh generate.py

@@ -5,7 +5,7 @@ ARCH_VERSION=3.24.14+9+g429a6287e0
 vcs=git
 gittag=${pkgver}
 relmon_id=10018
-relmon_rules="skip_big_second"
+updater_rules="skip_big_second"
 
 build() {
     meson --prefix=/usr \

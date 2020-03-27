@@ -4,7 +4,7 @@ vcs=git
 vcs_pkgname=matplotlib
 gittag=v${pkgver}
 relmon_id=3919
-relmon_rules="skip_rc"
+updater_rules="skip_rc"
 
 build() {
     # disable installation of jquery-ui

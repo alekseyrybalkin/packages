@@ -5,7 +5,7 @@ vcs=git
 vcs_pkgname=docker-ce
 gittag=v${pkgver}
 relmon_id=11719
-relmon_rules="skip_a,skip_b,skip_rc"
+updater_rules="skip_a,skip_b,skip_rc"
 
 build() {
     _DOCKER_COMMIT=`git rev-parse HEAD`
