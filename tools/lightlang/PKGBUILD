@@ -1,5 +1,4 @@
 pkgname=lightlang
-SKIP_ARCH_CHECK=1
 vcs=git
 pkgver=0.8.6.0.1
 # 7510d5dd87fc988fe1b14718bb546daae5baebe6

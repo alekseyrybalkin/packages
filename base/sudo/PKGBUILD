@@ -1,6 +1,5 @@
 pkgname=sudo
 # pkgver too complex to parse, we check hg tags instead
-SKIP_ARCH_CHECK=1
 pkgver=1.8.31p1
 vcs=mercurial
 hgtag=SUDO_${pkgver//\./_}

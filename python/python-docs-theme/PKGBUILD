@@ -1,5 +1,4 @@
 pkgname=python-docs-theme
-SKIP_ARCH_CHECK=1
 pkgver=2020.1
 vcs=git
 # e7367ebe35c3d6622d7e2bb01d7881e476eeadf0
