@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=compose
 gittag=${pkgver}
 relmon_id=6185
-updater_rules="skip_rc,skip_test"
 
 build() {
     sed -i 's/==/>=/g' requirements.txt

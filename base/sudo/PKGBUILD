@@ -5,6 +5,7 @@ pkgver=1.8.31p1
 vcs=mercurial
 hgtag=SUDO_${pkgver//\./_}
 relmon_id=4906
+updater_rules="no_alpha_skips"
 
 build() {
     ./autogen.sh

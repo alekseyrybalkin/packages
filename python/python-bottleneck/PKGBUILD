@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=bottleneck
 gittag=v${pkgver}
 relmon_id=3787
-updater_rules="skip_rc"
 
 build() {
     python setup.py build

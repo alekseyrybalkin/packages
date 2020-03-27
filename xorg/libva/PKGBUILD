@@ -3,7 +3,6 @@ pkgver=2.6.1
 vcs=git
 gittag=${pkgver}
 relmon_id=1752
-updater_rules="skip_pre"
 
 build() {
     ./autogen.sh $XORG_CONFIG

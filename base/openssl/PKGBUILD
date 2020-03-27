@@ -5,6 +5,7 @@ pkgver=1.1.1e
 vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 relmon_id=2566
+updater_rules="no_alpha_skips"
 
 build() {
     ./config --prefix=/usr \

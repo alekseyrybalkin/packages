@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=libzmq
 gittag=v${pkgver}
 relmon_id=16245
-updater_rules="skip_win"
 
 build() {
     ./autogen.sh

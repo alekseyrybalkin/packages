@@ -6,7 +6,6 @@ vcs=git
 gittag=libreoffice-${pkgver}
 tarball_dirs="libreoffice-tarballs"
 relmon_id=6506
-updater_rules="skip_alpha,skip_beta"
 
 prepare() {
     git clone -s -n `find_vcs_repo libreoffice` libreoffice-${pkgver}

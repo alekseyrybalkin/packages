@@ -5,7 +5,6 @@ pkgver=0.16
 vcs=git
 gittag=docutils-${pkgver}
 relmon_id=3849
-updater_rules="skip_b,skip_rc"
 
 build() {
     python setup.py build

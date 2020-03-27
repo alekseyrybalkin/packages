@@ -4,6 +4,7 @@ ARCH_VERSION=2.82.a
 vcs=git
 gittag=v${pkgver}
 relmon_id=201
+updater_rules="no_alpha_skips"
 
 build() {
     PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`

@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}
 relmon_id=4768
-updater_rules="skip_rc"
 
 build() {
     python setup.py config_fc --fcompiler=gnu95 build

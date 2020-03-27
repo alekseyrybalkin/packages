@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=werkzeug
 gittag=${pkgver}
 relmon_id=4092
-updater_rules='skip_rc'
 
 build() {
     python setup.py build

@@ -5,6 +5,7 @@ pkgver=${_ver}p${_patch}
 vcs=git
 gittag=V_${_ver//\./_}_P${_patch}
 relmon_id=2565
+updater_rules="no_alpha_skips"
 
 build() {
     autoreconf -fi

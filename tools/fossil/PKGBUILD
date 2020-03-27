@@ -3,7 +3,6 @@ pkgver=2.10
 vcs=fossil
 fossiltag=version-${pkgver}
 relmon_id=13971
-updater_rules="leftstrip_version.,skip_digit,skip_win"
 
 build() {
     ./configure --prefix=/usr

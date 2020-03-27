@@ -4,7 +4,6 @@ vcs=mercurial
 vcs_pkgname=openpyxl
 hgtag=${pkgver}
 relmon_id=8098
-updater_rules="skip_a,skip_b"
 
 build() {
     python setup.py build

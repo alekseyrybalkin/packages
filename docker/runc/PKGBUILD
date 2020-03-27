@@ -6,7 +6,7 @@ ARCH_VERSION=${_pkgver}rc${_rc}
 vcs=git
 gittag=v${_pkgver}-rc${_rc}
 relmon_id=7462
-updater_rules="skip_rc"
+updater_rules="no_alpha_skips"
 
 build() {
     cd ${location}

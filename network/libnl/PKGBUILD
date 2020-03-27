@@ -3,7 +3,7 @@ pkgver=3.5.0
 vcs=git
 gittag=libnl${pkgver//\./_}
 relmon_id=1684
-updater_rules="repl_underscore_dot,skip_rc"
+updater_rules="repl_underscore_dot"
 
 build() {
     ./autogen.sh

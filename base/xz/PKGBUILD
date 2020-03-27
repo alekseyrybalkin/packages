@@ -3,7 +3,6 @@ pkgver=5.2.5
 vcs=git
 gittag=v${pkgver}
 relmon_id=5277
-updater_rules="skip_alpha"
 
 build() {
     ./autogen.sh --no-po4a

@@ -4,7 +4,6 @@ vcs=git
 vcs_pkgname=sphinx
 gittag=v${pkgver}
 relmon_id=4031
-updater_rules="skip_b"
 contrib="qthelp serializinghtml websupport htmlhelp jsmath devhelp applehelp log-cabinet"
 
 build() {

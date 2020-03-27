@@ -4,7 +4,6 @@ vcs=git
 # e5d205bfe849f1b41f45b91a0b71a3bdc6cd458f
 gittag=jinni-v${pkgver}
 relmon_id=11793
-updater_rules="skip_alpha"
 
 build() {
     ./autogen.sh

@@ -5,7 +5,6 @@ vcs=git
 vcs_pkgname=cython
 gittag=${pkgver}
 relmon_id=12679
-updater_rules='skip_rc,skip_b'
 
 build() {
     python setup.py build
