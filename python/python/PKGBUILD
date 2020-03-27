@@ -3,8 +3,7 @@ _pybasever=3.8
 pkgver=${_pybasever}.2
 vcs=git
 gittag=v${pkgver}
-# relmon versions include a, b, rc version without 'a', 'b' or 'rc' in them
-#relmon_id=13254
+relmon_id=13254
 
 build() {
     rm -rf .github .git .gitignore .bzrignore .hgeol .hgignore .hgtags .hgtouch

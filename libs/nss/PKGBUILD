@@ -4,6 +4,7 @@ vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
 relmon_id=2503
+updater_rules='no_alpha_skips,skip_big_first,skip_big_second,skip_beta,skip_rtmall'
 
 build() {
     MAKEFLAGS=

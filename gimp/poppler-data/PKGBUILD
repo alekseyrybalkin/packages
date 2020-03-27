@@ -3,6 +3,7 @@ pkgver=0.4.9
 vcs=git
 gittag=POPPLER_DATA_${pkgver//\./_}
 relmon_id=3687
+updater_rules='lstrip_poppler_data'
 
 build() {
     :

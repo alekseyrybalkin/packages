@@ -3,6 +3,7 @@ pkgver=2.9
 vcs=git
 gittag=hostap_${pkgver//\./_}
 relmon_id=5146
+updater_rules='lstrip_hostap'
 
 build() {
     cp ../config ${pkgname}/.config

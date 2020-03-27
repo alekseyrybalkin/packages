@@ -3,8 +3,7 @@ ARCH_NAME=mypaint-brushes1
 pkgver=1.3.1
 vcs=git
 gittag=v${pkgver}
-# we use 1.x (needed for gimp), but 2.x is released
-#relmon_id=17096
+relmon_id=17096
 
 build() {
     autoreconf -fiv

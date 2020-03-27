@@ -4,6 +4,7 @@ pkgver=1.4.3
 vcs=git
 gittag=${_pkgname}-${pkgver}
 relmon_id=15018
+updater_rules="lstrip_${_pkgname}"
 
 build() {
     ./autogen.sh $XORG_CONFIG

@@ -5,6 +5,7 @@ pkgver=6.2
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=2057
+updater_rules='skip_big_third'
 
 build() {
     sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in

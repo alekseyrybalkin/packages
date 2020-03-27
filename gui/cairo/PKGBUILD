@@ -1,6 +1,7 @@
 pkgname=cairo
 vcs=git
 pkgver=1.17.2.0.1
+ARCH_VERSION=1.17.2+17+g52a7c79fd
 # aee96d175d8349945a6d1948a56abd4b4ec6ad84
 gittag=jinni-${pkgver}
 relmon_id=247

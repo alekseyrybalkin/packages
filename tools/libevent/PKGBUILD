@@ -3,6 +3,7 @@ pkgver=2.1.11
 vcs=git
 gittag=release-${pkgver}-stable
 relmon_id=1606
+updater_rules='no_alpha_skips'
 
 build() {
     autoreconf -fi

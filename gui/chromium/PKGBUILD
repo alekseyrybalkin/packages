@@ -1,11 +1,9 @@
 pkgname=chromium
-SKIP_ARCH_CHECK=1
 pkgver=80.0.3987.149
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
-# we update chromium separately from everything else
-#relmon_id=13344
+relmon_id=13344
 
 # updating node_modules:
 # git apply ~/projects/journal/jinni/clean_json_attrs.diff

@@ -4,6 +4,7 @@ ARCH_VERSION=${pkgver}
 vcs=git
 gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035
+updater_rules='no_alpha_skips'
 
 build() {
     rm -rf .git

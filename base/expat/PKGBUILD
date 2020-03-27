@@ -4,6 +4,7 @@ vcs=git
 vcs_pkgname=libexpat
 gittag=R_${pkgver//\./_}
 relmon_id=770
+updater_rules='skip_big_first,lstrip_r'
 
 build() {
     cd expat

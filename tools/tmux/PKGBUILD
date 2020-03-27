@@ -3,8 +3,7 @@ pkgver=3.0a
 ARCH_VERSION=3.0_a
 vcs=git
 gittag=${pkgver}
-# includes rc versions without 'rc' in them
-#relmon_id=4980
+relmon_id=4980
 updater_rules="no_alpha_skips"
 
 build() {

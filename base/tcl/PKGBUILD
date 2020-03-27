@@ -3,6 +3,7 @@ pkgver=8.6.10
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941
+updater_rules='lstrip_core'
 
 build() {
     cd unix

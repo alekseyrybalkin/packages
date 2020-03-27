@@ -3,6 +3,7 @@ pkgver=4.2.2
 vcs=git
 gittag=n${pkgver}
 relmon_id=5405
+updater_rules='lstrip_n'
 
 build() {
     export TMPDIR=${location}/tmp

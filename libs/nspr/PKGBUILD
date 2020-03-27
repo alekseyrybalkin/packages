@@ -3,6 +3,7 @@ pkgver=4.25
 vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
 relmon_id=7953
+updater_rules='no_alpha_skips,skip_big_second,skip_beta'
 
 build() {
     sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in

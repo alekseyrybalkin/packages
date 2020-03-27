@@ -5,6 +5,7 @@ vcs=git
 vcs_pkgname=openldap
 gittag=OPENLDAP_REL_ENG_${pkgver//\./_}
 relmon_id=2551
+updater_rules='lstrip_rel_eng'
 
 build() {
     autoconf

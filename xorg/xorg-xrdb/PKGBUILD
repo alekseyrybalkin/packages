@@ -4,6 +4,7 @@ pkgver=1.2.0
 vcs=git
 gittag=${_pkgname}-${pkgver}
 relmon_id=14956
+updater_rules="lstrip_${_pkgname}"
 
 build() {
     export PATH=/usr/bin:${PATH}

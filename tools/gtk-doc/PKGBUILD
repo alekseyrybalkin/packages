@@ -4,6 +4,7 @@ ARCH_VERSION=1.32+37+gefc3644
 vcs=git
 gittag=GTK_DOC_${pkgver//\./_}
 relmon_id=13140
+updater_rules='lstrip_gtk_doc'
 
 build() {
     mkdir build

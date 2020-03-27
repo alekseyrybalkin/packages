@@ -3,6 +3,7 @@ pkgver=1.2.3
 vcs=git
 gittag=libXScrnSaver-${pkgver}
 relmon_id=1791
+updater_rules='lstrip_libxscrnsaver'
 
 build() {
     ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR

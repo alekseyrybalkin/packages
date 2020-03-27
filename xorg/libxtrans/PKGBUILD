@@ -4,6 +4,7 @@ pkgver=1.4.0
 vcs=git
 gittag=xtrans-${pkgver}
 relmon_id=13651
+updater_rules='lstrip_xtrans'
 
 build() {
     ./autogen.sh $XORG_CONFIG

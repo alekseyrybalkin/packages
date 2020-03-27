@@ -3,6 +3,7 @@ pkgver=10.0.0
 vcs=git
 gittag=llvmorg-${pkgver}
 relmon_id=1830
+updater_rules='lstrip_org'
 
 build() {
     cd llvm

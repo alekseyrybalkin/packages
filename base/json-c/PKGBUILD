@@ -3,6 +3,7 @@ pkgver=0.13.1
 vcs=git
 gittag=json-c-${pkgver}-20180305
 relmon_id=1477
+updater_rules='skip_big_third'
 
 build() {
     autoreconf -fi

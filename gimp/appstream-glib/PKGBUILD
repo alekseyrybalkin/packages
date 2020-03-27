@@ -3,6 +3,7 @@ pkgver=0.7.17
 vcs=git
 gittag=appstream_glib_${pkgver//\./_}
 relmon_id=14018
+updater_rules='lstrip_appstream_glib'
 
 build() {
     mkdir build

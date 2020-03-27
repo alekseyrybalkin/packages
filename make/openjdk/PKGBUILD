@@ -4,6 +4,7 @@ pkgver=14
 _build=36
 vcs=mercurial
 hgtag=jdk-${pkgver}+${_build}
+updater_rules='no_alpha_skips,lstrip_jdk,skip_+'
 
 build() {
     patch -Np1 -i ../make4.3.patch
