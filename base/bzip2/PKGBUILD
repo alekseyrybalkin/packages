@@ -1,8 +1,6 @@
-pkgname=bzip
-ARCH_NAME=bzip2
+pkgname=bzip2
 pkgver=1.0.8
 vcs=git
-vcs_pkgname=bzip2
 gittag=bzip2-${pkgver}
 relmon_id=237
 

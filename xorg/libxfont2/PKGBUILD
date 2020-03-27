@@ -1,9 +1,9 @@
-pkgname=libxfont
-ARCH_NAME=libxfont2
+pkgname=libxfont2
 pkgver=2.0.4
 vcs=git
+vcs_pkgname=libxfont
 gittag=libXfont2-${pkgver}
-relmon_id=1776
+relmon_id=17165
 
 build() {
     ./autogen.sh $XORG_CONFIG --disable-devel-docs

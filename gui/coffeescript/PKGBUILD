@@ -1,16 +1,13 @@
-pkgname=coffeescript1
-SKIP_ARCH_CHECK=1
+pkgname=coffeescript
 pkgver=1.12.8
 vcs=git
-vcs_pkgname=coffeescript
 gittag=${pkgver}
+relmon_id=17700
 
 build() {
     rm -rf .git .gitignore
     cd ../
-    cp -r coffeescript{1,}-${pkgver}
     tar cvf coffeescript-${pkgver}.tgz coffeescript-${pkgver}
-    rm -rf coffeescript-${pkgver}
 }
 
 package() {

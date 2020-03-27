@@ -18,7 +18,7 @@ mpfr
 mpc
 gcc
 doxygen
-bzip
+bzip2
 pcre
 libffi
 ncurses
@@ -258,7 +258,7 @@ libxcursor
 libxdamage
 xorg-font-util
 libfontenc
-libxfont
+libxfont2
 libxft
 libxi
 libxinerama
@@ -501,7 +501,7 @@ gtkmm
 inkscape
 
 # gui: chromium
-coffeescript1
+coffeescript
 vimium
 ublock
 nodejs
