@@ -183,7 +183,6 @@ libpng
 libjpeg-turbo
 giflib
 cups
-zeromq
 
 # network
 dhcpcd
@@ -374,11 +373,6 @@ python-pybind11
 python-scipy
 python-dulwich
 python-onetimepass
-python-pyzmq
-python-kitchen
-python-arrow
-python-psutil
-python-fedmsg
 
 # python: sphinx
 python-imagesize
