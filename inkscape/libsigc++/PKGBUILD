@@ -1,5 +1,5 @@
 pkgname=libsigc++
-pkgver=2.10.2
+pkgver=2.10.3
 vcs=git
 gittag=${pkgver}
 relmon_id=7961

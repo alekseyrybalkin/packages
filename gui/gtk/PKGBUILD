@@ -1,5 +1,5 @@
 pkgname=gtk
-pkgver=3.24.14
+pkgver=3.24.16
 vcs=git
 gittag=${pkgver}
 relmon_id=10018

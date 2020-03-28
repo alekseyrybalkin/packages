@@ -1,0 +1,14 @@
+pkgname=python-cppy
+pkgver=1.1.0
+vcs=git
+vcs_pkgname=cppy
+gittag=${pkgver}
+relmon_id=89055
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

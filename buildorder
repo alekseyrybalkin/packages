@@ -406,6 +406,7 @@ python-bottleneck
 python-numexpr
 python-pandas
 python-cycler
+python-cppy
 python-kiwisolver
 python-matplotlib
 python-seaborn
