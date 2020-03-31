@@ -4,16 +4,12 @@ vcs=git
 gittag=v${pkgver}
 
 build() {
-    if [ "`hostname`" == "rybalkin.org" ]; then
-        sed -i -e 's/rybalkin/aleksey/g' conf.bash
-        sed -i -e 's/projects/sandbox/g' conf.bash
-        sed -i -e 's/DISABLE_SPHINX=/DISABLE_SPHINX=1/g' conf.bash
-    fi
+    :
 }
 
 package() {
     mkdir -p ${pkgdir}/{etc,usr/bin,usr/lib/ji}
     cp exe ${pkgdir}/usr/bin/ji
     cp util.py ${pkgdir}/usr/lib/ji/
-    cp conf.bash ${pkgdir}/etc/ji.conf
+    cp conf.bash ${pkgdir}/etc/ji.conf.packaged
 }
