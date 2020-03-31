@@ -10,9 +10,6 @@ relmon_id=13344
 # cd third_party/node
 # ./update_npm_deps
 
-# fetching webrtc branch_heads:
-# git fetch origin '+refs/branch-heads/*:refs/remotes/branch-heads/*'
-
 _check_and_clone_deps() {
     echo "vars = {}" > deps.py
     echo "" >> deps.py
