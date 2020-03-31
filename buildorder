@@ -230,6 +230,7 @@ libtheora
 libvpx
 fribidi
 rubberband
+pd
 
 # xorg
 xorg-util-macros
