@@ -12,4 +12,6 @@ build() {
 
 package() {
     make DESTDIR=${pkgdir} install
+    rm ${pkgdir}/usr/lib/pd/bin/pd
+    ln -sv /usr/bin/pd ${pkgdir}/usr/lib/pd/bin/pd
 }
