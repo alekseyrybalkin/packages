@@ -1,5 +1,5 @@
 pkgname=python-pybind11
-pkgver=2.4.3
+pkgver=2.5.0
 vcs=git
 vcs_pkgname=pybind11
 gittag=v${pkgver}

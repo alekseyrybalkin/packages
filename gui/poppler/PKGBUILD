@@ -1,5 +1,5 @@
 pkgname=poppler
-pkgver=0.86.1
+pkgver=0.87.0
 vcs=git
 gittag=poppler-${pkgver}
 relmon_id=3686
