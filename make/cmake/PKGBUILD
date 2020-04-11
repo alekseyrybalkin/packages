@@ -1,5 +1,5 @@
 pkgname=cmake
-pkgver=3.17.0
+pkgver=3.17.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=306
