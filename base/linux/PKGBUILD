@@ -8,9 +8,6 @@ build() {
     make mrproper
     cp -v ../config-x86_64 .config
     make
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        make htmldocs
-    fi
 }
 
 package() {
@@ -18,8 +15,4 @@ package() {
 
     mkdir -pv ${pkgdir}/boot
     cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-`guess_distro`
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -pv ${pkgdir}/usr/share/doc
-        cp -r Documentation/output ${pkgdir}/usr/share/doc/linux
-    fi
 }
