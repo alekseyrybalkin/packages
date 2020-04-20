@@ -1,6 +1,7 @@
-#vcs=git
 pkgname=cpp-docs
-pkgver=20190602
+#vcs=git
+vcs_pkgname=cppreference-doc
+pkgver=20200222
 urls="https://github.com/PeterFeicht/cppreference-doc/releases/download/v${pkgver}/html-book-${pkgver}.tar.xz"
 srctar=html-book-${pkgver}.tar.xz
 srcdir=reference
