@@ -21,8 +21,7 @@ build() {
         --enable-libvorbis \
         --enable-libvpx \
         --enable-openssl \
-        --enable-libxcb \
-        --disable-sdl2
+        --enable-libxcb
     make
 }
 

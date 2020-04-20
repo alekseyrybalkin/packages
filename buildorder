@@ -182,6 +182,7 @@ libpng
 libjpeg-turbo
 giflib
 cups
+sdl2
 
 # network
 dhcpcd
@@ -315,6 +316,7 @@ openjdk
 xclip
 kitty
 ttf-fonts
+sdl2_ttf
 fluxbox
 atk
 cairo
@@ -366,6 +368,8 @@ python-modernize
 python-isort
 python-mss
 python-mwparserfromhell
+python-opengl
+python-pysdl2
 python-pillow
 python-numpy
 python-pybind11
@@ -416,6 +420,7 @@ python-statsmodels
 
 # dev
 strace
+opengl-docs
 cpp-docs
 lfs-book
 blfs-book
