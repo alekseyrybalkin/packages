@@ -9,7 +9,7 @@ build() {
         --shared-zlib \
         --shared-openssl \
         --shared-libuv \
-        --with-intl=system-icu
+        --with-intl=small-icu
     make
 }
 
