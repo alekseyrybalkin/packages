@@ -170,7 +170,6 @@ gn
 lua
 
 # libs
-icu
 boost
 nspr
 nss
@@ -339,10 +338,6 @@ djvulibre
 evince
 imlib
 feh
-
-# gui: libreoffice
-librevenge
-libfreehand
 libreoffice
 
 # python: misc

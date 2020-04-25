@@ -21,7 +21,7 @@ build() {
             rm -rf ${lib}/include
         fi
     done
-    ./bootstrap.sh --prefix=/usr
+    ./bootstrap.sh --prefix=/usr --without-icu
     ./b2 stage \
         threading=multi \
         link=shared \

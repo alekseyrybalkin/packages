@@ -16,7 +16,8 @@ build() {
         --disable-static \
         --disable-dependency-tracking \
         --enable-gtk-doc \
-        --enable-{builtin,runtime}=libicu
+        --disable-runtime \
+        --disable-builtin
     LC_CTYPE=en_US.UTF-8 make
 }
 

@@ -41,6 +41,8 @@ build() {
         --without-system-dicts \
         --without-system-qrcodegen \
         --without-system-icu \
+        --without-system-graphite \
+        --without-system-harfbuzz \
         --disable-odk \
         --disable-firebird-sdbc \
         --disable-postgresql-sdbc \
@@ -58,8 +60,6 @@ build() {
         --with-system-serf \
         --with-system-zlib \
         --with-system-boost \
-        --with-system-librevenge \
-        --with-system-libfreehand \
         --with-system-epoxy \
         --disable-gstreamer-1-0 \
         --disable-dbus \

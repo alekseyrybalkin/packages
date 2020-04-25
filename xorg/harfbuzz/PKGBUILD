@@ -5,7 +5,10 @@ gittag=${pkgver}
 relmon_id=1299
 
 build() {
-    ./autogen.sh --prefix=/usr --libdir=$LIBDIR
+    ./autogen.sh \
+        --prefix=/usr \
+        --with-icu=no \
+        --libdir=$LIBDIR
     make
 }
 
