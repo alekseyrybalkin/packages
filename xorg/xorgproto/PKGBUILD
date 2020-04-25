@@ -1,5 +1,5 @@
 pkgname=xorgproto
-pkgver=2019.2
+pkgver=2020.1
 vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=17190

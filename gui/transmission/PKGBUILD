@@ -1,10 +1,16 @@
 pkgname=transmission
-pkgver=2.94
+pkgver=3.00
 vcs=git
 gittag=${pkgver}
 relmon_id=5002
 
 build() {
+    for module in `cat .gitmodules  | grep submodule | sed 's/^.*third-party\///g' | sed 's/"]//g'`; do
+        git clone -n -s `find_vcs_repo transmission-${module}` third-party/${module}
+    done
+    git submodule init
+    git submodule update
+
     sed -i -e '/gtr_get_favicon/d' gtk/details.c
     sed -i -e '/gtr_get_favicon/d' gtk/filter.c
     rm m4/glib-gettext.m4

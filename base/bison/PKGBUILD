@@ -3,6 +3,7 @@ pkgver=3.5.4
 vcs=git
 gittag=v${pkgver}
 relmon_id=193
+updater_rules='skip_big_third'
 
 build() {
     git clone -s `find_vcs_repo gnulib`

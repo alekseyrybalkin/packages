@@ -1,7 +1,8 @@
 pkgname=gettext
-pkgver=0.20.1
+pkgver=0.20.2
 vcs=git
 gittag=v${pkgver}
+extra_urls="https://alpha.gnu.org/gnu/gettext/archive.dir-${pkgver}.tar.xz"
 relmon_id=898
 
 build() {
@@ -33,8 +34,7 @@ build() {
 
     export GNULIB_TOOL=${srcdir}/gnulib/gnulib-tool
 
-    # copy archive.dir.tar.xz from system
-    cp /usr/share/gettext/archive.dir.tar.xz gettext-tools/misc/
+    cp ${TARBALLS_HOME}/archive.dir-${pkgver}.tar.xz gettext-tools/misc/archive.dir.tar.xz
 
     ./autogen.sh
     ./configure --prefix=/usr \

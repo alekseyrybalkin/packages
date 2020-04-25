@@ -1,6 +1,6 @@
 NON_FREE=1
 pkgname=linux-firmware
-pkgver=20200316
+pkgver=20200421
 vcs=git
 gittag=${pkgver}
 

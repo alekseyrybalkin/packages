@@ -1,5 +1,5 @@
 pkgname=python-cryptography
-pkgver=2.9
+pkgver=2.9.2
 vcs=git
 vcs_pkgname=cryptography
 gittag=${pkgver}

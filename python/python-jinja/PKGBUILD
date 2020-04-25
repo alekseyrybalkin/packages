@@ -1,5 +1,5 @@
 pkgname=python-jinja
-pkgver=2.11.1
+pkgver=2.11.2
 vcs=git
 vcs_pkgname=jinja
 gittag=${pkgver}

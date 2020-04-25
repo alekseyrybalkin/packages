@@ -1,5 +1,5 @@
 pkgname=doxygen
-pkgver=1.8.17
+pkgver=1.8.18
 vcs=git
 gittag=Release_${pkgver//\./_}
 relmon_id=457

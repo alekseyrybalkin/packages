@@ -1,18 +1,20 @@
 pkgname=json-c
-pkgver=0.13.1
+pkgver=0.14
 vcs=git
-gittag=json-c-${pkgver}-20180305
+gittag=json-c-${pkgver}-20200419
 relmon_id=1477
 updater_rules='skip_big_third'
 
 build() {
-    autoreconf -fi
-    sed -i s/-Werror// Makefile.in
-    ./configure --prefix=/usr \
-        --disable-static
-    make
+    cmake -H. -Bbuild \
+        -DCMAKE_BUILD_TYPE=None \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DENABLE_THREADING=ON \
+        -DENABLE_RDRAND=ON
+    cmake --build build
 }
 
 package() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} cmake --build build --target install
 }
