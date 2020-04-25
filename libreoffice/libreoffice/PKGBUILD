@@ -1,5 +1,5 @@
 pkgname=libreoffice
-_majorver=6.4.2
+_majorver=6.4.3
 pkgver=${_majorver}.2
 vcs=git
 gittag=libreoffice-${pkgver}
@@ -40,6 +40,7 @@ build() {
         --without-junit \
         --without-system-dicts \
         --without-system-qrcodegen \
+        --without-system-icu \
         --disable-odk \
         --disable-firebird-sdbc \
         --disable-postgresql-sdbc \
@@ -49,7 +50,6 @@ build() {
         --with-system-cairo \
         --with-system-curl \
         --with-system-expat \
-        --with-system-icu \
         --with-system-jpeg \
         --with-system-lcms2 \
         --with-system-libpng \
