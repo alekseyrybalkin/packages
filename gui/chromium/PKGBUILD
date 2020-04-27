@@ -1,5 +1,5 @@
 pkgname=chromium
-pkgver=80.0.3987.149
+pkgver=81.0.4044.131
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -35,24 +35,6 @@ build() {
     # Allow building against system libraries in official builds
     sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
         tools/generate_shim_headers/generate_shim_headers.py
-
-    # https://crbug.com/957519
-    # [cros search service]: Include <cmath> for std::pow()
-    git cherry-pick 8273f4d3130e06fd8b6bef87b07c936304b971d9
-    # BookmarkModelMerger: Move RemoteTreeNode declaration to header.
-    git cherry-pick cdf3e81ff49b200213d67d65558f2919222b60ab
-
-    # https://crbug.com/989153
-    # Fix shim header generation when unbundling ICU
-    git cherry-pick dcad5af090528018599277dc5d7e160fb6b2d68e
-
-    # https://crbug.com/1005508
-    # Remove verbose logging in local unique font matching on Linux
-    git cherry-pick 8500a125e9fba8bb84d185542155747ee7157ff8
-
-    # https://crbug.com/1043042
-    # Fix building with unbundled libxml
-    git cherry-pick d3afade220ddb307e16a6dd4f2b0ec88b2af91e7
 
     # https://crbug.com/1049258
     # Rename Relayout() in DesktopWindowTreeHostPlatform to ScheduleRelayout()
@@ -94,6 +76,9 @@ build() {
 
     # fix "ERROR at //device/vr/buildflags/buildflags.gni:22:19: Undefined identifier"
     sed -i -e 's/checkout_openxr/false/g' device/vr/buildflags/buildflags.gni
+
+    # fix "ERROR at //third_party/google_benchmark/buildconfig.gni:10:30: Undefined identifier"
+    sed -i -e 's/checkout_google_benchmark/false/g' third_party/google_benchmark/buildconfig.gni
 
     # Force script incompatible with Python 3 to use /usr/bin/python2
     sed -i '1s|python$|&2|' third_party/dom_distiller_js/protoc_plugins/*.py
