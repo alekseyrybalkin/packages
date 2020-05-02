@@ -372,6 +372,7 @@ python-pybind11
 python-scipy
 python-dulwich
 python-onetimepass
+python-urwid
 
 # python: sphinx
 python-imagesize

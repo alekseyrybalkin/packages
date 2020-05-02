@@ -1,0 +1,21 @@
+pkgname=python-urwid
+pkgver=2.1.0
+vcs=git
+vcs_pkgname=urwid
+gittag=release-${pkgver}
+relmon_id=4079
+
+build() {
+    python setup.py build
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        python setup.py build_sphinx
+    fi
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+    if [ -z "${DISABLE_SPHINX}" ]; then
+        mkdir -pv ${pkgdir}/usr/share/doc
+        cp -r build/sphinx/html ${pkgdir}/usr/share/doc/${pkgname}
+    fi
+}
