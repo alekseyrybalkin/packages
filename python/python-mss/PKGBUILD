@@ -1,5 +1,5 @@
 pkgname=python-mss
-pkgver=5.0.0
+pkgver=5.1.0
 vcs=git
 gittag=v${pkgver}
 

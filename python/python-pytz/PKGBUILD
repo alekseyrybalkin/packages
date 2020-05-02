@@ -1,5 +1,5 @@
 pkgname=python-pytz
-pkgver=2019.3
+pkgver=2020.1
 vcs=git
 vcs_pkgname=pytz
 gittag=release_${pkgver}

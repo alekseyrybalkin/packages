@@ -1,5 +1,5 @@
 pkgname=libmypaint
-pkgver=1.5.1
+pkgver=1.6.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=12974

@@ -1,5 +1,5 @@
 pkgname=libldap
-pkgver=2.4.49
+pkgver=2.4.50
 vcs=git
 vcs_pkgname=openldap
 gittag=OPENLDAP_REL_ENG_${pkgver//\./_}

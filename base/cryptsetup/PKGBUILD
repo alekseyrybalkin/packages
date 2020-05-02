@@ -1,8 +1,7 @@
 pkgname=cryptsetup
-pkgver=2.3.1.0.1
+pkgver=2.3.2
 vcs=git
-# 33378792ca18a8d5917a65a3c05209a5400ea9bd
-gittag=jinni-v${pkgver}
+gittag=v${pkgver}
 relmon_id=13709
 
 build() {

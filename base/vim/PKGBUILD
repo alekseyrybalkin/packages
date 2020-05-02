@@ -1,5 +1,5 @@
 pkgname=vim
-pkgver=8.2.0633
+pkgver=8.2.0676
 vcs=git
 gittag=v${pkgver}
 relmon_id=5092
