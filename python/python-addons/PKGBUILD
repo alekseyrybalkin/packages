@@ -1,0 +1,14 @@
+pkgname=python-addons
+pkgver=1
+vcs=git
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+
+    chown root:${PACMAN} ${pkgdir}/usr/bin/*
+    chmod 750 ${pkgdir}/usr/bin/*
+}

@@ -92,6 +92,7 @@ python-cython
 python-docutils
 python-mako
 python-configobj
+python-addons
 
 # base: boot
 ninja
