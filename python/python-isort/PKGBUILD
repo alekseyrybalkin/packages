@@ -7,9 +7,9 @@ gittag=jinni-${pkgver}
 relmon_id=11430
 
 build() {
-    python setup.py build
+    :
 }
 
 package() {
-    python setup.py install --root=${pkgdir} --optimize=1
+    pip install --no-deps --ignore-installed --prefix=/usr --root=${pkgdir} .
 }
