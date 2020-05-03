@@ -7,7 +7,7 @@ build() {
 }
 
 package() {
-    python setup.py install --prefix=/usr --root=${pkgdir}
+    pip install --ignore-installed --prefix=/usr --root=${pkgdir} .
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*

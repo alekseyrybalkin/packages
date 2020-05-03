@@ -88,6 +88,7 @@ python-appdirs
 python-setuptools
 python-setuptools-scm
 python-wheel
+python-pip
 python-cython
 python-docutils
 python-mako
@@ -434,7 +435,6 @@ python-cached-property
 python-websocket-client
 python-texttable
 python-docopt
-python-pip
 python-yaml
 python-pyrsistent
 python-toml
