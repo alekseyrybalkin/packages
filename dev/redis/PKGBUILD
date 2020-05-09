@@ -1,5 +1,5 @@
 pkgname=redis
-pkgver=6.0.0
+pkgver=6.0.1
 vcs=git
 gittag=${pkgver}
 relmon_id=4181

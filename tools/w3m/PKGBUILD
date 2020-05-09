@@ -1,5 +1,5 @@
 pkgname=w3m
-pkgver=0.5.3+git20190105
+pkgver=0.5.3+git20200502
 vcs=git
 gittag=v${pkgver}
 relmon_id=5115

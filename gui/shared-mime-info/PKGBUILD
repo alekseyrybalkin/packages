@@ -1,18 +1,20 @@
 pkgname=shared-mime-info
-pkgver=1.15
+pkgver=2.0.0.1
 vcs=git
-gittag=Release-${pkgver//\./-}
+gittag=jinni-${pkgver}
 relmon_id=5524
 
 build() {
-    MAKEFLAGS=
-    ./autogen.sh --prefix=/usr --disable-default-make-check
-    make
+    export ac_cv_func_fdatasync=no
+
+    mkdir build
+    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    ninja -C build
 }
 
 package() {
-    MAKEFLAGS=
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
+    update-mime-database ${pkgdir}/usr/share/mime
 }
 
 after_install() {
