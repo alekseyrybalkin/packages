@@ -17,4 +17,6 @@ build() {
 
 package() {
     make DESTDIR=${pkgdir} install
+    install -d ${pkgdir}/usr/share/doc/w3m
+    cp doc/MANUAL.html ${pkgdir}/usr/share/doc/w3m/manual.html
 }
