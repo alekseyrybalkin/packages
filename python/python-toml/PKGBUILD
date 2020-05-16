@@ -1,5 +1,5 @@
 pkgname=python-toml
-pkgver=0.10.0
+pkgver=0.10.1
 vcs=git
 vcs_pkgname=toml
 gittag=${pkgver}

@@ -1,5 +1,5 @@
 diff --git a/kitty/data-types.h b/kitty/data-types.h
-index de2663ff..ebce67d1 100644
+index 65d5a60f..399cf7d2 100644
 --- a/kitty/data-types.h
 +++ b/kitty/data-types.h
 @@ -318,9 +318,6 @@ void fake_scroll(int, bool);
@@ -13,10 +13,10 @@ index de2663ff..ebce67d1 100644
  SPRITE_MAP_HANDLE free_sprite_map(SPRITE_MAP_HANDLE);
  
 diff --git a/kitty/desktop.c b/kitty/desktop.c
-index 1a788ed5..92698972 100644
+index bd8f872e..16a6f9fe 100644
 --- a/kitty/desktop.c
 +++ b/kitty/desktop.c
-@@ -89,67 +89,10 @@ static PyMethodDef module_methods[] = {
+@@ -93,71 +93,10 @@ static PyMethodDef module_methods[] = {
      {NULL, NULL, 0, NULL}        /* Sentinel */
  };
  
@@ -36,18 +36,22 @@ index 1a788ed5..92698972 100644
 -
 -static void
 -load_libcanberra(void) {
--    static const char* libname = "libcanberra.so";
--    // some installs are missing the .so symlink, so try the full name
--    static const char* libname2 = "libcanberra.so.0";
--    static const char* libname3 = "libcanberra.so.0.2.5";
 -    static bool done = false;
 -    if (done) return;
 -    done = true;
--    libcanberra_handle = dlopen(libname, RTLD_LAZY);
--    if (libcanberra_handle == NULL) libcanberra_handle = dlopen(libname2, RTLD_LAZY);
--    if (libcanberra_handle == NULL) libcanberra_handle = dlopen(libname3, RTLD_LAZY);
+-    const char* libnames[] = {
+-        "libcanberra.so",
+-        // some installs are missing the .so symlink, so try the full name
+-        "libcanberra.so.0",
+-        "libcanberra.so.0.2.5",
+-        NULL
+-    };
+-    for (int i = 0; libnames[i]; i++) {
+-        libcanberra_handle = dlopen(libnames[i], RTLD_LAZY);
+-        if (libcanberra_handle) break;
+-    }
 -    if (libcanberra_handle == NULL) {
--        fprintf(stderr, "Failed to load %s, cannot play beep sound, with error: %s\n", libname, dlerror());
+-        fprintf(stderr, "Failed to load %s, cannot play beep sound, with error: %s\n", libnames[0], dlerror());
 -        return;
 -    }
 -    load_libcanberra_functions();
@@ -85,10 +89,10 @@ index 1a788ed5..92698972 100644
  
  bool
 diff --git a/kitty/glfw.c b/kitty/glfw.c
-index 6212af8c..24008aa3 100644
+index 6345b253..dcc9a89b 100644
 --- a/kitty/glfw.c
 +++ b/kitty/glfw.c
-@@ -881,13 +881,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
+@@ -879,13 +879,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
      monotonic_t now = monotonic();
      if (now - last_bell_at <= ms_to_monotonic_t(100ll)) return;
      last_bell_at = now;
