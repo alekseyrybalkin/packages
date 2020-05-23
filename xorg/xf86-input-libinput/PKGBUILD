@@ -1,5 +1,5 @@
 pkgname=xf86-input-libinput
-pkgver=0.29.0
+pkgver=0.30.0
 vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=5782

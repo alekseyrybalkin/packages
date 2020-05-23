@@ -1,5 +1,5 @@
 pkgname=python-packaging
-pkgver=20.3
+pkgver=20.4
 vcs=git
 vcs_pkgname=packaging
 gittag=${pkgver}
