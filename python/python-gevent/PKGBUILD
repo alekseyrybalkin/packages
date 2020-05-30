@@ -1,5 +1,5 @@
 pkgname=python-gevent
-pkgver=20.5.0
+pkgver=20.5.2
 vcs=git
 vcs_pkgname=gevent
 gittag=${pkgver}

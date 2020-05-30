@@ -1,5 +1,5 @@
 pkgname=ublock
-pkgver=1.27.6
+pkgver=1.27.10
 vcs=git
 gittag=${pkgver}
 relmon_id=16686

@@ -1,5 +1,5 @@
 pkgname=libgexiv2
-pkgver=0.12.0
+pkgver=0.12.1
 vcs=git
 vcs_pkgname=gexiv2
 gittag=gexiv2-${pkgver}
