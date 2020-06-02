@@ -4,6 +4,7 @@ vcs=git
 vcs_pkgname=imlib2
 # 59027165b2ea658128d1f8e737587767e78d6b97
 gittag=jinni-v${pkgver}
+relmon_id=21676
 
 build() {
     ./autogen.sh --prefix=/usr --disable-static
