@@ -5,6 +5,7 @@ pkgver=0.8.6.0.1
 gittag=jinni-${pkgver}
 
 build() {
+    export CFLAGS+=' -fcommon'
     sed -i -e 's/\.sl/\.config\/sl/g' apps/sl/src/settings.h
     autoconf
     ./configure --with-gui-flag=no \
