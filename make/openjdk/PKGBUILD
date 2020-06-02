@@ -25,8 +25,8 @@ build() {
         --with-version-pre="" \
         --with-version-opt="" \
         --with-jobs=4 \
-        --with-extra-cflags="${CFLAGS}" \
-        --with-extra-cxxflags="${CXXFLAGS}"
+        --with-extra-cflags="${CFLAGS} -fcommon" \
+        --with-extra-cxxflags="${CXXFLAGS} -fcommon"
     make images
 }
 

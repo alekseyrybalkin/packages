@@ -5,6 +5,9 @@ gittag=release_${pkgver//\./_}
 relmon_id=353
 
 build() {
+    # gcc 10
+    export CFLAGS+=' -fcommon'
+
     git clone -s `find_vcs_repo gnulib`
     git clone -s `find_vcs_repo paxutils`
     ./bootstrap --skip-po

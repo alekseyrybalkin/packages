@@ -6,6 +6,9 @@ relmon_id=846
 updater_rules='lstrip_fg'
 
 build() {
+    # gcc 10
+    export CFLAGS+=' -fcommon'
+
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX=/usr \
