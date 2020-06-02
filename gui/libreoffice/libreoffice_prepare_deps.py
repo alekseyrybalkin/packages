@@ -10,8 +10,8 @@ import requests
 def load_deps(file_path):
     deps = []
     varrs = {}
-    with open(file_path, 'r') as w:
-        for line in w.readlines():
+    with open(file_path, 'r') as deps_file:
+        for line in deps_file:
             line = line.replace('export ', '')
             if ':=' in line:
                 var, val = line.split(':=')
