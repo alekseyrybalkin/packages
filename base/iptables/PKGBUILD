@@ -16,6 +16,10 @@ build() {
 
 package() {
     make DESTDIR=${pkgdir} install
+
+    # not auto-installed in 1.8.5 for some reason
+    install -Dm755 iptables/iptables-apply ${pkgdir}/usr/bin/iptables-apply
+
     install -Dm644 ../iptables.service ${pkgdir}/usr/lib/systemd/system/iptables.service
     install -Dm755 ../iptables-flush ${pkgdir}/usr/bin/iptables-flush
 }

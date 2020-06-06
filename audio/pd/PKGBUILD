@@ -1,5 +1,5 @@
 pkgname=pd
-pkgver=0.50.2
+pkgver=0.51.0
 vcs=git
 vcs_pkgname=pure-data
 gittag=jinni-${pkgver}
