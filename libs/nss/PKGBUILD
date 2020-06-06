@@ -1,5 +1,5 @@
 pkgname=nss
-pkgver=3.52.1
+pkgver=3.53
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
@@ -9,7 +9,7 @@ updater_rules='no_alpha_skips,skip_big_first,skip_big_second,skip_beta,skip_rtma
 build() {
     MAKEFLAGS=
     cd ../
-    patch -Np1 -i nss-standalone.patch
+    patch -Np1 -i nss-${pkgver}-standalone-1.patch
     cd nss
     make BUILD_OPT=1 \
         NSPR_INCLUDE_DIR=/usr/include/nspr \

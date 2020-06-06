@@ -1,5 +1,5 @@
 pkgname=libva-intel-driver
-pkgver=2.4.0
+pkgver=2.4.1
 vcs=git
 vcs_pkgname=intel-vaapi-driver
 gittag=${pkgver}

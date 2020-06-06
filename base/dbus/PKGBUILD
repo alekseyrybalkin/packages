@@ -1,5 +1,5 @@
 pkgname=dbus
-pkgver=1.12.16
+pkgver=1.12.18
 vcs=git
 gittag=dbus-${pkgver}
 relmon_id=5356

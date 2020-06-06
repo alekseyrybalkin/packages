@@ -1,5 +1,5 @@
 pkgname=lcms
-pkgver=2.9
+pkgver=2.10
 vcs=git
 gittag=lcms${pkgver}
 relmon_id=9815
