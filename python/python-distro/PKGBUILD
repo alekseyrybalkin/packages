@@ -1,0 +1,14 @@
+pkgname=python-distro
+pkgver=1.5.0
+vcs=git
+vcs_pkgname=distro
+gittag=v${pkgver}
+relmon_id=12202
+
+build() {
+    python setup.py build
+}
+
+package() {
+    python setup.py install --prefix=/usr --root=${pkgdir}
+}

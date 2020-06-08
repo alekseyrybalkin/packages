@@ -452,6 +452,8 @@ python-paramiko
 python-docker-pycreds
 python-docker
 python-dockerpty
+python-dotenv
+python-distro
 
 # dev: docker
 bridge-utils
