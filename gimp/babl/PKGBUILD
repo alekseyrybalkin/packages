@@ -1,5 +1,5 @@
 pkgname=babl
-pkgver=0.1.76
+pkgver=0.1.78
 vcs=git
 gittag=BABL_${pkgver//\./_}
 relmon_id=7843

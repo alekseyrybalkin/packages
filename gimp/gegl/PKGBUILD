@@ -1,8 +1,7 @@
 pkgname=gegl
-pkgver=0.4.22.0.2
+pkgver=0.4.24
 vcs=git
-# 53e8d127085f93305ed4a7536e6df27556a1708a
-gittag=jinni-GEGL_${pkgver//\./_}
+gittag=GEGL_${pkgver//\./_}
 
 build() {
     mkdir build-gegl
