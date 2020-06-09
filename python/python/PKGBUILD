@@ -16,11 +16,9 @@ build() {
         --with-system-ffi \
         --without-ensurepip
     make
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        cd Doc
-        sed -i -e 's/blurb/true/g' Makefile
-        make html
-    fi
+
+    sed -i -e 's/blurb/true/g' Doc/Makefile
+    sphinx-prepare
 }
 
 package() {
@@ -30,8 +28,6 @@ package() {
     ln -s idle3                 ${pkgdir}/usr/bin/idle
     ln -s pydoc3                ${pkgdir}/usr/bin/pydoc
     ln -s python${_pybasever}.1 ${pkgdir}/usr/share/man/man1/python.1
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -p ${pkgdir}/usr/share/doc/python
-        cp -r Doc/build/html ${pkgdir}/usr/share/doc/python
-    fi
+
+    sphinx-install
 }

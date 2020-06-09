@@ -5,25 +5,11 @@ gittag=${pkgver}
 relmon_id=3925
 
 build() {
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        # rename sphinx function from deprecated name to new one
-        sed -i -e 's/add_description_unit/add_object_type/g' docs/sphinxext/extra_types.py
-        cd docs
-        make html
-    fi
+    # rename sphinx function from deprecated name to new one
+    sed -i -e 's/add_description_unit/add_object_type/g' docs/sphinxext/extra_types.py
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
-
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -pv ${pkgdir}/usr/share/doc
-        cp -r docs/_build/html ${pkgdir}/usr/share/doc/${pkgname}
-    fi
+    python-package
 }

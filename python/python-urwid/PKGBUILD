@@ -6,22 +6,9 @@ gittag=release-${pkgver}
 relmon_id=4079
 
 build() {
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        python setup.py build_sphinx
-    fi
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
-
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -pv ${pkgdir}/usr/share/doc
-        cp -r build/sphinx/html ${pkgdir}/usr/share/doc/${pkgname}
-    fi
+    python-package
 }

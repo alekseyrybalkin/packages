@@ -6,10 +6,9 @@ gittag=${pkgver}
 relmon_id=11773
 
 build() {
-    sphinx-prepare
+    python-build
 }
 
 package() {
-    pip-install
-    sphinx-install
+    python-package
 }

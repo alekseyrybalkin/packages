@@ -6,23 +6,9 @@ gittag=v${pkgver}
 relmon_id=18912
 
 build() {
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        cd readthedocs
-        make html
-    fi
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
-
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -pv ${pkgdir}/usr/share/doc
-        cp -r readthedocs/_build/html ${pkgdir}/usr/share/doc/${pkgname}
-    fi
+    python-package
 }

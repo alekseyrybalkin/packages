@@ -9,23 +9,14 @@ build() {
     # python3
     sed -i -e 's/itervalues/values/g' doc/mkhtml.py
 
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        cd doc
-        python mkhtml.py html .. ${pkgver}
-    fi
+    set +e
+    cd doc
+    python mkhtml.py html .. ${pkgver}
+    mkdir -p ../build/sphinx
+    mv html ../build/sphinx/
+    set -e
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
-
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -p ${pkgdir}/usr/share/doc
-        cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml
-    fi
+    python-package
 }
