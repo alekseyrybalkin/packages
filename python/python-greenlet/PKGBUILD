@@ -1,12 +1,11 @@
 pkgname=python-greenlet
-pkgver=0.4.15
+pkgver=0.4.16
 vcs=git
 vcs_pkgname=greenlet
 gittag=${pkgver}
 relmon_id=6870
 
 build() {
-    python setup.py build
     if [ -z "${DISABLE_SPHINX}" ]; then
         cd doc
         make html
@@ -14,7 +13,14 @@ build() {
 }
 
 package() {
-    python setup.py install --root=${pkgdir}
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
+
     if [ -z "${DISABLE_SPHINX}" ]; then
         mkdir -pv ${pkgdir}/usr/share/doc
         cp -r doc/_build/html ${pkgdir}/usr/share/doc/python-greenlet

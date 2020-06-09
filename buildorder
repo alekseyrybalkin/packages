@@ -359,6 +359,8 @@ python-click
 python-itsdangerous
 python-flask
 python-greenlet
+python-zope-event
+python-zope-interface
 python-gevent
 python-pycodestyle
 python-modernize

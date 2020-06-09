@@ -1,18 +1,14 @@
-pkgname=python-gevent
-pkgver=20.6.0
+pkgname=python-zope-interface
+pkgver=5.1.0
 vcs=git
-vcs_pkgname=gevent
+vcs_pkgname=zope.interface
 gittag=${pkgver}
-relmon_id=6835
 
 build() {
     :
 }
 
 package() {
-    EMBED=1 \
-    CYTHON=cython \
-    PYTHON=python \
     pip install \
         --no-deps \
         --no-build-isolation \
