@@ -12,14 +12,7 @@ build() {
 
 package() {
     export HGPYTHON3=1
-
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 
     install -d ${pkgdir}/usr/share/man/{man1,man5}
     install -m644 doc/hg.1 ${pkgdir}/usr/share/man/man1

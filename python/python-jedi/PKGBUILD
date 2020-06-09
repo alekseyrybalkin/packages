@@ -8,14 +8,10 @@ relmon_id=3893
 build() {
     git clone `find_vcs_repo typeshed` jedi/third_party/typeshed
     git submodule update --init
+
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 }

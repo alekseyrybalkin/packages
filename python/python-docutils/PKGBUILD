@@ -6,15 +6,9 @@ gittag=docutils-${pkgver}
 relmon_id=3849
 
 build() {
-    :
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 }

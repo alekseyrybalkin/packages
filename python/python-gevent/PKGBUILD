@@ -6,18 +6,12 @@ gittag=${pkgver}
 relmon_id=6835
 
 build() {
-    :
+    python-build
 }
 
 package() {
-    EMBED=1 \
-    CYTHON=cython \
-    PYTHON=python \
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    export EMBED=1
+    export CYTHON=cython
+    export PYTHON=python
+    python-package
 }

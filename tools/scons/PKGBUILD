@@ -5,20 +5,14 @@ gittag=${pkgver}
 relmon_id=4770
 
 build() {
-    :
+    python-build
 }
 
 package() {
     python bootstrap.py
     tar xvf build/dist/scons-${pkgver}.tar.gz
     cd scons-${pkgver}
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 
     mkdir -p ${pkgdir}/usr/share
     mv ${pkgdir}/usr/{,share/}man

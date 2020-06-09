@@ -8,18 +8,13 @@ relmon_id=4021
 build() {
     sed -i -e "s/VERSION/${pkgver}/g" ../bootstrap-fix.patch
     patch -Np1 -i ../bootstrap-fix.patch
-
     python bootstrap.py
+
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 
     # remove files with spaces in filenames
     rm ${pkgdir}/usr/lib/python*/site-packages/setuptools/script*

@@ -6,15 +6,9 @@ gittag=v${pkgver}
 relmon_id=7691
 
 build() {
-    :
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 }
