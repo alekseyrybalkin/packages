@@ -1,0 +1,13 @@
+pkgname=python-mistune
+pkgver=0.8.4
+vcs=git
+vcs_pkgname=mistune
+gittag=v${pkgver}
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}

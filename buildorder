@@ -376,6 +376,7 @@ python-scipy
 python-dulwich
 python-onetimepass
 python-urwid
+python-mistune
 
 # python: sphinx
 python-imagesize
