@@ -6,16 +6,21 @@ gittag=v${pkgver}
 relmon_id=4021
 
 build() {
-    sed -i -e 's/launcher manifest/launcher_manifest/g' setuptools/command/easy_install.py
-    mv setuptools/command/launcher{\ ,_}manifest.xml
+    sed -i -e "s/version = self._get_version()/version = '${pkgver}'/g" pkg_resources/__init__.py
+
     python bootstrap.py
-    python setup.py build
 }
 
 package() {
-    PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
-    python setup.py install --prefix=/usr \
-        --root=${pkgdir} --optimize=1 --skip-build
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
+
     # remove files with spaces in filenames
-    rm ${pkgdir}/usr/lib/python${PYVERSION}/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/lib/python*/site-packages/setuptools/script*
+    rm ${pkgdir}/usr/lib/python*/site-packages/setuptools/command/launcher*
 }

@@ -15,16 +15,27 @@ build() {
 
     for c in ${contrib}; do
         git clone `find_vcs_repo sphinxcontrib-${c}`
-        cd sphinxcontrib-${c}
-        python setup.py build
     done
 }
 
 package() {
-    python setup.py install --root=${pkgdir} --optimize=1
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 
     for c in ${contrib}; do
         cd sphinxcontrib-${c}
-        python setup.py install --root=${pkgdir}
+        pip install \
+            --no-deps \
+            --no-build-isolation \
+            --ignore-installed \
+            --compile \
+            --prefix=/usr \
+            --root=${pkgdir} .
+        cd ..
     done
 }

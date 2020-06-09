@@ -5,9 +5,15 @@ gittag=version-${pkgver}
 relmon_id=8808
 
 build() {
-    python setup.py build
+    :
 }
 
 package() {
-    python setup.py install --root=${pkgdir} --optimize=1
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 }

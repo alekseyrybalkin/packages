@@ -7,7 +7,13 @@ build() {
 }
 
 package() {
-    pip install --no-deps --ignore-installed --prefix=/usr --root=${pkgdir} .
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
