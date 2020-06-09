@@ -16,14 +16,10 @@ build() {
     cd ../
 
     python scripts/import_cldr.py ${srcdir}/cldr/common
+
+    python-build
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
+    python-package
 }
