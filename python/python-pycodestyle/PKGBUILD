@@ -6,23 +6,10 @@ gittag=${pkgver}
 relmon_id=11773
 
 build() {
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        cd docs
-        make html
-    fi
+    sphinx-prepare
 }
 
 package() {
-    pip install \
-        --no-deps \
-        --no-build-isolation \
-        --ignore-installed \
-        --compile \
-        --prefix=/usr \
-        --root=${pkgdir} .
-
-    if [ -z "${DISABLE_SPHINX}" ]; then
-        mkdir -pv ${pkgdir}/usr/share/doc
-        cp -r docs/_build/html ${pkgdir}/usr/share/doc/python-pycodestyle
-    fi
+    pip-install
+    sphinx-install
 }

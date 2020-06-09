@@ -7,7 +7,6 @@ relmon_id=3894
 
 build() {
     patch -Np1 -i ../sphinx-remove-pallets.diff
-    python setup.py build
     if [ -z "${DISABLE_SPHINX}" ]; then
         cd docs
         make html
@@ -15,7 +14,14 @@ build() {
 }
 
 package() {
-    python setup.py install --root=${pkgdir}
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
+
     if [ -z "${DISABLE_SPHINX}" ]; then
         mkdir -pv ${pkgdir}/usr/share/doc
         cp -r docs/_build/html ${pkgdir}/usr/share/doc/python-jinja

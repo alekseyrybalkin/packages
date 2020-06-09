@@ -8,9 +8,14 @@ relmon_id=3919
 build() {
     # disable installation of jquery-ui
     sed -i -e 's/if (dest \/ name).exists()/if not (dest \/ name).exists()/g' setup.py
-    python setup.py build
 }
 
 package() {
-    python setup.py install --root ${pkgdir} --prefix=/usr --optimize=1 --skip-build
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 }

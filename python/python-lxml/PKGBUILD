@@ -8,7 +8,6 @@ relmon_id=3914
 build() {
     # python3
     sed -i -e 's/itervalues/values/g' doc/mkhtml.py
-    python setup.py build
 
     if [ -z "${DISABLE_SPHINX}" ]; then
         cd doc
@@ -17,7 +16,14 @@ build() {
 }
 
 package() {
-    python setup.py install --skip-build --root=${pkgdir} --optimize=1
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
+
     if [ -z "${DISABLE_SPHINX}" ]; then
         mkdir -p ${pkgdir}/usr/share/doc
         cp -r doc/html ${pkgdir}/usr/share/doc/python-lxml

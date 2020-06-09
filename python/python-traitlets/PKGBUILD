@@ -6,14 +6,15 @@ gittag=${pkgver}
 relmon_id=12211
 
 build() {
-    # TODO: remove in the future
-    git clone --branch 0.2.0 `find_vcs_repo ipython_genutils`
+    :
 }
 
 package() {
-    # TODO: remove in the future
-    cd ipython_genutils
-    python setup.py install --prefix=/usr --root=${pkgdir} --optimize=0
-    cd ../
-    python setup.py install --prefix=/usr --root=${pkgdir} --optimize=0
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 }

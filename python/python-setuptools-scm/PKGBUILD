@@ -6,10 +6,15 @@ gittag=v${pkgver}
 relmon_id=7874
 
 build() {
-    python setup.py build
-    python setup.py egg_info
+    :
 }
 
 package() {
-    python setup.py install --root=${pkgdir}
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 }

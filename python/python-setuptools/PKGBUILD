@@ -6,7 +6,8 @@ gittag=v${pkgver}
 relmon_id=4021
 
 build() {
-    sed -i -e "s/version = self._get_version()/version = '${pkgver}'/g" pkg_resources/__init__.py
+    sed -i -e "s/VERSION/${pkgver}/g" ../bootstrap-fix.patch
+    patch -Np1 -i ../bootstrap-fix.patch
 
     python bootstrap.py
 }
