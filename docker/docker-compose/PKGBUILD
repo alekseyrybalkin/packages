@@ -8,9 +8,14 @@ relmon_id=6185
 build() {
     sed -i 's/==/>=/g' requirements.txt
     sed -i "s/, < .*',$/',/" setup.py
-    python setup.py build
 }
 
 package() {
-    python setup.py install --prefix=/usr --root=${pkgdir}
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
 }

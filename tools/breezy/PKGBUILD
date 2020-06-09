@@ -6,9 +6,18 @@ gittag=jinni-${pkgver}
 relmon_id=45817
 
 build() {
-    python setup.py build
+    :
 }
 
 package() {
-    python setup.py install --prefix=/usr --root=${pkgdir} --install-data="usr/share" --optimize=1
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
+        --prefix=/usr \
+        --root=${pkgdir} .
+
+    mkdir -p ${pkgdir}/usr/share
+    mv ${pkgdir}/usr/{,share/}man
 }

@@ -12,9 +12,14 @@ package() {
     python bootstrap.py
     tar xvf build/dist/scons-${pkgver}.tar.gz
     cd scons-${pkgver}
-    python setup.py install --standard-lib \
+    pip install \
+        --no-deps \
+        --no-build-isolation \
+        --ignore-installed \
+        --compile \
         --prefix=/usr \
-        --install-data=/usr/share \
-        --optimize=1 \
-        --root=${pkgdir}
+        --root=${pkgdir} .
+
+    mkdir -p ${pkgdir}/usr/share
+    mv ${pkgdir}/usr/{,share/}man
 }
