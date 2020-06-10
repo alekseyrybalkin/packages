@@ -1,3 +1,4 @@
+NON_FREE=1
 pkgname=intel-ucode
 pkgver=20200609
 vcs=git
