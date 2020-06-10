@@ -1,8 +1,7 @@
 pkgname=lightlang
 vcs=git
-pkgver=0.8.6.0.1
-# 7510d5dd87fc988fe1b14718bb546daae5baebe6
-gittag=jinni-${pkgver}
+pkgver=0.9.0
+gittag=v${pkgver}
 
 build() {
     # gcc 10
