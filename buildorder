@@ -114,6 +114,8 @@ systemd
 dbus
 e2fsprogs
 linux
+iucode-tool
+intel-ucode
 initramfs
 
 # base: ji

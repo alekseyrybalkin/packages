@@ -1,0 +1,15 @@
+pkgname=iucode-tool
+pkgver=2.3.1
+vcs=git
+gittag=v${pkgver}
+relmon_id=21455
+
+build() {
+    ./autogen.sh
+    ./configure --prefix=/usr --sbindir=/usr/bin
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

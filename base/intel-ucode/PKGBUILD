@@ -1,0 +1,14 @@
+pkgname=intel-ucode
+pkgver=20200609
+vcs=git
+gittag=microcode-${pkgver}
+relmon_id=20614
+updater_rules="lstrip_microcode"
+
+build() {
+    iucode_tool --write-earlyfw=intel-ucode.img intel-ucode{,-with-caveats}/
+}
+
+package() {
+    install -D -m0644 intel-ucode.img ${pkgdir}/boot/intel-ucode.img
+}

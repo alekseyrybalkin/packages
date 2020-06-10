@@ -3,6 +3,7 @@ pkgver=0.8.4
 vcs=git
 vcs_pkgname=mistune
 gittag=v${pkgver}
+relmon_id=6189
 
 build() {
     python-build

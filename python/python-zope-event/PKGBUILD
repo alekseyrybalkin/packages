@@ -3,6 +3,7 @@ pkgver=4.4
 vcs=git
 vcs_pkgname=zope.event
 gittag=${pkgver}
+relmon_id=4107
 
 build() {
     python-build

@@ -3,6 +3,7 @@ pkgver=5.1.0
 vcs=git
 vcs_pkgname=zope.interface
 gittag=${pkgver}
+relmon_id=4112
 
 build() {
     python-build
