@@ -1,5 +1,5 @@
 pkgname=python-certifi
-_pkgver=2020.04.05.1
+_pkgver=2020.04.05.2
 pkgver=${_pkgver//\.0/\.}
 vcs=git
 gittag=${_pkgver}

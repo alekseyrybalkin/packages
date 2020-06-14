@@ -5,13 +5,14 @@ gittag=v${pkgver}
 relmon_id=882
 
 build() {
-    MAKEFLAGS=
+    # gcc 10
+    export CFLAGS+=' -fcommon'
+
     autoreconf -fi
     ./configure --prefix=/usr --disable-static --enable-libgdbm-compat
     make
 }
 
 package() {
-    MAKEFLAGS=
     make prefix=${pkgdir}/usr install
 }

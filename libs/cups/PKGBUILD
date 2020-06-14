@@ -8,7 +8,10 @@ build() {
     sed -i 's:444:644:' Makedefs.in
     sed -i '/MAN.EXT/s:.gz::' configure config-scripts/cups-manpages.m4
 
-    export CFLAGS="${CFLAGS} -Wno-format-truncation -Wno-maybe-uninitialized"
+    export CFLAGS="${CFLAGS} \
+        -Wno-format-truncation \
+        -Wno-maybe-uninitialized \
+        -Wno-stringop-overflow"
     export CXXFLAGS=${CFLAGS}
 
     aclocal -I config-scripts

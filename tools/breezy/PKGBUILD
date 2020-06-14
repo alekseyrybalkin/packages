@@ -1,8 +1,8 @@
 pkgname=breezy
-pkgver=3.0.2.5
+pkgver=3.1.0.3
 vcs=git
-# d02249e1400dd18713982b25f1ebdaaf1ccf801c
-gittag=jinni-${pkgver}
+gittag=$(echo ${pkgver} | rev)
+gittag=$(echo ${gittag/\./-} | rev)
 relmon_id=45817
 
 build() {

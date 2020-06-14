@@ -94,6 +94,7 @@ python-docutils
 python-mako
 python-configobj
 python-addons
+python-patiencediff
 
 # base: boot
 ninja

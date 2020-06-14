@@ -5,6 +5,9 @@ gittag=${pkgver}
 relmon_id=1877
 
 build() {
+    # gcc 10
+    export CFLAGS+=' -Wno-return-local-addr -Wno-unused-result'
+
     git clone -s `find_vcs_repo gnulib`
     sed -i -e 's/ po//g' Makefile.am
     sed -i -e 's/-Werror//g' configure.ac

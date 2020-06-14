@@ -1,7 +1,7 @@
 pkgname=diffutils
-pkgver=3.7
+pkgver=3.7.0.1
 vcs=git
-gittag=v${pkgver}
+gittag=jinni-v${pkgver}
 relmon_id=436
 
 build() {

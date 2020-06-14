@@ -1,7 +1,7 @@
-pkgname=python-importlib-metadata
-pkgver=1.6.1
+pkgname=python-patiencediff
+pkgver=0.2.0
 vcs=git
-vcs_pkgname=importlib_metadata
+vcs_pkgname=patiencediff
 gittag=v${pkgver}
 
 build() {

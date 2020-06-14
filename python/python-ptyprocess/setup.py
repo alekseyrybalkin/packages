@@ -10,7 +10,7 @@ package_data = \
 {'': ['*']}
 
 setup(name='ptyprocess',
-      version='0.5.2',
+      version='0.6.0',
       description='Run a subprocess in a pseudo terminal',
       author='Thomas Kluyver',
       author_email='thomas@kluyver.me.uk',

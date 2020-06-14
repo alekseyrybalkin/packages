@@ -1,14 +1,14 @@
 pkgname=python-backcall
-pkgver=0.1
+pkgver=0.2.0
 vcs=git
 vcs_pkgname=backcall
 gittag=${pkgver}
 relmon_id=19636
 
 build() {
-    python-build
+    cp ../setup.py .
 }
 
 package() {
-    python-package
+    python setup.py install --root=${pkgdir} --prefix=/usr --optimize=0
 }
