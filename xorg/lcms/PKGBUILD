@@ -1,7 +1,7 @@
 pkgname=lcms
-pkgver=2.10
+pkgver=2.11
 vcs=git
-gittag=lcms${pkgver}
+gittag=${pkgver}
 relmon_id=9815
 
 build() {

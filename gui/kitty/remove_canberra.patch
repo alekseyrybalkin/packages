@@ -1,8 +1,8 @@
 diff --git a/kitty/data-types.h b/kitty/data-types.h
-index 65d5a60f..399cf7d2 100644
+index ce4ce116..366c53f1 100644
 --- a/kitty/data-types.h
 +++ b/kitty/data-types.h
-@@ -318,9 +318,6 @@ void fake_scroll(int, bool);
+@@ -306,9 +306,6 @@ void scroll_event(double, double, int, int);
  void set_special_key_combo(int glfw_key, int mods, bool is_native);
  void on_key_input(GLFWkeyevent *ev);
  void request_window_attention(id_type, bool);
@@ -13,10 +13,10 @@ index 65d5a60f..399cf7d2 100644
  SPRITE_MAP_HANDLE free_sprite_map(SPRITE_MAP_HANDLE);
  
 diff --git a/kitty/desktop.c b/kitty/desktop.c
-index bd8f872e..16a6f9fe 100644
+index 1417e081..7dcdc487 100644
 --- a/kitty/desktop.c
 +++ b/kitty/desktop.c
-@@ -93,71 +93,10 @@ static PyMethodDef module_methods[] = {
+@@ -97,75 +97,10 @@ static PyMethodDef module_methods[] = {
      {NULL, NULL, 0, NULL}        /* Sentinel */
  };
  
@@ -40,10 +40,14 @@ index bd8f872e..16a6f9fe 100644
 -    if (done) return;
 -    done = true;
 -    const char* libnames[] = {
+-#if defined(_KITTY_CANBERRA_LIBRARY)
+-        _KITTY_CANBERRA_LIBRARY,
+-#else
 -        "libcanberra.so",
 -        // some installs are missing the .so symlink, so try the full name
 -        "libcanberra.so.0",
 -        "libcanberra.so.0.2.5",
+-#endif
 -        NULL
 -    };
 -    for (int i = 0; libnames[i]; i++) {
@@ -89,10 +93,10 @@ index bd8f872e..16a6f9fe 100644
  
  bool
 diff --git a/kitty/glfw.c b/kitty/glfw.c
-index 6345b253..dcc9a89b 100644
+index f4055dd3..615f52ce 100644
 --- a/kitty/glfw.c
 +++ b/kitty/glfw.c
-@@ -879,13 +879,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
+@@ -895,13 +895,9 @@ ring_audio_bell(OSWindow *w UNUSED) {
      monotonic_t now = monotonic();
      if (now - last_bell_at <= ms_to_monotonic_t(100ll)) return;
      last_bell_at = now;

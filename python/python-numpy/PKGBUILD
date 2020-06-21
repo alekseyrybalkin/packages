@@ -1,5 +1,5 @@
 pkgname=python-numpy
-pkgver=1.18.5
+pkgver=1.19.0
 vcs=git
 vcs_pkgname=numpy
 gittag=v${pkgver}

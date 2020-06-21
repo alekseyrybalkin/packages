@@ -1,5 +1,5 @@
 pkgname=file
-pkgver=5.38
+pkgver=5.39
 vcs=git
 gittag=FILE${pkgver//\./_}
 relmon_id=807

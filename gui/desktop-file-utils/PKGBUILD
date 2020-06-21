@@ -1,5 +1,5 @@
 pkgname=desktop-file-utils
-pkgver=0.24
+pkgver=0.26
 vcs=git
 gittag=${pkgver}
 relmon_id=421

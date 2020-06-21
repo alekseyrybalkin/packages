@@ -8,6 +8,7 @@ build() {
     ./autogen.sh \
         --prefix=/usr \
         --with-icu=no \
+        --with-gobject \
         --libdir=$LIBDIR
     make
 }

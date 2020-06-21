@@ -1,5 +1,5 @@
 pkgname=python-matplotlib
-pkgver=3.2.1
+pkgver=3.2.2
 vcs=git
 vcs_pkgname=matplotlib
 gittag=v${pkgver}

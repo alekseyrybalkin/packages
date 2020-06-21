@@ -1,5 +1,5 @@
 pkgname=python-importlib-metadata
-pkgver=1.6.1
+pkgver=1.7.0
 vcs=git
 vcs_pkgname=importlib_metadata
 gittag=v${pkgver}
