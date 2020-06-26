@@ -428,13 +428,12 @@ opengl-docs
 cpp-docs
 lfs-book
 blfs-book
-zoom
+redis
+postgresql
+
+# dev: docker-compose deps
 libyaml
 libsodium
-redis
-libsasl
-libldap
-postgresql
 
 # python: docker-compose
 python-cached-property
