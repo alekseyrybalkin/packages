@@ -1,9 +1,8 @@
 pkgname=asciidoc
-pkgver=9.0.0rc2
+pkgver=9.0.1
 vcs=git
 gittag=${pkgver}
 relmon_id=13262
-updater_rules="no_alpha_skips"
 
 build() {
     autoconf
