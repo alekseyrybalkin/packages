@@ -1,5 +1,5 @@
 pkgname=nspr
-pkgver=4.25
+pkgver=4.26
 vcs=mercurial
 hgtag=NSPR_${pkgver//\./_}_RTM
 relmon_id=7953

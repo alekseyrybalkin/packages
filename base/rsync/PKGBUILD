@@ -1,5 +1,5 @@
 pkgname=rsync
-pkgver=3.2.0
+pkgver=3.2.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=4217

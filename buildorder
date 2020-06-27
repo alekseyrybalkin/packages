@@ -392,6 +392,7 @@ python-sphinx_rtd_theme
 python-docs-theme
 
 # python: ipython
+python-ipython_genutils
 python-decorator
 python-traitlets
 python-ptyprocess

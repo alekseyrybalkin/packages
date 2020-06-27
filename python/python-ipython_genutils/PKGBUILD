@@ -1,0 +1,14 @@
+pkgname=python-ipython_genutils
+pkgver=0.2.0
+vcs=git
+vcs_pkgname=ipython_genutils
+gittag=${pkgver}
+relmon_id=19997
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}

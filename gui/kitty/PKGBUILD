@@ -1,5 +1,5 @@
 pkgname=kitty
-pkgver=0.18.0
+pkgver=0.18.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=17405

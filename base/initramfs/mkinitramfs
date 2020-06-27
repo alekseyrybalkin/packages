@@ -62,7 +62,7 @@ cp -a /lib/firmware/iwlwifi*7265* $WDIR/lib/firmware/
 install -m0755 $DATADIR/$INITIN $WDIR/init
 
 # Install basic binaries
-binfiles="sh cat cp dd killall ls mkdir mknod mount umount sed sleep ln rm uname readlink basename udevadm modprobe blkid switch_root cryptsetup"
+binfiles="sh cat cp dd killall ls mkdir mknod mount umount sed sleep ln rm uname readlink basename udevadm modprobe blkid switch_root cryptsetup fsck fsck.ext2 fsck.ext3 fsck.ext4"
 for f in $binfiles ; do
     ldd /usr/bin/$f | sed "s/\t//" | cut -d " " -f1 >> $libs
     copy $f bin

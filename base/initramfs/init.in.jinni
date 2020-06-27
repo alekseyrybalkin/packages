@@ -12,6 +12,7 @@ udevadm trigger
 udevadm settle
 
 cryptsetup luksOpen /dev/sda1 root
+fsck /dev/mapper/root
 
 mkdir /.root
 mount -t ext4 /dev/mapper/root /.root

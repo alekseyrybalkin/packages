@@ -1,5 +1,5 @@
 pkgname=bridge-utils
-pkgver=1.6
+pkgver=1.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=217

@@ -1,5 +1,5 @@
 pkgname=nss
-pkgver=3.53.1
+pkgver=3.54
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
@@ -7,7 +7,6 @@ relmon_id=2503
 updater_rules='no_alpha_skips,skip_big_first,skip_big_second,skip_beta,skip_rtmall'
 
 build() {
-    MAKEFLAGS=
     cd ../
     patch -Np1 -i nss-standalone.patch
     cd nss
@@ -27,7 +26,6 @@ build() {
 }
 
 package() {
-    MAKEFLAGS=
     cd ../dist
     mkdir -p ${pkgdir}/usr/lib/pkgconfig
     mkdir -p ${pkgdir}/usr/bin
