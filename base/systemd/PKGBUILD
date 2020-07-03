@@ -5,6 +5,9 @@ gittag=v${pkgver}
 relmon_id=5440
 
 build() {
+    # login: filenames in /run/systemd/users are uids
+    git cherry-pick ac4e03d45bcf4ad2e570cabdb218e9bac003cc80
+
     sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
 
     mkdir -p build
