@@ -1,5 +1,5 @@
 pkgname=exiv2
-pkgver=0.27.2
+pkgver=0.27.3
 vcs=git
 gittag=v${pkgver}
 relmon_id=769

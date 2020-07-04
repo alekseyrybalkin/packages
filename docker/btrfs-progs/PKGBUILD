@@ -1,5 +1,5 @@
 pkgname=btrfs-progs
-pkgver=5.6.1
+pkgver=5.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=227

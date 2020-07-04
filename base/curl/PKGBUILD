@@ -1,5 +1,5 @@
 pkgname=curl
-pkgver=7.71.0
+pkgver=7.71.1
 vcs=git
 gittag=curl-${pkgver//\./_}
 relmon_id=381
