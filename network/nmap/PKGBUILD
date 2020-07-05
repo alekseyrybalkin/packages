@@ -9,7 +9,8 @@ build() {
     ./configure --prefix=/usr \
         --without-ndiff \
         --without-nping \
-        --without-zenmap
+        --without-zenmap \
+        --without-liblua
     make
 }
 

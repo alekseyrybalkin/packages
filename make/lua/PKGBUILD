@@ -1,24 +1,23 @@
 pkgname=lua
-_release=5.3
-pkgver=${_release}.5
+_release=5.4
+pkgver=${_release}.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=1847
 
 build() {
-    sed -i -e 's/local\///g' luaconf.h
     rm makefile
     cp ../Makefile.src ./Makefile
-
-    git clone `find_vcs_repo luac`
-    mv luac/luac.c .
-    rm -rf luac
+    cp ../luac.c .
+    cp ../lua.hpp .
 
     cd ${location}
     mv ${pkgname}-${pkgver} src
     mkdir ${pkgname}-${pkgver}
     mv src Makefile ${pkgname}-${pkgver}/
+
     cd ${pkgname}-${pkgver}
+    patch -p1 -i ../liblua.so.patch
 
     make MYCFLAGS="${CFLAGS} -fPIC" linux
 }

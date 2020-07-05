@@ -1,14 +1,11 @@
 pkgname=mpv
 vcs=git
 pkgver=0.32.0
-_wafver=2.0.19
+_wafver=2.0.20
 gittag=v${pkgver}
 relmon_id=5348
 
 build() {
-    # enable lua 5.3
-    patch -Np1 -i ../lua53.patch
-
     git clone -n -s `find_vcs_repo waf` waf-clone
     cd waf-clone
     git checkout waf-${_wafver}
@@ -21,6 +18,7 @@ build() {
         --confdir=/etc/mpv \
         --disable-pulse \
         --disable-libarchive \
+        --disable-lua \
         --enable-libmpv-shared
     ./waf build
 }
