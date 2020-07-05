@@ -172,7 +172,6 @@ tidy-html5
 llvm
 lld
 gn
-lua
 
 # libs
 boost
