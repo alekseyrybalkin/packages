@@ -1,5 +1,5 @@
 pkgname=nasm
-pkgver=2.14.02
+pkgver=2.15.02
 vcs=git
 gittag=nasm-${pkgver}
 relmon_id=2048
@@ -7,9 +7,8 @@ relmon_id=2048
 build() {
     ./autogen.sh
     ./configure --prefix=/usr
-    make dist
-    ./configure --prefix=/usr
     make
+    make manpages
 }
 
 package() {
