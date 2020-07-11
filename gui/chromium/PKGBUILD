@@ -1,12 +1,12 @@
 pkgname=chromium
-pkgver=81.0.4044.131
+pkgver=83.0.4103.122
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
 relmon_id=13344
 
 # updating node_modules:
-# git apply ~/projects/journal/jinni/clean_json_attrs.diff
+# git apply ~/.data/ventures/jinni/clean_json_attrs.diff
 # cd third_party/node
 # ./update_npm_deps
 
@@ -36,11 +36,44 @@ build() {
     sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
         tools/generate_shim_headers/generate_shim_headers.py
 
-    # https://crbug.com/1049258
-    # Rename Relayout() in DesktopWindowTreeHostPlatform to ScheduleRelayout()
-    git cherry-pick 5a2cd2409c7d65c019ad9f4595a4e85315857ac4
-    # Rebuild Linux frame button cache when activation state changes
-    git cherry-pick d10f885b9327399be9348b780967ebd6b7f2c4bc
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2145261
+    # Clean up a call to set_utf8().
+    git cherry-pick ede390a0b18e4565abf8ac1e1ff717e1d43fc320
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2153111
+    # [PM] Add calculation for age score
+    git cherry-pick 72ce65b031d1eb22c3be465fd38e39f5662face3
+    # IWYU: std::numeric_limits is defined in limits
+    git cherry-pick 74f76a6be385ef056b0be2362c32c728141cca16
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2152333
+    # Add missing algorithm header in crx_install_error.cc
+    git cherry-pick 2b9d6daa0ab5ce45ec5555466d5a5a583a020ea8
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2132403
+    # libstdc++: fix incomplete-type in AXTree for NodeSetSizePosInSetInfo
+    git cherry-pick aeef68888d4c00b69facead2b934095a8cd17329
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2164645
+    # from 40d994e4aa2e4d5077c1810e4623549618a19c05
+    # Include "memory" header to get the definition of std::unique_ptr.
+    sed -i -e '/#include "base\/optional.h"/i #include <memory>' third_party/blink/renderer/core/html/trust_token_attribute_parsing.h
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2174199
+    # Make some of blink custom iterators STL compatible.
+    git cherry-pick d3cabbc7321d349a9bffda482df5afc0d4df1ac2
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2094496
+    # ServiceWorker: Avoid double destruction of ServiceWorkerObjectHost on connection error
+    git cherry-pick bd59ce32629ef684624821419c43967b73d2989e
+
+    # GCC 10
+    sed -i -e '/class GURL;/i #include <cstddef>' chrome/browser/search/background/ntp_backgrounds.h
+    sed -i -e '/namespace ui {/i #include <cstdint>' ui/gfx/linux/drm_util_linux.h
+
+    # https://chromium-review.googlesource.com/c/chromium/src/+/2268221
+    # Force mp3 files to have a start time of zero.
+    git cherry-pick 192fc3899f76e9487d77895f31df8d2d13bf9619
 
     # Fix GL on fluxbox
     patch -Np1 -i ../gl_visual_info.patch
@@ -74,6 +107,10 @@ build() {
 
     patch -Np0 -i ../chromium-skia-harmony.patch
 
+    # GCC 10
+    sed -i -e '/namespace webrtc {/i #include <cstddef>' third_party/webrtc/modules/audio_processing/aec3/clockdrift_detector.h
+    sed -i -e '/#include "call\/rtp_packet_sink_interface.h"/i #include <cstdint>' third_party/webrtc/call/rtx_receive_stream.h
+
     # fix "ERROR at //device/vr/buildflags/buildflags.gni:22:19: Undefined identifier"
     sed -i -e 's/checkout_openxr/false/g' device/vr/buildflags/buildflags.gni
 
@@ -106,6 +143,7 @@ build() {
         'fieldtrial_testing_like_official_build=true'
         'ffmpeg_branding="Chrome"'
         'proprietary_codecs=true'
+        'use_vaapi=true'
         'rtc_use_pipewire=false'
         'rtc_link_pipewire=false'
         'link_pulseaudio=false'
@@ -137,16 +175,15 @@ build() {
 }
 
 package() {
+    mkdir -p ${pkgdir}/usr/bin ${pkgdir}/usr/lib/chromium/locales
+
     install -vDm755  out/Release/chrome ${pkgdir}/usr/lib/chromium/chromium
     install -vDm4755 out/Release/chrome_sandbox ${pkgdir}/usr/lib/chromium/chrome-sandbox
     install -vDm755  out/Release/chromedriver ${pkgdir}/usr/lib/chromium/chromedriver
-    mkdir -p ${pkgdir}/usr/bin
     ln -svf /usr/lib/chromium/chromium ${pkgdir}/usr/bin
     ln -svf /usr/lib/chromium/chromedriver ${pkgdir}/usr/bin/
 
-    install -vDm644 out/Release/icudtl.dat ${pkgdir}/usr/lib/chromium
-    install -vDm644 out/Release/gen/content/content_resources.pak ${pkgdir}/usr/lib/chromium/
+    install -vm644 out/Release/icudtl.dat ${pkgdir}/usr/lib/chromium/
     install -vm644 out/Release/{*.pak,*.bin} ${pkgdir}/usr/lib/chromium/
-
-    cp -rv out/Release/locales ${pkgdir}/usr/lib/chromium/
+    install -vm644 out/Release/locales/*.pak ${pkgdir}/usr/lib/chromium/locales/
 }
