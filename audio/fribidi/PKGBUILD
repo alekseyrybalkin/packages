@@ -1,5 +1,5 @@
 pkgname=fribidi
-pkgver=1.0.9
+pkgver=1.0.10
 vcs=git
 gittag=v${pkgver}
 relmon_id=857

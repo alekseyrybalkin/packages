@@ -1,5 +1,5 @@
 pkgname=libevent
-pkgver=2.1.11
+pkgver=2.1.12
 vcs=git
 gittag=release-${pkgver}-stable
 relmon_id=1606

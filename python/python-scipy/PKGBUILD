@@ -1,5 +1,5 @@
 pkgname=python-scipy
-pkgver=1.5.0rc2
+pkgver=1.5.1
 vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}

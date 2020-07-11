@@ -1,5 +1,5 @@
 pkgname=libcap
-pkgver=2.36
+pkgver=2.38
 vcs=git
 gittag=libcap-${pkgver}
 relmon_id=1569
