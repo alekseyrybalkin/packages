@@ -1,5 +1,5 @@
 pkgname=chromium
-pkgver=83.0.4103.122
+pkgver=83.0.4103.116
 vcs=git
 gittag=${pkgver}
 extra_urls="somethere/node_modules-${pkgver}.tar.gz"
@@ -77,6 +77,9 @@ build() {
 
     # Fix GL on fluxbox
     patch -Np1 -i ../gl_visual_info.patch
+
+    # Use system clang-format (workaround for no network build)
+    patch -Np1 -i ../clang_format.patch
 
     # https://crbug.com/893950
     sed -i -e 's/\<xmlMalloc\>/malloc/' -e 's/\<xmlFree\>/free/' \
