@@ -1,5 +1,5 @@
 pkgname=ffmpeg
-pkgver=4.3
+pkgver=4.3.1
 vcs=git
 gittag=n${pkgver}
 relmon_id=5405
