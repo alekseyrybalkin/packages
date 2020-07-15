@@ -7,8 +7,6 @@ relmon_id=1258
 updater_rules="repl_tilde_dot"
 
 build() {
-    patch -Np1 -i ../luks_messages.patch
-
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap
     ./configure --prefix=/usr \
