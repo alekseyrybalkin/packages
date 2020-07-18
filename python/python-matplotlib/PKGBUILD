@@ -1,5 +1,5 @@
 pkgname=python-matplotlib
-pkgver=3.2.2
+pkgver=3.3.0
 vcs=git
 vcs_pkgname=matplotlib
 gittag=v${pkgver}
@@ -8,6 +8,12 @@ relmon_id=3919
 build() {
     # disable installation of jquery-ui
     sed -i -e 's/if (dest \/ name).exists()/if not (dest \/ name).exists()/g' setup.py
+
+    # use system freetype
+    cat > setup.cfg << "EOF"
+[libs]
+system_freetype = true
+EOF
 
     python-build
 }

@@ -1,14 +1,12 @@
 pkgname=openjdk
-pkgver=14.0.1
-_build=7
+pkgver=14.0.2
+_build=12
 vcs=mercurial
 vcs_pkgname=jdk14u
 hgtag=jdk-${pkgver}+${_build}
 updater_rules='no_alpha_skips,lstrip_jdk,skip_+'
 
 build() {
-    patch -Np1 -i ../make4.3.patch
-
     PATH=/usr/bin
 
     unset MAKEFLAGS

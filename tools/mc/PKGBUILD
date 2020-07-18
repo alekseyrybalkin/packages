@@ -1,13 +1,10 @@
 pkgname=mc
-pkgver=4.8.24
+pkgver=4.8.25
 vcs=git
 gittag=${pkgver}
 relmon_id=1954
 
 build() {
-    # Revert "misc: install mc.charsets into $pkgdatadir again."
-    git revert --no-edit c4264c58ae4d6aea363e15b6007eaa0130f89d9b
-
     ./autogen.sh
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib \
