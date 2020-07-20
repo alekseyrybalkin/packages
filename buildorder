@@ -422,6 +422,7 @@ python-statsmodels
 
 # dev
 strace
+glew
 glfw
 opengl-docs
 cpp-docs

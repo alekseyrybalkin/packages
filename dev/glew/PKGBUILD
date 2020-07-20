@@ -1,0 +1,24 @@
+pkgname=glew
+pkgver=2.2.0
+vcs=git
+gittag=jinni-glew-${pkgver}
+relmon_id=7878
+
+build() {
+    sed -i -e 's/git clone/@echo git clone/g' auto/Makefile
+
+    git clone `find_vcs_repo opengl-registry` auto/OpenGL-Registry
+    git clone `find_vcs_repo egl-registry` auto/EGL-Registry
+    git clone `find_vcs_repo glfixes` auto/glfixes
+    cd auto/glfixes
+    git fetch origin +refs/remotes/*:refs/remotes/origin/*
+    git checkout origin/glew
+    cd ../..
+
+    make extensions
+    make STRIP= LIBDIR=/usr/lib
+}
+
+package() {
+    make install.all DESTDIR=${pkgdir} LIBDIR=/usr/lib
+}
