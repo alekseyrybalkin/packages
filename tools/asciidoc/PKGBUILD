@@ -1,5 +1,5 @@
 pkgname=asciidoc
-pkgver=9.0.1
+pkgver=9.0.2
 vcs=git
 gittag=${pkgver}
 relmon_id=13262

@@ -1,6 +1,6 @@
 pkgname=sudo
 # pkgver too complex to parse, we check hg tags instead
-pkgver=1.9.1
+pkgver=1.9.2
 vcs=mercurial
 hgtag=SUDO_${pkgver//\./_}
 relmon_id=4906

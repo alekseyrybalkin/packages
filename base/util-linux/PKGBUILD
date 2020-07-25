@@ -1,5 +1,5 @@
 pkgname=util-linux
-pkgver=2.35.2
+pkgver=2.36
 vcs=git
 gittag=v${pkgver}
 relmon_id=8179

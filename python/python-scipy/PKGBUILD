@@ -1,5 +1,5 @@
 pkgname=python-scipy
-pkgver=1.5.1
+pkgver=1.5.2
 vcs=git
 vcs_pkgname=scipy
 gittag=v${pkgver}
@@ -13,5 +13,5 @@ package() {
     python setup.py config_fc --fcompiler=gnu95 install \
         --prefix=/usr --root=${pkgdir} --optimize=1
 
-    rm ${pkgdir}/usr/lib/python3.8/site-packages/scipy/io/tests/data/Transparent\ Busy.ani
+    rm ${pkgdir}/usr/lib/python*/site-packages/scipy/io/tests/data/Transparent\ Busy.ani
 }

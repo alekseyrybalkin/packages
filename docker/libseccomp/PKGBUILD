@@ -1,5 +1,5 @@
 pkgname=libseccomp
-pkgver=2.4.3
+pkgver=2.5.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=13823
