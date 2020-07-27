@@ -274,9 +274,6 @@ libpciaccess
 libxkbfile
 libxshmfence
 xcb-util
-xcb-util-keysyms
-xcb-util-renderutil
-xcb-util-image
 libdrm
 mesa
 glu
