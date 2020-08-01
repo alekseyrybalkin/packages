@@ -1,5 +1,5 @@
 pkgname=python-asn1crypto
-pkgver=1.3.0
+pkgver=1.4.0
 vcs=git
 vcs_pkgname=asn1crypto
 gittag=${pkgver}

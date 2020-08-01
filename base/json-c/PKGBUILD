@@ -1,7 +1,7 @@
 pkgname=json-c
-pkgver=0.14
+pkgver=0.15
 vcs=git
-gittag=json-c-${pkgver}-20200419
+gittag=json-c-${pkgver}-20200726
 relmon_id=1477
 
 build() {

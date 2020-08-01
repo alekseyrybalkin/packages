@@ -1,5 +1,5 @@
 pkgname=gettext
-pkgver=0.20.2
+pkgver=0.21
 vcs=git
 gittag=v${pkgver}
 extra_urls="https://alpha.gnu.org/gnu/gettext/archive.dir-${pkgver}.tar.xz"
