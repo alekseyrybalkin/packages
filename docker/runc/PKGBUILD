@@ -1,6 +1,6 @@
 pkgname=runc
 _pkgver=1.0.0
-_rc=91
+_rc=92
 pkgver=${_pkgver}.rc${_rc}
 vcs=git
 gittag=v${_pkgver}-rc${_rc}

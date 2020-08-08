@@ -1,12 +1,15 @@
 pkgname=gimp
-pkgver=2.98.0.4
+pkgver=2.98.0.5
 vcs=git
-# afe98c5c703180e6e50a7d3274b192933fa18005
+# 96073ae1b042028f57239109d24c9d818aff7999
 gittag=jinni-GIMP_${pkgver//\./_}
 relmon_id=1161
 updater_rules='skip_big_first'
 
 build() {
+    # checking for xgettext version (>= 0.19)... ./configure: line 18500: test: 21-dirty: integer expression expected
+    sed -i -e "s/f4/f4 | sed 's\/\-dirty\/\/g'/g" configure.ac
+
     ./autogen.sh \
         --prefix=/usr \
         --sysconfdir=/etc \

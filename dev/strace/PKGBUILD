@@ -1,5 +1,5 @@
 pkgname=strace
-pkgver=5.7
+pkgver=5.8
 vcs=git
 gittag=v${pkgver}
 relmon_id=4897
