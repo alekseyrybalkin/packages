@@ -1,12 +1,12 @@
 pkgname=binutils
-pkgver=2.34
+pkgver=2.35
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}
 relmon_id=7981
 
 build() {
-    rm -rf gdb libdecnumber readline sim zlib
+    rm -rf gdb gdbserver libdecnumber readline sim zlib
     mkdir -v binutils-build
     cd binutils-build
     ../configure --prefix=/usr \

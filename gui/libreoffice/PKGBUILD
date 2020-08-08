@@ -1,6 +1,6 @@
 pkgname=libreoffice
-_majorver=6.4.4
-pkgver=${_majorver}.2
+_majorver=7.0.0
+pkgver=${_majorver}.3
 vcs=git
 gittag=libreoffice-${pkgver}
 tarball_dirs="libreoffice-tarballs"
@@ -16,11 +16,9 @@ prepare() {
 }
 
 build() {
-    patch -p1 -i ../libreoffice-poppler-0.86.patch
     patch -Np1 -i ../make-pyuno-work-with-system-wide-module-install.diff
 
     # gcc 10
-    git cherry-pick f0b74640137f07ed74027f98fbf6d1c0d98939bf
     export CFLAGS+=" -Wno-format-overflow"
     export CXXFLAGS+=" -Wno-format-overflow"
     export CPPFLAGS+=" -Wno-format-overflow"
