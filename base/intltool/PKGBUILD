@@ -1,3 +1,4 @@
+# required by transmission, gdl, libmypaint and gimp
 pkgname=intltool
 pkgver=0.51.0
 vcs=bzr
