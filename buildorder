@@ -427,6 +427,7 @@ opengl-docs
 cpp-docs
 lfs-book
 blfs-book
+zoom
 redis
 postgresql
 
