@@ -15,10 +15,12 @@ build() {
     git checkout origin/glew
     cd ../..
 
+    MAKEFLAGS=
     make extensions
     make STRIP= LIBDIR=/usr/lib
 }
 
 package() {
+    MAKEFLAGS=
     make install.all DESTDIR=${pkgdir} LIBDIR=/usr/lib
 }
