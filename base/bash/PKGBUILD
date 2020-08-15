@@ -1,7 +1,7 @@
 pkgname=bash
 pkgver=5.0.018
 vcs=git
-# 9e49d343e3cd7e20dad1b86ebfb764e8027596a7
+# 36f2c406ff27995392a9247dfa90672fdaf7dc43
 gittag=jinni-bash-${pkgver}
 relmon_id=166
 
