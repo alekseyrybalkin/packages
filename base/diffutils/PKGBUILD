@@ -1,6 +1,7 @@
 pkgname=diffutils
 pkgver=3.7.0.1
 vcs=git
+# 7c13bbbeca620e573827636311c5e76e3e3e8da6
 gittag=jinni-v${pkgver}
 relmon_id=436
 
