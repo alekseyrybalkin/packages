@@ -1,5 +1,5 @@
 pkgname=python-docker
-pkgver=4.2.2
+pkgver=4.3.0
 vcs=git
 vcs_pkgname=docker-py
 gittag=${pkgver}

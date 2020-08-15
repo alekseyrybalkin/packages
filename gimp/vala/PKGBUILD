@@ -1,5 +1,5 @@
 pkgname=vala
-pkgver=0.48.8
+pkgver=0.48.9
 vcs=git
 gittag=${pkgver}
 relmon_id=5065

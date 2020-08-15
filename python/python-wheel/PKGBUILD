@@ -1,5 +1,5 @@
 pkgname=python-wheel
-pkgver=0.34.2
+pkgver=0.35.0
 vcs=git
 vcs_pkgname=wheel
 hgtag=${pkgver}

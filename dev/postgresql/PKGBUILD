@@ -1,5 +1,5 @@
 pkgname=postgresql
-pkgver=12.3
+pkgver=12.4
 vcs=git
 gittag=REL_${pkgver//\./_}
 relmon_id=5601

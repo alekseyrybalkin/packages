@@ -1,5 +1,5 @@
 pkgname=boost
-pkgver=1.73.0
+pkgver=1.74.0
 vcs=git
 gittag=boost-${pkgver}
 relmon_id=6845
@@ -30,4 +30,7 @@ build() {
 
 package() {
     ./b2 --prefix=${pkgdir}/usr install threading=multi link=shared
+
+    # remove header file with spaces in filename
+    rm ${pkgdir}/usr/include/boost/serialization/collection_size_type\ copy.hpp
 }

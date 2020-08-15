@@ -1,5 +1,5 @@
 pkgname=bash
-pkgver=5.0.017
+pkgver=5.0.018
 vcs=git
 # 9e49d343e3cd7e20dad1b86ebfb764e8027596a7
 gittag=jinni-bash-${pkgver}
