@@ -1,5 +1,5 @@
 pkgname=fossil
-pkgver=2.11.1
+pkgver=2.12
 vcs=fossil
 fossiltag=version-${pkgver}
 relmon_id=13971

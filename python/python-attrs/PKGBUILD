@@ -1,5 +1,5 @@
 pkgname=python-attrs
-pkgver=19.3.0
+pkgver=20.1.0
 vcs=git
 vcs_pkgname=attrs
 gittag=${pkgver}

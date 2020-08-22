@@ -1,5 +1,5 @@
 pkgname=python-bcrypt
-pkgver=3.1.7
+pkgver=3.2.0
 vcs=git
 vcs_pkgname=bcrypt
 gittag=${pkgver}
