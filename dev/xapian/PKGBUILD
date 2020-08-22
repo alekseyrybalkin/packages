@@ -1,0 +1,21 @@
+pkgname=xapian
+pkgver=1.4.17
+vcs=git
+gittag=v${pkgver}
+relmon_id=15919
+
+build() {
+    cd xapian-core
+    perl preautoreconf
+    autoreconf -fi
+    perl -I. generate-exceptions
+    ./configure CXXFLAGS=-Wno-error --prefix=/usr \
+        --enable-maintainer-mode \
+        --disable-documentation
+    make
+}
+
+package() {
+    cd xapian-core
+    make DESTDIR=${pkgdir} install
+}

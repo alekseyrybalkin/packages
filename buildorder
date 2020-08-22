@@ -420,6 +420,7 @@ python-patsy
 python-statsmodels
 
 # dev
+xapian
 strace
 glew
 glfw
