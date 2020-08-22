@@ -13,9 +13,24 @@ build() {
         --enable-maintainer-mode \
         --disable-documentation
     make
+
+    cd ../xapian-bindings
+    sed -i -e 's/wrapper xapian.py$/wrapper xapian.py || true/g' python3/Makefile.am
+    autoreconf -fi
+    ./configure CXXFLAGS=-Wno-error --prefix=/usr \
+        --enable-maintainer-mode \
+        --disable-documentation \
+        --with-python3
+    make
 }
 
 package() {
     cd xapian-core
     make DESTDIR=${pkgdir} install
+    cd ../xapian-bindings
+    make DESTDIR=${pkgdir} install
+
+    cp -r python3/docs/html/ ${pkgdir}/usr/share/doc/python-xapian
+    mv ${pkgdir}/usr/share/doc/xapian-bindings/python3/examples ${pkgdir}/usr/share/doc/python-xapian/
+    rm -rf ${pkgdir}/usr/share/doc/xapian-bindings
 }
