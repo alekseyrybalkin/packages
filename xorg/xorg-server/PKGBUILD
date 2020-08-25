@@ -1,13 +1,10 @@
 pkgname=xorg-server
-pkgver=1.20.8
+pkgver=1.20.9
 vcs=git
 gittag=xorg-server-${pkgver}
 relmon_id=5250
 
 build() {
-    # fix CVE-2020-14347
-    git cherry-pick aac28e162e5108510065ad4c323affd6deffd816
-
     # use openssl for sha1 implementation instead of nettle
     sed -i -e "s/'nettle'/'openssl'/g" meson.build
     sed -i -e "s/sha1_dep = nettle_dep/sha1_dep = cc.find_library('crypto', required : false)/g" meson.build
