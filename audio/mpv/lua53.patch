@@ -1,0 +1,90 @@
+diff --git a/player/lua.c b/player/lua.c
+index 6423861f16..adb380ef8b 100644
+--- a/player/lua.c
++++ b/player/lua.c
+@@ -351,8 +351,8 @@ static int load_lua(struct mpv_handle *client, const char *fname)
+         .filename = fname,
+     };
+ 
+-    if (LUA_VERSION_NUM != 501 && LUA_VERSION_NUM != 502) {
+-        MP_FATAL(ctx, "Only Lua 5.1 and 5.2 are supported.\n");
++    if (LUA_VERSION_NUM != 501 && LUA_VERSION_NUM != 502 && LUA_VERSION_NUM != 503) {
++        MP_FATAL(ctx, "Only Lua 5.1, 5.2 and 5.3 are supported.\n");
+         goto error_out;
+     }
+ 
+diff --git a/player/lua/defaults.lua b/player/lua/defaults.lua
+index 7681ca173e..fc2672a868 100644
+--- a/player/lua/defaults.lua
++++ b/player/lua/defaults.lua
+@@ -639,7 +639,7 @@ end
+ 
+ function mp.get_osd_size()
+     local prop = mp.get_property_native("osd-dimensions")
+-    return prop.w, prop.h, prop.aspect
++    return math.floor(prop.w), math.floor(prop.h), prop.aspect
+ end
+ 
+ function mp.get_osd_margins()
+diff --git a/player/lua/osc.lua b/player/lua/osc.lua
+index e6a1e249dd..472b352429 100644
+--- a/player/lua/osc.lua
++++ b/player/lua/osc.lua
+@@ -130,6 +130,9 @@ local is_december = os.date("*t").month == 12
+ --
+ 
+ function set_osd(res_x, res_y, text)
++    res_x = math.floor(res_x)
++    res_y = math.floor(res_y)
++
+     if state.osd.res_x == res_x and
+        state.osd.res_y == res_y and
+        state.osd.data == text then
+@@ -167,7 +170,11 @@ end
+ 
+ function set_virt_mouse_area(x0, y0, x1, y1, name)
+     local sx, sy = get_virt_scale_factor()
+-    mp.set_mouse_area(x0 / sx, y0 / sy, x1 / sx, y1 / sy, name)
++    if sx ~= 0 and sy ~= 0 then
++        mp.set_mouse_area(x0 // sx, y0 // sy, x1 // sx, y1 // sy, name)
++    else
++        mp.set_mouse_area(x0, y0, x1, y1, name)
++    end
+ end
+ 
+ function scale_value(x0, x1, y0, y1, val)
+@@ -296,7 +303,7 @@ function ass_append_alpha(ass, alpha, modifier)
+     end
+ 
+     ass:append(string.format("{\\1a&H%X&\\2a&H%X&\\3a&H%X&\\4a&H%X&}",
+-               ar[1], ar[2], ar[3], ar[4]))
++               math.floor(ar[1]), math.floor(ar[2]), math.floor(ar[3]), math.floor(ar[4])))
+ end
+ 
+ function ass_draw_rr_h_cw(ass, x0, y0, x1, y1, r1, hexagon, r2)
+diff --git a/player/lua/stats.lua b/player/lua/stats.lua
+index 0749dbaf40..ddfc13b6a9 100644
+--- a/player/lua/stats.lua
++++ b/player/lua/stats.lua
+@@ -292,7 +292,7 @@ local function append_perfdata(s, dedicated_page)
+     -- Pretty print measured time
+     local function pp(i)
+         -- rescale to microseconds for a saner display
+-        return format("%05d", i / 1000)
++        return format("%05d", math.floor(i / 1000))
+     end
+ 
+     -- Format n/m with a font weight based on the ratio
+diff --git a/waftools/checks/custom.py b/waftools/checks/custom.py
+index ed5865a25c..95c052cd4e 100644
+--- a/waftools/checks/custom.py
++++ b/waftools/checks/custom.py
+@@ -67,6 +67,8 @@ def check_lua(ctx, dependency_identifier):
+         ( '52deb',  'lua5.2 >= 5.2.0'), # debian
+         ( '52fbsd', 'lua-5.2 >= 5.2.0'), # FreeBSD
+         ( 'luajit', 'luajit >= 2.0.0' ),
++        ( '53',     'lua >= 5.3.0 lua < 5.4.0' ),
++        ( '53deb',  'lua5.3 >= 5.3.0'), # debian
+     ]
+ 
+     if ctx.options.LUA_VER:
