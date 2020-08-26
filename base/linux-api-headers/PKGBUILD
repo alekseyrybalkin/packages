@@ -3,6 +3,7 @@ vcs=git
 vcs_pkgname=linux
 pkgver=5.7.17
 gittag=v${pkgver}
+relmon_id=6501
 
 build() {
     make mrproper
