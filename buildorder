@@ -170,6 +170,7 @@ yasm
 tidy-html5
 llvm
 lld
+openmp
 gn
 
 # libs
@@ -418,6 +419,9 @@ python-matplotlib
 python-seaborn
 python-patsy
 python-statsmodels
+python-joblib
+python-threadpoolctl
+python-scikit-learn
 
 # dev
 xapian

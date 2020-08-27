@@ -1,0 +1,14 @@
+pkgname=python-scikit-learn
+pkgver=0.23.2
+vcs=git
+vcs_pkgname=scikit-learn
+gittag=${pkgver}
+relmon_id=7686
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}
