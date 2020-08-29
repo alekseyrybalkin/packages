@@ -1,5 +1,5 @@
 pkgname=nasm
-pkgver=2.15.04
+pkgver=2.15.05
 vcs=git
 gittag=nasm-${pkgver}
 relmon_id=2048

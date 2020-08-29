@@ -1,5 +1,5 @@
 pkgname=python-openpyxl
-pkgver=3.0.4
+pkgver=3.0.5
 vcs=mercurial
 vcs_pkgname=openpyxl
 hgtag=${pkgver}

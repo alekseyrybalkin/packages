@@ -1,5 +1,5 @@
 pkgname=python-statsmodels
-pkgver=0.11.1
+pkgver=0.12.0
 vcs=git
 vcs_pkgname=statsmodels
 gittag=v${pkgver}
