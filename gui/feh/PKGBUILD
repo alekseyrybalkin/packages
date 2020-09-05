@@ -1,5 +1,5 @@
 pkgname=feh
-pkgver=3.4.1
+pkgver=3.5
 vcs=git
 gittag=${pkgver}
 relmon_id=790

@@ -1,5 +1,5 @@
 pkgname=python-ipython
-pkgver=7.17.0
+pkgver=7.18.1
 vcs=git
 vcs_pkgname=ipython
 gittag=${pkgver}

@@ -1,5 +1,5 @@
 pkgname=blender
-pkgver=2.83.5
+pkgver=2.90.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=201
@@ -20,11 +20,13 @@ build() {
         -DWITH_CYCLES=OFF \
         -DWITH_CYCLES_CUDA_BINARIES=OFF \
         -DWITH_CYCLES_OSL=OFF \
+        -DWITH_CYCLES_EMBREE=OFF \
         -DWITH_FFTW3=OFF \
         -DWITH_TBB=OFF \
         -DWITH_MOD_FLUID=OFF \
         -DWITH_MOD_OCEANSIM=OFF \
         -DWITH_INTERNATIONAL=OFF \
+        -DWITH_ALEMBIC=OFF \
         -DPYTHON_VERSION=${PYVERSION} \
         -DPYTHON_LIBPATH=/usr/lib \
         -DPYTHON_LIBRARY=python${PYVERSION} \
