@@ -10,7 +10,8 @@ build() {
         --program-prefix="eu-" \
         --enable-deterministic-archives \
         --enable-maintainer-mode \
-        --disable-debuginfod
+        --disable-debuginfod \
+        --disable-libdebuginfod
     make
 }
 
