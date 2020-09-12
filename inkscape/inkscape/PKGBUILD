@@ -1,11 +1,15 @@
 pkgname=inkscape
-pkgver=1.0
+pkgver=1.0.1
 vcs=git
 _pkgver=${pkgver^^}
 gittag=INKSCAPE_${_pkgver//\./_}
 relmon_id=1381
 
 build() {
+    # Fix build when atomic include is not implied
+    # Fixes "src/ui/tool/node.cpp:100:25: error: field ‘rel_error’ has incomplete type ‘std::atomic<double>’"
+    git cherry-pick 4a732c3c7494adfaef8ff6784761b14ef2719c18
+
     mkdir build
     cd build
     export CXXFLAGS="${CXXFLAGS} -fpermissive"

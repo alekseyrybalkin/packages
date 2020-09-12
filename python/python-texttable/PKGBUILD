@@ -1,5 +1,5 @@
 pkgname=python-texttable
-pkgver=1.6.2
+pkgver=1.6.3
 vcs=git
 vcs_pkgname=texttable
 gittag=v${pkgver}

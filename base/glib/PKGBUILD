@@ -1,5 +1,5 @@
 pkgname=glib
-pkgver=2.64.5
+pkgver=2.66.0
 vcs=git
 gittag=${pkgver}
 relmon_id=10024
@@ -12,7 +12,7 @@ build() {
     meson --prefix=/usr \
         -D man=true \
         -D selinux=disabled \
-        -D gtk_doc=true \
+        -D gtk_doc=false \
         ..
     ninja
 }

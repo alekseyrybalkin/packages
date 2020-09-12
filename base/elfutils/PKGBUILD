@@ -1,5 +1,5 @@
 pkgname=elfutils
-pkgver=0.180
+pkgver=0.181
 vcs=git
 gittag=elfutils-${pkgver}
 relmon_id=5679

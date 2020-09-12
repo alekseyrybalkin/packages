@@ -1,5 +1,5 @@
 pkgname=appstream-glib
-pkgver=0.7.17
+pkgver=0.7.18
 vcs=git
 gittag=appstream_glib_${pkgver//\./_}
 relmon_id=14018

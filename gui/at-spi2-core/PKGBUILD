@@ -1,5 +1,5 @@
 pkgname=at-spi2-core
-pkgver=2.36.0
+pkgver=2.36.1
 vcs=git
 gittag=AT_SPI2_CORE_${pkgver//\./_}
 relmon_id=7841

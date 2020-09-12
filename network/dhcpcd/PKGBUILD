@@ -1,5 +1,5 @@
 pkgname=dhcpcd
-pkgver=9.1.4
+pkgver=9.2.0
 vcs=git
 gittag=dhcpcd-${pkgver}
 relmon_id=11429
@@ -15,7 +15,7 @@ build() {
 package() {
     make DESTDIR=${pkgdir} install
     mv ${pkgdir}/lib/dhcpcd/* ${pkgdir}/usr/lib/dhcpcd
-    rm -rf ${pkgdir}/lib
+    rm -rf ${pkgdir}/{lib,var,run}
 
     mv -v ${pkgdir}/etc/dhcpcd.conf{,.packaged}
 }
