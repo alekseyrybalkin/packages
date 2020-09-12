@@ -276,6 +276,8 @@ libpciaccess
 libxkbfile
 libxshmfence
 xcb-util
+xcb-util-keysyms
+xcb-util-image
 libdrm
 mesa
 glu
@@ -431,6 +433,7 @@ opengl-docs
 cpp-docs
 lfs-book
 blfs-book
+zoom
 redis
 postgresql
 
