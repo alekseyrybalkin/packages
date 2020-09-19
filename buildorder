@@ -166,7 +166,6 @@ libuv
 rhash
 cmake
 nasm
-yasm
 tidy-html5
 llvm
 lld

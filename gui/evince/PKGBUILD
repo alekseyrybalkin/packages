@@ -1,41 +1,24 @@
 pkgname=evince
-pkgver=3.36.7
+pkgver=3.38.0
 vcs=git
 gittag=${pkgver}
 relmon_id=8178
 updater_rules="skip_odd_second"
 
 build() {
-    # disable gtk-doc
-    sed -i -e '/help\//d' configure.ac
-    sed -i -e '/GTK_DOC_CHECK/d' configure.ac
-    sed -i -e '/help$/d' Makefile.am
-    sed -i -e 's/po \\$/po/g' Makefile.am
-    sed -i -e '/po \\/d' Makefile.am
-    sed -i -e '/gtkdocize /d' autogen.sh
-    rm -rf help
-
-    export CFLAGS="${CFLAGS} -Wno-format-y2k -Wno-format-nonliteral"
-    ./autogen.sh --prefix=/usr \
-        --libexecdir=/usr/lib/evince \
-        --disable-introspection \
-        --disable-nautilus \
-        --without-keyring \
-        --disable-libgnome-desktop \
-        --disable-browser-plugin \
-        --disable-help \
-        --disable-gtk-doc \
-        --without-gspell \
-        --disable-thumbnailer \
-        --disable-comics \
-        --disable-static
-    sed -i -e 's/ po //g' Makefile
-    make
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D nautilus=false \
+        -D gtk_doc=false \
+        -D comics=disabled \
+        . build
+    ninja -C build
 }
 
 package() {
-    make DESTDIR=${pkgdir} install
-    rm -rf ${pkgdir}/usr/share/help
+    DESTDIR=${pkgdir} ninja -C build install
 }
 
 after_install() {

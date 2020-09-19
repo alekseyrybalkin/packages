@@ -1,5 +1,5 @@
 pkgname=libva
-pkgver=2.8.0
+pkgver=2.9.0
 vcs=git
 gittag=${pkgver}
 relmon_id=1752

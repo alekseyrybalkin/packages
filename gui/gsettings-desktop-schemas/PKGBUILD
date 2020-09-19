@@ -1,5 +1,5 @@
 pkgname=gsettings-desktop-schemas
-pkgver=3.36.1
+pkgver=3.38.0
 vcs=git
 gittag=${pkgver}
 relmon_id=13139

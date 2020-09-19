@@ -1,5 +1,5 @@
 pkgname=containerd
-pkgver=1.4.0
+pkgver=1.4.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=16460

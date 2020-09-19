@@ -1,5 +1,5 @@
 pkgname=glib-networking
-pkgver=2.64.3
+pkgver=2.66.0
 vcs=git
 gittag=${pkgver}
 relmon_id=21353

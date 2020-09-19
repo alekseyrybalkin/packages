@@ -1,5 +1,5 @@
 pkgname=yelp-tools
-pkgver=3.32.2
+pkgver=3.38.0
 vcs=git
 gittag=${pkgver}
 relmon_id=8420
