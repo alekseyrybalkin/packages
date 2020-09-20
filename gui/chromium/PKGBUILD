@@ -124,7 +124,6 @@ build() {
         'enable_hangout_services_extension=false'
         'enable_widevine=false'
         'enable_nacl=false'
-        'enable_swiftshader=false'
         'use_kerberos=false'
         'use_libpci=false'
         'use_pulseaudio=false'
@@ -156,4 +155,7 @@ package() {
     install -vm644 out/Release/icudtl.dat ${pkgdir}/usr/lib/chromium/
     install -vm644 out/Release/{*.pak,*.bin} ${pkgdir}/usr/lib/chromium/
     install -vm644 out/Release/locales/*.pak ${pkgdir}/usr/lib/chromium/locales/
+
+    install -vm644 out/Release/{libEGL.so,libGLESv2.so} ${pkgdir}/usr/lib/chromium/
+    install -Dm755 out/Release/swiftshader/*.so -t ${pkgdir}/usr/lib/chromium/swiftshader
 }
