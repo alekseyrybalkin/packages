@@ -1,15 +1,18 @@
-pkgname=jinni-icon-theme
-pkgver=2
+pkgname=adwaita-icon-theme
+pkgver=3.38.0
 vcs=git
-gittag=v${pkgver}
+gittag=${pkgver}
+relmon_id=13117
+updater_rules="skip_odd_second,skip_big_third"
 
 build() {
-    :
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
 }
 
 package() {
-    mkdir -p ${pkgdir}/usr/share/icons
-    cp -r Adwaita ${pkgdir}/usr/share/icons/
+    make DESTDIR=${pkgdir} install
 }
 
 after_install() {

@@ -329,7 +329,9 @@ gtk
 hicolor-icon-theme
 desktop-file-utils
 gsettings-desktop-schemas
-jinni-icon-theme
+libcroco
+librsvg
+adwaita-icon-theme
 transmission
 openjpeg
 poppler

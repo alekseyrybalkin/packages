@@ -7,21 +7,6 @@ relmon_id=1161
 updater_rules='skip_big_first'
 
 build() {
-    patch -Np1 -i ../disable-librsvg.patch
-
-    #mkdir mbuild
-    #meson --prefix=/usr \
-    #    -D libexecdir=/usr/lib \
-    #    -D sysconfdir=/etc \
-    #    -D python=never \
-    #    -D lua=never \
-    #    -D javascript=never \
-    #    -D enable-console-bin=true \
-    #    -D vec-icons=false \
-    #    -D vala-plugins=disabled \
-    #    . mbuild
-    #ninja -C mbuild
-
     # checking for xgettext version (>= 0.19)... ./configure: line 18500: test: 21-dirty: integer expression expected
     sed -i -e "s/f4/f4 | sed 's\/\-dirty\/\/g'/g" configure.ac
 
@@ -30,9 +15,9 @@ build() {
         --sysconfdir=/etc \
         --libexecdir=/usr/bin \
         --enable-mp \
+        --enable-python \
         --enable-gimp-console \
-        --enable-vector-icons=no \
-        --with-vala=no \
+        --with-libcurl \
         --with-python=no \
         --with-lua=no \
         --with-javascript=no
@@ -40,8 +25,6 @@ build() {
 }
 
 package() {
-    #DESTDIR=${pkgdir} ninja -C mbuild install
-
     make DESTDIR=${pkgdir} install
     ln -sv gimp-2.99 ${pkgdir}/usr/bin/gimp
 }
