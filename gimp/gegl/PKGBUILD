@@ -9,6 +9,7 @@ build() {
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
         -D workshop=true \
+        -D librsvg=disabled \
         . build-gegl
     ninja -C build-gegl
 }
