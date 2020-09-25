@@ -314,7 +314,6 @@ openjdk
 xclip
 kitty
 ttf-fonts
-sdl2_ttf
 fluxbox
 atk
 cairo
@@ -363,8 +362,6 @@ python-pycodestyle
 python-modernize
 python-mss
 python-mwparserfromhell
-python-opengl
-python-pysdl2
 python-pillow
 python-numpy
 python-pybind11
@@ -422,9 +419,6 @@ python-scikit-learn
 # dev
 xapian
 strace
-glew
-glfw
-opengl-docs
 cpp-docs
 lfs-book
 blfs-book
