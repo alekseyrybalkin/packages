@@ -195,7 +195,6 @@ wpa_supplicant
 macchanger
 tor
 nmap
-miniupnpc
 nginx
 chrony
 openvpn
