@@ -218,7 +218,6 @@ mutt
 syncema
 borg
 telenoti
-unoconv
 
 # audio
 alsa-lib
@@ -368,32 +367,19 @@ python-pybind11
 python-scipy
 python-dulwich
 python-onetimepass
-python-urwid
 python-mistune
+python-pygments
+python-wcwidth
+python-prompt_toolkit
 
 # python: sphinx
 python-imagesize
 python-pytz
 python-babel
 python-alabaster
-python-pygments
 python-sphinx
 python-sphinx_rtd_theme
 python-docs-theme
-
-# python: ipython
-python-ipython_genutils
-python-decorator
-python-traitlets
-python-ptyprocess
-python-pexpect
-python-pickleshare
-python-wcwidth
-python-prompt_toolkit
-python-backcall
-python-parso
-python-jedi
-python-ipython
 
 # python: data science
 python-dateutil
