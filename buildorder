@@ -171,7 +171,6 @@ llvm
 lld
 openmp
 gn
-lua
 
 # libs
 boost
