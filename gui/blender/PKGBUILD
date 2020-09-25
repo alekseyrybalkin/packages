@@ -27,6 +27,7 @@ build() {
         -DWITH_MOD_OCEANSIM=OFF \
         -DWITH_INTERNATIONAL=OFF \
         -DWITH_ALEMBIC=OFF \
+        -DWITH_SDL=OFF \
         -DPYTHON_VERSION=${PYVERSION} \
         -DPYTHON_LIBPATH=/usr/lib \
         -DPYTHON_LIBRARY=python${PYVERSION} \
