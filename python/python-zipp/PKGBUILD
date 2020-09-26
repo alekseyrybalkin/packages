@@ -1,5 +1,5 @@
 pkgname=python-zipp
-pkgver=3.1.0
+pkgver=3.2.0
 vcs=git
 vcs_pkgname=zipp
 gittag=v${pkgver}

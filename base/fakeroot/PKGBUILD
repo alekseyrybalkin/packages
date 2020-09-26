@@ -1,5 +1,5 @@
 pkgname=fakeroot
-pkgver=1.24
+pkgver=1.25.1
 vcs=git
 # 65bfa45a78034bdd9cc19291ad7f7cb9a43878d6
 gittag=jinni-${pkgver}
@@ -8,7 +8,6 @@ relmon_id=12048
 build() {
     sed -i -e '/man_MANS/d' doc/Makefile.am
     sed -i -e 's/de es fr nl pt sv//g' doc/Makefile.am
-    patch -p1 -i ../silence-dlerror.patch
     ./bootstrap
     ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot \
         --disable-static --with-ipc=sysv

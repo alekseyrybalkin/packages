@@ -1,5 +1,5 @@
 pkgname=libsndfile
-pkgver=1.0.29
+pkgver=1.0.30
 vcs=git
 gittag=v${pkgver}
 relmon_id=13277

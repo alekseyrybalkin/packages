@@ -1,5 +1,5 @@
 pkgname=libuv
-pkgver=1.39.0
+pkgver=1.40.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=10784

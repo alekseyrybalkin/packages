@@ -1,5 +1,4 @@
 pkgname=ncurses
-# pkgver too complex to parse, we check git tags instead
 pkgver=6.2
 vcs=git
 gittag=v${pkgver//\./_}

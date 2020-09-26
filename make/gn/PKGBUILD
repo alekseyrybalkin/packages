@@ -1,5 +1,5 @@
 pkgname=gn
-pkgver=0.1731.5ed3c9cc
+pkgver=0.1819.e327ffdc
 vcs=git
 # ad9e442d92dcd9ee73a557428cfc336b55cbd533
 gittag=jinni-${pkgver}
