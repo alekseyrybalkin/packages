@@ -15,7 +15,8 @@ build() {
         -Dpager="/usr/bin/less -isR" \
         -Duseshrplib \
         -Dusethreads \
-        -Di_db=undef
+        -Di_db=undef \
+        -Dman3ext=3perl
     make
 }
 
