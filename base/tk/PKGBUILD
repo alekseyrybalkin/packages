@@ -25,6 +25,4 @@ package() {
     sed -e "s#${srcdir}/unix#/usr/lib#" \
         -e "s#${srcdir}#/usr/include#" \
         -i "${pkgdir}/usr/lib/tkConfig.sh"
-    # remove man pages
-    rm -rf ${pkgdir}/usr/share
 }
