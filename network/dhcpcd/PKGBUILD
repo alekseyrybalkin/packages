@@ -19,3 +19,16 @@ package() {
 
     mv -v ${pkgdir}/etc/dhcpcd.conf{,.packaged}
 }
+
+after_install() {
+    getent group dhcpcd >/dev/null || groupadd -g 970 dhcpcd
+    getent passwd dhcpcd >/dev/null || \
+        useradd -c 'dhcpcd' -d /var/lib/dhcpcd -g dhcpcd \
+        -s /bin/false -u 970 dhcpcd
+    chown -R dhcpcd:dhcpcd /var/lib/dhcpcd &> /dev/null
+    chmod 700 /var/lib/dhcpcd &> /dev/null
+}
+
+after_upgrade() {
+    after_install
+}
