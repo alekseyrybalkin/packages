@@ -1,5 +1,5 @@
 pkgname=python-joblib
-pkgver=0.16.0
+pkgver=0.17.0
 vcs=git
 vcs_pkgname=joblib
 gittag=${pkgver}

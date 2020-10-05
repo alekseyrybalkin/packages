@@ -1,7 +1,7 @@
 pkgname=fakeroot
-pkgver=1.25.1
+pkgver=1.25.2
 vcs=git
-# 65bfa45a78034bdd9cc19291ad7f7cb9a43878d6
+# 204e4f4928b8b7a230278e711628dbf26ede1f33
 gittag=jinni-${pkgver}
 relmon_id=12048
 

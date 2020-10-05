@@ -1,8 +1,8 @@
 pkgname=nmap
 pkgver=7.80
 vcs=git
-#NOTE manuaul tags
-gittag=${pkgver}
+# f05296d7f7f7d735e5ccf0f2dca07bc2aa3b7ae8
+gittag=jinni-${pkgver}
 relmon_id=2096
 
 build() {

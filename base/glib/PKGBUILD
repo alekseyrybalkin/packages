@@ -1,5 +1,5 @@
 pkgname=glib
-pkgver=2.66.0
+pkgver=2.66.1
 vcs=git
 gittag=${pkgver}
 relmon_id=10024

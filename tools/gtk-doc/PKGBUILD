@@ -1,7 +1,7 @@
 pkgname=gtk-doc
-pkgver=1.32
+pkgver=1.33.0
 vcs=git
-gittag=GTK_DOC_${pkgver//\./_}
+gittag=${pkgver}
 relmon_id=13140
 updater_rules='lstrip_gtk_doc'
 

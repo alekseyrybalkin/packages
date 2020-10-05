@@ -1,5 +1,5 @@
 pkgname=grep
-pkgver=3.4
+pkgver=3.5
 vcs=git
 gittag=v${pkgver}
 relmon_id=1251

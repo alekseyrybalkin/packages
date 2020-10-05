@@ -1,12 +1,10 @@
 pkgname=python-modernize
-pkgver=0.7
+pkgver=0.8.0
 vcs=git
-gittag=${pkgver}
+gittag=v${pkgver}
 relmon_id=3925
 
 build() {
-    # rename sphinx function from deprecated name to new one
-    sed -i -e 's/add_description_unit/add_object_type/g' docs/sphinxext/extra_types.py
     python-build
 }
 

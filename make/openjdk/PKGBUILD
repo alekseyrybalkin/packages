@@ -1,8 +1,8 @@
 pkgname=openjdk
-pkgver=14.0.2
-_build=12
+pkgver=15
+_build=36
 vcs=mercurial
-vcs_pkgname=jdk14u
+vcs_pkgname=jdk15u
 hgtag=jdk-${pkgver}+${_build}
 updater_rules='no_alpha_skips,lstrip_jdk,skip_+'
 

@@ -1,5 +1,5 @@
 pkgname=mm-common
-pkgver=1.0.1
+pkgver=1.0.2
 vcs=git
 gittag=${pkgver}
 relmon_id=13152
