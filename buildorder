@@ -271,8 +271,6 @@ libpciaccess
 libxkbfile
 libxshmfence
 xcb-util
-xcb-util-keysyms
-xcb-util-image
 libdrm
 mesa
 glu
@@ -409,7 +407,6 @@ strace
 cpp-docs
 lfs-book
 blfs-book
-zoom
 redis
 postgresql
 
