@@ -1,6 +1,6 @@
 #vcs=none
 pkgname=tzdata
-pkgver=2020a
+pkgver=2020b
 urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
 _srctar=${pkgname}${pkgver}.tar.gz
 _srcdir=${location}/${pkgname}${pkgver}
@@ -16,14 +16,14 @@ package() {
     cd ${_srcdir}
     ZONEINFO=${pkgdir}/usr/share/zoneinfo
     mkdir -pv $ZONEINFO/{posix,right}
-    for tz in etcetera southamerica northamerica europe africa antarctica  \
-        asia australasia backward pacificnew systemv; do
-        zic -L /dev/null   -d $ZONEINFO       ${tz}
-        zic -L /dev/null   -d $ZONEINFO/posix ${tz}
-        zic -L leapseconds -d $ZONEINFO/right ${tz}
+    for tz in etcetera southamerica northamerica europe africa antarctica \
+        asia australasia backward; do
+        zic -b fat -L /dev/null   -d $ZONEINFO       ${tz}
+        zic -b fat -L /dev/null   -d $ZONEINFO/posix ${tz}
+        zic -b fat -L leapseconds -d $ZONEINFO/right ${tz}
     done
     cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
-    zic -d $ZONEINFO -p America/New_York
+    zic -b fat -d $ZONEINFO -p America/New_York
     unset ZONEINFO
 
     cd ${location}

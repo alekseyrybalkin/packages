@@ -1,6 +1,6 @@
 pkgname=python
-_pybasever=3.8
-pkgver=${_pybasever}.6
+_pybasever=3.9
+pkgver=${_pybasever}.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=13254

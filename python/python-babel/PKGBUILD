@@ -7,6 +7,11 @@ gittag=v${pkgver}
 relmon_id=11984
 
 build() {
+    # stop using deprecated ElementTree methods "getchildren()" and "getiterator()"
+    git cherry-pick 167b71421f113e2210e4deefef5020402492e5be
+    # simplify iteration code in "import_cldr.py"
+    git cherry-pick 2a826bb1ad9996a1c1e2d3e86a493d01d7f12c09
+
     patch -Np1 -i ../import_cldr_conversion.patch
 
     rm -rf cldr

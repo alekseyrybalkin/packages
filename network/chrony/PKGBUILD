@@ -1,5 +1,5 @@
 pkgname=chrony
-pkgver=3.5.1
+pkgver=4.0
 vcs=git
 gittag=${pkgver}
 relmon_id=8810

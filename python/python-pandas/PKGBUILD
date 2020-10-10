@@ -1,6 +1,6 @@
 pkgname=python-pandas
 PIP_INSTALL_ARGS="--no-use-pep517"
-pkgver=1.1.2
+pkgver=1.1.3
 vcs=git
 vcs_pkgname=pandas
 gittag=v${pkgver}
