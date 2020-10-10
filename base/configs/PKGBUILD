@@ -12,3 +12,11 @@ package() {
     chmod 440 ${pkgdir}/etc/sudoers
     chmod 600 ${pkgdir}/etc/crypttab
 }
+
+after_install() {
+    domains --no-remote
+}
+
+after_upgrade() {
+    after_install
+}
