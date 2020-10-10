@@ -1,0 +1,19 @@
+pkgname=iana-etc
+pkgver=20201005
+vcs=git
+gittag=${pkgver}
+
+build() {
+    sed -i -e 's/getiterator/iter/g' update.py
+    sed -i -e '/sys.exit/d' update.py
+
+    mkdir out
+    cp {service-names-port-numbers,protocol-numbers}.xml out/
+
+    python update.py out
+}
+
+package() {
+    mkdir -p ${pkgdir}/etc
+    install -m644 out/dist/{protocols,services} ${pkgdir}/etc/
+}
