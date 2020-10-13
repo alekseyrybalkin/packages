@@ -1,8 +1,8 @@
 pkgname=lua
 _release=5.3
-pkgver=${_release}.5
+pkgver=${_release}.6
 vcs=git
-gittag=v${pkgver}
+gittag=jinni-v${pkgver}
 relmon_id=1847
 
 build() {
