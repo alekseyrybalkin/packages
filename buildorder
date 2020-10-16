@@ -452,7 +452,7 @@ containerd
 docker
 docker-compose
 
-# gui: gimp, blender
+# gui: gimp
 libarchive
 babl
 json-glib
@@ -468,7 +468,6 @@ libgexiv2
 libmypaint
 mypaint-brushes
 gimp
-blender
 
 # gui: inkscape
 gsl
