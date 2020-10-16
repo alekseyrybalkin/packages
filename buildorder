@@ -187,6 +187,7 @@ libpng
 libjpeg-turbo
 giflib
 cups
+sdl2
 
 # network
 dhcpcd
