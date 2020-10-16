@@ -167,7 +167,6 @@ libuv
 rhash
 cmake
 nasm
-yasm
 tidy-html5
 llvm
 lld
@@ -187,7 +186,6 @@ libpng
 libjpeg-turbo
 giflib
 cups
-sdl2
 
 # network
 dhcpcd
@@ -214,7 +212,6 @@ python-telethon
 acpi
 socat
 zip
-p7zip
 lightlang
 pinentry
 gnupg
@@ -228,7 +225,6 @@ alsa-lib
 libsndfile
 libsamplerate
 alsa-utils
-alsa-plugins
 libogg
 libvorbis
 lame
