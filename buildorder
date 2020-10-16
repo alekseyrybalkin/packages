@@ -167,6 +167,7 @@ libuv
 rhash
 cmake
 nasm
+yasm
 tidy-html5
 llvm
 lld
@@ -212,6 +213,7 @@ python-telethon
 acpi
 socat
 zip
+p7zip
 lightlang
 pinentry
 gnupg
