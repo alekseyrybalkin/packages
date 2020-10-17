@@ -1,6 +1,6 @@
 pkgname=iproute
 vcs=git
-pkgver=5.8.0
+pkgver=5.9.0
 gittag=v${pkgver}
 relmon_id=1392
 

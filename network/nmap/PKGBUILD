@@ -1,5 +1,5 @@
 pkgname=nmap
-pkgver=7.80
+pkgver=7.90
 vcs=git
 # f05296d7f7f7d735e5ccf0f2dca07bc2aa3b7ae8
 gittag=jinni-${pkgver}
