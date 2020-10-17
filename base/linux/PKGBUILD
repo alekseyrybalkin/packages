@@ -10,6 +10,7 @@ build() {
     make
 
     set +e
+    sed -i -e "s/ 'cdomain',//g" Documentation/conf.py
     make htmldocs
     set -e
 }
