@@ -191,8 +191,8 @@ macchanger
 tor
 nginx
 chrony
-openvpn
 tinyproxy
+transmission
 
 # python: telenoti deps
 python-pysocks
@@ -322,7 +322,6 @@ gsettings-desktop-schemas
 libcroco
 librsvg
 adwaita-icon-theme
-transmission
 openjpeg
 poppler
 djvulibre
