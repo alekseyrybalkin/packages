@@ -163,9 +163,6 @@ rhash
 cmake
 nasm
 tidy-html5
-llvm
-lld
-gn
 
 # libs
 boost
@@ -298,9 +295,6 @@ libass
 ffmpeg
 mpv
 
-# make: xorg support
-openjdk
-
 # gui
 xclip
 kitty
@@ -389,9 +383,17 @@ pangomm
 gtkmm
 inkscape
 
+# gui: chromium build deps
+python2
+python2-setuptools
+llvm
+lld
+gn
+openjdk
+nodejs
+
 # gui: chromium
 coffeescript
 vimium
 ublock
-nodejs
 chromium
