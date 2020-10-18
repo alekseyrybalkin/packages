@@ -1,3 +1,4 @@
+# required by openjdk, libreoffice
 #vcs=none
 pkgname=unzip
 pkgver=6.0

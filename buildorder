@@ -44,7 +44,6 @@ gdbm
 expat
 inetutils
 perl
-perl-xml-parser
 help2man
 autoconf
 automake
@@ -53,6 +52,7 @@ coreutils
 diffutils
 gawk
 findutils
+perl-xml-parser
 intltool
 gperf
 groff
@@ -65,13 +65,12 @@ gzip
 iptables
 iproute
 kbd
-libpipeline
 make
 patch
 tar
 texinfo
+libpipeline
 man-db
-unzip
 openssl
 tcl
 tk
@@ -91,9 +90,7 @@ python-pip
 python-cython
 python-docutils
 python-mako
-python-configobj
 python-addons
-python-patiencediff
 
 # base: boot
 ninja
@@ -127,7 +124,6 @@ ji
 
 # tools: vcs
 mercurial
-breezy
 libxslt
 docbook-xsl
 docbook-xml
@@ -151,6 +147,7 @@ physlock
 perl-file-next
 perl-ack
 gtk-doc
+unzip
 
 # make
 ccache
@@ -362,7 +359,6 @@ python-pillow
 python-numpy
 python-pybind11
 python-scipy
-python-dulwich
 python-onetimepass
 python-mistune
 python-pygments
