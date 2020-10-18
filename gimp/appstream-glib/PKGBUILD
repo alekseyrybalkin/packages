@@ -12,6 +12,7 @@ build() {
         -D sysconfdir=/etc \
         -D rpm=false \
         -D stemmer=false \
+        -D dep11=false \
         . build
     ninja -C build
 }

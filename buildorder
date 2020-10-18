@@ -403,46 +403,6 @@ blfs-book
 redis
 postgresql
 
-# dev: docker-compose deps
-libyaml
-libsodium
-
-# python: docker-compose
-python-cached-property
-python-websocket-client
-python-texttable
-python-docopt
-python-yaml
-python-pyrsistent
-python-toml
-python-zipp
-python-importlib-metadata
-python-jsonschema
-python-ply
-python-pycparser
-python-cffi
-python-bcrypt
-python-asn1crypto
-python-cryptography
-python-pynacl
-python-paramiko
-python-docker-pycreds
-python-docker
-python-dockerpty
-python-dotenv
-python-distro
-
-# dev: docker
-bridge-utils
-libseccomp
-lzo
-btrfs-progs
-go
-runc
-containerd
-docker
-docker-compose
-
 # gui: gimp
 libarchive
 babl
