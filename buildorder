@@ -330,10 +330,6 @@ feh
 # python: misc
 python-lxml
 python-chardet
-python-certifi
-python-urllib3
-python-idna
-python-requests
 python-gunicorn
 python-werkzeug
 python-markupsafe
@@ -341,10 +337,6 @@ python-jinja
 python-click
 python-itsdangerous
 python-flask
-python-greenlet
-python-zope-event
-python-zope-interface
-python-gevent
 python-mwparserfromhell
 python-onetimepass
 python-youtube-dl
