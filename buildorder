@@ -62,11 +62,9 @@ gettext
 bison
 less
 gzip
-elfutils
 iptables
 iproute
 kbd
-kmod
 libpipeline
 make
 patch

@@ -29,6 +29,8 @@ build() {
         -Db_lto=false \
         -Dman=true \
         -Dseccomp=false \
+        -Dkmod=false \
+        -Delfutils=false \
         ..
     ninja
 }
