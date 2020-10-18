@@ -383,15 +383,6 @@ pangomm
 gtkmm
 inkscape
 
-# gui: chromium build deps
-python2
-python2-setuptools
-llvm
-lld
-gn
-openjdk
-nodejs
-
 # gui: chromium
 coffeescript
 vimium
