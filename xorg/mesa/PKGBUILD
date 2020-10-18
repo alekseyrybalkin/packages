@@ -10,20 +10,20 @@ build() {
     meson --prefix=$XORG_PREFIX \
         -D b_lto=false \
         -D b_ndebug=true \
-        -D platforms=x11,drm \
+        -D platforms=x11 \
         -D dri-drivers='i965,swrast' \
         -D gallium-drivers='' \
         -D vulkan-drivers='' \
         -D swr-arches=avx,avx2 \
-        -D dri3=true \
-        -D egl=true \
-        -D gbm=true \
-        -D gles1=false \
-        -D gles2=true \
+        -D dri3=enabled \
+        -D egl=enabled \
+        -D gbm=enabled \
+        -D gles1=disabled \
+        -D gles2=enabled \
         -D glx=dri \
         -D llvm=false \
         -D osmesa=classic \
-        -D shared-glapi=true \
+        -D shared-glapi=enabled \
         -D valgrind=false \
         -D libunwind=false \
         . build
