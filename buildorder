@@ -165,14 +165,12 @@ nasm
 tidy-html5
 llvm
 lld
-openmp
 gn
 
 # libs
 boost
 nspr
 nss
-lapack
 libassuan
 libksba
 npth
@@ -328,17 +326,14 @@ djvulibre
 evince
 imlib
 feh
-libreoffice
 
 # python: misc
-python-youtube-dl
-python-urllib3
-python-certifi
-python-idna
-python-chardet
-python-requests
 python-lxml
-python-defusedxml
+python-chardet
+python-certifi
+python-urllib3
+python-idna
+python-requests
 python-gunicorn
 python-werkzeug
 python-markupsafe
@@ -350,19 +345,11 @@ python-greenlet
 python-zope-event
 python-zope-interface
 python-gevent
-python-pycodestyle
-python-modernize
-python-mss
 python-mwparserfromhell
-python-pillow
-python-numpy
-python-pybind11
-python-scipy
 python-onetimepass
-python-mistune
-python-pygments
-python-wcwidth
-python-prompt_toolkit
+python-youtube-dl
+python-mss
+python-pycodestyle
 
 # python: sphinx
 python-imagesize
@@ -373,35 +360,11 @@ python-sphinx
 python-sphinx_rtd_theme
 python-docs-theme
 
-# python: data science
-python-dateutil
-python-xlrd
-python-xlwt
-python-jdcal
-python-et-xmlfile
-python-openpyxl
-python-bottleneck
-python-numexpr
-python-pandas
-python-cycler
-python-cppy
-python-kiwisolver
-python-matplotlib
-python-seaborn
-python-patsy
-python-statsmodels
-python-joblib
-python-threadpoolctl
-python-scikit-learn
-
 # dev
 xapian
-strace
 cpp-docs
 lfs-book
 blfs-book
-redis
-postgresql
 
 # gui: gimp
 libarchive
