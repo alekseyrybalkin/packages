@@ -1,0 +1,18 @@
+pkgname=coffeescript
+pkgver=1.12.8
+vcs=git
+gittag=${pkgver}
+relmon_id=17700
+
+build() {
+    rm -rf .git .gitignore
+    cd ../
+    tar cvf coffeescript-${pkgver}.tgz coffeescript-${pkgver}
+}
+
+package() {
+    cd ..
+    npm install -g --user root --prefix ${pkgdir}/usr coffeescript-${pkgver}.tgz
+
+    rm coffeescript-${pkgver}.tgz
+}
