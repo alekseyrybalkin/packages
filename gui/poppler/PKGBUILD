@@ -12,6 +12,8 @@ build() {
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DTESTDATADIR=$PWD/testfiles \
         -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
+        -DENABLE_SPLASH=OFF \
+        -DBUILD_GTK_TESTS=OFF \
         ..
     make
 }
