@@ -1,7 +1,7 @@
 pkgname=gimp
-pkgver=2.98.0.5
+pkgver=2.98.0.6
 vcs=git
-# 96073ae1b042028f57239109d24c9d818aff7999
+# 172bdbaad3b8e9240349a27d37de72f2a20eb845
 gittag=jinni-GIMP_${pkgver//\./_}
 relmon_id=1161
 updater_rules='skip_big_first'

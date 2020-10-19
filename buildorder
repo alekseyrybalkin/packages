@@ -311,7 +311,6 @@ feh
 
 # python: misc
 python-lxml
-python-chardet
 python-gunicorn
 python-werkzeug
 python-markupsafe
@@ -329,6 +328,7 @@ python-pycodestyle
 python-certifi
 python-urllib3
 python-idna
+python-chardet
 python-requests
 python-pygments
 python-imagesize
