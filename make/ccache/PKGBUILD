@@ -20,7 +20,4 @@ package() {
         ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${prog}
         ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${CHOST}-${prog}
     done
-    for prog in clang clang++; do
-        ln -sf /usr/bin/ccache ${pkgdir}/usr/lib/ccache/bin/${prog}
-    done
 }
