@@ -5,8 +5,6 @@ urls="http://potrace.sourceforge.net/download/1.16/${pkgname}-${pkgver}.tar.gz"
 srctar=${pkgname}-${pkgver}.tar.gz
 
 build() {
-    # build with gcc
-    sed -i -e 's/clang //g' configure
     ./configure \
         --prefix=/usr \
         --mandir=/usr/share/man \
