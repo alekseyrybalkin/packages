@@ -1,11 +1,12 @@
 pkgname=inetutils
-pkgver=1.9.4.0.1
+pkgver=1.9.4.0.2
 vcs=git
-# 393f4c6c3e3761ceed843cb3990169a5ef2f89d1
+# 73e0faebc4c14e92cdc3f3fb070783b7cd5d2468
 gittag=jinni-inetutils-${pkgver//\./_}
 relmon_id=13805
 
 build() {
+    sed -i -e 's/2\.63/2\.64/g' configure.ac
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \

@@ -7,6 +7,9 @@ relmon_id=1392
 build() {
     sed -i /ARPD/d Makefile
     sed -i 's/arpd.8//' man/man8/Makefile
+    # disable libelf
+    sed -i -e 's/libelf --exists/xlibelf --exists/g' configure
+
     ./configure --prefix=/usr
     sed -i -e '/HAVE_BERKELEY_DB:=y/d' config.mk
     make DESTDIR=

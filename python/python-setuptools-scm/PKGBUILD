@@ -1,3 +1,4 @@
+# needed for borg
 pkgname=python-setuptools-scm
 pkgver=4.1.2
 vcs=git

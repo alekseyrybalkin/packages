@@ -1,0 +1,15 @@
+# needed for sphinx
+pkgname=python-requests
+pkgver=2.24.0
+vcs=git
+vcs_pkgname=requests
+gittag=v${pkgver}
+relmon_id=4004
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}

@@ -1,9 +1,9 @@
-pkgname=python-attrs
-pkgver=20.2.0
+pkgname=python-pygments
+pkgver=2.7.1
 vcs=git
-vcs_pkgname=attrs
+vcs_pkgname=pygments
 gittag=${pkgver}
-relmon_id=15099
+relmon_id=3986
 
 build() {
     python-build

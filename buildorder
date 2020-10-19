@@ -80,9 +80,7 @@ sqlite
 python
 python-six
 python-pyparsing
-python-attrs
 python-packaging
-python-appdirs
 python-setuptools
 python-setuptools-scm
 python-wheel
@@ -110,6 +108,7 @@ curl
 systemd
 dbus
 e2fsprogs
+elfutils
 linux
 iucode-tool
 intel-ucode
@@ -165,7 +164,6 @@ nasm
 tidy-html5
 
 # libs
-boost
 nspr
 nss
 libassuan
@@ -174,7 +172,6 @@ npth
 libpng
 libjpeg-turbo
 giflib
-cups
 
 # network
 dhcpcd
@@ -337,6 +334,11 @@ python-mss
 python-pycodestyle
 
 # python: sphinx
+python-certifi
+python-urllib3
+python-idna
+python-requests
+python-pygments
 python-imagesize
 python-pytz
 python-babel
@@ -369,6 +371,7 @@ mypaint-brushes
 gimp
 
 # gui: inkscape
+boost
 gsl
 double-conversion
 potrace
@@ -383,6 +386,7 @@ gtkmm
 inkscape
 
 # gui: chromium
+cups
 coffeescript
 vimium
 ublock

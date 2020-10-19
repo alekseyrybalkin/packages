@@ -1,0 +1,14 @@
+pkgname=python-certifi
+_pkgver=2020.06.20
+pkgver=${_pkgver//\.0/\.}
+vcs=git
+gittag=${_pkgver}
+relmon_id=7995
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}

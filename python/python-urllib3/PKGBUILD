@@ -1,9 +1,9 @@
-pkgname=python-appdirs
-pkgver=1.4.4
+pkgname=python-urllib3
+pkgver=1.25.10
 vcs=git
-vcs_pkgname=appdirs
+vcs_pkgname=urllib3
 gittag=${pkgver}
-relmon_id=6278
+relmon_id=4078
 
 build() {
     python-build
