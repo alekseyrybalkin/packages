@@ -85,9 +85,9 @@ python-setuptools
 python-setuptools-scm
 python-wheel
 python-pip
-python-cython
 python-docutils
 python-mako
+python-cython
 python-addons
 
 # base: boot
@@ -310,7 +310,6 @@ imlib
 feh
 
 # python: misc
-python-lxml
 python-gunicorn
 python-werkzeug
 python-markupsafe

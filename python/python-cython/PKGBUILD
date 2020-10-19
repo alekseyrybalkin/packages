@@ -1,3 +1,4 @@
+# needed to build borg
 pkgname=python-cython
 pkgver=0.29.21
 vcs=git
