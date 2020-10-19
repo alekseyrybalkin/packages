@@ -186,12 +186,13 @@ chrony
 tinyproxy
 transmission
 
-# python: telenoti deps
+# python: telenoti
 python-pysocks
 python-pyasn1
 python-rsa
 python-pyaes
 python-telethon
+telenoti
 
 # tools: more productivity
 acpi
@@ -203,7 +204,6 @@ gnupg
 mutt
 syncema
 borg
-telenoti
 
 # audio
 alsa-lib
