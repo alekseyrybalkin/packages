@@ -1,9 +1,9 @@
-pkgname=python-itsdangerous
-pkgver=1.1.0
+pkgname=python-bottle
+pkgver=0.12.18
 vcs=git
-vcs_pkgname=itsdangerous
+vcs_pkgname=bottle
 gittag=${pkgver}
-relmon_id=3892
+relmon_id=11101
 
 build() {
     python-build

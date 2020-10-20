@@ -6,7 +6,6 @@ gittag=${pkgver}
 relmon_id=3894
 
 build() {
-    patch -Np1 -i ../sphinx-remove-pallets.diff
     python-build
 }
 
