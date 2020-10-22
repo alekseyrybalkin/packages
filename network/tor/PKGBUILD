@@ -8,13 +8,14 @@ build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
+        --localstatedir=/var \
         --disable-seccomp
     make
 }
 
 package() {
     make DESTDIR=${pkgdir} install
-    install -Dm0644 ../tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
+    install -Dm0644 contrib/dist/tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
 }
 
 after_install() {
