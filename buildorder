@@ -57,6 +57,7 @@ intltool
 gperf
 groff
 xz
+zstd
 libxml
 gettext
 bison
