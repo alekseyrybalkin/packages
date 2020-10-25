@@ -6,7 +6,10 @@ relmon_id=1738
 
 build() {
     ./autogen.sh
-    ./configure --prefix=/usr --disable-static --libdir=$LIBDIR
+    ./configure --prefix=/usr \
+        --disable-static \
+        --libdir=$LIBDIR \
+        --disable-zstd
     make
 }
 

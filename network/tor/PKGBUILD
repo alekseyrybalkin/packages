@@ -9,6 +9,7 @@ build() {
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
+        --disable-zstd \
         --disable-seccomp
     make
 }

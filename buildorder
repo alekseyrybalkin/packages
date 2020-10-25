@@ -57,7 +57,6 @@ intltool
 gperf
 groff
 xz
-zstd
 libxml
 gettext
 bison
@@ -126,6 +125,7 @@ ji
 mercurial
 libxslt
 docbook-xsl
+unzip
 docbook-xml
 swig
 apr
@@ -147,9 +147,9 @@ physlock
 perl-file-next
 perl-ack
 gtk-doc
-unzip
 
 # make
+zstd
 ccache
 colm
 ragel

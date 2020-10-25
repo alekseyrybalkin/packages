@@ -26,6 +26,7 @@ build() {
         -D shared-glapi=enabled \
         -D valgrind=false \
         -D libunwind=false \
+        -D zstd=disabled \
         . build
     ninja -C build
 }

@@ -10,6 +10,7 @@ build() {
         --prefix=/usr \
         --without-xml2 \
         --without-nettle \
+        --without-zstd \
         --disable-static
     make
 }

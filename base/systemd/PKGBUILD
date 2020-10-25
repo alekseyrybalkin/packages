@@ -31,6 +31,7 @@ build() {
         -Dseccomp=false \
         -Dkmod=false \
         -Delfutils=false \
+        -Dzstd=false \
         ..
     ninja
 }
