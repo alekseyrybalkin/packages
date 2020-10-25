@@ -17,7 +17,6 @@ gmp
 mpfr
 mpc
 gcc
-doxygen
 bzip2
 pcre
 libffi
@@ -358,21 +357,6 @@ libgexiv2
 libmypaint
 mypaint-brushes
 gimp
-
-# gui: inkscape
-boost
-gsl
-double-conversion
-potrace
-gdl
-mm-common
-libsigc++
-glibmm
-atkmm
-cairomm
-pangomm
-gtkmm
-inkscape
 
 # gui: chromium
 cups
