@@ -315,23 +315,6 @@ python-youtube-dl
 python-mss
 python-pycodestyle
 
-# python: sphinx
-python-certifi
-python-urllib3
-python-idna
-python-chardet
-python-requests
-python-markupsafe
-python-jinja
-python-pygments
-python-imagesize
-python-pytz
-python-babel
-python-alabaster
-python-sphinx
-python-sphinx_rtd_theme
-python-docs-theme
-
 # dev
 xapian
 cpp-docs

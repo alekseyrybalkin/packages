@@ -6,6 +6,9 @@ relmon_id=17405
 
 build() {
     patch -Np1 -i ../remove_canberra.patch
+    sed -i -e '/docs: man html/d' Makefile
+    sed -i -e '/    copy_man_pages/d' setup.py
+    sed -i -e '/    copy_html_docs/d' setup.py
     python setup.py linux-package --update-check-interval=0
 }
 
