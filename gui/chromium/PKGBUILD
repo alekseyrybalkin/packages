@@ -6,7 +6,7 @@ extra_urls="somethere/node_modules-${pkgver}.tar.gz"
 relmon_id=13344
 
 # updating node_modules:
-# git apply ~/.data/ventures/jinni/clean_json_attrs.diff
+# git apply somethere/clean_json_attrs.diff
 # cd third_party/node
 # ./update_npm_deps
 
