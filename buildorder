@@ -316,7 +316,6 @@ python-mss
 python-pycodestyle
 
 # dev
-xapian
 cpp-docs
 lfs-book
 blfs-book
