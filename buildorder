@@ -83,7 +83,6 @@ python-packaging
 python-setuptools
 python-wheel
 python-pip
-python-docutils
 python-mako
 python-addons
 
