@@ -81,12 +81,10 @@ python-six
 python-pyparsing
 python-packaging
 python-setuptools
-python-setuptools-scm
 python-wheel
 python-pip
 python-docutils
 python-mako
-python-cython
 python-addons
 
 # base: boot
@@ -195,7 +193,6 @@ pinentry
 gnupg
 mutt
 syncema
-borg
 
 # audio
 alsa-lib
