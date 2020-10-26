@@ -314,11 +314,6 @@ python-youtube-dl
 python-mss
 python-pycodestyle
 
-# dev
-cpp-docs
-lfs-book
-blfs-book
-
 # gui: gimp
 libarchive
 babl
