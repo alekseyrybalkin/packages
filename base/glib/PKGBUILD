@@ -15,7 +15,7 @@ build() {
     meson --prefix=/usr \
         -D man=true \
         -D selinux=disabled \
-        -D gtk_doc=true \
+        -D gtk_doc=false \
         -D libelf=disabled \
         ..
     ninja
