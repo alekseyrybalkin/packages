@@ -76,9 +76,6 @@ sqlite
 
 # python
 python
-python-six
-python-pyparsing
-python-packaging
 python-setuptools
 python-wheel
 python-pip

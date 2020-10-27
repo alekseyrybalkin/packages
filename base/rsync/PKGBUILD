@@ -1,4 +1,4 @@
-# required by linux-api-headers
+# required to build linux-api-headers
 pkgname=rsync
 pkgver=3.2.3
 vcs=git

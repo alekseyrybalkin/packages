@@ -1,3 +1,4 @@
+# required to build python-pip
 pkgname=python-wheel
 pkgver=0.35.1
 vcs=git
