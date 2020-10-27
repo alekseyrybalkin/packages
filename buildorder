@@ -303,7 +303,6 @@ feh
 python-bottle
 python-mwparserfromhell
 python-youtube-dl
-python-mss
 python-pycodestyle
 
 # gui: gimp
