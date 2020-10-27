@@ -153,7 +153,6 @@ libuv
 rhash
 cmake
 nasm
-tidy-html5
 
 # libs
 nspr
