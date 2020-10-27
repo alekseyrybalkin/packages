@@ -36,7 +36,6 @@ iana-etc
 grep
 readline
 bash
-which
 bc
 libtool
 gdbm
