@@ -301,7 +301,6 @@ imlib
 feh
 
 # python: misc
-python-gunicorn
 python-bottle
 python-mwparserfromhell
 python-youtube-dl
