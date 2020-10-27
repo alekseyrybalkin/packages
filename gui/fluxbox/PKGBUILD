@@ -8,8 +8,10 @@ build() {
     ./autogen.sh
     ./configure --prefix=/usr --disable-imlib2
     make
+    gcc `pkg-config --cflags --libs cairo x11` ../sss.c -o sss
 }
 
 package() {
     make DESTDIR=${pkgdir} install
+    cp sss ${pkgdir}/usr/bin/
 }
