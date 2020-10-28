@@ -179,7 +179,6 @@ transmission
 
 # tools: more productivity
 acpi
-socat
 zip
 lightlang
 pinentry
