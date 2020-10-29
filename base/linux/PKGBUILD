@@ -11,8 +11,8 @@ build() {
 }
 
 package() {
-    . /usr/lib/addons/helpers.bash
+    HOST_DISTRO=$(cat /etc/hostdistro 2>/dev/null || echo "unknown")
 
     mkdir -pv ${pkgdir}/boot
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-`guess_distro`
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${HOST_DISTRO}
 }
