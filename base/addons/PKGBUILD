@@ -11,5 +11,4 @@ package() {
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
-    chmod 755 ${pkgdir}/usr/bin/trust-local-certs
 }
