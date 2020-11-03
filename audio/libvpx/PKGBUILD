@@ -10,6 +10,7 @@ build() {
     ../configure --prefix=/usr \
         --enable-shared \
         --disable-static \
+        --as=nasm \
         --libdir=${LIBDIR}
     make
 }

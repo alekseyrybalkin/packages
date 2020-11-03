@@ -17,7 +17,8 @@ build() {
         --enable-languages=c,c++,fortran \
         --disable-multilib \
         --build=x86_64-unknown-linux-gnu \
-        --with-system-zlib
+        --with-system-zlib \
+        --with-zstd=no
     make
 }
 

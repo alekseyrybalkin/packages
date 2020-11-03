@@ -7,6 +7,8 @@ relmon_id=7305
 build() {
     git clone `find_vcs_repo publicsuffix-list` list
 
+    sed -i -e '/docs\/libpsl\//d' configure.ac
+
     ./autogen.sh
     ./configure \
         --prefix=/usr \

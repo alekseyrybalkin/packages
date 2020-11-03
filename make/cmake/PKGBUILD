@@ -10,7 +10,8 @@ build() {
         --mandir=/share/man \
         --docdir=/share/doc/cmake \
         --no-system-jsoncpp \
-        --no-system-libarchive
+        --no-system-libarchive \
+        --no-system-zstd
     make
 }
 

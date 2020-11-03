@@ -5,10 +5,16 @@ gittag=${pkgver}
 relmon_id=1299
 
 build() {
+    sed -i -e 's/gtkdocize/true/g' autogen.sh
+    sed -i -e '/gtk-doc/d' Makefile.am
+    sed -i -e 's/ docs//g' Makefile.am
+    sed -i -e '/docs/d' configure.ac
+
     ./autogen.sh \
         --prefix=/usr \
         --with-icu=no \
         --with-gobject \
+        --enable-gtk-doc=no \
         --libdir=$LIBDIR
     make
 }

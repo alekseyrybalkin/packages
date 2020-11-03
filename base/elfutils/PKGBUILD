@@ -12,7 +12,8 @@ build() {
         --enable-deterministic-archives \
         --enable-maintainer-mode \
         --disable-debuginfod \
-        --disable-libdebuginfod
+        --disable-libdebuginfod \
+        --with-zstd=no
     make
 }
 
