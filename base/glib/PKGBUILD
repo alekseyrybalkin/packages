@@ -27,3 +27,13 @@ package() {
     python -m compileall -d /usr/share/glib-2.0/codegen ${pkgdir}/usr/share/glib-2.0/codegen
     python -O -m compileall -d /usr/share/glib-2.0/codegen ${pkgdir}/usr/share/glib-2.0/codegen
 }
+
+after_install() {
+    glib-compile-schemas /usr/share/glib-2.0/schemas
+}
+
+after_upgrade() {
+    after_install
+}
+
+generated_files="usr/share/glib-2.0/schemas/gschemas.compiled"
