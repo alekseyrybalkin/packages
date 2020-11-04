@@ -184,10 +184,7 @@ syncema
 alsa-lib
 libsamplerate
 alsa-utils
-libogg
-libvorbis
 lame
-libtheora
 libvpx
 fribidi
 rubberband

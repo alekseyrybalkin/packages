@@ -10,18 +10,18 @@ build() {
     mkdir ${TMPDIR}
     sed -i 's/-lflite"/-lflite -lasound"/' configure
     ./configure --prefix=/usr \
+        --disable-static \
+        --disable-debug \
         --enable-gpl \
         --enable-version3 \
         --enable-nonfree \
-        --disable-static \
         --enable-shared \
-        --disable-debug \
         --enable-libmp3lame \
-        --enable-libtheora \
-        --enable-libvorbis \
         --enable-libvpx \
         --enable-openssl \
         --enable-libxcb \
+        --disable-libtheora \
+        --disable-libvorbis \
         --disable-sdl2
     make
 }
