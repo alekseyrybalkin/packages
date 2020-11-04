@@ -50,8 +50,6 @@ coreutils
 diffutils
 gawk
 findutils
-perl-xml-parser
-intltool
 gperf
 groff
 xz
@@ -145,10 +143,6 @@ ccache
 colm
 ragel
 itstool
-yelp-xsl
-yelp-tools
-gnome-common
-gobject-introspection
 libuv
 rhash
 cmake

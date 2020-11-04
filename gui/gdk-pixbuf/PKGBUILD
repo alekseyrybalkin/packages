@@ -7,7 +7,10 @@ updater_rules='skip_big_second'
 
 build() {
     mkdir build
-    meson --prefix=/usr -D libexecdir=/usr/lib . build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D gir=false \
+        . build
     ninja -C build
 }
 

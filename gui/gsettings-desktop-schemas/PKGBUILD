@@ -7,7 +7,11 @@ updater_rules="skip_big_third,skip_odd_second"
 
 build() {
     mkdir build
-    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D introspection=false \
+        . build
     ninja -C build
 }
 

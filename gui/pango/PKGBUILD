@@ -6,7 +6,11 @@ relmon_id=11783
 
 build() {
     mkdir build
-    meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc . build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D introspection=false \
+        . build
     ninja -C build
 }
 
