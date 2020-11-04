@@ -288,9 +288,7 @@ gtk
 hicolor-icon-theme
 desktop-file-utils
 gsettings-desktop-schemas
-libcroco
-librsvg
-adwaita-icon-theme
+jinni-icon-theme
 openjpeg
 poppler
 evince
