@@ -1,3 +1,4 @@
+# required for rubberband
 pkgname=libsamplerate
 pkgver=0.1.9
 vcs=git

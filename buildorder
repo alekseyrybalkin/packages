@@ -182,7 +182,6 @@ syncema
 
 # audio
 alsa-lib
-libsndfile
 libsamplerate
 alsa-utils
 libogg
