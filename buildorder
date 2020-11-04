@@ -280,8 +280,6 @@ jinni-icon-theme
 openjpeg
 poppler
 evince
-imlib
-feh
 
 # python: misc
 python-bottle
