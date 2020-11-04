@@ -12,6 +12,7 @@ build() {
         -D sysconfdir=/etc \
         -D nautilus=false \
         -D gtk_doc=false \
+        -D user_doc=false \
         -D comics=disabled \
         -D djvu=disabled \
         -D introspection=false \
