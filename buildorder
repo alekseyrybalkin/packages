@@ -155,7 +155,6 @@ libksba
 npth
 libpng
 libjpeg-turbo
-giflib
 
 # network
 dhcpcd
