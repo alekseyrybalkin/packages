@@ -11,7 +11,9 @@ build() {
         --docdir=/share/doc/cmake \
         --no-system-jsoncpp \
         --no-system-libarchive \
-        --no-system-zstd
+        --no-system-zstd \
+        --no-system-librhash \
+        --no-system-libuv
     make
 }
 

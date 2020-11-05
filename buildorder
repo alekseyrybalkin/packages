@@ -142,8 +142,6 @@ zstd
 ccache
 colm
 ragel
-libuv
-rhash
 cmake
 nasm
 
