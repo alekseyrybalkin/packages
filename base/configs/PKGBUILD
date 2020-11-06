@@ -7,7 +7,7 @@ build() {
 }
 
 package() {
-    cp -av etc usr ${pkgdir}/
+    cp -av etc ${pkgdir}/
 
     chmod 440 ${pkgdir}/etc/sudoers
     chmod 600 ${pkgdir}/etc/crypttab
