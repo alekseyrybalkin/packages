@@ -199,7 +199,6 @@ libice
 libsm
 libxt
 libxmu
-libxpm
 libxfixes
 libxcomposite
 libxrender
@@ -215,16 +214,12 @@ libxrandr
 libxtst
 libxv
 libxss
-libxvmc
 libxxf86vm
 libpciaccess
 libxkbfile
 libxshmfence
-xcb-util
 libdrm
 mesa
-glu
-xorg-mkfontscale
 xorg-xauth
 xorg-xinit
 xorg-xinput
@@ -233,8 +228,6 @@ xorg-xmodmap
 xorg-xrandr
 xorg-xrdb
 xorg-xset
-xorg-fonts-encodings
-xorg-fonts-alias
 xkeyboard-config
 pixman
 libepoxy
@@ -245,8 +238,6 @@ libinput
 xf86-input-libinput
 libva
 libva-intel-driver
-freeglut
-libtiff
 lcms
 libxkbcommon
 

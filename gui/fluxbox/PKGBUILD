@@ -6,7 +6,9 @@ relmon_id=824
 
 build() {
     ./autogen.sh
-    ./configure --prefix=/usr --disable-imlib2
+    ./configure --prefix=/usr \
+        --disable-imlib2 \
+        --disable-xpm
     make
 }
 

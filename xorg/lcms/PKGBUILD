@@ -5,7 +5,10 @@ gittag=${pkgver}
 relmon_id=9815
 
 build() {
-    ./autogen.sh --prefix=/usr --disable-static --libdir=$LIBDIR
+    ./autogen.sh --prefix=/usr \
+        --disable-static \
+        --libdir=$LIBDIR \
+        --without-tiff
     make
 }
 

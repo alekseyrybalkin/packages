@@ -10,6 +10,7 @@ build() {
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D gir=false \
+        -D tiff=false \
         . build
     ninja -C build
 }

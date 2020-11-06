@@ -13,6 +13,7 @@ build() {
         -DTESTDATADIR=$PWD/testfiles \
         -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
         -DENABLE_SPLASH=OFF \
+        -DENABLE_LIBTIFF=OFF \
         -DBUILD_GTK_TESTS=OFF \
         -DENABLE_LIBOPENJPEG=none \
         ..
