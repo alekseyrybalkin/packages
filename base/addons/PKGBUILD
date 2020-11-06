@@ -11,4 +11,6 @@ package() {
 
     chown root:${PACMAN} ${pkgdir}/usr/bin/*
     chmod 750 ${pkgdir}/usr/bin/*
+    chown root: ${pkgdir}/usr/bin/browser
+    chmod 755 ${pkgdir}/usr/bin/browser
 }
