@@ -4,7 +4,6 @@
 # base
 filesystem
 configs
-addons
 linux-api-headers
 man-pages
 glibc
