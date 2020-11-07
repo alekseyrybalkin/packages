@@ -37,6 +37,4 @@ after_upgrade() {
 
 generated_files="usr/share/fonts/TTF/.uuid \
     usr/share/fonts/.uuid \
-    usr/share/fonts/X11/.uuid \
-    usr/share/fonts/TTF/fonts.scale \
-    usr/share/fonts/TTF/fonts.dir"
+    usr/share/fonts/X11/.uuid"
