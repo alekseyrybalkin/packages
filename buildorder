@@ -263,6 +263,5 @@ evince
 
 # python: misc
 python-bottle
-python-mwparserfromhell
 python-youtube-dl
 python-pycodestyle
