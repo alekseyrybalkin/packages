@@ -25,8 +25,9 @@ after_install() {
     getent passwd dhcpcd >/dev/null || \
         useradd -c 'dhcpcd' -d /var/lib/dhcpcd -g dhcpcd \
         -s /bin/false -u 970 dhcpcd
-    chown -R dhcpcd:dhcpcd /var/lib/dhcpcd &> /dev/null
-    chmod 700 /var/lib/dhcpcd &> /dev/null
+
+    install -dv -m 0700 /var/lib/dhcpcd
+    chown -R dhcpcd:dhcpcd /var/lib/dhcpcd
 }
 
 after_upgrade() {

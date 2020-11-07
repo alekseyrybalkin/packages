@@ -39,3 +39,12 @@ account         include         system-auth
 session         include         system-auth
 EOF
 }
+
+after_install() {
+    install -dv -m 0755 /var/db
+    install -dv -m 0700 /var/db/sudo
+}
+
+after_upgrade() {
+    after_install
+}

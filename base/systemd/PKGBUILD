@@ -59,7 +59,16 @@ EOF
 }
 
 after_install() {
-    systemd-machine-id-setup
+    install -dv -m 0755 /var/lib/systemd
+    install -dv -m 0755 /var/log/journal
+
+    if [ ! -f /etc/machine-id ]; then
+        systemd-machine-id-setup
+    fi
+}
+
+after_upgrade() {
+    after_install
 }
 
 generated_files="etc/machine-id \

@@ -47,51 +47,6 @@ package() {
     chmod -v 664  ${pkgdir}/var/log/lastlog
     chmod -v 600  ${pkgdir}/var/log/{btmp,faillog}
 
-    # for glibc
-    install -dv -m 0755 ${pkgdir}/usr/lib/locale
-    install -dv -m 0755 ${pkgdir}/var/lib/nss_db
-
-    # for systemd
-    install -dv -m 0755 ${pkgdir}/var/lib/systemd
-    install -dv -m 0755 ${pkgdir}/var/log/journal
-
-    # for dbus
-    install -dv -m 0755 ${pkgdir}/var/lib/dbus
-
-    # for sudo
-    install -dv -m 0755 ${pkgdir}/var/db
-    install -dv -m 0700 ${pkgdir}/var/db/sudo
-
-    # for openssh
-    install -dv -m 0700 ${pkgdir}/var/lib/sshd
-    chown root:sys ${pkgdir}/var/lib/sshd
-
-    # for alsa-utils
-    install -dv -m 0755 ${pkgdir}/var/lib/alsa
-
-    # for fontconfig
-    install -dv -m 0755 ${pkgdir}/var/cache/fontconfig
-
-    # for tor
-    install -dv -m 0700 ${pkgdir}/var/lib/tor
-
-    # for dhcpcd
-    install -dv -m 0700 ${pkgdir}/var/lib/dhcpcd
-
-    # for ji
-    mkdir -pv ${pkgdir}/var/lib/jinni/{installed,uninstalled}
-
-    # for chrony
-    mkdir -pv ${pkgdir}/var/lib/chrony
-
-    # for mutt
-    install -dv -m 0755 ${pkgdir}/var/spool/mail
-    chgrp -v mail ${pkgdir}/var/spool/mail
-
-    # for nginx
-    install -dv -m 0755 ${pkgdir}/var/log/nginx
-    install -dv -m 0755 ${pkgdir}/var/lib/nginx/proxy
-
     cp ../nsswitch.conf ${pkgdir}/etc/nsswitch.conf
     cp ../ld.so.conf ${pkgdir}/etc/ld.so.conf
     cp ../shells ${pkgdir}/etc/shells

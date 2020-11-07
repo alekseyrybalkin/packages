@@ -7,10 +7,7 @@ build() {
 }
 
 package() {
-    cp -av etc ${pkgdir}/
-
-    chmod 440 ${pkgdir}/etc/sudoers
-    chmod 600 ${pkgdir}/etc/crypttab
+    ./bootstrap install ${pkgdir}
 }
 
 after_install() {

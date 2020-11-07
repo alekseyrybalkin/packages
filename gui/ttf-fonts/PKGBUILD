@@ -15,8 +15,6 @@ package() {
 }
 
 after_install() {
-    mkfontscale /usr/share/fonts/TTF
-    mkfontdir /usr/share/fonts/TTF
     fc-cache -fs > /dev/null
 }
 

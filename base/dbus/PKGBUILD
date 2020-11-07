@@ -36,6 +36,8 @@ package() {
 }
 
 after_install() {
+    install -dv -m 0755 /var/lib/dbus
+
     if [ ! -f /var/lib/dbus/machine-id ]; then
         ln -sfv /etc/machine-id /var/lib/dbus/machine-id
     fi

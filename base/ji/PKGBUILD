@@ -8,8 +8,15 @@ build() {
 }
 
 package() {
-    mkdir -p ${pkgdir}/{etc,usr/bin,usr/lib/ji}
+    mkdir -p ${pkgdir}/{usr/bin,usr/lib/ji}
     cp exe ${pkgdir}/usr/bin/ji
     cp util.py ${pkgdir}/usr/lib/ji/
-    cp conf.bash ${pkgdir}/etc/ji.conf.packaged
+}
+
+after_install() {
+    mkdir -pv /var/lib/jinni/{installed,uninstalled}
+}
+
+after_upgrade() {
+    after_install
 }

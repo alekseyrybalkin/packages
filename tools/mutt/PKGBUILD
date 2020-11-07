@@ -20,3 +20,12 @@ build() {
 package() {
     make DESTDIR=${pkgdir} install
 }
+
+after_install() {
+    install -dv -m 0755 /var/spool/mail
+    chgrp -v mail /var/spool/mail
+}
+
+after_upgrade() {
+    after_install
+}

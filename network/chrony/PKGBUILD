@@ -25,7 +25,9 @@ after_install() {
     getent passwd chrony >/dev/null || \
         useradd -c 'chrony' -d /var/lib/chrony -g chrony \
         -s /bin/false -u 183 chrony
-    chown -R chrony:chrony /var/lib/chrony &> /dev/null
+
+    install -dv -m 0700 /var/lib/chrony
+    chown -R chrony:chrony /var/lib/chrony
 }
 
 after_upgrade() {

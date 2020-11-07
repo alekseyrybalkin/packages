@@ -33,11 +33,15 @@ build() {
 package() {
     cd glibc-build
     make install_root=${pkgdir} install
+
+    install -dv -m 0755 ${pkgdir}/usr/lib/locale
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/lib64
 }
 
 after_install() {
+    install -dv -m 0755 /var/lib/nss_db
+
     localedef -i en_US -f UTF-8 en_US.UTF-8
     localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
 }

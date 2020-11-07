@@ -17,3 +17,11 @@ package() {
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
 }
+
+after_install() {
+    install -dv -m 0755 /var/lib/alsa
+}
+
+after_upgrade() {
+    after_install
+}

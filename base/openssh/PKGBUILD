@@ -47,6 +47,9 @@ after_install() {
         useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd \
         -s /bin/false -u 50 sshd
     [ -f /etc/ssh/ssh_host_rsa_key ] || ssh-keygen -A
+
+    install -dv -m 0700 /var/lib/sshd
+    chown root:sys /var/lib/sshd
 }
 
 after_upgrade() {

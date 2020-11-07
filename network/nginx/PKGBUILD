@@ -55,6 +55,9 @@ after_install() {
     getent passwd http >/dev/null || \
         useradd -c 'nginx' -d /var/lib/nginx -g http \
         -s /bin/false -u 33 http
+
+    install -dv -m 0755 /var/log/nginx
+    install -dv -m 0755 /var/lib/nginx/proxy
     chown -R http: /var/log/nginx /var/lib/nginx
 }
 

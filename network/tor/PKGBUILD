@@ -24,8 +24,9 @@ after_install() {
     getent passwd tor >/dev/null || \
         useradd -c 'tor' -d /var/lib/tor -g tor \
         -s /bin/false -u 43 tor
-    chown -R tor:tor /var/lib/tor &> /dev/null
-    chmod 700 /var/lib/tor &> /dev/null
+
+    install -dv -m 0700 /var/lib/tor
+    chown -R tor:tor /var/lib/tor
 }
 
 after_upgrade() {
