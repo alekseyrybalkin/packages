@@ -268,3 +268,6 @@ python-pyasn1
 python-rsa
 python-pyaes
 python-telethon
+
+# gui: chromium extensions
+ublock
