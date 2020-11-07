@@ -22,6 +22,8 @@ package() {
 
     install -Dm644 ../iptables.service ${pkgdir}/usr/lib/systemd/system/iptables.service
     install -Dm755 ../iptables-flush ${pkgdir}/usr/bin/iptables-flush
+
+    install -Dm644 ../empty.rules ${pkgdir}/etc/iptables/empty.rules
 }
 
 generated_files="etc/systemd/system/multi-user.target.wants/iptables.service"
