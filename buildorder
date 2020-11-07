@@ -173,7 +173,6 @@ lightlang
 pinentry
 gnupg
 mutt
-syncema
 
 # audio
 alsa-lib
