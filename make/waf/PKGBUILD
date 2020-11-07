@@ -1,0 +1,27 @@
+pkgname=waf
+pkgver=2.0.20
+vcs=git
+gittag=waf-${pkgver}
+relmon_id=5116
+
+build() {
+    PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
+    sed -e "/test(i/ s|dirname|'python${PYVERSION}/site-packages/waf'|" -i waf-light
+
+    ./waf-light \
+        configure --prefix=/usr \
+        build --make-waf
+
+    # removing compiled in vendored library from executable
+    sed -i '/^#==>$/,/^#<==$/d' waf
+}
+
+package() {
+    install -vDm 755 waf -t ${pkgdir}/usr/bin
+    install -vDm 644 wscript -t ${pkgdir}/usr/share/${pkgname}
+
+    PYVERSION=`python -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))"`
+    install -vDm 644 waflib/*.py -t ${pkgdir}/usr/lib/python${PYVERSION}/site-packages/waf/waflib
+    install -vDm 644 waflib/Tools/*.py -t ${pkgdir}/usr/lib/python${PYVERSION}/site-packages/waf/waflib/Tools
+    install -vDm 644 waflib/extras/*.py -t ${pkgdir}/usr/lib/python${PYVERSION}/site-packages/waf/waflib/extras
+}

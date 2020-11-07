@@ -144,6 +144,7 @@ colm
 ragel
 cmake
 nasm
+waf
 
 # libs
 nspr
