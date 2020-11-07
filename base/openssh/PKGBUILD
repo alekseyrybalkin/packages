@@ -28,8 +28,7 @@ package() {
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
     # do not replace ssh{,d}_config, since it is in git repo now
-    mv -v ${pkgdir}/etc/ssh/ssh_config{,.packaged}
-    mv -v ${pkgdir}/etc/ssh/sshd_config{,.packaged}
+    rm -v ${pkgdir}/etc/ssh/ssh{,d}_config
 
     mkdir -p ${pkgdir}/etc/pam.d
     cat > ${pkgdir}/etc/pam.d/sshd << "EOF"

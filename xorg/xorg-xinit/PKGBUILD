@@ -15,5 +15,5 @@ build() {
 
 package() {
     make DESTDIR=${pkgdir} install
-    mv ${pkgdir}/etc/X11/app-defaults/xinitrc{,.packaged}
+    rm -v ${pkgdir}/etc/X11/app-defaults/xinitrc
 }

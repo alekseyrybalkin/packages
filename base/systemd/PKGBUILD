@@ -43,7 +43,7 @@ package() {
     rm -rvf ${pkgdir}/usr/lib/rpm
 
     for conf in journald logind system user; do
-        mv ${pkgdir}/etc/systemd/${conf}.conf{,.packaged}
+        rm -v ${pkgdir}/etc/systemd/${conf}.conf
     done
 
     ln -sv /usr/lib/systemd/systemd-udevd ${pkgdir}/usr/bin/udevd

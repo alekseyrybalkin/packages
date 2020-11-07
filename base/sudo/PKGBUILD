@@ -27,7 +27,7 @@ build() {
 package() {
     make DESTDIR=${pkgdir} install
     # do not replace /etc/sudoers, since it is in git repo now
-    mv -v ${pkgdir}/etc/sudoers{,.packaged}
+    rm -v ${pkgdir}/etc/sudoers
     # remove /var, filesystem package creates everything in there
     rm -rvf ${pkgdir}/var
     rm -rvf ${pkgdir}/run

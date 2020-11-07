@@ -46,7 +46,7 @@ build() {
 package() {
     make DESTDIR=${pkgdir} install
     rm -rf ${pkgdir}/{var,run}
-    mv -v ${pkgdir}/etc/nginx/nginx.conf{,.packaged}
+    rm -v ${pkgdir}/etc/nginx/nginx.conf
     install -Dm644 ../nginx.service ${pkgdir}/usr/lib/systemd/system/nginx.service
 }
 
