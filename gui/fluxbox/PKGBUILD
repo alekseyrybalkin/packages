@@ -8,7 +8,8 @@ build() {
     ./autogen.sh
     ./configure --prefix=/usr \
         --disable-imlib2 \
-        --disable-xpm
+        --disable-xpm \
+        --disable-fribidi
     make
 }
 
