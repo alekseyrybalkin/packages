@@ -1,5 +1,5 @@
 pkgname=python-telethon
-pkgver=1.16.4
+pkgver=1.17.5
 vcs=git
 vcs_pkgname=telethon
 gittag=v${pkgver}

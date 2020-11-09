@@ -166,14 +166,6 @@ chrony
 tinyproxy
 transmission
 
-# python: telenoti
-python-pysocks
-python-pyasn1
-python-rsa
-python-pyaes
-python-telethon
-telenoti
-
 # tools: more productivity
 acpi
 lightlang
@@ -272,3 +264,10 @@ evince
 python-bottle
 python-youtube-dl
 python-pycodestyle
+
+# python: telenoti deps
+python-pysocks
+python-pyasn1
+python-rsa
+python-pyaes
+python-telethon
