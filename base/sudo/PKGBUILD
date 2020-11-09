@@ -1,7 +1,7 @@
 pkgname=sudo
 pkgver=1.9.3p1
-vcs=mercurial
-hgtag=SUDO_${pkgver//\./_}
+vcs=git
+gittag=SUDO_${pkgver//\./_}
 relmon_id=4906
 updater_rules="no_alpha_skips"
 
