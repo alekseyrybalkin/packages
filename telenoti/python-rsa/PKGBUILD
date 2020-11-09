@@ -1,0 +1,13 @@
+pkgname=python-rsa
+pkgver=4.6
+vcs=git
+gittag=version-${pkgver}
+relmon_id=8808
+
+build() {
+    python-build
+}
+
+package() {
+    python-package
+}

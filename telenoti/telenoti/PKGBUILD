@@ -1,0 +1,31 @@
+pkgname=telenoti
+pkgver=3
+vcs=git
+gittag=v${pkgver}
+
+build() {
+    :
+}
+
+package() {
+    mkdir -p ${pkgdir}/{usr/bin,etc,usr/lib/systemd/system}
+    install -m 755 telenoti.py ${pkgdir}/usr/bin/telenoti
+    install -m 755 telenoti-login.py ${pkgdir}/usr/bin/telenoti-login
+    install -m 644 telenoti-example.conf ${pkgdir}/etc/telenoti-example.conf
+    install -m 644 telenoti.service ${pkgdir}/usr/lib/systemd/system/
+}
+
+after_install() {
+    if ! getent passwd telenoti >/dev/null; then
+        useradd --system --shell /bin/false telenoti
+    fi
+    if [ ! -d '/var/lib/telenoti' ]; then
+        mkdir -p '/var/lib/telenoti'
+        chown telenoti: '/var/lib/telenoti'
+        chmod 700 '/var/lib/telenoti'
+    fi
+}
+
+after_upgrade() {
+    after_install
+}
