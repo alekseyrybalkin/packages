@@ -8,7 +8,6 @@ build() {
     make configure
     ./configure --prefix=/usr \
         --libexecdir=/usr/lib \
-        --with-libpcre \
         --with-gitconfig=/etc/gitconfig
     make
 }
