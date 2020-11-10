@@ -1,31 +1,23 @@
-#vcs=none
 pkgname=tzdata
 pkgver=2020d
-urls="http://www.iana.org/time-zones/repository/releases/${pkgname}${pkgver}.tar.gz"
-_srctar=${pkgname}${pkgver}.tar.gz
-_srcdir=${location}/${pkgname}${pkgver}
+vcs=git
+gittag=${pkgver}
 relmon_id=5021
 updater_rules="no_alpha_skips"
 
 build() {
-    mkdir ${_srcdir}
-    tar xf ${TARBALLS_HOME}/${_srctar} -C ${_srcdir}
+    make
 }
 
 package() {
-    cd ${_srcdir}
     ZONEINFO=${pkgdir}/usr/share/zoneinfo
-    mkdir -pv $ZONEINFO/{posix,right}
+    mkdir -pv ${ZONEINFO}/{posix,right}
     for tz in etcetera southamerica northamerica europe africa antarctica \
         asia australasia backward; do
-        zic -b fat -L /dev/null   -d $ZONEINFO       ${tz}
-        zic -b fat -L /dev/null   -d $ZONEINFO/posix ${tz}
-        zic -b fat -L leapseconds -d $ZONEINFO/right ${tz}
+        zic -b fat -L /dev/null   -d ${ZONEINFO}       ${tz}
+        zic -b fat -L /dev/null   -d ${ZONEINFO}/posix ${tz}
+        zic -b fat -L leapseconds -d ${ZONEINFO}/right ${tz}
     done
-    cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
-    zic -b fat -d $ZONEINFO -p America/New_York
-    unset ZONEINFO
-
-    cd ${location}
-    rm -rf ${_srcdir}
+    cp -v zone.tab zone1970.tab iso3166.tab ${ZONEINFO}
+    zic -b fat -d ${ZONEINFO} -p America/New_York
 }
