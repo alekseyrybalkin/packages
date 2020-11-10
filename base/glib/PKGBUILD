@@ -17,6 +17,7 @@ build() {
         -D selinux=disabled \
         -D gtk_doc=false \
         -D libelf=disabled \
+        -D internal_pcre=true \
         ..
     ninja
 }

@@ -14,7 +14,6 @@ mpfr
 mpc
 gcc
 bzip2
-pcre
 libffi
 ncurses
 attr

@@ -8,6 +8,7 @@ build() {
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \
+        --disable-perl-regexp \
         --build=x86_64-unknown-linux-gnu
     make
 }

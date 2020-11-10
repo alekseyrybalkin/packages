@@ -6,7 +6,8 @@ relmon_id=4919
 
 build() {
     ./autogen.sh
-    ./configure --prefix=/usr
+    ./configure --prefix=/usr \
+        --without-pcre
     make
 }
 
