@@ -1,5 +1,5 @@
 pkgname=pango
-pkgver=1.47.0
+pkgver=1.48.0
 vcs=git
 gittag=${pkgver}
 relmon_id=11783
@@ -9,7 +9,7 @@ build() {
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
-        -D introspection=false \
+        -D introspection=disabled \
         . build
     ninja -C build
 }
