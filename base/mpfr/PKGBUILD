@@ -1,14 +1,11 @@
+#vcs=subversion
 pkgname=mpfr
 pkgver=4.1.0
-vcs=git-svn
-vcs_pkgname=mpfr-git-svn
-gittag=origin/tags/${pkgver}
+urls="https://ftp.gnu.org/gnu/mpfr/mpfr-${pkgver}.tar.xz"
+srctar=mpfr-${pkgver}.tar.xz
 relmon_id=2019
-updater_rules='skip_@'
 
 build() {
-    mkdir m4
-    ./autogen.sh
     ./configure --prefix=/usr \
         --enable-thread-safe \
         --disable-static \
