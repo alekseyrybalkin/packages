@@ -108,9 +108,6 @@ ji
 
 # tools: vcs
 mercurial
-swig
-apr
-subversion
 git
 git-crypt
 fossil
