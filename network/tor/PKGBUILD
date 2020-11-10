@@ -10,7 +10,8 @@ build() {
         --sysconfdir=/etc \
         --localstatedir=/var \
         --disable-zstd \
-        --disable-seccomp
+        --disable-seccomp \
+        --disable-asciidoc
     make
 }
 

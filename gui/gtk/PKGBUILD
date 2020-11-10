@@ -11,7 +11,7 @@ build() {
         -D sysconfdir=/etc \
         -D colord=no \
         -D gtk_doc=false \
-        -D man=true \
+        -D man=false \
         -D broadway_backend=true \
         -D wayland_backend=false \
         -D print_backends='file' \

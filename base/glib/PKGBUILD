@@ -13,7 +13,7 @@ build() {
     cd build
 
     meson --prefix=/usr \
-        -D man=true \
+        -D man=false \
         -D selinux=disabled \
         -D gtk_doc=false \
         -D libelf=disabled \

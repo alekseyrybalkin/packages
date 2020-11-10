@@ -6,6 +6,9 @@ extra_urls="https://alpha.gnu.org/gnu/gettext/archive.dir-${pkgver}.tar.xz"
 relmon_id=898
 
 build() {
+    # Fix build failure with bison 3.7. Revisit bison Makefile rules.
+    git cherry-pick ad3bbee2d98fab6c1e2f132394ca5565a7dae678
+
     # don't build problematic examples
     for lang in java pascal csharp; do
         sed -i -e "/hello-${lang}/d" gettext-tools/examples/po/Makefile.am \
