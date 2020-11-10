@@ -27,7 +27,7 @@ build() {
         -Dsysusers=false \
         -Drpmmacrosdir=no \
         -Db_lto=false \
-        -Dman=true \
+        -Dman=false \
         -Dseccomp=false \
         -Dkmod=false \
         -Delfutils=false \

@@ -5,9 +5,9 @@ gittag=${pkgver}
 relmon_id=17093
 
 build() {
-    make ENABLE_MAN=yes PREFIX=/usr
+    make ENABLE_MAN=no PREFIX=/usr
 }
 
 package() {
-    make ENABLE_MAN=yes PREFIX=/usr DESTDIR=${pkgdir} install
+    make ENABLE_MAN=no PREFIX=/usr DESTDIR=${pkgdir} install
 }

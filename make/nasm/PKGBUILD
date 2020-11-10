@@ -5,10 +5,12 @@ gittag=nasm-${pkgver}
 relmon_id=2048
 
 build() {
+    sed -i -e '/\/nasm.1/d' Makefile.in
+    sed -i -e '/\/ndisasm.1/d' Makefile.in
+
     ./autogen.sh
     ./configure --prefix=/usr
     make
-    make manpages
 }
 
 package() {

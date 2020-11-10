@@ -11,12 +11,10 @@ build() {
         --with-libpcre \
         --with-gitconfig=/etc/gitconfig
     make
-    make html
-    make man
 }
 
 package() {
-    make DESTDIR=${pkgdir} install install-html install-man
+    make DESTDIR=${pkgdir} install
     find ${pkgdir} -name perllocal.pod -delete
     find ${pkgdir} -name .packlist -delete
 }

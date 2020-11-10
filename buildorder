@@ -109,14 +109,9 @@ ji
 
 # tools: vcs
 mercurial
-libxslt
-docbook-xsl
-docbook-xml
 swig
 apr
 subversion
-asciidoc
-xmlto
 git
 git-crypt
 fossil

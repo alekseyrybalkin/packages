@@ -5,6 +5,9 @@ gittag=jinni-${pkgver}
 relmon_id=5524
 
 build() {
+    sed -i -e '/xmlto/d' meson.build
+    sed -i -e "s/xmlto/'true'/g" data/meson.build
+
     export ac_cv_func_fdatasync=no
 
     sed -i -e 's/itstool/true/g' data/freedesktop_generate.sh

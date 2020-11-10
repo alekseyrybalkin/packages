@@ -13,7 +13,8 @@ build() {
         --disable-db \
         --docdir=/usr/share/doc/pam \
         --enable-tally \
-        --enable-tally2
+        --enable-tally2 \
+        --disable-doc
     make
 }
 

@@ -5,11 +5,15 @@ gittag=${pkgver}
 relmon_id=8699
 
 build() {
+    sed -i -e '/^docs\/man/d' configure.ac
+    sed -i -e '/docs/d' Makefile.am
+
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --sbindir=/usr/bin \
         --localstatedir=/var \
-        --enable-transparent
+        --enable-transparent \
+        --disable-manpage-support
     make
 }
 
