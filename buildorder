@@ -215,7 +215,6 @@ xorg-xinput
 xorg-xkbcomp
 xorg-xmodmap
 xorg-xrandr
-xorg-xrdb
 xorg-xset
 xkeyboard-config
 pixman
