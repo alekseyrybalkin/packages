@@ -9,3 +9,11 @@ build() {
 package() {
     python-package
 }
+
+after_install() {
+    mkdir -pv /var/lib/jinni/{installed,uninstalled}
+}
+
+after_upgrade() {
+    after_install
+}

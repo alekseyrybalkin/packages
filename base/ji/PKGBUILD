@@ -1,5 +1,5 @@
 pkgname=ji
-pkgver=76
+pkgver=77
 vcs=git
 gittag=v${pkgver}
 
@@ -10,12 +10,4 @@ build() {
 package() {
     mkdir -p ${pkgdir}/usr/bin
     cp exe ${pkgdir}/usr/bin/ji
-}
-
-after_install() {
-    mkdir -pv /var/lib/jinni/{installed,uninstalled}
-}
-
-after_upgrade() {
-    after_install
 }
