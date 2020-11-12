@@ -1,5 +1,5 @@
 pkgname=ji
-pkgver=73
+pkgver=76
 vcs=git
 gittag=v${pkgver}
 
@@ -8,9 +8,8 @@ build() {
 }
 
 package() {
-    mkdir -p ${pkgdir}/{usr/bin,usr/lib/ji}
+    mkdir -p ${pkgdir}/usr/bin
     cp exe ${pkgdir}/usr/bin/ji
-    cp util.py ${pkgdir}/usr/lib/ji/
 }
 
 after_install() {
