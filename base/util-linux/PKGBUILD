@@ -14,7 +14,7 @@ build() {
         --enable-chfn-chsh \
         --enable-write \
         --enable-mesg \
-        --with-python=3
+        --without-python
     make
 }
 

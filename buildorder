@@ -63,8 +63,8 @@ texinfo
 libpipeline
 man-db
 openssl
+util-linux
 tcl
-tk
 sqlite
 
 # python
@@ -80,7 +80,6 @@ ninja
 meson
 libgpg-error
 libgcrypt
-util-linux
 libaio
 device-mapper
 cpio
@@ -230,6 +229,7 @@ ffmpeg
 mpv
 
 # gui
+tk
 xclip
 kitty
 ttf-fonts
