@@ -10,7 +10,7 @@ build() {
         --enable-maintainer-mode \
         --prefix=/usr \
         --build=x86_64-unknown-linux-gnu \
-        --libdir=${LIBDIR}
+        --libdir=/usr/lib
     make
 }
 
