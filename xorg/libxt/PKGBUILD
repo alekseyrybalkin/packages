@@ -5,7 +5,7 @@ gittag=libXt-${pkgver}
 relmon_id=1793
 
 build() {
-    ./autogen.sh $XORG_CONFIG \
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static \
         --with-appdefaultdir=/etc/X11/app-defaults \
         --libdir=/usr/lib
     make

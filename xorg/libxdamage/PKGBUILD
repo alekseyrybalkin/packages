@@ -5,7 +5,7 @@ gittag=libXdamage-${pkgver}
 relmon_id=1771
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static --libdir=/usr/lib
     make
 }
 

@@ -5,7 +5,7 @@ gittag=${pkgname}-${pkgver}
 relmon_id=5191
 
 build() {
-    ./autogen.sh $XORG_CONFIG --with-xkb-rules-symlink=xorg
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static --with-xkb-rules-symlink=xorg
     make
 }
 

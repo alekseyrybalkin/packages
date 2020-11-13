@@ -8,7 +8,7 @@ relmon_id=15018
 updater_rules="lstrip_${_pkgname}"
 
 build() {
-    ./autogen.sh $XORG_CONFIG
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static
     make
 }
 

@@ -7,7 +7,7 @@ relmon_id=5258
 updater_rules="lstrip_${_pkgname}"
 
 build() {
-    ./autogen.sh $XORG_CONFIG \
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static \
         --with-xinitdir=/etc/X11/app-defaults
     make
     sed -i -e "s/xserverauthfile=\$HOME\/\.serverauth\.\$\$$/xserverauthfile=\$XAUTHORITY; touch \$XAUTHORITY/g" startx

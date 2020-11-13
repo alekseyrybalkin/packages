@@ -9,7 +9,7 @@ build() {
     # gcc 10
     export CFLAGS+=' -fcommon'
 
-    ./autogen.sh $XORG_CONFIG
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static
     make
 }
 

@@ -5,7 +5,7 @@ gittag=libXrender-${pkgver}
 relmon_id=1789
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static --libdir=/usr/lib
     make
 }
 
