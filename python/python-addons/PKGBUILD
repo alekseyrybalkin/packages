@@ -7,7 +7,7 @@ build() {
 }
 
 package() {
-    python-package
+    python_package
 }
 
 after_install() {

@@ -10,7 +10,7 @@ build() {
 }
 
 package() {
-    python-package
+    python_package
 
     rm -rf ${pkgdir}/usr/etc
 }

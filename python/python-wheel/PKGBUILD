@@ -3,7 +3,7 @@ pkgname=python-wheel
 pkgver=0.35.1
 vcs=git
 vcs_pkgname=wheel
-hgtag=${pkgver}
+gittag=${pkgver}
 relmon_id=11428
 
 build() {
@@ -11,5 +11,5 @@ build() {
 }
 
 package() {
-    python-package
+    python_package
 }

@@ -14,7 +14,7 @@ build() {
 }
 
 package() {
-    python-package
+    python_package
 
     # remove files with spaces in filenames
     rm ${pkgdir}/usr/lib/python*/site-packages/setuptools/script*
