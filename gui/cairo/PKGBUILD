@@ -14,7 +14,7 @@ build() {
         --enable-gl \
         --enable-egl \
         --enable-tee \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

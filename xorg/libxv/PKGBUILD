@@ -5,7 +5,7 @@ gittag=libXv-${pkgver}
 relmon_id=1795
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

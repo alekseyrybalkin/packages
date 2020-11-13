@@ -7,7 +7,7 @@ relmon_id=9815
 build() {
     ./autogen.sh --prefix=/usr \
         --disable-static \
-        --libdir=$LIBDIR \
+        --libdir=/usr/lib \
         --without-tiff
     make
 }

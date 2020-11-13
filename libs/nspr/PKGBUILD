@@ -12,7 +12,7 @@ build() {
         --with-mozilla \
         --with-pthreads \
         --enable-64bit \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

@@ -15,7 +15,7 @@ build() {
         --with-default-fonts=/usr/share/fonts \
         --with-add-fonts=/usr/share/fonts \
         --with-templatedir=/etc/fonts/conf.avail \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

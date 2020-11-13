@@ -19,7 +19,7 @@ build() {
     ./configure --prefix=/usr \
         --disable-static \
         --enable-readline \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

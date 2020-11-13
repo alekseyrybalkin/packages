@@ -5,7 +5,7 @@ gittag=libXrandr-${pkgver}
 relmon_id=1788
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

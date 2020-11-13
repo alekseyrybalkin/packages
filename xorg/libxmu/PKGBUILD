@@ -5,7 +5,7 @@ gittag=libXmu-${pkgver}
 relmon_id=1785
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

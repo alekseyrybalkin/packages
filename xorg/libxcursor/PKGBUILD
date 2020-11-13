@@ -5,7 +5,7 @@ gittag=libXcursor-${pkgver}
 relmon_id=1770
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

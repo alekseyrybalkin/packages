@@ -5,7 +5,7 @@ gittag=libXfixes-${pkgver}
 relmon_id=1775
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

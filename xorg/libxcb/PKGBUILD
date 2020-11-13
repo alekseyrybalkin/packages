@@ -9,7 +9,7 @@ build() {
     ./autogen.sh $XORG_CONFIG \
         --enable-xinput --enable-xkb \
         --docdir='${datadir}'/doc/${pkgname} \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

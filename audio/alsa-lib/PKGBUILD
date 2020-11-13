@@ -6,7 +6,7 @@ relmon_id=38
 
 build() {
     autoreconf -fi
-    ./configure --libdir=$LIBDIR --disable-python
+    ./configure --libdir=/usr/lib --disable-python
     make
 }
 

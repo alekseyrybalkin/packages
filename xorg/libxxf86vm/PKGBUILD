@@ -5,7 +5,7 @@ gittag=libXxf86vm-${pkgver}
 relmon_id=1799
 
 build() {
-    ./autogen.sh $XORG_CONFIG --libdir=$LIBDIR
+    ./autogen.sh $XORG_CONFIG --libdir=/usr/lib
     make
 }
 

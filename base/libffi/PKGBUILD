@@ -11,7 +11,7 @@ build() {
     sed -e '/^includedir/ s/=.*$/=@includedir@/' -e 's/^Cflags: -I${includedir}/Cflags:/' -i libffi.pc.in
     ./configure --prefix=/usr \
         --disable-static \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

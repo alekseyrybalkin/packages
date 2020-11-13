@@ -15,7 +15,7 @@ build() {
         --with-icu=no \
         --with-gobject \
         --enable-gtk-doc=no \
-        --libdir=$LIBDIR
+        --libdir=/usr/lib
     make
 }
 

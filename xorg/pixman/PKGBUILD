@@ -5,7 +5,7 @@ gittag=pixman-${pkgver}
 relmon_id=3648
 
 build() {
-    ./autogen.sh --prefix=/usr --disable-static --disable-gtk --libdir=$LIBDIR
+    ./autogen.sh --prefix=/usr --disable-static --disable-gtk --libdir=/usr/lib
     make
 }
 
