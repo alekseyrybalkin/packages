@@ -6,7 +6,7 @@ gittag=${pkgver}
 relmon_id=5292
 
 build() {
-    python-build
+    :
 }
 
 package() {

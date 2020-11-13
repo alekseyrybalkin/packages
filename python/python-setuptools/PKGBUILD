@@ -10,7 +10,7 @@ build() {
     patch -Np1 -i ../bootstrap-fix.patch
     python bootstrap.py
 
-    python-build
+    :
 }
 
 package() {

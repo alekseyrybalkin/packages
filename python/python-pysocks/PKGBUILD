@@ -7,7 +7,7 @@ gittag=jinni-${pkgver}
 relmon_id=10673
 
 build() {
-    python-build
+    :
 }
 
 package() {

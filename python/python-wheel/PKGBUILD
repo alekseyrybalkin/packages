@@ -7,7 +7,7 @@ hgtag=${pkgver}
 relmon_id=11428
 
 build() {
-    python-build
+    :
 }
 
 package() {
