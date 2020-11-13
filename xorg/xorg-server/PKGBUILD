@@ -14,7 +14,7 @@ build() {
     patch -Np1 -i ../0001-v2-FS-58644.patch
 
     mkdir build
-    meson --prefix=$XORG_PREFIX \
+    meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D os_vendor="Jinni GNU/Linux" \
         -D ipv6=true \

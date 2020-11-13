@@ -7,7 +7,7 @@ updater_rules='skip_big_first'
 
 build() {
     mkdir build
-    meson --prefix=$XORG_PREFIX \
+    meson --prefix=/usr \
         -D b_lto=false \
         -D b_ndebug=true \
         -D platforms=x11 \
@@ -33,6 +33,6 @@ build() {
 
 package() {
     DESTDIR=${pkgdir} ninja -C build install
-    mkdir -pv ${pkgdir}${XORG_PREFIX}/share/doc/mesa
-    cp -rfv docs/* ${pkgdir}${XORG_PREFIX}/share/doc/mesa
+    mkdir -pv ${pkgdir}/usr/share/doc/mesa
+    cp -rfv docs/* ${pkgdir}/usr/share/doc/mesa
 }

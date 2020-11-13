@@ -7,7 +7,7 @@ updater_rules="skip_big_third"
 
 build() {
     mkdir build
-    meson --prefix=$XORG_PREFIX \
+    meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D udev-dir=/usr/lib/udev \
         -D debug-gui=false \
