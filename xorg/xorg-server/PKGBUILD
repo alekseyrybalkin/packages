@@ -16,7 +16,7 @@ build() {
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
-        -D os_vendor="Jinni GNU/Linux" \
+        -D os_vendor="GNU/Linux" \
         -D ipv6=true \
         -D xcsecurity=true \
         -D xorg=true \

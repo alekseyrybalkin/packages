@@ -1,4 +1,4 @@
-NAME="Jinni GNU/Linux"
-PRETTY_NAME="Jinni GNU/Linux"
-ID=jinni
+NAME="GNU/Linux"
+PRETTY_NAME="GNU/Linux"
+ID=gnulinux
 BUILD_ID=rolling

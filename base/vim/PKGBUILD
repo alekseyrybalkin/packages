@@ -12,7 +12,6 @@ build() {
         --enable-multibyte \
         --with-x=no \
         --disable-gui \
-        --with-compiledby=jinni \
         --enable-python3interp=dynamic
     make
 }
