@@ -98,12 +98,11 @@ iucode-tool
 intel-ucode
 initramfs
 
-# base: ji
+# base: package management
 vim
 fakeroot
 sudo
 openssh
-ji
 
 # tools: vcs
 mercurial
