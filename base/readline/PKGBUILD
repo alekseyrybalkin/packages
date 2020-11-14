@@ -2,7 +2,7 @@ pkgname=readline
 pkgver=8.0.004
 vcs=git
 # c5ad6be530f5c1daf64a2d20df4baba9f6b57aa4
-gittag=jinni-readline-${pkgver}
+gittag=handmade-readline-${pkgver}
 relmon_id=4173
 
 build() {

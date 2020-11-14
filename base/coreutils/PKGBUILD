@@ -2,7 +2,7 @@ pkgname=coreutils
 pkgver=8.32.0.1
 vcs=git
 # ff80b6b0a0507e24f39cc1aad09d147f5187430b
-gittag=jinni-v${pkgver}
+gittag=handmade-v${pkgver}
 relmon_id=343
 
 build() {

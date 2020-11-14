@@ -2,7 +2,7 @@ pkgname=inetutils
 pkgver=1.9.4.0.2
 vcs=git
 # 73e0faebc4c14e92cdc3f3fb070783b7cd5d2468
-gittag=jinni-inetutils-${pkgver//\./_}
+gittag=handmade-inetutils-${pkgver//\./_}
 relmon_id=13805
 
 build() {

@@ -2,7 +2,7 @@ pkgname=fakeroot
 pkgver=1.25.3
 vcs=git
 # f0a6b1f5d520cf6dec5750b887546a414df367d8
-gittag=jinni-${pkgver}
+gittag=handmade-${pkgver}
 relmon_id=12048
 
 build() {

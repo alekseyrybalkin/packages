@@ -1,8 +1,7 @@
 pkgname=ragel
 pkgver=7.0.0.12
 vcs=git
-# 48cb9c83bfc00b1c5cb44308b9ed2f31fb629b42
-gittag=jinni-ragel-${pkgver}
+gittag=ragel-${pkgver}
 relmon_id=12105
 
 build() {

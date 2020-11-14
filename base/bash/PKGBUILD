@@ -2,7 +2,7 @@ pkgname=bash
 pkgver=5.0.018
 vcs=git
 # 36f2c406ff27995392a9247dfa90672fdaf7dc43
-gittag=jinni-bash-${pkgver}
+gittag=handmade-bash-${pkgver}
 relmon_id=166
 
 build() {

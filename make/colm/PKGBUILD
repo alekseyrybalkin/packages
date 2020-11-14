@@ -2,7 +2,7 @@ pkgname=colm
 pkgver=0.13.0.7
 vcs=git
 # 46488f5222650183e236ad27e6bb9bf3a428bfb6
-gittag=jinni-colm-${pkgver}
+gittag=handmade-colm-${pkgver}
 relmon_id=12622
 
 build() {

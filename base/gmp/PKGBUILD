@@ -4,7 +4,7 @@ pkgver=${_release}.0
 vcs=mercurial
 vcs_pkgname=gmp-${_release}
 # 18021:413ede7e6962
-hgtag=jinni-gmp-${pkgver}
+hgtag=handmade-gmp-${pkgver}
 relmon_id=1186
 
 build() {
