@@ -1,4 +1,4 @@
-pkgname=jinni-icon-theme
+pkgname=icon-theme
 pkgver=2
 vcs=git
 gittag=v${pkgver}

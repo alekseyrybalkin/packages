@@ -239,7 +239,7 @@ shared-mime-info
 gdk-pixbuf
 pango
 gtk
-jinni-icon-theme
+icon-theme
 poppler
 evince
 
