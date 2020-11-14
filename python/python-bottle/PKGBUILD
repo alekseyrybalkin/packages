@@ -1,5 +1,5 @@
 pkgname=python-bottle
-pkgver=0.12.18
+pkgver=0.12.19
 vcs=git
 vcs_pkgname=bottle
 gittag=${pkgver}
