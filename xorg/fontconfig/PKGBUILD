@@ -28,7 +28,7 @@ package() {
 after_install() {
     install -dv -m 0755 /var/cache/fontconfig
 
-    fc-cache -rs > /dev/null
+    fc-cache -rs || true
 }
 
 after_upgrade() {
