@@ -1,4 +1,4 @@
-NO_STRIPPING=1
+disable_stripping=1
 pkgname=glibc
 pkgver=2.32
 vcs=git

@@ -6,12 +6,6 @@ build() {
     :
 }
 
-before_install() {
-    groupadd --gid 1000 ${PACMAN}
-    useradd --uid 1000 -m -g ${PACMAN} -G kvm,audio,video -s /bin/bash ${PACMAN}
-    useradd --uid 1100 -m -g ${PACMAN} -s /bin/bash ${HOUSECARL}
-}
-
 package() {
     # dirs
     mkdir -v ${pkgdir}/{boot,dev,etc,home,mnt,proc,run,sys,usr,var}

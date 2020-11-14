@@ -1,5 +1,5 @@
 pkgname=ji
-pkgver=80
+pkgver=81
 vcs=git
 gittag=v${pkgver}
 

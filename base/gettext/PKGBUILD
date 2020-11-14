@@ -37,7 +37,7 @@ build() {
 
     export GNULIB_TOOL=${srcdir}/gnulib/gnulib-tool
 
-    cp ${TARBALLS_HOME}/archive.dir-${pkgver}.tar.xz gettext-tools/misc/archive.dir.tar.xz
+    cp ${tarballs_path}/archive.dir-${pkgver}.tar.xz gettext-tools/misc/archive.dir.tar.xz
 
     ./autogen.sh
     ./configure --prefix=/usr \
