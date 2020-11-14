@@ -12,8 +12,6 @@ build() {
         --sbindir=/usr/bin \
         --disable-db \
         --docdir=/usr/share/doc/pam \
-        --enable-tally \
-        --enable-tally2 \
         --disable-doc
     make
 }
@@ -55,12 +53,10 @@ session   required   pam_warn.so
 EOF
 
     cat > ${pkgdir}/etc/pam.d/system-login << "EOF"
-auth       required   pam_tally2.so        onerr=succeed file=/var/log/tallylog
 auth       required   pam_shells.so
 auth       requisite  pam_nologin.so
 auth       include    system-auth
 
-account    required   pam_tally2.so
 account    required   pam_access.so
 account    required   pam_nologin.so
 account    include    system-auth
