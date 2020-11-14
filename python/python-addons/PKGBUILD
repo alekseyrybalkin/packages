@@ -11,7 +11,7 @@ package() {
 }
 
 after_install() {
-    mkdir -pv /var/lib/jinni/{installed,uninstalled}
+    mkdir -pv /var/lib/packages/{installed,uninstalled}
 }
 
 after_upgrade() {
