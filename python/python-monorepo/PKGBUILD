@@ -1,6 +1,7 @@
-pkgname=python-addons
+pkgname=python-monorepo
 pkgver=1
 vcs=git
+vcs_pkgname=monorepo
 
 build() {
     :

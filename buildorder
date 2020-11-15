@@ -73,7 +73,7 @@ python-setuptools
 python-wheel
 python-pip
 python-mako
-python-addons
+python-monorepo
 
 # base: boot
 ninja
