@@ -22,5 +22,5 @@ killall -w udevd
 mount --bind /.root/.arch /.root/.arch
 mount --bind /.root/home /.root/.arch/home
 mount --bind /.root/boot /.root/.arch/boot
-mount --bind /.root /.root/.arch/.jinni
+mount --bind /.root /.root/.arch/.base
 exec switch_root /.root/.arch /sbin/init "$@"
