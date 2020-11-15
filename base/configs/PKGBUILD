@@ -11,9 +11,9 @@ package() {
 }
 
 after_install() {
-    if [ "$(hostconf distro)" == "jinni" ]; then
-        domains --no-remote
-    fi
+    hostconf configs_after_install | while read cmd; do
+        ${cmd}
+    done
 }
 
 after_upgrade() {
