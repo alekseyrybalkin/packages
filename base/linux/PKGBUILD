@@ -11,8 +11,8 @@ build() {
 }
 
 package() {
-    HOST_DISTRO=$(hostconf distro)
+    KERNEL_ALIAS=$(hostconf kernel)
 
     mkdir -pv ${pkgdir}/boot
-    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${HOST_DISTRO}
+    cp -v arch/x86_64/boot/bzImage ${pkgdir}/boot/vmlinuz-${KERNEL_ALIAS}
 }

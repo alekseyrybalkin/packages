@@ -7,10 +7,10 @@ build() {
 }
 
 package() {
-    HOST_DISTRO=$(hostconf distro)
+    KERNEL_ALIAS=$(hostconf kernel)
 
     cd ../
-    ./mkinitramfs ${HOST_DISTRO}
+    ./mkinitramfs ${KERNEL_ALIAS}
     mkdir -p ${pkgdir}/boot
-    mv -v initrd-${HOST_DISTRO} ${pkgdir}/boot
+    mv -v initrd-${KERNEL_ALIAS} ${pkgdir}/boot
 }
