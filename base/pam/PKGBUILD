@@ -25,7 +25,8 @@ package() {
     install -vdm755 ${pkgdir}/etc/pam.d
 
     cat > ${pkgdir}/etc/pam.d/system-auth << "EOF"
-auth      required  pam_unix.so     try_first_pass nullok
+auth      required  pam_unix.so     try_first_pass nullok nodelay
+auth      optional  pam_faildelay.so    delay=150000
 auth      optional  pam_permit.so
 auth      required  pam_env.so
 
