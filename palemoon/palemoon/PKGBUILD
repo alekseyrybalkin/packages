@@ -1,0 +1,30 @@
+pkgname=palemoon
+pkgver=28.15.0
+vcs=git
+gittag=${pkgver}_Release
+
+build() {
+    cd ${location}
+    git clone `find_vcs_repo uxp` uxp
+    cd ${srcdir}
+
+    git submodule init
+    git config submodule.platform.url ${location}/uxp
+    git submodule update
+
+    cp ../mozconfig .
+
+    export MOZBUILD_STATE_PATH=${srcdir}/mozbuild
+    export MOZCONFIG=${srcdir}/mozconfig
+    export CPPFLAGS="${CPPFLAGS} -O2 -Wno-format-overflow"
+    ./mach build
+}
+
+package() {
+    cd obj-x86_64-pc-linux-gnu
+    make package
+    cd dist
+    install -d ${pkgdir}/usr/{bin,lib}
+    cp -r palemoon/ ${pkgdir}/usr/lib/${pkgname}
+    ln -s ../lib/${pkgname}/palemoon ${pkgdir}/usr/bin/palemoon
+}

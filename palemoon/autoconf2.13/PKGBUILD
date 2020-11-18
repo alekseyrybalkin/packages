@@ -1,0 +1,20 @@
+pkgname=autoconf2.13
+pkgver=2.13
+vcs=git
+vcs_pkgname=autoconf
+gittag=df646e7699865557f342782df1134d9e75eb4628
+
+build() {
+    cp ../autoupdate.sh .
+    ./configure --prefix=/usr \
+        --infodir=/usr/share/info \
+        --program-suffix=-2.13
+    make
+}
+
+package() {
+    make prefix=${pkgdir}/usr \
+        infodir=${pkgdir}/usr/share/info install
+    mv ${pkgdir}/usr/share/info/autoconf{,-2.13}.info
+    mv ${pkgdir}/usr/share/info/standards{,-2.13}.info
+}

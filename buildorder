@@ -257,3 +257,11 @@ python-telethon
 
 # gui: chromium extensions
 ublock
+
+# palemoon
+autoconf2.13
+yasm
+python2
+zip
+gtk2
+palemoon
