@@ -28,10 +28,6 @@ ac_add_options --disable-accessibility
 ac_add_options --disable-crashreporter
 ac_add_options --disable-debug-symbols
 
-# Please see https://www.palemoon.org/redist.shtml for restrictions when using the official branding.
-ac_add_options --enable-official-branding
-export MOZILLA_OFFICIAL=1
-
 # For versions after 28.12.0
 ac_add_options --enable-phoenix-extensions
 
