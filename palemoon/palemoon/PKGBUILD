@@ -12,11 +12,16 @@ build() {
     git config submodule.platform.url ${location}/uxp
     git submodule update
 
+    sed -i -e 's/Vendor=Moonchild Productions/Vendor=config/g' palemoon/app/application.ini
+    sed -i -e 's/Name=Pale Moon/Name=palemoon/g' palemoon/app/application.ini
+
     cp ../mozconfig .
 
     export MOZBUILD_STATE_PATH=${srcdir}/mozbuild
     export MOZCONFIG=${srcdir}/mozconfig
     export CPPFLAGS="${CPPFLAGS} -O2 -Wno-format-overflow"
+    export CCACHE_SLOPPINESS=file_macro,locale,time_macros
+
     ./mach build
 }
 
