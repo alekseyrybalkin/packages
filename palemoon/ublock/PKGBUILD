@@ -3,6 +3,7 @@ pkgver=1.16.4.26
 vcs=git
 vcs_pkgname=ublock-for-firefox-legacy
 gittag=firefox-legacy-${pkgver}
+updater_rules="lstrip_firefox-legacy-"
 
 build() {
     cd ../
