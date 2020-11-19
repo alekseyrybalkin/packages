@@ -13,8 +13,8 @@ build() {
 
 package() {
     mkdir -p ${pkgdir}/usr/lib/palemoon/browser/extensions
-    extension_id="uBlock0@raymondhill.net"
-    cp -r dist/build/*.xpi ${pkgdir}/usr/lib/palemoon/browser/extensions/${extension_id}.xpi
+    emid="uBlock0@raymondhill.net"
+    cp -r dist/build/*.xpi ${pkgdir}/usr/lib/palemoon/browser/extensions/${emid}.xpi
     find ${pkgdir} -type d -exec chmod 0755 {} \;
     find ${pkgdir} -type f -exec chmod 0644 {} \;
 }

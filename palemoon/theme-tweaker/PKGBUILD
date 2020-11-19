@@ -9,7 +9,7 @@ build() {
 
 package() {
     mkdir -p ${pkgdir}/usr/lib/palemoon/browser/extensions
-    extension_id="{d9990772-0e04-4731-b98e-98e62085837f}"
+    emid=$(sed -n -e '/<\?em:id>\?/!d; s/.*\([\"{].*[}\"]\).*/\1/; s/\"//g; p; q' src/install.rdf)
     cd src
-    zip -r ${pkgdir}/usr/lib/palemoon/browser/extensions/${extension_id}.xpi *
+    zip -r ${pkgdir}/usr/lib/palemoon/browser/extensions/${emid}.xpi *
 }
