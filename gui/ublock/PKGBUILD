@@ -1,21 +1,20 @@
 pkgname=ublock
-pkgver=1.30.8
+pkgver=1.16.4.26
 vcs=git
-gittag=${pkgver}
-relmon_id=16686
+vcs_pkgname=ublock-for-firefox-legacy
+gittag=firefox-legacy-${pkgver}
 
 build() {
     cd ../
     git clone `find_vcs_repo uassets` uAssets
-    cd ${pkgname}-${pkgver}
-    tools/make-chromium.sh .
+    cd ${srcdir}
+    ./tools/make-firefox-legacy.sh all
 }
 
 package() {
-    mkdir -p ${pkgdir}/usr/lib/chromium/extensions/
-    cp -r dist/build/*.chromium ${pkgdir}/usr/lib/chromium/extensions/ublock
+    mkdir -p ${pkgdir}/usr/lib/palemoon/browser/extensions
+    extension_id="uBlock0@raymondhill.net"
+    cp -r dist/build/*.xpi ${pkgdir}/usr/lib/palemoon/browser/extensions/${extension_id}.xpi
     find ${pkgdir} -type d -exec chmod 0755 {} \;
     find ${pkgdir} -type f -exec chmod 0644 {} \;
-
-    rm -rf ../uAssets
 }
