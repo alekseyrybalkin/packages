@@ -1,7 +1,7 @@
 pkgname=palemoon
 pkgver=28.15.0
 vcs=git
-gittag=remotes/origin/custom/rybalkin-${pkgver}_Release
+gittag=remotes/origin/custom/custom-${pkgver}_Release
 
 build() {
     git submodule init

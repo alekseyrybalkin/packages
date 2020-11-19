@@ -254,13 +254,12 @@ python-rsa
 python-pyaes
 python-telethon
 
-# gui: chromium extensions
-ublock
-
 # palemoon
 autoconf2.13
 yasm
 python2
 zip
 gtk2
+ublock
+theme-tweaker
 palemoon
