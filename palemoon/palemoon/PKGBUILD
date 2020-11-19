@@ -1,19 +1,12 @@
 pkgname=palemoon
 pkgver=28.15.0
 vcs=git
-gittag=${pkgver}_Release
+gittag=remotes/origin/custom/rybalkin-${pkgver}_Release
 
 build() {
-    cd ${location}
-    git clone `find_vcs_repo uxp` uxp
-    cd ${srcdir}
-
     git submodule init
-    git config submodule.platform.url ${location}/uxp
+    git config submodule.platform.url `find_vcs_repo uxp`
     git submodule update
-
-    sed -i -e 's/Vendor=Moonchild Productions/Vendor=config/g' palemoon/app/application.ini
-    sed -i -e 's/Name=Pale Moon/Name=palemoon/g' palemoon/app/application.ini
 
     cp ../mozconfig .
 
