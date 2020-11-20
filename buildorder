@@ -122,6 +122,7 @@ perl-file-next
 perl-ack
 
 # make
+zstd
 ccache
 colm
 ragel
