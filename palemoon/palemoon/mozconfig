@@ -10,6 +10,7 @@ ac_add_options --enable-default-toolkit=cairo-gtk3
 ac_add_options --enable-jemalloc
 ac_add_options --enable-strip
 ac_add_options --enable-devtools
+ac_add_options --enable-phoenix-extensions
 ac_add_options --disable-eme
 ac_add_options --disable-webrtc
 ac_add_options --disable-gamepad
@@ -17,20 +18,18 @@ ac_add_options --disable-tests
 ac_add_options --disable-debug
 ac_add_options --disable-necko-wifi
 ac_add_options --disable-updater
+ac_add_options --x-libraries=/usr/lib
 ac_add_options --with-pthreads
 ac_add_options --with-ccache=/usr/bin/ccache
 
 ac_add_options --disable-dbus
 ac_add_options --disable-pulseaudio
+ac_add_options --disable-gio
 ac_add_options --disable-gconf
 ac_add_options --disable-parental-controls
 ac_add_options --disable-accessibility
 ac_add_options --disable-crashreporter
 ac_add_options --disable-debug-symbols
-
-# For versions after 28.12.0
-ac_add_options --enable-phoenix-extensions
-
-ac_add_options --x-libraries=/usr/lib
+ac_add_options --disable-libjpeg-turbo
 
 export MOZ_PKG_SPECIAL=gtk3
