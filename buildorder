@@ -257,10 +257,10 @@ python-telethon
 
 # palemoon
 autoconf2.13
+yasm
 python2
 zip
 gtk2
-libvpx
 ublock
 theme-tweaker
 palemoon

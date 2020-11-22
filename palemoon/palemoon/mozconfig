@@ -30,6 +30,5 @@ ac_add_options --disable-parental-controls
 ac_add_options --disable-accessibility
 ac_add_options --disable-crashreporter
 ac_add_options --disable-debug-symbols
-ac_add_options --disable-libjpeg-turbo
 
 export MOZ_PKG_SPECIAL=gtk3
