@@ -1,6 +1,6 @@
 NON_FREE=1
 pkgname=intel-ucode
-pkgver=20201112
+pkgver=20201118
 vcs=git
 gittag=microcode-${pkgver}
 relmon_id=20614
