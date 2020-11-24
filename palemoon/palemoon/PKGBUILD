@@ -2,6 +2,7 @@ pkgname=palemoon
 pkgver=28.15.0
 vcs=git
 gittag=${pkgver}_Release
+updater_rules="no_alpha_skips,skip_rc"
 
 build() {
     git submodule init
