@@ -64,6 +64,8 @@ libpipeline
 man-db
 openssl
 util-linux
+fakeroot
+sudo
 tcl
 sqlite
 
@@ -98,12 +100,6 @@ iucode-tool
 intel-ucode
 initramfs
 
-# base: package management
-vim
-fakeroot
-sudo
-openssh
-
 # tools: vcs
 mercurial
 git
@@ -111,6 +107,7 @@ git-crypt
 fossil
 
 # tools: productivity
+vim
 libevent
 tmux
 slang
@@ -140,6 +137,7 @@ libpng
 libjpeg-turbo
 
 # network
+openssh
 dhcpcd
 linux-firmware
 libnl
