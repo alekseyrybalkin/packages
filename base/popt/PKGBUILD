@@ -3,6 +3,7 @@ pkgver=1.18
 vcs=git
 gittag=popt-${pkgver}-release
 relmon_id=3689
+updater_rules="no_alpha_skips"
 
 build() {
     ./autogen.sh
