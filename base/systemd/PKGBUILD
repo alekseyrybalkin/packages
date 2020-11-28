@@ -1,5 +1,5 @@
 pkgname=systemd
-pkgver=246.6
+pkgver=247
 vcs=git
 gittag=v${pkgver}
 relmon_id=5440
@@ -51,6 +51,7 @@ package() {
     mkdir -pv ${pkgdir}/etc/systemd/system/getty.target.wants/
     ln -sv ../../../../lib/systemd/system/getty@.service ${pkgdir}/etc/systemd/system/getty.target.wants/getty@tty1.service
 
+    mkdir -p ${pkgdir}/etc/pam.d
     cat > ${pkgdir}/etc/pam.d/systemd-user << "EOF"
 account  include system-login
 session  required pam_loginuid.so

@@ -1,6 +1,6 @@
 # required to build linux
 pkgname=bc
-pkgver=3.1.6
+pkgver=3.2.1
 vcs=git
 gittag=${pkgver}
 

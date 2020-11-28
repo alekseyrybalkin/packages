@@ -1,5 +1,5 @@
 pkgname=libxkbcommon
-pkgver=1.0.2
+pkgver=1.0.3
 vcs=git
 gittag=xkbcommon-${pkgver}
 relmon_id=1780

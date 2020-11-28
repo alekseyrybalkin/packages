@@ -1,5 +1,5 @@
 pkgname=nginx
-pkgver=1.19.4
+pkgver=1.19.5
 vcs=mercurial
 hgtag=release-${pkgver}
 relmon_id=5413
