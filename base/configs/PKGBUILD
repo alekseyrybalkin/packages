@@ -14,6 +14,7 @@ after_install() {
     hostconf configs_after_install | while read cmd; do
         ${cmd}
     done
+    systemctl daemon-reload
 }
 
 after_upgrade() {
