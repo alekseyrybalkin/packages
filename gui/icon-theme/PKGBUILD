@@ -1,5 +1,5 @@
 pkgname=icon-theme
-pkgver=2
+pkgver=3
 vcs=git
 gittag=v${pkgver}
 
