@@ -2,6 +2,10 @@ pkgname=monorepo
 pkgver=1
 vcs=git
 
+prepare() {
+    srcfetcher monorepo
+}
+
 build() {
     :
 }
