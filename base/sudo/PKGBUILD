@@ -1,11 +1,14 @@
 pkgname=sudo
-pkgver=1.9.3p1
+pkgver=1.9.4
 vcs=git
 gittag=SUDO_${pkgver//\./_}
 relmon_id=4906
 updater_rules="no_alpha_skips"
 
 build() {
+    # Fix build when configured using --without-sendmail
+    git cherry-pick e22817e3abfee6fee779ab0b2d312d48323abb56
+
     ./autogen.sh
     sed -i -e 's/-lshadow//g' configure
     sed -i -e 's/-lshadow//g' configure.ac

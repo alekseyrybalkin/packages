@@ -1,6 +1,6 @@
 # required to build python-pip
 pkgname=python-wheel
-pkgver=0.35.1
+pkgver=0.36.0
 vcs=git
 vcs_pkgname=wheel
 gittag=${pkgver}
