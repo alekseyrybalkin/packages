@@ -1,5 +1,5 @@
 pkgname=nss
-pkgver=3.59
+pkgver=3.60
 vcs=mercurial
 hgtag=NSS_${pkgver//\./_}_RTM
 srcdir=${location}/nss
