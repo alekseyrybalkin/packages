@@ -1,0 +1,16 @@
+pkgname=xcb-util-keysyms
+pkgver=0.4.0
+vcs=git
+gittag=${pkgver}
+relmon_id=5168
+
+build() {
+    git clone -s `find_vcs_repo xcb-util-m4` m4
+    git submodule update --init
+    ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
