@@ -5,10 +5,14 @@ gittag=${pkgver}
 relmon_id=1877
 
 build() {
+    # new argument in find_in_given_path from gnulib
+    sed -i -e 's/, p, 0/, p, NULL, 0/g' src/job.c
+
     # gcc 10
     export CFLAGS+=' -Wno-return-local-addr -Wno-unused-result'
 
     git clone -s `find_vcs_repo gnulib`
+
     sed -i -e 's/ po//g' Makefile.am
     sed -i -e 's/-Werror//g' configure.ac
     ./bootstrap --skip-po
