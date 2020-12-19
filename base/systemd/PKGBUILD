@@ -1,5 +1,5 @@
 pkgname=systemd
-pkgver=247.1
+pkgver=247.2
 vcs=git
 gittag=v${pkgver}
 relmon_id=5440

@@ -262,10 +262,3 @@ gtk2
 ublock
 theme-tweaker
 palemoon
-
-# zoom
-libxtst
-xcb-util
-xcb-util-keysyms
-xcb-util-image
-zoom

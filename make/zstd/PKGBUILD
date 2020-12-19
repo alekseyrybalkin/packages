@@ -1,5 +1,5 @@
 pkgname=zstd
-pkgver=1.4.5
+pkgver=1.4.7
 vcs=git
 gittag=v${pkgver}
 relmon_id=12083
