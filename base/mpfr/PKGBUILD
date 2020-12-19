@@ -3,6 +3,7 @@ pkgname=mpfr
 pkgver=4.1.0
 urls="https://ftp.gnu.org/gnu/mpfr/mpfr-${pkgver}.tar.xz"
 srctar=mpfr-${pkgver}.tar.xz
+srcdir=${location}/${pkgname}-${pkgver}
 relmon_id=2019
 
 build() {
