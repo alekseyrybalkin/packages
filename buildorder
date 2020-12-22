@@ -193,6 +193,7 @@ libxft
 libxi
 libxinerama
 libxrandr
+libxtst
 libxv
 libxss
 libxxf86vm
@@ -206,6 +207,7 @@ xorg-xinit
 xorg-xinput
 xorg-xkbcomp
 xorg-xmodmap
+xorg-xrandr
 xorg-xset
 xkeyboard-config
 pixman
@@ -262,3 +264,5 @@ gtk2
 ublock
 theme-tweaker
 palemoon
+
+# zoom
