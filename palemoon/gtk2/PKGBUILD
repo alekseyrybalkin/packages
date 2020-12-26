@@ -1,5 +1,5 @@
 pkgname=gtk2
-pkgver=2.24.32
+pkgver=2.24.33
 vcs=git
 vcs_pkgname=gtk
 gittag=${pkgver}

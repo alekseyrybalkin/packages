@@ -1,5 +1,5 @@
 pkgname=libgpg-error
-pkgver=1.39
+pkgver=1.41
 vcs=git
 gittag=libgpg-error-${pkgver}
 relmon_id=1628

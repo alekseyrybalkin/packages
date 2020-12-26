@@ -1,5 +1,5 @@
 pkgname=palemoon
-pkgver=28.16.0
+pkgver=28.17.0
 vcs=git
 gittag=${pkgver}_Release
 updater_rules="no_alpha_skips,skip_rc"

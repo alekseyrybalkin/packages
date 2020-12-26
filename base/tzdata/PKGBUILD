@@ -1,5 +1,5 @@
 pkgname=tzdata
-pkgver=2020d
+pkgver=2020e
 vcs=git
 gittag=${pkgver}
 relmon_id=5021

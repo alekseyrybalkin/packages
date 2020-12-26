@@ -1,5 +1,5 @@
 pkgname=harfbuzz
-pkgver=2.7.2
+pkgver=2.7.3
 vcs=git
 gittag=${pkgver}
 relmon_id=1299

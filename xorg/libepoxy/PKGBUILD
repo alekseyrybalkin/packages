@@ -1,14 +1,15 @@
 pkgname=libepoxy
-pkgver=1.5.4
+pkgver=1.5.5
 vcs=git
 gittag=${pkgver}
 relmon_id=6090
 
 build() {
-    ./autogen.sh --prefix=/usr
-    make
+    mkdir build
+    meson --prefix=/usr . build
+    ninja -C build
 }
 
 package() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }
