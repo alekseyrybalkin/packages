@@ -1,5 +1,5 @@
 pkgname=tar
-pkgver=1.32
+pkgver=1.33
 vcs=git
 gittag=release_${pkgver//\./_}
 relmon_id=4939

@@ -1,12 +1,10 @@
 pkgname=ragel
-pkgver=7.0.1
+pkgver=7.0.2
 vcs=git
-# 5b45918d4f2d57da45ff702a3d4bcccc6f171ee0
-gittag=handmade-ragel-${pkgver}
+gittag=${pkgver}
 relmon_id=12105
 
 build() {
-    sed -i -e 's/EXPECTED_COLM_VER=0.14.2/EXPECTED_COLM_VER=0.14.4/g' configure.ac
     sed -i -e '/doc\//d' configure.ac
     sed -i -e 's/ doc//g' Makefile.am
     ./autogen.sh

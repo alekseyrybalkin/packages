@@ -1,8 +1,7 @@
 pkgname=shared-mime-info
-pkgver=2.0.0.1
+pkgver=2.1
 vcs=git
-# 6bf9e4ff0fb7eff11a02bd937045bf5dc291841a
-gittag=handmade-${pkgver}
+gittag=${pkgver}
 relmon_id=5524
 
 build() {

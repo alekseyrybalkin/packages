@@ -1,5 +1,5 @@
 pkgname=tcl
-pkgver=8.6.10
+pkgver=8.6.11
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=4941

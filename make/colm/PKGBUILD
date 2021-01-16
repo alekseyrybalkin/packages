@@ -1,6 +1,6 @@
 keep_la_files=1
 pkgname=colm
-pkgver=0.14.4
+pkgver=0.14.5
 vcs=git
 gittag=${pkgver}
 relmon_id=12622

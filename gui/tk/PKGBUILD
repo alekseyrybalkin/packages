@@ -1,6 +1,6 @@
 pkgname=tk
 _release=8.6
-pkgver=${_release}.10
+pkgver=${_release}.11.1
 vcs=fossil
 fossiltag=core-${pkgver//\./-}
 relmon_id=11426

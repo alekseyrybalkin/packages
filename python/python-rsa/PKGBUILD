@@ -1,5 +1,5 @@
 pkgname=python-rsa
-pkgver=4.6
+pkgver=4.7
 vcs=git
 gittag=version-${pkgver}
 relmon_id=8808
