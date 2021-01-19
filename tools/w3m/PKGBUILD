@@ -3,7 +3,7 @@ pkgver=0.5.3+git20210102
 vcs=git
 gittag=v${pkgver}
 relmon_id=5115
-updater_rules="no_alpha_skips"
+updater_rules="no_alpha_skips,skip_deb"
 
 build() {
     ./configure \
