@@ -245,6 +245,7 @@ evince
 python-bottle
 python-youtube-dl
 python-pycodestyle
+python-defusedxml
 
 # python: telenoti deps
 python-pysocks
