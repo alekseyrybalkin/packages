@@ -1,6 +1,6 @@
 # required to build mesa
 pkgname=python-mako
-pkgver=1.1.3
+pkgver=1.1.4
 vcs=git
 vcs_pkgname=mako
 gittag=rel_${pkgver//\./_}

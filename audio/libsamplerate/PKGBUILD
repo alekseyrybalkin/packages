@@ -1,13 +1,14 @@
 # required for rubberband
 pkgname=libsamplerate
-pkgver=0.1.9
+pkgver=0.2.1
 vcs=git
-gittag=v${pkgver}
+gittag=${pkgver}
 relmon_id=1716
 
 build() {
     sed -i -e 's/\-\-enable\-gcc-werror //g' autogen.sh
-    ./autogen.sh --prefix=/usr
+    ./autogen.sh
+    ./configure --prefix=/usr
     make
 }
 

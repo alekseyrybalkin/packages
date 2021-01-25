@@ -1,5 +1,5 @@
 pkgname=mc
-pkgver=4.8.25
+pkgver=4.8.26
 vcs=git
 gittag=${pkgver}
 relmon_id=1954
