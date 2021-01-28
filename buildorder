@@ -135,7 +135,6 @@ libksba
 npth
 libpng
 libjpeg-turbo
-sdl2
 
 # network
 openssh
@@ -227,8 +226,6 @@ ffmpeg
 mpv
 
 # gui
-sdl2_ttf
-glew
 tk
 xclip
 kitty
