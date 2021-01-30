@@ -1,12 +1,10 @@
 pkgname=autoconf
-pkgver=2.69
+pkgver=2.71
 vcs=git
 gittag=v${pkgver}
 relmon_id=141
 
 build() {
-    # doc: fix texinfo macro usage
-    git cherry-pick a357718b081f1678748ead5d7cb67c766c930441
     autoreconf -fi
     ./configure --prefix=/usr
     make

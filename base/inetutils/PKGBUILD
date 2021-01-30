@@ -1,12 +1,10 @@
 pkgname=inetutils
-pkgver=1.9.4.0.2
+pkgver=1.9.4.90
 vcs=git
-# 73e0faebc4c14e92cdc3f3fb070783b7cd5d2468
-gittag=handmade-inetutils-${pkgver//\./_}
+gittag=v${pkgver}
 relmon_id=13805
 
 build() {
-    sed -i -e 's/2\.63/2\.64/g' configure.ac
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap --skip-po
     ./configure --prefix=/usr \

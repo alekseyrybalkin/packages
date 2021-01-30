@@ -1,5 +1,5 @@
 pkgname=ublock
-pkgver=1.16.4.27
+pkgver=1.16.4.28
 vcs=git
 vcs_pkgname=ublock-for-firefox-legacy
 gittag=firefox-legacy-${pkgver}
