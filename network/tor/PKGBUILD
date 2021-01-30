@@ -5,7 +5,7 @@ gittag=tor-${pkgver}
 relmon_id=4991
 
 build() {
-    ./autogen.sh
+    autoreconf -fi
     ./configure --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
