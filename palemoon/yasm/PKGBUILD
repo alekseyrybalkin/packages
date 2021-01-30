@@ -6,6 +6,10 @@ relmon_id=5286
 
 build() {
     MAKEFLAGS=
+
+    # autoconf 2.70 workaround
+    sed -i -e 's/AC_MSG_ERROR(\[Standard/AC_MSG_NOTICE(\[Standard/g' configure.ac
+
     ./autogen.sh --prefix=/usr
     make
 }
