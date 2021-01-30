@@ -5,6 +5,11 @@ gittag=${pkgver}
 relmon_id=247
 
 build() {
+    # autoconf 2.70 (?) workaround
+    mkdir bin
+    ln -sv /usr/bin/true bin/gtkdocize
+    export PATH=${PATH}:./bin
+
     sed -i -e 's/lzo2a.h/withoutlzo.h/g' configure.ac
     NOCONFIGURE=1 ./autogen.sh
     ./configure --prefix=/usr \
