@@ -1,15 +1,11 @@
 pkgname=python-setuptools
-pkgver=52.0.0
+pkgver=53.0.0
 vcs=git
 vcs_pkgname=setuptools
 gittag=v${pkgver}
 relmon_id=4021
 
 build() {
-    sed -i -e "s/VERSION/${pkgver}/g" ../bootstrap-fix.patch
-    patch -Np1 -i ../bootstrap-fix.patch
-    python bootstrap.py
-
     :
 }
 

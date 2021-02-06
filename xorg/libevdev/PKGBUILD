@@ -1,5 +1,5 @@
 pkgname=libevdev
-pkgver=1.10.1
+pkgver=1.11.0
 vcs=git
 gittag=libevdev-${pkgver}
 relmon_id=20540

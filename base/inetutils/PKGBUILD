@@ -1,5 +1,5 @@
 pkgname=inetutils
-pkgver=1.9.4.90
+pkgver=2.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=13805

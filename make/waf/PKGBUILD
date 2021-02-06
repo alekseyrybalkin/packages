@@ -1,5 +1,5 @@
 pkgname=waf
-pkgver=2.0.21
+pkgver=2.0.22
 vcs=git
 gittag=waf-${pkgver}
 relmon_id=5116

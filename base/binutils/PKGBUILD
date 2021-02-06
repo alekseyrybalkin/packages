@@ -1,5 +1,5 @@
 pkgname=binutils
-pkgver=2.35.1
+pkgver=2.36.1
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}
@@ -10,7 +10,6 @@ build() {
     mkdir -v binutils-build
     cd binutils-build
     ../configure --prefix=/usr \
-        --enable-shared \
         --enable-gold \
         --enable-ld=default \
         --enable-plugins \
