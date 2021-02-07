@@ -1,5 +1,5 @@
 pkgname=binutils
-pkgver=2.35.2
+pkgver=2.36.1
 vcs=git
 vcs_pkgname=binutils-gdb
 gittag=binutils-${pkgver//\./_}
