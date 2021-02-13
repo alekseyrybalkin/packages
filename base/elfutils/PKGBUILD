@@ -1,6 +1,6 @@
 # used while building linux kernel
 pkgname=elfutils
-pkgver=0.182
+pkgver=0.183
 vcs=git
 gittag=elfutils-${pkgver}
 relmon_id=5679

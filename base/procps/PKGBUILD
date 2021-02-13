@@ -1,5 +1,5 @@
 pkgname=procps
-pkgver=3.3.16
+pkgver=3.3.17
 vcs=git
 gittag=v${pkgver}
 relmon_id=3708
