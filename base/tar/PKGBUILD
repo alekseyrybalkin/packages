@@ -1,10 +1,13 @@
 pkgname=tar
-pkgver=1.33
+pkgver=1.33.0.1
 vcs=git
-gittag=release_${pkgver//\./_}
+# beeb19f927762f21aed7fc20e8e359c7aa21388b
+gittag=handmade-release_${pkgver//\./_}
 relmon_id=4939
 
 build() {
+    patch -Np1 -i ../version1.34.patch
+
     git clone -s `find_vcs_repo gnulib`
     git clone -s `find_vcs_repo paxutils`
     ./bootstrap --skip-po

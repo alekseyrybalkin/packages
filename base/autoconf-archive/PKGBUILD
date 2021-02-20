@@ -1,6 +1,6 @@
 # required to build dbus
 pkgname=autoconf-archive
-pkgver=2019.01.06
+pkgver=2021.02.19
 vcs=git
 gittag=v${pkgver}
 relmon_id=142

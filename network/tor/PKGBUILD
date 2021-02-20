@@ -1,5 +1,5 @@
 pkgname=tor
-pkgver=0.4.4.7
+pkgver=0.4.5.6
 vcs=git
 gittag=tor-${pkgver}
 relmon_id=4991
@@ -17,7 +17,7 @@ build() {
 
 package() {
     make DESTDIR=${pkgdir} install
-    install -Dm0644 contrib/dist/tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
+    install -Dm0644 ../tor.service ${pkgdir}/usr/lib/systemd/system/tor.service
 }
 
 after_install() {

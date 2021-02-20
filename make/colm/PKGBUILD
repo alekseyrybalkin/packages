@@ -1,9 +1,8 @@
 keep_la_files=1
 pkgname=colm
-pkgver=0.14.6
+pkgver=0.14.7
 vcs=git
-# 2c520d84df2463d69a28dba9fff5648a841bad74
-gittag=handmade-${pkgver}
+gittag=${pkgver}
 relmon_id=12622
 
 build() {
