@@ -226,7 +226,6 @@ ffmpeg
 mpv
 
 # gui
-tk
 xclip
 kitty
 ttf-fonts
