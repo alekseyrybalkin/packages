@@ -1,0 +1,14 @@
+pkgname=python-pygments
+pkgver=2.8.0
+vcs=git
+vcs_pkgname=pygments
+gittag=${pkgver}
+relmon_id=3986
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

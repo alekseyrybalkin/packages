@@ -253,6 +253,11 @@ python-rsa
 python-pyaes
 python-telethon
 
+# python: prompt_toolkit
+python-wcwidth
+python-pygments
+python-prompt_toolkit
+
 # palemoon
 autoconf2.13
 yasm
