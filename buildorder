@@ -240,14 +240,6 @@ icon-theme
 poppler
 evince
 
-# sdl2
-sdl2
-sdl2_image
-sdl2_net
-sdl2_mixer
-sdl2_ttf
-sdl2_gfx
-
 # python: misc
 python-bottle
 python-youtube-dl
