@@ -240,7 +240,8 @@ icon-theme
 poppler
 evince
 
-# python: misc
+# python: dev
+python-whoosh
 python-bottle
 python-youtube-dl
 python-pycodestyle

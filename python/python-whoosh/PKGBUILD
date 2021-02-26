@@ -1,0 +1,14 @@
+pkgname=python-whoosh
+pkgver=2.7.4
+vcs=git
+vcs_pkgname=whoosh
+gittag=v${pkgver}
+relmon_id=16662
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}
