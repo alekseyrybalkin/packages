@@ -89,6 +89,7 @@ json-c
 cryptsetup
 grub
 glib
+gobject-introspection
 pkg-config
 curl
 systemd
@@ -126,6 +127,7 @@ ragel
 cmake
 nasm
 waf
+vala
 
 # libs
 nspr

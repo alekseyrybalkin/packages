@@ -20,7 +20,6 @@ build() {
         -D broadway_backend=true \
         -D wayland_backend=false \
         -D print_backends='file' \
-        -D introspection=false \
         . build
     ninja -C build
 }
