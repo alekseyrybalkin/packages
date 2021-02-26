@@ -1,0 +1,14 @@
+pkgname=python-cairo
+pkgver=1.20.0
+vcs=git
+vcs_pkgname=pycairo
+gittag=v${pkgver}
+relmon_id=13166
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}
