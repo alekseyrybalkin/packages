@@ -1,0 +1,18 @@
+pkgname=granite
+pkgver=5.5.0
+vcs=git
+gittag=${pkgver}
+relmon_id=5410
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
