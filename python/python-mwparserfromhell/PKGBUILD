@@ -1,0 +1,13 @@
+pkgname=python-mwparserfromhell
+pkgver=0.6
+vcs=git
+vcs_pkgname=mwparserfromhell
+gittag=v${pkgver}
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}
