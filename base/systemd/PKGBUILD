@@ -5,6 +5,11 @@ gittag=v${pkgver}
 relmon_id=5440
 
 build() {
+    # rfkill: improve error logging
+    git cherry-pick 6c7afdeab010025c80508effd2b0039bc5181b82
+    # rfkill: use short writes and accept long reads
+    git cherry-pick a71c09685021cbcecb7566a00342421f635cc002
+
     sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
 
     mkdir -p build
