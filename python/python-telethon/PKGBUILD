@@ -1,8 +1,9 @@
 pkgname=python-telethon
-pkgver=1.19.5
+pkgver=1.20
 vcs=git
 vcs_pkgname=telethon
-gittag=v${pkgver}
+# d9691c934290a9578bfdcf2bcda3df1cad3a959c
+gittag=handmade-v${pkgver}
 relmon_id=18912
 
 build() {

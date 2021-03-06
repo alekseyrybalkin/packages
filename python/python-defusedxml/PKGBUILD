@@ -1,5 +1,5 @@
 pkgname=python-defusedxml
-pkgver=0.6.0
+pkgver=0.7.0
 vcs=git
 vcs_pkgname=defusedxml
 gittag=v${pkgver}
