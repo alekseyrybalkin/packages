@@ -1,0 +1,15 @@
+pkgname=ratpoison
+pkgver=1.4.9
+vcs=git
+gittag=v${pkgver}
+relmon_id=6362
+
+build() {
+    autoreconf -fi
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
