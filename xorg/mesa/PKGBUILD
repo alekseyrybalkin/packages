@@ -1,5 +1,5 @@
 pkgname=mesa
-pkgver=20.3.4
+pkgver=21.0.0
 vcs=git
 gittag=mesa-${pkgver}
 relmon_id=1970
@@ -11,8 +11,8 @@ build() {
         -D b_lto=false \
         -D b_ndebug=true \
         -D platforms=x11 \
-        -D dri-drivers='i965,swrast' \
-        -D gallium-drivers='' \
+        -D dri-drivers='i965' \
+        -D gallium-drivers='swrast,iris' \
         -D vulkan-drivers='' \
         -D swr-arches=avx,avx2 \
         -D dri3=enabled \
@@ -22,11 +22,12 @@ build() {
         -D gles2=enabled \
         -D glx=dri \
         -D llvm=false \
-        -D osmesa=classic \
+        -D osmesa=true \
         -D shared-glapi=enabled \
         -D valgrind=false \
         -D libunwind=false \
         -D zstd=disabled \
+        -D microsoft-clc=disabled \
         . build
     ninja -C build
 }

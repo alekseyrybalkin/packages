@@ -1,5 +1,5 @@
 pkgname=mercurial
-pkgver=5.7
+pkgver=5.7.1
 vcs=mercurial
 hgtag=${pkgver}
 relmon_id=1969
