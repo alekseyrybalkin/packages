@@ -246,7 +246,6 @@ python-bottle
 python-mwparserfromhell
 python-youtube-dl
 python-pycodestyle
-python-defusedxml
 
 # python: telenoti deps
 python-pysocks
