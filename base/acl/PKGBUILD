@@ -1,5 +1,5 @@
 pkgname=acl
-pkgver=2.3.0
+pkgver=2.3.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=16

@@ -1,5 +1,5 @@
 pkgname=iana-etc
-pkgver=20210304
+pkgver=20210316
 vcs=git
 gittag=${pkgver}
 

@@ -1,28 +1,19 @@
 pkgname=rubberband
-pkgver=1.9
+pkgver=1.9.1
 vcs=mercurial
 hgtag=v${pkgver}
 relmon_id=4222
 
 build() {
-    patch -Np1 -i ../kissfft.patch
-
-    sed -i -e '/cp.*JNI_TARGET/d' Makefile.in
-
-    # use kissfft instead of fftw
-    sed -i -e '/fftw/Id' configure.ac
-    sed -i -e 's/ -DHAVE_FFTW3 -DFFTW_DOUBLE_ONLY/ -DUSE_KISSFFT/g' Makefile.in
-    sed -i -e "s/ @fftw_cflags@//Ig" Makefile.in
-    sed -i -e "s/ @fftw_libs@//Ig" Makefile.in
-
-    autoreconf -vfi
-    ./configure --prefix=/usr \
-        --disable-vamp \
-        --disable-ladspa \
-        --disable-programs
-    make
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D fft=kissfft \
+        . build
+    ninja -C build
 }
 
 package() {
-    make DESTDIR=${pkgdir} install
+    DESTDIR=${pkgdir} ninja -C build install
 }

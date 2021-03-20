@@ -1,5 +1,5 @@
 pkgname=perl-ack
-pkgver=3.4.0
+pkgver=3.5.0
 vcs=git
 gittag=v${pkgver}
 relmon_id=15
