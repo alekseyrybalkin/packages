@@ -3,7 +3,6 @@ pkgver=2.13.1
 vcs=git
 gittag=${pkgver}
 relmon_id=827
-updater_rules="skip_big_third"
 
 build() {
     ./autogen.sh --prefix=/usr \
