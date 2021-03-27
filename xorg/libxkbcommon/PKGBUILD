@@ -8,7 +8,7 @@ updater_rules='lstrip_xkbcommon'
 build() {
     mkdir build
     meson --prefix=/usr -D libexecdir=/usr/lib -D sysconfdir=/etc \
-        -D enable-wayland=false \
+        -D enable-wayland=true \
         -D enable-docs=false \
         . build
     ninja -C build

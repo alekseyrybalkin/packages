@@ -1,0 +1,14 @@
+pkgname=wayland-protocols
+pkgver=1.20
+vcs=git
+gittag=${pkgver}
+relmon_id=13997
+
+build() {
+    ./autogen.sh --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

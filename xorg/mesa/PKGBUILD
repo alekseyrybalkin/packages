@@ -10,7 +10,7 @@ build() {
     meson --prefix=/usr \
         -D b_lto=false \
         -D b_ndebug=true \
-        -D platforms=x11 \
+        -D platforms=x11,wayland \
         -D dri-drivers='i965' \
         -D gallium-drivers='swrast,iris' \
         -D vulkan-drivers='' \

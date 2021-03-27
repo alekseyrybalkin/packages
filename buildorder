@@ -164,6 +164,10 @@ alsa-utils
 fribidi
 rubberband
 
+# wayland
+wayland
+wayland-protocols
+
 # xorg
 xorg-util-macros
 xorgproto

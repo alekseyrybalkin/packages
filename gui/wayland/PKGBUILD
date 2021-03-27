@@ -1,0 +1,21 @@
+pkgname=wayland
+pkgver=1.19.0
+vcs=git
+gittag=${pkgver}
+relmon_id=10061
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        --buildtype=release \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D documentation=false \
+        -D dtd_validation=false \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
