@@ -1,5 +1,5 @@
 pkgname=libassuan
-pkgver=2.5.4
+pkgver=2.5.5
 vcs=git
 gittag=libassuan-${pkgver}
 relmon_id=1559

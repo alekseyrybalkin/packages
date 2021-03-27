@@ -238,6 +238,7 @@ pango
 gtk
 icon-theme
 poppler
+libhandy
 evince
 
 # python: dev

@@ -1,6 +1,6 @@
 pkgname=linux
 vcs=git
-pkgver=5.11.7
+pkgver=5.11.10
 gittag=v${pkgver}
 relmon_id=6501
 

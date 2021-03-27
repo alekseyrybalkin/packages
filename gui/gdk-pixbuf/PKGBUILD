@@ -1,5 +1,5 @@
 pkgname=gdk-pixbuf
-pkgver=2.42.2
+pkgver=2.42.4
 vcs=git
 gittag=${pkgver}
 relmon_id=9533

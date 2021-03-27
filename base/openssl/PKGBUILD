@@ -1,5 +1,5 @@
 pkgname=openssl
-pkgver=1.1.1j
+pkgver=1.1.1k
 vcs=git
 gittag=OpenSSL_${pkgver//\./_}
 relmon_id=2566
