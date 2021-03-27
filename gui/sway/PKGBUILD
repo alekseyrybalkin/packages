@@ -1,0 +1,27 @@
+pkgname=sway
+pkgver=1.5.1
+vcs=git
+gittag=${pkgver}
+relmon_id=11497
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D default-wallpaper=false \
+        -D zsh-completions=false \
+        -D bash-completions=false \
+        -D fish-completions=false \
+        -D xwayland=disabled \
+        -D tray=disabled \
+        -D gdk-pixbuf=disabled \
+        -D man-pages=disabled \
+        -D sd-bus-provider=libsystemd \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

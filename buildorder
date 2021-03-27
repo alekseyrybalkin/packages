@@ -238,6 +238,8 @@ cairo
 shared-mime-info
 gdk-pixbuf
 pango
+pcre
+sway
 gtk
 icon-theme
 poppler
