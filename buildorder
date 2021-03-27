@@ -164,17 +164,16 @@ alsa-utils
 fribidi
 rubberband
 
-# wayland
+# wayland and xorg
 wayland
 wayland-protocols
-
-# xorg
 xorg-util-macros
 xorgproto
 libxau
 libxdmcp
 xcb-proto
 libxcb
+libxkbcommon
 freetype
 harfbuzz
 fontconfig
@@ -222,7 +221,7 @@ xf86-input-libinput
 libva
 libva-intel-driver
 lcms
-libxkbcommon
+wlroots
 
 # audio: xorg support
 libass

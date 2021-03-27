@@ -1,0 +1,27 @@
+pkgname=wlroots
+pkgver=0.12.0
+vcs=git
+gittag=${pkgver}
+relmon_id=18357
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D logind=enabled \
+        -D logind-provider=systemd \
+        -D libseat=disabled \
+        -D xcb-errors=disabled \
+        -D xcb-icccm=disabled \
+        -D xwayland=disabled \
+        -D x11-backend=disabled \
+        -D examples=false \
+        -D xdg-foreign=disabled \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
