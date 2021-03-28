@@ -1,0 +1,45 @@
+#vcs=subversion
+pkgname=webkit2gtk
+pkgver=2.32.0
+urls="https://webkitgtk.org/releases/webkitgtk-${pkgver}.tar.xz"
+srctar=webkitgtk-${pkgver}.tar.xz
+srcdir=${location}/webkitgtk-${pkgver}
+relmon_id=5355
+
+build() {
+    sed -i -e '/setMediaEnabled/d' Source/WebCore/editing/markup.cpp
+    sed -i -e '/setMediaEnabled/d' Source/WebCore/svg/graphics/SVGImage.cpp
+    sed -i -e '/setMediaEnabled/d' Source/WebKit/UIProcess/API/glib/WebKitSettings.cpp
+
+    cmake -B build -G Ninja \
+        -DPORT=GTK \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_LIBEXECDIR=lib \
+        -DCMAKE_SKIP_RPATH=ON \
+        -DENABLE_GTKDOC=OFF \
+        -DUSE_WPE_RENDERER=OFF \
+        -DENABLE_GAMEPAD=OFF \
+        -DENABLE_XSLT=OFF \
+        -DUSE_LIBSECRET=OFF \
+        -DUSE_LIBNOTIFY=OFF \
+        -DUSE_LIBHYPHEN=OFF \
+        -DUSE_OPENJPEG=OFF \
+        -DUSE_WOFF2=OFF \
+        -DENABLE_BUBBLEWRAP_SANDBOX=OFF \
+        -DENABLE_INTROSPECTION=OFF \
+        -DENABLE_WEB_CRYPTO=OFF \
+        -DENABLE_SPELLCHECK=OFF \
+        -DENABLE_VIDEO=OFF \
+        -DENABLE_WEB_AUDIO=OFF \
+        -DENABLE_WEBGL=OFF \
+        -DUSE_OPENGL_OR_ES=OFF \
+        -DUSE_TEXTURE_MAPPER_GL=OFF \
+        -DENABLE_MINIBROWSER=OFF
+    cmake --build build
+}
+
+package() {
+    DESTDIR=${pkgdir} cmake --install build
+}
