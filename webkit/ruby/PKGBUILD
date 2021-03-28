@@ -1,0 +1,30 @@
+pkgname=ruby
+pkgver=3.0.0
+vcs=git
+gittag=v${pkgver//\./_}
+relmon_id=4223
+
+build() {
+    # Removed YYUSE [Bug #17582]
+    git cherry-pick b091889ed67f278b1652ddde88596e2160d5aef0
+
+    patch -Np1 -i ../no_network.patch
+
+    autoreconf -fi
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --sharedstatedir=/var/lib \
+        --libexecdir=/usr/lib/ruby \
+        --enable-shared \
+        --disable-rpath \
+        --with-dbm-type=gdbm_compat \
+        --with-baseruby=/usr/bin/ruby \
+        --disable-rubygems
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install-nodoc
+}

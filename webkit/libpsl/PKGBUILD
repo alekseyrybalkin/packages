@@ -1,0 +1,25 @@
+pkgname=libpsl
+pkgver=0.21.1
+vcs=git
+gittag=${pkgver}
+relmon_id=7305
+
+build() {
+    git clone `find_vcs_repo publicsuffix-list` list
+
+    sed -i -e '/docs\/libpsl\//d' configure.ac
+
+    ./autogen.sh
+    ./configure \
+        --prefix=/usr \
+        --disable-static \
+        --disable-dependency-tracking \
+        --disable-gtk-doc \
+        --disable-runtime \
+        --disable-builtin
+    LC_CTYPE=en_US.UTF-8 make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}
