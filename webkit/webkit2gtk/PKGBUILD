@@ -7,10 +7,6 @@ srcdir=${location}/webkitgtk-${pkgver}
 relmon_id=5355
 
 build() {
-    sed -i -e '/setMediaEnabled/d' Source/WebCore/editing/markup.cpp
-    sed -i -e '/setMediaEnabled/d' Source/WebCore/svg/graphics/SVGImage.cpp
-    sed -i -e '/setMediaEnabled/d' Source/WebKit/UIProcess/API/glib/WebKitSettings.cpp
-
     cmake -B build -G Ninja \
         -DPORT=GTK \
         -DCMAKE_BUILD_TYPE=Release \
@@ -31,11 +27,6 @@ build() {
         -DENABLE_INTROSPECTION=OFF \
         -DENABLE_WEB_CRYPTO=OFF \
         -DENABLE_SPELLCHECK=OFF \
-        -DENABLE_VIDEO=OFF \
-        -DENABLE_WEB_AUDIO=OFF \
-        -DENABLE_WEBGL=OFF \
-        -DUSE_OPENGL_OR_ES=OFF \
-        -DUSE_TEXTURE_MAPPER_GL=OFF \
         -DENABLE_MINIBROWSER=OFF
     cmake --build build
 }

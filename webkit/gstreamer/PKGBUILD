@@ -1,0 +1,22 @@
+pkgname=gstreamer
+pkgver=1.18.4
+vcs=git
+gittag=${pkgver}
+relmon_id=1263
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D doc=disabled \
+        -D ptp-helper-permissions=capabilities \
+        -D dbghelp=disabled \
+        -D gobject-cast-checks=disabled \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}

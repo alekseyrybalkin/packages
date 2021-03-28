@@ -274,6 +274,8 @@ theme-tweaker
 palemoon
 
 # webkit
+gstreamer
+gst-plugins-base
 ruby
 libpsl
 glib-networking
