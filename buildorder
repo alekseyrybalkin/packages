@@ -223,6 +223,7 @@ libva
 libva-intel-driver
 lcms
 wlroots
+wl-clipboard
 
 # audio: xorg support
 libass

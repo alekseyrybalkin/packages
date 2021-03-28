@@ -1,0 +1,20 @@
+pkgname=wl-clipboard
+pkgver=2.0.0
+vcs=git
+gittag=v${pkgver}
+relmon_id=49082
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        -D zshcompletiondir=no \
+        -D fishcompletiondir=no \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
