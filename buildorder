@@ -128,7 +128,6 @@ nasm
 waf
 
 # libs
-icu
 nspr
 nss
 libassuan
@@ -241,8 +240,6 @@ gdk-pixbuf
 pango
 pcre
 sway
-at-spi2-core
-at-spi2-atk
 gtk
 icon-theme
 poppler
@@ -272,11 +269,3 @@ gtk2
 ublock
 theme-tweaker
 palemoon
-
-# webkit
-ruby
-libpsl
-glib-networking
-libsoup
-libwebp
-webkit2gtk

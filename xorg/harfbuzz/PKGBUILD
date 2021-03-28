@@ -12,7 +12,7 @@ build() {
 
     ./autogen.sh \
         --prefix=/usr \
-        --with-icu=yes \
+        --with-icu=no \
         --with-gobject \
         --enable-gtk-doc=no \
         --libdir=/usr/lib
