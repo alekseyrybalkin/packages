@@ -1,16 +1,17 @@
-pkgname=pango
-pkgver=1.48.3
+pkgname=foot
+pkgver=1.7.1
 vcs=git
 gittag=${pkgver}
-relmon_id=11783
+relmon_id=141611
 
 build() {
+    patch -Np1 -i ../disable_docs.patch
+
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
-        -D introspection=disabled \
-        -D xft=disabled \
+        -D ime=false \
         . build
     ninja -C build
 }

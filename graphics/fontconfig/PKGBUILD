@@ -1,0 +1,39 @@
+pkgname=fontconfig
+pkgver=2.13.1
+vcs=git
+gittag=${pkgver}
+relmon_id=827
+updater_rules="skip_big_third"
+
+build() {
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --docdir=/usr/share/doc/${pkgname} \
+        --disable-docs \
+        --disable-static \
+        --with-default-fonts=/usr/share/fonts \
+        --with-add-fonts=/usr/share/fonts \
+        --with-templatedir=/etc/fonts/conf.avail \
+        --libdir=/usr/lib
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+    # remove /var, filesystem package creates everything in there
+    rm -rvf ${pkgdir}/var
+}
+
+after_install() {
+    install -dv -m 0755 /var/cache/fontconfig
+
+    fc-cache -rs || true
+}
+
+after_upgrade() {
+    after_install
+}
+
+generated_files="usr/share/fonts/TTF/.uuid \
+    usr/share/fonts/.uuid"

@@ -1,16 +1,13 @@
-pkgname=pango
-pkgver=1.48.3
+pkgname=libepoxy
+pkgver=1.5.5
 vcs=git
 gittag=${pkgver}
-relmon_id=11783
+relmon_id=6090
 
 build() {
     mkdir build
     meson --prefix=/usr \
-        -D libexecdir=/usr/lib \
-        -D sysconfdir=/etc \
-        -D introspection=disabled \
-        -D xft=disabled \
+        -D x11=false \
         . build
     ninja -C build
 }

@@ -1,0 +1,18 @@
+pkgname=xkeyboard-config
+pkgver=2.32
+vcs=git
+gittag=${pkgname}-${pkgver}
+relmon_id=5191
+
+build() {
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --disable-static \
+        --disable-runtime-deps
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

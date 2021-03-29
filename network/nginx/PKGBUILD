@@ -25,7 +25,6 @@ build() {
         --with-stream_ssl_module \
         --with-threads \
         --with-ipv6 \
-        --without-pcre \
         --without-http_rewrite_module \
         --with-file-aio \
         --with-http_dav_module \

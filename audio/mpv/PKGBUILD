@@ -10,6 +10,8 @@ build() {
         --disable-pulse \
         --disable-libarchive \
         --disable-lua \
+        --disable-x11 \
+        --disable-lcms2 \
         --enable-libmpv-shared
     waf build
 }

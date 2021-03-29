@@ -14,9 +14,11 @@ build() {
     NOCONFIGURE=1 ./autogen.sh
     ./configure --prefix=/usr \
         --disable-static \
-        --enable-gl \
-        --enable-egl \
+        --disable-gl \
+        --disable-egl \
         --enable-tee \
+        --disable-xlib \
+        --disable-xcb \
         --libdir=/usr/lib
     make
 }

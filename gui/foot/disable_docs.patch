@@ -1,0 +1,21 @@
+diff --git a/meson.build b/meson.build
+index b8ba12e..891db65 100644
+--- a/meson.build
++++ b/meson.build
+@@ -218,16 +218,12 @@ if tic.found()
+     install_dir: join_paths(get_option('datadir'), 'terminfo'))
+ endif
+ 
+-install_data(
+-  'LICENSE', 'README.md', 'CHANGELOG.md',
+-  install_dir: join_paths(get_option('datadir'), 'doc', 'foot'))
+ install_data(
+   'foot.desktop', 'foot-server.desktop',
+   install_dir: join_paths(get_option('datadir'), 'applications'))
+ install_data('foot.ini', install_dir: join_paths(get_option('datadir'), 'foot'))
+ 
+ subdir('completions')
+-subdir('doc')
+ subdir('icons')
+ 
+ summary(

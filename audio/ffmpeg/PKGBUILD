@@ -22,7 +22,12 @@ build() {
         --disable-libvpx \
         --disable-libtheora \
         --disable-libvorbis \
-        --disable-sdl2
+        --disable-sdl2 \
+        --disable-xlib \
+        --disable-libxcb \
+        --disable-libxcb-shm \
+        --disable-libxcb-xfixes \
+        --disable-libxcb-shape
     make
 }
 

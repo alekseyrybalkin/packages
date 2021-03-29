@@ -12,6 +12,9 @@ build() {
         -D doc=disabled \
         -D tremor=disabled \
         -D gobject-cast-checks=disabled \
+        -D x11=disabled \
+        -D xshm=disabled \
+        -D xvideo=disabled \
         . build
     ninja -C build
 }

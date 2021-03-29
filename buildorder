@@ -88,6 +88,7 @@ cpio
 json-c
 cryptsetup
 grub
+pcre
 glib
 pkg-config
 curl
@@ -164,88 +165,49 @@ libsamplerate
 alsa-utils
 fribidi
 rubberband
+gstreamer
 
-# wayland and xorg
+# graphics
 wayland
 wayland-protocols
 xorg-util-macros
-xorgproto
-libxau
-libxdmcp
-xcb-proto
-libxcb
 libxkbcommon
 freetype
 harfbuzz
 fontconfig
-libxtrans
-libx11
-libxext
-libice
-libsm
-libxt
-libxmu
-libxfixes
-libxcomposite
-libxrender
-libxcursor
-libxdamage
-xorg-font-util
-libfontenc
-libxfont2
-libxft
-libxi
-libxinerama
-libxrandr
-libxv
-libxss
-libxxf86vm
 libpciaccess
-libxkbfile
-libxshmfence
 libdrm
 mesa
-xorg-xauth
-xorg-xinit
-xorg-xinput
-xorg-xkbcomp
-xorg-xmodmap
-xorg-xset
 xkeyboard-config
 pixman
 libepoxy
-xorg-server
 mtdev
 libevdev
 libinput
-xf86-input-libinput
 libva
 libva-intel-driver
-lcms
 wlroots
 wl-clipboard
 
-# audio: xorg support
+# audio: graphics support
 libass
 ffmpeg
 mpv
 
 # gui
-xclip
-kitty
+tllist
+fcft
+foot
 ttf-fonts
-fluxbox
 atk
 cairo
 shared-mime-info
 gdk-pixbuf
 pango
-pcre
 sway
-at-spi2-core
-at-spi2-atk
 gtk
 icon-theme
+gst-plugins-base
 poppler
 libhandy
 evince
@@ -264,19 +226,7 @@ python-rsa
 python-pyaes
 python-telethon
 
-# palemoon
-autoconf2.13
-yasm
-python2
-zip
-gtk2
-ublock
-theme-tweaker
-palemoon
-
 # webkit
-gstreamer
-gst-plugins-base
 ruby
 libpsl
 glib-networking

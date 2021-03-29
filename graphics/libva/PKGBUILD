@@ -1,0 +1,19 @@
+pkgname=libva
+pkgver=2.11.0
+vcs=git
+gittag=${pkgver}
+relmon_id=1752
+updater_rules='skip_big_first'
+
+build() {
+    ./autogen.sh --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --disable-x11 \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR=${pkgdir} install
+}

@@ -1,0 +1,13 @@
+diff --git a/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h b/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h
+index 6727d16c8c0b..db65f813267d 100644
+--- a/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h
++++ b/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h
+@@ -213,7 +213,7 @@ inline void LayerTreeHost::setRootCompositingLayer(WebCore::GraphicsLayer*) { }
+ inline void LayerTreeHost::setViewOverlayRootLayer(WebCore::GraphicsLayer*) { }
+ inline void LayerTreeHost::scrollNonCompositedContents(const WebCore::IntRect&) { }
+ inline void LayerTreeHost::forceRepaint() { }
+-inline bool LayerTreeHost::forceRepaintAsync(CompletionHandler<void()>&) { return false; }
++inline void LayerTreeHost::forceRepaintAsync(CompletionHandler<void()>&&) { }
+ inline void LayerTreeHost::sizeDidChange(const WebCore::IntSize&) { }
+ inline void LayerTreeHost::pauseRendering() { }
+ inline void LayerTreeHost::resumeRendering() { }

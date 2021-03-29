@@ -14,6 +14,7 @@ build() {
         -D man=false \
         -D broadway_backend=true \
         -D wayland_backend=true \
+        -D x11_backend=false \
         -D print_backends='file' \
         -D introspection=false \
         . build
