@@ -127,6 +127,7 @@ ragel
 cmake
 nasm
 waf
+scdoc
 
 # libs
 icu
@@ -205,6 +206,8 @@ shared-mime-info
 gdk-pixbuf
 pango
 sway
+swaylock
+swayidle
 gtk
 icon-theme
 gst-plugins-base

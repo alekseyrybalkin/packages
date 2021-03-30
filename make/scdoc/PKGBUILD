@@ -1,0 +1,13 @@
+pkgname=scdoc
+pkgver=1.11.1
+vcs=git
+gittag=${pkgver}
+relmon_id=68662
+
+build() {
+    make PREFIX=/usr
+}
+
+package() {
+    make PREFIX=/usr DESTDIR=${pkgdir} install
+}

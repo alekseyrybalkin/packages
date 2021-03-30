@@ -16,7 +16,7 @@ build() {
         -D xwayland=disabled \
         -D tray=disabled \
         -D gdk-pixbuf=disabled \
-        -D man-pages=disabled \
+        -D man-pages=enabled \
         -D sd-bus-provider=libsystemd \
         . build
     ninja -C build

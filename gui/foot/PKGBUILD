@@ -5,8 +5,6 @@ gittag=${pkgver}
 relmon_id=141611
 
 build() {
-    patch -Np1 -i ../disable_docs.patch
-
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \

@@ -1,14 +1,17 @@
-pkgname=fcft
-pkgver=2.3.2
+pkgname=swayidle
+pkgver=1.6
 vcs=git
 gittag=${pkgver}
-relmon_id=143240
+relmon_id=137685
 
 build() {
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
+        -D zsh-completions=false \
+        -D bash-completions=false \
+        -D fish-completions=false \
         . build
     ninja -C build
 }
