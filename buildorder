@@ -208,6 +208,7 @@ pcre
 sway
 swaylock
 swayidle
+swaybg
 gtk
 icon-theme
 gst-plugins-base

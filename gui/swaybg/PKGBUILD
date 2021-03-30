@@ -1,0 +1,18 @@
+pkgname=swaybg
+pkgver=1.0
+vcs=git
+gittag=${pkgver}
+relmon_id=20562
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
