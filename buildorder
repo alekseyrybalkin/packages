@@ -88,7 +88,6 @@ cpio
 json-c
 cryptsetup
 grub
-pcre
 glib
 pkg-config
 curl
@@ -205,6 +204,7 @@ cairo
 shared-mime-info
 gdk-pixbuf
 pango
+pcre
 sway
 swaylock
 swayidle
