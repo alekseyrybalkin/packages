@@ -31,7 +31,7 @@ build() {
         -DENABLE_WEB_CRYPTO=OFF \
         -DENABLE_SPELLCHECK=OFF \
         -DUSE_OPENGL_OR_ES=OFF \
-        -DENABLE_MINIBROWSER=OFF
+        -DENABLE_MINIBROWSER=ON
     cmake --build build
 }
 
