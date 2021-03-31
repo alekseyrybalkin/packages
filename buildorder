@@ -230,10 +230,11 @@ python-rsa
 python-pyaes
 python-telethon
 
-# webkit
+# browser
 ruby
 libpsl
 glib-networking
 libsoup
 libwebp
 webkit2gtk
+lugworm

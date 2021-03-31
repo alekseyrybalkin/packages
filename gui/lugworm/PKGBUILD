@@ -1,0 +1,20 @@
+pkgname=lugworm
+pkgver=1
+vcs=git
+
+prepare() {
+    srcfetcher lugworm
+}
+
+build() {
+    mkdir build
+    meson --prefix=/usr \
+        -D libexecdir=/usr/lib \
+        -D sysconfdir=/etc \
+        . build
+    ninja -C build
+}
+
+package() {
+    DESTDIR=${pkgdir} ninja -C build install
+}
