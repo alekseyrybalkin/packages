@@ -193,7 +193,6 @@ libpciaccess
 libdrm
 mesa
 pixman
-libepoxy
 mtdev
 libevdev
 libinput
@@ -227,6 +226,7 @@ swaybg
 tllist
 fcft
 foot
+libepoxy
 gtk
 icon-theme
 poppler
