@@ -1,3 +1,4 @@
+# required to build webkit2gtk
 pkgname=ruby
 pkgver=3.0.0
 vcs=git

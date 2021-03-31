@@ -76,6 +76,20 @@ python-wheel
 python-pip
 python-mako
 
+# python: dev
+python-whoosh
+python-bottle
+python-mwparserfromhell
+python-youtube-dl
+python-pycodestyle
+
+# python: telenoti deps
+python-pysocks
+python-pyasn1
+python-rsa
+python-pyaes
+python-telethon
+
 # base: boot
 monorepo
 ninja
@@ -127,8 +141,10 @@ cmake
 nasm
 waf
 scdoc
+ruby
 
 # libs
+fribidi
 icu
 nspr
 nss
@@ -137,6 +153,10 @@ libksba
 npth
 libpng
 libjpeg-turbo
+libwebp
+libpsl
+glib-networking
+libsoup
 
 # network
 openssh
@@ -159,26 +179,19 @@ pinentry
 gnupg
 mutt
 
-# audio
-alsa-lib
-libsamplerate
-alsa-utils
-fribidi
-rubberband
-gstreamer
-
 # graphics
 wayland
 wayland-protocols
 xorg-util-macros
+xkeyboard-config
 libxkbcommon
 freetype
 harfbuzz
 fontconfig
+ttf-fonts
 libpciaccess
 libdrm
 mesa
-xkeyboard-config
 pixman
 libepoxy
 mtdev
@@ -186,55 +199,38 @@ libevdev
 libinput
 libva
 libva-intel-driver
-wlroots
-wl-clipboard
+atk
+cairo
+pango
 
-# audio: graphics support
+# media
+alsa-lib
+libsamplerate
+alsa-utils
+rubberband
+gstreamer
+gst-plugins-base
 libass
 ffmpeg
 mpv
 
 # gui
-tllist
-fcft
-foot
-ttf-fonts
-atk
-cairo
 shared-mime-info
 gdk-pixbuf
-pango
+wlroots
+wl-clipboard
 pcre
 sway
 swaylock
 swayidle
 swaybg
+tllist
+fcft
+foot
 gtk
 icon-theme
-gst-plugins-base
 poppler
 libhandy
 evince
-
-# python: dev
-python-whoosh
-python-bottle
-python-mwparserfromhell
-python-youtube-dl
-python-pycodestyle
-
-# python: telenoti deps
-python-pysocks
-python-pyasn1
-python-rsa
-python-pyaes
-python-telethon
-
-# browser
-ruby
-libpsl
-glib-networking
-libsoup
-libwebp
 webkit2gtk
 lugworm
