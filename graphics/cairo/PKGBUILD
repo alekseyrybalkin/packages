@@ -15,7 +15,6 @@ build() {
     ./configure --prefix=/usr \
         --disable-static \
         --disable-gl \
-        --disable-egl \
         --enable-tee \
         --disable-xlib \
         --disable-xcb \
