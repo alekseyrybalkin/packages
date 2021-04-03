@@ -74,8 +74,21 @@ python
 python-setuptools
 python-wheel
 python-pip
-python-six
 python-mako
+
+# python: dev
+python-whoosh
+python-bottle
+python-mwparserfromhell
+python-youtube-dl
+python-pycodestyle
+
+# python: telenoti deps
+python-pysocks
+python-pyasn1
+python-rsa
+python-pyaes
+python-telethon
 
 # base: boot
 monorepo
@@ -135,7 +148,6 @@ fribidi
 icu
 nspr
 nss
-lapack
 libassuan
 libksba
 npth
@@ -206,29 +218,6 @@ sdl2_net
 sdl2_mixer
 sdl2_ttf
 sdl2_gfx
-glfw
-
-# python: dev
-python-pysocks
-python-pyasn1
-python-rsa
-python-pyaes
-python-telethon
-python-whoosh
-python-bottle
-python-mwparserfromhell
-python-youtube-dl
-python-pycodestyle
-python-cython
-python-numpy
-python-pillow
-python-glcontext
-python-moderngl
-python-multipledispatch
-python-pyrr
-python-pysdl2
-python-glfw
-python-moderngl-window
 
 # gui
 shared-mime-info
