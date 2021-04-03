@@ -213,11 +213,11 @@ libass
 ffmpeg
 mpv
 sdl2
-sdl2_image
-sdl2_net
-sdl2_mixer
 sdl2_ttf
 sdl2_gfx
+
+# python: dev
+python-pysdl2
 
 # gui
 shared-mime-info
