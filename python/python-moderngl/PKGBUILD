@@ -1,0 +1,14 @@
+pkgname=python-moderngl
+pkgver=5.6.4
+vcs=git
+vcs_pkgname=moderngl
+gittag=${pkgver}
+relmon_id=69039
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

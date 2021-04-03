@@ -1,0 +1,14 @@
+pkgname=python-six
+pkgver=1.15.0
+vcs=git
+vcs_pkgname=six
+gittag=${pkgver}
+relmon_id=4027
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

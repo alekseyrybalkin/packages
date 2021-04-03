@@ -1,0 +1,14 @@
+pkgname=python-moderngl-window
+pkgver=2.3.0
+vcs=git
+vcs_pkgname=moderngl-window
+gittag=${pkgver}
+relmon_id=26802
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

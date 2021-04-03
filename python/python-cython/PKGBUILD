@@ -1,0 +1,14 @@
+pkgname=python-cython
+pkgver=0.29.22
+vcs=git
+vcs_pkgname=cython
+gittag=${pkgver}
+relmon_id=12679
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

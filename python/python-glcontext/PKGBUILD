@@ -1,0 +1,14 @@
+pkgname=python-glcontext
+pkgver=2.3.3
+vcs=git
+vcs_pkgname=glcontext
+gittag=${pkgver}
+relmon_id=43303
+
+build() {
+    patch -Np1 -i ../nox11.patch
+}
+
+package() {
+    python_package
+}
