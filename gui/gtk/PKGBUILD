@@ -23,6 +23,7 @@ build() {
 
 package() {
     DESTDIR=${pkgdir} ninja -C build install
+    install -Dm755 ../color_chooser ${pkgdir}/usr/bin/
 }
 
 after_install() {
