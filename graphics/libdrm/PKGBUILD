@@ -5,6 +5,8 @@ gittag=libdrm-${pkgver}
 relmon_id=1596
 
 build() {
+    patch -Np1 -i ../remove_libpciaccess.patch
+
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \

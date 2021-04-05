@@ -1,0 +1,38 @@
+diff --git a/Makefile.am b/Makefile.am
+index 44189a4..f8e031f 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1,6 +1,6 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = compat geometry keycodes po rules symbols types docs man
++SUBDIRS = compat geometry keycodes po rules symbols types docs
+ 
+ pkgconfigdir = $(datadir)/pkgconfig
+ pkgconfig_DATA = xkeyboard-config.pc
+diff --git a/configure.ac b/configure.ac
+index bb90a56..fa1d133 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -2,13 +2,6 @@ AC_INIT(xkeyboard-config, 2.32) # change version in meson.build as well
+ AC_CONFIG_SRCDIR(rules/base.xml)
+ AM_INIT_AUTOMAKE([foreign dist-bzip2])
+ 
+-# Require X.Org macros 1.12 or later for XORG_WITH_XSLTPROC
+-m4_ifndef([XORG_MACROS_VERSION],
+-          [m4_fatal([must install xorg-macros 1.12 or later before
+-          running autoconf/autogen])])
+-XORG_MACROS_VERSION(1.12)
+-XORG_MANPAGE_SECTIONS
+-XORG_WITH_XSLTPROC
+ AC_PROG_SED
+ AM_PATH_PYTHON([3.0])
+ 
+@@ -85,7 +78,6 @@ symbols/Makefile
+ types/Makefile
+ xkeyboard-config.pc
+ docs/Makefile
+-man/Makefile
+ ])
+ 
+ echo '***********************************************************'

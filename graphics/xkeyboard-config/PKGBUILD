@@ -5,6 +5,8 @@ gittag=${pkgname}-${pkgver}
 relmon_id=5191
 
 build() {
+    patch -Np1 -i ../no_xorg.patch
+
     ./autogen.sh --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \

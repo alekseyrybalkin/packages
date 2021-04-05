@@ -182,14 +182,12 @@ mutt
 # graphics
 wayland
 wayland-protocols
-xorg-util-macros
 xkeyboard-config
 libxkbcommon
 freetype
 harfbuzz
 fontconfig
 ttf-fonts
-libpciaccess
 libdrm
 mesa
 pixman
