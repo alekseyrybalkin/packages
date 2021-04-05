@@ -1,0 +1,23 @@
+pkgname=pkgconf
+pkgver=1.7.4
+vcs=git
+gittag=pkgconf-${pkgver}
+relmon_id=12753
+
+build() {
+    ./autogen.sh
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --with-pkg-config-dir=/usr/lib/pkgconfig:/usr/share/pkgconfig \
+        --with-system-libdir=/usr/lib \
+        --with-system-includedir=/usr/include \
+        --disable-static
+    make
+}
+
+package() {
+    DESTDIR=${pkgdir} make install
+    ln -s pkgconf ${pkgdir}/usr/bin/pkg-config
+    ln -s pkgconf.1 ${pkgdir}/usr/share/man/man1/pkg-config.1
+}

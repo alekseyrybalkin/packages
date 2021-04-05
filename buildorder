@@ -103,7 +103,7 @@ json-c
 cryptsetup
 grub
 glib
-pkg-config
+pkgconf
 curl
 systemd
 dbus
