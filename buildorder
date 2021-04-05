@@ -185,7 +185,6 @@ wayland-protocols
 xkeyboard-config
 libxkbcommon
 freetype
-harfbuzz
 fontconfig
 ttf-fonts
 libdrm
@@ -198,6 +197,7 @@ libva
 libva-intel-driver
 atk
 cairo
+harfbuzz
 pango
 
 # media
