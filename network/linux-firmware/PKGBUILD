@@ -3,6 +3,7 @@ pkgname=linux-firmware
 pkgver=20210315
 vcs=git
 gittag=${pkgver}
+relmon_id=141464
 
 build() {
     :

@@ -1,5 +1,4 @@
 pkgname=grub
-# magic in PKGBUILD
 pkgver=2.04
 vcs=git
 gittag=grub-${pkgver}
