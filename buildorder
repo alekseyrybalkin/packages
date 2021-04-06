@@ -210,6 +210,12 @@ gst-plugins-base
 libass
 ffmpeg
 mpv
+sdl2
+sdl2_ttf
+sdl2_gfx
+
+# python: dev
+python-pysdl2
 
 # gui
 shared-mime-info
