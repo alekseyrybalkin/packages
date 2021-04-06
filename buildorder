@@ -76,20 +76,6 @@ python-wheel
 python-pip
 python-mako
 
-# python: dev
-python-whoosh
-python-bottle
-python-mwparserfromhell
-python-youtube-dl
-python-pycodestyle
-
-# python: telenoti deps
-python-pysocks
-python-pyasn1
-python-rsa
-python-pyaes
-python-telethon
-
 # base: boot
 monorepo
 ninja
@@ -215,6 +201,16 @@ sdl2_ttf
 sdl2_gfx
 
 # python: dev
+python-pysocks
+python-pyasn1
+python-rsa
+python-pyaes
+python-telethon
+python-whoosh
+python-bottle
+python-mwparserfromhell
+python-youtube-dl
+python-pycodestyle
 python-pysdl2
 
 # gui
