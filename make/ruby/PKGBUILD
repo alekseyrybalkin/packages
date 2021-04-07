@@ -4,6 +4,7 @@ pkgver=3.0.0
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=4223
+updater_rules="repl_underscore_dot"
 
 build() {
     # Removed YYUSE [Bug #17582]
