@@ -1,5 +1,5 @@
 pkgname=libksba
-pkgver=1.5.0
+pkgver=1.5.1
 vcs=git
 gittag=libksba-${pkgver}
 relmon_id=1649

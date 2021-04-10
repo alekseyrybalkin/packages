@@ -1,15 +1,12 @@
 # required to build webkit2gtk
 pkgname=ruby
-pkgver=3.0.0
+pkgver=3.0.1
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=4223
 updater_rules="repl_underscore_dot"
 
 build() {
-    # Removed YYUSE [Bug #17582]
-    git cherry-pick b091889ed67f278b1652ddde88596e2160d5aef0
-
     patch -Np1 -i ../no_network.patch
 
     autoreconf -fi

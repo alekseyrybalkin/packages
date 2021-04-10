@@ -1,5 +1,5 @@
 pkgname=python-youtube-dl
-pkgver=2021.04.01
+pkgver=2021.04.07
 vcs=git
 vcs_pkgname=youtube-dl
 gittag=${pkgver}

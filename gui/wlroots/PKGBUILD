@@ -1,5 +1,5 @@
 pkgname=wlroots
-pkgver=0.12.0
+pkgver=0.13.0
 vcs=git
 gittag=${pkgver}
 relmon_id=18357
