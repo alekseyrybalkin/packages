@@ -3,6 +3,7 @@ pkgver=7.76.0
 vcs=git
 gittag=curl-${pkgver//\./_}
 relmon_id=381
+updater_rules="repl_underscore_dot"
 
 build() {
     # apparently, curl cannot autodetect PATH_SEPARATOR when there is only one
