@@ -1,5 +1,5 @@
 pkgname=libhandy
-pkgver=1.2.0
+pkgver=1.2.1
 vcs=git
 gittag=${pkgver}
 relmon_id=114486

@@ -1,5 +1,5 @@
 pkgname=libgcrypt
-pkgver=1.9.2
+pkgver=1.9.3
 vcs=git
 gittag=libgcrypt-${pkgver}
 relmon_id=1623
