@@ -5,6 +5,9 @@ gittag=v${pkgver}
 relmon_id=5440
 
 build() {
+    # rfkill: add some casts to silence -Werror=sign-compare
+    git cherry-pick ab1aa6368a883bce88e3162fee2bea14aacedf23
+
     sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
 
     mkdir -p build

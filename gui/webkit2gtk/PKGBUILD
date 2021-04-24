@@ -8,6 +8,7 @@ relmon_id=5355
 
 build() {
     patch -Np1 -i ../layer_tree_host_h_fix.patch
+    patch -Np1 -i ../unhide-deprecated-api.patch
     sed -i -e '/ATSPI/d' Source/cmake/OptionsGTK.cmake
 
     cmake -B build -G Ninja \
