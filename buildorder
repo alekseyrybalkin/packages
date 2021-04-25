@@ -213,6 +213,8 @@ python-mwparserfromhell
 python-youtube-dl
 python-pycodestyle
 python-pysdl2
+python-cairo
+python-gobject
 
 # gui
 shared-mime-info

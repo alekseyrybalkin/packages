@@ -1,0 +1,14 @@
+pkgname=python-gobject
+pkgver=3.40.1
+vcs=git
+vcs_pkgname=pygobject
+gittag=${pkgver}
+relmon_id=13158
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}
