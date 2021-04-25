@@ -10,6 +10,7 @@ build() {
     patch -Np1 -i ../layer_tree_host_h_fix.patch
     patch -Np1 -i ../unhide-deprecated-api.patch
     sed -i -e '/ATSPI/d' Source/cmake/OptionsGTK.cmake
+    sed -i -e 's/\-fcolor\-diagnostics//g' Source/cmake/WebKitCompilerFlags.cmake
 
     cmake -B build -G Ninja \
         -DPORT=GTK \
