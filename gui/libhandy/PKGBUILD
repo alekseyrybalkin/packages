@@ -9,7 +9,6 @@ build() {
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
-        -D introspection=disabled \
         -D glade_catalog=disabled \
         -D vapi=false \
         -D tests=false \

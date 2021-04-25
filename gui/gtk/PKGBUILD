@@ -16,7 +16,6 @@ build() {
         -D wayland_backend=true \
         -D x11_backend=false \
         -D print_backends='file' \
-        -D introspection=false \
         . build
     ninja -C build
 }

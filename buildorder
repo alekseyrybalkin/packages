@@ -89,6 +89,7 @@ json-c
 cryptsetup
 grub
 glib
+gobject-introspection
 pkgconf
 curl
 systemd
