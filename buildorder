@@ -144,6 +144,7 @@ libwebp
 libpsl
 glib-networking
 libsoup
+libsasl
 
 # network
 openssh

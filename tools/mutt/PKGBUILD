@@ -8,12 +8,19 @@ updater_rules='no_alpha_skips'
 build() {
     rm -rf .git
     autoreconf -fi
-    ./configure --prefix=/usr --sysconfdir=/etc \
+    ./configure --prefix=/usr \
+        --sysconfdir=/etc \
         --with-docdir=/usr/share/doc/mutt \
-        --enable-pop --enable-imap \
-        --enable-hcache --without-qdbm \
+        --enable-pop \
+        --enable-imap \
+        --enable-smtp \
+        --enable-hcache \
+        --without-qdbm \
         --without-tokyocabinet \
-        --with-gdbm --without-bdb --with-ssl
+        --with-gdbm \
+        --without-bdb \
+        --with-ssl \
+        --with-sasl
     make
 }
 
