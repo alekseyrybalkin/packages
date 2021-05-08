@@ -1,5 +1,5 @@
 pkgname=libass
-pkgver=0.15.0
+pkgver=0.15.1
 vcs=git
 gittag=${pkgver}
 relmon_id=1560
