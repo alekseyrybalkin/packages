@@ -8,8 +8,8 @@ build() {
     # new argument in find_in_given_path from gnulib
     sed -i -e 's/, p, 0/, p, NULL, 0/g' src/job.c
 
-    # gcc 10
-    export CFLAGS+=' -Wno-return-local-addr -Wno-unused-result'
+    # gcc 10+
+    export CFLAGS+=' -Wno-return-local-addr -Wno-unused-result -Wno-stringop-overflow'
 
     git clone -s `find_vcs_repo gnulib`
 

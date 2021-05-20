@@ -6,6 +6,9 @@ relmon_id=10018
 updater_rules="skip_big_second"
 
 build() {
+    # Avoid diagnostics for gcc-11 false positive out of bounds accesses
+    git cherry-pick c514c41d0eab095104f099a6650e4e7c18b35c72
+
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \

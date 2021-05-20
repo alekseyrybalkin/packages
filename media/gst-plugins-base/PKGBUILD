@@ -5,6 +5,9 @@ gittag=${pkgver}
 relmon_id=21850
 
 build() {
+    # gstgl: Fix build when Meson >= 0.58.0rc1
+    git cherry-pick 90903917a8185e0f9add7af8153ae2fc9875fdcb
+
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
