@@ -1,7 +1,7 @@
 pkgname=readline
-pkgver=8.1.000
+pkgver=8.1.001
 vcs=git
-# acb676c4a529f4147b3087e9e66d372cee2564ca
+# 9ba3434aa5434e509300a3722b0479fd30480b44
 gittag=handmade-readline-${pkgver}
 relmon_id=4173
 

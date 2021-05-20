@@ -1,7 +1,7 @@
 pkgname=bash
-pkgver=5.1.004
+pkgver=5.1.008
 vcs=git
-# 76404c85d492c001f59f2644074333ffb7608532
+# ce23728687ce9e584333367075c9deef413553fa
 gittag=handmade-bash-${pkgver}
 relmon_id=166
 

@@ -1,6 +1,6 @@
 #vcs=subversion
 pkgname=webkit2gtk
-pkgver=2.32.0
+pkgver=2.32.1
 urls="https://webkitgtk.org/releases/webkitgtk-${pkgver}.tar.xz"
 srctar=webkitgtk-${pkgver}.tar.xz
 srcdir=${location}/webkitgtk-${pkgver}

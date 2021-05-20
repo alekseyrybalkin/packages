@@ -1,6 +1,6 @@
 NON_FREE=1
 pkgname=linux-firmware
-pkgver=20210315
+pkgver=20210511
 vcs=git
 gittag=${pkgver}
 relmon_id=141464

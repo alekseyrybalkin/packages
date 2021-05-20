@@ -1,5 +1,5 @@
 pkgname=device-mapper
-pkgver=2.03.11
+pkgver=2.03.12
 vcs=git
 vcs_pkgname=lvm2
 gittag=v${pkgver//\./_}
@@ -15,6 +15,5 @@ build() {
 }
 
 package() {
-    MAKEFLAGS=
     make DESTDIR=${pkgdir} install_device-mapper
 }

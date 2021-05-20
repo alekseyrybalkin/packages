@@ -1,14 +1,11 @@
 pkgname=libxml
-pkgver=2.9.10
+pkgver=2.9.12
 vcs=git
 vcs_pkgname=libxml2
 gittag=v${pkgver}
 relmon_id=1783
 
 build() {
-    # Parenthesize Py<type>_Check() in ifs
-    git cherry-pick e4fb36841800038c289997432ca547c9bfef9db1
-
     ./autogen.sh --prefix=/usr \
         --disable-static \
         --with-history \
