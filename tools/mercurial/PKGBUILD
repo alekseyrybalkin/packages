@@ -5,6 +5,9 @@ hgtag=${pkgver}
 relmon_id=1969
 
 build() {
+    # workaround a bug in 5.8
+    hg commit --noninteractive --quiet --message "${pkgver} fix" && hg tag -f "${pkgver}.0" || true
+
     export HGPYTHON3=1
 }
 
