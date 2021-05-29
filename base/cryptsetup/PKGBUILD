@@ -1,5 +1,5 @@
 pkgname=cryptsetup
-pkgver=2.3.5
+pkgver=2.3.6
 vcs=git
 gittag=v${pkgver}
 relmon_id=13709

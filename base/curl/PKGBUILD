@@ -1,5 +1,5 @@
 pkgname=curl
-pkgver=7.76.1
+pkgver=7.77.0
 vcs=git
 gittag=curl-${pkgver//\./_}
 relmon_id=381
@@ -16,6 +16,7 @@ build() {
         --disable-ldap \
         --without-libpsl \
         --without-zstd \
+        --with-openssl \
         --with-ca-path=/etc/ssl/certs
     make
 }
