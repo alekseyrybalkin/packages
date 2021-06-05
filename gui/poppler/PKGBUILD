@@ -1,7 +1,8 @@
 pkgname=poppler
-pkgver=21.05.0
+pkgver=21.06.1
 vcs=git
-gittag=poppler-${pkgver}
+# b782d4be006c184c49c6b46bec1d23dd28f1683a
+gittag=handmade-poppler-${pkgver}
 relmon_id=3686
 
 build() {
