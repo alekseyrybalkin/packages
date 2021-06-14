@@ -1,5 +1,5 @@
 pkgname=xkeyboard-config
-pkgver=2.32
+pkgver=2.33
 vcs=git
 gittag=${pkgname}-${pkgver}
 relmon_id=5191

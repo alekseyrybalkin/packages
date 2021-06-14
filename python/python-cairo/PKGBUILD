@@ -1,5 +1,5 @@
 pkgname=python-cairo
-pkgver=1.20.0
+pkgver=1.20.1
 vcs=git
 vcs_pkgname=pycairo
 gittag=v${pkgver}

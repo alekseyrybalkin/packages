@@ -1,5 +1,5 @@
 pkgname=rubberband
-pkgver=1.9.1
+pkgver=1.9.2
 vcs=mercurial
 hgtag=v${pkgver}
 relmon_id=4222

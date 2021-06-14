@@ -1,5 +1,5 @@
 pkgname=sudo
-pkgver=1.9.7
+pkgver=1.9.7p1
 vcs=git
 gittag=SUDO_${pkgver//\./_}
 relmon_id=4906
