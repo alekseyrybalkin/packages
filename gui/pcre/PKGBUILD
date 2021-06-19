@@ -1,6 +1,6 @@
 #vcs=subversion
 pkgname=pcre
-pkgver=8.44
+pkgver=8.45
 urls="https://ftp.pcre.org/pub/pcre/${pkgname}-${pkgver}.tar.bz2"
 srctar=${pkgname}-${pkgver}.tar.bz2
 srcdir=${location}/${pkgname}-${pkgver}

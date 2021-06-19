@@ -1,5 +1,5 @@
 pkgname=gdbm
-pkgver=1.19
+pkgver=1.20
 vcs=git
 gittag=v${pkgver}
 relmon_id=882

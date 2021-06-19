@@ -1,5 +1,5 @@
 pkgname=alsa-utils
-pkgver=1.2.5
+pkgver=1.2.5.1
 vcs=git
 gittag=v${pkgver}
 relmon_id=37
