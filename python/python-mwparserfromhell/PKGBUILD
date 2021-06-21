@@ -3,6 +3,7 @@ pkgver=0.6.2
 vcs=git
 vcs_pkgname=mwparserfromhell
 gittag=v${pkgver}
+relmon_id=201693
 
 build() {
     :
