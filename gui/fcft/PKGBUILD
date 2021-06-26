@@ -1,5 +1,5 @@
 pkgname=fcft
-pkgver=2.4.0
+pkgver=2.4.1
 vcs=git
 gittag=${pkgver}
 relmon_id=143240

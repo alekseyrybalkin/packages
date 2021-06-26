@@ -1,5 +1,5 @@
 pkgname=man-pages
-pkgver=5.11
+pkgver=5.12
 vcs=git
 gittag=man-pages-${pkgver}
 relmon_id=1883

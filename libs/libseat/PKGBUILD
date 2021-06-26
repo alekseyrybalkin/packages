@@ -1,15 +1,16 @@
-pkgname=foot
-pkgver=1.8.0
+pkgname=libseat
+pkgver=0.5.0
 vcs=git
+vcs_pkgname=seatd
 gittag=${pkgver}
-relmon_id=141611
 
 build() {
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
-        -D ime=false \
+        -D examples=disabled \
+        -D man-pages=enabled \
         . build
     ninja -C build
 }

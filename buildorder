@@ -145,6 +145,7 @@ libpsl
 glib-networking
 libsoup
 libsasl
+libseat
 
 # network
 openssh

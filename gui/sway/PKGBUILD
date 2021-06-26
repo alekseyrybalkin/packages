@@ -1,5 +1,5 @@
 pkgname=sway
-pkgver=1.6
+pkgver=1.6.1
 vcs=git
 gittag=${pkgver}
 relmon_id=11497
