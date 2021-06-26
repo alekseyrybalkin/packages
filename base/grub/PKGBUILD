@@ -1,11 +1,17 @@
 pkgname=grub
-pkgver=2.04
+pkgver=2.06
 vcs=git
 gittag=grub-${pkgver}
 relmon_id=1258
 updater_rules="repl_tilde_dot"
 
 build() {
+    unset MAKEFLAGS
+    unset CFLAGS
+    unset CPPFLAGS
+    unset CXXFLAGS
+    unset LDFLAGS
+
     git clone -s `find_vcs_repo gnulib`
     ./bootstrap
     ./configure --prefix=/usr \
@@ -15,7 +21,9 @@ build() {
         --disable-efiemu \
         --enable-device-mapper \
         --disable-grub-mkfont \
-        --disable-werror
+        --disable-werror \
+        --with-platform="pc" \
+        --target="i386"
     make
 }
 
