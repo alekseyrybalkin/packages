@@ -11,6 +11,10 @@ build() {
         -D sysconfdir=/etc \
         -D examples=disabled \
         -D man-pages=enabled \
+        -D logind=disabled \
+        -D seatd=enabled \
+        -D server=enabled \
+        -D builtin=disabled \
         . build
     ninja -C build
 }

@@ -10,8 +10,6 @@ build() {
         -D libexecdir=/usr/lib \
         -D sysconfdir=/etc \
         -D logind=enabled \
-        -D logind-provider=systemd \
-        -D libseat=disabled \
         -D xcb-errors=disabled \
         -D xcb-icccm=disabled \
         -D xwayland=disabled \
