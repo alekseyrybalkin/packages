@@ -1,4 +1,4 @@
-NO_STRIPPING=1
+disable_stripping=1
 pkgname=go
 pkgver=1.16.5
 vcs=git
@@ -9,7 +9,7 @@ build() {
     export GOARCH=amd64
     export GOROOT_FINAL=/usr/lib/go
     export GOROOT_BOOTSTRAP=/usr/lib/go
-    export GOPATH=${srcdir}
+    export GOPATH=${location}
 
     export GOROOT=${srcdir}
     export GOBIN="${GOROOT}/bin"
