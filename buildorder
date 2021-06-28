@@ -129,6 +129,7 @@ nasm
 waf
 scdoc
 ruby
+go
 
 # libs
 fribidi
