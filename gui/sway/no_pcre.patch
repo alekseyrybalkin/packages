@@ -1,0 +1,183 @@
+diff --git a/include/sway/criteria.h b/include/sway/criteria.h
+index ad8610cd..d00ab082 100644
+--- a/include/sway/criteria.h
++++ b/include/sway/criteria.h
+@@ -1,7 +1,7 @@
+ #ifndef _SWAY_CRITERIA_H
+ #define _SWAY_CRITERIA_H
+ 
+-#include <pcre.h>
++#include <regex.h>
+ #include "config.h"
+ #include "list.h"
+ #include "tree/view.h"
+@@ -15,13 +15,13 @@ enum criteria_type {
+ };
+ 
+ enum pattern_type {
+-	PATTERN_PCRE,
++	PATTERN_POSIX,
+ 	PATTERN_FOCUSED,
+ };
+ 
+ struct pattern {
+ 	enum pattern_type match_type;
+-	pcre *regex;
++	regex_t regex;
+ };
+ 
+ struct criteria {
+diff --git a/meson.build b/meson.build
+index 747cab5f..ceb9e4a2 100644
+--- a/meson.build
++++ b/meson.build
+@@ -36,7 +36,6 @@ if is_freebsd
+ endif
+ 
+ jsonc = dependency('json-c', version: '>=0.13')
+-pcre = dependency('libpcre')
+ wayland_server = dependency('wayland-server')
+ wayland_client = dependency('wayland-client')
+ wayland_cursor = dependency('wayland-cursor')
+diff --git a/sway/criteria.c b/sway/criteria.c
+index d2a5566f..b10ac501 100644
+--- a/sway/criteria.c
++++ b/sway/criteria.c
+@@ -3,7 +3,7 @@
+ #include <stdio.h>
+ #include <stdbool.h>
+ #include <strings.h>
+-#include <pcre.h>
++#include <regex.h>
+ #include "sway/criteria.h"
+ #include "sway/tree/container.h"
+ #include "sway/config.h"
+@@ -40,17 +40,14 @@ bool criteria_is_empty(struct criteria *criteria) {
+ char *error = NULL;
+ 
+ // Returns error string on failure or NULL otherwise.
+-static bool generate_regex(pcre **regex, char *value) {
+-	const char *reg_err;
+-	int offset;
++static bool generate_regex(regex_t *regex, char *value) {
++	int res = regcomp(regex, value, 0);
+ 
+-	*regex = pcre_compile(value, PCRE_UTF8 | PCRE_UCP, &reg_err, &offset, NULL);
+-
+-	if (!*regex) {
+-		const char *fmt = "Regex compilation for '%s' failed: %s";
+-		int len = strlen(fmt) + strlen(value) + strlen(reg_err) - 3;
++	if (res) {
++		const char *fmt = "Regex compilation for '%s' failed";
++		int len = strlen(fmt) + strlen(value) - 3;
+ 		error = malloc(len);
+-		snprintf(error, len, fmt, value, reg_err);
++		snprintf(error, len, fmt, value);
+ 		return false;
+ 	}
+ 
+@@ -66,7 +63,7 @@ static bool pattern_create(struct pattern **pattern, char *value) {
+ 	if (strcmp(value, "__focused__") == 0) {
+ 		(*pattern)->match_type = PATTERN_FOCUSED;
+ 	} else {
+-		(*pattern)->match_type = PATTERN_PCRE;
++		(*pattern)->match_type = PATTERN_POSIX;
+ 		if (!generate_regex(&(*pattern)->regex, value)) {
+ 			return false;
+ 		};
+@@ -76,9 +73,6 @@ static bool pattern_create(struct pattern **pattern, char *value) {
+ 
+ static void pattern_destroy(struct pattern *pattern) {
+ 	if (pattern) {
+-		if (pattern->regex) {
+-			pcre_free(pattern->regex);
+-		}
+ 		free(pattern);
+ 	}
+ }
+@@ -99,8 +93,8 @@ void criteria_destroy(struct criteria *criteria) {
+ 	free(criteria);
+ }
+ 
+-static int regex_cmp(const char *item, const pcre *regex) {
+-	return pcre_exec(regex, NULL, item, strlen(item), 0, 0, NULL, 0);
++static int regex_cmp(const char *item, const regex_t regex) {
++	return regexec(&regex, item, 0, NULL, 0);
+ }
+ 
+ #if HAVE_XWAYLAND
+@@ -192,7 +186,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(title, criteria->title->regex) != 0) {
+ 				return false;
+ 			}
+@@ -212,7 +206,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(shell, criteria->shell->regex) != 0) {
+ 				return false;
+ 			}
+@@ -232,7 +226,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(app_id, criteria->app_id->regex) != 0) {
+ 				return false;
+ 			}
+@@ -264,7 +258,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(class, criteria->class->regex) != 0) {
+ 				return false;
+ 			}
+@@ -284,7 +278,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(instance, criteria->instance->regex) != 0) {
+ 				return false;
+ 			}
+@@ -304,7 +298,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(window_role, criteria->window_role->regex) != 0) {
+ 				return false;
+ 			}
+@@ -363,7 +357,7 @@ static bool criteria_matches_view(struct criteria *criteria,
+ 				return false;
+ 			}
+ 			break;
+-		case PATTERN_PCRE:
++		case PATTERN_POSIX:
+ 			if (regex_cmp(ws->name, criteria->workspace->regex) != 0) {
+ 				return false;
+ 			}
+diff --git a/sway/meson.build b/sway/meson.build
+index b52fada4..b5ccf71a 100644
+--- a/sway/meson.build
++++ b/sway/meson.build
+@@ -211,7 +211,6 @@ sway_deps = [
+ 	libudev,
+ 	math,
+ 	pango,
+-	pcre,
+ 	glesv2,
+ 	pixman,
+ 	server_protos,
