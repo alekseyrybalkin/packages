@@ -88,6 +88,7 @@ cpio
 json-c
 cryptsetup
 grub
+pcre
 glib
 gobject-introspection
 pkgconf
@@ -224,7 +225,6 @@ shared-mime-info
 gdk-pixbuf
 wlroots
 wl-clipboard
-pcre
 sway
 swaylock
 swayidle
