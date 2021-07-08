@@ -10,7 +10,7 @@ build() {
         --libexecdir=/usr/lib \
         --disable-static \
         --sysconfdir=/etc \
-        --with-screen=slang
+        --with-screen=ncurses
     make
 }
 

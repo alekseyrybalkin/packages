@@ -112,7 +112,6 @@ fossil
 vim
 libevent
 tmux
-slang
 mc
 gc
 w3m
