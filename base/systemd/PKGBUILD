@@ -10,13 +10,13 @@ build() {
     mkdir -p build
     cd build
 
-    CFLAGS+=" -Wno-format-overflow" \
     meson --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
         -Dblkid=true \
-        -Dbuildtype=release \
-        -Ddefault-hierarchy=hybrid \
+        -Dmode=release \
+        -Ddbuspolicydir=/usr/share/dbus-1/system.d \
+        -Ddefault-hierarchy=unified \
         -Ddefault-dnssec=no \
         -Dfirstboot=false \
         -Dinstall-tests=false \
