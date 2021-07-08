@@ -1,5 +1,5 @@
 pkgname=texinfo
-pkgver=6.7
+pkgver=6.8
 vcs=git
 gittag=texinfo-${pkgver}
 relmon_id=4958

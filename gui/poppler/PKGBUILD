@@ -1,8 +1,7 @@
 pkgname=poppler
-pkgver=21.06.1
+pkgver=21.07.0
 vcs=git
-# b782d4be006c184c49c6b46bec1d23dd28f1683a
-gittag=handmade-poppler-${pkgver}
+gittag=poppler-${pkgver}
 relmon_id=3686
 
 build() {
@@ -14,6 +13,7 @@ build() {
         -DTESTDATADIR=$PWD/testfiles \
         -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
         -DENABLE_SPLASH=OFF \
+        -DENABLE_BOOST=OFF \
         -DENABLE_LIBTIFF=OFF \
         -DENABLE_CMS=none \
         -DBUILD_GTK_TESTS=OFF \

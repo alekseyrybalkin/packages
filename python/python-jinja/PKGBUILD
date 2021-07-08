@@ -1,0 +1,14 @@
+pkgname=python-jinja
+pkgver=3.0.1
+vcs=git
+vcs_pkgname=jinja
+gittag=${pkgver}
+relmon_id=3894
+
+build() {
+    :
+}
+
+package() {
+    python_package
+}

@@ -1,6 +1,6 @@
 # required to build webkit2gtk
 pkgname=ruby
-pkgver=3.0.1
+pkgver=3.0.2
 vcs=git
 gittag=v${pkgver//\./_}
 relmon_id=4223
