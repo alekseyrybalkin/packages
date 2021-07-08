@@ -5,8 +5,6 @@ gittag=${pkgver}
 relmon_id=11497
 
 build() {
-    patch -Np1 -i ../no_pcre.patch
-
     mkdir build
     meson --prefix=/usr \
         -D libexecdir=/usr/lib \

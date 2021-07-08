@@ -224,6 +224,7 @@ shared-mime-info
 gdk-pixbuf
 wlroots
 wl-clipboard
+pcre
 sway
 swaylock
 swayidle
