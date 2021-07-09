@@ -1,3 +1,4 @@
+# required to build systemd
 pkgname=python-jinja
 pkgver=3.0.1
 vcs=git

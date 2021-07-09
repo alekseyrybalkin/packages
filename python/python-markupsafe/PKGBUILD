@@ -1,3 +1,4 @@
+# required by jinja
 pkgname=python-markupsafe
 pkgver=2.0.1
 vcs=git
