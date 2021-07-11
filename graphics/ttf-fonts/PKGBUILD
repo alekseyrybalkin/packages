@@ -1,5 +1,5 @@
 pkgname=ttf-fonts
-pkgver=3
+pkgver=5
 vcs=git
 gittag=v${pkgver}
 
