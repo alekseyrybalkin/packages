@@ -1,5 +1,5 @@
 pkgname=icon-theme
-pkgver=3
+pkgver=4
 vcs=git
 gittag=v${pkgver}
 
@@ -11,7 +11,6 @@ package() {
     mkdir -p ${pkgdir}/usr/share/{icons,pkgconfig}
     cp -r Adwaita ${pkgdir}/usr/share/icons/
     cp -r adwaita-icon-theme.pc ${pkgdir}/usr/share/pkgconfig/
-    rm -rf ${pkgdir}/usr/share/icons/Adwaita/cursors/
 }
 
 after_install() {
