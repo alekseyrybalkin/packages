@@ -1,5 +1,5 @@
 pkgname=mutt
-pkgver=2.1
+pkgver=2.1.1
 vcs=git
 gittag=mutt-${pkgver//\./-}-rel
 relmon_id=2035

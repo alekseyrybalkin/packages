@@ -1,6 +1,6 @@
 disable_stripping=1
 pkgname=go
-pkgver=1.16.5
+pkgver=1.16.6
 vcs=git
 gittag=go${pkgver}
 relmon_id=1227

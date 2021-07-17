@@ -1,13 +1,12 @@
 pkgname=linux-api-headers
 vcs=git
 vcs_pkgname=linux
-pkgver=5.12.15
+pkgver=5.13.2
 gittag=v${pkgver}
 relmon_id=6501
 
 build() {
     make mrproper
-    make headers_check
 }
 
 package() {
