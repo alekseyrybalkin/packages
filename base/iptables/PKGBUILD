@@ -25,5 +25,3 @@ package() {
 
     install -Dm644 ../empty.rules ${pkgdir}/etc/iptables/empty.rules
 }
-
-generated_files="etc/systemd/system/multi-user.target.wants/iptables.service"
